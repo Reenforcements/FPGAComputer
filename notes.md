@@ -17,7 +17,7 @@ MIPS32 is one of the active MIPS architectures that hasn't been depricated yet.
 
 On the other hand, MIPS1 is a really old version of MIPS and has 45 regular instructions and 15 floating point instructions (30 if you count single and double precision separately.) This is much more feasible and will be the instruction set of choice for the processor of the computer.
 
-## Links:
+### Links:
 
 
 # Compiling for MIPS
@@ -82,17 +82,105 @@ Libraries are ELF files. So is the output from Arduino or GCC/G++.
 	
  It is within these sections that the run time can dynamically adjust the memory locations/references.
 
-## Links:
+### Links:
 [A nice diagram giving the rundown of an ELF file.](https://i.stack.imgur.com/xkGtg.jpg)
 <br>
 [ELF File format reference.](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
 <br>
 [Great Stackoverflow answer explaining the difference between an ELF and BIN file.](https://stackoverflow.com/questions/2427011/what-is-the-difference-between-elf-files-and-bin-files)
 
+# SystemVerilog
+###### Notes and things heavily taken from Altera's "SystemVerilog with the Quartus II Software" online course found [here](https://www.altera.com/support/training/course/ohdl1125.html).
+
+So it seems like there's three versions of Verilog floating around. There's Verilog, Verilog HDL, and SystemVerilog. This is really confusing, because HDL stands for hardware description language, but it also seems to be a version of Verilog itself. This nomenclature makes talking about and distinguishing these two versions of Verilog very confusing. One was created and maintained by the US military, and the other was created and maintained by other people. SystemVerilog seems to be the newest standard, and even supports classes. I'm not sure Quartus actually supports classes yet though. I don't think they have a full implementation of SystemVerilog yet. SystemVerilog seems to be Verilog with extra features, so I'll probably use it for my project in case I want to take advantage of some of its new and useful features. If not, its a superset of Verilog, so I could always just fall back to the basics.
+
+### Data Types Summary
+
+SystemVerilog has standard data types that you can take advantage of. Initially, you might think this would make things harder for the programmer, but using SystemVerilog's data types where applicable can actually reduce errors and make writing code easier. You can also make typedefs of your own data types so you don't have to guess what that 5 bit signal you made last week was for.
+
+All variables in plain Verilog may have one of four state values: **0, 1, x, and z**. This isn't always the case with SystemVerilog types.
+
+| 2 State Data Types | (0, 1) |
+| --- | ---- |
+| bit | User defined vector size; defaults to unsigned |
+| byte | 8 bit **signed** integer or ASCII character |
+| shortint | 16 bit signed integer |
+| int | 32 bit signed integer |
+| longint | 64 bit signed integer |
+| **4 State Data Types** | (0, 1, x, z) |
+| logic | User defined vector size; defaults to unsigned |
+| reg | User defined vector size; defaults to unsigned |
+| integer | 32 bit signed integer |
+| time | 32 bit unsigned integer |
+
+### Logic
+
+Removes confusion between `reg` and `wire`. Using `reg` doesn't mean you're creating a register in hardware. The context determines what a `reg` becomes. Use `logic` instead of `reg`. Use `net` or `wire` where multiple drivers are required, and `logic` everywhere else.
+
+### Casting
+
+SystemVerilog is more strict about type conversions and thus has casting.
+
+```
+// Casting size change to 10 bits
+10' (x - 2)
+// Casting to type int
+int' (2.0 * 3.0)
+// Casting to signed
+signed' (x)
+// Casting to enum type
+fruit'(0)
+```
+
+### User Defined Types ( `typedef` and `enum` )
+
+```
+typedef int unsigned uint;
+typedef logic [15:0] main_bus;
+
+typedef enum bit {TRUE, FALSE} boolean;
+boolean ready;
+assign eq_two = (datain == 2'b10) ? TRUE : FALSE;
+
+typedef struct {
+	logic         even;
+	logic [7:0] parity;
+} par_struct;
+
+par_struct p1, p2;
+assign p1  = '{0, 8'h80};
+assign p2.parity = 8'hA2;
+```
+
+### Arrays
+
+Arrays have lots of different parameters. Here's a breakdown:
+
+`type [A]arrayName[B][C]`<br>
+A = packed dimensions<br>
+B, C = unpacked dimensions<br>
+
+A one dimensional packed array is also called a **vector**.
+
+```
+logic [7:0]m;  
+logic [8]g;
+```
+
+An array of vectors or something like `int` can be done like this. Notice the order of the numbers can be different. Single values can also be used, but this seems less clear.
+
+```
+int arr[0:15][0:31];
+int arr[15:0][31:0];
+int arr3[16][32];
+```
+
+
+
 # Hex/Decimal/Octal/Binary
 
 Dealing with different number formats can make things tricky. If you're on a Mac, there's a special mode on the calculator app called **programmer mode**. Its under the "view" menu item. If you enable it, you can switch between octal, decimal, and hex modes. Additionally, the calcualtor will display the current number on the calculator's display in binary.
 
-## Links
+### Links
 [HEX to float](https://babbage.cs.qc.cuny.edu/IEEE-754.old/32bit.html)
 <br>
