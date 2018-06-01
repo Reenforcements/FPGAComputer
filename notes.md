@@ -19,6 +19,15 @@ On the other hand, MIPS1 is a really old version of MIPS and has 45 regular inst
 
 ### Links:
 
+# MIPS I Assembly
+
+The R2000 was the first processor to run MIPS I, the first version of MIPS. The R2000's instruction set is what my processor will be designed to run. Any of the newer MIPS are too complex
+
+
+### Links:
+
+[MIPS R2000 Assembly Language](https://fenix.tecnico.ulisboa.pt/downloadFile/3779576281986/MIPS)
+
 
 # Compiling for MIPS
 
@@ -88,9 +97,11 @@ Libraries are ELF files. So is the output from Arduino or GCC/G++.
 [ELF File format reference.](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
 <br>
 [Great Stackoverflow answer explaining the difference between an ELF and BIN file.](https://stackoverflow.com/questions/2427011/what-is-the-difference-between-elf-files-and-bin-files)
+<br>
+[Python library for working with ELF files. Will be useful to make an uploader.](https://github.com/eliben/pyelftools)
 
 # SystemVerilog
-###### Notes and things heavily taken from Altera's "SystemVerilog with the Quartus II Software" online course found [here](https://www.altera.com/support/training/course/ohdl1125.html).
+###### Notes and things heavily taken from Altera's "SystemVerilog with the Quartus II Software" online course found [here](https://www.altera.com/support/training/course/ohdl1125.html). Array info from [here](http://www.verilogpro.com/systemverilog-arrays-synthesizable/).
 
 So it seems like there's three versions of Verilog floating around. There's Verilog, Verilog HDL, and SystemVerilog. This is really confusing, because HDL stands for hardware description language, but it also seems to be a version of Verilog itself. This nomenclature makes talking about and distinguishing these two versions of Verilog very confusing. One was created and maintained by the US military, and the other was created and maintained by other people. SystemVerilog seems to be the newest standard, and even supports classes. I'm not sure Quartus actually supports classes yet though. I don't think they have a full implementation of SystemVerilog yet. SystemVerilog seems to be Verilog with extra features, so I'll probably use it for my project in case I want to take advantage of some of its new and useful features. If not, its a superset of Verilog, so I could always just fall back to the basics.
 
@@ -174,6 +185,120 @@ int arr[0:15][0:31];
 int arr[15:0][31:0];
 int arr3[16][32];
 ```
+
+In SystemVerilog, you can access more than one element of an array by 'slicing' it.
+
+```
+bit [8:0]myArray1[15:0];
+bit [8:0]array2[1:0];
+array2 = myArray1[8:7];
+// OR this equivalent expression
+array2 = myArray1[7+:2]; 
+
+// Can also do this in the opposite direction.
+```
+Arrays can also be multidimensional.
+
+```
+bit [3:0][15:0] multi1 [0:7]; // 8 elements of 4, 16 bit variables.
+
+typedef bit [4:0] bsix;   // multiple packed dimensions with typedef
+bsix [9:0] v5;            // equivalent to bit[4:0][9:0] v5
+ 
+typedef bsix mem_type [0:3]; // array of four unpacked 'bsix' elements
+mem_type ba [0:7];           // array of eight unpacked 'mem_type' elements
+                             // equivalent to bit[4:0] ba [0:3][0:7] - thanks Dennis!
+
+```
+
+###### More on arrays [here](http://www.verilogpro.com/systemverilog-arrays-synthesizable/).
+
+### Unsized Integer Literals
+
+```
+logic [7:0] data_reg;
+
+assign data_reg = '1; // Fills with ALL ONES.
+```
+
+### Packages
+
+Packages allow these things to be shared across modules:
+
+- parameters
+- types
+- tasks
+- functions
+
+```
+package global_defs;
+enum { IDLE, SOP, DATA_PAYLOAD, CRC } packet_state;
+typedef int unsigned uint;
+typedef logic [15:0] main_bus;
+endpackage
+```
+
+#### Importing packages
+
+`module main_control(input global_defs::main_bus in_bus, ...);`
+
+`import global_defs::*;`
+
+### Procedural Blocks
+
+##### always_ff - Sequential logic
+
+Designer intends to model sequential logic. Specify sensitivity list. Outputs cannot be assigned in another block.
+
+```
+always_ff @(posedge clk, posedge rst) begin
+	if (rst)
+		pckt_state <= IDLE;
+	else
+		pckt_state <= next_packet_state;
+end
+```
+
+##### always_comb - Combitorial logic
+
+Designer's intent to model combinatorial logic. Sensitivity list is inferred. Outputs cannot be assigned in another block. Evaluated at time zero.
+
+```
+always_comb begin
+	unique case (packet_state)
+		IDLE:
+			...
+		CRC:
+			...
+		etc..
+	endcase
+end
+```
+
+##### always_latch - Latched logic
+
+Designer's intent is to model latch based logic. Sensitivity list is inferred. Outputs cannot be assigned in another block. Evaluated at time zero. Not really sure what the purpose of this block is yet.
+
+```
+always_latch
+	if(data_enable)
+		data_out_latch <= data_in;
+end
+```
+
+### Procedural Statements
+
+These are what go into the various types of procedural blocks.
+
+##### Increment/Decrement Operators
+
+```
+
+```
+
+### Links
+
+[SystemVerilog reference guide](http://svref.renerta.com)
 
 
 
