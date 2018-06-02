@@ -21,7 +21,9 @@ On the other hand, MIPS1 is a really old version of MIPS and has 45 regular inst
 
 # MIPS I Assembly
 
-The R2000 was the first processor to run MIPS I, the first version of MIPS. The R2000's instruction set is what my processor will be designed to run. Any of the newer MIPS are too complex
+The R2000 was the first processor to run MIPS I, the first version of MIPS. The R2000's instruction set is what my processor will be designed to run. Any of the newer MIPS seem too complex to implement (at least for a beginner.)
+
+Some MIPS commands really get assembled down into multiple instructions. These are called **pseudoinstructions**.
 
 
 ### Links:
@@ -308,4 +310,6 @@ Dealing with different number formats can make things tricky. If you're on a Mac
 
 ### Links
 [HEX to float](https://babbage.cs.qc.cuny.edu/IEEE-754.old/32bit.html)
+<br>
+[Great Two's Complement Converter](http://www.exploringbinary.com/twos-complement-converter/)
 <br>
