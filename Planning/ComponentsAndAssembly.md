@@ -91,7 +91,6 @@ Relative branching is the number of instructions to jump back minus one more bec
 - Branch on less than zero and link 
 - Branch on less than zero
 - Branch on not equal
-
 - Jump
 - Jump and link
 - Jump register
@@ -99,8 +98,8 @@ Relative branching is the number of instructions to jump back minus one more bec
 
 ### Inputs
 
-- shouldLink
-- shouldBranch
+- branch - `1 if should branch`
+- link - `1 if should write return address when branching`
 - branchAddress [25:0]
 	- This will be from a 26 bit jump address or the result of adding the PC inside the ALU.
 
@@ -129,15 +128,21 @@ Relative branching is the number of instructions to jump back minus one more bec
 
 ### Input
 
-- addressInput0 [31:0]
-- dataInput [31:0]
-- writeEnable
-- readEnable
+- address [31:0] - `Read/write address`
+- data [31:0] - `Data to write if writing`
+- writeMode [1:0] 
+	- `0 = not writing`
+	- `1 = write byte`
+	- `2 = write half word`
+	- `3 = write word`word`
+- readMode [1:0] 
+	- `0 = not reading`
+	- `1 = read byte`
+	- `2 = read half word`
+	- `3 = read word`
 - unalignedLeft
 - unalignedRight
-
-
-- pcAddress
+- pcAddress [31:0]
 	- For fetching the next instruction
 
 ### Output
@@ -149,21 +154,22 @@ Relative branching is the number of instructions to jump back minus one more bec
 
 ### Input
 
-- registerReadAddress0 [4:0]
-- registerReadAddress1 [4:0]
-- registerWriteAddress0 [4:0]
+- rsAddress [4:0]
+- rtAddress [4:0]
+- rdAddress [4:0]
+- writeData [31:0]
 - registerWrite
+- registerRead
 
 ### Output
 
-- readData0 [31:0]
-- readData1 [31:0]
+- rsValue [31:0]
+- rtValue [31:0]
 
 # Misc
 
 - Move from coprocessor
 - Move to coprocessor
-
 - Return from exception -- Returns from an exception function call I'm guessing? Exceptions can occur if there's overflow with the non unsigned math operations.
 - System call
 - Break -- Used to transfer conrol to a debugger using kernel's exception handler. I won't have a kernel though so I'll probably just make this one a NOP or repurpose it for serial debugging somehow.

@@ -25,6 +25,12 @@ The R2000 was the first processor to run MIPS I, the first version of MIPS. The 
 
 Some MIPS commands really get assembled down into multiple instructions. These are called **pseudoinstructions**.
 
+##### Assembly instruction field names
+
+- rs = register source
+- rt = register target
+- rd = register destination
+
 
 ### Links:
 
