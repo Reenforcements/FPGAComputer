@@ -146,7 +146,7 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 	- 1 if should jump (uses 26 bits)
 	- 0 if should branch by adding immediate to current PC
 - jumpRegister
-	- 1 if jump using result from ALU (the register value) 
+	- 1 if jump using result from ALU (the register value)
 	- This will be from a 26 bit jump address or the result of adding the PC inside the ALU.
 - branchAddressOffset [15:0]
 - pcAddress [31:0]
@@ -168,7 +168,7 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 	- Load word left
 	- Load word right
 	- [I found this documentation on lwl, lwr, swl, and swr](https://www2.cs.duke.edu/courses/fall02/cps104/homework/lwswlr.html)
-	- I think I can accomplish these using byte "shifts" either inside the memory unit.
+	- I think I can accomplish these using byte "shifts" inside the memory module.
 - Store byte
 - Store halfword
 - Store word
