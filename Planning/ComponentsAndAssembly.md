@@ -1,3 +1,38 @@
+# Control Lines
+
+- registerRead
+- registerWrite
+- registerWriteMode
+	- 1 = use rtAddress [4:0]
+	- 0 = use rdAddress [4:0]
+- funct [5:0]
+- shamt [4:0]
+- useImmediate
+	- 1 = Use the immediate value provided
+	- 0 = Use the register value of rt 
+- readMode [1:0]
+- writeMode[1:0]
+- unalignedLeft
+- unalignedRight
+- jump/!branch
+- jumpRegister
+- registerWriteSource [1:0]
+	- 0 = write all zero
+	- 1 = write nextPCAddress (for branch/jump link)
+	- 2 = write data output from memory
+	- 3 = write result from ALU
+
+# Program Counter (PC)
+
+### Inputs
+
+- branchTo [31:0]
+
+### Outputs
+
+- pcAddress [31:0]
+- nextPCAddress [31:0]
+
 # ALU
 
 ### Operations
@@ -39,6 +74,7 @@ Implement using a bit shift of 16 left?
 
 - Set less than
 - Set less than unsigned
+	- Will do these with a big 32 bit OR gate and the result of subtraction 
 
 -
 
@@ -81,6 +117,14 @@ Ignore coprocessor stuff for right now.
 
 Relative branching is the number of instructions to jump back minus one more because the PC gets incremented automatically.
 
+Can handle greater than, less than, and equal using the zero, positive, and negative outputs from the ALU and a couple boolean gates.
+
+I'm going to put a simple adder/subtractor in this thing instead of trying to route things through the ALU.
+
+Don't need to hard code 31 for return address. I think that's done by the assembler using the immediate if you don't specify a value.
+
+Linking is accomplished by setting registerWrite=1 and setting registerWriteSource to use the next PC address.
+
 - Branch on coprocessor true
 - Branch on coprocessor false
 - Branch on equal
@@ -88,7 +132,7 @@ Relative branching is the number of instructions to jump back minus one more bec
 - Branch on greater than equal zero and link
 - Branch on greater than zero
 - Branch on less than equal zero
-- Branch on less than zero and link 
+- Branch on less than zero and link
 - Branch on less than zero
 - Branch on not equal
 - Jump
@@ -98,14 +142,20 @@ Relative branching is the number of instructions to jump back minus one more bec
 
 ### Inputs
 
-- branch - `1 if should branch`
-- link - `1 if should write return address when branching`
-- branchAddress [25:0]
+- jump/!branch 
+	- 1 if should jump (uses 26 bits)
+	- 0 if should branch by adding immediate to current PC
+- jumpRegister
+	- 1 if jump using result from ALU (the register value) 
 	- This will be from a 26 bit jump address or the result of adding the PC inside the ALU.
+- branchAddressOffset [15:0]
+- pcAddress [31:0]
+- jumpAddress [25:0]
+- jumpRegisterAddress [31:0]
 
 ### Outputs
 
-
+- branchTo [31:0] - `The address to branch to`
 
 # Memory
 
@@ -154,17 +204,17 @@ Relative branching is the number of instructions to jump back minus one more bec
 
 ### Input
 
-- rsAddress [4:0]
-- rtAddress [4:0]
-- rdAddress [4:0]
+- readAddress0 [4:0]
+- readAddress1 [4:0]
+- writeAddress [4:0]
 - writeData [31:0]
 - registerWrite
 - registerRead
 
 ### Output
 
-- rsValue [31:0]
-- rtValue [31:0]
+- read0Value [31:0]
+- read1Value [31:0]
 
 # Misc
 
@@ -174,3 +224,9 @@ Relative branching is the number of instructions to jump back minus one more bec
 - System call
 - Break -- Used to transfer conrol to a debugger using kernel's exception handler. I won't have a kernel though so I'll probably just make this one a NOP or repurpose it for serial debugging somehow.
 - NOP
+
+# Notes
+
+- For R format, rd is the destination
+- For I format, rt is the desitation (the **target**)
+

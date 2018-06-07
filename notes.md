@@ -309,6 +309,15 @@ These are what go into the various types of procedural blocks.
 [SystemVerilog reference guide](http://svref.renerta.com)
 
 
+# DE2-115 FPGA
+
+
+### Links
+
+[DE2-115 Specifications](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=163&No=502&PartNo=2)
+<br>
+[University IP Cores](https://www.altera.com/support/training/university/materials-ip-cores.html)
+
 
 # Hex/Decimal/Octal/Binary
 
