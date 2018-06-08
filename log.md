@@ -1,3 +1,10 @@
+### 6/7/18
+
+I can't find documentation on the different codes used in BREAK. I think I'll just make that a NOP for now in the processor.
+
+The diagram looks good. Lets start in SystemVerilog. I'm going to create a project in Ubuntu and start making one of the simpler modules like the register file.
+
+I finished taking notes on SystemVerilog. Now I'm trying to learn what testing is available. There seems to be some Verilog based testing that I can use but I'm having trouble finding documentation on it.
 
 ### 6/6/18
 

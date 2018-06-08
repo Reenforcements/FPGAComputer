@@ -222,7 +222,7 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 - Move to coprocessor
 - Return from exception -- Returns from an exception function call I'm guessing? Exceptions can occur if there's overflow with the non unsigned math operations.
 - System call
-- Break -- Used to transfer conrol to a debugger using kernel's exception handler. I won't have a kernel though so I'll probably just make this one a NOP or repurpose it for serial debugging somehow.
+- Break -- Used to transfer conrol to a debugger using kernel's exception handler. I won't have a kernel though so I'll probably just make this one a NOP or repurpose it for serial debugging somehow. I also can't find documentation on the different break codes.
 - NOP
 
 # Notes
