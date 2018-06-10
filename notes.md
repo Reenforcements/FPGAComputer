@@ -21,7 +21,15 @@ On the other hand, MIPS1 is a really old version of MIPS and has 45 regular inst
 
 # MIPS I Assembly
 
-The R2000 was the first processor to run MIPS I, the first version of MIPS. The R2000's instruction set is what my processor will be designed to run. Any of the newer MIPS are too complex
+The R2000 was the first processor to run MIPS I, the first version of MIPS. The R2000's instruction set is what my processor will be designed to run. Any of the newer MIPS seem too complex to implement (at least for a beginner.)
+
+Some MIPS commands really get assembled down into multiple instructions. These are called **pseudoinstructions**.
+
+##### Assembly instruction field names
+
+- rs = register source
+- rt = register target
+- rd = register destination
 
 
 ### Links:
@@ -144,6 +152,10 @@ fruit'(0)
 ```
 
 ### User Defined Types ( `typedef` and `enum` )
+
+Enum without a datatype defaults to `int` in SystemVerilog.
+
+Enums with each value defined will be ignored unless the settings are changed from auto to user encoded.
 
 ```
 typedef int unsigned uint;
@@ -292,15 +304,134 @@ These are what go into the various types of procedural blocks.
 
 ##### Increment/Decrement Operators
 
-```
+These should be used in combitorial blocks. If used in sequential blocks, they might create race conditions where another sequential block reading the value might get the old value or the new one.
+
+##### Other Operators
 
 ```
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+<<= // Logic shift
+>>=
+<<<= // Arith shift
+>>>=
+```
+##### Wild Equality and Inequality Operators
+
+`==?` and `!=?` treat X and Z bits as don't cares in the right operand.
+
+##### Jump Statements
+
+break, continue, and return
+
+### Block Names
+
+Name your blocks to avoid errors and make things easier to follow.
+
+```
+always_comb begin : write_registers
+	if(something == otherThing) begin : special1
+		...
+	end : special1
+
+
+end : write_registers
+```
+
+### Enhanced Case Statements
+
+unique case (...) - Only one case matches when evaluated, so it can be done in parallel
+
+priority case (...) - Should be evaluated in order like a big if-else
+
+### State Machine Guidelines
+
+- Assign detault values to outputs derived from the state machine.
+- Separate the state machine logic from:
+	- Arithmetic functions
+	- Data paths
+	- Output values
+- Define common operations outside of the state machine and then reuse that functionality across the state machine where needed.
+
+### Enhanced Port Connections
+
+Don't even bother with ordered port connections. Named is the way to go. Its more clear and less error prone. Its also easier to update stamped out modules with named ports compared to ordered ports.
+
+Use `.internalName(nameInCurrentScope)` for named connections.
+
+Use `.name` to connect something from the current scope to an internal thing of the same name.
+
+Use `.*` to auto connect all from the current scope to internal names.
+
+### Interfaces
+
+Bundle signals into single connections.
+
+```
+interface my_cool_bus;
+	logic writeEnabled;
+	logic readEnabled;
+	logic [5:0] opCode;
+	logic [31:0] data0;
+	
+	modport master (input writeEnabled, readEnabled,
+						output opCode, data0);
+	modport slave (input opCode, data0,
+					output writeEnabled, readEnabled);
+endinterface
+
+module fabric(
+			input logic clk,
+			my_cool_bus.master inputBus,
+			my_cool_bus.slave  device0,
+			my_cool_bus.slave device1);
+			
+			...
+			
+endmodule	
+
+```
+
+You can then instantiate my_cool_bus and hook them up to the source and destination and then use the instance to make connections in between.
 
 ### Links
 
 [SystemVerilog reference guide](http://svref.renerta.com)
 
 
+# DE2-115 FPGA
+
+
+### Links
+
+[DE2-115 Specifications](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=163&No=502&PartNo=2)
+<br>
+[University IP Cores](https://www.altera.com/support/training/university/materials-ip-cores.html)
+
+
+# Verification/Validation/Testing
+###### Notes taken from "SOC Verification using SystemVerilog" online course (link at bottom.)
+
+Verification is different from validation and testing. Verification demonstrates functional correctness of a design. Verification helps ensure that the specification is preserved in the implementation. Validation ensures that the product/design fits the application's needs. Testing ensures that the product/design is manufactured correctly.
+
+If you don't verify, you can introduce these fun issues:
+
+- Incorrect/insufficient specifications
+- Misinterpretation of specifications
+- Misunderstanding between designers
+- Missed cases
+- Protocol non-conformance
+
+### Links
+
+[SOC Verification using SystemVerilog](https://www.slideshare.net/RamdasMozhikunnath/soc-verificationsystemverilog)
+<Br>
 
 # Hex/Decimal/Octal/Binary
 
@@ -308,4 +439,6 @@ Dealing with different number formats can make things tricky. If you're on a Mac
 
 ### Links
 [HEX to float](https://babbage.cs.qc.cuny.edu/IEEE-754.old/32bit.html)
+<br>
+[Great Two's Complement Converter](http://www.exploringbinary.com/twos-complement-converter/)
 <br>
