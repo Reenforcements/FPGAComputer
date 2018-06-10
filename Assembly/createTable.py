@@ -20,12 +20,14 @@ allAssemblyInstructions = [
 {'name':'div', 'type':'r', 'argcount':2},
 {'name':'divu', 'type':'r', 'argcount':2},
 
-{'name':'div', 'type':'r'},
-{'name':'divu', 'type':'r'},
+# These support using an immediate instead of
+#  another register.
+{'name':'div', 'type':'r', 'supportsImmediate':true},
+{'name':'divu', 'type':'r', 'supportsImmediate':true},
 
-{'name':'mul', 'type':'r'},
-{'name':'mulo', 'type':'r'},
-{'name':'mulou', 'type':'r'},
+{'name':'mul', 'type':'r', 'supportsImmediate':true},
+{'name':'mulo', 'type':'r', 'supportsImmediate':true},
+{'name':'mulou', 'type':'r', 'supportsImmediate':true},
 
 {'name':'mult', 'type':'r', 'argcount':2},
 {'name':'multu', 'type':'r', 'argcount':2},
@@ -33,28 +35,28 @@ allAssemblyInstructions = [
 {'name':'neg', 'type':'r', 'argcount':2},
 {'name':'negu', 'type':'r', 'argcount':2},
 
-{'name':'nor', 'type':'r'},
+{'name':'nor', 'type':'r', 'supportsImmediate':true},
 
 {'name':'not', 'type':'r', 'argcount':2},
 
 {'name':'or', 'type':'r'},
 {'name':'ori', 'type':'i'},
 
-{'name':'rem', 'type':'r'},
-{'name':'remu', 'type':'r'},
+{'name':'rem', 'type':'r', 'supportsImmediate':true},
+{'name':'remu', 'type':'r', 'supportsImmediate':true},
 
-{'name':'rol', 'type':'r'},
-{'name':'ror', 'type':'r'},
+{'name':'rol', 'type':'r', 'supportsImmediate':true},
+{'name':'ror', 'type':'r', 'supportsImmediate':true},
 
-{'name':'sll', 'type':'r'},
+{'name':'sll', 'type':'r', 'supportsImmediate':true},
 {'name':'sllv', 'type':'r'},
-{'name':'sra', 'type':'r'},
+{'name':'sra', 'type':'r', 'supportsImmediate':true},
 {'name':'srav', 'type':'r'},
-{'name':'srl', 'type':'r'},
+{'name':'srl', 'type':'r', 'supportsImmediate':true},
 {'name':'srlv', 'type':'r'},
 
-{'name':'sub', 'type':'r'},
-{'name':'subu', 'type':'r'},
+{'name':'sub', 'type':'r', 'supportsImmediate':true},
+{'name':'subu', 'type':'r', 'supportsImmediate':true},
 
 {'name':'xor', 'type':'r'},
 {'name':'xori', 'type':'i'},
@@ -64,25 +66,28 @@ allAssemblyInstructions = [
 {'name':'lui', 'type':'i'},
 
 
-{'name':'seq', 'type':'r'},
+{'name':'seq', 'type':'r', 'supportsImmediate':true},
 
-{'name':'sge', 'type':'r'},
-{'name':'sgeu', 'type':'r'},
+{'name':'sge', 'type':'r', 'supportsImmediate':true},
+{'name':'sgeu', 'type':'r', 'supportsImmediate':true},
 
-{'name':'sgt', 'type':'r'},
-{'name':'sgtu', 'type':'r'},
+{'name':'sgt', 'type':'r', 'supportsImmediate':true},
+{'name':'sgtu', 'type':'r', 'supportsImmediate':true},
 
-{'name':'sle', 'type':'r'},
-{'name':'sleu', 'type':'r'},
+{'name':'sle', 'type':'r', 'supportsImmediate':true},
+{'name':'sleu', 'type':'r', 'supportsImmediate':true},
 
 {'name':'slt', 'type':'r'},
 {'name':'slti', 'type':'i'},
 {'name':'sltu', 'type':'r'},
 {'name':'sltiu', 'type':'i'},
 
-{'name':'sne', 'type':'r'},
+{'name':'sne', 'type':'r', 'supportsImmediate':true},
 
-
+# Both b and j seem to compile to an offset jump.
+# I'm wondering if it just depends on the size of the jump
+#  that needs to be made. In this case, they compile to branch
+#  if equal, but both registers are $0, so its always true.
 {'name':'b', 'type':'j'},
 
 ];
