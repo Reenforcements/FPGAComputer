@@ -1,0 +1,256 @@
+# Loading project ProcessorTests
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Testing
+# vsim work.Testing 
+# Start time: 20:57:28 on Jun 10,2018
+# Loading sv_std.std
+# Loading work.Testing
+add wave sim:/Testing/*
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+wave create -pattern none -portmode input -language vlog /Testing/clk
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# Testing
+wave create -pattern none -portmode input -language vlog /Testing/rst
+# Testing
+wave create -pattern none -portmode input -language vlog /Testing/inp1
+# Testing
+wave create -pattern none -portmode output -language vlog -range 1 0 /Testing/out1
+# Testing
+wave modify -driver freeze -pattern clock -initialvalue (no value) -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/Testing/clk
+# Testing
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 100ps Edit:/Testing/rst
+# Testing
+wave modify -driver freeze -pattern constant -value 0 -starttime 100ps -endtime 1000ps Edit:/Testing/rst
+# Testing
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do
+wave editwrite -file /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do -append
+wave modify -driver freeze -pattern constant -value 1 -starttime 200ps -endtime 1000ps Edit:/Testing/rst
+# Testing
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do
+wave editwrite -file /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do -append
+run
+run
+run 1000
+wave map Edit:/Testing/inp1 sim:/Testing/inp1
+# /Testing/inp1 already exists in the wave, cannot add twice
+wave map Edit:/Testing/out1 sim:/Testing/out1
+# /Testing/out1 already exists in the wave, cannot add twice
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /Testing/clk "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /Testing/rst ""
+restart -f
+run 1000
+run 1000
+restart -f
+# Load canceled
+run -all
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# couldn't execute "acroread": no such file or directory
+# Load canceled
+vsim
+# End time: 08:04:59 on Jun 11,2018, Elapsed time: 11:07:31
+# Errors: 4, Warnings: 0
+# vsim work.Testing 
+# Start time: 08:04:59 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing
+add wave sim:/Testing/*
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run 1000
+restart -f; run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f; run 1000
+# Loading work.Testing
+restart -f; run 1000
+restart -f
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Testing
+# End time: 08:24:20 on Jun 11,2018, Elapsed time: 0:19:21
+# Errors: 0, Warnings: 0
+# vsim work.Testing 
+# Start time: 08:24:20 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 3 errors.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.Testing_TB
+# End time: 09:09:44 on Jun 11,2018, Elapsed time: 0:45:24
+# Errors: 0, Warnings: 0
+# vsim work.Testing_TB 
+# Start time: 09:09:44 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing_TB
+# Loading work.Testing
+add wave sim:/Testing_TB/*
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.Testing_TB
+# Loading work.Testing
+run 100
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.Testing_TB
+# Loading work.Testing
+run 100
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+restart -f

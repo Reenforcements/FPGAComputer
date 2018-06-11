@@ -9,27 +9,77 @@ z2
 cModel Technology
 d/home/imaustyn/Documents/MSTest1
 vRegisterFile
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1528666344
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1528722684
 !i10b 1
-!s100 =WH25Xb2f>4ni2`?OJU>61
-I2>XILFbbV3KWCA:X<OTdj2
-VDg1SIo80bB@j0V0VzS_@n1
+!s100 YfCi[cjPMTHHYM6k?K:^21
+I<3R<fi<^<EIgGRH1<ZjI21
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 RegisterFile_sv_unit
 S1
-d/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects
-w1528666341
+Z3 d/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects
+w1528676204
 8/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 F/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 L0 5
-OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1528666343.000000
+Z5 !s108 1528722684.000000
 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !i113 1
-o-work ProcessorTests -sv
-tCvgOpt 0
+Z6 o-work ProcessorTests -sv
+Z7 tCvgOpt 0
 n@register@file
+vTesting
+R0
+R1
+!i10b 1
+!s100 k?`BGXcXG?[_]]n7o4n7<2
+IN9:`LDgP[;YSD6@7RVz992
+R2
+!s105 Testing_sv_unit
+S1
+R3
+w1528721724
+8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv|
+!s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv|
+!i113 1
+R6
+R7
+n@testing
+vTesting_TB
+R0
+R1
+!i10b 1
+!s100 c4J2>l:GaEz>7M8XO>=451
+IIL0XYM<8?97W424U?]lmP2
+R2
+!s105 Testing_TB_sv_unit
+S1
+R3
+w1528722682
+8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv
+F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv|
+!i113 1
+o-work work -sv
+R7
+n@testing_@t@b
