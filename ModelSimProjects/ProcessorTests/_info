@@ -10,15 +10,15 @@ cModel Technology
 d/home/imaustyn/Documents/MSTest1
 vRegisterFile
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1528722684
+Z1 !s110 1528732581
 !i10b 1
-!s100 YfCi[cjPMTHHYM6k?K:^21
-I<3R<fi<^<EIgGRH1<ZjI21
+!s100 zXe9Y1;HOiWmLUYG4@fGI2
+I4UEz>MVfK;OgQKWdEnZ241
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 RegisterFile_sv_unit
 S1
 Z3 d/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects
-w1528676204
+w1528732579
 8/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 F/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 L0 5
@@ -26,13 +26,38 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1528722684.000000
+Z5 !s108 1528732581.000000
 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !i113 1
 Z6 o-work ProcessorTests -sv
 Z7 tCvgOpt 0
 n@register@file
+vRegisterFile_TB
+R0
+R1
+!i10b 1
+!s100 LG_d8KDCo66i158SmU5972
+I^3=@z0l`JhAKi1VSa?8m`0
+R2
+!s105 RegisterFile_TB_sv_unit
+S1
+R3
+w1528724166
+8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv|
+!s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv|
+!i113 1
+R6
+R7
+n@register@file_@t@b
 vTesting
 R0
 R1

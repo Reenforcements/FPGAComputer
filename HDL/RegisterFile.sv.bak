@@ -28,13 +28,45 @@ always_ff @(posedge clk or negedge rst) begin
 		
 	end:reset
 	else
-	begin:clk
-
-	end:clk
+	begin
+		if (registerWrite == 1'b1) begin
+			registers[writeAddress] <= writeData;
+		end
+	end
 end
 
+// rs and rt
 always_comb begin
-	
-end
+	if (registerRead == 1'b1) begin
+		// Output values for the input addresses.
+		unique case(rsAddress)
+			5'd0:
+				begin
+					readValue0 = 32'd0;
+				end
+			default:
+				begin
+					readValue0 = registers[rsAddress];
+				end
+		endcase
+		unique case(rtAddress)
+			5'd0:
+				begin
+					readValue1 = 32'd0;
+				end
+			default:
+				begin
+					readValue1 = registers[rtAddress];
+				end
+		endcase
+
+	end
+	else
+	begin
+		// Not reading from registers
+		readValue0 = 32'd0;
+		readValue1 = 32'd0;
+	end
+ends
 
 endmodule

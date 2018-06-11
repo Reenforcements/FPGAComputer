@@ -254,3 +254,68 @@ run 100
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
