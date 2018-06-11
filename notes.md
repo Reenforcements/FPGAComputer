@@ -260,7 +260,7 @@ endpackage
 
 ##### always_ff - Sequential logic
 
-Designer intends to model sequential logic. Specify sensitivity list. Outputs cannot be assigned in another block.
+Designer intends to model sequential logic. The "ff" means "flip flop". Specify sensitivity list. Outputs cannot be assigned in another block.
 
 ```
 always_ff @(posedge clk, posedge rst) begin
@@ -403,6 +403,8 @@ You can then instantiate my_cool_bus and hook them up to the source and destinat
 ### Links
 
 [SystemVerilog reference guide](http://svref.renerta.com)
+<br>
+[Verilog Online Help](http://verilog.renerta.com/source/vrg00013.htm)
 
 
 # DE2-115 FPGA
@@ -427,6 +429,27 @@ If you don't verify, you can introduce these fun issues:
 - Misunderstanding between designers
 - Missed cases
 - Protocol non-conformance
+
+**70% of design effort goes into verification.**
+
+Verify functionally, timing, and performance.
+
+You can apparently call C functions from SystemVerilog and vice versa.
+
+# ModelSim
+
+ModelSim can be used to verify the logic of your designs without uploading them to an FPGA and testing them manually.
+
+`restart -f` - Will reload compiled files so you don't have to create a new simulation each time you edit a file.
+
+`assert` must go in a clocked block.
+
+
+You can print messages with your asserts.
+```
+assert (A == B) $display ("OK. A equals B");
+    else $error("It's gone wrong");
+```
 
 ### Links
 

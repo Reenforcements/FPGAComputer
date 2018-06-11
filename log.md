@@ -1,3 +1,21 @@
+###6/10/18
+
+I'm going to start with the RegisterFile. I made two new directories: HDL, for SystemVerilog code, and ModelSimTests, for all the testbenches. ModelSim and Quartus will share files in the HDL directory. I just made the RegisterFile.sv and RegisterFile_TB.sv files (TB stands for test bench.)
+
+### 6/9/18
+
+I finally figured out how to use `$display`. Its part of ModelSim. It also has to be used in a procedural block. This was such a mystery to me for a long time. I really wish I had known about this back in 287.
+
+Trying to get ModelSim running on Ubuntu. The Quartus install manual says they support Red Hat Linux, but I'm trying anyways. Things are a little extra tricky because ModelSim is 32 bit and I installed a 64 bit version of Ubuntu. I'm currently trying to install all the 32-bit libraries I'll need to run ModelSim.
+
+I went through and installed the most similar libraries I can find, and the application started!! I'll have to see if it crashes when I try to use it or if its pretty stable.
+
+Okay, the text editor has like nano sized text.
+
+Apparently changing the font size to negative fixes it. I don't know how people figured that out.
+
+I believe I have the basics of ModelSim down.
+
 ### 6/7/18
 
 I can't find documentation on the different codes used in BREAK. I think I'll just make that a NOP for now in the processor.
