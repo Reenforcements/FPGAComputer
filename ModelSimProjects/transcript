@@ -1257,3 +1257,165 @@ quit -sim
 # Compile of Testing_TB.sv was successful.
 # Compile of ALU.sv was successful.
 # 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
