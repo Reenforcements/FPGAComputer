@@ -60,7 +60,9 @@ always begin
 	registerRead <= 1;
 	rsAddress <= 5'd5;
 	rtAddress <= 5'd12;
-	#1
+	//#1
+	wait (readValue0);
+	wait (readValue1);
 	assert(readValue0 == (-(32'd555555)) ) else $error("Reg 5 should be -555555");
 	assert(readValue1 == 32'd1234) else $error("Reg 12 should be 1234.");
 	#9;
@@ -75,7 +77,7 @@ always begin
 	assert(readValue1 == 32'd0) else $error("Reg 4 should be 0 when readEnabled=0");
 	#9;
 
-	$error("Simulaton complete.");
+	$error("DONE!");
 
 	#1000;
 end

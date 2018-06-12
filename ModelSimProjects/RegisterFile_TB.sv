@@ -60,10 +60,12 @@ always begin
 	registerRead <= 1;
 	rsAddress <= 5'd5;
 	rtAddress <= 5'd12;
-	#1
+	//#1
+	wait (readValue0);
+	wait (readValue1);
 	assert(readValue0 == (-(32'd555555)) ) else $error("Reg 5 should be -555555");
 	assert(readValue1 == 32'd1234) else $error("Reg 12 should be 1234.");
-	#9;
+	#10;
 
 	// readValue0/readValue1 should be 0 if readEnabled = 0
 	registerWrite <= 0;

@@ -1419,3 +1419,2091 @@ quit -sim
 # Compile of Testing_TB.sv was successful.
 # Compile of ALU.sv was successful.
 # 5 compiles, 0 failed with no errors.
+vsim work.RegisterFile_TB
+# vsim work.RegisterFile_TB 
+# Start time: 15:24:53 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+simulate 1000
+# invalid command name "simulate"
+run 1000
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: Reg 5 should be -555555
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 65
+# ** Error: Reg 12 should be 1234.
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 66
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+restart -f
+run 1000
+# ** Error: Reg 5 should be -555555
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 65
+# ** Error: Reg 12 should be 1234.
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 66
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 80
+quit -sim
+# End time: 15:31:38 on Jun 12,2018, Elapsed time: 0:06:45
+# Errors: 10, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of ALU_TB.sv failed with 1 errors.
+# Compile of ALU_TB.sv failed with 1 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 1 errors.
+# 6 compiles, 1 failed with 1 error.
+# Compile of ALU_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 2 errors.
+# 6 compiles, 1 failed with 2 errors.
+# Compile of ALU_TB.sv failed with 2 errors.
+# Compile of ALU_TB.sv was successful.
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:52:28 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(33): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:52:29 on Jun 12,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# No Design Loaded!
+run 100
+# No Design Loaded!
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:53:50 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(35): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:53:50 on Jun 12,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# No Design Loaded!
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:58:12 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:58:12 on Jun 12,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:58:33 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+restart -f
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+quit -sim
+# End time: 17:01:06 on Jun 12,2018, Elapsed time: 0:02:33
+# Errors: 0, Warnings: 5
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 17:01:13 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# End time: 17:02:14 on Jun 12,2018, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 1
+# vsim work.ALU_TB 
+# Start time: 17:02:14 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+restart -f
+run 100
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '-' in data on line 18 of file "../ModelSimTestData/ALU.txt".    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          5
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
