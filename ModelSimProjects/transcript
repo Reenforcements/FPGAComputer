@@ -673,3 +673,587 @@ restart -f
 run 40
 restart -f
 run 80
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 80
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+compile_all
+# invalid command name "compile_all"
+compile
+# wrong # args: should be "compile w cmd ..."
+compile w .
+# couldn't execute "/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/.": permission denied
+compile RegisterFile_TB.sv
+# wrong # args: should be "compile w cmd ..."
+vcom
+vcom RegisterFile_TB.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:30:00 on Jun 11,2018
+# vcom -reportprogress 300 RegisterFile_TB.sv 
+# -- Loading package STANDARD
+# ** Error: RegisterFile_TB.sv(1): near "module": syntax error
+# End time: 20:30:00 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+restart -f
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: Simulaton complete.
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+restart -f
+run 1000
+# ** Error: Simulaton complete.
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+./ProcessorTests
+# invalid command name "./ProcessorTests"
+file
+# wrong # args: should be "file option ?arg ...?"
+ls
+# ProcessorTests
+# ProcessorTests.cr.mti
+# ProcessorTests.mpf
+# RegisterFile_TB.sv
+# RegisterFile_TB.sv.bak
+# Testing.sv
+# Testing.sv.bak
+# Testing_TB.sv
+# Testing_TB.sv.bak
+# TestingWave1.do
+# transcript
+# vsim.wlf
+list
+ls
+# ProcessorTests
+# ProcessorTests.cr.mti
+# ProcessorTests.mpf
+# RegisterFile_TB.sv
+# RegisterFile_TB.sv.bak
+# Testing.sv
+# Testing.sv.bak
+# Testing_TB.sv
+# Testing_TB.sv.bak
+# TestingWave1.do
+# transcript
+# vsim.wlf
+vcom -help
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Usage: vcom [options] files
+# Options:
+#   -help              Print this message
+#   -version           Print the version of the compiler
+#   -work <path>       Specify library WORK
+#   -fatal <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as fatal
+#   -error <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as errors
+#   -warning <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as warnings
+#   -warning error     Report all warnings as errors
+#   -note <msgNumber>[,<msgNumber>...]
+#                      Report the listed message as notes
+#   -suppress <msgNumber>[,<msgNumber>...]
+#                      Suppress the listed messages
+#   -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                      Limit the reporting of listed messages to default count
+#   -msglimitcount <limit_value> -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                      Limit the reporting of listed messages to user defined count
+#   -msgsingleline     Display the messages in a single line.
+#   -svfilesuffix=<extension>[,<extension>...]
+#                      filename extensions for SystemVerilog code
+#   -87                Enable support for VHDL 1076-1987
+#   -93                Enable support for VHDL 1076-1993
+#   -2002              Enable support for VHDL 1076-2002
+#   -2008              Enable support for VHDL 1076-2008
+#                      Refer to the technote docs/technotes/vhdl2008.note
+#                      for a list of the currently supported 2008 features.
+#   -allowProtectedBeforeBody
+#                      Allow a variable of protected type to be created prior
+#                      to declaring the body
+#   -ams99             Enable support for VHDL 1076.1-1999
+#   -ams07             Enable support for VHDL 1076.1-2007
+#   -addpragmaprefix <prefix>
+#                      Enable recognition of synthesis and coverage pragmas with
+#                      a user specified prefix.
+#   -check_synthesis   Check for compliance to some synthesis rules
+#   -createlib[=compress]
+#                      Create libraries that do not exist.
+#                      The =compress modifier creates compressed libraries.
+#   -nocreatelib       Do not create libraries that do not exist.
+#   -coverclkoptbuiltins, -nocoverclkoptbuiltins
+#                      Enable or disable clkOpt optimization builtins for code coverage.
+#   -bindAtCompile     Perform default binding when compiling the design
+#   -bindAtLoad        Perform default binding when the design is loaded (the default)
+#   -amsstd            Add VHDL-AMS declarations to package STANDARD
+#   -noamsstd          Do not add VHDL-AMS declarations to package STANDARD
+#   -ignoreStandardRealVector Ignore the VHDL-2008 declaration of REAL_VECTOR in package STANDARD
+#   -nocoversub        Ignore VHDL subprograms for code coverage
+#   -coversub          Include VHDL subprograms for code coverage
+#   -coverrespecthandl  Inform code coverage optimizations to look for H and L signal values
+#   -nocoverrespecthandl  Inform code coverage optimizations to ignore H and L signal values
+#   -separateConfigLibrary  Allows VHDL configuration decls in different library from corresponding entity
+#   +cover[=<spec>]
+#                      <spec> is used to enable code coverage metrics for certain
+#                      kinds of constructs.
+#                      <spec> consists of one or more of the following letter codes:
+#                         s (statement)
+#                         b (branch)
+#                         c (condition)
+#                         e (expression)
+#                         f (finite state machine)
+#                         t (toggle)
+#                         x (extended toggle)
+#                      If no <spec> characters are given, sbceft is the default.
+#   -coverenhanced     Enables functionality which may change the appearance or content of coverage
+#                      metrics. A detailed list of these changes can be found by searching in the
+#                      release notes for 'coverenhanced'. This option only takes meaningful effect in
+#                      letter releases (e.g. 10.2b). It has no effect in initial major releases (e.g. 10.2).
+#   -coveropt <i>      Specify a digit for code coverage optimization level: 1 through 4.
+#   -coverexcludedefault Automatically exclude case default clauses.
+#   -coverfec          Enable Focused Expression Coverage analysis for conditions and expressions.
+#   -nocoverfec        Disable Focused Expression Coverage analysis for conditions and expressions.
+#   -coverrec          Enable Rapid Expression Coverage mode of FEC for conditions and expressions.
+#   -nocoverrec        Disable Rapid Expression Coverage mode of FEC for conditions and expressions.
+#   -coverudp          Enable UDP Coverage analysis for conditions and expressions.
+#   -nocoverudp        Disable UDP Coverage analysis for conditions and expressions.
+#   -nocovershort      Disable short circuiting of expressions/condition when coverage is enabled.
+#   -coverexpandrdpfx  Bit-blast multi-bit operands of reduction prefix expressions for expression/condition coverage.
+#   -nocoverexpandrdpfx Don't bit-blast multi-bit operands of reduction prefix expressions for expression/condition coverage.
+#   -nocoverexcludedefault Don't automatically exclude case default clauses.
+#   -constimmedassert  Show constant immediate assertions in GUI/UCDB/reports etc.
+#   -togglecountlimit n Quit collecting toggle info after count n is reached.
+#   -togglewidthlimit n Don't collect toggle data on reg's or arrays wider than n.
+#   -extendedtogglemode [1|2|3]
+#                      Change the level of support for extended toggles.
+#                      The levels of support are:
+#                      1 - 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z')
+#                      2 - 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'
+#                      3 - 0L->1H & 1H->0L & all 'Z' transitions
+#   -toggleportsonly   Enable toggle statistics collection only for ports.
+#   -maxudprows n      Max number of rows allowed in UDP tables for code coverage.
+#   -maxfecrows n      Max number of input patterns allowed in FEC table for code coverage.
+#   -fecudpeffort n    Limit the size of expressions and conditions considered for expr/cond coverage.
+#                      Levels supported are:
+#                      1 - (low) Only small expressions and conditions considered for coverage.
+#                      2 - (medium) Bigger expressions and conditions considered for coverage.
+#                      3 - (high) Very large expressions and conditions considered for coverage.
+#   -coverreportcancelled Report coverage items that have been optimized away.
+#   -coverdeglitch <period> Report only the last execution of non-clocked processes/continuous assignments
+#                      within time greater than <period>, where <period> is 0 or
+#                      a time string with units
+#   -debugVA           Print VITAL cell optimization information
+#   -defercheck        Defer all compile-time range checking on constant index and
+#                      slice expressions until run time
+#   -explicit          Resolve resolution conflicts in favor of explicit functions
+#   -deferSubpgmCheck  Defer compile-time range checking on constant index and
+#                      slice expressions in subprograms until run time
+#   -f <path>          Specify a file containing more command line arguments
+#   -F <path>          Specify a file containing more command line arguments. Prefixes relative
+#                      file names within the arguments file with the absolute path of arguments file,
+#                      if lookup with relative path fails.
+#   -outf <filename>   Specify a file to save the final list of options after recursively expanding
+#                      all -f, -file and -F files.
+#   -force_refresh     Force a refresh of the library image from .dat file(s)
+#                      even if there are dependency errors
+#   -optionset <optionset_name>
+#                      Calls an option set in modelsim.ini.
+#   -nofsmresettrans   Disable recognition of implicit asynchronous reset transitions for FSMs
+#   -fsmresettrans     Enable recognition of implicit asynchronous reset transitions for FSMs
+#   -nofsmsingle       Disable recognition FSMs having single bit current state variable
+#   -fsmsingle         Enable recognition FSMs having single bit current state variable
+#   -fsmimplicittrans  Enable recognition of implicit transitions in FSMs
+#   -nofsmimplicittrans Disable recognition of implicit transitions in FSMs
+#   -fsmmultitrans     Enable recognition of Multi-state transitions in FSMs
+#   -fsmverbose [b|t|w]
+#                      Provides information about FSMs recognized, including state reachability analysis.
+#                      There are three detail levels that can be set with this option.
+#                         b (displays only basic information)
+#                         t (displays a transition table in addition to the basic information)
+#                         w (displays any warning messages in addition to the basic information)
+#                      If no character is specified, btw is the default.
+#   -gen_xml <entity> <output>
+#                      Output (into a file) the interface definition of the
+#                      specified design unit in XML format
+#   -gen_xmlstruct <entity> <output>
+#                      Similar to -gen_xml, but also output the structural definition
+#                      of the specified design unit in XML format
+#   -ignoredefaultbinding
+#                      Do not generate a default binding during compilation
+#   -ignorevitalerrors Ignore VITAL compliance errors
+#   -ignorepragmaprefix <prefix>
+#                      Ignore synthesis and coverage pragmas with specified prefix
+#   -initoutcompositeparam
+#                      Initialize array and record mode OUT parameters of subprograms
+#   -noinitoutcompositeparam
+#                      Do not initialize array and record mode OUT parameters of subprograms
+#   -just eapbc        Compile only selected design unit kinds
+#                      (e=entity, a=arch, p=package, b=body, c=config)
+#   -l <filename>      Write compilation log to <filename>
+#   -line <lineNum>    Specify a starting line number
+#   -lint              Perform lint-style checks
+#   -modelsimini <modelsim.ini>
+#                      Specify path to the modelsim.ini file.
+#   -no1164            Disable optimization for the std_logic_1164 package (same as "-noaccel std_logic_1164")
+#   -noaccel <pname>   Disable optimization for the specified package
+#   -nocasestaticerror Suppress case statement non-static choice warning
+#   -nofprangecheck    Disables range check for floating point only
+#   -noFunctionInline  Turns off subprogram inlining
+#   -nonstddriverinit  Match pre-5.7c behavior for driver initialization
+#   -lower             Save all identifiers as lower case names
+#   -preserve          Keep case of identifiers, does not make VHDL case sensitive
+#   -oldconfigvis      Use pre-10.0 non LRM-compilant visibility for use clauses in configurations
+#   -lrmconfigvis      Use LRM-compliant visibility for use clause in configurations
+#   -nocheck           Disable run-time range and index checks
+#   -nodebug[=ports][=pli][=ports+pli]
+#                      Do not put symbolic debugging information into the library
+#   -nodbgsym
+#                      Do not generate symbols debugging database
+#   -smartdbgsym
+#                      Generate symbols debugging database for only some special cases
+#   -noDeferSubpgmCheck
+#                      Perform compile-time range checking on constant index and
+#                      slice expressions in subprograms at compile-time
+#   -noindexcheck      Disable run-time index checks
+#   -nologo            Disable startup banner
+#   -[w]prof=<filename> Enables CPU (-prof) or WALL (-wprof) time based profiling
+#                       and saves the profile data to the given filename.
+#   -proftick=<integer> Set the time interval between the profile data collection.
+#                       Default value is 10.
+#   -noothersstaticerror Suppress array aggregate non-static OTHERS choice warning
+#   -nopsl             Disable embedded PSL language parsing
+#   -norangecheck      Disable run-time range checks
+#   -novital           Disable all VITAL optimizations
+#   -novitalcheck      Disable VITAL Level 1 compliance checking and optimizations
+#   -novopt            Do not run the "vopt" compiler before simulation
+#   -nowarn <number>   Disable specified category of warning messages; verror 1907 to see them
+#   -noconstimmedassert  Do not show constant immediate assertions in GUI/UCDB/reports etc.
+#   -O0                Disable optimizations
+#   -O1                Enable some optimizations (default)
+#   -pedanticerrors    Enforce strict language checks
+#   -performdefaultbinding
+#                      Enable default binding when it has been disabled with the
+#                      RequireConfigForAllDefaultBinding modelsim.ini variable
+#   -permissive        Relax some language error checks to warnings.
+#   +protect[=<file>]  Enable use of `protect...`endprotect compiler directives
+#   -pslext            Enable PSL LTL/Universal operators
+#   -pslfile <file>    Compile and bind PSL vunits specified by <file>
+#   -quiet             Disable 'Loading' messages
+#   -rangecheck        Enable run-time range checks
+#   -refresh           Refresh the library image from .dat file(s)
+#   -s                 Do not load package std.standard
+#   -skipsynthoffregion Ignore all constructs within synthesis_off or translate_off pragma regions.
+#   -skip eapbc        Compile all but selected design unit kinds
+#                      (e=entity, a=arch, p=package, b=body, c=config)
+#   -source            Print the source line with error messages
+#   -stats[=[+-]<args>] Enables compiler statistics
+#                      <args> are all,none,time,cmd,msg,perf,verbose,list,kb
+#   -vitalmemorycheck  Enable VITAL Level 1 Memory model compliance checking
+#   -mixedsvvh [b | l | r] [i] [pc]
+#                      Facilitates using a VHDL package at the SV-VHDL mixed-language boundary.
+#                         b  - treat scalars/vectors in the package as bit
+#                         l  - treat scalars/vectors in the package as logic
+#                         r  - treat scalars/vectors in the package as reg
+#                         i  - ignore range specified with VHDL integer types
+#                         pc - preserve case of all identifiers
+#   -vmake             Collects complete list of command line args for use by vmake.
+#   -showsubprograms   Show VHDL subprogram scopes in GUI windows (e.g. Structure) and CLI commands (e.g. show).
+#   -noshowsubprograms Don't show VHDL subprogram scopes in GUI windows (e.g. Structure) and CLI commands (e.g. show).(Default on)
+vcom /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:24 on Jun 11,2018
+# vcom -reportprogress 300 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv 
+# -- Loading package STANDARD
+# ** Error: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv(1): near "module": syntax error
+# End time: 20:53:24 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+vcom /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:54:18 on Jun 11,2018
+# vcom -reportprogress 300 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv 
+# -- Loading package STANDARD
+# ** Error: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv(1): near "module": syntax error
+# End time: 20:54:18 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+quit -sim
+# End time: 22:01:15 on Jun 11,2018, Elapsed time: 2:06:20
+# Errors: 36, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of Testing.sv failed with 4 errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 2 failed with 8 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 8 errors.
+# 5 compiles, 1 failed with 8 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.

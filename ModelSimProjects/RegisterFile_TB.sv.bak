@@ -75,7 +75,7 @@ always begin
 	assert(readValue1 == 32'd0) else $error("Reg 4 should be 0 when readEnabled=0");
 	#9;
 
-	$error("DONE!");
+	$error("Simulaton complete.");
 
 	#1000;
 end
