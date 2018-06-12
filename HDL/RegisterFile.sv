@@ -29,7 +29,10 @@ always_ff @(posedge clk or negedge rst) begin
 	end:reset
 	else
 	begin
-		if (registerWrite == 1'b1) begin
+		// Allow a write if registerWrite is enabled
+		//  and the write address isn't zero.
+		if (registerWrite == 1'b1 &
+			writeAddress != 5'b0) begin
 			registers[writeAddress] <= writeData;
 		end
 	end

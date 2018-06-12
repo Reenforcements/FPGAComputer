@@ -319,3 +319,357 @@ restart -f
 # Compile of Testing.sv was successful.
 # Compile of Testing_TB.sv was successful.
 # 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv failed with 10 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 10 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv failed with 3 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.RegisterFile_TB
+# End time: 19:54:55 on Jun 11,2018, Elapsed time: 10:45:11
+# Errors: 25, Warnings: 1
+# vsim work.RegisterFile_TB 
+# Start time: 19:54:55 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run
+add list sim:/RegisterFile_TB/*
+add wave sim:/RegisterFile_TB/*
+restart -f
+run 100
+run 100
+run 100
+restart -f
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# written
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+run 100
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# 4294966062
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+restart -f
+run 100
+# 4294966062
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+#       -1234
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+# Warning in wave window restart: (vish-4014) No objects found matching '/RegisterFile_TB/testCounter'. 
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 30 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 80 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 30 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 80 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 20 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 60 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 100 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 20 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 28 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 46
+restart -f
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 28 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 46
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+
+restart -f
+run 40
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 44
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 44
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+restart -f
+run 80
