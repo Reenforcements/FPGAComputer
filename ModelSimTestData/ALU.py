@@ -3,6 +3,8 @@ import sys
 # Binary is super annoying to work with in Python because of its
 #  "infinite" integer support, so we're going to use numpy
 from numpy import binary_repr
+# Apparently division is weird too
+from numpy import true_divide
 
 ADD = 0x20
 ADDU = 0x21
@@ -46,10 +48,7 @@ numbers = [
 ]
 
 currentNumber = 0
-def twosComplement(n):
-	if(n < 0):
-		return (~(n) + 1)
-	return n	 
+
 def writeOperation(
 f, 
 dataIn0, 
@@ -116,8 +115,9 @@ with open("ALU.txt", "w") as f:
 			result
 			)
 
-		currentNumber += 1
-		continue
+		# Uncomment for simple math only
+		#currentNumber += 1
+		#continue
 
 		# MUL
 		shamt = 0
@@ -176,7 +176,7 @@ with open("ALU.txt", "w") as f:
 		# DIV (check hi)
 		shamt = 0
 		funct = MFHI
-		result = ((num0 * num1) & 0xFFFFFFFF00000000) >> 32
+		result = ( int(true_divide(num0 , num1)) & 0xFFFFFFFF00000000) >> 32
 		writeOperation(
 			f,
 			num0,
@@ -189,7 +189,7 @@ with open("ALU.txt", "w") as f:
 		# DIV (check lo)
 		shamt = 0
 		funct = MFLO
-		result = (num0 * num1) & 0x00000000FFFFFFFF
+		result = ( int(true_divide(num0 , num1)) & 0x00000000FFFFFFFF)
 		writeOperation(
 			f,
 			num0,

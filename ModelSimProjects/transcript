@@ -3614,3 +3614,103 @@ run 100
 # Compile of ALU.sv was successful.
 # Compile of ALU_TB.sv failed with 1 errors.
 # 6 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave sim:/ALU_TB/*
+run 100
+restart -f
+run 100
+run 100
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+restart -f
+run 100
+# Compile of ALU_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+# ** Error: Didn't match
+#    Time: 71 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+run 100
+# ** Error: Didn't match
+#    Time: 151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+add wave -position insertpoint sim:/ALU_TB/alu/hi
+add wave -position insertpoint /ALU_TB/alu/lo
+restart -f
+run 100
+# ** Error: Didn't match
+#    Time: 71 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Didn't match
+#    Time: 471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Didn't match
+#    Time: 641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 651 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
