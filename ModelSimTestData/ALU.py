@@ -199,6 +199,89 @@ with open("ALU.txt", "w") as f:
 			result
 			)
 
+		# AND
+		shamt = 0
+		funct = AND
+		result = num0 & num1
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# NOR
+		shamt = 0
+		funct = NOR
+		result = ~(num0 | num1)
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+	
+		# OR
+		shamt = 0
+		funct = OR
+		result = num0 | num1
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# XOR
+		shamt = 0
+		funct = XOR
+		result = num0 ^ num1
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SLL
+		shamt = 5
+		funct = SLL
+		result = (num0 << shamt) & 0xFFFFFFFF
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SLLV
+		shamt = 0
+		funct = SLLV
+		# Doing "& 0xFFFFFFFF" makes it unsigned
+		# Don't bother shifting if the shift is >= 32 bits
+		if ((num1 & 0xFFFFFFFF) >= 32):
+			result = 0
+		else:
+			result = (num0 << (num1 & 0xFFFFFFFF)) & 0xFFFFFFFF
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
 		currentNumber += 1
 
 
