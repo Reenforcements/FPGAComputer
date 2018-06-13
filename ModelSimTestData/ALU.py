@@ -3,8 +3,10 @@ import sys
 # Binary is super annoying to work with in Python because of its
 #  "infinite" integer support, so we're going to use numpy
 from numpy import binary_repr
-# Apparently division is weird too
+# Apparently division is weird too...
 from numpy import true_divide
+# I really hate numbers in Python...
+from ctypes import c_int, c_uint
 
 ADD = 0x20
 ADDU = 0x21
@@ -41,6 +43,9 @@ numbers = [
 -20, -43,
 40, -30
 -40, 30,
+0xFFFFFFFF, 32,
+0xFFFFFFFF, 33,
+0xFFFFFFFF, 31,
 0, 1234,
 1000000000,1000000000,
 43, 34,
@@ -49,6 +54,19 @@ numbers = [
 
 currentNumber = 0
 
+
+def srl(num, amount):
+	num = c_int(num).value
+	amount = c_uint(amount).value
+	if (amount >= 32):
+		return 0
+	mask = 0x00000000
+	for x in range(0, amount):
+		mask |= (0x80000000 >> x)
+	mask = ~(mask & 0xFFFFFFFF)
+	#print(binary_repr(c_int(mask).value, width=32))
+	return ((num >> amount) & 0xFFFFFFFF) & (mask & 0xFFFFFFFF)
+
 def writeOperation(
 f, 
 dataIn0, 
@@ -56,11 +74,15 @@ dataIn1,
 shamt,
 funct,
 result):
+
+	# Ensure the result is within range
+	result = c_int(result & 0xFFFFFFFF).value
+
 	f.write("//dataIn0: {}\n//dataIn1: {}\n//shamt: {}\n//funct: {}\n//result: {}\n//outputZero: {}\n//outputNegative: {}\n//outputPositive: {}\n".format(
 	dataIn0,
 	dataIn1,
 	shamt,
-	funct,
+	hex(funct),
 	result,
 	result == 0,
 	result < 0,
@@ -85,14 +107,14 @@ with open("ALU.txt", "w") as f:
 			sys.exit(0);
 			break
 
-		num0 = numbers[currentNumber]
-		num1 = numbers[currentNumber + 1]
+		num0 = c_int(numbers[currentNumber]).value
+		num1 = c_int(numbers[currentNumber + 1]).value
 
 	
 		# ADD
 		shamt = 0
 		funct = ADD
-		result = num0 + num1
+		result = (num0 + num1) & 0xFFFFFFFF
 		writeOperation(
 			f,
 			num0,
@@ -136,7 +158,7 @@ with open("ALU.txt", "w") as f:
 		# MUL (check hi)
 		shamt = 0
 		funct = MFHI
-		result = ((num0 * num1) & 0xFFFFFFFF00000000) >> 32
+		result = c_int(((num0 * num1) & 0xFFFFFFFF00000000) >> 32).value
 		writeOperation(
 			f,
 			num0,
@@ -149,7 +171,7 @@ with open("ALU.txt", "w") as f:
 		# MUL (check lo)
 		shamt = 0
 		funct = MFLO
-		result = (num0 * num1) & 0x00000000FFFFFFFF
+		result = c_int((num0 * num1) & 0x00000000FFFFFFFF).value
 		writeOperation(
 			f,
 			num0,
@@ -252,7 +274,7 @@ with open("ALU.txt", "w") as f:
 			)
 
 		# SLL
-		shamt = 5
+		shamt = 1
 		funct = SLL
 		result = (num0 << shamt) & 0xFFFFFFFF
 		writeOperation(
@@ -273,6 +295,66 @@ with open("ALU.txt", "w") as f:
 			result = 0
 		else:
 			result = (num0 << (num1 & 0xFFFFFFFF)) & 0xFFFFFFFF
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SRA
+		shamt = 1
+		funct = SRA
+		# Shifts in Python are arithmetic.
+		result = (num0 >> shamt) & 0xFFFFFFFF
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SRAV
+		shamt = 0
+		funct = SRAV
+		# Shifts in Python are arithmetic.
+		if ((num1 & 0xFFFFFFFF) >= 32):
+			if ((num0) < 0):
+				result = -1
+			else:	
+				result = 0
+		else:
+			result = (num0 >> (num1 & 0xFFFFFFFF)) & 0xFFFFFFFF
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SRL
+		shamt = 1
+		funct = SRL
+		result = srl(num0, shamt);
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# SRLV
+		shamt = 0
+		funct = SRLV
+		result = srl(num0, num1);
 		writeOperation(
 			f,
 			num0,

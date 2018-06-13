@@ -4288,3 +4288,214 @@ run 900
 #    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
 restart -f
 run 900
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 3 errors.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Warning: (vsim-PLI-3406) Too many digits (111) in data on line 1161 of file "../ModelSimTestData/ALU.txt". (Max is 110.)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Error opening /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vsim-PLI-3406) Too many digits 
+# Path name '/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vsim-PLI-3406) Too many digits ' doesn't exist.
+restart -f
+run 900
+# ** Warning: (vsim-PLI-3406) Too many digits (111) in data on line 1170 of file "../ModelSimTestData/ALU.txt". (Max is 110.)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+run 900
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1761 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1771 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+restart -f
+run 9000
+restart -f
+run 9000
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
