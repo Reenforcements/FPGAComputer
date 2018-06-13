@@ -10,15 +10,15 @@ cModel Technology
 d/home/imaustyn/Documents/MSTest1
 vALU
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1528902995
+Z1 !s110 1528916406
 !i10b 1
-!s100 M]On?1kJL2QCKjRTkj0_;2
-IPW<_kXhWOUZYc>cRIS]^<2
+!s100 4LV??L2ZcAJ@G3S7ce86I0
+IXbQ8onT84E?7jEa_RSBa`1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 ALU_sv_unit
 S1
 Z3 d/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects
-w1528901997
+w1528916401
 8/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 F/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 L0 1
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1528902995.000000
+Z5 !s108 1528916406.000000
 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 !i113 1
@@ -35,15 +35,15 @@ Z7 tCvgOpt 0
 n@a@l@u
 vALU_TB
 R0
-!s110 1528902996
+R1
 !i10b 1
-!s100 ?Ql65KMdOB_3Z_jD1z;_>0
-I77_=i026XQ_PMojGI9<Ro3
+!s100 0WM62Nkd:?b23f^fhf@DR3
+IiNQKGFCASTfoEZ1Jl?h9I3
 R2
 !s105 ALU_TB_sv_unit
 S1
 R3
-w1528902992
+w1528916295
 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
 L0 1
