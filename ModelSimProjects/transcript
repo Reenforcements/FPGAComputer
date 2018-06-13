@@ -4499,3 +4499,6 @@ restart -f
 run 9000
 # ** Error: Didn't match
 #    Time: 341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+run 9000

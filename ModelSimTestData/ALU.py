@@ -364,6 +364,58 @@ with open("ALU.txt", "w") as f:
 			result
 			)
 
+		# MTHI
+		shamt = 0
+		funct = MTHI
+		result = 0
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# MFHI
+		shamt = 0
+		funct = MFHI
+		result = num0
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# MTLO
+		shamt = 0
+		funct = MTLO
+		result = 0
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
+		# MFLO
+		shamt = 0
+		funct = MFLO
+		result = num0
+		writeOperation(
+			f,
+			num0,
+			num1,
+			shamt,
+			funct,
+			result
+			)
+
 		currentNumber += 1
 
 
