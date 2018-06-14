@@ -4994,3 +4994,18 @@ quit -sim
 # 8 compiles, 0 failed with no errors.
 # Compile of Testing_TB.sv was successful.
 # Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
