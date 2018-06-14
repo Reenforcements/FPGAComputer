@@ -8,8 +8,6 @@ module Memory(
 	input logic [2:0]readMode,
 
 	input logic unsignedLoad,
-	input logic unalignedLeft,
-	input logic unalignedRight,
 
 	input logic [31:0]pcAddress,
 
@@ -80,6 +78,7 @@ always_comb begin
 		end
 		WORD: begin
 			// lw
+			// Technically this should read only at the word boundary
 			readData0 = 32'(memory[baseAddress+:4]);
 		end
 		WORDLEFT: begin

@@ -5011,3 +5011,7 @@ quit -sim
 # 8 compiles, 0 failed with no errors.
 # Compile of Testing_TB.sv was successful.
 # Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Memory_TB.sv was successful.

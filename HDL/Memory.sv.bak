@@ -80,6 +80,7 @@ always_comb begin
 		end
 		WORD: begin
 			// lw
+			// Technically this should read only at the word boundary
 			readData0 = 32'(memory[baseAddress+:4]);
 		end
 		WORDLEFT: begin
@@ -147,7 +148,6 @@ always_comb begin
 		end
 		WORDLEFT: begin
 			//swl
-			//
 			unique case (baseAddress[1:0])
 				2'd3: begin
 					writeData0 = data;
