@@ -14,7 +14,7 @@ output logic outputPositive
 );
 
 // Make sure Quartus is set to user encoded.
-typedef enum logic [5:0] {
+typedef enum [5:0] logic {
 	ADD = 6'h20,
 	ADDU = 6'h21,
 	SUB = 6'h22,
@@ -203,7 +203,7 @@ always_comb begin
 			{hiResult, loResult} = 0;
 			result = 0;
  		end
-	endcasde
+	endcase
 
 	// Should this take lo and hi into account?
 	outputZero = (result == 32'b0) ? 1'b1 : 1'b0;

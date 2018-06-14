@@ -4748,3 +4748,223 @@ run 9000
 # Compile of Memory.sv was successful.
 # Compile of Memory.sv failed with 1 errors.
 # Compile of Memory.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 31 errors.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 2 failed with 36 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of ALU.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 10 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 10 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 1 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+vsim work.Testing_TB
+# End time: 11:38:05 on Jun 14,2018, Elapsed time: 42:35:51
+# Errors: 416, Warnings: 3
+# vsim work.Testing_TB 
+# Start time: 11:38:05 on Jun 14,2018
+# Loading sv_std.std
+# Loading work.Testing_TB
+run 100
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+add wave sim:/Testing_TB/*
+restart -f
+run 10
+# debc9a78
+# debc9a78
+# Compile of Memory.sv was successful.
+quit -sim
+# End time: 11:44:49 on Jun 14,2018, Elapsed time: 0:06:44
+# Errors: 0, Warnings: 0
