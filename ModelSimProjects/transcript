@@ -5009,3 +5009,5 @@ quit -sim
 # Compile of Memory.sv was successful.
 # Compile of Memory_TB.sv was successful.
 # 8 compiles, 0 failed with no errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.

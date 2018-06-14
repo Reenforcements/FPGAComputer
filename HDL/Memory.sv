@@ -13,7 +13,6 @@ module Memory(
 
 	input logic [31:0]pcAddress,
 
-
 	output logic [31:0]dataOutput,
 	output logic [31:0]pcDataOutput
 );
@@ -127,6 +126,8 @@ always_comb begin
 			readData0 = 32'b0; 
 		end
 	endcase
+	// Mask which bytes we're going to write
+	//  using "writeMask"
 	unique case (writeMode)
 		NONE: begin
 			writeData0 = 32'b0;
@@ -213,6 +214,11 @@ always_ff @(posedge clk or negedge rst) begin
 			memory[baseAddress] <= writeData0[0];
 		end
 	end
+end
+
+// Output next instruction
+always_comb begin
+	pcDataOutput = memory[pcAddress[15:0]];
 end
 
 endmodule
