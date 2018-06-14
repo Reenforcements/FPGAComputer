@@ -4968,3 +4968,29 @@ run 10
 quit -sim
 # End time: 11:44:49 on Jun 14,2018, Elapsed time: 0:06:44
 # Errors: 0, Warnings: 0
+# Compile of Memory.sv failed with 7 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 7 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 7 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.
