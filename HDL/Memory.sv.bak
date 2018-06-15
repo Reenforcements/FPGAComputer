@@ -152,46 +152,52 @@ always_comb begin
 			writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 		end
 		WORDLEFT: begin
-			//swl
-			unique case (baseAddress[1:0])
-				2'd3: begin
-					writeData0 = data;
-					writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
-				end
-				2'd2: begin
-					writeData0[23:0] = data[31:8];
-					writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
-				end
-				2'd1: begin
-					writeData0[15:0] = data[31:16];
-					writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
-				end
-				2'd0: begin
-					writeData0[7:0] = data[31:24];
-					writeMask = {1'b0, 1'b0, 1'b0, 1'b1};
-				end
-			endcase
+			// We're always writing at least one byte.
+			logic [7:0]writeBytes[3:0];
+			writeBytes[baseAddress[1:0]] = data[31:24];
+			writeMask = {1'b0, 1'b0, 1'b0, 1'b1};
+
+			// Figure out how many more to write before we
+			//  hit the word boundary.
+			if (baseAddress[1:0] > 0) begin
+				writeBytes[baseAddress[1:0] - 2'd1] = data[23:16];
+				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
+			end
+			if (baseAddress[1:0] > 1) begin
+				writeBytes[baseAddress[1:0] - 2'd2] = data[15:8];
+				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
+			end
+			if (baseAddress[1:0] > 2) begin
+				writeBytes[baseAddress[1:0] - 2'd3] = data[7:0];
+				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
+			end
+			
+			// Cast backed to a packed array and assign
+			writeData0 = 32'(writeBytes);
 		end
 		WORDRIGHT: begin
-			//swr
-			unique case (baseAddress[1:0])
-				2'd0: begin
-					writeData0 = data;
-					writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
-				end
-				2'd1: begin
-					writeData0[31:8] = data[23:0];
-					writeMask = {1'b1, 1'b1, 1'b1, 1'b0};
-				end
-				2'd2: begin
-					writeData0[31:16] = data[15:0];
-					writeMask = {1'b1, 1'b1, 1'b0, 1'b0};
-				end
-				2'd3: begin
-					writeData0[31:24] = data[7:0];
-					writeMask = {1'b1, 1'b0, 1'b0, 1'b0};
-				end
-			endcase
+			// We're always writing at least one byte.
+			logic [7:0]writeBytes[3:0];
+			writeBytes[baseAddress[1:0]] = data[7:0];
+			writeMask = {1'b1, 1'b0, 1'b0, 1'b0};
+
+			// Figure out how many more to write before we
+			//  hit the word boundary.
+			if (baseAddress[1:0] > 0) begin
+				writeBytes[baseAddress[1:0] - 2'd1] = data[15:8];
+				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
+			end
+			if (baseAddress[1:0] > 1) begin
+				writeBytes[baseAddress[1:0] - 2'd2] = data[23:16];
+				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
+			end
+			if (baseAddress[1:0] > 2) begin
+				writeBytes[baseAddress[1:0] - 2'd3] = data[31:24];
+				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
+			end
+			
+			// Cast backed to a packed array and assign
+			writeData0 = 32'(writeBytes);
 		end
 
 		default: begin 
@@ -211,7 +217,25 @@ always_ff @(posedge clk or negedge rst) begin
 		// Write on the clock
 		// Only write the bytes that we have values for.
 		unique case (writeMode)
-			WORDRIGHT: begin
+			WORDRIGHT:
+			WORDLEFT: begin
+				// The base write address has to be word
+				//  aligned here because "baseAddress" is most
+				//   likely not word aligned in this case.
+				if (writeMask[3] == 1'b1) begin
+					memory[wordAlignedBase + 16'd3] <= writeData0[31:24];
+				end
+				if (writeMask[2] == 1'b1) begin
+					memory[wordAlignedBase + 16'd2] <= writeData0[23:16];
+				end
+				if (writeMask[1] == 1'b1) begin
+					memory[wordAlignedBase + 16'd1] <= writeData0[15:8];
+				end
+				if (writeMask[0] == 1'b1) begin
+					memory[wordAlignedBase] <= writeData0[7:0];
+				end
+			end
+			default: begin
 				if (writeMask[3] == 1'b1) begin
 					memory[baseAddress + 16'd3] <= writeData0[31:24];
 				end
@@ -223,34 +247,6 @@ always_ff @(posedge clk or negedge rst) begin
 				end
 				if (writeMask[0] == 1'b1) begin
 					memory[baseAddress] <= writeData0[7:0];
-				end
-			end
-			WORDLEFT: begin
-				if (writeMask[3] == 1'b1) begin
-					memory[wordAlignedBase] <= writeData0[31:24];
-				end
-				if (writeMask[2] == 1'b1) begin
-					memory[wordAlignedBase - 16'd1] <= writeData0[23:16];
-				end
-				if (writeMask[1] == 1'b1) begin
-					memory[wordAlignedBase - 16'd2] <= writeData0[15:8];
-				end
-				if (writeMask[0] == 1'b1) begin
-					memory[wordAlignedBase - 16'd3] <= writeData0[7:0];
-				end
-			end
-			default: begin
-				if (writeMask[3] == 1'b1) begin
-					memory[baseAddress + 16'd3] <= writeData0[3];
-				end
-				if (writeMask[2] == 1'b1) begin
-					memory[baseAddress + 16'd2] <= writeData0[2];
-				end
-				if (writeMask[1] == 1'b1) begin
-					memory[baseAddress + 16'd1] <= writeData0[1];
-				end
-				if (writeMask[0] == 1'b1) begin
-					memory[baseAddress] <= writeData0[0];
 				end
 			end
 		endcase

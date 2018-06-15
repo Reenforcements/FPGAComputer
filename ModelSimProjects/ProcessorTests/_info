@@ -27,7 +27,7 @@ Z5 8/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 Z6 F/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 L0 38
 Z7 OV;L;10.5b;63
-Z8 !s108 1529084342.000000
+Z8 !s108 1529086127.000000
 Z9 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 !i113 1
@@ -61,7 +61,7 @@ R12
 n@a@l@u_sv_unit
 vALU_TB
 R0
-Z13 !s110 1529084342
+!s110 1529087860
 !i10b 1
 !s100 0WM62Nkd:?b23f^fhf@DR3
 IiNQKGFCASTfoEZ1Jl?h9I3
@@ -77,7 +77,7 @@ R7
 r1
 !s85 0
 31
-R8
+!s108 1529087860.000000
 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv|
 !i113 1
@@ -86,7 +86,7 @@ R12
 n@a@l@u_@t@b
 XALUFunctCodes
 R0
-R13
+Z13 !s110 1529086127
 !i10b 1
 !s100 im]_74g>OjJzNhPzn=1kh0
 I:R5C5Z68[4fdYL9XV0zFW0
@@ -111,23 +111,23 @@ n@a@l@u@funct@codes
 vMemory
 R0
 Z14 DXx4 work 11 MemoryModes 0 22 8^TB[o2Lo5fdQI_@J<Eio2
-DXx4 work 14 Memory_sv_unit 0 22 :k:SoT>I[ROE0IbdMQ2oY2
+DXx4 work 14 Memory_sv_unit 0 22 mYKdjcJmXnVIgn^j8h8OW3
 R2
 r1
 !s85 0
 31
 !i10b 1
-!s100 hYXmTkEb1SNBSJ]XlikzF2
-I162L]bh1cU@DVzN8fM4QH0
+!s100 BAoAk82:PCJc`oQzFYUd53
+IGIA4UjFkDBlX672MU3SZj2
 !s105 Memory_sv_unit
 S1
 R3
-Z15 w1529084694
+Z15 w1529087584
 Z16 8/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
 Z17 F/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
 L0 16
 R7
-Z18 !s108 1529084698.000000
+Z18 !s108 1529087630.000000
 Z19 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
 Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
 !i113 1
@@ -137,13 +137,13 @@ n@memory
 XMemory_sv_unit
 R0
 R14
-V:k:SoT>I[ROE0IbdMQ2oY2
+VmYKdjcJmXnVIgn^j8h8OW3
 r1
 !s85 0
 31
 !i10b 1
-!s100 @3z9?KQTAPKd1k>W0:[3C0
-I:k:SoT>I[ROE0IbdMQ2oY2
+!s100 P?BQIRN<HRjFWkLP0Ah6D1
+ImYKdjcJmXnVIgn^j8h8OW3
 !i103 1
 S1
 R3
@@ -168,12 +168,12 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Lb9IKJO9^QEz_Z_m@9dzE3
-I`S7jAIjPC]^]GZ4[OZUAZ1
+!s100 NM<JPlVQ89bB^;oT4ia4X0
+IUL]h`gQHOR?k;Ij]5O=c01
 !s105 Memory_TB_sv_unit
 S1
 R3
-Z21 w1529083862
+Z21 w1529086018
 Z22 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 Z23 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 L0 3
@@ -212,7 +212,7 @@ R12
 n@memory_@t@b_sv_unit
 XMemoryModes
 R0
-!s110 1529084698
+!s110 1529087630
 !i10b 1
 !s100 OJggAi04_]PoFZz1o6A0f3
 I8^TB[o2Lo5fdQI_@J<Eio2

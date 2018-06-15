@@ -363,7 +363,7 @@ writeMode = NONE;
 readMode = WORDLEFT;
 unsignedLoad = 0;
 #1;
-assert(dataOutput == 32'h12000000) else $error("Reading the previously written value didn't work.");
+assert(dataOutput == 32'h12000000) else $error("Reading the previously written value didn't work: %h", dataOutput);
 #9;
 address = 32'd65528;
 data = 32'h0;
@@ -371,7 +371,7 @@ writeMode = NONE;
 readMode = WORD;
 unsignedLoad = 0;
 #1;
-assert(dataOutput == 32'h12) else $error("Reading the previously written value didn't work.");
+assert(dataOutput == 32'h12) else $error("Reading the previously written value didn't work: %h", dataOutput);
 #9;
 
 address = 32'd65529;
