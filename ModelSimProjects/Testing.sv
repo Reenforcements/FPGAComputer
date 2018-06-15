@@ -1,0 +1,21 @@
+module Testing(
+input logic clk,
+input logic rst,
+input logic inp1,
+output logic [1:0]out1);
+
+
+always_ff @(posedge clk or negedge rst) begin
+	if(rst == 0) begin: reset
+		out1 <= 2'b11;
+	end: reset
+	else 
+	if(clk == 1) begin : sequentialLogic
+		if(out1 == 2'b10)
+			out1 <= 2'b01;
+		else
+			out1 <= 2'b10;
+	end : sequentialLogic
+end
+
+endmodule

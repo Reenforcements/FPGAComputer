@@ -1,0 +1,43 @@
+/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegisterFile_TB
+
+Top level modules:
+	RegisterFile_TB
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Testing
+
+Top level modules:
+	Testing
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Testing_TB
+
+Top level modules:
+	Testing_TB
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_TB
+
+Top level modules:
+	ALU_TB
+
+} {} {}}

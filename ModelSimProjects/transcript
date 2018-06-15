@@ -1,0 +1,5017 @@
+# Loading project ProcessorTests
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Testing
+# vsim work.Testing 
+# Start time: 20:57:28 on Jun 10,2018
+# Loading sv_std.std
+# Loading work.Testing
+add wave sim:/Testing/*
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+wave create -pattern none -portmode input -language vlog /Testing/clk
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# Testing
+wave create -pattern none -portmode input -language vlog /Testing/rst
+# Testing
+wave create -pattern none -portmode input -language vlog /Testing/inp1
+# Testing
+wave create -pattern none -portmode output -language vlog -range 1 0 /Testing/out1
+# Testing
+wave modify -driver freeze -pattern clock -initialvalue (no value) -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/Testing/clk
+# Testing
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 100ps Edit:/Testing/rst
+# Testing
+wave modify -driver freeze -pattern constant -value 0 -starttime 100ps -endtime 1000ps Edit:/Testing/rst
+# Testing
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do
+wave editwrite -file /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do -append
+wave modify -driver freeze -pattern constant -value 1 -starttime 200ps -endtime 1000ps Edit:/Testing/rst
+# Testing
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do
+wave editwrite -file /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/TestingWave1.do -append
+run
+run
+run 1000
+wave map Edit:/Testing/inp1 sim:/Testing/inp1
+# /Testing/inp1 already exists in the wave, cannot add twice
+wave map Edit:/Testing/out1 sim:/Testing/out1
+# /Testing/out1 already exists in the wave, cannot add twice
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /Testing/clk "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+# Internal Error: In tclprim_ApplyStimulus for /Testing/rst ""
+restart -f
+run 1000
+run 1000
+restart -f
+# Load canceled
+run -all
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# couldn't execute "acroread": no such file or directory
+# Load canceled
+vsim
+# End time: 08:04:59 on Jun 11,2018, Elapsed time: 11:07:31
+# Errors: 4, Warnings: 0
+# vsim work.Testing 
+# Start time: 08:04:59 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing
+add wave sim:/Testing/*
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run 1000
+restart -f; run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f; run 1000
+# Loading work.Testing
+restart -f; run 1000
+restart -f
+force -freeze sim:/Testing/clk 1 0, 0 {50 ps} -r 100
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.Testing
+# End time: 08:24:20 on Jun 11,2018, Elapsed time: 0:19:21
+# Errors: 0, Warnings: 0
+# vsim work.Testing 
+# Start time: 08:24:20 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv failed with 3 errors.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 3 errors.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.Testing_TB
+# End time: 09:09:44 on Jun 11,2018, Elapsed time: 0:45:24
+# Errors: 0, Warnings: 0
+# vsim work.Testing_TB 
+# Start time: 09:09:44 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.Testing_TB
+# Loading work.Testing
+add wave sim:/Testing_TB/*
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.Testing_TB
+# Loading work.Testing
+run 100
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.Testing_TB
+# Loading work.Testing
+run 100
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+run 100
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 2 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv failed with 3 errors.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv failed with 10 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 10 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv failed with 3 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.RegisterFile_TB
+# End time: 19:54:55 on Jun 11,2018, Elapsed time: 10:45:11
+# Errors: 25, Warnings: 1
+# vsim work.RegisterFile_TB 
+# Start time: 19:54:55 on Jun 11,2018
+# Loading sv_std.std
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run
+add list sim:/RegisterFile_TB/*
+add wave sim:/RegisterFile_TB/*
+restart -f
+run 100
+run 100
+run 100
+restart -f
+run 100
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# written
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+run 100
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# 4294966062
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+restart -f
+run 100
+# 4294966062
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+#       -1234
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+# Warning in wave window restart: (vish-4014) No objects found matching '/RegisterFile_TB/testCounter'. 
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 30 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 80 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 30 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 80 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 20 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 60 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# ** Error: Reg 12 should be -1234
+#    Time: 100 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 20 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 100
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+restart -f
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 28 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 46
+restart -f
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 28 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 46
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be -1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 25 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 43
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+
+restart -f
+run 40
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 44
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+# ** Error: Reg 12 should be 1234
+#    Time: 22 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 44
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 40
+restart -f
+run 80
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 80
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+compile_all
+# invalid command name "compile_all"
+compile
+# wrong # args: should be "compile w cmd ..."
+compile w .
+# couldn't execute "/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/.": permission denied
+compile RegisterFile_TB.sv
+# wrong # args: should be "compile w cmd ..."
+vcom
+vcom RegisterFile_TB.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:30:00 on Jun 11,2018
+# vcom -reportprogress 300 RegisterFile_TB.sv 
+# -- Loading package STANDARD
+# ** Error: RegisterFile_TB.sv(1): near "module": syntax error
+# End time: 20:30:00 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 100
+restart -f
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: Simulaton complete.
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+restart -f
+run 1000
+# ** Error: Simulaton complete.
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 78
+./ProcessorTests
+# invalid command name "./ProcessorTests"
+file
+# wrong # args: should be "file option ?arg ...?"
+ls
+# ProcessorTests
+# ProcessorTests.cr.mti
+# ProcessorTests.mpf
+# RegisterFile_TB.sv
+# RegisterFile_TB.sv.bak
+# Testing.sv
+# Testing.sv.bak
+# Testing_TB.sv
+# Testing_TB.sv.bak
+# TestingWave1.do
+# transcript
+# vsim.wlf
+list
+ls
+# ProcessorTests
+# ProcessorTests.cr.mti
+# ProcessorTests.mpf
+# RegisterFile_TB.sv
+# RegisterFile_TB.sv.bak
+# Testing.sv
+# Testing.sv.bak
+# Testing_TB.sv
+# Testing_TB.sv.bak
+# TestingWave1.do
+# transcript
+# vsim.wlf
+vcom -help
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Usage: vcom [options] files
+# Options:
+#   -help              Print this message
+#   -version           Print the version of the compiler
+#   -work <path>       Specify library WORK
+#   -fatal <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as fatal
+#   -error <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as errors
+#   -warning <msgNumber>[,<msgNumber>...]
+#                      Report the listed messages as warnings
+#   -warning error     Report all warnings as errors
+#   -note <msgNumber>[,<msgNumber>...]
+#                      Report the listed message as notes
+#   -suppress <msgNumber>[,<msgNumber>...]
+#                      Suppress the listed messages
+#   -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                      Limit the reporting of listed messages to default count
+#   -msglimitcount <limit_value> -msglimit [all,|none,][-|+]<msgNumber>[,[-|+]<msgNumber>...]
+#                      Limit the reporting of listed messages to user defined count
+#   -msgsingleline     Display the messages in a single line.
+#   -svfilesuffix=<extension>[,<extension>...]
+#                      filename extensions for SystemVerilog code
+#   -87                Enable support for VHDL 1076-1987
+#   -93                Enable support for VHDL 1076-1993
+#   -2002              Enable support for VHDL 1076-2002
+#   -2008              Enable support for VHDL 1076-2008
+#                      Refer to the technote docs/technotes/vhdl2008.note
+#                      for a list of the currently supported 2008 features.
+#   -allowProtectedBeforeBody
+#                      Allow a variable of protected type to be created prior
+#                      to declaring the body
+#   -ams99             Enable support for VHDL 1076.1-1999
+#   -ams07             Enable support for VHDL 1076.1-2007
+#   -addpragmaprefix <prefix>
+#                      Enable recognition of synthesis and coverage pragmas with
+#                      a user specified prefix.
+#   -check_synthesis   Check for compliance to some synthesis rules
+#   -createlib[=compress]
+#                      Create libraries that do not exist.
+#                      The =compress modifier creates compressed libraries.
+#   -nocreatelib       Do not create libraries that do not exist.
+#   -coverclkoptbuiltins, -nocoverclkoptbuiltins
+#                      Enable or disable clkOpt optimization builtins for code coverage.
+#   -bindAtCompile     Perform default binding when compiling the design
+#   -bindAtLoad        Perform default binding when the design is loaded (the default)
+#   -amsstd            Add VHDL-AMS declarations to package STANDARD
+#   -noamsstd          Do not add VHDL-AMS declarations to package STANDARD
+#   -ignoreStandardRealVector Ignore the VHDL-2008 declaration of REAL_VECTOR in package STANDARD
+#   -nocoversub        Ignore VHDL subprograms for code coverage
+#   -coversub          Include VHDL subprograms for code coverage
+#   -coverrespecthandl  Inform code coverage optimizations to look for H and L signal values
+#   -nocoverrespecthandl  Inform code coverage optimizations to ignore H and L signal values
+#   -separateConfigLibrary  Allows VHDL configuration decls in different library from corresponding entity
+#   +cover[=<spec>]
+#                      <spec> is used to enable code coverage metrics for certain
+#                      kinds of constructs.
+#                      <spec> consists of one or more of the following letter codes:
+#                         s (statement)
+#                         b (branch)
+#                         c (condition)
+#                         e (expression)
+#                         f (finite state machine)
+#                         t (toggle)
+#                         x (extended toggle)
+#                      If no <spec> characters are given, sbceft is the default.
+#   -coverenhanced     Enables functionality which may change the appearance or content of coverage
+#                      metrics. A detailed list of these changes can be found by searching in the
+#                      release notes for 'coverenhanced'. This option only takes meaningful effect in
+#                      letter releases (e.g. 10.2b). It has no effect in initial major releases (e.g. 10.2).
+#   -coveropt <i>      Specify a digit for code coverage optimization level: 1 through 4.
+#   -coverexcludedefault Automatically exclude case default clauses.
+#   -coverfec          Enable Focused Expression Coverage analysis for conditions and expressions.
+#   -nocoverfec        Disable Focused Expression Coverage analysis for conditions and expressions.
+#   -coverrec          Enable Rapid Expression Coverage mode of FEC for conditions and expressions.
+#   -nocoverrec        Disable Rapid Expression Coverage mode of FEC for conditions and expressions.
+#   -coverudp          Enable UDP Coverage analysis for conditions and expressions.
+#   -nocoverudp        Disable UDP Coverage analysis for conditions and expressions.
+#   -nocovershort      Disable short circuiting of expressions/condition when coverage is enabled.
+#   -coverexpandrdpfx  Bit-blast multi-bit operands of reduction prefix expressions for expression/condition coverage.
+#   -nocoverexpandrdpfx Don't bit-blast multi-bit operands of reduction prefix expressions for expression/condition coverage.
+#   -nocoverexcludedefault Don't automatically exclude case default clauses.
+#   -constimmedassert  Show constant immediate assertions in GUI/UCDB/reports etc.
+#   -togglecountlimit n Quit collecting toggle info after count n is reached.
+#   -togglewidthlimit n Don't collect toggle data on reg's or arrays wider than n.
+#   -extendedtogglemode [1|2|3]
+#                      Change the level of support for extended toggles.
+#                      The levels of support are:
+#                      1 - 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z')
+#                      2 - 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'
+#                      3 - 0L->1H & 1H->0L & all 'Z' transitions
+#   -toggleportsonly   Enable toggle statistics collection only for ports.
+#   -maxudprows n      Max number of rows allowed in UDP tables for code coverage.
+#   -maxfecrows n      Max number of input patterns allowed in FEC table for code coverage.
+#   -fecudpeffort n    Limit the size of expressions and conditions considered for expr/cond coverage.
+#                      Levels supported are:
+#                      1 - (low) Only small expressions and conditions considered for coverage.
+#                      2 - (medium) Bigger expressions and conditions considered for coverage.
+#                      3 - (high) Very large expressions and conditions considered for coverage.
+#   -coverreportcancelled Report coverage items that have been optimized away.
+#   -coverdeglitch <period> Report only the last execution of non-clocked processes/continuous assignments
+#                      within time greater than <period>, where <period> is 0 or
+#                      a time string with units
+#   -debugVA           Print VITAL cell optimization information
+#   -defercheck        Defer all compile-time range checking on constant index and
+#                      slice expressions until run time
+#   -explicit          Resolve resolution conflicts in favor of explicit functions
+#   -deferSubpgmCheck  Defer compile-time range checking on constant index and
+#                      slice expressions in subprograms until run time
+#   -f <path>          Specify a file containing more command line arguments
+#   -F <path>          Specify a file containing more command line arguments. Prefixes relative
+#                      file names within the arguments file with the absolute path of arguments file,
+#                      if lookup with relative path fails.
+#   -outf <filename>   Specify a file to save the final list of options after recursively expanding
+#                      all -f, -file and -F files.
+#   -force_refresh     Force a refresh of the library image from .dat file(s)
+#                      even if there are dependency errors
+#   -optionset <optionset_name>
+#                      Calls an option set in modelsim.ini.
+#   -nofsmresettrans   Disable recognition of implicit asynchronous reset transitions for FSMs
+#   -fsmresettrans     Enable recognition of implicit asynchronous reset transitions for FSMs
+#   -nofsmsingle       Disable recognition FSMs having single bit current state variable
+#   -fsmsingle         Enable recognition FSMs having single bit current state variable
+#   -fsmimplicittrans  Enable recognition of implicit transitions in FSMs
+#   -nofsmimplicittrans Disable recognition of implicit transitions in FSMs
+#   -fsmmultitrans     Enable recognition of Multi-state transitions in FSMs
+#   -fsmverbose [b|t|w]
+#                      Provides information about FSMs recognized, including state reachability analysis.
+#                      There are three detail levels that can be set with this option.
+#                         b (displays only basic information)
+#                         t (displays a transition table in addition to the basic information)
+#                         w (displays any warning messages in addition to the basic information)
+#                      If no character is specified, btw is the default.
+#   -gen_xml <entity> <output>
+#                      Output (into a file) the interface definition of the
+#                      specified design unit in XML format
+#   -gen_xmlstruct <entity> <output>
+#                      Similar to -gen_xml, but also output the structural definition
+#                      of the specified design unit in XML format
+#   -ignoredefaultbinding
+#                      Do not generate a default binding during compilation
+#   -ignorevitalerrors Ignore VITAL compliance errors
+#   -ignorepragmaprefix <prefix>
+#                      Ignore synthesis and coverage pragmas with specified prefix
+#   -initoutcompositeparam
+#                      Initialize array and record mode OUT parameters of subprograms
+#   -noinitoutcompositeparam
+#                      Do not initialize array and record mode OUT parameters of subprograms
+#   -just eapbc        Compile only selected design unit kinds
+#                      (e=entity, a=arch, p=package, b=body, c=config)
+#   -l <filename>      Write compilation log to <filename>
+#   -line <lineNum>    Specify a starting line number
+#   -lint              Perform lint-style checks
+#   -modelsimini <modelsim.ini>
+#                      Specify path to the modelsim.ini file.
+#   -no1164            Disable optimization for the std_logic_1164 package (same as "-noaccel std_logic_1164")
+#   -noaccel <pname>   Disable optimization for the specified package
+#   -nocasestaticerror Suppress case statement non-static choice warning
+#   -nofprangecheck    Disables range check for floating point only
+#   -noFunctionInline  Turns off subprogram inlining
+#   -nonstddriverinit  Match pre-5.7c behavior for driver initialization
+#   -lower             Save all identifiers as lower case names
+#   -preserve          Keep case of identifiers, does not make VHDL case sensitive
+#   -oldconfigvis      Use pre-10.0 non LRM-compilant visibility for use clauses in configurations
+#   -lrmconfigvis      Use LRM-compliant visibility for use clause in configurations
+#   -nocheck           Disable run-time range and index checks
+#   -nodebug[=ports][=pli][=ports+pli]
+#                      Do not put symbolic debugging information into the library
+#   -nodbgsym
+#                      Do not generate symbols debugging database
+#   -smartdbgsym
+#                      Generate symbols debugging database for only some special cases
+#   -noDeferSubpgmCheck
+#                      Perform compile-time range checking on constant index and
+#                      slice expressions in subprograms at compile-time
+#   -noindexcheck      Disable run-time index checks
+#   -nologo            Disable startup banner
+#   -[w]prof=<filename> Enables CPU (-prof) or WALL (-wprof) time based profiling
+#                       and saves the profile data to the given filename.
+#   -proftick=<integer> Set the time interval between the profile data collection.
+#                       Default value is 10.
+#   -noothersstaticerror Suppress array aggregate non-static OTHERS choice warning
+#   -nopsl             Disable embedded PSL language parsing
+#   -norangecheck      Disable run-time range checks
+#   -novital           Disable all VITAL optimizations
+#   -novitalcheck      Disable VITAL Level 1 compliance checking and optimizations
+#   -novopt            Do not run the "vopt" compiler before simulation
+#   -nowarn <number>   Disable specified category of warning messages; verror 1907 to see them
+#   -noconstimmedassert  Do not show constant immediate assertions in GUI/UCDB/reports etc.
+#   -O0                Disable optimizations
+#   -O1                Enable some optimizations (default)
+#   -pedanticerrors    Enforce strict language checks
+#   -performdefaultbinding
+#                      Enable default binding when it has been disabled with the
+#                      RequireConfigForAllDefaultBinding modelsim.ini variable
+#   -permissive        Relax some language error checks to warnings.
+#   +protect[=<file>]  Enable use of `protect...`endprotect compiler directives
+#   -pslext            Enable PSL LTL/Universal operators
+#   -pslfile <file>    Compile and bind PSL vunits specified by <file>
+#   -quiet             Disable 'Loading' messages
+#   -rangecheck        Enable run-time range checks
+#   -refresh           Refresh the library image from .dat file(s)
+#   -s                 Do not load package std.standard
+#   -skipsynthoffregion Ignore all constructs within synthesis_off or translate_off pragma regions.
+#   -skip eapbc        Compile all but selected design unit kinds
+#                      (e=entity, a=arch, p=package, b=body, c=config)
+#   -source            Print the source line with error messages
+#   -stats[=[+-]<args>] Enables compiler statistics
+#                      <args> are all,none,time,cmd,msg,perf,verbose,list,kb
+#   -vitalmemorycheck  Enable VITAL Level 1 Memory model compliance checking
+#   -mixedsvvh [b | l | r] [i] [pc]
+#                      Facilitates using a VHDL package at the SV-VHDL mixed-language boundary.
+#                         b  - treat scalars/vectors in the package as bit
+#                         l  - treat scalars/vectors in the package as logic
+#                         r  - treat scalars/vectors in the package as reg
+#                         i  - ignore range specified with VHDL integer types
+#                         pc - preserve case of all identifiers
+#   -vmake             Collects complete list of command line args for use by vmake.
+#   -showsubprograms   Show VHDL subprogram scopes in GUI windows (e.g. Structure) and CLI commands (e.g. show).
+#   -noshowsubprograms Don't show VHDL subprogram scopes in GUI windows (e.g. Structure) and CLI commands (e.g. show).(Default on)
+vcom /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:24 on Jun 11,2018
+# vcom -reportprogress 300 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv 
+# -- Loading package STANDARD
+# ** Error: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv(1): near "module": syntax error
+# End time: 20:53:24 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+vcom /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:54:18 on Jun 11,2018
+# vcom -reportprogress 300 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv 
+# -- Loading package STANDARD
+# ** Error: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv(1): near "module": syntax error
+# End time: 20:54:18 on Jun 11,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vcom failed.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+quit -sim
+# End time: 22:01:15 on Jun 11,2018, Elapsed time: 2:06:20
+# Errors: 36, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of Testing.sv failed with 4 errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 2 failed with 8 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 4 errors.
+# 5 compiles, 1 failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 8 errors.
+# 5 compiles, 1 failed with 8 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.RegisterFile_TB
+# vsim work.RegisterFile_TB 
+# Start time: 15:24:53 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+simulate 1000
+# invalid command name "simulate"
+run 1000
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: Reg 5 should be -555555
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 65
+# ** Error: Reg 12 should be 1234.
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 66
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+restart -f
+run 1000
+# ** Error: Reg 5 should be -555555
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 65
+# ** Error: Reg 12 should be 1234.
+#    Time: 42 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 66
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 61 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 79
+# Compile of RegisterFile_TB.sv failed with 1 errors.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RegisterFile_TB
+# Loading work.RegisterFile
+run 1000
+# ** Error: DONE!
+#    Time: 62 ps  Scope: RegisterFile_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv Line: 80
+quit -sim
+# End time: 15:31:38 on Jun 12,2018, Elapsed time: 0:06:45
+# Errors: 10, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# 5 compiles, 0 failed with no errors.
+# Compile of ALU_TB.sv failed with 1 errors.
+# Compile of ALU_TB.sv failed with 1 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 1 errors.
+# 6 compiles, 1 failed with 1 error.
+# Compile of ALU_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 2 errors.
+# 6 compiles, 1 failed with 2 errors.
+# Compile of ALU_TB.sv failed with 2 errors.
+# Compile of ALU_TB.sv was successful.
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:52:28 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(33): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:52:29 on Jun 12,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# No Design Loaded!
+run 100
+# No Design Loaded!
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:53:50 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(35): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:53:50 on Jun 12,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# No Design Loaded!
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:58:12 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+# ** Error (suppressible): (vsim-PLI-3098) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28): $readmemb : Argument 2 must be a memory.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+# Error loading design
+# End time: 16:58:12 on Jun 12,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 16:58:33 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+restart -f
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 1000
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+run 1000
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+quit -sim
+# End time: 17:01:06 on Jun 12,2018, Elapsed time: 0:02:33
+# Errors: 0, Warnings: 5
+vsim work.ALU_TB
+# vsim work.ALU_TB 
+# Start time: 17:01:13 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+# ** Warning: (vsim-7) Failed to open readmem file "ALU.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of ALU_TB.sv was successful.
+vsim work.ALU_TB
+# End time: 17:02:14 on Jun 12,2018, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 1
+# vsim work.ALU_TB 
+# Start time: 17:02:14 on Jun 12,2018
+# Loading sv_std.std
+# Loading work.ALU_TB
+# Loading work.ALU
+restart -f
+run 100
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '-' in data on line 18 of file "../ModelSimTestData/ALU.txt".    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+#          0
+#          5
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+#          0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+#          0
+#          5
+# 4294967295
+#          0
+#          0
+#          6
+#          0
+#          0
+#          0
+#         13
+# 4294967289
+# Compile of ALU_TB.sv was successful.
+restart -f
+# Loading work.ALU_TB
+run 100
+#          0
+#          5
+# 4294967295
+#          0
+#          0
+#          6
+#          0
+#          0
+#          0
+#         13
+# 4294967289
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+#          0
+#          5
+# 4294967295
+#         13
+# 4294967289
+#         30
+# 4294967286
+#          0
+#         40
+# 4294967233
+#         23
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+#           0
+#           5
+#          -1
+#          13
+#          -7
+#          30
+#         -10
+#           0
+#          40
+#         -63
+#          23
+run 100
+#          -3
+#         -83
+#         -30
+#         110
+#         -40
+#        -100
+#           0
+#           0
+#           0
+#           0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 1 errors.
+# 6 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv failed with 1 errors.
+# 6 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave sim:/ALU_TB/*
+run 100
+restart -f
+run 100
+run 100
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+restart -f
+run 100
+# Compile of ALU_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+# ** Error: Didn't match
+#    Time: 71 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+run 100
+# ** Error: Didn't match
+#    Time: 151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+add wave -position insertpoint sim:/ALU_TB/alu/hi
+add wave -position insertpoint /ALU_TB/alu/lo
+restart -f
+run 100
+# ** Error: Didn't match
+#    Time: 71 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Didn't match
+#    Time: 471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Didn't match
+#    Time: 641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 651 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Didn't match
+#    Time: 961 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 971 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 981 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 991 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+run 900
+# ** Error: Didn't match
+#    Time: 961 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 971 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 981 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 991 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1001 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1011 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1021 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1031 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1041 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1051 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1061 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1071 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1081 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1091 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1101 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1111 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1121 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1131 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1141 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1161 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1171 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1191 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1201 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1211 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1221 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1231 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1241 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1251 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1261 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1281 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1291 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1301 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1321 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1331 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1361 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1381 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1391 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1401 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1411 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1421 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1431 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1441 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1451 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1461 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1481 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1491 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1501 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1521 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1531 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1541 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1561 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1571 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1601 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1611 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1621 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1651 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1701 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1711 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1721 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1731 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1741 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1751 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1761 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1771 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+run 900
+# ** Error: Didn't match
+#    Time: 961 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 971 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 981 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 991 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1001 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1011 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1021 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1031 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1041 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1051 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1061 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1071 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1081 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1091 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1101 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1111 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1121 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1131 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1141 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1161 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1171 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1191 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1201 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1211 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1221 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1231 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1241 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1251 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1261 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1281 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1291 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1301 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1321 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1331 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1361 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1381 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1391 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1401 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1411 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1421 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1431 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1441 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1451 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1461 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1481 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1491 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1501 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1521 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1531 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1541 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1561 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1571 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1601 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1611 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1621 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1651 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1701 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1711 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1721 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1731 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1741 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1751 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1761 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1771 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+restart -f
+run 900
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 131 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 411 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 831 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 831 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 831 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+run 900
+# ** Error: Didn't match
+#    Time: 1121 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1131 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1141 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1161 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1171 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1191 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1201 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1211 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1221 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1231 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1241 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1251 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1261 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1281 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1291 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1301 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1321 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1331 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1361 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1381 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1391 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1401 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1411 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1421 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1431 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1441 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1451 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1461 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1481 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1491 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1501 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1521 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1531 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1541 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1551 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1561 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1571 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1601 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1611 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1621 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1651 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1691 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1701 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1711 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1721 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1731 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1741 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1751 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1761 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1771 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 3 errors.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 1 failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Warning: (vsim-PLI-3406) Too many digits (111) in data on line 1161 of file "../ModelSimTestData/ALU.txt". (Max is 110.)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Error opening /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vsim-PLI-3406) Too many digits 
+# Path name '/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vsim-PLI-3406) Too many digits ' doesn't exist.
+restart -f
+run 900
+# ** Warning: (vsim-PLI-3406) Too many digits (111) in data on line 1170 of file "../ModelSimTestData/ALU.txt". (Max is 110.)    : /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv(28)
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_TB
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 900
+# ** Error: Didn't match
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+restart -f
+run 900
+run 900
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1761 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1771 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# ** Error: Didn't match
+#    Time: 1791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 52
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 1311 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1581 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1631 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+# ** Error: Didn't match
+#    Time: 1671 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+restart -f
+run 9000
+restart -f
+run 9000
+restart -f
+run 9000
+# ** Error: Didn't match
+#    Time: 341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 54
+restart -f
+run 9000
+run 9000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 9000
+# ** Error: Didn't match output positive
+#    Time: 21 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 31 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 51 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 61 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 71 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 171 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 201 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 241 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 251 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 281 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 291 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 391 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 401 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 421 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 461 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 491 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 501 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 511 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 521 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 611 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 621 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 641 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 661 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 681 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 711 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 791 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 811 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 831 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 841 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 861 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 901 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 911 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 931 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 941 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 951 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1011 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1051 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1061 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1081 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1121 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1231 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1271 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1281 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1301 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1341 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1381 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1391 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1451 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1471 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1491 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1501 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1521 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1561 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1591 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1721 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1741 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1781 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1811 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1851 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1891 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1911 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1931 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1941 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 1961 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2001 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2031 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2041 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2051 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2071 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2111 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2151 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2161 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2181 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2221 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2251 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2291 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2331 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2351 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2371 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2381 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+# ** Error: Didn't match output positive
+#    Time: 2401 ps  Scope: ALU_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv Line: 57
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# Loading work.ALU_TB
+# Loading work.ALU
+run 9000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU_TB.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv failed with 31 errors.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 2 failed with 36 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of ALU.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 10 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 10 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 10 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 4 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 4 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 2 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv failed with 1 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+vsim work.Testing_TB
+# End time: 11:38:05 on Jun 14,2018, Elapsed time: 42:35:51
+# Errors: 416, Warnings: 3
+# vsim work.Testing_TB 
+# Start time: 11:38:05 on Jun 14,2018
+# Loading sv_std.std
+# Loading work.Testing_TB
+run 100
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+# debc9a78
+add wave sim:/Testing_TB/*
+restart -f
+run 10
+# debc9a78
+# debc9a78
+# Compile of Memory.sv was successful.
+quit -sim
+# End time: 11:44:49 on Jun 14,2018, Elapsed time: 0:06:44
+# Errors: 0, Warnings: 0
+# Compile of Memory.sv failed with 7 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 7 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 7 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv failed with 3 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of Testing_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Memory_TB.sv was successful.
