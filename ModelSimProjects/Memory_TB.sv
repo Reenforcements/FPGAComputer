@@ -473,6 +473,149 @@ assert(dataOutput == 32'h1234ABCD) else $error("Reading the previously written v
 #9;
 
 
+//==================
+//Test swl, lwl
+// Clear all around 65528
+address = 32'd65532;
+data = 32'h0;
+writeMode = WORD;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65528;
+data = 32'h0;
+writeMode = WORD;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65524;
+data = 32'h0;
+writeMode = WORD;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+
+
+// Write 1 bytes
+address = 32'd65531;
+data = 32'h12345678;
+writeMode = WORDRIGHT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65531;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDRIGHT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h78) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h78000000) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+
+// Write 2 bytes
+address = 32'd65530;
+data = 32'h12345678;
+writeMode = WORDRIGHT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65530;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDRIGHT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h5678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h56780000) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+
+// Write 3 bytes
+address = 32'd65529;
+data = 32'h12345678;
+writeMode = WORDRIGHT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65529;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDRIGHT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h34567800) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+
+// Write 4 bytes
+address = 32'd65528;
+data = 32'h12345678;
+writeMode = WORDRIGHT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDRIGHT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h12345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h12345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+
+// Try writing part of it
+address = 32'd65531;
+data = 32'h0000ABCD;
+writeMode = WORDRIGHT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDRIGHT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'hCD345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'hCD345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+
 
 #10000;
 end

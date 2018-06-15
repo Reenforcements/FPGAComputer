@@ -184,15 +184,15 @@ always_comb begin
 
 			// Figure out how many more to write before we
 			//  hit the word boundary.
-			if (baseAddress[1:0] > 2'd0) begin
+			if (baseAddress[1:0] < 2'd3) begin
 				writeBytes[baseAddress[1:0] + 2'd1] = data[15:8];
-				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
+				writeMask = {1'b1, 1'b1, 1'b0, 1'b0};
 			end
-			if (baseAddress[1:0] > 2'd1) begin
+			if (baseAddress[1:0] < 2'd2) begin
 				writeBytes[baseAddress[1:0] + 2'd2] = data[23:16];
-				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
+				writeMask = {1'b1, 1'b1, 1'b1, 1'b0};
 			end
-			if (baseAddress[1:0] > 2'd2) begin
+			if (baseAddress[1:0] < 2'd1) begin
 				writeBytes[baseAddress[1:0] + 2'd3] = data[31:24];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 			end
