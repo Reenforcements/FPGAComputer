@@ -59,6 +59,7 @@ These use the 5 bit "shamt" value for the shift amount, or in the case of the va
 
 - Shift left logical
 - Shift left logical variable
+	- Remember, don't limit it to 5 bits. Just add a check that if its 32 or greater, output zero.
 - Shift right arithmetic
 - Shift right arithmetic variable
 - Shift right logical
@@ -74,7 +75,6 @@ Implement using a bit shift of 16 left?
 
 - Set less than
 - Set less than unsigned
-	- Will do these with a big 32 bit OR gate and the result of subtraction 
 
 -
 
@@ -180,18 +180,21 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 
 - address [31:0] - `Read/write address`
 - data [31:0] - `Data to write if writing`
-- writeMode [1:0] 
+- writeMode [2:0] 
 	- `0 = not writing`
 	- `1 = write byte`
 	- `2 = write half word`
-	- `3 = write word`word`
-- readMode [1:0] 
+	- `3 = write word`
+	- `4 = write word left`
+	- `5 = write word right`
+- readMode [2:0] 
 	- `0 = not reading`
 	- `1 = read byte`
 	- `2 = read half word`
 	- `3 = read word`
-- unalignedLeft
-- unalignedRight
+	- `4 = read word left`
+	- `5 = read word right`
+- unsignedLoad
 - pcAddress [31:0]
 	- For fetching the next instruction
 
