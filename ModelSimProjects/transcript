@@ -5015,3 +5015,1291 @@ quit -sim
 # Compile of Memory_TB.sv failed with 1 errors.
 # 2 compiles, 1 failed with 1 error.
 # Compile of Memory_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv failed with 4 errors.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of Memory_TB.sv failed with 3 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv failed with 6 errors.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 3 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 3 errors.
+# 2 compiles, 2 failed with 9 errors.
+# Compile of Memory.sv failed with 6 errors.
+# Compile of Memory_TB.sv failed with 3 errors.
+# 2 compiles, 2 failed with 9 errors.
+# Compile of Memory.sv was successful with warnings.
+# Compile of Memory_TB.sv failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of Memory_TB.sv failed with 1 errors.
+# Compile of Memory_TB.sv was successful with warnings.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful with warnings.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory_TB.sv was successful with warnings.
+# Compile of Memory_TB.sv was successful with warnings.
+# Compile of Memory_TB.sv was successful with warnings.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful with warnings.
+# 8 compiles, 0 failed with no errors.
+# Compile of Memory_TB.sv was successful with warnings.
+# Compile of ALU_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful with warnings.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful with warnings.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim work.Memory_TB
+# vsim work.Memory_TB 
+# Start time: 16:08:54 on Jun 14,2018
+# Loading sv_std.std
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+add wave sim:/Memory_TB/*
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+restart -f
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+restart -f
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# 65532
+# 65528
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# 120
+#   0
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# 120
+#   0
+# ** Error: Reading the previously written value didn't work.
+#    Time: 21 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 58
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 67
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# 120
+#   0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+# 120
+#   0
+# Compile of ALU.sv failed with 30 errors.
+# Compile of Memory.sv was successful.
+# 2 compiles, 1 failed with 30 errors.
+# Compile of ALU.sv failed with 30 errors.
+# Compile of ALU.sv failed with 31 errors.
+# Compile of ALU.sv was successful.
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# ** Fatal: Bit stream casting is only allowed on same size data.
+#    Time: 80 ps  Iteration: 1  Process: /Memory_TB/m1/#ALWAYS#41 File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+# Fatal error in Module Memory at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv line 71
+# 
+# HDL call sequence:
+# Stopped at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv 71 Module Memory
+# 
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 50
+run 50
+# ** Fatal: Bit stream casting is only allowed on same size data.
+#    Time: 80 ps  Iteration: 1  Process: /Memory_TB/m1/#ALWAYS#41 File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+# Fatal error in Module Memory at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv line 71
+# 
+# HDL call sequence:
+# Stopped at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv 71 Module Memory
+# 
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+run 10
+run 10
+run 10
+# ** Fatal: Bit stream casting is only allowed on same size data.
+#    Time: 80 ps  Iteration: 1  Process: /Memory_TB/m1/#ALWAYS#41 File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+# Fatal error in Module Memory at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv line 71
+# 
+# HDL call sequence:
+# Stopped at /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv 71 Module Memory
+# 
+# ** Fatal: (vish-4) ****** Memory allocation failure. *****
+# Attempting to allocate 4294967288 bytes
+# Please check your system for available memory and swap space.
+# ** Fatal: (vish-4) ****** Memory allocation failure. *****
+# Attempting to allocate 4294967288 bytes
+# Please check your system for available memory and swap space.
+# ** Fatal: (vish-4) ****** Memory allocation failure. *****
+# Attempting to allocate 4294967288 bytes
+# Please check your system for available memory and swap space.
+# Compile of Memory.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 50
+run 50
+run 50
+run 50
+run 50
+run 50
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 500
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+run 500
+run 500
+run 500
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# ** Error: Reading the previously written value didn't work.
+#    Time: 281 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 267
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# ** Error: Reading the previously written value didn't work.
+#    Time: 291 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 276
+# ** Error: Reading the previously written value didn't work.
+#    Time: 301 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 284
+# ** Error: Reading the previously written value didn't work.
+#    Time: 311 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 292
+# ** Error: Reading the previously written value didn't work.
+#    Time: 321 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 300
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+run 500
+# Compile of Memory_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 500
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 365
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run 500
+run 500
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run 5000
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 10881 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 10891 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+restart -f
+run 1000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+restart -f
+run 1000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+run 5000
+restart -f
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 1 failed with 1 error.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work: 34120000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+add wave -position insertpoint /Memory_TB/m1/memory
+# (vsim-4077) Logging very large object: /Memory_TB/m1/memory 
+add wave -position insertpoint /Memory_TB/m1/memory
+# (vsim-4077) Logging very large object: /Memory_TB/m1/memory 
+# Warning: Unable to determine driver(s) for "sim:/Memory_TB/m1/memory"
+restart -f
+run 5000
+# ** Error: Reading the previously written value didn't work: 34120000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work: 34120000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful with warnings.
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 41 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 73
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+# ** Error: Reading the previously written value didn't work.
+#    Time: 191 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 201
+# ** Error: Reading the previously written value didn't work.
+#    Time: 201 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 210
+# ** Error: Reading the previously written value didn't work.
+#    Time: 281 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 267
+# ** Error: Reading the previously written value didn't work.
+#    Time: 291 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 276
+# ** Error: Reading the previously written value didn't work.
+#    Time: 301 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 284
+# ** Error: Reading the previously written value didn't work.
+#    Time: 311 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 292
+# ** Error: Reading the previously written value didn't work.
+#    Time: 321 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 300
+# ** Error: Reading the previously written value didn't work.
+#    Time: 331 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 309
+# ** Error: Reading the previously written value didn't work.
+#    Time: 341 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 318
+# ** Error: Reading the previously written value didn't work.
+#    Time: 351 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 327
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 366
+# ** Error: Reading the previously written value didn't work.
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 374
+# ** Error: Reading the previously written value didn't work: xxxx0000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 41 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 73
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+# ** Error: Reading the previously written value didn't work.
+#    Time: 191 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 201
+# ** Error: Reading the previously written value didn't work.
+#    Time: 201 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 210
+# ** Error: Reading the previously written value didn't work.
+#    Time: 281 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 267
+# ** Error: Reading the previously written value didn't work.
+#    Time: 291 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 276
+# ** Error: Reading the previously written value didn't work.
+#    Time: 301 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 284
+# ** Error: Reading the previously written value didn't work.
+#    Time: 311 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 292
+# ** Error: Reading the previously written value didn't work.
+#    Time: 321 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 300
+# ** Error: Reading the previously written value didn't work.
+#    Time: 331 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 309
+# ** Error: Reading the previously written value didn't work.
+#    Time: 341 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 318
+# ** Error: Reading the previously written value didn't work.
+#    Time: 351 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 327
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 366
+# ** Error: Reading the previously written value didn't work.
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 374
+# ** Error: Reading the previously written value didn't work: xx000000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 41 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 73
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+# ** Error: Reading the previously written value didn't work.
+#    Time: 191 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 201
+# ** Error: Reading the previously written value didn't work.
+#    Time: 201 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 210
+# ** Error: Reading the previously written value didn't work.
+#    Time: 281 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 267
+# ** Error: Reading the previously written value didn't work.
+#    Time: 291 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 276
+# ** Error: Reading the previously written value didn't work.
+#    Time: 301 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 284
+# ** Error: Reading the previously written value didn't work.
+#    Time: 311 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 292
+# ** Error: Reading the previously written value didn't work.
+#    Time: 321 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 300
+# ** Error: Reading the previously written value didn't work.
+#    Time: 331 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 309
+# ** Error: Reading the previously written value didn't work.
+#    Time: 341 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 318
+# ** Error: Reading the previously written value didn't work.
+#    Time: 351 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 327
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 366
+# ** Error: Reading the previously written value didn't work.
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 374
+# ** Error: Reading the previously written value didn't work: xx000000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 5000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+# ** Error: Reading the previously written value didn't work.
+#    Time: 281 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 267
+# ** Error: Reading the previously written value didn't work.
+#    Time: 291 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 276
+# ** Error: Reading the previously written value didn't work.
+#    Time: 301 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 284
+# ** Error: Reading the previously written value didn't work.
+#    Time: 311 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 292
+# ** Error: Reading the previously written value didn't work.
+#    Time: 321 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 300
+# ** Error: Reading the previously written value didn't work.
+#    Time: 331 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 309
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 366
+# ** Error: Reading the previously written value didn't work.
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 374
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397
+restart -f
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work.
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of Memory.sv was successful.
+# Compile of Memory.sv failed with 5 errors.
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+quit -sim
+# End time: 13:38:52 on Jun 15,2018, Elapsed time: 21:29:58
+# Errors: 180, Warnings: 1
+vsim work.Memory_TB
+# vsim work.Memory_TB 
+# Start time: 13:38:58 on Jun 15,2018
+# Loading sv_std.std
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+add wave sim:/Memory_TB/*
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+restart -f
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 111 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 139
+# ** Error: Reading the previously written value didn't work.
+#    Time: 121 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 149
+# ** Error: Reading the previously written value didn't work.
+#    Time: 181 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 192
+restart -f
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+restart -f
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 31 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 64
+# ** Error: Reading the previously written value didn't work: 00000101
+#    Time: 71 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 101
+# ** Error: Reading the previously written value didn't work.
+#    Time: 81 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 111
+# ** Error: Reading the previously written value didn't work.
+#    Time: 91 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 121
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 100
+run 100
+run 100
+run 100
+run 100
+# ** Error: Reading the previously written value didn't work.
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 366
+# ** Error: Reading the previously written value didn't work.
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 374
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 389
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 397

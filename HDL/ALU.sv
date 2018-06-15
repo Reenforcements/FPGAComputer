@@ -1,18 +1,4 @@
-module ALU(
-input logic clk,
-input logic rst,
-
-input logic [31:0]dataIn0,
-input logic [31:0]dataIn1,
-input logic [4:0]shamt,
-input logic [5:0]funct,
-
-output logic [31:0]result,
-output logic outputZero,
-output logic outputNegative,
-output logic outputPositive
-);
-
+package ALUFunctCodes;
 // Make sure Quartus is set to user encoded.
 typedef enum logic [5:0] {
 	ADD = 6'h20,
@@ -45,6 +31,24 @@ typedef enum logic [5:0] {
 	MTLO = 6'h13
 	
 } functCodes;
+endpackage
+
+import ALUFunctCodes::*;
+
+module ALU(
+input logic clk,
+input logic rst,
+
+input logic [31:0]dataIn0,
+input logic [31:0]dataIn1,
+input logic [4:0]shamt,
+input logic [5:0]funct,
+
+output logic [31:0]result,
+output logic outputZero,
+output logic outputNegative,
+output logic outputPositive
+);
 
 logic carry;
 logic [31:0]hiResult;
