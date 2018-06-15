@@ -6879,3 +6879,1458 @@ run 30
 # regular write?
 # regular write?
 # regular write?
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 4000
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 4000
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 4000
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# ** Error: Reading the previously written value didn't work.
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 4000
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# ** Error: Reading the previously written value didn't work.
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 4000
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 600
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# Regular write?
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Regular write?
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# WORDLEFT WORDRIGHT
+# WORDLEFT WORDRIGHT
+# WORDLEFT WORDRIGHT
+# WORDLEFT WORDRIGHT
+# WORDLEFT WORDRIGHT
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# WORDLEFT WORDRIGHT
+# default write
+# default write
+# WORDLEFT WORDRIGHT
+# default write
+# default write
+# WORDLEFT WORDRIGHT
+# default write
+# default write
+# WORDLEFT WORDRIGHT
+# default write
+# default write
+# WORDLEFT WORDRIGHT
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# default write
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# WORDLEFT WORDRIGHT
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# ** Error (suppressible): (vsim-8323) /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv(177): $display : Argument number 3 is an unpacked type, and may only be printed with the '%p' format.
+#    Time: 0 ps  Iteration: 0  Instance: /Memory_TB/m1 File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+run 600
+# No Design Loaded!
+restart -f
+# No Design Loaded!
+# Compile of Memory.sv was successful.
+restart -f
+# No Design Loaded!
+load Memory_TB.sv
+# couldn't load file "Memory_TB.sv": Memory_TB.sv: cannot open shared object file: No such file or directory
+vsim work.Memory_TB
+# vsim work.Memory_TB 
+# Start time: 13:38:58 on Jun 15,2018
+# Loading sv_std.std
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+restart -f
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: xxxxxx12, '{x, x, x, 18}
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# Writedata0: xxxxxx12, '{x, x, x, 18}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xxxx1234, '{x, x, 18, 52}
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# Writedata0: xxxx1234, '{x, x, 18, 52}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xx123456, '{x, 18, 52, 86}
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# Writedata0: xx123456, '{x, 18, 52, 86}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12345678, '{18, 52, 86, 120}
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# Writedata0: 12345678, '{18, 52, 86, 120}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12340000, '{18, 52, 0, 0}
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# Writedata0: 12340000, '{18, 52, 0, 0}
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: 12xxxxxx, '{18, x, x, x}
+# WORDLEFT WORDRIGHT: 0001, 12xxxxxx
+# Writedata0: 12xxxxxx, '{18, x, x, x}
+# ** Error: Reading the previously written value didn't work: xx000000
+#    Time: 401 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 367
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 000000xx
+#    Time: 411 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 375
+# default write: 0000, 00000000
+# Writedata0: 3412xxxx, '{52, 18, x, x}
+# WORDLEFT WORDRIGHT: 0011, 3412xxxx
+# Writedata0: 3412xxxx, '{52, 18, x, x}
+# ** Error: Reading the previously written value didn't work: xxxx0000
+#    Time: 431 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 392
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 441 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 400
+# default write: 0000, 00000000
+# Writedata0: 563412xx, '{86, 52, 18, x}
+# WORDLEFT WORDRIGHT: 0111, 563412xx
+# Writedata0: 563412xx, '{86, 52, 18, x}
+# ** Error: Reading the previously written value didn't work: 3412xx00
+#    Time: 461 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 416
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 471 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 424
+# default write: 0000, 00000000
+# Writedata0: 78563412, '{120, 86, 52, 18}
+# WORDLEFT WORDRIGHT: 1111, 78563412
+# Writedata0: 78563412, '{120, 86, 52, 18}
+# ** Error: Reading the previously written value didn't work: 78563412
+#    Time: 491 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 440
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work.
+#    Time: 501 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 448
+# default write: 0000, 00000000
+# Writedata0: 00003412, '{0, 0, 52, 18}
+# WORDLEFT WORDRIGHT: 0011, 00003412
+# ** Error: Reading the previously written value didn't work: 34120000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 78563412
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: xxxxxx12, '{x, x, x, 18}
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# Writedata0: xxxxxx12, '{x, x, x, 18}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xxxx1234, '{x, x, 18, 52}
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# Writedata0: xxxx1234, '{x, x, 18, 52}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xx123456, '{x, 18, 52, 86}
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# Writedata0: xx123456, '{x, 18, 52, 86}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12345678, '{18, 52, 86, 120}
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# Writedata0: 12345678, '{18, 52, 86, 120}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12340000, '{18, 52, 0, 0}
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# Writedata0: 12340000, '{18, 52, 0, 0}
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: xxxxxx12, '{x, x, x, 170}
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# Writedata0: xxxxxx12, '{x, x, x, 170}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xxxx1234, '{x, x, 18, 170}
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# Writedata0: xxxx1234, '{x, x, 18, 170}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xx123456, '{x, 18, 52, 170}
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# Writedata0: xx123456, '{x, 18, 52, 170}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12345678, '{18, 52, 86, 170}
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# Writedata0: 12345678, '{18, 52, 86, 170}
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12340000, '{18, 52, 0, 170}
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# Writedata0: 12340000, '{18, 52, 0, 170}
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+restart -f
+restart -f
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# data0: 12
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# data0: 12
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# data0: 12
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# data0: 12
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# data0: 12
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 00
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# data0: 00
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# data0: 12345678
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# data0: 12345678
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# data0: 12345678
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# data0: 12345678
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 0000abcd
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 12340000
+# data0: 0000abcd
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 12340000, '{18, 52, 0, 170}, 1, 65529
+# ** Error: Reading the previously written value didn't work: 00000000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 12340000
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# default write: 1111, 22345678
+# default write: 1111, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 33333333
+# default write: 0011, 00001fff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0011, 0000ffff
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0011, 0000abcd
+# default write: 0011, 00009845
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 0001, 000000b2
+# default write: 0001, 000000d4
+# default write: 0001, 000000a1
+# default write: 0001, 000000c3
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# default write: 1111, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# WORDLEFT WORDRIGHT: 0001, xxxxxx12
+# data0: 12345678
+# baseAddress[1:0]: 00
+# writeMask: 0001
+# Writedata0: xxxxxx12, '{x, x, x, 170}, 0, 65528
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, xxxx1234
+# data0: 12345678
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: xxxx1234, '{x, x, 18, 170}, 1, 65529
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# WORDLEFT WORDRIGHT: 0111, xx123456
+# data0: 12345678
+# baseAddress[1:0]: 10
+# writeMask: 0111
+# Writedata0: xx123456, '{x, 18, 52, 170}, 2, 65530
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: 12345678
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# WORDLEFT WORDRIGHT: 1111, 12345678
+# data0: 12345678
+# baseAddress[1:0]: 11
+# writeMask: 1111
+# Writedata0: 12345678, '{18, 52, 86, 170}, 3, 65531
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# data0: abcd0000
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 1234abcd, '{18, 52, 171, 170}, 1, 65529
+# WORDLEFT WORDRIGHT: 0011, 1234abcd
+# data0: abcd0000
+# baseAddress[1:0]: 01
+# writeMask: 0011
+# Writedata0: 1234abcd, '{18, 52, 171, 170}, 1, 65529
+# default write: 0000, 00000000
+# ** Error: Reading the previously written value didn't work: 1234abcd
+#    Time: 531 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 472
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# default write: 0000, 00000000
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 600
+# ** Error: Reading the previously written value didn't work: abcd0000
+#    Time: 521 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 464
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 600

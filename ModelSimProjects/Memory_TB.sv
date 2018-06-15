@@ -350,6 +350,7 @@ unsignedLoad = 0;
 #10;
 
 // Start saving successively to the right
+// Write 1 byte
 address = 32'd65528;
 data = 32'h12345678;
 writeMode = WORDLEFT;
@@ -357,7 +358,6 @@ readMode = NONE;
 unsignedLoad = 0;
 #10;
 // Reading using lwl and lw
-// Write 1 byte
 address = 32'd65528;
 data = 32'h0;
 writeMode = NONE;
@@ -376,17 +376,6 @@ assert(dataOutput == 32'h12) else $error("Reading the previously written value d
 #9;
 
 
-// REMOVE THIS
-// REMOVE THIS
-// REMOVE THIS
-//***********
-address = 32'd65528;
-data = 32'h0;
-writeMode = WORD;
-readMode = NONE;
-unsignedLoad = 0;
-#10;
-//************
 // Write 2 bytes
 address = 32'd65529;
 data = 32'h12345678;
@@ -433,6 +422,54 @@ readMode = WORD;
 unsignedLoad = 0;
 #1;
 assert(dataOutput == 32'h123456) else $error("Reading the previously written value didn't work.");
+#9;
+
+// Write 4 bytes
+address = 32'd65531;
+data = 32'h12345678;
+writeMode = WORDLEFT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65531;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDLEFT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h12345678) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h12345678) else $error("Reading the previously written value didn't work.");
+#9;
+
+// Try overwriting the middle half of the word
+address = 32'd65529;
+data = 32'hABCD0000;
+writeMode = WORDLEFT;
+readMode = NONE;
+unsignedLoad = 0;
+#10;
+address = 32'd65529;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORDLEFT;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'hABCD0000) else $error("Reading the previously written value didn't work: %h", dataOutput);
+#9;
+address = 32'd65528;
+data = 32'h0;
+writeMode = NONE;
+readMode = WORD;
+unsignedLoad = 0;
+#1;
+assert(dataOutput == 32'h1234ABCD) else $error("Reading the previously written value didn't work: %h", dataOutput);
 #9;
 
 

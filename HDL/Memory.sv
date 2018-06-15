@@ -174,6 +174,7 @@ always_comb begin
 			
 			// Cast backed to a packed array and assign
 			writeData0 = 32'(writeBytes);
+			writeBytes[0] = 8'hAA;
 		end
 		WORDRIGHT: begin
 			// We're always writing at least one byte.

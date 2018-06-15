@@ -174,8 +174,7 @@ always_comb begin
 			
 			// Cast backed to a packed array and assign
 			writeData0 = 32'(writeBytes);
-			$display("Write data: %h", writeData0);
-			$display("WriteMask: %b", writeMask);
+			writeBytes[0] = 8'hAA;
 		end
 		WORDRIGHT: begin
 			// We're always writing at least one byte.
@@ -250,6 +249,7 @@ always_ff @(posedge clk or negedge rst) begin
 				if (writeMask[0] == 1'b1) begin
 					memory[baseAddress] <= writeData0[7:0];
 				end
+				$display("default write: %b, %h", writeMask, writeData0);
 			end
 		endcase
 		
