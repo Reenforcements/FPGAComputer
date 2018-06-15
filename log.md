@@ -1,4 +1,31 @@
-###6/10/18
+### 6/14/18
+
+I found a possible way of running arbitrary machine code from a C/C++ program. It involves making a pointer to data and then calling it like a function. If I can trick the compiler in this way, I can make my own assembly instructions for graphics or even GPIO. More info [here.](https://cboard.cprogramming.com/c-programming/135212-inline-asm-machine-code-non-mnemonic-input.html)
+
+I finished version 1 of the memory module. I'm thinking about the best way to test it.
+
+I'm just going to do some basic reads/writes using the different commands. Also, I had to move the enums for the Memory and ALU modules to packages so they could be imported.
+
+### 6/13/18
+
+Finished the ALU + unit tests in ModelSim. I made a Python program to generate test data and results for a number of inputs. Integers in Python can be really tricky. I used a number of modules to help me.
+
+I started on the memory module.
+
+I finally understand the lwl, lwr, swl, and swr commands I think.
+
+I needed to add "unsignedLoad" to the memory to sign extend bytes and halfwords that are being loaded.
+
+### 6/12/18
+Working on the ALU. 
+
+The ALU seems to be mostly done if not done. I've been working on a test module and an accompanying Python program to generate test data for the ALU. It will be read in to ModelSim using `$memreadb`. Working with bits in Python is super annoying because of the "infinite" integers. If you use numpy, things are a little better because you can convert to binary with a set width and it will do proper 2's complement.
+
+### 6/11/18
+
+Register file is done! I even have tests. I created the file for the ALU.
+
+### 6/10/18
 
 I'm going to start with the RegisterFile. I made two new directories: HDL, for SystemVerilog code, and ModelSimTests, for all the testbenches. ModelSim and Quartus will share files in the HDL directory. I just made the RegisterFile.sv and RegisterFile_TB.sv files (TB stands for test bench.)
 
@@ -12,7 +39,13 @@ I went through and installed the most similar libraries I can find, and the appl
 
 Okay, the text editor has like nano sized text.
 
-Apparently changing the font size to negative fixes it. I don't know how people figured that out.
+Apparently changing the font size to negative fixes it. I don't know how people figured that out. Here's how to do it:
+
+```
+nano ~/.modelsim
+Find "textFontV2"
+Change "12" to "-12"
+```
 
 I believe I have the basics of ModelSim down.
 

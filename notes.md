@@ -451,10 +451,22 @@ assert (A == B) $display ("OK. A equals B");
     else $error("It's gone wrong");
 ```
 
+Use `#time` to wait for a certain amount of time in an `always` block that uses `<=`.
+
+Use `wait (signalName)` to wait for that signal to change before proceeding. Super useful to put these before asserts.
+
+You can put a giant wait at the end of your always block to let the simulation run and have it never repeat.
+
+`$readmemb` can be used to read lines of binary from a file for use with testing. [More help.](http://verilog.renerta.com/mobile/source/vrg00016.htm)
+
 ### Links
 
 [SOC Verification using SystemVerilog](https://www.slideshare.net/RamdasMozhikunnath/soc-verificationsystemverilog)
-<Br>
+<br>
+[Generating a TestBench](https://www.youtube.com/watch?v=qZNL1C0TwY8)
+<br>
+[How to Simulate and Test SystemVerilog with ModelSim (SystemVerilog Tutorial #2)](https://www.youtube.com/watch?v=-o3RBvTh4Hw)
+
 
 # Hex/Decimal/Octal/Binary
 
