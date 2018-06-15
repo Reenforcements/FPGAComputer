@@ -159,15 +159,15 @@ always_comb begin
 
 			// Figure out how many more to write before we
 			//  hit the word boundary.
-			if (baseAddress[1:0] > 0) begin
+			if (baseAddress[1:0] > 2'd0) begin
 				writeBytes[baseAddress[1:0] - 2'd1] = data[23:16];
 				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
 			end
-			if (baseAddress[1:0] > 1) begin
+			if (baseAddress[1:0] > 2'd1) begin
 				writeBytes[baseAddress[1:0] - 2'd2] = data[15:8];
 				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
 			end
-			if (baseAddress[1:0] > 2) begin
+			if (baseAddress[1:0] > 2'd2) begin
 				writeBytes[baseAddress[1:0] - 2'd3] = data[7:0];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 			end
@@ -183,15 +183,15 @@ always_comb begin
 
 			// Figure out how many more to write before we
 			//  hit the word boundary.
-			if (baseAddress[1:0] > 0) begin
+			if (baseAddress[1:0] > 2'd0) begin
 				writeBytes[baseAddress[1:0] + 2'd1] = data[15:8];
 				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
 			end
-			if (baseAddress[1:0] > 1) begin
+			if (baseAddress[1:0] > 2'd1) begin
 				writeBytes[baseAddress[1:0] + 2'd2] = data[23:16];
 				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
 			end
-			if (baseAddress[1:0] > 2) begin
+			if (baseAddress[1:0] > 2'd2) begin
 				writeBytes[baseAddress[1:0] + 2'd3] = data[31:24];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 			end
@@ -217,7 +217,7 @@ always_ff @(posedge clk or negedge rst) begin
 		// Write on the clock
 		// Only write the bytes that we have values for.
 		unique case (writeMode)
-			WORDRIGHT:
+			WORDRIGHT,
 			WORDLEFT: begin
 				// The base write address has to be word
 				//  aligned here because "baseAddress" is most
