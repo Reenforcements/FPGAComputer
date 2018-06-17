@@ -28,7 +28,13 @@ typedef enum logic [5:0] {
 	MFHI = 6'h10,
 	MFLO = 6'h12,
 	MTHI = 6'h11,
-	MTLO = 6'h13
+	MTLO = 6'h13,
+
+	// I shouldn't have to prefix these with "ALU_"
+	//  because of how namespaces work, but I just /know/
+	//  I'll mix these up with the OPCODES later if I don't.
+	ALU_JR = 6'h8,
+	ALU_JALR = 6'h9
 	
 } functCodes;
 endpackage
@@ -207,6 +213,14 @@ always_comb begin
 			{hiResult, loResult} = 0;
 			result = 0;
  		end
+		// These just pass the register's value
+		//  through to the Branch module.
+		ALU_JR: begin
+			result = dataIn0;
+		end
+		ALU_JALR: begin
+			result = dataIn0;
+		end
 	endcase
 
 	// Should this take lo and hi into account?

@@ -8424,3 +8424,77 @@ restart -f
 # Loading work.Memory_TB_sv_unit
 # Loading work.Memory_TB
 run 1000
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModes
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 1000
+run 1000
+# Compile of ALU.sv failed with 2 errors.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv failed with 3 errors.
+# Compile of ALU.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv failed with 1 errors.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of Branch_TB.sv failed with 1 errors.
+# Compile of Branch.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of Branch_TB.sv was successful with warnings.
+# Compile of Branch_TB.sv was successful with warnings.
+# Compile of Branch_TB.sv was successful with warnings.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# 10 compiles, 0 failed with no errors.
