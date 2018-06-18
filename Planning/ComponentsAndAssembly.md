@@ -2,31 +2,50 @@
 
 - registerRead
 - registerWrite
-- registerWriteMode
-	- 1 = use rtAddress [4:0]
-	- 0 = use rdAddress [4:0]
+- registerWriteAddressMode[1:0]
+	- 0 = use rtAddress [4:0]
+	- 1 = use rdAddress [4:0]
+	- 2 = 31 ($ra)
 - funct [5:0]
 - shamt [4:0]
 - useImmediate
 	- 1 = Use the immediate value provided
 	- 0 = Use the register value of rt 
-- readMode [1:0]
-- writeMode[1:0]
-- unalignedLeft
-- unalignedRight
-- jump/!branch
-- jumpRegister
+- readMode [2:0]
+	- NONE = 0,
+	- BYTE = 1,
+	- HALFWORD = 2,
+	- WORD = 3,
+	- WORDLEFT = 4,
+	- WORDRIGHT = 5 
+- writeMode[2:0]
+	- (Same as readMode) 
+- unsignedLoad
 - registerWriteSource [1:0]
 	- 0 = write all zero
 	- 1 = write nextPCAddress (for branch/jump link)
 	- 2 = write data output from memory
 	- 3 = write result from ALU
+- mode [3:0] (Branch module)
+	- NONE = 0
+	- BEQ = 1
+	- BGEZ = 2
+	- BGTZ = 3
+	- BLEZ = 4
+	- BLTZ = 5
+	- BNE = 6
+	- BC1T = 7
+	- BC1F = 8
+	- J = 9
+	- JR = 0xA
 
 # Program Counter (PC)
 
 ### Inputs
 
-- branchTo [31:0]
+- newPC [31:0]
+- shouldUseNewPC
+- count
 
 ### Outputs
 
@@ -115,18 +134,17 @@ Immediate vs register value (This will be handled outside the ALU.)
 
 Ignore coprocessor stuff for right now.
 
-Relative branching is the number of instructions to jump back minus one more because the PC gets incremented automatically.
+Relative branching is the number of instructions to jump taking into account one more because the PC gets incremented automatically.
 
 Can handle greater than, less than, and equal using the zero, positive, and negative outputs from the ALU and a couple boolean gates.
 
 I'm going to put a simple adder/subtractor in this thing instead of trying to route things through the ALU.
 
-Don't need to hard code 31 for return address. I think that's done by the assembler using the immediate if you don't specify a value.
+Actually wait, I think I do need to hard code 32 somewhere for `jal`. <!-- Don't need to hard code 31 for return address. I think that's done by the assembler using the immediate if you don't specify a value.
+-->
 
 Linking is accomplished by setting registerWrite=1 and setting registerWriteSource to use the next PC address.
 
-- Branch on coprocessor true
-- Branch on coprocessor false
 - Branch on equal
 - Branch on greater than equal zero
 - Branch on greater than equal zero and link
@@ -135,6 +153,8 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 - Branch on less than zero and link
 - Branch on less than zero
 - Branch on not equal
+- Branch on coprocessor true
+- Branch on coprocessor false
 - Jump
 - Jump and link
 - Jump register
@@ -142,20 +162,36 @@ Linking is accomplished by setting registerWrite=1 and setting registerWriteSour
 
 ### Inputs
 
-- jump/!branch 
+<!--- jump/!branch 
 	- 1 if should jump (uses 26 bits)
 	- 0 if should branch by adding immediate to current PC
 - jumpRegister
 	- 1 if jump using result from ALU (the register value)
-	- This will be from a 26 bit jump address or the result of adding the PC inside the ALU.
+	- This will be from a 26 bit jump address or the result of adding the PC inside the ALU.-->
+- mode [3:0]
+	- 0 Disabled
+	- 1 Branch on A == B
+	- 2 Branch on A >= 0
+	- 3 Branch on A > 0
+	- 4 Branch on A <= 0
+	- 5 Branch on A < 0
+	- 6 Branch on A != B
+	- 7 Branch on coprocessor true
+	- 8 Branch on coprocessor false
+	- 9 Jump
+	- A Jump register
 - branchAddressOffset [15:0]
 - pcAddress [31:0]
 - jumpAddress [25:0]
 - jumpRegisterAddress [31:0]
+- outputZero
+- outputNegative
+- outputPositive
 
 ### Outputs
 
-- branchTo [31:0] - `The address to branch to`
+- newPC [31:0] - `The address to branch to`
+- shouldUseNewPC
 
 # Memory
 
