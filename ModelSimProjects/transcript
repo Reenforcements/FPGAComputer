@@ -693,3 +693,229 @@ restart -f
 run 200
 restart -f
 run 200
+quit -sim
+# End time: 11:52:33 on Jun 18,2018, Elapsed time: 0:16:17
+# Errors: 151, Warnings: 0
+vsim work.PC_TB
+# vsim work.PC_TB 
+# Start time: 11:52:42 on Jun 18,2018
+# Loading sv_std.std
+# Loading work.PC_TB
+# Loading work.PC
+restart -f
+run 200
+add wave sim:/PC_TB/*
+run 200
+restart -f
+run 200
+# Compile of PC.sv was successful.
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 90
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 6 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 43
+# ** Error: PC is incorrect: 0040000c
+#    Time: 16 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 52
+# ** Error: PC is incorrect: 00400010
+#    Time: 26 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 62
+# ** Error: PC is incorrect: 00400014
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 81
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 90
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+restart -f
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 6 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 43
+# ** Error: PC is incorrect: 0040000c
+#    Time: 16 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 52
+# ** Error: PC is incorrect: 00400010
+#    Time: 26 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 62
+# ** Error: PC is incorrect: 00400014
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 81
+# Compile of PC.sv was successful.
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 101
+# Compile of PC.sv was successful.
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 200
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 101
+restart -f
+run 58
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# Compile of PC_TB.sv was successful.
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 58
+# ** Error: Next PC is incorrect: abcdabd1, Should be: abcdabd5
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 58
+# ** Error: Next PC is incorrect: abcdabd1, Should be: abcdabd5
+#    Time: 57 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+run 20
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 67 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 67 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 101
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: Next PC is incorrect: abcdabd1, Should be: abcdabd5
+#    Time: 58 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 101
+# Compile of PC_TB.sv failed with 2 errors.
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: Next PC is incorrect: abcdabd1, Should be: abcdabd5
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 92
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 103
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 67 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 67 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 103
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: PC is incorrect: 00400010
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: PC is incorrect: 00400010
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# 12 compiles, 0 failed with no errors.
+restart -f
+# Loading work.PC_TB
+# Loading work.PC
+run 100
+# ** Error: PC is incorrect: 00400010
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: PC is incorrect: 00400010
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 100
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 6 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 43
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 16 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 51
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 16 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 52
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 26 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 61
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 26 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 62
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 71
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 80
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 81
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 58 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 91
+# ** Error: Next PC is incorrect: xxxxxxxx, Should be: xxxxxxxx
+#    Time: 58 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 92
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 103
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 100
+# ** Error: PC is incorrect: abcdabd1
+#    Time: 68 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 102
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# 12 compiles, 0 failed with no errors.
+restart -f
+# Loading work.PC_TB
+# Loading work.PC
+run 100
+restart -f
+run 100

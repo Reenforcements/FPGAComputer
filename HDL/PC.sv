@@ -7,34 +7,31 @@ input logic shouldUseNewPC,
 input logic [31:0]newPC,
 
 output logic [31:0]pcAddress,
+// nextPCAddress is used for linking
 output logic [31:0]nextPCAddress
 );
 
 logic [31:0]currentPC = 32'h00400000;
 
-logic [31:0]nextPC;
+logic [31:0]oldPC;
 always_comb begin
 	// Are we jumping/branching or just counting?
 	if (shouldUseNewPC) begin
-		nextPC = newPC;
+		// New PC is the branch/jump address
+		oldPC = newPC;
 	end
 	else begin
-		nextPC = currentPC;
+		oldPC = currentPC;
 	end
 
-	// This is used for linking the next instruction
-	//  upon branching/jumping.
-	nextPCAddress = nextPC + 32'h4;
+	
 
-	// Always add 4 (unless we're not counting)
+	// Always add 4
 	// The compiler/assembly author will know this
 	//  and take it into account in their code.
-	if (count == 1'b1) begin
-		nextPC = nextPC + 32'h4;
-	end
-	else begin
-		nextPC = nextPC;
-	end
+	//nextPC = oldPC + 32'h4;
+	// This is the next address, used if we need to link.
+	nextPCAddress = oldPC + 32'h4;
 end
 
 always_ff @ (posedge clk or negedge rst) begin
@@ -43,11 +40,19 @@ always_ff @ (posedge clk or negedge rst) begin
 	end
 	else begin
 		// Update to next PC on the clock.
-		currentPC <= nextPC;
+		if (count == 1'b1) begin
+			// We should use the next one because we're counting.
+			currentPC <= oldPC + 32'h4;
+		end
+		else begin
+			// We're not counting, use the previous value.
+			currentPC <= oldPC;
+		end
 	end
 end
 
 always_comb begin
+	// Update the PC output
 	pcAddress = currentPC;
 end
 
