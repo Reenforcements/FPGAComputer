@@ -11,7 +11,7 @@ BC1T = 4'h7,
 BC1F = 4'h8,
 J = 4'h9,
 JR = 4'hA
-} BranchModes;
+} BranchMode;
 endpackage
 
 import BranchModesPackage::*;
@@ -127,7 +127,7 @@ always_comb begin
 		endcase
 	end
 	else begin
-		branchTo = 32'bx;
+		branchTo = {32'hxxxxxxxx};
 	end
 end
 
