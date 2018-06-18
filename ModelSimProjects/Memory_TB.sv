@@ -1,4 +1,4 @@
-import MemoryModes::*;
+import MemoryModesPackage::*;
 
 module Memory_TB;
 

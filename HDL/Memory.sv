@@ -1,5 +1,5 @@
 
-package MemoryModes;
+package MemoryModesPackage;
 // Modes for "readMode" and "writeMode"
 typedef enum logic [2:0] {
 	NONE = 3'h0,
@@ -8,7 +8,7 @@ typedef enum logic [2:0] {
 	WORD = 3'h3,
 	WORDLEFT = 3'h4,
 	WORDRIGHT = 3'h5
-} readWriteModes;
+} ReadWriteModes;
 endpackage
 
 import MemoryModes::*;

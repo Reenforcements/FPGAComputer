@@ -672,6 +672,11 @@ pcAddress = 32'd3;
 assert(pcDataOutput == 32'd3) else $error("PC output didn't match %h", pcDataOutput);
 #9;
 
+pcAddress = 32'd4;
+#1;
+assert(pcDataOutput == 32'd4) else $error("PC output didn't match %h", pcDataOutput);
+#9;
+
 
 #10000;
 end

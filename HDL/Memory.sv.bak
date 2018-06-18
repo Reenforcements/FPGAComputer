@@ -1,5 +1,5 @@
 
-package MemoryModes;
+package MemoryModesPackage;
 // Modes for "readMode" and "writeMode"
 typedef enum logic [2:0] {
 	NONE = 3'h0,
@@ -186,11 +186,11 @@ always_comb begin
 			//  hit the word boundary.
 			if (baseAddress[1:0] < 2'd3) begin
 				writeBytes[baseAddress[1:0] + 2'd1] = data[15:8];
-				writeMask = {1'b1, 1'b0, 1'b0, 1'b0};
+				writeMask = {1'b1, 1'b1, 1'b0, 1'b0};
 			end
 			if (baseAddress[1:0] < 2'd2) begin
 				writeBytes[baseAddress[1:0] + 2'd2] = data[23:16];
-				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
+				writeMask = {1'b1, 1'b1, 1'b1, 1'b0};
 			end
 			if (baseAddress[1:0] < 2'd1) begin
 				writeBytes[baseAddress[1:0] + 2'd3] = data[31:24];
