@@ -1,3 +1,19 @@
+### 6/18/18
+
+Branch testbench done. Starting on PC module. After that, I'll do the PC testbench. Following that, I'll do the control lines module and accompanying testbench. Then I can create the main file to tie everything together and pipeline it. After all that's done, I'll try running some code!
+
+PC + PC testbench done. Starting on the control line module.
+
+### 6/17/18
+
+The diagram is updated and I implemented the Branch module. I'm currently writing the testbench.
+
+### 6/15/18
+
+Had a meeting with Dr. Rajasekhar and Dr. Majumder this morning. Progress is more than satisfactory. I'm actually ahead of the planned schedule.
+
+I finished the memory module with accompanying tests. I just created the files for the Branch module. I realized earlier I forgot to add control lines for what condition(s) to branch on. I'll update the ComponentsAndAssembly.md and online diagram.
+
 ### 6/14/18
 
 I found a possible way of running arbitrary machine code from a C/C++ program. It involves making a pointer to data and then calling it like a function. If I can trick the compiler in this way, I can make my own assembly instructions for graphics or even GPIO. More info [here.](https://cboard.cprogramming.com/c-programming/135212-inline-asm-machine-code-non-mnemonic-input.html)
