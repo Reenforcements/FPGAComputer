@@ -360,6 +360,56 @@ R32
 R11
 R12
 n@memory@modes
+vPC
+R0
+!s110 1529337007
+!i10b 1
+!s100 E?bEJ2YTEmgc]LI2Pd0F42
+I7nb@EC4lc3UV:fbh[2dPI1
+R2
+!s105 PC_sv_unit
+S1
+R3
+w1529337004
+8/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
+F/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1529337007.000000
+!s107 /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv|
+!i113 1
+R11
+R12
+n@p@c
+vPC_TB
+R0
+!s110 1529336967
+!i10b 1
+!s100 i;191j1CecC0a>aOFBJV_0
+IZcKJS1;nQn=?TOXjdO`:W2
+R2
+!s105 PC_TB_sv_unit
+S1
+R3
+w1529336966
+8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
+F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1529336967.000000
+!s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv|
+!i113 1
+R11
+R12
+n@p@c_@t@b
 vRegisterFile
 R0
 Z38 !s110 1529330110

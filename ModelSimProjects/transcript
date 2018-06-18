@@ -316,3 +316,380 @@ restart -f
 # Loading work.Branch_TB
 run 2000
 # Done.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.PC_TB
+# End time: 11:36:16 on Jun 18,2018, Elapsed time: 1:55:08
+# Errors: 5, Warnings: 0
+# vsim work.PC_TB 
+# Start time: 11:36:16 on Jun 18,2018
+# Loading sv_std.std
+# Loading work.PC_TB
+# Loading work.PC
+add wave sim:/PC_TB/*
+restart -f
+run 100
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 5 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 5 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 10 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 10 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 15 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 15 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 100
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 5 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 5 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 10 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 10 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 15 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 15 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: xxxxxxxx
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 100
+# ** Error: PC is incorrect: 00400004
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400004
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400008
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400008
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040000c
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040000c
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400010
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400010
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400014
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400014
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400018
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400018
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040001c
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040001c
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400020
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400020
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400024
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# Compile of PC_TB.sv was successful.
+run 100
+# ** Error: PC is incorrect: 00400024
+#    Time: 105 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400028
+#    Time: 110 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400028
+#    Time: 115 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040002c
+#    Time: 120 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040002c
+#    Time: 125 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400030
+#    Time: 130 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400030
+#    Time: 135 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400034
+#    Time: 140 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400034
+#    Time: 145 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400038
+#    Time: 150 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400038
+#    Time: 155 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040003c
+#    Time: 160 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040003c
+#    Time: 165 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400040
+#    Time: 170 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400040
+#    Time: 175 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400044
+#    Time: 180 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400044
+#    Time: 185 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400048
+#    Time: 190 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400048
+#    Time: 195 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040004c
+#    Time: 200 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: PC is incorrect: 00400004
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400004
+#    Time: 25 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400008
+#    Time: 30 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400008
+#    Time: 35 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040000c
+#    Time: 40 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040000c
+#    Time: 45 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400010
+#    Time: 50 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400010
+#    Time: 55 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400014
+#    Time: 60 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400014
+#    Time: 65 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400018
+#    Time: 70 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400018
+#    Time: 75 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040001c
+#    Time: 80 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 0040001c
+#    Time: 85 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400020
+#    Time: 90 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400020
+#    Time: 95 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# ** Error: PC is incorrect: 00400024
+#    Time: 100 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+restart -f
+run 20
+# ** Error: PC is incorrect: 00400004
+#    Time: 20 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 41
+# Compile of PC_TB.sv failed with 1 errors.
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 20
+# ** Error: PC is incorrect: 00400004
+#    Time: 16 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+restart -f
+run 10
+# Compile of PC_TB.sv failed with 2 errors.
+# Compile of PC_TB.sv failed with 2 errors.
+restart -f
+# Compile of PC_TB.sv was successful.
+run 10
+restart -f
+# Loading work.PC_TB
+run 100
+# ** Error: PC is incorrect: 0040000c
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 71
+# ** Error: PC is incorrect: 00400010
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 80
+# ** Error: PC is incorrect: 00400014
+#    Time: 56 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 42
+# ** Error: PC is incorrect: 00400018
+#    Time: 66 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 51
+# ** Error: PC is incorrect: 0040001c
+#    Time: 76 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 61
+# ** Error: PC is incorrect: 00400020
+#    Time: 86 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 71
+# ** Error: PC is incorrect: 00400024
+#    Time: 96 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 80
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 1000
+# ** Error: PC is incorrect: 0040000c
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 71
+# ** Error: PC is incorrect: 00400010
+#    Time: 46 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 80
+# Compile of PC.sv failed with 1 errors.
+# Compile of PC.sv was successful.
+restart -f
+# Loading work.PC
+run 1000
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+restart -f
+run 1000
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+restart -f
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+run 200
+restart -f
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+# Compile of PC_TB.sv was successful.
+restart -f
+# Loading work.PC_TB
+run 200
+# ** Error: PC is incorrect: 00400008
+#    Time: 36 ps  Scope: PC_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv Line: 72
+# Compile of PC.sv was successful.
+run 200
+restart -f
+# Loading work.PC
+run 200
+restart -f
+run 200
