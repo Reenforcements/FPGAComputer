@@ -1,8 +1,35 @@
+### 6/21/18
+
+It seems like this MIPS compiler doesn't recognize the 26-bit jump command. I think it treats it as BEQ with two zeros. All the other instruction OPCodes seem to be correct.
+
+### 6/20/18
+
+The documentation for j says its 0x2. The compiler turns J into b and has an OPCode of 0x4. BEQ has an opcode of 0x4 too.
+
+### 6/19/18
+
+I think the "Weird instructions" may just be random data that objdump tried to interpret as instructions. Its unclear to me though.
+
 ### 6/18/18
 
 Branch testbench done. Starting on PC module. After that, I'll do the PC testbench. Following that, I'll do the control lines module and accompanying testbench. Then I can create the main file to tie everything together and pipeline it. After all that's done, I'll try running some code!
 
 PC + PC testbench done. Starting on the control line module.
+
+Interesting. All the ALU operations that don't use immediates all have the OP code of 0. The immediate instructions all have to have different OP codes because there's no room for funct or shamt.
+
+swc1 comes out to be 0x39=57
+The document says its 0x21=33
+
+lwc1 comes out to be 0x31=49
+The document says its 0x31=49
+
+I think SWC1 is a typo. I wonder what else is a typo in that document... I might need to go through and verify all the codes in the document with compiler output. I'm going to write a python program that uses all the assembly commands so I can get the machine language output and verify all the OP codes.
+
+Python program is going well.
+
+The Python program works. I'm noticing a bunch of weird instructions that must be from extensions. I'm trying to figure out how to get the compiler to stop producing them in the code. There's a lot of flag options for the MIPS GCC.
+
 
 ### 6/17/18
 

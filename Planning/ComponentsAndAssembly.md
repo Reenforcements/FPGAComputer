@@ -26,7 +26,7 @@
 	- 1 = write nextPCAddress (for branch/jump link)
 	- 2 = write data output from memory
 	- 3 = write result from ALU
-- mode [3:0] (Branch module)
+- mode[3:0] -- Branch module
 	- NONE = 0
 	- BEQ = 1
 	- BGEZ = 2
