@@ -53,7 +53,6 @@ always_comb begin
 		end
 		BEQ: begin
 			branchCompareResult = resultZero && !resultNegative && !resultPositive;
-			$display("BEQ: %b", branchCompareResult);
 		end
 		BGEZ: begin
 			branchCompareResult = (resultZero || resultPositive) && !resultNegative;

@@ -11,7 +11,7 @@ BC1T = 4'h7,
 BC1F = 4'h8,
 J = 4'h9,
 JR = 4'hA
-} BranchMode;
+} BranchModes;
 endpackage
 
 import BranchModesPackage::*;

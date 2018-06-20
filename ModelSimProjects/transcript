@@ -919,3 +919,201 @@ restart -f
 run 100
 restart -f
 run 100
+quit -sim
+# End time: 12:58:07 on Jun 18,2018, Elapsed time: 1:05:25
+# Errors: 50, Warnings: 0
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 5 errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of Control.sv failed with 4 errors.
+# Compile of Control.sv failed with 6 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 6 errors.
+# 14 compiles, 1 failed with 6 errors.
+# Compile of Control.sv failed with 5 errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 5 errors.
+# 14 compiles, 1 failed with 5 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 6 errors.
+# 14 compiles, 1 failed with 6 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 5 errors.
+# 14 compiles, 1 failed with 5 errors.
+# Compile of Memory_TB.sv was successful.
+# Compile of Control.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of ALU.sv was successful.
+# Compile of Control.sv failed with 4 errors.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of Control.sv failed with 4 errors.
+# Compile of Memory.sv was successful.
+# Compile of Control.sv failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 3 errors.
+# 14 compiles, 1 failed with 3 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of Control.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 3 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
