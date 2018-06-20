@@ -75,7 +75,7 @@ Top level modules:
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package ALUFunctCodesPackage
 -- Compiling package ALU_sv_unit
--- Importing package ALUFunctCodes
+-- Importing package ALUFunctCodesPackage
 -- Compiling module ALU
 
 Top level modules:

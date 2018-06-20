@@ -1117,3 +1117,65 @@ quit -sim
 # Compile of Control.sv was successful.
 # Compile of Control.sv failed with 1 errors.
 # Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Control.sv was successful.
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv failed with 2 errors.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of Control.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv failed with 4 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 2 errors.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.

@@ -1,6 +1,7 @@
-package ALUFunctCodes;
+package ALUFunctCodesPackage;
 // Make sure Quartus is set to user encoded.
 typedef enum logic [5:0] {
+
 	ADD = 6'h20,
 	ADDU = 6'h21,
 	SUB = 6'h22,

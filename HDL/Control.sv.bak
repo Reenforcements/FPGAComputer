@@ -36,7 +36,7 @@ typedef enum logic [5:0] {
 	//  OP codes because there's no room to specify the function
 	//  or shift amount due to the size of the immediate.
 	ADDI = 6'h8,
-	ADDUI = 6'h9,
+	ADDIU = 6'h9,
 
 	ANDI = 6'hC,
 	ORI = 6'hD,
@@ -47,13 +47,17 @@ typedef enum logic [5:0] {
 	SLTI = 6'hA,
 	SLTIU = 6'hB,
 
-	BC1T_BC1F = 6'h11,
+	// BC1T, BC1F, MFC1, MTC1 are all 0x11
+	BC1T_BC1F_MFC1_MTC1 = 6'h11,
 	BEQ = 6'h4,
 	BGEZ_BGEZAL_BLTZAL_BLTZ = 6'h1,
 	BGTZ = 6'h7,
 	BLEZ = 6'h6,
 	BNE = 6'h5,
 	
+	// The documentation for j says its 0x2
+	// The compiler turns J into b and has an OPCode of 0x4,
+	// which is the same OPCode as BEQ.
 	J = 6'h2,
 	JAL = 6'h3,
 	
@@ -69,16 +73,12 @@ typedef enum logic [5:0] {
 	SB = 6'h28,
 	SH = 6'h29,
 	SW = 6'h2B,
-	SWC1 = 6'h21,
+	SWC1 = 6'h39,
 	SWL = 6'h2A,
 	SWR = 6'h2E,
-	
-	MFC1_MTC1 = 6'h11,
 
 	// Return from exception
-	RFE = 6'h10;
-	
-	
+	RFE = 6'h10
 } OPCode;
 endpackage
 
@@ -131,12 +131,25 @@ output logic unsignedLoad,
 output logic [3:0]branchMode
 );
 
-logic [5:0]opCode;
+logic [5:0]opCodeIn;
+logic [4:0]rsIn;
+logic [4:0]rtIn;
+logic [4:0]rdIn;
+logic [4:0]shamtIn;
+logic [5:0]functIn;
 always_comb begin
-	opCode = instructionData[31:26];
-	unique case (opCode)
+	opCodeIn = instructionData[31:26];
+	rsIn = instructionData[25:21];
+	rtIn = instructionData[20:16];
+	rdIn = instructionData[15:11];
+	shamtIn = instructionData[10:6];
+	functIn = instructionData[5:0];
 
-		// Default is also NOP
+	// Change each control line accordingly
+
+	// registerRead
+	unique case (opCodeIn)
+		
 		default: begin
 			registerRead = 0;
 			registerWrite = 0;
@@ -153,6 +166,81 @@ always_comb begin
 
 			branchMode = BranchModesPackage::NONE;
 		end
+
+		// NON_IMMEDIATE_ALU includes NOP
+		// "not_immediate_alu" is a block label and just helps
+		//   avoid coding errors plus increases readability.
+		NON_IMMEDIATE_ALU: begin : not_immediate_alu
+			/*
+			NON_IMMEDIATE_ALU takes care of all these instructions:
+			nop (ALU funct = 0x0)
+    		mfhi (ALU funct = 0x10)
+    		mthi (ALU funct = 0x11)
+    		mflo (ALU funct = 0x12)
+    		mtlo (ALU funct = 0x13)
+    		mult (ALU funct = 0x18)
+    		multu (ALU funct = 0x19)
+    		div (ALU funct = 0x1a)
+    		divu (ALU funct = 0x1b)
+    		add (ALU funct = 0x20)
+    		addu (ALU funct = 0x21)
+    		sub (ALU funct = 0x22)
+    		subu (ALU funct = 0x23)
+    		and (ALU funct = 0x24)
+    		move (ALU funct = 0x25)
+    		or (ALU funct = 0x25)
+    		xor (ALU funct = 0x26)
+    		nor (ALU funct = 0x27)
+    		slt (ALU funct = 0x2a)
+    		sltu (ALU funct = 0x2b)
+    		sllv (ALU funct = 0x4)
+    		srlv (ALU funct = 0x6)
+    		srav (ALU funct = 0x7)
+    		jr (ALU funct = 0x8)
+    		jalr (ALU funct = 0x9)
+    		break (ALU funct = 0xd)
+
+			*/
+
+			// We're always reading/writing, but we can
+			// use $0 to make the write inconsequential
+			registerRead = 1;
+			registerWrite = 1;
+			
+			if (functIn == ALU_JALR) begin
+				// Write to return address if we're linking
+				registerWriteAddressMode = ControlLinePackage::RA;
+				registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
+			end
+			else begin
+				// Write to our regular destination otherwise
+				registerWriteAddressMode = ControlLinePackage::RD;
+				registerWriteSource = ControlLinePackage::RESULT;
+			end
+			
+
+			funct = functIn;
+			shamt = shamtIn;
+
+			// Never use immediates for these
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			unique case (functIn)
+				ALUFunctCodesPackage::ALU_JR,
+				ALUFunctCodesPackage::ALU_JALR: begin
+					branchMode = BranchModesPackage::JR;
+				end
+				default: begin
+					branchMode = BranchModesPackage::NONE;
+				end
+			endcase
+		// "not_immediate_alu" is a block label and just helps
+		//   avoid coding errors plus increases readability.
+		end : not_immediate_alu
 
 		
 	endcase
