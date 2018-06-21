@@ -1210,3 +1210,5 @@ quit -sim
 # Compile of Control.sv was successful.
 # Compile of Control.sv was successful.
 # Compile of Control.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of Control.sv was successful.

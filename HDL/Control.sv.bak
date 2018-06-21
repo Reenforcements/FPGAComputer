@@ -216,7 +216,7 @@ always_comb begin
 				registerWriteSource = ControlLinePackage::RESULT;
 			end
 			// Whether or not we're linking, both use RD as the write register.
-			//  JALR just has 31 hard coded into the instruction by default by the assembler.
+			//  JALR just has 31 put into the instruction by default by the assembler.
 			registerWriteAddressMode = ControlLinePackage::RD;
 			
 
@@ -252,7 +252,21 @@ always_comb begin
 			registerWriteAddressMode = ControlLinePackage::RT;
 			registerWriteSource = ControlLinePackage::RESULT;
 
-			funct = functIn;
+			unique case (opCodeIn)
+				ADDI: begin
+					funct = ALUFunctCodesPackage::ADD;
+				end
+				ANDI: begin
+					funct = ALUFunctCodesPackage::AND;
+				end
+				ORI: begin
+					funct = ALUFunctCodesPackage::OR;
+				end
+				XORI: begin
+					funct = ALUFunctCodesPackage::XOR;
+				end
+				default: begin end
+			endcase
 			shamt = 5'd0;
 			useImmediate = 1;
 
@@ -360,6 +374,7 @@ always_comb begin
 			end
 			// These are totally dependent on the value for registerWrite so
 			//  we don't have to put them in the if statement.
+			// "ControlLinePackage::RA" is just $ra (register 31.)
 			registerWriteAddressMode = ControlLinePackage::RA;
 			registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
 
@@ -371,7 +386,8 @@ always_comb begin
 			writeMode = MemoryModesPackage::NONE;
 			unsignedLoad = 0;
 
-			// These distinguish using rt
+			// These instructions use rt to hold the branch mode
+			//  and branch module is coded to have the same values that rt could have.
 			branchMode = rtIn;
 		end
 
@@ -432,6 +448,7 @@ always_comb begin
 			registerWriteAddressMode = ControlLinePackage::RT;
 			registerWriteSource = ControlLinePackage::NONE;
 
+			// The function doesn't matter here since we're not writing anything.
 			funct = ALUFunctCodesPackage::ADD;
 			shamt = 5'd0;
 			useImmediate = 0;
@@ -446,6 +463,9 @@ always_comb begin
 		JAL: begin
 			registerRead = 0;
 			registerWrite = 1;
+			// Hardcode $ra for the write register since there's no room
+			//  in the instruction to specify the register to write to.
+			//  (Some of these instructions default to $ra but can be changed)
 			registerWriteAddressMode = ControlLinePackage::RA;
 			registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
 
@@ -512,11 +532,11 @@ always_comb begin
 			branchMode = BranchModesPackage::NONE;
 		end
 
-			SB,
-			SH,
-			SW,
-			SWL,
-			SWR: begin
+		SB,
+		SH,
+		SW,
+		SWL,
+		SWR: begin
 			registerRead = 1;
 			registerWrite = 0;
 			registerWriteAddressMode = ControlLinePackage::RT;
