@@ -49,7 +49,7 @@ with file("results.txt", "w") as f:
 		print(g)
 		f.write(g + "\n");
 		for i in sorted(allCommands[g], key=lambda com: com.funct):
-			toWrite = "    {} (ALU funct = {})".format(i.asm, i.funct)
+			toWrite = "    {} (ALU funct = {})\n".format(i.asm, i.funct)
 			print(toWrite)
 			f.write(toWrite);
 

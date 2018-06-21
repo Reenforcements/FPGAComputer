@@ -35,13 +35,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	PC
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RegisterFile_TB
-
-Top level modules:
-	RegisterFile_TB
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package BranchModesPackage
@@ -51,6 +44,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Branch
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegisterFile_TB
+
+Top level modules:
+	RegisterFile_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Branch_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Branch_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

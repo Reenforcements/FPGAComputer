@@ -207,16 +207,17 @@ always_comb begin
 			registerRead = 1;
 			registerWrite = 1;
 			
-			if (functIn == ALU_JALR) begin
+			if (functIn == ALUFunctCodesPackage::ALU_JALR) begin
 				// Write to return address if we're linking
-				registerWriteAddressMode = ControlLinePackage::RA;
 				registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
 			end
 			else begin
 				// Write to our regular destination otherwise
-				registerWriteAddressMode = ControlLinePackage::RD;
 				registerWriteSource = ControlLinePackage::RESULT;
 			end
+			// Whether or not we're linking, both use RD as the write register.
+			//  JALR just has 31 hard coded into the instruction by default by the assembler.
+			registerWriteAddressMode = ControlLinePackage::RD;
 			
 
 			funct = functIn;
@@ -242,7 +243,323 @@ always_comb begin
 		//   avoid coding errors plus increases readability.
 		end : not_immediate_alu
 
-		
+		ADDI,
+		ANDI,
+		ORI,
+		XORI: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::RESULT;
+
+			funct = functIn;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+		ADDIU: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::RESULT;
+
+			funct = ALUFunctCodesPackage::ADD;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+		LUI: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::RESULT;
+
+			// Shift the immediate value 16 left
+			funct = ALUFunctCodesPackage::SLL;
+			shamt = 5'd16;
+			useImmediate = 1;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+		SLTI: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::RESULT;
+
+			funct = ALUFunctCodesPackage::SLT;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+		SLTIU: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::RESULT;
+
+			funct = ALUFunctCodesPackage::SLTU;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+		BEQ: begin
+			registerRead = 1;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::NONE;
+
+			funct = ALUFunctCodesPackage::SUB;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::BEQ;
+		end
+
+		BGEZ_BGEZAL_BLTZAL_BLTZ: begin
+			registerRead = 1;
+			// Only link for BGEZAL and BLTZAL
+			if (rtIn == BranchModesPackage::BGEZAL || rtIn == BranchModesPackage::BLTZAL) begin
+				registerWrite = 1;
+			end
+			else begin
+				registerWrite = 0;
+			end
+			// These are totally dependent on the value for registerWrite so
+			//  we don't have to put them in the if statement.
+			registerWriteAddressMode = ControlLinePackage::RA;
+			registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
+
+			funct = ALUFunctCodesPackage::SUB;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			// These distinguish using rt
+			branchMode = rtIn;
+		end
+
+		BGTZ: begin
+			registerRead = 1;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::NONE;
+
+			funct = ALUFunctCodesPackage::SUB;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::BGTZ;
+		end
+
+		BLEZ: begin
+			registerRead = 1;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::NONE;
+
+			funct = ALUFunctCodesPackage::SUB;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::BLEZ;
+		end
+
+		BNE: begin
+			registerRead = 1;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::NONE;
+
+			funct = ALUFunctCodesPackage::SUB;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::BNE;
+		end
+
+		J: begin
+			registerRead = 0;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::NONE;
+
+			funct = ALUFunctCodesPackage::ADD;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::J;
+		end
+
+		JAL: begin
+			registerRead = 0;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RA;
+			registerWriteSource = ControlLinePackage::NEXT_PC_ADDRESS;
+
+			funct = ALUFunctCodesPackage::ADD;
+			shamt = 5'd0;
+			useImmediate = 0;
+
+			readMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::NONE;
+			unsignedLoad = 0;
+
+			branchMode = BranchModesPackage::J;
+		end
+
+		LB,
+		LBU,
+		LH,
+		LHU,
+		LW,
+		LWL,
+		LWR: begin
+			registerRead = 1;
+			registerWrite = 1;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::DATA_OUTPUT;
+
+			funct = ALUFunctCodesPackage::ADD;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			// Set our read mode
+			unique case (opCodeIn)
+				LB,
+				LBU: begin
+					readMode = MemoryModesPackage::BYTE;
+				end
+				LH,
+				LHU: begin
+					readMode = MemoryModesPackage::HALFWORD;
+				end
+				LW: begin
+					readMode = MemoryModesPackage::WORD;
+				end
+				LWL: begin
+					readMode = MemoryModesPackage::WORDLEFT;
+				end
+				LWR: begin
+					readMode = MemoryModesPackage::WORDRIGHT;
+				end
+				default: begin
+					readMode = MemoryModesPackage::NONE;
+				end
+			endcase
+			
+			writeMode = MemoryModesPackage::NONE;
+
+			if (opCodeIn == LBU || opCodeIn == LHU) begin
+				unsignedLoad = 1;
+			end
+			else begin
+				unsignedLoad = 0;
+			end
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
+			SB,
+			SH,
+			SW,
+			SWL,
+			SWR: begin
+			registerRead = 1;
+			registerWrite = 0;
+			registerWriteAddressMode = ControlLinePackage::RT;
+			registerWriteSource = ControlLinePackage::DATA_OUTPUT;
+
+			funct = ALUFunctCodesPackage::ADD;
+			shamt = 5'd0;
+			useImmediate = 1;
+
+			// Set our read mode
+			unique case (opCodeIn)
+				SB: begin
+					writeMode = MemoryModesPackage::BYTE;
+				end
+				SH: begin
+					writeMode = MemoryModesPackage::HALFWORD;
+				end
+				SW: begin
+					writeMode = MemoryModesPackage::WORD;
+				end
+				SWL: begin
+					writeMode = MemoryModesPackage::WORDLEFT;
+				end
+				SWR: begin
+					writeMode = MemoryModesPackage::WORDRIGHT;
+				end
+				default: begin
+					writeMode = MemoryModesPackage::NONE;
+				end
+			endcase
+			
+			readMode = MemoryModesPackage::NONE;
+
+			if (opCodeIn == LBU || opCodeIn == LHU) begin
+				unsignedLoad = 1;
+			end
+			else begin
+				unsignedLoad = 0;
+			end
+
+			branchMode = BranchModesPackage::NONE;
+		end
+
 	endcase
 end
 

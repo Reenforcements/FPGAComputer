@@ -1,17 +1,30 @@
 package BranchModesPackage;
+// Certain branch commands use rt as their "funct"
 typedef enum logic [3:0] {
-NONE = 4'h0,
-BEQ = 4'h1,
-BGEZ = 4'h2,
-BGTZ = 4'h3,
-BLEZ = 4'h4,
-BLTZ = 4'h5,
+
+// These have specific values
+BGEZ = 4'h1,
+BLTZ = 4'h0,
+
+// These can be anything.
+NONE = 4'h2,
+BEQ = 4'h3,
+BGTZ = 4'h4,
+BLEZ = 4'h5,
 BNE = 4'h6,
 BC1T = 4'h7,
 BC1F = 4'h8,
 J = 4'h9,
 JR = 4'hA
 } BranchModes;
+
+typedef enum logic [4:0] {
+// These are paired with BGEZ and BLTZ above but
+//  they have a "1" in the 16's place
+BGEZAL = 5'h11,
+BLTZAL = 5'h10
+} LinkBranchModes;
+
 endpackage
 
 import BranchModesPackage::*;
