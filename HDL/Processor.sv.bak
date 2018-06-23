@@ -4,6 +4,7 @@ package ProcessorPackage;
 endpackage
 
 import ProcessorPackage::*;
+import ControlLinePackage::*;
 module Processor(
 input logic rst,
 input logic clk,
@@ -205,8 +206,7 @@ Control control(
 	.branchMode(control_branchMode)
 );
 
-// I'm going to try to follow a specific convention with wiring this up.
-//  Connections shall be grouped by what module they're going into.
+
 
 // Get the current instruction from memory.
 assign memory_pcAddress = pc_pcAddress;
@@ -241,15 +241,15 @@ always_comb begin
 end
 
 
+
 // Assign control input.
 assign control_instructionData = instructionData;
+
 
 
 // Assign register file inputs.
 assign registerRead = control_registerRead;
 assign registerWrite = control_registerWrite;
-
-assign registerFile_writeData = memory_dataOut;
 
 assign registerFile_rsAddress = instruction_rsIn;
 assign registerFile_rtAddress = instruction_rtIn;
@@ -269,6 +269,28 @@ always_comb begin
 		default: begin 
 			// Default to zero.
 			registerFile_writeAddress = 5'd0; 
+		end
+	endcase
+end
+
+// Choose our register write data based on registerWriteSource
+always_comb begin
+	unique case (control_registerWriteSource)
+		ControlLinePackage::NONE: begin
+			registerFile_writeData = 32'd0;
+		end
+		ControlLinePackage::NEXT_PC_ADDRESS: begin
+			registerFile_writeData = nextPCAddress;
+		end
+		ControlLinePackage::DATA_OUTPUT: begin
+			registerFile_writeData = memory_dataOut;
+		end
+
+		ControlLinePackage::RESULT: begin
+			registerFile_writeData = alu_result;
+		end
+		default: begin
+			registerFile_writeData = 32'd0;
 		end
 	endcase
 end
@@ -308,6 +330,7 @@ always begin
 		memory_unsignedLoad = control_unsignedLoad;
 	end
 end
+assign externalDataOutput = memory_dataOut;
 
 // Assign branch inputs
 assign branch_jumpAddress = instruction_jumpAddress;
@@ -326,7 +349,6 @@ assign branch_mode = control_branchMode;
 
 
 
-
 /*
 logic [31:0]g;
 Register 
@@ -336,15 +358,6 @@ r(
 .rst(rst), 
 .in(32'd0), 
 .out(g));*/
-
-always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-
-	end
-	else begin
-
-	end
-end
 
 
 endmodule
