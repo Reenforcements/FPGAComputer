@@ -2,7 +2,6 @@ module PC(
 input logic clk,
 input logic rst,
 
-input logic count,
 input logic shouldUseNewPC,
 input logic [31:0]newPC,
 
@@ -46,7 +45,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		end
 		else begin
 			// We're not counting, use the previous value.
-			currentPC <= currentPC;
+			currentPC <= oldPC;
 		end
 	end
 end

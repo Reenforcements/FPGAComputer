@@ -2,7 +2,6 @@ module PC(
 input logic clk,
 input logic rst,
 
-input logic count,
 input logic shouldUseNewPC,
 input logic [31:0]newPC,
 
@@ -39,15 +38,8 @@ always_ff @ (posedge clk or negedge rst) begin
 		currentPC <= 32'h400000;
 	end
 	else begin
-		// Update to next PC on the clock.
-		if (count == 1'b1) begin
-			// We should use the next one because we're counting.
-			currentPC <= oldPC + 32'h4;
-		end
-		else begin
-			// We're not counting, use the previous value.
-			currentPC <= oldPC;
-		end
+		// Update to next PC on the clock
+		currentPC <= oldPC + 32'h4;
 	end
 end
 

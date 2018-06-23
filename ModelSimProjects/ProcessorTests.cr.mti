@@ -1,4 +1,12 @@
-/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
+/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package Register_sv_unit
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module RegisterFile
 
@@ -11,6 +19,21 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Testing_TB
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package MIPSInstructionPackage
+-- Compiling package ControlLinePackage
+-- Compiling package Control_sv_unit
+-- Importing package MIPSInstructionPackage
+-- Importing package ControlLinePackage
+-- Importing package ALUFunctCodesPackage
+-- Importing package MemoryModesPackage
+-- Importing package BranchModesPackage
+-- Compiling module Control
+
+Top level modules:
+	Control
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
