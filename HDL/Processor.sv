@@ -38,20 +38,20 @@ end
 
 
 // PC
-logic [31:0]newPC;
+logic [31:0]pc_newPC;
 logic pc_shouldUseNewPC;
 
 logic [31:0]pc_pcAddress;
-logic [31:0]nextPCAddress;
+logic [31:0]pc_nextPCAddress;
 PC pc(
 	.clk(pClk),
 	.rst(rst),
 
-	.newPC(newPC),
+	.newPC(pc_newPC),
 	.shouldUseNewPC(pc_shouldUseNewPC),
 
 	.pcAddress(pc_pcAddress),
-	.nextPCAddress(nextPCAddress)
+	.nextPCAddress(pc_nextPCAddress)
 );
 
 always @ (posedge clk) begin
@@ -59,12 +59,12 @@ $display("Current PC: %d", pc_pcAddress);
 end
 
 // Register File
-logic [4:0]rsAddress;
-logic [4:0]rtAddress;
+logic [4:0]registerFile_rsAddress;
+logic [4:0]registerFile_rtAddress;
 logic [4:0]registerFile_writeAddress;
 
-logic registerRead;
-logic registerWrite;
+logic registerFile_registerRead;
+logic registerFile_registerWrite;
 
 logic [31:0]registerFile_writeData;
 logic [31:0]registerFile_readValue0;
@@ -74,12 +74,12 @@ RegisterFile registerFile(
 	.clk(pClk),
 	.rst(rst),
 
-	.rsAddress(rsAddress),
-	.rtAddress(rtAddress),
+	.rsAddress(registerFile_rsAddress),
+	.rtAddress(registerFile_rtAddress),
 	.writeAddress(registerFile_writeAddress),
 
-	.registerRead(registerRead),
-	.registerWrite(registerWrite),
+	.registerRead(registerFile_registerRead),
+	.registerWrite(registerFile_registerWrite),
 	
 	.writeData(registerFile_writeData),
 	.readValue0(registerFile_readValue0),
@@ -90,8 +90,8 @@ RegisterFile registerFile(
 logic [31:0]alu_dataIn0;
 logic [31:0]alu_dataIn1;
 
-logic [5:0]funct;
-logic [4:0]shamt;
+logic [5:0]alu_funct;
+logic [4:0]alu_shamt;
 
 logic [31:0]alu_result;
 logic alu_outputZero;
@@ -105,8 +105,8 @@ ALU alu(
 
 	.dataIn0(alu_dataIn0),
 	.dataIn1(alu_dataIn1),
-	.funct(funct),
-	.shamt(shamt),
+	.funct(alu_funct),
+	.shamt(alu_shamt),
 
 	.result(alu_result),
 	.outputZero(alu_outputZero),
@@ -118,16 +118,16 @@ ALU alu(
 logic [3:0]branch_mode;
 
 logic branch_shouldUseNewPC;
-logic [31:0]jumpRegisterAddress;
-logic [25:0]jumpAddress;
+logic [31:0]branch_jumpRegisterAddress;
+logic [25:0]branch_jumpAddress;
 
 logic branch_resultZero;
 logic branch_resultPositive;
 logic branch_resultNegative;
 
 logic [31:0]branch_pcAddress;
-logic [15:0]branchAddressOffset;
-logic [31:0]branchTo;
+logic [15:0]branch_branchAddressOffset;
+logic [31:0]branch_branchTo;
 
 Branch branch(
 	.clk(pClk),
@@ -135,16 +135,16 @@ Branch branch(
 	
 	.shouldUseNewPC(branch_shouldUseNewPC),
 	.mode(branch_mode),
-	.jumpRegisterAddress(jumpRegisterAddress),
-	.jumpAddress(jumpAddress),
+	.jumpRegisterAddress(branch_jumpRegisterAddress),
+	.jumpAddress(branch_jumpAddress),
 
 	.resultZero(branch_resultZero),
 	.resultPositive(branch_resultPositive),
 	.resultNegative(branch_resultNegative),
 
 	.pcAddress(branch_pcAddress),
-	.branchAddressOffset(branchAddressOffset),
-	.branchTo(branchTo)
+	.branchAddressOffset(branch_branchAddressOffset),
+	.branchTo(branch_branchTo)
 );
 
 // Memory
@@ -222,12 +222,16 @@ Control control(
 
 
 // Get the current instruction from memory.
-assign memory_pcAddress = pc_pcAddress;
 logic [31:0]instructionData;
-assign instructionData = memory_pcData;
+always_comb begin
+	memory_pcAddress = pc_pcAddress;
+ 	instructionData = memory_pcData;
+end
+
 always @ (posedge clk) begin
 	$display("Current instruction: %b", instructionData);
 end
+
 // Split up the instruction
 logic [5:0]instruction_opCode;
 logic [4:0]instruction_rsIn;
@@ -258,20 +262,19 @@ end
 
 
 
-// Assign control input.
-assign control_instructionData = instructionData;
-
-
-
-// Assign register file inputs.
-assign registerRead = control_registerRead;
-assign registerWrite = control_registerWrite;
-
-assign registerFile_rsAddress = instruction_rsIn;
-assign registerFile_rtAddress = instruction_rtIn;
-
-// Choose our register write address based on the address mode.
 always_comb begin
+
+	// Assign control input.
+	control_instructionData = instructionData;
+
+	// Assign register file inputs.
+	registerFile_registerRead = control_registerRead;
+	registerFile_registerWrite = control_registerWrite;
+
+	registerFile_rsAddress = instruction_rsIn;
+	registerFile_rtAddress = instruction_rtIn;
+
+	// Choose our register write address based on the address mode.
 	unique case (control_registerWriteAddressMode)
 		ControlLinePackage::RD: begin
 			registerFile_writeAddress = instruction_rdIn;
@@ -296,7 +299,7 @@ always_comb begin
 			registerFile_writeData = 32'd0;
 		end
 		ControlLinePackage::NEXT_PC_ADDRESS: begin
-			registerFile_writeData = nextPCAddress;
+			registerFile_writeData = pc_nextPCAddress;
 		end
 		ControlLinePackage::DATA_OUTPUT: begin
 			registerFile_writeData = memory_dataOut;
@@ -312,11 +315,14 @@ always_comb begin
 end
 
 // Assign ALU inputs
-assign funct = control_funct;
-assign shamt = control_shamt;
-
-assign alu_dataIn0 = registerFile_readValue0;
 always_comb begin
+	alu_funct = control_funct;
+	alu_shamt = control_shamt;
+end
+
+always_comb begin
+	alu_dataIn0 = registerFile_readValue0;
+
 	if (control_useImmediate == 1'b1) begin
 		alu_dataIn1 = instruction_immediateSignExtended;
 	end 
@@ -352,21 +358,22 @@ always_comb begin
 end
 
 // Assign branch inputs
-assign jumpAddress = instruction_jumpAddress;
-assign branch_jumpRegisterAddress = alu_result;
+always_comb begin
+	branch_jumpAddress = instruction_jumpAddress;
+	branch_jumpRegisterAddress = alu_result;
 
-assign branch_pcAddress = pc_pcAddress;
-assign branchAddressOffset = instruction_immediate;
+	branch_pcAddress = pc_pcAddress;
+	branch_branchAddressOffset = instruction_immediate;
 
-assign branch_resultZero = alu_outputZero;
-assign branch_resultNegative = alu_outputNegative;
-assign branch_resultPositive = alu_outputPositive;
+	branch_resultZero = alu_outputZero;
+	branch_resultNegative = alu_outputNegative;
+	branch_resultPositive = alu_outputPositive;
 
-assign branch_mode = control_branchMode;
+	branch_mode = control_branchMode;
 
-assign newPC = branchTo;
-assign pc_shouldUseNewPC = branch_shouldUseNewPC;
-
+	pc_newPC = branch_branchTo;
+	pc_shouldUseNewPC = branch_shouldUseNewPC;
+end
 
 /*
 logic [31:0]g;
