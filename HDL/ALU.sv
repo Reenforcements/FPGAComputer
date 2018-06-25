@@ -64,7 +64,7 @@ logic [31:0]lo;
 logic [31:0]hi;
 
 always_ff @(posedge clk or negedge rst) begin
-	if (rst == 1'b1) begin
+	if (rst == 1'b0) begin
 		
 	end
 	else

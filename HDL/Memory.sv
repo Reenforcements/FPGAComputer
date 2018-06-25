@@ -211,7 +211,7 @@ always_comb begin
 end
 
 always_ff @(posedge clk or negedge rst) begin
-	if (rst == 1'b1) begin
+	if (rst == 1'b0) begin
 		
 	end
 	else begin
@@ -257,7 +257,12 @@ end
 
 // Output next instruction
 always_comb begin
-	pcDataOutput = memory[pcAddress[15:0]];
+	pcDataOutput = { 
+					memory[pcAddress[15:0] + 16'd3], 
+					memory[pcAddress[15:0] + 16'd2],
+					memory[pcAddress[15:0] + 16'd1],
+					memory[pcAddress[15:0]]
+					};
 end
 
 endmodule

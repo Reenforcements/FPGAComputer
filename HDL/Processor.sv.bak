@@ -18,14 +18,15 @@ input logic externalMemoryControl,
 input logic [31:0]externalAddress,
 input logic [31:0]externalData,
 input logic [2:0]externalReadMode,
-input logic [2:0]externalWriteMode
+input logic [2:0]externalWriteMode,
+output logic [31:0]externalDataOut
 );
 
 // pClk stands for pausable clock.
 // We may want to be able to "pause" the processor at times.
 logic pClk;
 always_ff @ (posedge clk or negedge clk) begin
-	if (pause == 1'b0) begin
+	if (pause == 1'b1) begin
 		// Maintain current clock state
 		pClk <= pClk;
 	end
@@ -53,6 +54,10 @@ PC pc(
 	.nextPCAddress(nextPCAddress)
 );
 
+always @ (posedge clk) begin
+$display("Current PC: %d", pc_pcAddress);
+end
+
 // Register File
 logic [4:0]rsAddress;
 logic [4:0]rtAddress;
@@ -71,6 +76,7 @@ RegisterFile registerFile(
 
 	.rsAddress(rsAddress),
 	.rtAddress(rtAddress),
+	.writeAddress(registerFile_writeAddress),
 
 	.registerRead(registerRead),
 	.registerWrite(registerWrite),
@@ -115,9 +121,9 @@ logic branch_shouldUseNewPC;
 logic [31:0]jumpRegisterAddress;
 logic [25:0]jumpAddress;
 
-logic branch_outputZero;
-logic branch_outputPositive;
-logic branch_outputNegative;
+logic branch_resultZero;
+logic branch_resultPositive;
+logic branch_resultNegative;
 
 logic [31:0]branch_pcAddress;
 logic [15:0]branchAddressOffset;
@@ -127,19 +133,26 @@ Branch branch(
 	.clk(pClk),
 	.rst(rst),
 	
-	.shouldUSeNewPC(branch_shouldUseNewPC),
+	.shouldUseNewPC(branch_shouldUseNewPC),
 	.mode(branch_mode),
 	.jumpRegisterAddress(jumpRegisterAddress),
 	.jumpAddress(jumpAddress),
-	.outputZero(branch_outputZero),
-	.outputPositive(branch_outputPositive),
-	.outputNegative(branch_outputNegative),
+
+	.resultZero(branch_resultZero),
+	.resultPositive(branch_resultPositive),
+	.resultNegative(branch_resultNegative),
+
 	.pcAddress(branch_pcAddress),
 	.branchAddressOffset(branchAddressOffset),
 	.branchTo(branchTo)
 );
 
 // Memory
+
+// The memory has a separate clock because we might want
+//  to use the memory externally while the processor is running.
+logic memory_clk;
+
 logic [31:0]memory_address;
 logic [31:0]memory_dataIn;
 logic [2:0]memory_writeMode;
@@ -151,7 +164,7 @@ logic memory_unsignedLoad;
 logic [31:0]memory_pcAddress;
 logic [31:0]memory_pcData;
 Memory mem(
-	.clk(pClk), 
+	.clk(memory_clk), 
 	.rst(rst),
 
 	.address(memory_address),
@@ -212,6 +225,9 @@ Control control(
 assign memory_pcAddress = pc_pcAddress;
 logic [31:0]instructionData;
 assign instructionData = memory_pcData;
+always @ (posedge clk) begin
+	$display("Current instruction: %b", instructionData);
+end
 // Split up the instruction
 logic [5:0]instruction_opCode;
 logic [4:0]instruction_rsIn;
@@ -312,41 +328,43 @@ end
 // Assign memory inputs
 
 // External memory reading/writing
-always begin
+always_comb begin
 	if (externalMemoryControl == 1'b1) begin
 		// Force the memory to be controlled externally.
 		// This could be RS232 serial or ModelSim.
+		memory_clk = clk;
 		memory_address = externalAddress;
 		memory_dataIn = externalData;
 		memory_readMode = externalReadMode;
 		memory_writeMode = externalWriteMode;
 		memory_unsignedLoad = 1'b1;
+		externalDataOut = memory_dataOut;
 	end
 	else begin	
+		memory_clk = pClk;
 		memory_address = alu_result;
 		memory_dataIn = registerFile_readValue1;
 		memory_readMode = control_readMode;
 		memory_writeMode = control_writeMode;
 		memory_unsignedLoad = control_unsignedLoad;
+		externalDataOut = 32'd0;
 	end
 end
-assign externalDataOutput = memory_dataOut;
 
 // Assign branch inputs
-assign branch_jumpAddress = instruction_jumpAddress;
+assign jumpAddress = instruction_jumpAddress;
 assign branch_jumpRegisterAddress = alu_result;
 
 assign branch_pcAddress = pc_pcAddress;
 assign branchAddressOffset = instruction_immediate;
 
-assign branch_outputZero = alu_outputZero;
-assign branch_outputNegative = alu_outputNegative;
-assign branch_outputPositive = alu_outputPositive;
+assign branch_resultZero = alu_outputZero;
+assign branch_resultNegative = alu_outputNegative;
+assign branch_resultPositive = alu_outputPositive;
 
 assign branch_mode = control_branchMode;
 
-
-
+assign newPC = branchTo;
 
 
 /*

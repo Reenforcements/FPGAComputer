@@ -1,4 +1,11 @@
-/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
+/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package Register_sv_unit
 -- Compiling module Register
@@ -6,19 +13,23 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Register
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RegisterFile
-
-Top level modules:
-	RegisterFile
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Testing_TB
 
 Top level modules:
 	Testing_TB
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package ProcessorPackage
+-- Compiling package Processor_sv_unit
+-- Importing package ProcessorPackage
+-- Importing package ControlLinePackage
+-- Compiling module Processor
+
+Top level modules:
+	Processor
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

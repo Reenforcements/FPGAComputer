@@ -40,7 +40,7 @@ typedef enum logic [5:0] {
 } FunctCodes;
 endpackage
 
-import ALUFunctCodes::*;
+import ALUFunctCodesPackage::*;
 
 module ALU(
 input logic clk,

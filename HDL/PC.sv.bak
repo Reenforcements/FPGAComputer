@@ -10,7 +10,9 @@ output logic [31:0]pcAddress,
 output logic [31:0]nextPCAddress
 );
 
-logic [31:0]currentPC = 32'h00400000;
+// The reserved addresses end at 0x00400000, but we don't
+//  have that much memory. Let's use 0x400
+logic [31:0]currentPC = 32'h400;
 
 logic [31:0]oldPC;
 always_comb begin
@@ -34,19 +36,12 @@ always_comb begin
 end
 
 always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		currentPC <= 32'h400000;
+	if (rst == 1'b1) begin
+		currentPC <= 32'h400;
 	end
 	else begin
-		// Update to next PC on the clock.
-		if (count == 1'b1) begin
-			// We should use the next one because we're counting.
-			currentPC <= oldPC + 32'h4;
-		end
-		else begin
-			// We're not counting, use the previous value.
-			currentPC <= oldPC;
-		end
+		// Update to next PC on the clock
+		currentPC <= oldPC + 32'h4;
 	end
 end
 

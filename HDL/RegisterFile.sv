@@ -24,7 +24,7 @@ logic [31:0]registers[0:31];
 
 
 always_ff @(posedge clk or negedge rst) begin
-	if(rst == 1'b1) begin:reset
+	if(rst == 1'b0) begin:reset
 		
 	end:reset
 	else

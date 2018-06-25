@@ -39,7 +39,7 @@ count = 1;
 shouldUseNewPC = 0;
 newPC = {32{1'bx}};
 #3;
-assert(pcAddress == 32'h00400000) else $error("PC is incorrect: %h", pcAddress);
+assert(pcAddress == 32'h400) else $error("PC is incorrect: %h", pcAddress);
 assert((nextPCAddress) == (pcAddress + 32'd4)) else $error("PC is incorrect: %h", nextPCAddress);
 #4;
 
@@ -48,7 +48,7 @@ count = 1;
 shouldUseNewPC = 0;
 newPC = {32{1'bx}};
 #3;
-assert(pcAddress == 32'h00400004) else $error("PC is incorrect: %h", pcAddress);
+assert(pcAddress == 32'h404) else $error("PC is incorrect: %h", pcAddress);
 assert((nextPCAddress) == (pcAddress + 32'd4)) else $error("PC is incorrect: %h", nextPCAddress);
 #4;
 
@@ -58,7 +58,7 @@ count = 1;
 shouldUseNewPC = 0;
 newPC = {32{1'bx}};
 #3;
-assert(pcAddress == 32'h00400008) else $error("PC is incorrect: %h", pcAddress);
+assert(pcAddress == 32'h408) else $error("PC is incorrect: %h", pcAddress);
 assert((nextPCAddress) == (pcAddress + 32'd4)) else $error("PC is incorrect: %h", nextPCAddress);
 #4;
 

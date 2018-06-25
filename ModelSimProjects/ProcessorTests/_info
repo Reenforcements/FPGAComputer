@@ -17,17 +17,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 >X^cGK0iSc@E1]of@7_z53
-Io0cRNTYES@CPGQdDX`b]10
+!s100 H_9<Hb;?EJ5UFo_LRfCP`2
+Ik<1j8E1oSH?BeTBKil5F63
 !s105 ALU_sv_unit
 S1
 Z3 d/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects
-Z4 w1529501169
+Z4 w1529941544
 Z5 8/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 Z6 F/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 L0 45
 Z7 OV;L;10.5b;63
-Z8 !s108 1529711417.000000
+Z8 !s108 1529942473.000000
 Z9 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv|
 !i113 1
@@ -61,7 +61,7 @@ R12
 n@a@l@u_sv_unit
 vALU_TB
 R0
-Z13 !s110 1529711417
+Z13 !s110 1529942473
 !i10b 1
 !s100 0WM62Nkd:?b23f^fhf@DR3
 IiNQKGFCASTfoEZ1Jl?h9I3
@@ -146,7 +146,7 @@ IEml7CjWE<VQDzPaNk4L@L0
 !s105 Branch_sv_unit
 S1
 R3
-Z15 w1529584995
+Z15 w1529941552
 Z16 8/home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
 Z17 F/home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
 L0 31
@@ -360,59 +360,59 @@ r1
 !s85 0
 31
 !s108 1529618992.000000
-!s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv|
-Z36 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv|
+Z36 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv|
+Z37 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv|
 !i113 1
 R11
 R12
 n@main
 vMemory
 R0
-Z37 DXx4 work 11 MemoryModes 0 22 8^TB[o2Lo5fdQI_@J<Eio2
-DXx4 work 14 Memory_sv_unit 0 22 fVk4N:Gh]E?7[BEBW:AME2
+Z38 DXx4 work 11 MemoryModes 0 22 8^TB[o2Lo5fdQI_@J<Eio2
+DXx4 work 14 Memory_sv_unit 0 22 `<Tf690B[YVJTY<GmKICm1
 R2
 r1
 !s85 0
 31
 !i10b 1
-!s100 U5HI^[1MZZB1`[[7EiS=Y2
-I1Hf1@T9Vh?gmc:^RaTogi0
+!s100 <`P?@>GSA]oI<QoE[I5G^1
+IiMn[oQhBSV`XHfT9PWFf>3
 !s105 Memory_sv_unit
 S1
 R3
-Z38 w1529343102
-Z39 8/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
-Z40 F/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+Z39 w1529942163
+Z40 8/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+Z41 F/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
 L0 16
 R7
 R8
-Z41 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
-Z42 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
+Z42 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
+Z43 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv|
 !i113 1
 R11
 R12
 n@memory
 XMemory_sv_unit
 R0
-R37
-VfVk4N:Gh]E?7[BEBW:AME2
+R38
+V`<Tf690B[YVJTY<GmKICm1
 r1
 !s85 0
 31
 !i10b 1
-!s100 0n@kPPlLegblZc:IAE]b`3
-IfVk4N:Gh]E?7[BEBW:AME2
+!s100 XCQm3oKOzNa8X<0^3?zQm1
+I`<Tf690B[YVJTY<GmKICm1
 !i103 1
 S1
 R3
-R38
 R39
 R40
+R41
 L0 14
 R7
 R8
-R41
 R42
+R43
 !i113 1
 R11
 R12
@@ -431,14 +431,14 @@ Ig3?ZBG2TRM;8eEc;Nbacb1
 !s105 Memory_TB_sv_unit
 S1
 R3
-Z43 w1529343045
-Z44 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
-Z45 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
+Z44 w1529343045
+Z45 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
+Z46 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 L0 3
 R7
 R8
-Z46 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv|
-Z47 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv|
+Z47 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv|
+Z48 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv|
 !i113 1
 R11
 R12
@@ -456,14 +456,14 @@ I5PI>ZlkakFKk>jX>hFIUj3
 !i103 1
 S1
 R3
-R43
 R44
 R45
+R46
 L0 1
 R7
 R8
-R46
 R47
+R48
 !i113 1
 R11
 R12
@@ -478,16 +478,16 @@ V8^TB[o2Lo5fdQI_@J<Eio2
 S1
 R3
 w1529094222
-R39
 R40
+R41
 L0 2
 R7
 r1
 !s85 0
 31
 !s108 1529342967.000000
-R41
 R42
+R43
 !i113 1
 R11
 R12
@@ -501,17 +501,17 @@ IL?Fj4A4glIKP4d?ZBOmjl0
 VL?Fj4A4glIKP4d?ZBOmjl0
 S1
 R3
-R38
 R39
 R40
+R41
 L0 2
 R7
 r1
 !s85 0
 31
 R8
-R41
 R42
+R43
 !i113 1
 R11
 R12
@@ -544,13 +544,13 @@ vPC
 R0
 R13
 !i10b 1
-!s100 AMihkM_XhGGDEgiR]W;GV2
-I4T`?1<0HzemKF_UVA7dLA0
+!s100 @cAgJ^i5A@m@jU2XkJ6Z]2
+I@Nm1JMZmCY9C>X>i;EdO30
 R2
 !s105 PC_sv_unit
 S1
 R3
-w1529674484
+w1529941512
 8/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
 F/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
 L0 1
@@ -569,13 +569,13 @@ vPC_TB
 R0
 R13
 !i10b 1
-!s100 6l9Y2QCEJ6UzNR7I1FIYg1
-I0U6U:hbmEa1dWFV`0GmB13
+!s100 Rm[_Yi5bRIM]0o;zAHVCB1
+IeUXCS@M1InF<[ng[a5S3W2
 R2
 !s105 PC_TB_sv_unit
 S1
 R3
-w1529674578
+w1529937029
 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
 L0 1
@@ -592,7 +592,7 @@ R12
 n@p@c_@t@b
 vProcessor
 R0
-Z48 DXx4 work 16 ProcessorPackage 0 22 33E]:iLX5=Je0`JknP?<O3
+Z49 DXx4 work 16 ProcessorPackage 0 22 33E]:iLX5=Je0`JknP?<O3
 R26
 DXx4 work 17 Processor_sv_unit 0 22 :iaIH>[3QEFFGgHOcPoni2
 R2
@@ -600,26 +600,26 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 8CoXL:k]0R5DnH`5az^<32
-IN;8>A]Ma4H48NP`?6E6[Y1
+!s100 @oDmY]5cOdOFOM=5oOlba2
+Ion[4_@b^Kc1QVjW3W3fF@3
 R33
 S1
 R3
-Z49 w1529771722
+Z50 w1529942860
 R34
 R35
 L0 8
 R7
-Z50 !s108 1529771770.000000
-Z51 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv|
+Z51 !s108 1529942861.000000
 R36
+R37
 !i113 1
 R11
 R12
 n@processor
 XProcessor_sv_unit
 R0
-R48
+R49
 R26
 V:iaIH>[3QEFFGgHOcPoni2
 r1
@@ -631,28 +631,81 @@ I:iaIH>[3QEFFGgHOcPoni2
 !i103 1
 S1
 R3
-R49
+R50
 R34
 R35
 L0 6
 R7
-R50
 R51
 R36
+R37
 !i113 1
 R11
 R12
 n@processor_sv_unit
+vProcessor_TB
+R0
+R25
+R27
+DXx4 work 20 Processor_TB_sv_unit 0 22 b>jgkKPFKeDEKXZJSSoYc0
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 7NmAUa513]LX7^dGgLFS21
+Ib3c<SoCbPFDSjZ]6]EA:Q0
+!s105 Processor_TB_sv_unit
+S1
+R3
+Z52 w1529943079
+Z53 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
+Z54 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
+L0 3
+R7
+Z55 !s108 1529943079.000000
+Z56 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv|
+Z57 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv|
+!i113 1
+R11
+R12
+n@processor_@t@b
+XProcessor_TB_sv_unit
+R0
+R25
+R27
+Vb>jgkKPFKeDEKXZJSSoYc0
+r1
+!s85 0
+31
+!i10b 1
+!s100 cb6>JH9bMh]k>?M^:gN4n2
+Ib>jgkKPFKeDEKXZJSSoYc0
+!i103 1
+S1
+R3
+R52
+R53
+R54
+L0 1
+R7
+R55
+R56
+R57
+!i113 1
+R11
+R12
+n@processor_@t@b_sv_unit
 XProcessorPackage
 R0
-!s110 1529771770
+!s110 1529942861
 !i10b 1
 !s100 FGJP9Vzk1?McMnecP0ed=1
 I33E]:iLX5=Je0`JknP?<O3
 V33E]:iLX5=Je0`JknP?<O3
 S1
 R3
-R49
+R50
 R34
 R35
 L0 1
@@ -660,9 +713,9 @@ R7
 r1
 !s85 0
 31
-R50
 R51
 R36
+R37
 !i113 1
 R11
 R12
@@ -680,14 +733,14 @@ Ign4U;UhINJWMZk_`Q<ZF]0
 !s105 Register_sv_unit
 S1
 R3
-Z52 w1529619439
-Z53 8/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
-Z54 F/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
+Z58 w1529619439
+Z59 8/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
+Z60 F/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv
 L0 4
 R7
 R8
-Z55 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv|
-Z56 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv|
+Z61 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv|
+Z62 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/Register.sv|
 !i113 1
 R11
 R12
@@ -704,29 +757,29 @@ I@:QFKbSXFkTa8KHZF@ETJ0
 !i103 1
 S1
 R3
-R52
-R53
-R54
+R58
+R59
+R60
 L0 3
 R7
 R8
-R55
-R56
+R61
+R62
 !i113 1
 R11
 R12
 n@register_sv_unit
 vRegisterFile
 R0
-Z57 !s110 1529711416
+R13
 !i10b 1
-!s100 kTNkPV@7@c9R^SfBH64fF2
-IF8m0mV<`bSbZWBH9BD?>D0
+!s100 5^dlN83Iz_@k85c?9aKG[0
+I^H7ha=U2P`aAILWUIl:272
 R2
 !s105 RegisterFile_sv_unit
 S1
 R3
-w1528760743
+w1529941582
 8/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 F/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
 L0 5
@@ -734,16 +787,16 @@ R7
 r1
 !s85 0
 31
-Z58 !s108 1529711416.000000
+R8
 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv|
 !i113 1
-Z59 o-work ProcessorTests -sv
+Z63 o-work ProcessorTests -sv
 R12
 n@register@file
 vRegisterFile_TB
 R0
-R57
+R13
 !i10b 1
 !s100 G@D26D]KdH_FHk1ee`G4?3
 IA__0=F5lF72SPL;<7K@Ga3
@@ -759,11 +812,11 @@ R7
 r1
 !s85 0
 31
-R58
+R8
 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv|
 !s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv|
 !i113 1
-R59
+R63
 R12
 n@register@file_@t@b
 vTesting
@@ -784,11 +837,11 @@ R7
 r1
 !s85 0
 31
-R58
+R8
 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv|
 !s90 -reportprogress|300|-work|ProcessorTests|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv|
 !i113 1
-R59
+R63
 R12
 n@testing
 vTesting_TB

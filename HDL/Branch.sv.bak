@@ -21,8 +21,8 @@ JR = 4'hA
 typedef enum logic [4:0] {
 // These are paired with BGEZ and BLTZ above but
 //  they have a "1" in the 16's place
-BGEZAL = 4'h11,
-BLTZAL = 4'h10
+BGEZAL = 5'h11,
+BLTZAL = 5'h10
 } LinkBranchModes;
 
 endpackage
@@ -47,7 +47,7 @@ output logic [31:0]branchTo
 );
 
 always_ff @(posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
+	if (rst == 1'b1) begin
 
 	end 
 	else begin
