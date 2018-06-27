@@ -1,10 +1,46 @@
+
+### 6/26/18
+
+Made a python program to output the .text section of a compiled assembly program. Now I can program in assembly, compile it, run my Python program, and feed the output into ModelSim to test the processor.
+
+I'm now creating a giant test program that I can feed into ModelSim to test the processor.
+
+Got progress on the test program. I'm not sure how to edit the start address that the assembler uses. This will be important for testing but eventually also running compiled programs on the processor.
+
+I found an error with the Branch module where when it branches by offset it needs to multiply by 4 because branches go by number of instructions and not number of bytes. I need to update the Branch_TB to reflect this and make sure it works.
+
+### 6/25/18
+
+I've been wiring up the processor. Apparently using the assign keyword can create errors because it will create a variable if it doesn't already exist. I'm going to move to always_comb for all assignments instead of using the assign keyword.
+
+Basic processor test with addi and sw working!
+
+### 6/23/18
+
+I've been connecting all the modules together in the Processor.sv file. Everything is going together so cleanly and beautifully.
+
+### 6/22/18
+
+Yeah I don't think the "count" line makes sense. I removed it.
+
 ### 6/21/18
 
-It seems like this MIPS compiler doesn't recognize the 26-bit jump command. I think it treats it as BEQ with two zeros. All the other instruction OPCodes seem to be correct.
+I started a new BOM. I'll need things like a power supply, 3D printer filament, logic level converters, and maybe some other things like a breadboard.
+
+Control lines module v1 is done. I'm getting close to running code on this thing.
+
+I created the file for the Processor module. I also created a generic Register module for pipelining.
+
+I'm going to add some extra stuff to the diagram for force loading things into Memory from an external source. This will be perfect for testing but also when I implement serial uploading.
+
+I just realized with the "count" line on the PC, if the clock still runs, it won't truly pause things. I think I should just make the clock the pause line and that will encapsulate everything. I'm not sure there's ever a case where I want the PC to not increment but I want the clock to still run.
+
 
 ### 6/20/18
 
 The documentation for j says its 0x2. The compiler turns J into b and has an OPCode of 0x4. BEQ has an opcode of 0x4 too.
+
+It seems like this MIPS compiler doesn't recognize the 26-bit jump command. I think it treats it as BEQ with two zeros. All the other instruction OPCodes seem to be correct.
 
 ### 6/19/18
 
@@ -24,7 +60,7 @@ The document says its 0x21=33
 lwc1 comes out to be 0x31=49
 The document says its 0x31=49
 
-I think SWC1 is a typo. I wonder what else is a typo in that document... I might need to go through and verify all the codes in the document with compiler output. I'm going to write a python program that uses all the assembly commands so I can get the machine language output and verify all the OP codes.
+I think the opcode for SWC1 is a typo. I wonder what else is a typo in that document... I might need to go through and verify all the codes in the document with compiler output. I'm going to write a python program that uses all the assembly commands so I can get the machine language output and verify all the OP codes.
 
 Python program is going well.
 

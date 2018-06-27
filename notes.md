@@ -80,6 +80,11 @@ It seems that cross compiling isn't as easy as I thought. Ultimately, I need a *
 - mips-linux-gnu-gcc-5    
 - mips-linux-gnu-gprof  
 
+### Links
+
+Apparently you can change a section's start address using the linker. [Here's the link I found this info on](https://gcc.gnu.org/ml/gcc-help/2010-02/msg00213.html)
+[Linker scripts](https://www.math.utah.edu/docs/info/ld_3.html#SEC14)
+
 ___
 
 # ELF File - Executable and linkable format
@@ -467,6 +472,9 @@ You can put a giant wait at the end of your always block to let the simulation r
 <br>
 [How to Simulate and Test SystemVerilog with ModelSim (SystemVerilog Tutorial #2)](https://www.youtube.com/watch?v=-o3RBvTh4Hw)
 
+# RGB LED Matrix
+
+[Here's a really good explaination on how the RGB Matrix is wired.](https://bikerglen.com/projects/lighting/led-panel-1up/)
 
 # Hex/Decimal/Octal/Binary
 
