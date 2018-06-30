@@ -1,0 +1,164 @@
+
+../ModelSimTestData/processorTest1.elf:     file format elf32-tradbigmips
+
+
+Disassembly of section .text:
+
+00000400 <first-0x8>:
+ 400:	08000102 	j	408 <first>
+ 404:	00000000 	nop
+
+00000408 <first>:
+ 408:	24044e20 	li	a0,20000
+ 40c:	240800c8 	li	t0,200
+ 410:	24090007 	li	t1,7
+ 414:	01288020 	add	s0,t1,t0
+ 418:	01098822 	sub	s1,t0,t1
+ 41c:	2112007b 	addi	s2,t0,123
+ 420:	2113ff85 	addi	s3,t0,-123
+ 424:	ac900000 	sw	s0,0(a0)
+ 428:	20840004 	addi	a0,a0,4
+ 42c:	ac910000 	sw	s1,0(a0)
+ 430:	20840004 	addi	a0,a0,4
+ 434:	ac920000 	sw	s2,0(a0)
+ 438:	20840004 	addi	a0,a0,4
+ 43c:	ac930000 	sw	s3,0(a0)
+ 440:	20840004 	addi	a0,a0,4
+ 444:	3408ffff 	li	t0,0xffff
+ 448:	240900ff 	li	t1,255
+ 44c:	340aff00 	li	t2,0xff00
+ 450:	012a8021 	addu	s0,t1,t2
+ 454:	01098823 	subu	s1,t0,t1
+ 458:	2532ff00 	addiu	s2,t1,-256
+ 45c:	2513ffff 	addiu	s3,t0,-1
+ 460:	ac900000 	sw	s0,0(a0)
+ 464:	20840004 	addi	a0,a0,4
+ 468:	ac910000 	sw	s1,0(a0)
+ 46c:	20840004 	addi	a0,a0,4
+ 470:	ac920000 	sw	s2,0(a0)
+ 474:	20840004 	addi	a0,a0,4
+ 478:	ac930000 	sw	s3,0(a0)
+ 47c:	20840004 	addi	a0,a0,4
+ 480:	24080014 	li	t0,20
+ 484:	24090003 	li	t1,3
+ 488:	240a0001 	li	t2,1
+ 48c:	240b7fff 	li	t3,32767
+ 490:	340cffff 	li	t4,0xffff
+ 494:	340d8000 	li	t5,0x8000
+ 498:	340e8001 	li	t6,0x8001
+ 49c:	3c0fffff 	lui	t7,0xffff
+ 4a0:	35efffff 	ori	t7,t7,0xffff
+ 4a4:	01090018 	mult	t0,t1
+ 4a8:	00008012 	mflo	s0
+	...
+ 4b4:	014b0018 	mult	t2,t3
+ 4b8:	00008812 	mflo	s1
+	...
+ 4c4:	01e90018 	mult	t7,t1
+ 4c8:	00009012 	mflo	s2
+ 4cc:	00009810 	mfhi	s3
+	...
+ 4d8:	01ab0018 	mult	t5,t3
+ 4dc:	0000a012 	mflo	s4
+	...
+ 4e8:	01cc0018 	mult	t6,t4
+ 4ec:	0000a812 	mflo	s5
+ 4f0:	ac900000 	sw	s0,0(a0)
+ 4f4:	20840004 	addi	a0,a0,4
+ 4f8:	ac910000 	sw	s1,0(a0)
+ 4fc:	20840004 	addi	a0,a0,4
+ 500:	ac920000 	sw	s2,0(a0)
+ 504:	20840004 	addi	a0,a0,4
+ 508:	ac930000 	sw	s3,0(a0)
+ 50c:	20840004 	addi	a0,a0,4
+ 510:	ac940000 	sw	s4,0(a0)
+ 514:	20840004 	addi	a0,a0,4
+ 518:	ac950000 	sw	s5,0(a0)
+ 51c:	20840004 	addi	a0,a0,4
+ 520:	24080064 	li	t0,100
+ 524:	24090003 	li	t1,3
+ 528:	240a000a 	li	t2,10
+ 52c:	240b0080 	li	t3,128
+ 530:	240c0002 	li	t4,2
+ 534:	240cfffd 	li	t4,-3
+ 538:	15400002 	bnez	t2,544 <first+0x13c>
+ 53c:	010a001a 	div	zero,t0,t2
+ 540:	0007000d 	break	0x7
+ 544:	2401ffff 	li	at,-1
+ 548:	15410004 	bne	t2,at,55c <first+0x154>
+ 54c:	3c018000 	lui	at,0x8000
+ 550:	15010002 	bne	t0,at,55c <first+0x154>
+ 554:	00000000 	nop
+ 558:	0006000d 	break	0x6
+ 55c:	00004012 	mflo	t0
+ 560:	00008012 	mflo	s0
+ 564:	00000000 	nop
+ 568:	15200002 	bnez	t1,574 <first+0x16c>
+ 56c:	0109001a 	div	zero,t0,t1
+ 570:	0007000d 	break	0x7
+ 574:	2401ffff 	li	at,-1
+ 578:	15210004 	bne	t1,at,58c <first+0x184>
+ 57c:	3c018000 	lui	at,0x8000
+ 580:	15010002 	bne	t0,at,58c <first+0x184>
+ 584:	00000000 	nop
+ 588:	0006000d 	break	0x6
+ 58c:	00004012 	mflo	t0
+ 590:	00008812 	mflo	s1
+ 594:	00000000 	nop
+ 598:	15800002 	bnez	t4,5a4 <first+0x19c>
+ 59c:	010c001a 	div	zero,t0,t4
+ 5a0:	0007000d 	break	0x7
+ 5a4:	2401ffff 	li	at,-1
+ 5a8:	15810004 	bne	t4,at,5bc <first+0x1b4>
+ 5ac:	3c018000 	lui	at,0x8000
+ 5b0:	15010002 	bne	t0,at,5bc <first+0x1b4>
+ 5b4:	00000000 	nop
+ 5b8:	0006000d 	break	0x6
+ 5bc:	00004012 	mflo	t0
+ 5c0:	00009012 	mflo	s2
+ 5c4:	ac900000 	sw	s0,0(a0)
+ 5c8:	20840004 	addi	a0,a0,4
+ 5cc:	ac910000 	sw	s1,0(a0)
+ 5d0:	20840004 	addi	a0,a0,4
+ 5d4:	ac920000 	sw	s2,0(a0)
+ 5d8:	20840004 	addi	a0,a0,4
+
+000005dc <section1>:
+ 5dc:	1000ffff 	b	5dc <section1>
+ 5e0:	00000000 	nop
+	...
+
+Disassembly of section .reginfo:
+
+000005f0 <.reginfo>:
+ 5f0:	003fff12 	0x3fff12
+	...
+
+Disassembly of section .MIPS.abiflags:
+
+00000608 <.MIPS.abiflags>:
+ 608:	00000100 	sll	zero,zero,0x4
+ 60c:	01010001 	0x1010001
+	...
+
+Disassembly of section .data:
+
+00000620 <namePrompt>:
+ 620:	506c6561 	0x506c6561
+ 624:	73652065 	0x73652065
+ 628:	6e746572 	0x6e746572
+ 62c:	20796f75 	addi	t9,v1,28533
+ 630:	72206e61 	0x72206e61
+ 634:	6d653a20 	0x6d653a20
+	...
+
+00000639 <nameStorage>:
+	...
+
+Disassembly of section .gnu.attributes:
+
+00000000 <.gnu.attributes>:
+   0:	41000000 	bc0f	4 <first-0x404>
+   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db39b>
+   8:	00010000 	sll	zero,at,0x0
+   c:	00070401 	0x70401

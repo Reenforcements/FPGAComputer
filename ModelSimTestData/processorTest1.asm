@@ -63,7 +63,14 @@
 # _0_ xori (ALU funct = 0x24)
 # _0_ lui (ALU funct = 0x0)
 
+.data
+  namePrompt: .asciiz "Please enter your name: "
+  nameStorage: .space 40
+
 .text
+	j first
+	first:
+
 	# Base address for saving results
 	li $a0, 20000
 
@@ -112,19 +119,22 @@
 	li $t4, 0xFFFF # -1
 	li $t5, 0x8000 # Largest negative 16 bit number
 	li $t6, 0x8001 # Almost largest negative 16 bit number
+
+	lui $t7, 0xFFFF
+	ori $t7, $t7, 0xFFFF
+
 	mult $t0, $t1
 	mflo $s0
 	mult $t2, $t3
 	mflo $s1
-	mult $t3, $t1 # 0x0001_7FFD
+	mult $t7, $t1 # 0x00000002_FFFFFFFD
 	mflo $s2
 	mfhi $s3
 	mult $t5, $t3 # 0x3FFF8000
 	mflo $s4
-	mfhi $s5
 	mult $t6, $t4 # 0x80007FFF
-	mflo $s6
-	mfhi $s7
+	mflo $s5
+
 	
 	sw $s0, 0($a0)
 		addi $a0, $a0, 4
@@ -137,10 +147,6 @@
 	sw $s4, 0($a0)
 		addi $a0, $a0, 4
 	sw $s5, 0($a0)
-		addi $a0, $a0, 4
-	sw $s6, 0($a0)
-		addi $a0, $a0, 4
-	sw $s7, 0($a0)
 		addi $a0, $a0, 4
 
 	# Division
@@ -165,6 +171,10 @@
 	sw $s2, 0($a0)
 		addi $a0, $a0, 4
 
+
+	# Loop forever so things don't break.
+	section1:
+	b section1
 
 
 

@@ -1,0 +1,35 @@
+// Basic arithmetic
+// 200 + 7
+000000CF
+// 200 - 7
+000000C1
+// 200 + 123
+00000143
+// 200 - 123
+0000004D
+
+// Unsigned arithmetic
+0000FFFF
+0000FF00
+0000FFFF
+0001FFFE
+
+// Multiplication
+0000003C
+00007FFF
+
+FFFFFFFD
+00000002
+3FFF8000
+80007FFF
+
+// Division
+0000000A
+00000021
+FFFFFFDF
+
+
+
+
+
+

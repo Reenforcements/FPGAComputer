@@ -26,6 +26,9 @@ end
 
 Processor p(.*);
 
+
+// Original, small test
+/*
 always begin
 
 #10;
@@ -99,12 +102,13 @@ externalData = 32'd0;
 externalReadMode = WORD;
 externalWriteMode = NONE;
 #9;
-assert(externalDataOut == 32'd123) $display("Correct result: %d", externalDataOut); else $error("Result should be 32, was %d", externalDataOut);
+assert(externalDataOut == 32'd123) $display(">>>Correct result: %d", externalDataOut); else $error("Result should be 32, was %d", externalDataOut);
 #1;
 
 
 #100000;
 end
+*/
 
 always begin
 clk = 0;

@@ -26,6 +26,13 @@ end
 
 Processor p(.*);
 
+
+always begin
+
+end
+
+// Original, small test
+/*
 always begin
 
 #10;
@@ -105,6 +112,7 @@ assert(externalDataOut == 32'd123) $display(">>>Correct result: %d", externalDat
 
 #100000;
 end
+*/
 
 always begin
 clk = 0;
