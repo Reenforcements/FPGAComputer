@@ -26,6 +26,8 @@ with open(args.inputELF[0], "rb") as f:
 
 	# Open the output file for writing.
 	with open(args.outputHex[0], "w") as out:
+
+		currentPC = 1024
 		# Iterate over the sections
 		for section in elf.iter_sections():
 			print("{}, {}, {}".format(section.name, section.header.sh_offset, section.header.sh_size))
@@ -37,17 +39,18 @@ with open(args.inputELF[0], "rb") as f:
 			
 			# Iterate over the bytes of the section and print four at a time in hex format.
 			current = 0
-			for x in range(0, section.header.sh_size):
+			for current in range(0, section.header.sh_size/4):
 				four = section.stream.read(4)
 				assert (len(four) == 4), "Didn't get four bytes! Got {}.".format(len(four))
 				unpacked = struct.unpack_from(">i", four)[0]
 				val = c_uint(unpacked).value
 				line = "{:08x}".format(val)
-				line = " {} ({})    {}".format(current, hex(current), line)
+				line = " /*{} ({})*/    {}".format(currentPC, hex(currentPC), line)
 				print( line )
 				out.write(line)
 				out.write("\n")
-				current += 4
+				currentPC += 4
+				
 
 
 

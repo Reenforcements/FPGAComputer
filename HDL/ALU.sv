@@ -109,16 +109,16 @@ always_comb begin
 		MUL: begin
 			// Multiplication goes into hi and lo
 			//  on the clock above.
-			{hiResult, loResult} = signed'(dataIn0) * signed'(dataIn1);
+			{hiResult, loResult} = 64'(signed'(dataIn0)) * 64'(signed'(dataIn1));
 		end
 		MULU: begin
-			{hiResult, loResult} = unsigned'(dataIn0) * unsigned'(dataIn1);
+			{hiResult, loResult} = 64'(unsigned'(dataIn0)) * 64'(unsigned'(dataIn1));
 		end
 		DIV: begin
-			{hiResult, loResult} = signed'(dataIn0) / signed'(dataIn1);
+			{hiResult, loResult} = 64'(signed'(dataIn0)) / 64'(signed'(dataIn1));
 		end
 		DIVU: begin
-			{hiResult, loResult} = unsigned'(dataIn0) / unsigned'(dataIn1);
+			{hiResult, loResult} = 64'(unsigned'(dataIn0)) / 64'(unsigned'(dataIn1));
 		end
 		
 

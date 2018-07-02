@@ -54,9 +54,12 @@ PC pc(
 	.nextPCAddress(pc_nextPCAddress)
 );
 
+
 always @ (posedge clk) begin
-$display("Current PC: %d", pc_pcAddress);
+	if (pause == 1'b0)
+		$display("Current PC: %d", pc_pcAddress);
 end
+
 
 // Register File
 logic [4:0]registerFile_rsAddress;
@@ -190,6 +193,7 @@ logic [1:0]control_registerWriteSource;
 logic [5:0]control_funct;
 logic [4:0]control_shamt;
 logic control_useImmediate;
+logic control_signExtend;
 // Memory
 logic [2:0]control_readMode;
 logic [2:0]control_writeMode;
@@ -211,6 +215,7 @@ Control control(
 	.funct(control_funct),
 	.shamt(control_shamt),
 	.useImmediate(control_useImmediate),
+	.signExtend(control_signExtend),
 
 	.readMode(control_readMode),
 	.writeMode(control_writeMode),
@@ -228,9 +233,12 @@ always_comb begin
  	instructionData = memory_pcData;
 end
 
+
 always @ (posedge clk) begin
-	$display("Current instruction: %b", instructionData);
+	if (pause == 1'b0)
+		$display("Current instruction: %h", instructionData);
 end
+
 
 // Split up the instruction
 logic [5:0]instruction_opCode;
@@ -240,7 +248,8 @@ logic [4:0]instruction_rdIn;
 logic [4:0]instruction_shamtIn;
 logic [5:0]instruction_functIn;
 logic [15:0]instruction_immediate;
-logic [31:0]instruction_immediateSignExtended;
+logic [31:0]instruction_immediateExtended;
+logic [31:0]instruction_zeroExtended;
 logic [25:0]instruction_jumpAddress;
 always_comb begin
 	instruction_opCode = instructionData[31:26];
@@ -250,12 +259,18 @@ always_comb begin
 	instruction_shamtIn = instructionData[10:6];
 	instruction_functIn = instructionData[5:0];
 	instruction_immediate = instructionData[15:0];
-	// Sign extend the immediate to 32 bits
-	if (instructionData[15] == 1'b1) begin
-		instruction_immediateSignExtended = { {16{1'b1}}, instructionData[15:0]};
+	if (control_signExtend == 1'b1) begin
+		// Sign extend the immediate to 32 bits
+		if (instructionData[15] == 1'b1) begin
+			instruction_immediateExtended = { {16{1'b1}}, instruction_immediate};
+		end
+		else begin
+			instruction_immediateExtended = { {16{1'b0}}, instruction_immediate};
+		end
 	end
 	else begin
-		instruction_immediateSignExtended = { {16{1'b0}}, instructionData[15:0]};
+		// Zero extend
+		instruction_immediateExtended = { {16{1'b0}}, instruction_immediate };
 	end
 	instruction_jumpAddress = instructionData[25:0];
 end
@@ -324,7 +339,7 @@ always_comb begin
 	alu_dataIn0 = registerFile_readValue0;
 
 	if (control_useImmediate == 1'b1) begin
-		alu_dataIn1 = instruction_immediateSignExtended;
+		alu_dataIn1 = instruction_immediateExtended;
 	end 
 	else begin
 		alu_dataIn1 = registerFile_readValue1;

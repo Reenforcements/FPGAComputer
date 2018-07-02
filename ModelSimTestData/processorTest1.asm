@@ -94,9 +94,9 @@
 		addi $a0, $a0, 4
 
 	# Basic arithmetic (unsigned)
-	li $t0, 0xFFFF
-	li $t1, 0x00FF
-	li $t2, 0xFF00
+	li $t0, 0xFFFF # -1
+	li $t1, 0x00FF # 255
+	li $t2, 0xFF00 # -256
 	addu $s0, $t1, $t2
 	subu $s1, $t0, $t1
 	addiu $s2, $t1, 0xFF00
@@ -115,11 +115,12 @@
 	li $t0, 20
 	li $t1, 3
 	li $t2, 1
-	li $t3, 0x7FFF # Largest positive 16 bit number
-	li $t4, 0xFFFF # -1
+	li $t3, 0x7FFF
+	li $t4, 0xFFFF # 65535
 	li $t5, 0x8000 # Largest negative 16 bit number
 	li $t6, 0x8001 # Almost largest negative 16 bit number
 
+	# $t7 = -1
 	lui $t7, 0xFFFF
 	ori $t7, $t7, 0xFFFF
 
@@ -127,7 +128,7 @@
 	mflo $s0
 	mult $t2, $t3
 	mflo $s1
-	mult $t7, $t1 # 0x00000002_FFFFFFFD
+	mult $t7, $t1 # 0xFFFFFFFF_FFFFFFFD
 	mflo $s2
 	mfhi $s3
 	mult $t5, $t3 # 0x3FFF8000

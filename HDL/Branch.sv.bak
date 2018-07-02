@@ -125,13 +125,13 @@ always_comb begin
 				
 				// However, branches count by instruction, not by byte
 				// We need to multiply by 4 to convert to bytes.
-				logic signed[31:0]lBranchAddressOffset;
-				lBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
-				branchTo = pcAddress + lBranchAddressOffset;
-				$display("Branching to %d + %d = %d", 
-						lBranchAddressOffset,
+				logic signed[31:0]sBranchAddressOffset;
+				sBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
+				branchTo = pcAddress + sBranchAddressOffset;
+				/*$display("Branching to %d + %d = %d", 
+						sBranchAddressOffset,
 						pcAddress,
-						branchTo);
+						branchTo);*/
 			end
 
 			J: begin

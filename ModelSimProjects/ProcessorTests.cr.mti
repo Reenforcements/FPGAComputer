@@ -46,6 +46,16 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Control
 
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package Processor_TB_sv_unit
+-- Importing package MIPSInstructionPackage
+-- Importing package MemoryModesPackage
+-- Compiling module Processor_TB
+
+Top level modules:
+	Processor_TB
+
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package Memory_TB_sv_unit
@@ -117,13 +127,6 @@ Top level modules:
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU_TB
-
-Top level modules:
-	ALU_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
