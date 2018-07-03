@@ -131,43 +131,106 @@ Disassembly of section .text:
  5f4:	20840004 	addi	a0,a0,4
  5f8:	ac950000 	sw	s5,0(a0)
  5fc:	20840004 	addi	a0,a0,4
+ 600:	3408cccc 	li	t0,0xcccc
+ 604:	24093333 	li	t1,13107
+ 608:	340affff 	li	t2,0xffff
+ 60c:	01098024 	and	s0,t0,t1
+ 610:	012a8824 	and	s1,t1,t2
+ 614:	01099025 	or	s2,t0,t1
+ 618:	01499826 	xor	s3,t2,t1
+ 61c:	3114ffff 	andi	s4,t0,0xffff
+ 620:	35354444 	ori	s5,t1,0x4444
+ 624:	39561111 	xori	s6,t2,0x1111
+ 628:	0109b827 	nor	s7,t0,t1
+ 62c:	ac900000 	sw	s0,0(a0)
+ 630:	20840004 	addi	a0,a0,4
+ 634:	ac910000 	sw	s1,0(a0)
+ 638:	20840004 	addi	a0,a0,4
+ 63c:	ac920000 	sw	s2,0(a0)
+ 640:	20840004 	addi	a0,a0,4
+ 644:	ac930000 	sw	s3,0(a0)
+ 648:	20840004 	addi	a0,a0,4
+ 64c:	ac940000 	sw	s4,0(a0)
+ 650:	20840004 	addi	a0,a0,4
+ 654:	ac950000 	sw	s5,0(a0)
+ 658:	20840004 	addi	a0,a0,4
+ 65c:	ac960000 	sw	s6,0(a0)
+ 660:	20840004 	addi	a0,a0,4
+ 664:	ac970000 	sw	s7,0(a0)
+ 668:	20840004 	addi	a0,a0,4
+ 66c:	3c08abcd 	lui	t0,0xabcd
+ 670:	3508ef12 	ori	t0,t0,0xef12
+ 674:	3c09ffff 	lui	t1,0xffff
+ 678:	3529ffff 	ori	t1,t1,0xffff
+ 67c:	01200011 	mthi	t1
+ 680:	01000013 	mtlo	t0
+ 684:	00008810 	mfhi	s1
+ 688:	00008012 	mflo	s0
+ 68c:	ac900000 	sw	s0,0(a0)
+ 690:	20840004 	addi	a0,a0,4
+ 694:	ac910000 	sw	s1,0(a0)
+ 698:	20840004 	addi	a0,a0,4
+ 69c:	2408ffff 	li	t0,-1
+ 6a0:	24090001 	li	t1,1
+ 6a4:	240a0002 	li	t2,2
+ 6a8:	0109802a 	slt	s0,t0,t1
+ 6ac:	0008882a 	slt	s1,zero,t0
+ 6b0:	0009902a 	slt	s2,zero,t1
+ 6b4:	0128982b 	sltu	s3,t1,t0
+ 6b8:	29540003 	slti	s4,t2,3
+ 6bc:	2955ffff 	slti	s5,t2,-1
+ 6c0:	2d56ffff 	sltiu	s6,t2,-1
+ 6c4:	ac900000 	sw	s0,0(a0)
+ 6c8:	20840004 	addi	a0,a0,4
+ 6cc:	ac910000 	sw	s1,0(a0)
+ 6d0:	20840004 	addi	a0,a0,4
+ 6d4:	ac920000 	sw	s2,0(a0)
+ 6d8:	20840004 	addi	a0,a0,4
+ 6dc:	ac930000 	sw	s3,0(a0)
+ 6e0:	20840004 	addi	a0,a0,4
+ 6e4:	ac940000 	sw	s4,0(a0)
+ 6e8:	20840004 	addi	a0,a0,4
+ 6ec:	ac950000 	sw	s5,0(a0)
+ 6f0:	20840004 	addi	a0,a0,4
+ 6f4:	ac960000 	sw	s6,0(a0)
+ 6f8:	20840004 	addi	a0,a0,4
 
-00000600 <section1>:
- 600:	1000ffff 	b	600 <section1>
- 604:	00000000 	nop
+000006fc <section1>:
+ 6fc:	1000ffff 	b	6fc <section1>
+ 700:	00000000 	nop
 	...
 
 Disassembly of section .reginfo:
 
-00000610 <.reginfo>:
- 610:	003fff12 	0x3fff12
+00000710 <.reginfo>:
+ 710:	00ffff12 	0xffff12
 	...
 
 Disassembly of section .MIPS.abiflags:
 
-00000628 <.MIPS.abiflags>:
- 628:	00000100 	sll	zero,zero,0x4
- 62c:	01010001 	0x1010001
+00000728 <.MIPS.abiflags>:
+ 728:	00000100 	sll	zero,zero,0x4
+ 72c:	01010001 	0x1010001
 	...
 
 Disassembly of section .data:
 
-00000640 <namePrompt>:
- 640:	506c6561 	0x506c6561
- 644:	73652065 	0x73652065
- 648:	6e746572 	0x6e746572
- 64c:	20796f75 	addi	t9,v1,28533
- 650:	72206e61 	0x72206e61
- 654:	6d653a20 	0x6d653a20
+00000740 <namePrompt>:
+ 740:	506c6561 	0x506c6561
+ 744:	73652065 	0x73652065
+ 748:	6e746572 	0x6e746572
+ 74c:	20796f75 	addi	t9,v1,28533
+ 750:	72206e61 	0x72206e61
+ 754:	6d653a20 	0x6d653a20
 	...
 
-00000659 <nameStorage>:
+00000759 <nameStorage>:
 	...
 
 Disassembly of section .gnu.attributes:
 
 00000000 <.gnu.attributes>:
    0:	41000000 	bc0f	4 <first-0x404>
-   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db37b>
+   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db27b>
    8:	00010000 	sll	zero,at,0x0
    c:	00070401 	0x70401
