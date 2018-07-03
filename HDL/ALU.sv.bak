@@ -23,6 +23,8 @@ typedef enum logic [5:0] {
 	SRL = 6'h2,
 	SRLV = 6'h6,
 
+	LU = 6'hf,
+
 	SLT = 6'h2a,
 	SLTU = 6'h2b,
 	
@@ -72,7 +74,10 @@ always_ff @(posedge clk or negedge rst) begin
 		// Save hi and lo on the clock, but only for certain instructions
 		unique case (funct)
 			MUL,
-			MULU,
+			MULU: begin
+				lo <= loResult;
+				hi <= hiResult;
+			end
 			DIV,
 			DIVU: begin
 				lo <= loResult;
@@ -115,10 +120,13 @@ always_comb begin
 			{hiResult, loResult} = 64'(unsigned'(dataIn0)) * 64'(unsigned'(dataIn1));
 		end
 		DIV: begin
-			{hiResult, loResult} = 64'(signed'(dataIn0)) / 64'(signed'(dataIn1));
+			loResult = signed'(dataIn0) / signed'(dataIn1);
+			hiResult = signed'(dataIn0) - (signed'(loResult)  * signed'(dataIn1));
+			$display("Division result: %h %h", hiResult, loResult);
 		end
 		DIVU: begin
-			{hiResult, loResult} = unsigned'(dataIn0) / unsigned'(dataIn1);
+			loResult = unsigned'(dataIn0) / unsigned'(dataIn1);
+			hiResult = unsigned'(dataIn0) - (unsigned'(loResult)  * unsigned'(dataIn1));
 		end
 		
 
@@ -185,6 +193,10 @@ always_comb begin
 				// The shift is < 32.
 				result = signed'(dataIn0) >>> unsigned'(dataIn1[4:0]);
 			end
+		end
+
+		LU: begin
+			result = dataIn1 << 32'd16;
 		end
 
 

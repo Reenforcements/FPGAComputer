@@ -372,20 +372,64 @@ always_comb begin
 	end
 end
 
+
+logic [25:0]branch_jumpAddress_d0;
+logic [31:0]branch_jumpRegisterAddress_d0;
+
+logic [31:0]branch_pcAddress_d0;
+logic [15:0]branch_branchAddressOffset_d0;
+
+logic branch_resultZero_d0;
+logic branch_resultNegative_d0;
+logic branch_resultPositive_d0;
+
+logic [3:0]branch_mode_d0;
+
 // Assign branch inputs
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		branch_jumpAddress_d0 <= 26'd0;
+		branch_jumpRegisterAddress_d0 <= 32'd0;
+		
+		branch_pcAddress_d0 <= 32'd0;
+		branch_branchAddressOffset_d0 <= 32'd0;
+	
+		branch_resultZero_d0 <= 32'd0;
+		branch_resultNegative_d0 <= 32'd0;
+		branch_resultPositive_d0 <= 32'd0;
+		
+		branch_mode_d0 <= BranchModesPackage::NONE;
+	end
+	else begin
+		// Assign inputs to delay flip-flops on the clock.
+		branch_jumpAddress_d0 <= instruction_jumpAddress;
+		branch_jumpRegisterAddress_d0 <= alu_result;
+
+		branch_pcAddress_d0 <= pc_pcAddress;
+		branch_branchAddressOffset_d0 <= instruction_immediate;
+
+		branch_resultZero_d0 <= alu_outputZero;
+		branch_resultNegative_d0 <= alu_outputNegative;
+		branch_resultPositive_d0 <= alu_outputPositive;
+
+		branch_mode_d0 <= control_branchMode;
+	end
+end
 always_comb begin
-	branch_jumpAddress = instruction_jumpAddress;
-	branch_jumpRegisterAddress = alu_result;
+	branch_jumpAddress = branch_jumpAddress_d0;
+	branch_jumpRegisterAddress = branch_jumpRegisterAddress_d0;
 
-	branch_pcAddress = pc_pcAddress;
-	branch_branchAddressOffset = instruction_immediate;
+	branch_pcAddress = branch_pcAddress_d0;
+	branch_branchAddressOffset = branch_branchAddressOffset_d0;
 
-	branch_resultZero = alu_outputZero;
-	branch_resultNegative = alu_outputNegative;
-	branch_resultPositive = alu_outputPositive;
+	branch_resultZero = branch_resultZero_d0;
+	branch_resultNegative = branch_resultNegative_d0;
+	branch_resultPositive = branch_resultPositive_d0;
 
-	branch_mode = control_branchMode;
+	branch_mode = branch_mode_d0;
 
+	// These are just outputs from Branch so they'll
+	//  follow the delayed inputs to Branch.
 	pc_newPC = branch_branchTo;
 	pc_shouldUseNewPC = branch_shouldUseNewPC;
 end

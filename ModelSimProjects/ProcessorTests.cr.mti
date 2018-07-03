@@ -27,24 +27,10 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 -- Importing package ProcessorPackage
 -- Importing package ControlLinePackage
 -- Compiling module Processor
+-- Importing package BranchModesPackage
 
 Top level modules:
 	Processor
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package MIPSInstructionPackage
--- Compiling package ControlLinePackage
--- Compiling package Control_sv_unit
--- Importing package MIPSInstructionPackage
--- Importing package ControlLinePackage
--- Importing package ALUFunctCodesPackage
--- Importing package MemoryModesPackage
--- Importing package BranchModesPackage
--- Compiling module Control
-
-Top level modules:
-	Control
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -127,6 +113,13 @@ Top level modules:
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_TB
+
+Top level modules:
+	ALU_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

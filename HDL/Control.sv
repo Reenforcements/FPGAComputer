@@ -296,7 +296,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::ADD;
 			shamt = 5'd0;
 			useImmediate = 1;
-			signExtend = 0;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;
@@ -312,7 +312,7 @@ always_comb begin
 			registerWriteSource = ControlLinePackage::RESULT;
 
 			// Shift the immediate value 16 left
-			funct = ALUFunctCodesPackage::SLL;
+			funct = ALUFunctCodesPackage::LU;
 			shamt = 5'd16;
 			useImmediate = 1;
 
@@ -350,7 +350,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::SLTU;
 			shamt = 5'd0;
 			useImmediate = 1;
-			signExtend = 0;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;

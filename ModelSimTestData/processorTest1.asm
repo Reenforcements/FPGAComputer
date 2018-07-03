@@ -99,8 +99,8 @@
 	li $t2, 0xFF00 # -256
 	addu $s0, $t1, $t2
 	subu $s1, $t0, $t1
-	addiu $s2, $t1, 0xFF00
-	addiu $s3, $t0, 0xFFFF
+	addiu $s2, $t1, 0x7F00
+	addiu $s3, $t0, 0x7FFF
 	# Save results
 	sw $s0, 0($a0)
 		addi $a0, $a0, 4
@@ -156,20 +156,31 @@
 	li $t2, 10
 	li $t3, 128
 	li $t4, 2
-	li $t4, -3
+	addi $t5, $0, -3
 
-	div $t0, $t2 # 10
+	div  $t0, $t2 # 10
 	mflo $s0
+	mfhi $s1
+	li $t0, 100
 	div $t0, $t1 # 33
-	mflo $s1
-	div $t0, $t4 # -33
 	mflo $s2
+	mfhi $s3
+	li $t0, 100
+	div $t0, $t5 # -33
+	mflo $s4
+	mfhi $s5
 
 	sw $s0, 0($a0)
 		addi $a0, $a0, 4
 	sw $s1, 0($a0)
 		addi $a0, $a0, 4
 	sw $s2, 0($a0)
+		addi $a0, $a0, 4
+	sw $s3, 0($a0)
+		addi $a0, $a0, 4
+	sw $s4, 0($a0)
+		addi $a0, $a0, 4
+	sw $s5, 0($a0)
 		addi $a0, $a0, 4
 
 

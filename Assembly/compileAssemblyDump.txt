@@ -29,8 +29,8 @@ Disassembly of section .text:
  44c:	340aff00 	li	t2,0xff00
  450:	012a8021 	addu	s0,t1,t2
  454:	01098823 	subu	s1,t0,t1
- 458:	2532ff00 	addiu	s2,t1,-256
- 45c:	2513ffff 	addiu	s3,t0,-1
+ 458:	25327f00 	addiu	s2,t1,32512
+ 45c:	25137fff 	addiu	s3,t0,32767
  460:	ac900000 	sw	s0,0(a0)
  464:	20840004 	addi	a0,a0,4
  468:	ac910000 	sw	s1,0(a0)
@@ -80,7 +80,7 @@ Disassembly of section .text:
  528:	240a000a 	li	t2,10
  52c:	240b0080 	li	t3,128
  530:	240c0002 	li	t4,2
- 534:	240cfffd 	li	t4,-3
+ 534:	200dfffd 	addi	t5,zero,-3
  538:	15400002 	bnez	t2,544 <first+0x13c>
  53c:	010a001a 	div	zero,t0,t2
  540:	0007000d 	break	0x7
@@ -92,73 +92,82 @@ Disassembly of section .text:
  558:	0006000d 	break	0x6
  55c:	00004012 	mflo	t0
  560:	00008012 	mflo	s0
- 564:	00000000 	nop
- 568:	15200002 	bnez	t1,574 <first+0x16c>
- 56c:	0109001a 	div	zero,t0,t1
- 570:	0007000d 	break	0x7
- 574:	2401ffff 	li	at,-1
- 578:	15210004 	bne	t1,at,58c <first+0x184>
- 57c:	3c018000 	lui	at,0x8000
- 580:	15010002 	bne	t0,at,58c <first+0x184>
- 584:	00000000 	nop
- 588:	0006000d 	break	0x6
- 58c:	00004012 	mflo	t0
- 590:	00008812 	mflo	s1
- 594:	00000000 	nop
- 598:	15800002 	bnez	t4,5a4 <first+0x19c>
- 59c:	010c001a 	div	zero,t0,t4
- 5a0:	0007000d 	break	0x7
- 5a4:	2401ffff 	li	at,-1
- 5a8:	15810004 	bne	t4,at,5bc <first+0x1b4>
- 5ac:	3c018000 	lui	at,0x8000
- 5b0:	15010002 	bne	t0,at,5bc <first+0x1b4>
- 5b4:	00000000 	nop
- 5b8:	0006000d 	break	0x6
- 5bc:	00004012 	mflo	t0
- 5c0:	00009012 	mflo	s2
- 5c4:	ac900000 	sw	s0,0(a0)
- 5c8:	20840004 	addi	a0,a0,4
- 5cc:	ac910000 	sw	s1,0(a0)
- 5d0:	20840004 	addi	a0,a0,4
- 5d4:	ac920000 	sw	s2,0(a0)
- 5d8:	20840004 	addi	a0,a0,4
+ 564:	00008810 	mfhi	s1
+ 568:	24080064 	li	t0,100
+ 56c:	15200002 	bnez	t1,578 <first+0x170>
+ 570:	0109001a 	div	zero,t0,t1
+ 574:	0007000d 	break	0x7
+ 578:	2401ffff 	li	at,-1
+ 57c:	15210004 	bne	t1,at,590 <first+0x188>
+ 580:	3c018000 	lui	at,0x8000
+ 584:	15010002 	bne	t0,at,590 <first+0x188>
+ 588:	00000000 	nop
+ 58c:	0006000d 	break	0x6
+ 590:	00004012 	mflo	t0
+ 594:	00009012 	mflo	s2
+ 598:	00009810 	mfhi	s3
+ 59c:	24080064 	li	t0,100
+ 5a0:	15a00002 	bnez	t5,5ac <first+0x1a4>
+ 5a4:	010d001a 	div	zero,t0,t5
+ 5a8:	0007000d 	break	0x7
+ 5ac:	2401ffff 	li	at,-1
+ 5b0:	15a10004 	bne	t5,at,5c4 <first+0x1bc>
+ 5b4:	3c018000 	lui	at,0x8000
+ 5b8:	15010002 	bne	t0,at,5c4 <first+0x1bc>
+ 5bc:	00000000 	nop
+ 5c0:	0006000d 	break	0x6
+ 5c4:	00004012 	mflo	t0
+ 5c8:	0000a012 	mflo	s4
+ 5cc:	0000a810 	mfhi	s5
+ 5d0:	ac900000 	sw	s0,0(a0)
+ 5d4:	20840004 	addi	a0,a0,4
+ 5d8:	ac910000 	sw	s1,0(a0)
+ 5dc:	20840004 	addi	a0,a0,4
+ 5e0:	ac920000 	sw	s2,0(a0)
+ 5e4:	20840004 	addi	a0,a0,4
+ 5e8:	ac930000 	sw	s3,0(a0)
+ 5ec:	20840004 	addi	a0,a0,4
+ 5f0:	ac940000 	sw	s4,0(a0)
+ 5f4:	20840004 	addi	a0,a0,4
+ 5f8:	ac950000 	sw	s5,0(a0)
+ 5fc:	20840004 	addi	a0,a0,4
 
-000005dc <section1>:
- 5dc:	1000ffff 	b	5dc <section1>
- 5e0:	00000000 	nop
+00000600 <section1>:
+ 600:	1000ffff 	b	600 <section1>
+ 604:	00000000 	nop
 	...
 
 Disassembly of section .reginfo:
 
-000005f0 <.reginfo>:
- 5f0:	003fff12 	0x3fff12
+00000610 <.reginfo>:
+ 610:	003fff12 	0x3fff12
 	...
 
 Disassembly of section .MIPS.abiflags:
 
-00000608 <.MIPS.abiflags>:
- 608:	00000100 	sll	zero,zero,0x4
- 60c:	01010001 	0x1010001
+00000628 <.MIPS.abiflags>:
+ 628:	00000100 	sll	zero,zero,0x4
+ 62c:	01010001 	0x1010001
 	...
 
 Disassembly of section .data:
 
-00000620 <namePrompt>:
- 620:	506c6561 	0x506c6561
- 624:	73652065 	0x73652065
- 628:	6e746572 	0x6e746572
- 62c:	20796f75 	addi	t9,v1,28533
- 630:	72206e61 	0x72206e61
- 634:	6d653a20 	0x6d653a20
+00000640 <namePrompt>:
+ 640:	506c6561 	0x506c6561
+ 644:	73652065 	0x73652065
+ 648:	6e746572 	0x6e746572
+ 64c:	20796f75 	addi	t9,v1,28533
+ 650:	72206e61 	0x72206e61
+ 654:	6d653a20 	0x6d653a20
 	...
 
-00000639 <nameStorage>:
+00000659 <nameStorage>:
 	...
 
 Disassembly of section .gnu.attributes:
 
 00000000 <.gnu.attributes>:
    0:	41000000 	bc0f	4 <first-0x404>
-   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db39b>
+   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db37b>
    8:	00010000 	sll	zero,at,0x0
    c:	00070401 	0x70401
