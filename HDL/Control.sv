@@ -121,6 +121,7 @@ output logic [1:0]registerWriteSource,
 output logic [5:0]funct,
 output logic [4:0]shamt,
 output logic useImmediate,
+output logic signExtend,
 
 // Memory
 output logic [2:0]readMode,
@@ -144,6 +145,9 @@ always_comb begin
 	rdIn = instructionData[15:11];
 	shamtIn = instructionData[10:6];
 	functIn = instructionData[5:0];
+	
+	// Don't care what this is for most instructions.
+	signExtend = 1;
 
 	// Change each control line accordingly
 
@@ -159,6 +163,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::OR;
 			shamt = 5'd0;
 			useImmediate = 0;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;
@@ -225,6 +230,7 @@ always_comb begin
 
 			// Never use immediates for these
 			useImmediate = 0;
+			signExtend = 0;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;
@@ -255,15 +261,19 @@ always_comb begin
 			unique case (opCodeIn)
 				ADDI: begin
 					funct = ALUFunctCodesPackage::ADD;
+					signExtend = 1;
 				end
 				ANDI: begin
 					funct = ALUFunctCodesPackage::AND;
+					signExtend = 0;
 				end
 				ORI: begin
 					funct = ALUFunctCodesPackage::OR;
+					signExtend = 0;
 				end
 				XORI: begin
 					funct = ALUFunctCodesPackage::XOR;
+					signExtend = 0;
 				end
 				default: begin end
 			endcase
@@ -286,6 +296,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::ADD;
 			shamt = 5'd0;
 			useImmediate = 1;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;
@@ -301,7 +312,7 @@ always_comb begin
 			registerWriteSource = ControlLinePackage::RESULT;
 
 			// Shift the immediate value 16 left
-			funct = ALUFunctCodesPackage::SLL;
+			funct = ALUFunctCodesPackage::LU;
 			shamt = 5'd16;
 			useImmediate = 1;
 
@@ -321,6 +332,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::SLT;
 			shamt = 5'd0;
 			useImmediate = 1;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;
@@ -338,6 +350,7 @@ always_comb begin
 			funct = ALUFunctCodesPackage::SLTU;
 			shamt = 5'd0;
 			useImmediate = 1;
+			signExtend = 1;
 
 			readMode = MemoryModesPackage::NONE;
 			writeMode = MemoryModesPackage::NONE;

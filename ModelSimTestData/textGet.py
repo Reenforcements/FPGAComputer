@@ -8,7 +8,7 @@ import sys
 import os
 
 if len(sys.argv) < 2:
-	print("Usage: \"python textGet.py myElfFile\"")
+	print("Usage: \"python textGet.py myAsmFile\"")
 	sys.exit(0)
 
 filename = sys.argv[1]
@@ -20,7 +20,7 @@ if os.path.exists(filename) == False:
 
 os.system("mips-linux-gnu-as {} -o textGetOutput.elf".format(filename))
 
-with open("textGetOutput.elf", "rb") as f:
+with open("a.out", "rb") as f:
 	elf = ELFFile(f)
 	textSection = elf.get_section_by_name(".text")
 	textString = textSection.data()

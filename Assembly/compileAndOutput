@@ -1,0 +1,1 @@
+mips-linux-gnu-as ../ModelSimTestData/processorTest1.asm -mips1 -g -mfp32 -mhard-float -o processorTest1.elf && mips-linux-gnu-ld -T ./linkerscript --entry first ./processorTest1.elf -o "linked.out" && mips-linux-gnu-objdump linked.out -D -S > compileAndOutputDump.txt && python printRaw.py

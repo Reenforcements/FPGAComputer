@@ -34,7 +34,7 @@ input logic rst,
 input logic [3:0]mode,
 
 input logic [31:0]pcAddress,
-input logic [15:0]branchAddressOffset,
+input logic signed[15:0]branchAddressOffset,
 input logic [25:0]jumpAddress,
 input logic [31:0]jumpRegisterAddress,
 
@@ -122,18 +122,27 @@ always_comb begin
 				// Branches take into account the pc being auto
 				//  incremented by 4 every clock cycle. The compiler
 				//  (or assembly code author) takes this into account.
-				branchTo = pcAddress + 32'(branchAddressOffset);
+				
+				// However, branches count by instruction, not by byte
+				// We need to multiply by 4 to convert to bytes.
+				logic signed[31:0]sBranchAddressOffset;
+				sBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
+				branchTo = pcAddress + sBranchAddressOffset;
+				/*$display("Branching to %d + %d = %d", 
+						sBranchAddressOffset,
+						pcAddress,
+						branchTo);*/
 			end
 
 			J: begin
 				// Jumping uses the four MBbs of the PC,
 				//  the jump address, and then the two LSBs
 				//  are zero because instructions are word aligned.
-				branchTo = {pcAddress[31:28], jumpAddress, 2'b0};
+				branchTo = {pcAddress[31:28], jumpAddress, 2'b0} - 32'd4;
 			end
 
 			JR: begin
-				branchTo = jumpRegisterAddress;
+				branchTo = jumpRegisterAddress - 32'd4;
 			end
 
 			default: begin end

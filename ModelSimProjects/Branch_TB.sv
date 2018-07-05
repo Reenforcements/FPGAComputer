@@ -51,7 +51,7 @@ for (n = 0; n < 16; n = n + 1) begin
 	assert(branchTo === {8{4'hx}}) else $error("Branch address isn't x when it should be.");
 	#1;
 end
-#160;
+//#160;
 
 // Test BEQ
 resultZero = 1;
@@ -64,7 +64,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BEQ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 0;
@@ -91,7 +91,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BGEZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't correct.");
 #1;
 
 resultZero = 0;
@@ -104,7 +104,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BGEZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be: %h", branchTo);
 #1;
 
 resultZero = 0;
@@ -131,7 +131,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BGTZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 1;
@@ -171,20 +171,20 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BLEZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 0;
 resultNegative = 1;
 resultPositive = 0;
-branchAddressOffset = 16'hFFFF;
+branchAddressOffset = 16'h0FFF;
 pcAddress = 32'hAABBCCDD;
 jumpAddress = 26'hAABBCC;
 jumpRegisterAddress = 32'hAABBCCDD;
 mode = BLEZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABC0CD9)) else $error("Branch address isn't correct: %h", branchTo);
 #1;
 
 resultZero = 0;
@@ -211,7 +211,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BLTZ;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 1;
@@ -251,7 +251,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BNE;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 0;
@@ -264,7 +264,7 @@ jumpRegisterAddress = 32'hAABBCCDD;
 mode = BNE;
 #9;
 assert(shouldUseNewPC == 1'b1) else $error("Trying to branch when it shouldn't.");
-assert(branchTo == (32'hAABCCCDC)) else $error("Branch address isn't x when it should be.");
+assert(branchTo == (32'hAABBCCD9)) else $error("Branch address isn't x when it should be.");
 #1;
 
 resultZero = 1;

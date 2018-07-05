@@ -1,0 +1,6 @@
+SECTIONS {
+	. = 1000;
+	.text : {
+		first = ABSOLUTE(0x0);
+	}
+}

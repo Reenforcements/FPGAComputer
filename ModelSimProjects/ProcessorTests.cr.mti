@@ -27,6 +27,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 -- Importing package ProcessorPackage
 -- Importing package ControlLinePackage
 -- Compiling module Processor
+-- Importing package BranchModesPackage
 
 Top level modules:
 	Processor

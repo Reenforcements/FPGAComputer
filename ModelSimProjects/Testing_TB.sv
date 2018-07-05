@@ -1,5 +1,6 @@
 module Testing_TB;
 
+/*
 logic [15:0]counter;
 
 logic clk;
@@ -60,6 +61,31 @@ always begin
 	h1 = 32'(memory[index+:4]);
 	$display("%h", h1);
 end
+*/
+logic clk;
+always begin
+clk = 1;
+#5;
+clk = 0;
+#5;
+end
+
+logic [31:0]lo;
+logic [31:0]hi;
+logic [31:0]num1;
+logic [31:0]num2;
+initial begin
+	num1 = (32'd100);
+	num2 = -(32'd3);
+end
+always @ (posedge clk) begin
+lo = (signed'(num1)) / (signed'(num2));
+hi = (signed'(num1)) - (lo * (signed'(num2)));
+$display("%h %h",hi, lo);
+$display("num1: %h", 64'(num1));
+#10;
+end
+
 
 endmodule
 
