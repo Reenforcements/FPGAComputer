@@ -64,7 +64,7 @@ $display("Done loading memory.");
 $display("Running code...");
 pause = 0;
 externalMemoryControl = 0;
-#2000;
+#3500;
 $display("Done.");
 
 $display("Comparing/Printing memory...");
@@ -74,7 +74,7 @@ externalWriteMode = NONE;
 externalMemoryControl = 1;
 curWord = 0;
 #10;
-for (n = 32'd20000; n < 32'd20200; n = n + 4) begin
+for (n = 32'd20000; n < 32'd20300; n = n + 4) begin
 	externalAddress = n;
 	#6;
 	assert(externalDataOut == results[curWord])

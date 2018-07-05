@@ -19,13 +19,16 @@
 # _1_ nor (ALU funct = 0x27)
 # _1_ slt (ALU funct = 0x2a)
 # _1_ sltu (ALU funct = 0x2b)
-# _0_ sllv (ALU funct = 0x4)
-# _0_ srlv (ALU funct = 0x6)
-# _0_ srav (ALU funct = 0x7)
-# _0_ jr (ALU funct = 0x8)
-# _0_ jalr (ALU funct = 0x9)
+# _1_ sllv (ALU funct = 0x4)
+# _1_ srlv (ALU funct = 0x6)
+# _1_ sll
+# _1_ srl
+# _1_ sra 
+# _1_ srav (ALU funct = 0x7)
+# _1_ jr (ALU funct = 0x8)
+# _1_ jalr (ALU funct = 0x9)
 # _0_ break (ALU funct = 0xd)
-# _0_ bgez (ALU funct = 0x1)
+# _1_ bgez (ALU funct = 0x1)
 # _0_ bltz (ALU funct = 0x3b)
 # _0_ bltzal (ALU funct = 0x3d)
 # _0_ bgezal (ALU funct = 0x3f)
@@ -47,10 +50,10 @@
 # _0_ swr (ALU funct = 0xc)
 # _0_ lwc1 (ALU funct = 0xc)
 # _0_ swc1 (ALU funct = 0xc)
-# _0_ beq (ALU funct = 0x3)
-# _0_ b (ALU funct = 0x33)
+# _1_ beq (ALU funct = 0x3)
+# _1_ b (ALU funct = 0x33)
 # _0_ bnez (ALU funct = 0x2)
-# _0_ bne (ALU funct = 0x4)
+# _1_ bne (ALU funct = 0x4)
 # _0_ blez (ALU funct = 0x37)
 # _0_ bgtz (ALU funct = 0x39)
 # _1_ addi (ALU funct = 0x24)
@@ -264,11 +267,211 @@
 		addi $a0, $a0, 4
 	sw $s6, 0($a0)
 		addi $a0, $a0, 4
+
+
+	# Shift
+
+	li $t0, 1
+	li $t1, -1
+	lui $t2, 0x8000
+	li $t3, -16
+
+	sll $s0, $t0, 31
+	sll $s1, $t0, 1
+		li $t7, 31
+	sllv $s2, $t0, $t7
+		li $t7, 1
+	sllv $s3, $t0, $t7
+		li $t7, 32
+	sllv $s4, $t0, $t7
+
+	srl $s5, $t2, 31
+	srl $s6, $t2, 1
+	srl $s7, $t2, 0
+
+	sw $s0, 0($a0)
+		addi $a0, $a0, 4
+	sw $s1, 0($a0)
+		addi $a0, $a0, 4
+	sw $s2, 0($a0)
+		addi $a0, $a0, 4
+	sw $s3, 0($a0)
+		addi $a0, $a0, 4
+	sw $s4, 0($a0)
+		addi $a0, $a0, 4
+	sw $s5, 0($a0)
+		addi $a0, $a0, 4
+	sw $s6, 0($a0)
+		addi $a0, $a0, 4
+	sw $s7, 0($a0)
+		addi $a0, $a0, 4
+
+	# srlv
+		li $t7, 31
+	srlv $s0, $t2, $t7
+		li $t7, 1
+	srlv $s1, $t2, $t7
+		li $t7, 32
+	srlv $s2, $t2, $t7
+
+	sw $s0, 0($a0)
+		addi $a0, $a0, 4
+	sw $s1, 0($a0)
+		addi $a0, $a0, 4
+	sw $s2, 0($a0)
+		addi $a0, $a0, 4
+
+	# sra
+	sra $s0, $t2, 31
+	sra $s1, $t2, 0
+	sra $s2, $t0, 16
+	sra $s3, $t3, 2
+
+	sw $s0, 0($a0)
+		addi $a0, $a0, 4
+	sw $s1, 0($a0)
+		addi $a0, $a0, 4
+	sw $s2, 0($a0)
+		addi $a0, $a0, 4
+	sw $s3, 0($a0)
+		addi $a0, $a0, 4
+
+	# srav
+		li $t7, 31
+	srav $s0, $t2, $t7
+		li $t7, 1
+	srav $s1, $t2, $t7
+		li $t7, 32
+	srav $s2, $t2, $t7
+
+	sw $s0, 0($a0)
+		addi $a0, $a0, 4
+	sw $s1, 0($a0)
+		addi $a0, $a0, 4
+	sw $s2, 0($a0)
+		addi $a0, $a0, 4
+
+	# Jumping and branching
+
+	# jal
+	li $s0, 0xBBBB
+	sw $s0, 0($a0)
+	# The compiler will try to put the instruction before jal
+	#  into the delay slot, so we'll give it a NOP because the
+	#  choice of instruction ordering is important here.
+	nop
+	jal testfunction1
+		addi $a0, $a0, 4
+
+	# beq
+	li $t0, 0
+	li $t1, 1
+	li $t2, 1
+	li $t3, 2
+	li $a1, 0
+	nop
+	beq $t0, $t1, beq1
+	nop 
+	ori $a1, $a1, 0x000F
+	beq1:
+	nop
+	beq $t1, $t2, beq2
+	nop
+	ori $a1, $a1, 0x00F0
+	beq2:
+	sw $a1, 0($a0)
+		addi $a0, $a0, 4
+
+	# bgez
+	li $t0, 0
+	li $t1, 1
+	li $t2, 1
+	li $t3, -1
+	li $a1, 0
+	nop
+	bgez $t0, bgez1
+	nop 
+	ori $a1, $a1, 0x000C
+	bgez1:
+	nop
+	bgez $t3, bgez2
+	nop
+	ori $a1, $a1, 0x00C0
+	bgez2:
+	sw $a1, 0($a0)
+		addi $a0, $a0, 4
+
+	# bne
+	li $t0, 0
+	li $t1, 1
+	li $t2, 1
+	li $t3, -1
+	li $a1, 0
+	nop
+	bne $t0, $t1, bne1
+	nop 
+	ori $a1, $a1, 0x000A
+	bne1:
+	nop
+	bne $t2, $t1, bne2
+	nop
+	ori $a1, $a1, 0x00A0
+	bne2:
+	sw $a1, 0($a0)
+		addi $a0, $a0, 4
 	
+
+
+	# Saving and loading
+
+	# lb (ALU funct = 0xc)
+	# lh (ALU funct = 0xc)
+	# lwl (ALU funct = 0xc)
+	# lw (ALU funct = 0xc)
+	# lbu (ALU funct = 0xc)
+	# lhu (ALU funct = 0xc)
+	# lwr (ALU funct = 0xc)
+	# sb (ALU funct = 0xc)
+	# sh (ALU funct = 0xc)
+	# swl (ALU funct = 0xc)
+	# sw (ALU funct = 0x4)
+	# swr (ALU funct = 0xc)
+	
+	li $t0, 0x0034
+	li $t1, 0x5678
+	lui $t2, 0xABCD
+	ori $t2, $t2, 0xEF12
+	sw $t2, 0($a0)
+	sh $t1, 0($a0)
+	sb $t0, 0($a0)
+		addi $a0, $a0, 4
+		sw $0, 0($a0)
+	swl $t2, 2($a0)
+	lwl $s0, 2($a0)
+		addi $a0, $a0, 4
+		sw $0, 0($a0)
+	swr $t2, 2($a0)
+	lwr $s1, 2($a0)
+		addi $a0, $a0, 4
+		sw $0, 0($a0)
+
+	sw $s0, 0($a0)
+		addi $a0, $a0, 4
+	sw $s1, 0($a0)
+		addi $a0, $a0, 4
+
 
 	# Loop forever so things don't break.
 	section1:
 	b section1
+	nop
+
+	testfunction1:
+	li $a1, 0xAAAA
+	andi $a1, $a1, 0xFFFF
+	sw $a1, 0($a0)
+	jr $ra
+	nop
 
 
 

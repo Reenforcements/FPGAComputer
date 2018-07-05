@@ -194,43 +194,200 @@ Disassembly of section .text:
  6f0:	20840004 	addi	a0,a0,4
  6f4:	ac960000 	sw	s6,0(a0)
  6f8:	20840004 	addi	a0,a0,4
+ 6fc:	24080001 	li	t0,1
+ 700:	2409ffff 	li	t1,-1
+ 704:	3c0a8000 	lui	t2,0x8000
+ 708:	240bfff0 	li	t3,-16
+ 70c:	000887c0 	sll	s0,t0,0x1f
+ 710:	00088840 	sll	s1,t0,0x1
+ 714:	240f001f 	li	t7,31
+ 718:	01e89004 	sllv	s2,t0,t7
+ 71c:	240f0001 	li	t7,1
+ 720:	01e89804 	sllv	s3,t0,t7
+ 724:	240f0020 	li	t7,32
+ 728:	01e8a004 	sllv	s4,t0,t7
+ 72c:	000aafc2 	srl	s5,t2,0x1f
+ 730:	000ab042 	srl	s6,t2,0x1
+ 734:	000ab802 	srl	s7,t2,0x0
+ 738:	ac900000 	sw	s0,0(a0)
+ 73c:	20840004 	addi	a0,a0,4
+ 740:	ac910000 	sw	s1,0(a0)
+ 744:	20840004 	addi	a0,a0,4
+ 748:	ac920000 	sw	s2,0(a0)
+ 74c:	20840004 	addi	a0,a0,4
+ 750:	ac930000 	sw	s3,0(a0)
+ 754:	20840004 	addi	a0,a0,4
+ 758:	ac940000 	sw	s4,0(a0)
+ 75c:	20840004 	addi	a0,a0,4
+ 760:	ac950000 	sw	s5,0(a0)
+ 764:	20840004 	addi	a0,a0,4
+ 768:	ac960000 	sw	s6,0(a0)
+ 76c:	20840004 	addi	a0,a0,4
+ 770:	ac970000 	sw	s7,0(a0)
+ 774:	20840004 	addi	a0,a0,4
+ 778:	240f001f 	li	t7,31
+ 77c:	01ea8006 	srlv	s0,t2,t7
+ 780:	240f0001 	li	t7,1
+ 784:	01ea8806 	srlv	s1,t2,t7
+ 788:	240f0020 	li	t7,32
+ 78c:	01ea9006 	srlv	s2,t2,t7
+ 790:	ac900000 	sw	s0,0(a0)
+ 794:	20840004 	addi	a0,a0,4
+ 798:	ac910000 	sw	s1,0(a0)
+ 79c:	20840004 	addi	a0,a0,4
+ 7a0:	ac920000 	sw	s2,0(a0)
+ 7a4:	20840004 	addi	a0,a0,4
+ 7a8:	000a87c3 	sra	s0,t2,0x1f
+ 7ac:	000a8803 	sra	s1,t2,0x0
+ 7b0:	00089403 	sra	s2,t0,0x10
+ 7b4:	000b9883 	sra	s3,t3,0x2
+ 7b8:	ac900000 	sw	s0,0(a0)
+ 7bc:	20840004 	addi	a0,a0,4
+ 7c0:	ac910000 	sw	s1,0(a0)
+ 7c4:	20840004 	addi	a0,a0,4
+ 7c8:	ac920000 	sw	s2,0(a0)
+ 7cc:	20840004 	addi	a0,a0,4
+ 7d0:	ac930000 	sw	s3,0(a0)
+ 7d4:	20840004 	addi	a0,a0,4
+ 7d8:	240f001f 	li	t7,31
+ 7dc:	01ea8007 	srav	s0,t2,t7
+ 7e0:	240f0001 	li	t7,1
+ 7e4:	01ea8807 	srav	s1,t2,t7
+ 7e8:	240f0020 	li	t7,32
+ 7ec:	01ea9007 	srav	s2,t2,t7
+ 7f0:	ac900000 	sw	s0,0(a0)
+ 7f4:	20840004 	addi	a0,a0,4
+ 7f8:	ac910000 	sw	s1,0(a0)
+ 7fc:	20840004 	addi	a0,a0,4
+ 800:	ac920000 	sw	s2,0(a0)
+ 804:	20840004 	addi	a0,a0,4
+ 808:	3410bbbb 	li	s0,0xbbbb
+ 80c:	ac900000 	sw	s0,0(a0)
+ 810:	0c00024c 	jal	930 <testfunction1>
+ 814:	00000000 	nop
+ 818:	20840004 	addi	a0,a0,4
+ 81c:	24080000 	li	t0,0
+ 820:	24090001 	li	t1,1
+ 824:	240a0001 	li	t2,1
+ 828:	240b0002 	li	t3,2
+ 82c:	24050000 	li	a1,0
+ 830:	11090003 	beq	t0,t1,840 <beq1>
+ 834:	00000000 	nop
+ 838:	00000000 	nop
+ 83c:	34a5000f 	ori	a1,a1,0xf
 
-000006fc <section1>:
- 6fc:	1000ffff 	b	6fc <section1>
- 700:	00000000 	nop
+00000840 <beq1>:
+ 840:	112a0003 	beq	t1,t2,850 <beq2>
+ 844:	00000000 	nop
+ 848:	00000000 	nop
+ 84c:	34a500f0 	ori	a1,a1,0xf0
+
+00000850 <beq2>:
+ 850:	ac850000 	sw	a1,0(a0)
+ 854:	20840004 	addi	a0,a0,4
+ 858:	24080000 	li	t0,0
+ 85c:	24090001 	li	t1,1
+ 860:	240a0001 	li	t2,1
+ 864:	240bffff 	li	t3,-1
+ 868:	24050000 	li	a1,0
+ 86c:	05010003 	bgez	t0,87c <bgez1>
+ 870:	00000000 	nop
+ 874:	00000000 	nop
+ 878:	34a5000c 	ori	a1,a1,0xc
+
+0000087c <bgez1>:
+ 87c:	05610003 	bgez	t3,88c <bgez2>
+ 880:	00000000 	nop
+ 884:	00000000 	nop
+ 888:	34a500c0 	ori	a1,a1,0xc0
+
+0000088c <bgez2>:
+ 88c:	ac850000 	sw	a1,0(a0)
+ 890:	20840004 	addi	a0,a0,4
+ 894:	24080000 	li	t0,0
+ 898:	24090001 	li	t1,1
+ 89c:	240a0001 	li	t2,1
+ 8a0:	240bffff 	li	t3,-1
+ 8a4:	24050000 	li	a1,0
+ 8a8:	15090003 	bne	t0,t1,8b8 <bne1>
+ 8ac:	00000000 	nop
+ 8b0:	00000000 	nop
+ 8b4:	34a5000a 	ori	a1,a1,0xa
+
+000008b8 <bne1>:
+ 8b8:	15490003 	bne	t2,t1,8c8 <bne2>
+ 8bc:	00000000 	nop
+ 8c0:	00000000 	nop
+ 8c4:	34a500a0 	ori	a1,a1,0xa0
+
+000008c8 <bne2>:
+ 8c8:	ac850000 	sw	a1,0(a0)
+ 8cc:	20840004 	addi	a0,a0,4
+ 8d0:	24080034 	li	t0,52
+ 8d4:	24095678 	li	t1,22136
+ 8d8:	3c0aabcd 	lui	t2,0xabcd
+ 8dc:	354aef12 	ori	t2,t2,0xef12
+ 8e0:	ac8a0000 	sw	t2,0(a0)
+ 8e4:	a4890000 	sh	t1,0(a0)
+ 8e8:	a0880000 	sb	t0,0(a0)
+ 8ec:	20840004 	addi	a0,a0,4
+ 8f0:	ac800000 	sw	zero,0(a0)
+ 8f4:	a88a0002 	swl	t2,2(a0)
+ 8f8:	88900002 	lwl	s0,2(a0)
+ 8fc:	20840004 	addi	a0,a0,4
+ 900:	ac800000 	sw	zero,0(a0)
+ 904:	b88a0002 	swr	t2,2(a0)
+ 908:	98910002 	lwr	s1,2(a0)
+ 90c:	20840004 	addi	a0,a0,4
+ 910:	ac800000 	sw	zero,0(a0)
+ 914:	ac900000 	sw	s0,0(a0)
+ 918:	20840004 	addi	a0,a0,4
+ 91c:	ac910000 	sw	s1,0(a0)
+ 920:	20840004 	addi	a0,a0,4
+
+00000924 <section1>:
+ 924:	1000ffff 	b	924 <section1>
+ 928:	00000000 	nop
+ 92c:	00000000 	nop
+
+00000930 <testfunction1>:
+ 930:	3405aaaa 	li	a1,0xaaaa
+ 934:	30a5ffff 	andi	a1,a1,0xffff
+ 938:	03e00008 	jr	ra
+ 93c:	ac850000 	sw	a1,0(a0)
 	...
 
 Disassembly of section .reginfo:
 
-00000710 <.reginfo>:
- 710:	00ffff12 	0xffff12
+00000950 <.reginfo>:
+ 950:	80ffff32 	lb	ra,-206(a3)
 	...
 
 Disassembly of section .MIPS.abiflags:
 
-00000728 <.MIPS.abiflags>:
- 728:	00000100 	sll	zero,zero,0x4
- 72c:	01010001 	0x1010001
+00000968 <.MIPS.abiflags>:
+ 968:	00000100 	sll	zero,zero,0x4
+ 96c:	01010001 	0x1010001
 	...
 
 Disassembly of section .data:
 
-00000740 <namePrompt>:
- 740:	506c6561 	0x506c6561
- 744:	73652065 	0x73652065
- 748:	6e746572 	0x6e746572
- 74c:	20796f75 	addi	t9,v1,28533
- 750:	72206e61 	0x72206e61
- 754:	6d653a20 	0x6d653a20
+00000980 <namePrompt>:
+ 980:	506c6561 	0x506c6561
+ 984:	73652065 	0x73652065
+ 988:	6e746572 	0x6e746572
+ 98c:	20796f75 	addi	t9,v1,28533
+ 990:	72206e61 	0x72206e61
+ 994:	6d653a20 	0x6d653a20
 	...
 
-00000759 <nameStorage>:
+00000999 <nameStorage>:
 	...
 
 Disassembly of section .gnu.attributes:
 
 00000000 <.gnu.attributes>:
    0:	41000000 	bc0f	4 <first-0x404>
-   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db27b>
+   4:	0f676e75 	jal	d9db9d4 <nameStorage+0xd9db03b>
    8:	00010000 	sll	zero,at,0x0
    c:	00070401 	0x70401

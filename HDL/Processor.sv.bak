@@ -389,7 +389,7 @@ logic [3:0]branch_mode_d0;
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		branch_jumpAddress_d0 <= 26'd0;
-		branch_jumpRegisterAddress_do <= 32'd0;
+		branch_jumpRegisterAddress_d0 <= 32'd0;
 		
 		branch_pcAddress_d0 <= 32'd0;
 		branch_branchAddressOffset_d0 <= 32'd0;

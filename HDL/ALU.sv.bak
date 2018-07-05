@@ -122,7 +122,7 @@ always_comb begin
 		DIV: begin
 			loResult = signed'(dataIn0) / signed'(dataIn1);
 			hiResult = signed'(dataIn0) - (signed'(loResult)  * signed'(dataIn1));
-			$display("Division result: %h %h", hiResult, loResult);
+			//$display("Division %h / %h : %h %h", signed'(dataIn0), signed'(dataIn1), hiResult, loResult);
 		end
 		DIVU: begin
 			loResult = unsigned'(dataIn0) / unsigned'(dataIn1);
@@ -145,41 +145,42 @@ always_comb begin
 
 		
 		SLL: begin
-			result = dataIn0 << unsigned'(shamt);
+			result = dataIn1 << unsigned'(shamt);
 		end
 		SLLV: begin
 			// Don't bother shifting if the shift is
 			//  greater than 32 bits.
-			if (unsigned'(dataIn1) >= 32'd32) begin
+			if (unsigned'(dataIn0) >= 32'd32) begin
 				result = 32'b0;
 			end
 			else begin
-				result = dataIn0 << unsigned'(dataIn1[4:0]);
+				result = dataIn1 << unsigned'(dataIn0[4:0]);
+				//$display(" Shift %h by %h, producing %h", dataIn1, unsigned'(dataIn0[4:0]), result); 
 			end
 		end
 		SRL: begin
-			result = dataIn0 >> unsigned'(shamt);
+			result = dataIn1 >> unsigned'(shamt);
 		end
 		SRLV: begin
 			// Don't bother shifting if the shift is
 			//  greater than 32 bits.
-			if (unsigned'(dataIn1) >= 32'd32) begin
+			if (unsigned'(dataIn0) >= 32'd32) begin
 				result = 32'b0;
 			end
 			else begin
-				result = dataIn0 >> unsigned'(dataIn1[4:0]);
+				result = dataIn1 >> unsigned'(dataIn0[4:0]);
 			end
 		end
 
 		SRA: begin
-			result = signed'(dataIn0) >>> unsigned'(shamt);
+			result = signed'(dataIn1) >>> unsigned'(shamt);
 		end
 		SRAV: begin
 			// If the number is negative, shifting 32 or
 			//  more should always produce -1.
 			// If the number is positive, shifting 32 or
 			//  more should always produce 0.
-			if (unsigned'(dataIn1) >= 32'd32) begin
+			if (unsigned'(dataIn0) >= 32'd32) begin
 				if(dataIn0[31] == 1'b1) begin
 					// Always -1
 					result = -(32'd1);
@@ -191,7 +192,7 @@ always_comb begin
 			end
 			else begin
 				// The shift is < 32.
-				result = signed'(dataIn0) >>> unsigned'(dataIn1[4:0]);
+				result = signed'(dataIn1) >>> unsigned'(dataIn0[4:0]);
 			end
 		end
 

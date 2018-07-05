@@ -314,7 +314,7 @@ always_comb begin
 			registerFile_writeData = 32'd0;
 		end
 		ControlLinePackage::NEXT_PC_ADDRESS: begin
-			registerFile_writeData = pc_nextPCAddress;
+			registerFile_writeData = pc_nextPCAddress + 32'd4;
 		end
 		ControlLinePackage::DATA_OUTPUT: begin
 			registerFile_writeData = memory_dataOut;
