@@ -1,3 +1,52 @@
+### 7/5/18
+
+jalr isn't working correctly because the compiler reorganizes the assembly to fill the delay slot of the jalr instruction. This means that when we jump back with `jr $ra`, we process the instruction in the delay slot again. This is because of my branch delay hack that I did instead of pipelining the whole processor. I just add 4 to the next PC address to fix this.
+
+Basic processor tests are done! :) 
+
+### 7/3/18
+
+Continuing to write giant test program for processor.
+
+Fixed a bug with sll where it used the wrong output value from the register file. I probably need to fix all the other bit shift commands too.
+
+### 7/2/18
+
+Fixed a bug with lui not working.
+
+Division stores the result in LO and the remainder in HI. That needs to be fixed. The compiler also creates assembly for division that doesn't seem to make sense. It branches away from the division if the divisior isn't zero. Shouldn't it branch away if the divisior IS zero???
+
+Okay, so I found a Stackoverflow answer on the subject. If the processor is properly pipelined, the code will work because the branch won't kick in right away. I might need to pipeline my processor to get compiled code to work properly then. I'd really prefer not to, as pipelining will make things messier and harder to debug, but I might not have a choice here. I'll need to pipeline it exactly like the R2000 to ensure the compiler output works. If I use mips-linux-gnu-gcc to compile code, I can provide a flag so it doesn't check for zero division, but who knows what else relies on pipelining in the compiler. If I can prevent the compiler from utilizing delay slots it might be OK though.
+
+I delayed the branch module and the compiler's division works now :) Also, apparently loading -3 with `li dest, -3` doesn't seem to work but `addi dest, $0, -3` works. `li dest -3` works on the MARS simulator. addiu does sign extend the immediate after all.
+
+The compiler is weird though because it automatically moves the lo of the result into one of the registers it used to divide automatically and I don't know why.
+
+### 7/1/18
+
+Apparently the sign extension of immediates works differently than I thought. Apparently not all instructions that use immediates sign extend the immediate. Some zero extend the immediate. I think I need to add a control line for this. It can't be done in the ALU because the ALU doesn't know the difference between addi and add
+
+##### Sign extend with:
+addi
+slti
+sltiu
+addiu
+##### Zero extend with:
+andi
+ori
+xori
+sltiu
+addiu
+
+### 6/30/18
+
+Made a python script to compile run compilation commands. Fixed the Branch_TB to reflect a coding fix I made in the Branch module.
+
+I think I have loadable hex from a compiled/linked assembly program! It even starts at the correct address: 32'd1024. Anything below 1024 is reserved.
+
+### 6/27/18
+
+I figured out how to change the start address of compiled code! This is really great.
 
 ### 6/26/18
 

@@ -35,6 +35,7 @@ Some MIPS commands really get assembled down into multiple instructions. These a
 ### Links:
 
 [MIPS R2000 Assembly Language](https://fenix.tecnico.ulisboa.pt/downloadFile/3779576281986/MIPS)
+[How to Use Inline Assembly Language in C Code](https://gcc.gnu.org/onlinedocs/gcc/Using-Assembly-Language-with-C.html)
 
 
 # Compiling for MIPS
@@ -84,7 +85,8 @@ It seems that cross compiling isn't as easy as I thought. Ultimately, I need a *
 
 Apparently you can change a section's start address using the linker. [Here's the link I found this info on](https://gcc.gnu.org/ml/gcc-help/2010-02/msg00213.html)
 [Linker scripts](https://www.math.utah.edu/docs/info/ld_3.html#SEC14)
-
+[Linker scripts #2](http://www.scoberlin.de/content/media/http/informatik/gcc_docs/ld_3.html)
+[Assembler Directives](ftp://ftp.gnu.org/old-gnu/Manuals/gas/html_chapter/as_7.html)
 ___
 
 # ELF File - Executable and linkable format
@@ -462,7 +464,7 @@ Use `wait (signalName)` to wait for that signal to change before proceeding. Sup
 
 You can put a giant wait at the end of your always block to let the simulation run and have it never repeat.
 
-`$readmemb` can be used to read lines of binary from a file for use with testing. [More help.](http://verilog.renerta.com/mobile/source/vrg00016.htm)
+`$readmemb` can be used to read lines of binary from a file for use with testing. [More help.](http://verilog.renerta.com/mobile/source/vrg00016.htm) `$readmemh` also exists but for reading hex from a file instead of binary.
 
 ### Links
 
