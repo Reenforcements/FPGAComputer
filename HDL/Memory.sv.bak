@@ -258,10 +258,10 @@ end
 // Output next instruction
 always_comb begin
 	pcDataOutput = { 
-					memory[pcAddress[15:0]], 
-					memory[pcAddress[15:0] + 16'd1],
+					memory[pcAddress[15:0] + 16'd3], 
 					memory[pcAddress[15:0] + 16'd2],
-					memory[pcAddress[15:0] + 16'd3]
+					memory[pcAddress[15:0] + 16'd1],
+					memory[pcAddress[15:0]]
 					};
 end
 

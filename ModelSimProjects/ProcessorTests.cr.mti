@@ -100,7 +100,7 @@ Top level modules:
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package MemoryModesPackage
 -- Compiling package Memory_sv_unit
--- Importing package MemoryModes
+-- Importing package MemoryModesPackage
 -- Compiling module Memory
 
 Top level modules:

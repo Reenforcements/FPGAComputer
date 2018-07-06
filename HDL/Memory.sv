@@ -11,7 +11,7 @@ typedef enum logic [2:0] {
 } ReadWriteModes;
 endpackage
 
-import MemoryModes::*;
+import MemoryModesPackage::*;
 
 module Memory(
 	input logic clk,
