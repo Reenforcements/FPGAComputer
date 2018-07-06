@@ -1,0 +1,3 @@
+python compileAssembly.py -o ../ModelSimTestData/processorTest1.elf ../ModelSimTestData/processorTest1.asm
+python outputHex.py ../ModelSimTestData/processorTest1.elf ../ModelSimTestData/processorTest1Hex.txt
+

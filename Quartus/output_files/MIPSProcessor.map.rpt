@@ -1,0 +1,239 @@
+Analysis & Synthesis report for MIPSProcessor
+Fri Jul  6 12:06:32 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Jul  6 12:06:32 2018           ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; MIPSProcessor                               ;
+; Top-level Entity Name              ; Processor                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; Processor          ; MIPSProcessor      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; All                ;                    ;
+; Verilog Show LMF Mapping Messages                                ; Off                ;                    ;
+; Verilog Version                                                  ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Fri Jul  6 12:06:23 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
+    Info (12023): Found entity 1: RegisterFile File: /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
+    Info (12023): Found entity 1: PC File: /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+    Info (12022): Found design unit 1: MemoryModesPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 2
+    Info (12023): Found entity 1: Memory File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 16
+Info (12021): Found 3 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
+    Info (12022): Found design unit 1: MIPSInstructionPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv Line: 1
+    Info (12022): Found design unit 2: ControlLinePackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv Line: 85
+    Info (12023): Found entity 1: Control File: /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv Line: 109
+Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
+    Info (12022): Found design unit 1: BranchModesPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 1
+    Info (12023): Found entity 1: Branch File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+    Info (12022): Found design unit 1: ALUFunctCodesPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 1
+    Info (12023): Found entity 1: ALU File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 47
+Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv
+    Info (12022): Found design unit 1: ProcessorPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 1
+    Info (12023): Found entity 1: Processor File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 8
+Info (12127): Elaborating entity "Processor" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(244): object "instruction_opCode" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 244
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(248): object "instruction_shamtIn" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 248
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(249): object "instruction_functIn" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 249
+Info (12128): Elaborating entity "PC" for hierarchy "PC:pc" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 55
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:registerFile" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 90
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 118
+Warning (10036): Verilog HDL or VHDL warning at ALU.sv(62): object "carry" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 62
+Info (12128): Elaborating entity "Branch" for hierarchy "Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 151
+Warning (10240): Verilog HDL Always Construct warning at Branch.sv(108): inferring latch(es) for variable "branchTo", which holds its previous value in one or more paths through the always construct File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 108
+Error (10166): SystemVerilog RTL Coding error at Branch.sv(108): always_comb construct does not infer purely combinational logic. File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 108
+Info (10041): Inferred latch for "branchTo[0]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[1]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[2]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[3]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[4]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[5]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[6]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[7]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[8]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[9]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[10]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[11]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[12]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[13]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[14]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[15]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[16]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[17]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[18]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[19]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[20]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[21]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[22]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[23]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[24]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[25]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[26]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[27]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[28]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[29]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[30]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Info (10041): Inferred latch for "branchTo[31]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
+Error (12152): Can't elaborate user hierarchy "Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 151
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 5 warnings
+    Error: Peak virtual memory: 893 megabytes
+    Error: Processing ended: Fri Jul  6 12:06:32 2018
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:15
+
+

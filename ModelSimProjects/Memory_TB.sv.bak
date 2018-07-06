@@ -1,4 +1,4 @@
-import MemoryModes::*;
+import MemoryModesPackage::*;
 
 module Memory_TB;
 
@@ -623,25 +623,25 @@ writeMode = WORD;
 readMode = NONE;
 unsignedLoad = 0;
 #10;
-address = 32'd1;
+address = 32'd4;
 data = 32'd1;
 writeMode = WORD;
 readMode = NONE;
 unsignedLoad = 0;
 #10;
-address = 32'd2;
+address = 32'd8;
 data = 32'd2;
 writeMode = WORD;
 readMode = NONE;
 unsignedLoad = 0;
 #10;
-address = 32'd3;
+address = 32'd12;
 data = 32'd3;
 writeMode = WORD;
 readMode = NONE;
 unsignedLoad = 0;
 #10;
-address = 32'd4;
+address = 32'd16;
 data = 32'd4;
 writeMode = WORD;
 readMode = NONE;
@@ -657,22 +657,22 @@ unsignedLoad = 0;
 assert(pcDataOutput == 32'd0) else $error("PC output didn't match %h", pcDataOutput);
 #9;
 
-pcAddress = 32'd1;
+pcAddress = 32'd4;
 #1;
 assert(pcDataOutput == 32'd1) else $error("PC output didn't match %h", pcDataOutput);
 #9;
 
-pcAddress = 32'd2;
+pcAddress = 32'd8;
 #1;
 assert(pcDataOutput == 32'd2) else $error("PC output didn't match %h", pcDataOutput);
 #9;
 
-pcAddress = 32'd3;
+pcAddress = 32'd16;
 #1;
 assert(pcDataOutput == 32'd3) else $error("PC output didn't match %h", pcDataOutput);
 #9;
 
-pcAddress = 32'd4;
+pcAddress = 32'd20;
 #1;
 assert(pcDataOutput == 32'd4) else $error("PC output didn't match %h", pcDataOutput);
 #9;

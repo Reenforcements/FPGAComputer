@@ -25,7 +25,7 @@ output logic [31:0]externalDataOut
 // pClk stands for pausable clock.
 // We may want to be able to "pause" the processor at times.
 logic pClk;
-always_ff @ (posedge clk or negedge clk) begin
+always_ff @ (posedge clk) begin
 	if (pause == 1'b1) begin
 		// Maintain current clock state
 		pClk <= pClk;
@@ -108,13 +108,13 @@ ALU alu(
 
 	.dataIn0(alu_dataIn0),
 	.dataIn1(alu_dataIn1),
-	.funct(alu_funct),
 	.shamt(alu_shamt),
+	.funct(alu_funct),
 
 	.result(alu_result),
 	.outputZero(alu_outputZero),
-	.outputPositive(alu_outputPositive),
-	.outputNegative(alu_outputNegative)
+	.outputNegative(alu_outputNegative),
+	.outputPositive(alu_outputPositive)
 );
 
 // Branch
@@ -392,11 +392,11 @@ always_ff @ (posedge clk or negedge rst) begin
 		branch_jumpRegisterAddress_d0 <= 32'd0;
 		
 		branch_pcAddress_d0 <= 32'd0;
-		branch_branchAddressOffset_d0 <= 32'd0;
+		branch_branchAddressOffset_d0 <= 16'd0;
 	
-		branch_resultZero_d0 <= 32'd0;
-		branch_resultNegative_d0 <= 32'd0;
-		branch_resultPositive_d0 <= 32'd0;
+		branch_resultZero_d0 <= 1'd0;
+		branch_resultNegative_d0 <= 1'd0;
+		branch_resultPositive_d0 <= 1'd0;
 		
 		branch_mode_d0 <= BranchModesPackage::NONE;
 	end

@@ -2,7 +2,7 @@
 package MemoryModesPackage;
 // Modes for "readMode" and "writeMode"
 typedef enum logic [2:0] {
-	NONE = 3'h0,
+	ReadWriteMode_NONE = 3'h0,
 	BYTE = 3'h1,
 	HALFWORD = 3'h2,
 	WORD = 3'h3,
@@ -35,8 +35,8 @@ logic [7:0]memory[65535:0];
 
 logic [15:0]baseAddress;
 logic [15:0]wordAlignedBase;
-logic [31:0]readData0;
-logic [31:0]writeData0;
+logic [7:0]readData0[3:0];
+logic [7:0]writeData0[3:0];
 logic [3:0]writeMask;
 
 always_comb begin
@@ -44,8 +44,11 @@ always_comb begin
 	wordAlignedBase = {baseAddress[15:2], 2'b0};
 
 	unique case (readMode)
-		NONE: begin
-			readData0 = 32'b0;
+		ReadWriteMode_NONE: begin
+			readData0[3] = 8'd0;
+			readData0[2] = 8'd0;
+			readData0[1] = 8'd0;
+			readData0[0] = 8'd0;
 		end
 		BYTE: begin
 			// Get a single byte from memory
@@ -53,40 +56,64 @@ always_comb begin
 			singleByte = memory[ baseAddress ];
 			if (unsignedLoad) begin
 				// Don't sign extend
-				readData0 = { {24{1'b0}}, singleByte};
+				readData0[3] = 8'h0;
+				readData0[2] = 8'h0;
+				readData0[1] = 8'h0;
+				readData0[0] = singleByte;
 			end else begin
 				// Sign extend using the MSb
 				// (Can't use replication operator here :( )
-				if (singleByte[7] == 1'b1)
-					readData0 = { {24{1'b1}}, singleByte};
-				else
-					readData0 = { {24{1'b0}}, singleByte};
+				if (singleByte[7] == 1'b1) begin
+					readData0[3] = 8'hFF;
+					readData0[2] = 8'hFF;
+					readData0[1] = 8'hFF;
+					readData0[0] = singleByte;
+				end else begin
+					readData0[3] = 8'h0;
+					readData0[2] = 8'h0;
+					readData0[1] = 8'h0;
+					readData0[0] = singleByte;
+				end
 			end
 		end
 		HALFWORD: begin
 			// Get a halfword from memory
-			logic [15:0]singleHalfword;
+			logic [7:0]singleHalfword[1:0];
 			// "+:" is called array slicing.
 			// "16'" is a cast.
 			// In this case, its returning:
 			// { memory[baseAddress + 32'b1], memory[baseAddress] }
-			singleHalfword = 16'(memory[baseAddress+:2]);
+			singleHalfword[1] = memory[baseAddress+16'd1];
+			singleHalfword[0] = memory[baseAddress];
 			if (unsignedLoad) begin
 				// Don't sign extend
-				readData0 = { {16{1'b0}}, singleHalfword};
+				readData0[3] = 8'h0;
+				readData0[2] = 8'h0;
+				readData0[1] = singleHalfword[1];
+				readData0[0] = singleHalfword[0];
 			end else begin
 				// Sign extend using the MSb
 				// (Can't use replication operator here :( )
-				if (singleHalfword[15] == 1'b1)
-					readData0 = { {16{1'b1}}, singleHalfword};
-				else
-					readData0 = { {16{1'b0}}, singleHalfword};
+				if (singleHalfword[1][7] == 1'b1) begin
+					readData0[3] = 8'hFF;
+					readData0[2] = 8'hFF;
+					readData0[1] = singleHalfword[1];
+					readData0[0] = singleHalfword[0];
+				end else begin
+					readData0[3] = 8'h0;
+					readData0[2] = 8'h0;
+					readData0[1] = singleHalfword[1];
+					readData0[0] = singleHalfword[0];
+				end
 			end
 		end
 		WORD: begin
 			// lw
 			// Technically this should read only at the word boundary
-			readData0 = 32'(memory[baseAddress+:4]);
+			readData0[3] = memory[baseAddress + 16'd3];
+			readData0[2] = memory[baseAddress + 16'd2];
+			readData0[1] = memory[baseAddress + 16'd1];
+			readData0[0] = memory[baseAddress];
 		end
 		WORDLEFT: begin
 			// lwl
@@ -96,16 +123,31 @@ always_comb begin
 			//  right word boundary.
 			unique case (baseAddress[1:0])
 				2'd3: begin
-					readData0 = 32'(memory[baseAddress-:4]);
+					//readData0 = 32'(memory[baseAddress-:4]);
+					readData0[3] = memory[baseAddress];
+					readData0[2] = memory[baseAddress - 16'd1];
+					readData0[1] = memory[baseAddress - 16'd2];
+					readData0[0] = memory[baseAddress - 16'd3];
 				end
 				2'd2: begin
-					readData0 = {24'(memory[baseAddress-:3]), {8{1'b0}}};
+					//readData0 = {24'(memory[baseAddress-:3]), {8{1'b0}}};
+					readData0[3] = memory[baseAddress];
+					readData0[2] = memory[baseAddress - 16'd1];
+					readData0[1] = memory[baseAddress - 16'd2];
+					readData0[0] = 8'd0;
 				end
 				2'd1: begin
-					readData0 = {16'(memory[baseAddress-:2]), {16{1'b0}}};
+					readData0[3] = memory[baseAddress];
+					readData0[2] = memory[baseAddress - 16'd1];
+					readData0[1] = 8'd0;
+					readData0[0] = 8'd0;
 				end
 				2'd0: begin
-					readData0 = {8'(memory[baseAddress-:1]), {24{1'b0}}};
+					//readData0 = {8'(memory[baseAddress-:1]), {24{1'b0}}};
+					readData0[3] = memory[baseAddress];
+					readData0[2] = 8'd0;
+					readData0[1] = 8'd0;
+					readData0[0] = 8'd0;
 				end
 			endcase
 		end
@@ -114,100 +156,136 @@ always_comb begin
 			// count up to word boundary
 			unique case (baseAddress[1:0])
 				2'd0: begin
-					readData0 = 32'(memory[baseAddress+:4]);
+					//readData0 = 32'(memory[baseAddress+:4]);
+					readData0[3] = memory[baseAddress + 16'd3];
+					readData0[2] = memory[baseAddress + 16'd2];
+					readData0[1] = memory[baseAddress + 16'd1];
+					readData0[0] = memory[baseAddress];
 				end
 				2'd1: begin
-					readData0 = {{8{1'b0}}, 24'(memory[baseAddress+:3])};
+					//readData0 = {{8{1'b0}}, 24'(memory[baseAddress+:3])};
+					readData0[3] = 8'd0;
+					readData0[2] = memory[baseAddress + 16'd2];
+					readData0[1] = memory[baseAddress + 16'd1];
+					readData0[0] = memory[baseAddress];
 				end
 				2'd2: begin
-					readData0 = {{16{1'b0}}, 16'(memory[baseAddress+:2])};
+					//readData0 = {{16{1'b0}}, 16'(memory[baseAddress+:2])};
+					readData0[3] = 8'd0;
+					readData0[2] = 8'd0;
+					readData0[1] = memory[baseAddress + 16'd1];
+					readData0[0] = memory[baseAddress];
 				end
 				2'd3: begin
-					readData0 = {{24{1'b0}}, 8'(memory[baseAddress+:1])};
+					readData0[3] = 8'd0;
+					readData0[2] = 8'd0;
+					readData0[1] = 8'd0;
+					readData0[0] = memory[baseAddress];
 				end
 			endcase
 
 		end
 		default: begin 
-			readData0 = 32'b0; 
+			readData0[3] = 8'd0;
+			readData0[2] = 8'd0;
+			readData0[1] = 8'd0;
+			readData0[0] = 8'd0;
 		end
 	endcase
 	// Mask which bytes we're going to write
 	//  using "writeMask"
 	unique case (writeMode)
-		NONE: begin
-			writeData0 = 32'b0;
+		ReadWriteMode_NONE: begin
+			writeData0[3] = 8'd0;
+			writeData0[2] = 8'd0;
+			writeData0[1] = 8'd0;
+			writeData0[0] = 8'd0;
 			writeMask = 4'b0;
 		end
 		BYTE: begin
-			writeData0 = data[7:0];
+			//writeData0 = data[7:0];
+			writeData0[3] = 8'd0;
+			writeData0[2] = 8'd0;
+			writeData0[1] = 8'd0;
+			writeData0[0] = data[7:0];
 			writeMask = {1'b0, 1'b0, 1'b0, 1'b1};
 		end
 		HALFWORD: begin
-			writeData0 = data[15:0];
+			//writeData0 = data[15:0];
+			writeData0[3] = 8'd0;
+			writeData0[2] = 8'd0;
+			writeData0[1] = data[15:8];
+			writeData0[0] = data[7:0];
 			writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
 		end
 		WORD: begin
-			writeData0 = data[31:0];
+			//writeData0 = data[31:0];
+			writeData0[3] = data[31:24];
+			writeData0[2] = data[23:16];
+			writeData0[1] = data[15:8];
+			writeData0[0] = data[7:0];
 			writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 		end
 		WORDLEFT: begin
 			// We're always writing at least one byte.
-			logic [7:0]writeBytes[3:0];
-			writeBytes[baseAddress[1:0]] = data[31:24];
+			//logic [7:0]writeBytes[3:0];
+			writeData0[baseAddress[1:0]] = data[31:24];
 			writeMask = {1'b0, 1'b0, 1'b0, 1'b1};
 
 			// Figure out how many more to write before we
 			//  hit the word boundary.
 			if (baseAddress[1:0] > 2'd0) begin
-				writeBytes[baseAddress[1:0] - 2'd1] = data[23:16];
+				writeData0[baseAddress[1:0] - 2'd1] = data[23:16];
 				writeMask = {1'b0, 1'b0, 1'b1, 1'b1};
 			end
 			if (baseAddress[1:0] > 2'd1) begin
-				writeBytes[baseAddress[1:0] - 2'd2] = data[15:8];
+				writeData0[baseAddress[1:0] - 2'd2] = data[15:8];
 				writeMask = {1'b0, 1'b1, 1'b1, 1'b1};
 			end
 			if (baseAddress[1:0] > 2'd2) begin
-				writeBytes[baseAddress[1:0] - 2'd3] = data[7:0];
+				writeData0[baseAddress[1:0] - 2'd3] = data[7:0];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 			end
 			
 			// Cast backed to a packed array and assign
-			writeData0 = 32'(writeBytes);
-			writeBytes[0] = 8'hAA;
+			//writeData0 = 32'(writeBytes);
+			//writeBytes[0] = 8'hAA;
 		end
 		WORDRIGHT: begin
 			// We're always writing at least one byte.
-			logic [7:0]writeBytes[3:0];
-			writeBytes[baseAddress[1:0]] = data[7:0];
+			//logic [7:0]writeBytes[3:0];
+			writeData0[baseAddress[1:0]] = data[7:0];
 			writeMask = {1'b1, 1'b0, 1'b0, 1'b0};
 
 			// Figure out how many more to write before we
 			//  hit the word boundary.
 			if (baseAddress[1:0] < 2'd3) begin
-				writeBytes[baseAddress[1:0] + 2'd1] = data[15:8];
+				writeData0[baseAddress[1:0] + 2'd1] = data[15:8];
 				writeMask = {1'b1, 1'b1, 1'b0, 1'b0};
 			end
 			if (baseAddress[1:0] < 2'd2) begin
-				writeBytes[baseAddress[1:0] + 2'd2] = data[23:16];
+				writeData0[baseAddress[1:0] + 2'd2] = data[23:16];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b0};
 			end
 			if (baseAddress[1:0] < 2'd1) begin
-				writeBytes[baseAddress[1:0] + 2'd3] = data[31:24];
+				writeData0[baseAddress[1:0] + 2'd3] = data[31:24];
 				writeMask = {1'b1, 1'b1, 1'b1, 1'b1};
 			end
 			
 			// Cast backed to a packed array and assign
-			writeData0 = 32'(writeBytes);
+			//writeData0 = 32'(writeBytes);
 		end
 
 		default: begin 
-			writeData0 = 32'b0; 
+			writeData0[3] = 8'd0;
+			writeData0[2] = 8'd0;
+			writeData0[1] = 8'd0;
+			writeData0[0] = 8'd0;
 			writeMask = {1'b0, 1'b0, 1'b0, 1'b0};
 		end
 	endcase
 
-	dataOutput = readData0;
+	dataOutput = {readData0[3], readData0[2], readData0[1], readData0[0]};
 end
 
 always_ff @(posedge clk or negedge rst) begin
@@ -224,30 +302,30 @@ always_ff @(posedge clk or negedge rst) begin
 				//  aligned here because "baseAddress" is most
 				//   likely not word aligned in this case.
 				if (writeMask[3] == 1'b1) begin
-					memory[wordAlignedBase + 16'd3] <= writeData0[31:24];
+					memory[wordAlignedBase + 16'd3] <= writeData0[3];
 				end
 				if (writeMask[2] == 1'b1) begin
-					memory[wordAlignedBase + 16'd2] <= writeData0[23:16];
+					memory[wordAlignedBase + 16'd2] <= writeData0[2];
 				end
 				if (writeMask[1] == 1'b1) begin
-					memory[wordAlignedBase + 16'd1] <= writeData0[15:8];
+					memory[wordAlignedBase + 16'd1] <= writeData0[1];
 				end
 				if (writeMask[0] == 1'b1) begin
-					memory[wordAlignedBase] <= writeData0[7:0];
+					memory[wordAlignedBase] <= writeData0[0];
 				end
 			end
 			default: begin
 				if (writeMask[3] == 1'b1) begin
-					memory[baseAddress + 16'd3] <= writeData0[31:24];
+					memory[baseAddress + 16'd3] <= writeData0[3];
 				end
 				if (writeMask[2] == 1'b1) begin
-					memory[baseAddress + 16'd2] <= writeData0[23:16];
+					memory[baseAddress + 16'd2] <= writeData0[2];
 				end
 				if (writeMask[1] == 1'b1) begin
-					memory[baseAddress + 16'd1] <= writeData0[15:8];
+					memory[baseAddress + 16'd1] <= writeData0[1];
 				end
 				if (writeMask[0] == 1'b1) begin
-					memory[baseAddress] <= writeData0[7:0];
+					memory[baseAddress] <= writeData0[0];
 				end
 			end
 		endcase

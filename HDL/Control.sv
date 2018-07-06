@@ -165,11 +165,11 @@ always_comb begin
 			useImmediate = 0;
 			signExtend = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		// NON_IMMEDIATE_ALU includes NOP
@@ -232,17 +232,17 @@ always_comb begin
 			useImmediate = 0;
 			signExtend = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
 			unique case (functIn)
 				ALUFunctCodesPackage::ALU_JR,
 				ALUFunctCodesPackage::ALU_JALR: begin
-					branchMode = BranchModesPackage::JR;
+					branchMode = BranchModesPackage::BranchMode_JR;
 				end
 				default: begin
-					branchMode = BranchModesPackage::NONE;
+					branchMode = BranchModesPackage::BranchMode_NONE;
 				end
 			endcase
 		// "not_immediate_alu" is a block label and just helps
@@ -280,11 +280,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		ADDIU: begin
@@ -298,11 +298,11 @@ always_comb begin
 			useImmediate = 1;
 			signExtend = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		LUI: begin
@@ -316,11 +316,11 @@ always_comb begin
 			shamt = 5'd16;
 			useImmediate = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		SLTI: begin
@@ -334,11 +334,11 @@ always_comb begin
 			useImmediate = 1;
 			signExtend = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		SLTIU: begin
@@ -352,11 +352,11 @@ always_comb begin
 			useImmediate = 1;
 			signExtend = 1;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		BEQ: begin
@@ -369,17 +369,17 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::BEQ;
+			branchMode = BranchModesPackage::BranchMode_BEQ;
 		end
 
 		BGEZ_BGEZAL_BLTZAL_BLTZ: begin
 			registerRead = 1;
 			// Only link for BGEZAL and BLTZAL
-			if (rtIn == BranchModesPackage::BGEZAL || rtIn == BranchModesPackage::BLTZAL) begin
+			if (rtIn == BranchModesPackage::BranchMode_BGEZAL || rtIn == BranchModesPackage::BranchMode_BLTZAL) begin
 				registerWrite = 1;
 			end
 			else begin
@@ -395,8 +395,8 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
 			// These instructions use rt to hold the branch mode
@@ -414,11 +414,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::BGTZ;
+			branchMode = BranchModesPackage::BranchMode_BGTZ;
 		end
 
 		BLEZ: begin
@@ -431,11 +431,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::BLEZ;
+			branchMode = BranchModesPackage::BranchMode_BLEZ;
 		end
 
 		BNE: begin
@@ -448,11 +448,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::BNE;
+			branchMode = BranchModesPackage::BranchMode_BNE;
 		end
 
 		J: begin
@@ -466,11 +466,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::J;
+			branchMode = BranchModesPackage::BranchMode_J;
 		end
 
 		JAL: begin
@@ -486,11 +486,11 @@ always_comb begin
 			shamt = 5'd0;
 			useImmediate = 0;
 
-			readMode = MemoryModesPackage::NONE;
-			writeMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 			unsignedLoad = 0;
 
-			branchMode = BranchModesPackage::J;
+			branchMode = BranchModesPackage::BranchMode_J;
 		end
 
 		LB,
@@ -529,12 +529,12 @@ always_comb begin
 					readMode = MemoryModesPackage::WORDRIGHT;
 				end
 				default: begin
-					readMode = MemoryModesPackage::NONE;
+					readMode = MemoryModesPackage::ReadWriteMode_NONE;
 				end
 			endcase
 			
 			// Not writing
-			writeMode = MemoryModesPackage::NONE;
+			writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 
 			if (opCodeIn == LBU || opCodeIn == LHU) begin
 				unsignedLoad = 1;
@@ -543,7 +543,7 @@ always_comb begin
 				unsignedLoad = 0;
 			end
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 		SB,
@@ -578,11 +578,11 @@ always_comb begin
 					writeMode = MemoryModesPackage::WORDRIGHT;
 				end
 				default: begin
-					writeMode = MemoryModesPackage::NONE;
+					writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 				end
 			endcase
 			
-			readMode = MemoryModesPackage::NONE;
+			readMode = MemoryModesPackage::ReadWriteMode_NONE;
 
 			if (opCodeIn == LBU || opCodeIn == LHU) begin
 				unsignedLoad = 1;
@@ -591,7 +591,7 @@ always_comb begin
 				unsignedLoad = 0;
 			end
 
-			branchMode = BranchModesPackage::NONE;
+			branchMode = BranchModesPackage::BranchMode_NONE;
 		end
 
 	endcase
