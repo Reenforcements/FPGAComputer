@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSProcessor
-Fri Jul  6 12:06:32 2018
+Sat Jul  7 14:19:55 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Jul  6 12:06:32 2018           ;
+; Analysis & Synthesis Status        ; Failed - Sat Jul  7 14:19:55 2018           ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Processor                                   ;
@@ -163,16 +163,18 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Fri Jul  6 12:06:23 2018
+    Info: Processing started: Sat Jul  7 14:19:44 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
     Info (12023): Found entity 1: RegisterFile File: /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
     Info (12023): Found entity 1: PC File: /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv Line: 1
-Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
-    Info (12022): Found design unit 1: MemoryModesPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 2
-    Info (12023): Found entity 1: Memory File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 16
+Error (10267): Verilog HDL Module Instantiation error at Memory.sv(60): cannot connect instance ports both by order and by name File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 60
+Error (10170): Verilog HDL syntax error at Memory.sv(104) near text: "begin";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 104
+Error (10170): Verilog HDL syntax error at Memory.sv(175) near text: "begin";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 175
+Error (10170): Verilog HDL syntax error at Memory.sv(187) near text: "{";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 187
+Info (12021): Found 0 design units, including 0 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
 Info (12021): Found 3 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
     Info (12022): Found design unit 1: MIPSInstructionPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv Line: 1
     Info (12022): Found design unit 2: ControlLinePackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv Line: 85
@@ -186,54 +188,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/i
 Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv
     Info (12022): Found design unit 1: ProcessorPackage (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 1
     Info (12023): Found entity 1: Processor File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 8
-Info (12127): Elaborating entity "Processor" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(244): object "instruction_opCode" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 244
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(248): object "instruction_shamtIn" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 248
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(249): object "instruction_functIn" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 249
-Info (12128): Elaborating entity "PC" for hierarchy "PC:pc" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 55
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:registerFile" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 90
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 118
-Warning (10036): Verilog HDL or VHDL warning at ALU.sv(62): object "carry" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 62
-Info (12128): Elaborating entity "Branch" for hierarchy "Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 151
-Warning (10240): Verilog HDL Always Construct warning at Branch.sv(108): inferring latch(es) for variable "branchTo", which holds its previous value in one or more paths through the always construct File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 108
-Error (10166): SystemVerilog RTL Coding error at Branch.sv(108): always_comb construct does not infer purely combinational logic. File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 108
-Info (10041): Inferred latch for "branchTo[0]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[1]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[2]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[3]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[4]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[5]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[6]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[7]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[8]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[9]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[10]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[11]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[12]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[13]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[14]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[15]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[16]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[17]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[18]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[19]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[20]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[21]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[22]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[23]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[24]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[25]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[26]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[27]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[28]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[29]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[30]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Info (10041): Inferred latch for "branchTo[31]" at Branch.sv(152) File: /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv Line: 152
-Error (12152): Can't elaborate user hierarchy "Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 151
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 5 warnings
-    Error: Peak virtual memory: 893 megabytes
-    Error: Processing ended: Fri Jul  6 12:06:32 2018
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:15
+Info (12021): Found 1 design units, including 1 entities, in source file RAM32Bit.v
+    Info (12023): Found entity 1: RAM32Bit File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 39
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 0 warnings
+    Error: Peak virtual memory: 886 megabytes
+    Error: Processing ended: Sat Jul  7 14:19:55 2018
+    Error: Elapsed time: 00:00:11
+    Error: Total CPU time (on all processors): 00:00:16
 
 
