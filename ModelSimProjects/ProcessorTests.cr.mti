@@ -25,22 +25,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 -- Compiling package ProcessorPackage
 ** Error: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv(401):  Failed to find the name 'NONE' in scope 'BranchModesPackage' at /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv(1).
 
-} {4.0 5.0} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package MIPSInstructionPackage
--- Compiling package ControlLinePackage
--- Compiling package Control_sv_unit
--- Importing package MIPSInstructionPackage
--- Importing package ControlLinePackage
--- Importing package ALUFunctCodesPackage
--- Importing package MemoryModesPackage
--- Importing package BranchModesPackage
--- Compiling module Control
-
-Top level modules:
-	Control
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
+} {4.0 5.0} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package Processor_TB_sv_unit
 -- Importing package MIPSInstructionPackage

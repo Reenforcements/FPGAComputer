@@ -133,16 +133,16 @@ output logic [3:0]branchMode
 );
 
 logic [5:0]opCodeIn;
-logic [4:0]rsIn;
+//logic [4:0]rsIn;
 logic [4:0]rtIn;
-logic [4:0]rdIn;
+//logic [4:0]rdIn;
 logic [4:0]shamtIn;
 logic [5:0]functIn;
 always_comb begin
 	opCodeIn = instructionData[31:26];
-	rsIn = instructionData[25:21];
+	//rsIn = instructionData[25:21];
 	rtIn = instructionData[20:16];
-	rdIn = instructionData[15:11];
+	//rdIn = instructionData[15:11];
 	shamtIn = instructionData[10:6];
 	functIn = instructionData[5:0];
 	
@@ -275,7 +275,11 @@ always_comb begin
 					funct = ALUFunctCodesPackage::XOR;
 					signExtend = 0;
 				end
-				default: begin end
+				default: begin
+					// Default
+					funct = ALUFunctCodesPackage::ADD;
+					signExtend = 0;
+				end
 			endcase
 			shamt = 5'd0;
 			useImmediate = 1;
@@ -401,7 +405,7 @@ always_comb begin
 
 			// These instructions use rt to hold the branch mode
 			//  and branch module is coded to have the same values that rt could have.
-			branchMode = rtIn;
+			branchMode = 4'(rtIn);
 		end
 
 		BGTZ: begin

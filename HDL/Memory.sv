@@ -203,8 +203,6 @@ always_comb begin
 	end
 end
 
-
-
 // PC related things:
 // Output next instruction
 always_comb begin

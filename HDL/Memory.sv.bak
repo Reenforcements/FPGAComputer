@@ -213,12 +213,5 @@ always_comb begin
 	address_b = pcAddress[15:0];
 	pcDataOutput = q_b;
 end
-always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		pcDataOutput <= 32'd0;
-	end else begin
-		pcDataOutput <= q_b;
-	end
-end
 
 endmodule
