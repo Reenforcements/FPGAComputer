@@ -248,6 +248,7 @@ logic [31:0]instructionData_d0;
 logic [4:0]instruction_rsIn_d0;
 logic [4:0]instruction_rtIn_d0;
 logic [31:0]instruction_immediateExtended_d0;
+logic [25:0]instruction_jumpAddress_d0;
 
 logic [1:0]control_registerWriteSource_d0;
 logic control_registerWrite_d0;
@@ -266,7 +267,6 @@ logic [4:0]registerFile_writeAddress_d0;
 // d1
 logic [31:0]pc_nextPCAddress_d1;
 
-logic [31:0]instructionData_d1;
 	// Need these to check if we can use the ALU result immediately for the next instruction.
 logic [4:0]instruction_rsIn_d1;
 logic [4:0]instruction_rtIn_d1;
@@ -309,10 +309,17 @@ always_comb begin
  	instructionData = memory_pcData;
 end
 always_ff @ (posedge clk or negedge rst) begin
-	
+	if (rst == 1'b0) begin
+		pc_pcAddress_dIF <= 32'd0;
+		pc_nextPCAddress_dIF <= 32'd0;
+	end
+	else begin
+		pc_pcAddress_dIF <= pc_pcAddress;
+		pc_nextPCAddress_dIF <= pc_nextPCAddress;
+	end
 end
 
-
+// Debug
 always @ (posedge clk) begin
 	if (pause == 1'b0)
 		$display("Current instruction: %h", instructionData);
@@ -330,7 +337,7 @@ logic [4:0]instruction_rdIn;
 //logic [5:0]instruction_functIn;
 logic [15:0]instruction_immediate;
 logic [31:0]instruction_immediateExtended;
-logic [31:0]instruction_zeroExtended;
+//logic [31:0]instruction_zeroExtended;
 logic [25:0]instruction_jumpAddress;
 always_comb begin
 	//instruction_opCode = instructionData[31:26];
@@ -378,6 +385,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		instruction_rsIn_d0 <= 5'd0;
 		instruction_rtIn_d0 <= 5'd0;
 		instruction_immediateExtended_d0 <= 32'd0;
+		instruction_jumpAddress_d0 <= 26'd0;
 		
 		control_registerWriteSource_d0 <= ControlLinePackage::NONE;
 		control_registerWrite_d0 <= 0;
@@ -394,13 +402,14 @@ always_ff @ (posedge clk or negedge rst) begin
 		registerFile_writeAddress_d0 <= 5'd0;
 	end
 	else begin
-		pc_pcAddress_d0 <= pc_pcAddress;
-		pc_nextPCAddress_d0 <= pc_nextPCAddress;
+		pc_pcAddress_d0 <= pc_pcAddress_dIF;
+		pc_nextPCAddress_d0 <= pc_nextPCAddress_dIF;
 	
 		instructionData_d0 <= instructionData;
+		instruction_rsIn_d0 <= instruction_rsIn;
 		instruction_rtIn_d0 <= instruction_rtIn;
-		instruction_rdIn_d0 <= instruction_rdIn;
 		instruction_immediateExtended_d0 <= instruction_immediateExtended;
+		instruction_jumpAddress_d0 <= instruction_jumpAddress;
 		
 		control_registerWriteSource_d0 <= control_registerWriteSource;
 		control_registerWrite_d0 <= control_registerWrite;
@@ -437,46 +446,71 @@ end
 
 // Assign values passed from last stage
 always_comb begin
-	alu_dataIn0 = registerFile_readValue0_d0;
+
+	// PC
+	pc_newPC = branch_branchTo;
+	pc_shouldUseNewPC = branch_shouldUseNewPC;
+
+	// ALU
+	if(instruction_rsIn_d1 == instruction_rsIn_d0)
+		alu_dataIn0 = alu_result_d1;
+	else
+		alu_dataIn0 = registerFile_readValue0_d0;
 	
-	if (control_useImmediate_d0 == 1'b1) begin
-		alu_dataIn1 = instruction_immediateExtended_d0;
-	end 
+	if(instruction_rtIn_d1 == instruction_rtIn_d0) begin
+		// Use our last ALU result which hasn't been written back to the register file yet.
+		alu_dataIn1 = alu_result_d1;
+	end
 	else begin
-		alu_dataIn1 = registerFile_readValue1_d0;
+		// We're not using data we just calculated.
+		if (control_useImmediate_d0 == 1'b1) begin
+			alu_dataIn1 = instruction_immediateExtended_d0;
+		end 
+		else begin
+			alu_dataIn1 = registerFile_readValue1_d0;
+		end
 	end
 
 	alu_funct = control_funct_d0;
 	alu_shamt = control_shamt_d0;
+	
+	// Branch
+	branch_mode = control_branchMode_d0;
+	
+	branch_jumpRegisterAddress = alu_result;
+	branch_jumpAddress = instruction_jumpAddress_d0;
+	branch_pcAddress = pc_pcAddress_d0;
+	branch_branchAddressOffset = instruction_immediateExtended_d0[15:0];
+	
+	branch_resultZero = alu_outputZero;
+	branch_resultPositive = alu_outputPositive;
+	branch_resultNegative = alu_outputNegative;
+	
+	// Memory
+	// The memory has its own internal registers for the address/data
+	// The memory control lines are stored in other registers and then assigned next clock cycle.
+	if (externalMemoryControl == 1'b1) begin
+		// Force the memory to be controlled externally.
+		// This could be RS232 serial or ModelSim.
+		memory_clk = clk;
+		memory_address = externalAddress;
+		memory_dataIn = externalData;
+	end
+	else begin	
+		memory_clk = pClk;
+		memory_address = alu_result;
+		memory_dataIn = registerFile_readValue1_d0;
+	end
 end
 
-/*
-logic [31:0]pc_nextPCAddress_d1;
-
-logic [31:0]instructionData_d1;
-	// Need these to check if we can use the ALU result immediately for the next instruction.
-logic [4:0]instruction_rsIn_d1;
-logic [4:0]instruction_rtIn_d1;
-
-logic [1:0]control_registerWriteAddressMode_d1;
-logic control_registerWrite_d1;
-logic [2:0]control_readMode_d1;
-logic [2:0]control_writeMode_d1;
-logic control_unsignedLoad_d1;
-logic [1:0]control_registerWriteSource_d1;
-
-logic [4:0]registerFile_writeAddress_d1;
-
-logic [31:0]alu_result_d1;
-*/
 
 always_ff begin
 	if (rst == 1'b0) begin
-		instructionData_d1 <= 32'd0;
+		pc_nextPCAddress_d1 <= 32'd0;
+	
+		instruction_rsIn_d1 <= R0;
 		instruction_rtIn_d1 <= R0;
-		instruction_rdIn_d1 <= R0;
 		
-		control_registerWriteAddressMode_d1 <= R0;
 		control_registerWriteSource_d1 <= ControlLinePackage::NONE;
 		control_registerWrite_d1 <= 1'b0;
 		control_readMode_d1 <= ReadWriteMode_NONE;
@@ -485,18 +519,14 @@ always_ff begin
 	
 		alu_result_d1 <= 32'd0;
 		
-		alu_outputZero_d1 <= 1'b0;
-		alu_outputPositive_d1 <= 1'b0;
-		alu_outputNegative_d1 <= 1'b0;
-		
-		registerFile_readValue1_d1 <= 32'd0;
+		registerFile_writeAddress_d1 <= 5'd0;
 	end
 	else begin
-		instructionData_d1 <= instructionData_d0;
+		pc_nextPCAddress_d1 <= pc_nextPCAddress_d0;
+	
+		instruction_rsIn_d1 <= instruction_rsIn_d0;
 		instruction_rtIn_d1 <= instruction_rtIn_d0;
-		instruction_rdIn_d1 <= instruction_rdIn_d0;
 		
-		control_registerWriteAddressMode_d1 <= control_registerWriteAddressMode_d0;
 		control_registerWriteSource_d1 <= control_registerWriteSource_d0;
 		control_registerWrite_d1 <= control_registerWrite_d0;
 		control_readMode_d1 <= control_readMode_d0;
@@ -505,11 +535,7 @@ always_ff begin
 	
 		alu_result_d1 <= alu_result;
 		
-		alu_outputZero_d1 <= alu_outputZero;
-		alu_outputPositive_d1 <= alu_outputPositive;
-		alu_outputNegative_d1 <= alu_outputNegative;
-		
-		registerFile_readValue1_d1 <= registerFile_readValue1_d0;
+		registerFile_writeAddress_d1 <= registerFile_writeAddress_d0;
 	end
 end
 
@@ -520,33 +546,79 @@ end
 always_comb begin
 
 	if (externalMemoryControl == 1'b1) begin
-		// Force the memory to be controlled externally.
-		// This could be RS232 serial or ModelSim.
-		memory_clk = clk;
-		memory_address = externalAddress;
-		memory_dataIn = externalData;
 		memory_readMode = externalReadMode;
 		memory_writeMode = externalWriteMode;
 		memory_unsignedLoad = 1'b1;
 		externalDataOut = memory_dataOut;
 	end
 	else begin	
-		memory_clk = pClk;
-		memory_address = alu_result_d1;
-		memory_dataIn = registerFile_readValue1_d1;
 		memory_readMode = control_readMode_d1;
 		memory_writeMode = control_writeMode_d1;
 		memory_unsignedLoad = control_unsignedLoad_d1;
 		externalDataOut = 32'd0;
 	end
-	
 end
 
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		pc_nextPCAddress_d2 <= 32'd0;
+		
+		control_registerWriteSource_d2 <= ControlLinePackage::NONE;
+		control_registerWrite_d2 <= 1'b0;
+		
+		registerFile_writeAddress_d2 <= 5'd0;
+		
+		alu_result_d2 <= 32'd0;
+		
+		memory_dataOut_d2 <= 32'd0;
+	end
+	else begin
+		pc_nextPCAddress_d2 <= pc_nextPCAddress_d1;
+		
+		control_registerWriteSource_d2 <= control_registerWriteSource_d1;
+		control_registerWrite_d2 <= control_registerWrite_d1;
+		
+		registerFile_writeAddress_d2 <= registerFile_writeAddress_d1;
+		
+		alu_result_d2 <= alu_result_d1;
+		
+		memory_dataOut_d2 <= memory_dataOut;
+	end
+end
+
+// d3 
+
+always_comb begin
+	
+
+	registerFile_writeAddress = registerFile_writeAddress_d2;
+	registerFile_registerWrite= control_registerWrite_d2;
+	
+	unique case (control_registerWriteSource_d2)
+		ControlLinePackage::NONE: begin
+			registerFile_writeData = 32'd0;
+		end
+		ControlLinePackage::NEXT_PC_ADDRESS: begin
+			registerFile_writeData = pc_nextPCAddress_d2 + 32'd4;
+		end
+		ControlLinePackage::DATA_OUTPUT: begin
+			registerFile_writeData = memory_dataOut_d2;
+		end
+
+		ControlLinePackage::RESULT: begin
+			registerFile_writeData = alu_result_d2;
+		end
+		default: begin
+			registerFile_writeData = 32'd0;
+		end
+	endcase
+end
 
 
 // NEW CODE ABOVE HERE.
 // (ORIGINAL IMPLEMENTATION BELOW)
 
+/*
 always_comb begin
 
 	// Assign control input.
@@ -704,7 +776,7 @@ always_comb begin
 	pc_shouldUseNewPC = branch_shouldUseNewPC;
 end
 
-/*
+
 logic [31:0]g;
 Register 
 #(.SIZE(32)) 
@@ -713,6 +785,5 @@ r(
 .rst(rst), 
 .in(32'd0), 
 .out(g));*/
-
 
 endmodule
