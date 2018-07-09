@@ -87,7 +87,8 @@ package ControlLinePackage;
 typedef enum logic [1:0] {
 	RD = 2'h0,
 	RT = 2'h1,
-	RA = 2'h2
+	RA = 2'h2,
+	R0 = 2'h3
 } WriteAddressModes;
 
 typedef enum logic [1:0] {

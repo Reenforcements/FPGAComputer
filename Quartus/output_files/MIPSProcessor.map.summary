@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Jul  7 15:27:59 2018
+Analysis & Synthesis Status : Failed - Sun Jul  8 14:50:04 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : MIPSProcessor
 Top-level Entity Name : Processor
 Family : Cyclone IV E
-Total logic elements : 990
-    Total combinational functions : 990
-    Dedicated logic registers : 9
-Total registers : 9
-Total pins : 106
-Total virtual pins : 0
-Total memory bits : 2,097,152
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
