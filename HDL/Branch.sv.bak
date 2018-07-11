@@ -127,7 +127,7 @@ always_comb begin
 				// We need to multiply by 4 to convert to bytes.
 				logic signed[31:0]sBranchAddressOffset;
 				sBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
-				branchTo = pcAddress + sBranchAddressOffset;
+				branchTo = pcAddress + sBranchAddressOffset + 32'd4;
 			end
 
 			BranchMode_J: begin
@@ -139,6 +139,7 @@ always_comb begin
 
 			BranchMode_JR: begin
 				branchTo = jumpRegisterAddress;
+				
 			end
 
 			default: begin

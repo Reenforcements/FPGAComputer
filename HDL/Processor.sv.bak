@@ -285,16 +285,16 @@ logic [31:0]alu_result_d1;
 // The memory data/address has built in input registers.
 
 // d2
-logic [31:0]pc_nextPCAddress_d2;
-
-logic [1:0]control_registerWriteSource_d2;
-logic control_registerWrite_d2;
-
-logic [4:0]registerFile_writeAddress_d2;
-
-logic [31:0]alu_result_d2;
-
-logic [31:0]memory_dataOut_d2;
+//logic [31:0]pc_nextPCAddress_d2;
+//
+//logic [1:0]control_registerWriteSource_d2;
+//logic control_registerWrite_d2;
+//
+//logic [4:0]registerFile_writeAddress_d2;
+//
+//logic [31:0]alu_result_d2;
+//
+//logic [31:0]memory_dataOut_d2;
 
 
 // PIPELINE STAGE IF BELOW
@@ -321,7 +321,7 @@ end
 
 // Debug
 always @ (posedge pClk or negedge rst) begin
-	$display(" (%h) Current instruction: %h, branch %h (%b)", memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
+	$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
 end
 
 // PIPELINE STAGE 0 BELOW (using clocked output from memory)
@@ -469,7 +469,7 @@ always_comb begin
 	end 
 	else begin
 		// Use immediately calculated data if we can
-		if(instruction_rtIn_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
+		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
 			// Use our last ALU result which hasn't been written back to the register file yet.
 			alu_dataIn1 = alu_result_d1;
 		end
@@ -510,7 +510,14 @@ always_comb begin
 	else begin	
 		memory_clk = pClk;
 		memory_address = alu_result;
-		memory_dataIn = registerFile_readValue1_d0;
+		//memory_dataIn = registerFile_readValue1_d0;
+		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
+			// Use our last ALU result which hasn't been written back to the register file yet.
+			memory_dataIn = alu_result_d1;
+		end
+		else begin
+			memory_dataIn = registerFile_readValue1_d0;
+		end
 		memory_readMode = control_readMode_d0;
 		memory_writeMode = control_writeMode_d0;
 		memory_unsignedLoad = control_unsignedLoad_d0;
@@ -567,67 +574,82 @@ end
 // Assign inputs from previous registers
 always_comb begin
 
-	if (externalMemoryControl == 1'b1) begin
-		
-	end
-	else begin	
-		
-	end
-end
-
-always_ff @ (posedge pClk or negedge rst) begin
-	if (rst == 1'b0) begin
-		pc_nextPCAddress_d2 <= 32'd0;
-		
-		control_registerWriteSource_d2 <= ControlLinePackage::NONE;
-		control_registerWrite_d2 <= 1'b0;
-		
-		registerFile_writeAddress_d2 <= 5'd0;
-		
-		alu_result_d2 <= 32'd0;
-		
-		memory_dataOut_d2 <= 32'd0;
-	end
-	else begin
-		pc_nextPCAddress_d2 <= pc_nextPCAddress_d1;
-		
-		control_registerWriteSource_d2 <= control_registerWriteSource_d1;
-		control_registerWrite_d2 <= control_registerWrite_d1;
-		
-		registerFile_writeAddress_d2 <= registerFile_writeAddress_d1;
-		
-		alu_result_d2 <= alu_result_d1;
-		
-		memory_dataOut_d2 <= memory_dataOut;
-	end
-end
-
-// d3 
-
-always_comb begin
+	registerFile_writeAddress = registerFile_writeAddress_d1;
+	registerFile_registerWrite = control_registerWrite_d1;
 	
-
-	registerFile_writeAddress = registerFile_writeAddress_d2;
-	registerFile_registerWrite = control_registerWrite_d2;
-	
-	unique case (control_registerWriteSource_d2)
+	unique case (control_registerWriteSource_d1)
 		ControlLinePackage::NONE: begin
 			registerFile_writeData = 32'd0;
 		end
 		ControlLinePackage::NEXT_PC_ADDRESS: begin
-			registerFile_writeData = pc_nextPCAddress_d2 + 32'd4;
+			registerFile_writeData = pc_nextPCAddress_d1 + 32'd4;
 		end
 		ControlLinePackage::DATA_OUTPUT: begin
-			registerFile_writeData = memory_dataOut_d2;
+			registerFile_writeData = memory_dataOut;
 		end
 
 		ControlLinePackage::RESULT: begin
-			registerFile_writeData = alu_result_d2;
+			registerFile_writeData = alu_result_d1;
 		end
 		default: begin
 			registerFile_writeData = 32'd0;
 		end
 	endcase
+end
+
+//always_ff @ (posedge pClk or negedge rst) begin
+//	if (rst == 1'b0) begin
+//		pc_nextPCAddress_d2 <= 32'd0;
+//		
+//		control_registerWriteSource_d2 <= ControlLinePackage::NONE;
+//		control_registerWrite_d2 <= 1'b0;
+//		
+//		registerFile_writeAddress_d2 <= 5'd0;
+//		
+//		alu_result_d2 <= 32'd0;
+//		
+//		memory_dataOut_d2 <= 32'd0;
+//	end
+//	else begin
+//		pc_nextPCAddress_d2 <= pc_nextPCAddress_d1;
+//		
+//		control_registerWriteSource_d2 <= control_registerWriteSource_d1;
+//		control_registerWrite_d2 <= control_registerWrite_d1;
+//		
+//		registerFile_writeAddress_d2 <= registerFile_writeAddress_d1;
+//		
+//		alu_result_d2 <= alu_result_d1;
+//		
+//		memory_dataOut_d2 <= memory_dataOut;
+//	end
+//end
+
+// d3 
+
+always_comb begin
+	
+// Moved to d2
+//	registerFile_writeAddress = registerFile_writeAddress_d2;
+//	registerFile_registerWrite = control_registerWrite_d2;
+//	
+//	unique case (control_registerWriteSource_d2)
+//		ControlLinePackage::NONE: begin
+//			registerFile_writeData = 32'd0;
+//		end
+//		ControlLinePackage::NEXT_PC_ADDRESS: begin
+//			registerFile_writeData = pc_nextPCAddress_d2 + 32'd4;
+//		end
+//		ControlLinePackage::DATA_OUTPUT: begin
+//			registerFile_writeData = memory_dataOut_d2;
+//		end
+//
+//		ControlLinePackage::RESULT: begin
+//			registerFile_writeData = alu_result_d2;
+//		end
+//		default: begin
+//			registerFile_writeData = 32'd0;
+//		end
+//	endcase
 end
 
 

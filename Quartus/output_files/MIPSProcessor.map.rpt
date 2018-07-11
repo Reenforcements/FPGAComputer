@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSProcessor
-Tue Jul 10 18:11:36 2018
+Wed Jul 11 14:29:22 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -60,15 +60,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 10 18:11:36 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 11 14:29:22 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Processor                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7,858                                       ;
-;     Total combinational functions  ; 6,712                                       ;
-;     Dedicated logic registers      ; 1,477                                       ;
-; Total registers                    ; 1477                                        ;
+; Total logic elements               ; 7,916                                       ;
+;     Total combinational functions  ; 6,819                                       ;
+;     Dedicated logic registers      ; 1,427                                       ;
+; Total registers                    ; 1427                                        ;
 ; Total pins                         ; 106                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,097,120                                   ;
@@ -178,7 +178,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -233,20 +233,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 7,858   ;
+; Estimated Total logic elements              ; 7,916   ;
 ;                                             ;         ;
-; Total combinational functions               ; 6712    ;
+; Total combinational functions               ; 6819    ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 4090    ;
-;     -- 3 input functions                    ; 2324    ;
-;     -- <=2 input functions                  ; 298     ;
+;     -- 4 input functions                    ; 4133    ;
+;     -- 3 input functions                    ; 2418    ;
+;     -- <=2 input functions                  ; 268     ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 5112    ;
-;     -- arithmetic mode                      ; 1600    ;
+;     -- normal mode                          ; 5248    ;
+;     -- arithmetic mode                      ; 1571    ;
 ;                                             ;         ;
-; Total registers                             ; 1477    ;
-;     -- Dedicated logic registers            ; 1477    ;
+; Total registers                             ; 1427    ;
+;     -- Dedicated logic registers            ; 1427    ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
 ; I/O pins                                    ; 106     ;
@@ -255,9 +255,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 28      ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; pClk    ;
-; Maximum fan-out                             ; 1724    ;
-; Total fan-out                               ; 37635   ;
-; Average fan-out                             ; 4.33    ;
+; Maximum fan-out                             ; 1674    ;
+; Total fan-out                               ; 38070   ;
+; Average fan-out                             ; 4.35    ;
 +---------------------------------------------+---------+
 
 
@@ -266,20 +266,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Processor                                   ; 6712 (272)          ; 1477 (374)                ; 2097120     ; 28           ; 0       ; 14        ; 106  ; 0            ; |Processor                                                                                                                           ; Processor           ; work         ;
-;    |ALU:alu|                                 ; 4094 (1495)         ; 64 (64)                   ; 0           ; 28           ; 0       ; 14        ; 0    ; 0            ; |Processor|ALU:alu                                                                                                                   ; ALU                 ; work         ;
-;       |lpm_divide:Div0|                      ; 1260 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
-;          |lpm_divide_92p:auto_generated|     ; 1260 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated                                                                     ; lpm_divide_92p      ; work         ;
-;             |abs_divider_4dg:divider|        ; 1260 (64)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider                                             ; abs_divider_4dg     ; work         ;
+; |Processor                                   ; 6819 (381)          ; 1427 (318)                ; 2097120     ; 28           ; 0       ; 14        ; 106  ; 0            ; |Processor                                                                                                                           ; Processor           ; work         ;
+;    |ALU:alu|                                 ; 4190 (1590)         ; 64 (64)                   ; 0           ; 28           ; 0       ; 14        ; 0    ; 0            ; |Processor|ALU:alu                                                                                                                   ; ALU                 ; work         ;
+;       |lpm_divide:Div0|                      ; 1262 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_92p:auto_generated|     ; 1262 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated                                                                     ; lpm_divide_92p      ; work         ;
+;             |abs_divider_4dg:divider|        ; 1262 (64)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider                                             ; abs_divider_4dg     ; work         ;
 ;                |alt_u_div_6af:divider|       ; 1087 (1084)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider                       ; alt_u_div_6af       ; work         ;
 ;                   |add_sub_7pc:add_sub_0|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider|add_sub_7pc:add_sub_0 ; add_sub_7pc         ; work         ;
 ;                   |add_sub_8pc:add_sub_1|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc         ; work         ;
-;                |lpm_abs_i0a:my_abs_den|      ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_den                      ; lpm_abs_i0a         ; work         ;
+;                |lpm_abs_i0a:my_abs_den|      ; 66 (66)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_den                      ; lpm_abs_i0a         ; work         ;
 ;                |lpm_abs_i0a:my_abs_num|      ; 45 (45)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num                      ; lpm_abs_i0a         ; work         ;
-;       |lpm_divide:Div1|                      ; 1112 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1                                                                                                   ; lpm_divide          ; work         ;
-;          |lpm_divide_hkm:auto_generated|     ; 1112 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated                                                                     ; lpm_divide_hkm      ; work         ;
-;             |sign_div_unsign_9nh:divider|    ; 1112 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                         ; sign_div_unsign_9nh ; work         ;
-;                |alt_u_div_6af:divider|       ; 1112 (1112)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                   ; alt_u_div_6af       ; work         ;
+;       |lpm_divide:Div1|                      ; 1111 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1                                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_hkm:auto_generated|     ; 1111 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated                                                                     ; lpm_divide_hkm      ; work         ;
+;             |sign_div_unsign_9nh:divider|    ; 1111 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                         ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_6af:divider|       ; 1111 (1111)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|ALU:alu|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                   ; alt_u_div_6af       ; work         ;
 ;       |lpm_mult:Mult0|                       ; 92 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult0                                                                                                    ; lpm_mult            ; work         ;
 ;          |mult_46t:auto_generated|           ; 92 (92)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult0|mult_46t:auto_generated                                                                            ; mult_46t            ; work         ;
 ;       |lpm_mult:Mult1|                       ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult1                                                                                                    ; lpm_mult            ; work         ;
@@ -288,19 +288,19 @@ refer to the applicable agreement for further details.
 ;          |mult_46t:auto_generated|           ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult2|mult_46t:auto_generated                                                                            ; mult_46t            ; work         ;
 ;       |lpm_mult:Mult3|                       ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult3                                                                                                    ; lpm_mult            ; work         ;
 ;          |mult_7dt:auto_generated|           ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |Processor|ALU:alu|lpm_mult:Mult3|mult_7dt:auto_generated                                                                            ; mult_7dt            ; work         ;
-;    |Branch:branch|                           ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Branch:branch                                                                                                             ; Branch              ; work         ;
+;    |Branch:branch|                           ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Branch:branch                                                                                                             ; Branch              ; work         ;
 ;    |Control:control|                         ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Control:control                                                                                                           ; Control             ; work         ;
-;    |Memory:mem|                              ; 685 (340)           ; 14 (6)                    ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem                                                                                                                ; Memory              ; work         ;
-;       |RAM32Bit:ram|                         ; 345 (0)             ; 8 (0)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram                                                                                                   ; RAM32Bit            ; work         ;
-;          |altsyncram:altsyncram_component|   ; 345 (0)             ; 8 (0)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component                                                                   ; altsyncram          ; work         ;
-;             |altsyncram_oni2:auto_generated| ; 345 (1)             ; 8 (8)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated                                    ; altsyncram_oni2     ; work         ;
+;    |Memory:mem|                              ; 667 (320)           ; 14 (6)                    ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem                                                                                                                ; Memory              ; work         ;
+;       |RAM32Bit:ram|                         ; 347 (0)             ; 8 (0)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram                                                                                                   ; RAM32Bit            ; work         ;
+;          |altsyncram:altsyncram_component|   ; 347 (0)             ; 8 (0)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component                                                                   ; altsyncram          ; work         ;
+;             |altsyncram_oni2:auto_generated| ; 347 (1)             ; 8 (8)                     ; 2097120     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated                                    ; altsyncram_oni2     ; work         ;
 ;                |decode_rsa:decode2|          ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|decode_rsa:decode2                 ; decode_rsa          ; work         ;
-;                |decode_rsa:rden_decode_a|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|decode_rsa:rden_decode_a           ; decode_rsa          ; work         ;
+;                |decode_rsa:rden_decode_a|    ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|decode_rsa:rden_decode_a           ; decode_rsa          ; work         ;
 ;                |decode_rsa:rden_decode_b|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|decode_rsa:rden_decode_b           ; decode_rsa          ; work         ;
 ;                |mux_oob:mux4|                ; 160 (160)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|mux_oob:mux4                       ; mux_oob             ; work         ;
 ;                |mux_oob:mux5|                ; 160 (160)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|mux_oob:mux5                       ; mux_oob             ; work         ;
-;    |PC:pc|                                   ; 101 (101)           ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|PC:pc                                                                                                                     ; PC                  ; work         ;
-;    |RegisterFile:registerFile|               ; 1394 (1394)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|RegisterFile:registerFile                                                                                                 ; RegisterFile        ; work         ;
+;    |PC:pc|                                   ; 137 (137)           ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|PC:pc                                                                                                                     ; PC                  ; work         ;
+;    |RegisterFile:registerFile|               ; 1338 (1338)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Processor|RegisterFile:registerFile                                                                                                 ; RegisterFile        ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -360,68 +360,34 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Memory:mem|readMode_d0[3]                                                                           ; Stuck at GND due to stuck port data_in           ;
 ; Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|rden_b_store ; Lost fanout                                      ;
 ; Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|wren_b_store ; Lost fanout                                      ;
-; PC:pc|currentPC[31]                                                                                 ; Merged with pc_nextPCAddress_dIF[31]             ;
-; PC:pc|currentPC[30]                                                                                 ; Merged with pc_nextPCAddress_dIF[30]             ;
-; PC:pc|currentPC[29]                                                                                 ; Merged with pc_nextPCAddress_dIF[29]             ;
-; PC:pc|currentPC[28]                                                                                 ; Merged with pc_nextPCAddress_dIF[28]             ;
-; PC:pc|currentPC[27]                                                                                 ; Merged with pc_nextPCAddress_dIF[27]             ;
-; PC:pc|currentPC[26]                                                                                 ; Merged with pc_nextPCAddress_dIF[26]             ;
-; PC:pc|currentPC[25]                                                                                 ; Merged with pc_nextPCAddress_dIF[25]             ;
-; PC:pc|currentPC[24]                                                                                 ; Merged with pc_nextPCAddress_dIF[24]             ;
-; PC:pc|currentPC[23]                                                                                 ; Merged with pc_nextPCAddress_dIF[23]             ;
-; PC:pc|currentPC[22]                                                                                 ; Merged with pc_nextPCAddress_dIF[22]             ;
-; PC:pc|currentPC[21]                                                                                 ; Merged with pc_nextPCAddress_dIF[21]             ;
-; PC:pc|currentPC[20]                                                                                 ; Merged with pc_nextPCAddress_dIF[20]             ;
-; PC:pc|currentPC[19]                                                                                 ; Merged with pc_nextPCAddress_dIF[19]             ;
-; PC:pc|currentPC[18]                                                                                 ; Merged with pc_nextPCAddress_dIF[18]             ;
-; PC:pc|currentPC[17]                                                                                 ; Merged with pc_nextPCAddress_dIF[17]             ;
-; PC:pc|currentPC[16]                                                                                 ; Merged with pc_nextPCAddress_dIF[16]             ;
-; PC:pc|currentPC[15]                                                                                 ; Merged with pc_nextPCAddress_dIF[15]             ;
-; PC:pc|currentPC[14]                                                                                 ; Merged with pc_nextPCAddress_dIF[14]             ;
-; PC:pc|currentPC[13]                                                                                 ; Merged with pc_nextPCAddress_dIF[13]             ;
-; PC:pc|currentPC[12]                                                                                 ; Merged with pc_nextPCAddress_dIF[12]             ;
-; PC:pc|currentPC[11]                                                                                 ; Merged with pc_nextPCAddress_dIF[11]             ;
-; PC:pc|currentPC[9]                                                                                  ; Merged with pc_nextPCAddress_dIF[9]              ;
-; PC:pc|currentPC[8]                                                                                  ; Merged with pc_nextPCAddress_dIF[8]              ;
-; PC:pc|currentPC[7]                                                                                  ; Merged with pc_nextPCAddress_dIF[7]              ;
-; PC:pc|currentPC[6]                                                                                  ; Merged with pc_nextPCAddress_dIF[6]              ;
-; PC:pc|currentPC[5]                                                                                  ; Merged with pc_nextPCAddress_dIF[5]              ;
-; PC:pc|currentPC[4]                                                                                  ; Merged with pc_nextPCAddress_dIF[4]              ;
-; PC:pc|currentPC[3]                                                                                  ; Merged with pc_nextPCAddress_dIF[3]              ;
-; PC:pc|currentPC[2]                                                                                  ; Merged with pc_nextPCAddress_dIF[2]              ;
-; PC:pc|currentPC[1]                                                                                  ; Merged with pc_nextPCAddress_dIF[1]              ;
-; PC:pc|currentPC[0]                                                                                  ; Merged with pc_nextPCAddress_dIF[0]              ;
-; pc_pcAddress_dIF[31]                                                                                ; Merged with pc_nextPCAddress_d0[31]              ;
-; pc_pcAddress_dIF[30]                                                                                ; Merged with pc_nextPCAddress_d0[30]              ;
-; pc_pcAddress_dIF[29]                                                                                ; Merged with pc_nextPCAddress_d0[29]              ;
-; pc_pcAddress_dIF[28]                                                                                ; Merged with pc_nextPCAddress_d0[28]              ;
-; pc_pcAddress_dIF[27]                                                                                ; Merged with pc_nextPCAddress_d0[27]              ;
-; pc_pcAddress_dIF[26]                                                                                ; Merged with pc_nextPCAddress_d0[26]              ;
-; pc_pcAddress_dIF[25]                                                                                ; Merged with pc_nextPCAddress_d0[25]              ;
-; pc_pcAddress_dIF[24]                                                                                ; Merged with pc_nextPCAddress_d0[24]              ;
-; pc_pcAddress_dIF[23]                                                                                ; Merged with pc_nextPCAddress_d0[23]              ;
-; pc_pcAddress_dIF[22]                                                                                ; Merged with pc_nextPCAddress_d0[22]              ;
-; pc_pcAddress_dIF[21]                                                                                ; Merged with pc_nextPCAddress_d0[21]              ;
-; pc_pcAddress_dIF[20]                                                                                ; Merged with pc_nextPCAddress_d0[20]              ;
-; pc_pcAddress_dIF[19]                                                                                ; Merged with pc_nextPCAddress_d0[19]              ;
-; pc_pcAddress_dIF[18]                                                                                ; Merged with pc_nextPCAddress_d0[18]              ;
-; pc_pcAddress_dIF[17]                                                                                ; Merged with pc_nextPCAddress_d0[17]              ;
-; pc_pcAddress_dIF[16]                                                                                ; Merged with pc_nextPCAddress_d0[16]              ;
-; pc_pcAddress_dIF[15]                                                                                ; Merged with pc_nextPCAddress_d0[15]              ;
-; pc_pcAddress_dIF[14]                                                                                ; Merged with pc_nextPCAddress_d0[14]              ;
-; pc_pcAddress_dIF[13]                                                                                ; Merged with pc_nextPCAddress_d0[13]              ;
-; pc_pcAddress_dIF[12]                                                                                ; Merged with pc_nextPCAddress_d0[12]              ;
-; pc_pcAddress_dIF[11]                                                                                ; Merged with pc_nextPCAddress_d0[11]              ;
-; pc_pcAddress_dIF[9]                                                                                 ; Merged with pc_nextPCAddress_d0[9]               ;
-; pc_pcAddress_dIF[8]                                                                                 ; Merged with pc_nextPCAddress_d0[8]               ;
-; pc_pcAddress_dIF[7]                                                                                 ; Merged with pc_nextPCAddress_d0[7]               ;
-; pc_pcAddress_dIF[6]                                                                                 ; Merged with pc_nextPCAddress_d0[6]               ;
-; pc_pcAddress_dIF[5]                                                                                 ; Merged with pc_nextPCAddress_d0[5]               ;
-; pc_pcAddress_dIF[4]                                                                                 ; Merged with pc_nextPCAddress_d0[4]               ;
-; pc_pcAddress_dIF[3]                                                                                 ; Merged with pc_nextPCAddress_d0[3]               ;
-; pc_pcAddress_dIF[2]                                                                                 ; Merged with pc_nextPCAddress_d0[2]               ;
-; pc_pcAddress_dIF[1]                                                                                 ; Merged with pc_nextPCAddress_d0[1]               ;
-; pc_pcAddress_dIF[0]                                                                                 ; Merged with pc_nextPCAddress_d0[0]               ;
+; PC:pc|currentPC[31]                                                                                 ; Merged with pc_pcAddress_dIF[31]                 ;
+; PC:pc|currentPC[30]                                                                                 ; Merged with pc_pcAddress_dIF[30]                 ;
+; PC:pc|currentPC[29]                                                                                 ; Merged with pc_pcAddress_dIF[29]                 ;
+; PC:pc|currentPC[28]                                                                                 ; Merged with pc_pcAddress_dIF[28]                 ;
+; PC:pc|currentPC[27]                                                                                 ; Merged with pc_pcAddress_dIF[27]                 ;
+; PC:pc|currentPC[26]                                                                                 ; Merged with pc_pcAddress_dIF[26]                 ;
+; PC:pc|currentPC[25]                                                                                 ; Merged with pc_pcAddress_dIF[25]                 ;
+; PC:pc|currentPC[24]                                                                                 ; Merged with pc_pcAddress_dIF[24]                 ;
+; PC:pc|currentPC[23]                                                                                 ; Merged with pc_pcAddress_dIF[23]                 ;
+; PC:pc|currentPC[22]                                                                                 ; Merged with pc_pcAddress_dIF[22]                 ;
+; PC:pc|currentPC[21]                                                                                 ; Merged with pc_pcAddress_dIF[21]                 ;
+; PC:pc|currentPC[20]                                                                                 ; Merged with pc_pcAddress_dIF[20]                 ;
+; PC:pc|currentPC[19]                                                                                 ; Merged with pc_pcAddress_dIF[19]                 ;
+; PC:pc|currentPC[18]                                                                                 ; Merged with pc_pcAddress_dIF[18]                 ;
+; PC:pc|currentPC[17]                                                                                 ; Merged with pc_pcAddress_dIF[17]                 ;
+; PC:pc|currentPC[16]                                                                                 ; Merged with pc_pcAddress_dIF[16]                 ;
+; PC:pc|currentPC[15]                                                                                 ; Merged with pc_pcAddress_dIF[15]                 ;
+; PC:pc|currentPC[14]                                                                                 ; Merged with pc_pcAddress_dIF[14]                 ;
+; PC:pc|currentPC[13]                                                                                 ; Merged with pc_pcAddress_dIF[13]                 ;
+; PC:pc|currentPC[12]                                                                                 ; Merged with pc_pcAddress_dIF[12]                 ;
+; PC:pc|currentPC[11]                                                                                 ; Merged with pc_pcAddress_dIF[11]                 ;
+; PC:pc|currentPC[10]                                                                                 ; Merged with pc_pcAddress_dIF[10]                 ;
+; PC:pc|currentPC[1]                                                                                  ; Merged with pc_pcAddress_dIF[1]                  ;
+; pc_nextPCAddress_dIF[1]                                                                             ; Merged with pc_pcAddress_dIF[1]                  ;
+; PC:pc|currentPC[0]                                                                                  ; Merged with pc_pcAddress_dIF[0]                  ;
+; pc_nextPCAddress_dIF[0]                                                                             ; Merged with pc_pcAddress_dIF[0]                  ;
+; pc_nextPCAddress_d0[1]                                                                              ; Merged with pc_pcAddress_d0[1]                   ;
+; pc_nextPCAddress_d0[0]                                                                              ; Merged with pc_pcAddress_d0[0]                   ;
 ; instruction_jumpAddress_d0[25]                                                                      ; Merged with instruction_rsIn_d0[4]               ;
 ; instruction_jumpAddress_d0[24]                                                                      ; Merged with instruction_rsIn_d0[3]               ;
 ; instruction_jumpAddress_d0[23]                                                                      ; Merged with instruction_rsIn_d0[2]               ;
@@ -448,39 +414,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; instruction_jumpAddress_d0[2]                                                                       ; Merged with instruction_immediateExtended_d0[2]  ;
 ; instruction_jumpAddress_d0[1]                                                                       ; Merged with instruction_immediateExtended_d0[1]  ;
 ; instruction_jumpAddress_d0[0]                                                                       ; Merged with instruction_immediateExtended_d0[0]  ;
-; pc_pcAddress_d0[31]                                                                                 ; Merged with pc_nextPCAddress_d1[31]              ;
-; pc_pcAddress_d0[30]                                                                                 ; Merged with pc_nextPCAddress_d1[30]              ;
-; pc_pcAddress_d0[29]                                                                                 ; Merged with pc_nextPCAddress_d1[29]              ;
-; pc_pcAddress_d0[28]                                                                                 ; Merged with pc_nextPCAddress_d1[28]              ;
-; pc_pcAddress_d0[27]                                                                                 ; Merged with pc_nextPCAddress_d1[27]              ;
-; pc_pcAddress_d0[26]                                                                                 ; Merged with pc_nextPCAddress_d1[26]              ;
-; pc_pcAddress_d0[25]                                                                                 ; Merged with pc_nextPCAddress_d1[25]              ;
-; pc_pcAddress_d0[24]                                                                                 ; Merged with pc_nextPCAddress_d1[24]              ;
-; pc_pcAddress_d0[23]                                                                                 ; Merged with pc_nextPCAddress_d1[23]              ;
-; pc_pcAddress_d0[22]                                                                                 ; Merged with pc_nextPCAddress_d1[22]              ;
-; pc_pcAddress_d0[21]                                                                                 ; Merged with pc_nextPCAddress_d1[21]              ;
-; pc_pcAddress_d0[20]                                                                                 ; Merged with pc_nextPCAddress_d1[20]              ;
-; pc_pcAddress_d0[19]                                                                                 ; Merged with pc_nextPCAddress_d1[19]              ;
-; pc_pcAddress_d0[18]                                                                                 ; Merged with pc_nextPCAddress_d1[18]              ;
-; pc_pcAddress_d0[17]                                                                                 ; Merged with pc_nextPCAddress_d1[17]              ;
-; pc_pcAddress_d0[16]                                                                                 ; Merged with pc_nextPCAddress_d1[16]              ;
-; pc_pcAddress_d0[15]                                                                                 ; Merged with pc_nextPCAddress_d1[15]              ;
-; pc_pcAddress_d0[14]                                                                                 ; Merged with pc_nextPCAddress_d1[14]              ;
-; pc_pcAddress_d0[13]                                                                                 ; Merged with pc_nextPCAddress_d1[13]              ;
-; pc_pcAddress_d0[12]                                                                                 ; Merged with pc_nextPCAddress_d1[12]              ;
-; pc_pcAddress_d0[11]                                                                                 ; Merged with pc_nextPCAddress_d1[11]              ;
-; pc_pcAddress_d0[9]                                                                                  ; Merged with pc_nextPCAddress_d1[9]               ;
-; pc_pcAddress_d0[8]                                                                                  ; Merged with pc_nextPCAddress_d1[8]               ;
-; pc_pcAddress_d0[7]                                                                                  ; Merged with pc_nextPCAddress_d1[7]               ;
-; pc_pcAddress_d0[6]                                                                                  ; Merged with pc_nextPCAddress_d1[6]               ;
-; pc_pcAddress_d0[5]                                                                                  ; Merged with pc_nextPCAddress_d1[5]               ;
-; pc_pcAddress_d0[4]                                                                                  ; Merged with pc_nextPCAddress_d1[4]               ;
-; pc_pcAddress_d0[3]                                                                                  ; Merged with pc_nextPCAddress_d1[3]               ;
-; pc_pcAddress_d0[2]                                                                                  ; Merged with pc_nextPCAddress_d1[2]               ;
-; pc_pcAddress_d0[1]                                                                                  ; Merged with pc_nextPCAddress_d1[1]               ;
-; pc_pcAddress_d0[0]                                                                                  ; Merged with pc_nextPCAddress_d1[0]               ;
 ; instruction_immediateExtended_d0[17..31]                                                            ; Merged with instruction_immediateExtended_d0[16] ;
-; Total Number of Removed Registers = 137                                                             ;                                                  ;
+; PC:pc|currentPC[2]                                                                                  ; Merged with pc_nextPCAddress_dIF[2]              ;
+; Total Number of Removed Registers = 73                                                              ;                                                  ;
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 
@@ -489,12 +425,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1477  ;
-; Number of registers using Synchronous Clear  ; 33    ;
-; Number of registers using Synchronous Load   ; 36    ;
-; Number of registers using Asynchronous Clear ; 381   ;
+; Total registers                              ; 1427  ;
+; Number of registers using Synchronous Clear  ; 97    ;
+; Number of registers using Synchronous Load   ; 100   ;
+; Number of registers using Asynchronous Clear ; 331   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1093  ;
+; Number of registers using Clock Enable       ; 1091  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -504,14 +440,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; instruction_rsIn_d1[0]                 ; 1       ;
-; instruction_rsIn_d1[1]                 ; 1       ;
-; instruction_rtIn_d1[0]                 ; 1       ;
-; instruction_rtIn_d1[1]                 ; 1       ;
-; PC:pc|currentPC[10]                    ; 3       ;
-; control_unsignedLoad_d0                ; 1       ;
 ; control_branchMode_d0[1]               ; 6       ;
-; Total number of inverted registers = 7 ;         ;
+; PC:pc|currentPC[9]                     ; 1       ;
+; PC:pc|currentPC[8]                     ; 1       ;
+; PC:pc|currentPC[7]                     ; 1       ;
+; PC:pc|currentPC[6]                     ; 1       ;
+; PC:pc|currentPC[5]                     ; 1       ;
+; PC:pc|currentPC[4]                     ; 1       ;
+; PC:pc|currentPC[3]                     ; 1       ;
+; control_unsignedLoad_d0                ; 1       ;
+; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
@@ -520,39 +458,39 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Processor|registerFile_readValue1_d0[12]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Processor|registerFile_readValue0_d0[4]   ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Processor|registerFile_writeAddress_d0[4] ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 4 LEs                ; 18 LEs                 ; Yes        ; |Processor|pc_nextPCAddress_dIF[0]         ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 27 LEs               ; 99 LEs                 ; Yes        ; |Processor|control_registerWrite_d0        ;
-; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Processor|control_funct_d0[3]             ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 36 LEs               ; 90 LEs                 ; Yes        ; |Processor|control_funct_d0[0]             ;
-; 35:1               ; 31 bits   ; 713 LEs       ; 124 LEs              ; 589 LEs                ; Yes        ; |Processor|ALU:alu|lo[17]                  ;
-; 14:1               ; 14 bits   ; 126 LEs       ; 56 LEs               ; 70 LEs                 ; Yes        ; |Processor|ALU:alu|hi[21]                  ;
-; 12:1               ; 15 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |Processor|ALU:alu|hi[1]                   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Processor|registerFile_readValue1_d0[10]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Processor|registerFile_readValue0_d0[17]  ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 27 LEs               ; 99 LEs                 ; Yes        ; |Processor|control_branchMode_d0[2]        ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Processor|control_shamt_d0[4]             ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 36 LEs               ; 90 LEs                 ; Yes        ; |Processor|control_funct_d0[2]             ;
+; 35:1               ; 31 bits   ; 713 LEs       ; 124 LEs              ; 589 LEs                ; Yes        ; |Processor|ALU:alu|lo[15]                  ;
+; 14:1               ; 14 bits   ; 126 LEs       ; 56 LEs               ; 70 LEs                 ; Yes        ; |Processor|ALU:alu|hi[17]                  ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |Processor|ALU:alu|hi[2]                   ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; Yes        ; |Processor|ALU:alu|hi[26]                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Processor|ALU:alu|Mux14                   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Processor|alu_dataIn1[4]                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Processor|Mux16                           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Processor|ALU:alu|Mux9                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Processor|alu_dataIn1[29]                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Processor|Mux11                           ;
 ; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |Processor|ALU:alu|Mux29                   ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|Memory:mem|ShiftRight2          ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Processor|Memory:mem|ShiftRight2          ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Processor|Memory:mem|Mux43                ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Processor|Memory:mem|Mux63                ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux18                ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |Processor|Memory:mem|Mux26                ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux53                ;
-; 17:1               ; 30 bits   ; 330 LEs       ; 90 LEs               ; 240 LEs                ; No         ; |Processor|PC:pc|oldPC[26]                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Processor|Memory:mem|Mux39                ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Processor|Memory:mem|Mux61                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux16                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |Processor|Memory:mem|Mux20                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux52                ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 4 LEs                ; 18 LEs                 ; No         ; |Processor|PC:pc|nextPCAddress[1]          ;
+; 17:1               ; 30 bits   ; 330 LEs       ; 90 LEs               ; 240 LEs                ; No         ; |Processor|PC:pc|pcAddress[5]              ;
 ; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux51                ;
 ; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |Processor|ALU:alu|Add1                    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Processor|Memory:mem|Mux33                ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Processor|Memory:mem|Mux35                ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Processor|Memory:mem|Mux8                 ;
-; 31:1               ; 7 bits    ; 140 LEs       ; 98 LEs               ; 42 LEs                 ; No         ; |Processor|ALU:alu|Mux21                   ;
-; 33:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; No         ; |Processor|ALU:alu|Mux24                   ;
+; 31:1               ; 7 bits    ; 140 LEs       ; 98 LEs               ; 42 LEs                 ; No         ; |Processor|ALU:alu|Mux17                   ;
+; 33:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; No         ; |Processor|ALU:alu|Mux25                   ;
 ; 38:1               ; 7 bits    ; 175 LEs       ; 98 LEs               ; 77 LEs                 ; No         ; |Processor|ALU:alu|Mux14                   ;
 ; 35:1               ; 2 bits    ; 46 LEs        ; 32 LEs               ; 14 LEs                 ; No         ; |Processor|ALU:alu|Mux28                   ;
-; 40:1               ; 4 bits    ; 104 LEs       ; 68 LEs               ; 36 LEs                 ; No         ; |Processor|ALU:alu|Mux4                    ;
-; 42:1               ; 2 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |Processor|ALU:alu|Mux3                    ;
+; 40:1               ; 4 bits    ; 104 LEs       ; 68 LEs               ; 36 LEs                 ; No         ; |Processor|ALU:alu|Mux7                    ;
+; 42:1               ; 2 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |Processor|ALU:alu|Mux2                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
@@ -902,30 +840,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 106                         ;
-; cycloneiii_ff         ; 1477                        ;
-;     CLR               ; 374                         ;
+; cycloneiii_ff         ; 1427                        ;
+;     CLR               ; 262                         ;
+;     CLR SCLR SLD      ; 64                          ;
 ;     CLR SLD           ; 5                           ;
 ;     ENA               ; 1058                        ;
-;     ENA CLR           ; 2                           ;
 ;     ENA SCLR          ; 2                           ;
 ;     ENA SCLR SLD      ; 31                          ;
 ;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 6712                        ;
-;     arith             ; 1600                        ;
-;         2 data inputs ; 115                         ;
-;         3 data inputs ; 1485                        ;
-;     normal            ; 5112                        ;
+; cycloneiii_lcell_comb ; 6819                        ;
+;     arith             ; 1571                        ;
+;         2 data inputs ; 97                          ;
+;         3 data inputs ; 1474                        ;
+;     normal            ; 5248                        ;
 ;         0 data inputs ; 63                          ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 108                         ;
-;         3 data inputs ; 839                         ;
-;         4 data inputs ; 4090                        ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 97                          ;
+;         3 data inputs ; 944                         ;
+;         4 data inputs ; 4133                        ;
 ; cycloneiii_mac_mult   ; 14                          ;
 ; cycloneiii_mac_out    ; 14                          ;
 ; cycloneiii_ram_block  ; 256                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 140.60                      ;
-; Average LUT depth     ; 49.84                       ;
+; Max LUT depth         ; 141.60                      ;
+; Average LUT depth     ; 50.83                       ;
 +-----------------------+-----------------------------+
 
 
@@ -934,7 +872,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:16     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
@@ -944,7 +882,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 10 18:11:05 2018
+    Info: Processing started: Wed Jul 11 14:28:54 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv
@@ -971,6 +909,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file RAM32Bi
     Info (12023): Found entity 1: RAM32Bit File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 39
 Info (12127): Elaborating entity "Processor" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at Processor.sv(247): object "instructionData_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 247
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(271): object "instruction_rsIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 271
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(272): object "instruction_rtIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 272
 Warning (10036): Verilog HDL or VHDL warning at Processor.sv(276): object "control_readMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 276
 Warning (10036): Verilog HDL or VHDL warning at Processor.sv(277): object "control_writeMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 277
 Warning (10036): Verilog HDL or VHDL warning at Processor.sv(278): object "control_unsignedLoad_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 278
@@ -1118,7 +1058,7 @@ Warning (14284): Synthesized away the following node(s):
 Info (13014): Ignored 700 buffer(s)
     Info (13016): Ignored 62 CARRY_SUM buffer(s)
     Info (13019): Ignored 638 SOFT buffer(s)
-Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 536
+Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 404
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
@@ -1141,16 +1081,16 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "externalAddress[29]" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 18
     Warning (15610): No output dependent on input pin "externalAddress[30]" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 18
     Warning (15610): No output dependent on input pin "externalAddress[31]" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 18
-Info (21057): Implemented 8381 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8449 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 74 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 7991 logic cells
+    Info (21061): Implemented 8059 logic cells
     Info (21064): Implemented 256 RAM segments
     Info (21062): Implemented 28 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 1054 megabytes
-    Info: Processing ended: Tue Jul 10 18:11:36 2018
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:38
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 1060 megabytes
+    Info: Processing ended: Wed Jul 11 14:29:22 2018
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:32
 
 
