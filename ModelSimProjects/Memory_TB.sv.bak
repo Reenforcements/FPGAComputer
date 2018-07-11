@@ -1,10 +1,11 @@
 import MemoryModesPackage::*;
 
-`timescale 1ps/1ps
+`timescale 1ps / 1ps
 
 module Memory_TB;
 
 logic clk;
+logic clk_pc;
 logic rst;
 
 logic [31:0]address;
@@ -21,6 +22,7 @@ logic [31:0]pcDataOutput;
 
 initial begin
 	clk = 0;
+	clk_pc = 0;
 	unsignedLoad = 0;
 end
 
@@ -30,8 +32,10 @@ Memory m1(.*);
 always begin
 #5;
 clk = 1;
+clk_pc = 1;
 #5;
 clk = 0;
+clk_pc = 0;
 end
 
 always begin
@@ -665,21 +669,21 @@ assert(pcDataOutput == 32'd1) else $error("PC output didn't match %h", pcDataOut
 #1;
 
 pcAddress = 32'd8;
-#1;
-assert(pcDataOutput == 32'd2) else $error("PC output didn't match %h", pcDataOutput);
 #9;
+assert(pcDataOutput == 32'd2) else $error("PC output didn't match %h", pcDataOutput);
+#1;
 
 pcAddress = 32'd12;
-#1;
-assert(pcDataOutput == 32'd3) else $error("PC output didn't match %h", pcDataOutput);
 #9;
+assert(pcDataOutput == 32'd3) else $error("PC output didn't match %h", pcDataOutput);
+#1;
 
 pcAddress = 32'd16;
-#1;
-assert(pcDataOutput == 32'd4) else $error("PC output didn't match %h", pcDataOutput);
 #9;
+assert(pcDataOutput == 32'd4) else $error("PC output didn't match %h", pcDataOutput);
+#1;
 
-
+$display("Done.");
 #10000;
 end
 

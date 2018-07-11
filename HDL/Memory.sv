@@ -15,6 +15,7 @@ import MemoryModesPackage::*;
 
 module Memory(
 	input logic clk,
+	input logic clk_pc,
 	input logic rst,
 
 	input logic [31:0]address,
@@ -46,10 +47,13 @@ logic	[31:0]q_a;
 logic	[31:0]q_b;
 
 RAM32Bit ram(
+	.aclr_a(~rst),
+	.aclr_b(~rst),
 	.address_a(address_a),
 	.address_b(address_b),
 	.byteena_a(byteena_a),
-	.clock(clk),
+	.clock_a(clk),
+	.clock_b(clk_pc),
 	.data_a(data_a),
 	.data_b(data_b),
 	.rden_a(rden_a),

@@ -71,7 +71,13 @@
   nameStorage: .space 40
 
 .text
+	li $t0, 0
+	nop
 	j first
+	nop
+	nop
+	nop
+	nop
 	first:
 
 	# Base address for saving results
@@ -82,6 +88,9 @@
 	# Basic arithmetic 
 	li $t0, 200
 	li $t1, 7
+	nop
+	nop
+	nop
 	add $s0, $t1, $t0
 	sub $s1, $t0, $t1
 	addi $s2, $t0, 123

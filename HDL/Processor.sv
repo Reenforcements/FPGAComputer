@@ -25,14 +25,14 @@ output logic [31:0]externalDataOut
 // pClk stands for pausable clock.
 // We may want to be able to "pause" the processor at times.
 logic pClk;
-always_ff @ (posedge clk) begin
+always_latch begin
 	if (pause == 1'b1) begin
-		// Maintain current clock state
-		pClk <= pClk;
+		// Maintain current clock state by latching
+		pClk = pClk;
 	end
 	else begin
 		// Change with the clock.
-		pClk <= clk;
+		pClk = clk;
 	end
 end
 
@@ -55,9 +55,8 @@ PC pc(
 );
 
 
-always @ (posedge clk) begin
-	if (pause == 1'b0)
-		$display("Current PC: %d", pc_pcAddress);
+always @ (posedge pClk) begin
+	//$display("Current PC: %d", pc_pcAddress);
 end
 
 
@@ -168,6 +167,7 @@ logic [31:0]memory_pcAddress;
 logic [31:0]memory_pcData;
 Memory mem(
 	.clk(memory_clk), 
+	.clk_pc(pClk),
 	.rst(rst),
 
 	.address(memory_address),
@@ -308,7 +308,7 @@ always_comb begin
 	memory_pcAddress = pc_pcAddress;
  	instructionData = memory_pcData;
 end
-always_ff @ (posedge clk or negedge rst) begin
+always_ff @ (posedge pClk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_pcAddress_dIF <= 32'd0;
 		pc_nextPCAddress_dIF <= 32'd0;
@@ -320,9 +320,8 @@ always_ff @ (posedge clk or negedge rst) begin
 end
 
 // Debug
-always @ (posedge clk) begin
-	if (pause == 1'b0)
-		$display("Current instruction: %h", instructionData);
+always @ (posedge pClk or negedge rst) begin
+	$display(" (%h) Current instruction: %h, branch %h (%b)", memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
 end
 
 // PIPELINE STAGE 0 BELOW (using clocked output from memory)
@@ -376,7 +375,7 @@ always_comb begin
 end
 
 // Save results in registers
-always_ff @ (posedge clk or negedge rst) begin
+always_ff @ (posedge pClk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_pcAddress_d0 <= 32'd0;
 		pc_nextPCAddress_d0 <= 32'd0;
@@ -392,8 +391,8 @@ always_ff @ (posedge clk or negedge rst) begin
 		control_funct_d0 <= 6'd0;
 		control_shamt_d0 <= 5'd0;
 		control_useImmediate_d0 <= 0;
-		control_readMode_d0 <= ReadWriteMode_NONE;
-		control_writeMode_d0 <= ReadWriteMode_NONE;
+		control_readMode_d0 <= MemoryModesPackage::ReadWriteMode_NONE;
+		control_writeMode_d0 <= MemoryModesPackage::ReadWriteMode_NONE;
 		control_unsignedLoad_d0 <= 1'b1;
 		control_branchMode_d0 <= BranchModesPackage::BranchMode_NONE;
 		
@@ -444,28 +443,36 @@ end
 
 // PIPELINE STAGE 1 BELOW
 
+//DEBUG
+always @ (posedge pClk) begin
+	//$display("Should use new PC: %d", branch_shouldUseNewPC);
+end
+
 // Assign values passed from last stage
 always_comb begin
 
 	// PC
 	pc_newPC = branch_branchTo;
 	pc_shouldUseNewPC = branch_shouldUseNewPC;
-
 	// ALU
-	if(instruction_rsIn_d1 == instruction_rsIn_d0)
+	// Use immediately calculated data if we can
+	if(registerFile_writeAddress_d1 == instruction_rsIn_d0 && instruction_rsIn_d0 != 5'd0) begin
 		alu_dataIn0 = alu_result_d1;
-	else
-		alu_dataIn0 = registerFile_readValue0_d0;
-	
-	if(instruction_rtIn_d1 == instruction_rtIn_d0) begin
-		// Use our last ALU result which hasn't been written back to the register file yet.
-		alu_dataIn1 = alu_result_d1;
 	end
 	else begin
-		// We're not using data we just calculated.
-		if (control_useImmediate_d0 == 1'b1) begin
-			alu_dataIn1 = instruction_immediateExtended_d0;
-		end 
+		alu_dataIn0 = registerFile_readValue0_d0;
+	end
+	
+	// We're not using data we just calculated.
+	if (control_useImmediate_d0 == 1'b1) begin
+		alu_dataIn1 = instruction_immediateExtended_d0;
+	end 
+	else begin
+		// Use immediately calculated data if we can
+		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
+			// Use our last ALU result which hasn't been written back to the register file yet.
+			alu_dataIn1 = alu_result_d1;
+		end
 		else begin
 			alu_dataIn1 = registerFile_readValue1_d0;
 		end
@@ -495,16 +502,24 @@ always_comb begin
 		memory_clk = clk;
 		memory_address = externalAddress;
 		memory_dataIn = externalData;
+		memory_readMode = externalReadMode;
+		memory_writeMode = externalWriteMode;
+		memory_unsignedLoad = 1'b1;
+		externalDataOut = memory_dataOut;
 	end
 	else begin	
 		memory_clk = pClk;
 		memory_address = alu_result;
 		memory_dataIn = registerFile_readValue1_d0;
+		memory_readMode = control_readMode_d0;
+		memory_writeMode = control_writeMode_d0;
+		memory_unsignedLoad = control_unsignedLoad_d0;
+		externalDataOut = 32'd0;
 	end
 end
 
 
-always_ff begin
+always_ff @ (posedge pClk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_nextPCAddress_d1 <= 32'd0;
 	
@@ -513,8 +528,8 @@ always_ff begin
 		
 		control_registerWriteSource_d1 <= ControlLinePackage::NONE;
 		control_registerWrite_d1 <= 1'b0;
-		control_readMode_d1 <= ReadWriteMode_NONE;
-		control_writeMode_d1 <= ReadWriteMode_NONE;
+		control_readMode_d1 <= MemoryModesPackage::ReadWriteMode_NONE;
+		control_writeMode_d1 <= MemoryModesPackage::ReadWriteMode_NONE;
 		control_unsignedLoad_d1 <= 1'b1;
 	
 		alu_result_d1 <= 32'd0;
@@ -522,6 +537,13 @@ always_ff begin
 		registerFile_writeAddress_d1 <= 5'd0;
 	end
 	else begin
+//		$display("Memory: %h, %h, %h, %h, %h", 
+//alu_result, 
+//registerFile_readValue1_d0, 
+//control_readMode_d0, 
+//control_writeMode_d0, 
+//control_unsignedLoad_d0);
+
 		pc_nextPCAddress_d1 <= pc_nextPCAddress_d0;
 	
 		instruction_rsIn_d1 <= instruction_rsIn_d0;
@@ -546,20 +568,14 @@ end
 always_comb begin
 
 	if (externalMemoryControl == 1'b1) begin
-		memory_readMode = externalReadMode;
-		memory_writeMode = externalWriteMode;
-		memory_unsignedLoad = 1'b1;
-		externalDataOut = memory_dataOut;
+		
 	end
 	else begin	
-		memory_readMode = control_readMode_d1;
-		memory_writeMode = control_writeMode_d1;
-		memory_unsignedLoad = control_unsignedLoad_d1;
-		externalDataOut = 32'd0;
+		
 	end
 end
 
-always_ff @ (posedge clk or negedge rst) begin
+always_ff @ (posedge pClk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_nextPCAddress_d2 <= 32'd0;
 		
@@ -592,7 +608,7 @@ always_comb begin
 	
 
 	registerFile_writeAddress = registerFile_writeAddress_d2;
-	registerFile_registerWrite= control_registerWrite_d2;
+	registerFile_registerWrite = control_registerWrite_d2;
 	
 	unique case (control_registerWriteSource_d2)
 		ControlLinePackage::NONE: begin

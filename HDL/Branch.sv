@@ -128,21 +128,18 @@ always_comb begin
 				logic signed[31:0]sBranchAddressOffset;
 				sBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
 				branchTo = pcAddress + sBranchAddressOffset;
-				/*$display("Branching to %d + %d = %d", 
-						sBranchAddressOffset,
-						pcAddress,
-						branchTo);*/
 			end
 
 			BranchMode_J: begin
 				// Jumping uses the four MBbs of the PC,
 				//  the jump address, and then the two LSBs
 				//  are zero because instructions are word aligned.
-				branchTo = {pcAddress[31:28], jumpAddress, 2'b0} - 32'd4;
+				branchTo = {pcAddress[31:28], jumpAddress, 2'b0};
 			end
 
 			BranchMode_JR: begin
-				branchTo = jumpRegisterAddress - 32'd4;
+				branchTo = jumpRegisterAddress;
+				
 			end
 
 			default: begin

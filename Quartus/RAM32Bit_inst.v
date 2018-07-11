@@ -1,8 +1,11 @@
 RAM32Bit	RAM32Bit_inst (
+	.aclr_a ( aclr_a_sig ),
+	.aclr_b ( aclr_b_sig ),
 	.address_a ( address_a_sig ),
 	.address_b ( address_b_sig ),
 	.byteena_a ( byteena_a_sig ),
-	.clock ( clock_sig ),
+	.clock_a ( clock_a_sig ),
+	.clock_b ( clock_b_sig ),
 	.data_a ( data_a_sig ),
 	.data_b ( data_b_sig ),
 	.rden_a ( rden_a_sig ),

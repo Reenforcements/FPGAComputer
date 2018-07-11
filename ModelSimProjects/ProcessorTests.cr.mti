@@ -20,12 +20,22 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Testing_TB
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv {0 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package ProcessorPackage
-** Error: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv(401):  Failed to find the name 'NONE' in scope 'BranchModesPackage' at /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv(1).
+-- Compiling package MIPSInstructionPackage
+-- Compiling package ControlLinePackage
+-- Compiling package Control_sv_unit
+-- Importing package MIPSInstructionPackage
+-- Importing package ControlLinePackage
+-- Importing package ALUFunctCodesPackage
+-- Importing package MemoryModesPackage
+-- Importing package BranchModesPackage
+-- Compiling module Control
 
-} {4.0 5.0} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
+Top level modules:
+	Control
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Processor_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package Processor_TB_sv_unit
 -- Importing package MIPSInstructionPackage
@@ -58,13 +68,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	PC
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RAM32Bit
-
-Top level modules:
-	RAM32Bit
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package BranchModesPackage
@@ -74,6 +77,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Branch
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RAM32Bit
+
+Top level modules:
+	RAM32Bit
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -91,6 +101,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Branch_TB
 
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package MemoryModesPackage
+-- Compiling package Memory_sv_unit
+-- Importing package MemoryModesPackage
+-- Compiling module Memory
+
+Top level modules:
+	Memory
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package ALUFunctCodesPackage
@@ -100,9 +123,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	ALU
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
