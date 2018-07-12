@@ -557,3 +557,255 @@ run 528000
 # Done
 # Successful stop
 #  (              520940) Successfully received: 00000101
+# Compile of RS232.sv failed with 1 errors.
+run 528000
+restart -f
+# Compile of RS232.sv was successful.
+# Compile of RS232.sv failed with 2 errors.
+# Compile of RS232_TB.sv failed with 1 errors.
+# 2 compiles, 2 failed with 3 errors.
+# Compile of RS232.sv failed with 2 errors.
+# Compile of RS232_TB.sv was successful.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of RS232.sv failed with 2 errors.
+# Compile of RS232.sv failed with 3 errors.
+# Compile of RS232.sv failed with 3 errors.
+# Compile of RS232.sv failed with 1 errors.
+# Compile of RS232.sv was successful.
+# Compile of RS232.sv failed with 1 errors.
+# Compile of RS232.sv was successful.
+add wave -position insertpoint /RS232_TB/UART_TXD
+# Compile of RS232_TB.sv was successful.
+restart -f
+# Loading work.RS232_TB
+# Loading work.RS232
+# Warning in wave window restart: (vish-4014) No objects found matching '/RS232_TB/rs/state'. 
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# 20 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RS232_TB
+# Loading work.RS232
+run 
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+run 528000
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# ** Error: TX not ready!
+#    Time: 520840 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 63
+# Successful stop
+#  (              520940) Successfully received: 00000101
+# Compile of RS232.sv was successful.
+restart -f
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+add wave  \
+sim:/RS232_TB/TX_ready
+restart -f
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+add wave -position insertpoint /RS232_TB/rs/TX_state
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# 20 compiles, 0 failed with no errors.
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+restart -f
+# Loading work.RS232_TB
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+run 528000
+# Compile of RS232.sv was successful.
+restart -f
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+add wave -position insertpoint /RS232_TB/rs/currentTX
+add wave -position insertpoint /RS232_TB/rs/TX_currentBit
+restart -f
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+# Compile of RS232.sv was successful.
+restart -f
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+# Compile of RS232.sv was successful.
+restart -f
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+add wave -position insertpoint /RS232_TB/rs/TX_counter
+restart -f
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 65
+# Done
+# Compile of RS232_TB.sv was successful.
+restart -f
+# Loading work.RS232_TB
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Successful stop
+#  (              520940) Successfully received: 00000101
+run 528000
+# ** Error: TX not ready!
+#    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 67
+# Done
+restart -f
