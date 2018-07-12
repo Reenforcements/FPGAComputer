@@ -1,5 +1,5 @@
 Flow report for MIPSProcessor
-Wed Jul 11 14:29:22 2018
+Thu Jul 12 13:26:12 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jul 11 14:29:22 2018       ;
+; Flow Status                        ; Flow Failed - Thu Jul 12 13:26:12 2018      ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Processor                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,916                                       ;
-;     Total combinational functions  ; 6,819                                       ;
-;     Dedicated logic registers      ; 1,427                                       ;
-; Total registers                    ; 1427                                        ;
-; Total pins                         ; 106                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 2,097,120                                   ;
-; Embedded Multiplier 9-bit elements ; 28                                          ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/11/2018 14:28:55 ;
+; Start date & time ; 07/12/2018 13:26:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPSProcessor       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153133373422482            ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 52229457043.153141636226825            ; --            ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --          ; eda_design_synthesis ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                   ;
@@ -92,6 +92,7 @@ refer to the applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                   ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                   ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                   ;
+; STATE_MACHINE_PROCESSING            ; User-Encoded                           ; Auto          ; --          ; --                   ;
 ; TOP_LEVEL_ENTITY                    ; Processor                              ; MIPSProcessor ; --          ; --                   ;
 ; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                     ; Verilog_2001  ; --          ; --                   ;
 ; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                    ; --            ; --          ; --                   ;
@@ -103,8 +104,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 1025 MB             ; 00:00:31                           ;
-; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:31                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 904 MB              ; 00:00:16                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

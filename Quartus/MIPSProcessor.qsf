@@ -61,6 +61,8 @@ set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
 set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
+set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/RS232.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/RegisterFile.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/PC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/Memory.sv

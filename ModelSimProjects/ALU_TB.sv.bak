@@ -23,7 +23,7 @@ logic [31:0]currentTest;
 
 initial begin
 clk = 0;
-rst = 1;
+rst = 0;
 currentTest = 0;
 $readmemb("../ModelSimTestData/ALU.txt", memOut);
 end

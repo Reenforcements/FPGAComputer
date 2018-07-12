@@ -486,7 +486,7 @@ always_comb begin
 	
 	branch_jumpRegisterAddress = alu_result;
 	branch_jumpAddress = instruction_jumpAddress_d0;
-	branch_pcAddress = pc_pcAddress_d0;
+	branch_pcAddress = pc_pcAddress_dIF;
 	branch_branchAddressOffset = instruction_immediateExtended_d0[15:0];
 	
 	branch_resultZero = alu_outputZero;
