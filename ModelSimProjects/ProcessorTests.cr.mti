@@ -81,12 +81,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	PC
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RS232
+-- Compiling module RS232_TB
 
 Top level modules:
-	RS232
+	RS232_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

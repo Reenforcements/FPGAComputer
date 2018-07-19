@@ -871,25 +871,25 @@ R12
 n@register@file_@t@b
 vRS232
 R0
-!s110 1531430947
+Z63 !s110 1531435984
 !i10b 1
-!s100 ?N?_iI?MdjG?W_03VXXT:1
-I7J:LI?XN7meUJn1I27:162
+!s100 7cFR1;>NNoh?o]QTa>j0_2
+IiWzA_ZUDie_g0iEoSD4bC3
 R2
 !s105 RS232_sv_unit
 S1
 R3
-w1531430944
-Z63 8/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
-Z64 F/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
+w1531435295
+Z64 8/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
+Z65 F/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
 L0 5
 R7
 r1
 !s85 0
 31
-!s108 1531430947.000000
-Z65 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv|
-Z66 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv|
+Z66 !s108 1531435984.000000
+Z67 !s107 /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv|
+Z68 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv|
 !i113 1
 R11
 R12
@@ -907,38 +907,38 @@ IWW3E4=`@g9_g?P4[1XEEF1
 S1
 R3
 w1531416396
-R63
 R64
+R65
 L0 4
 R7
 !s108 1531416402.000000
-R65
-R66
+R67
+R68
 !i113 1
 R11
 R12
 n@r@s232_sv_unit
 vRS232_TB
 R0
-!s110 1531431051
+R63
 !i10b 1
-!s100 8e=Xz6?zSUIMn7d;Ef3dJ2
-I<jYS8H3i3h3Dk<=HiFY@f2
+!s100 ofCeh:AUDK7in1RTF4]HS3
+Il<nT>GS<UV??FPYfbLYLz3
 R2
-Z67 !s105 RS232_TB_sv_unit
+Z69 !s105 RS232_TB_sv_unit
 S1
 R3
-w1531431050
-Z68 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
-Z69 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
+w1531435983
+Z70 8/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
+Z71 F/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
 L0 3
 R7
 r1
 !s85 0
 31
-!s108 1531431051.000000
+R66
 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv|
-Z70 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv|
+Z72 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv|
 !i113 1
 R11
 R12
@@ -950,12 +950,12 @@ R0
 !s100 >3hMR0NVHHR@AgX@j^WB;2
 IfjAYnRVde:>mS_dTM`fBN1
 R2
-R67
+R69
 S1
 R3
 w1531356464
-R68
-R69
+R70
+R71
 L0 3
 R7
 r1
@@ -963,7 +963,7 @@ r1
 31
 !s108 1531356544.000000
 !s107 /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv|
-R70
+R72
 !i113 1
 R11
 R12

@@ -1,0 +1,113 @@
+# do MIPSProcessor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/imaustyn/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus {/home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus" /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v 
+# -- Compiling module RAM32Bit
+# 
+# Top level modules:
+# 	RAM32Bit
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv 
+# -- Compiling package MemoryModesPackage
+# -- Compiling package Memory_sv_unit
+# -- Importing package MemoryModesPackage
+# -- Compiling module Memory
+# 
+# Top level modules:
+# 	Memory
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv 
+# -- Compiling package BranchModesPackage
+# -- Compiling package Branch_sv_unit
+# -- Importing package BranchModesPackage
+# -- Compiling module Branch
+# 
+# Top level modules:
+# 	Branch
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv 
+# -- Compiling package ALUFunctCodesPackage
+# -- Compiling package ALU_sv_unit
+# -- Importing package ALUFunctCodesPackage
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/Control.sv 
+# -- Compiling package MIPSInstructionPackage
+# -- Compiling package ControlLinePackage
+# -- Compiling package Control_sv_unit
+# -- Importing package MIPSInstructionPackage
+# -- Importing package ControlLinePackage
+# -- Importing package ALUFunctCodesPackage
+# -- Importing package MemoryModesPackage
+# -- Importing package BranchModesPackage
+# -- Compiling module Control
+# 
+# Top level modules:
+# 	Control
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:29:40 on Jul 07,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/imaustyn/Desktop/FPGAComputer/HDL" /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv 
+# -- Compiling package ProcessorPackage
+# ** Error: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv(401):  Failed to find the name 'NONE' in scope 'BranchModesPackage' at /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv(1).
+# End time: 15:29:40 on Jul 07,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /home/imaustyn/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./MIPSProcessor_run_msim_rtl_verilog.do line 15
+# /home/imaustyn/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+/home/imaustyn/Desktop/FPGAComputer/HDL {/home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv}"
+# 
+# stdin: <EOF>

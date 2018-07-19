@@ -809,3 +809,24 @@ run 528000
 #    Time: 1041640 ps  Scope: RS232_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv Line: 67
 # Done
 restart -f
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# Loading work.RS232_TB
+# Loading work.RS232
+run 528000
+# CYCLES_PER_BIT:       5208, TIME_BIT:      52080
+# Save bit:  5206 vs     2 to last RX: 01111011
+# Save bit:     3 vs  5205 to last RX: 10111101
+# Save bit:  5204 vs     4 to last RX: 01011110
+# Save bit:     0 vs  5208 to last RX: 10101111
+# Save bit:     0 vs  5208 to last RX: 01010111
+# Save bit:     0 vs  5208 to last RX: 00101011
+# Save bit:     0 vs  5208 to last RX: 00010101
+# Save bit:     9 vs  5199 to last RX: 00001010
+# Done
+# Successful stop
+#  (              520940) Successfully received: 00000101
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
