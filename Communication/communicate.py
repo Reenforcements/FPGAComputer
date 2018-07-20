@@ -1,12 +1,6 @@
 import sys
 import serial
-
-s = serial.Serial("/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH063CIS-if00-port0", baudrate=250000, parity=serial.PARITY_NONE, rtscts=False, bytesize=serial.EIGHTBITS, timeout=1, stopbits=1)
-
-if s.is_open == False:
-	print("Couldn't connect to processor.")
-	sys.exit(0)
-
+from argparse import *
 
 commands = {
 0:"NOP",
@@ -14,6 +8,22 @@ commands = {
 2:"UPLOAD",
 3:"DOWNLOAD"
 }
+
+parser = ArgumentParser(description="Communicate with the processor uploaded to the FPGA through RS232 serial.")
+parser.add_argument("command", nargs=1, choices=commands.values(), action='store')
+parser.add_argument("-i", dest="input", type=FileType('r'), nargs="?", default="input.txt", action='store')
+parser.add_argument("-o", dest="output", nargs="?", default="output.txt", action='store')
+
+args = parser.parse_args()
+
+print(args.input)
+
+s = serial.Serial("/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH063CIS-if00-port0", baudrate=250000, parity=serial.PARITY_NONE, rtscts=False, bytesize=serial.EIGHTBITS, timeout=1, stopbits=1)
+
+if s.is_open == False:
+	print("Couldn't connect to processor.")
+	sys.exit(0)
+
 
 print("Done.")
 s.close()

@@ -8,10 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LED1",
-					"strict" : false
-				},
-				{
 					"name" : "LED2",
 					"strict" : false
 				},

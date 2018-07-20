@@ -59,7 +59,6 @@ clk => currentTX[4].CLK
 clk => currentTX[5].CLK
 clk => currentTX[6].CLK
 clk => currentTX[7].CLK
-clk => rxError~reg0.CLK
 clk => RX_currentBit[0].CLK
 clk => RX_currentBit[1].CLK
 clk => RX_currentBit[2].CLK
@@ -141,7 +140,6 @@ clk => UART_RXD_d1.CLK
 clk => UART_RXD_d0.CLK
 clk => TX_state~1.DATAIN
 clk => RX_state~1.DATAIN
-rst => rxError~reg0.ACLR
 rst => RX_currentBit[0].ACLR
 rst => RX_currentBit[1].ACLR
 rst => RX_currentBit[2].ACLR
@@ -298,6 +296,6 @@ RX[6] <= RX[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 RX[7] <= RX[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hasRX <= hasRX~reg0.DB_MAX_OUTPUT_PORT_TYPE
 txError <= LessThan2.DB_MAX_OUTPUT_PORT_TYPE
-rxError <= rxError~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rxError <= <GND>
 
 

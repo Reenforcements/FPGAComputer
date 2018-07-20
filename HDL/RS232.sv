@@ -14,7 +14,7 @@ output logic UART_RTS,
 output logic UART_TXD,
 
 input logic [7:0]TX,
-input logic en_TX,
+input logic start_TX,
 output logic TX_ready,
 
 output logic [7:0]RX,
@@ -59,9 +59,6 @@ logic [3:0]RX_currentBit;
 RS232RX_state RX_state;
 RS232RX_state RX_nextState;
 
-logic rxTap/*synthesis keep*/;
-
-
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		RX <= 8'd0;
@@ -74,10 +71,8 @@ always_ff @ (posedge clk or negedge rst) begin
 		// Keep zero so we can keep receiving data.
 		UART_RTS <= 1'b0;
 		rxError <= 1'b0;
-		rxTap <= 1'b0;
 	end
 	else begin
-		rxTap <= 1'b0;
 		// Clear hasRX by default. It will be set to 1 further down if we have data.
 		hasRX <= 1'b0;
 	
@@ -91,12 +86,6 @@ always_ff @ (posedge clk or negedge rst) begin
 			RX_counter <= 32'd0;
 			RX_countOnes <= 16'd0;
 			RX_countZeroes <= 16'd0;
-			rxTap <= 1'b1;
-		end
-		
-		// Test
-		if (RX_state == RX_POSSIBLE_STOP_BIT && RX_nextState == RX_POSSIBLE_START_BIT) begin
-			hasRX <= 1'b1;
 		end
 		
 		// Have we finished receiving one bit?
@@ -112,21 +101,14 @@ always_ff @ (posedge clk or negedge rst) begin
 				RX_counter <= 32'd0;
 				RX_countOnes <= 16'd0;
 				RX_countZeroes <= 16'd0;
-				rxTap <= 1'b1;
 			end
-			if (RX_state == RX_POSSIBLE_STOP_BIT) begin
-				rxTap <= 1'b1;
-				if (RX_countOnes > RX_countZeroes) begin
-					// Successful stop condition
-					hasRX <= 1'b1;
-					$display("Successful stop");
-				end
-				else begin
-					// Didn't get a good stop condition.
-					// Something probably went wrongly. Don't set hasRX to 1.
-					$display("%d vs %d", RX_countOnes, RX_countZeroes);
-					rxError <= 1'b1;
-				end
+		end
+		
+		if (RX_state == RX_POSSIBLE_STOP_BIT) begin
+			if (RX_nextState == RX_POSSIBLE_START_BIT || RX_nextState == RX_WAITING) begin
+				// Successful stop condition
+				hasRX <= 1'b1;
+				$display("Successful stop");
 			end
 		end
 	end
@@ -171,7 +153,6 @@ always_comb begin
 			else
 				RX_nextState = RX_POSSIBLE_STOP_BIT;
 				
-			// TEST
 			if (UART_RXD_d1 == 1'b0) begin
 				RX_nextState = RX_POSSIBLE_START_BIT;
 			end
@@ -209,7 +190,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		TX_state <= TX_nextState;
 		TX_counter <= TX_counter + 32'd1;
 		
-		if (TX_ready == 1'b1 && en_TX == 1'b1) begin
+		if (TX_ready == 1'b1 && start_TX == 1'b1) begin
 			// Copy current TX and reset things.
 			currentTX <= TX;
 			TX_ready <= 1'b0;
@@ -241,7 +222,7 @@ always_comb begin
 	txError = TX_counter > 32'd300000000; //6 seconds
 	unique case (TX_state)
 		TX_IDLE: begin
-			if (en_TX == 1'b0) begin
+			if (start_TX == 1'b0) begin
 				TX_nextState = TX_IDLE;
 			end
 			else begin

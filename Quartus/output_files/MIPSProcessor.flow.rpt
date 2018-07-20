@@ -1,5 +1,5 @@
 Flow report for MIPSProcessor
-Thu Jul 19 12:12:38 2018
+Thu Jul 19 14:16:15 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jul 19 12:12:38 2018       ;
+; Flow Status                        ; Successful - Thu Jul 19 14:16:15 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,770 / 114,480 ( 2 % )                     ;
-;     Total combinational functions  ; 1,458 / 114,480 ( 1 % )                     ;
-;     Dedicated logic registers      ; 2,342 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2342                                        ;
+; Total logic elements               ; 2,773 / 114,480 ( 2 % )                     ;
+;     Total combinational functions  ; 1,460 / 114,480 ( 1 % )                     ;
+;     Dedicated logic registers      ; 2,341 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2341                                        ;
 ; Total pins                         ; 8 / 529 ( 2 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,146,880 / 3,981,312 ( 29 % )              ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/19/2018 12:11:33 ;
+; Start date & time ; 07/19/2018 14:15:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPSProcessor       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                                                                           ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153201669361171                                                     ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 52229457043.153202410662984                                                     ; --            ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                                                             ; --            ; --          ; eda_design_synthesis ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                               ; --            ; --          ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                                 ; <None>        ; --          ; --                   ;
@@ -133,12 +133,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 1079 MB             ; 00:00:38                           ;
-; Fitter               ; 00:00:20     ; 1.0                     ; 1490 MB             ; 00:00:24                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 848 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 929 MB              ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 1107 MB             ; 00:00:05                           ;
-; Total                ; 00:00:59     ; --                      ; --                  ; 00:01:14                           ;
+; Analysis & Synthesis ; 00:00:29     ; 1.0                     ; 1071 MB             ; 00:00:42                           ;
+; Fitter               ; 00:00:22     ; 1.0                     ; 1489 MB             ; 00:00:25                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 843 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 932 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 1108 MB             ; 00:00:05                           ;
+; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

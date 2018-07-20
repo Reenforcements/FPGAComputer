@@ -69,7 +69,6 @@ set_location_assignment PIN_G14 -to UART_CTS
 set_location_assignment PIN_J13 -to UART_RTS
 set_location_assignment PIN_G19 -to LED1
 set_location_assignment PIN_F19 -to LED2
-set_global_assignment -name VERILOG_FILE RS232Tap1/synthesis/RS232Tap1.v
 set_global_assignment -name SDC_FILE MIPSProcessor.out.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/RS232.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../HDL/RegisterFile.sv
