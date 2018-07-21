@@ -1,0 +1,16 @@
+
+State Machine - |Main|RS232:rs|TX_state
+Name TX_state~6 TX_state~5 TX_state~4 
+TX_state.TX_IDLE 0 0 0 
+TX_state.TX_START_BIT 0 0 1 
+TX_state.TX_TRANSMIT 0 1 0 
+TX_state.TX_STOP_BIT 0 1 1 
+TX_state.TX_BAD 1 0 0 
+
+State Machine - |Main|RS232:rs|RX_state
+Name RX_state~6 RX_state~5 RX_state~4 
+RX_state.RX_WAITING 0 0 0 
+RX_state.RX_POSSIBLE_START_BIT 0 0 1 
+RX_state.RX_RECEIVE 0 1 0 
+RX_state.RX_POSSIBLE_STOP_BIT 0 1 1 
+RX_state.RX_BAD 1 0 0 

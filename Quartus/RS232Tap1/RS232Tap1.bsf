@@ -1,0 +1,78 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 272 200)
+	(text "RS232Tap1" (rect 104 -1 151 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 184 20 196)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "acq_data_in[5..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "acq_data_in[5..0]" (rect 4 61 106 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 96 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "acq_trigger_in" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "acq_trigger_in" (rect 4 77 88 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 96 88)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "acq_clk" (rect 0 0 30 12)(font "Arial" (font_size 8)))
+		(text "acq_clk" (rect 4 117 46 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 96 128)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "trigger_in" (rect 0 0 36 12)(font "Arial" (font_size 8)))
+		(text "trigger_in" (rect 4 157 64 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 96 168)(line_width 1))
+	)
+	(drawing
+		(text "tap" (rect 79 43 176 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "acq_data_in" (rect 101 67 268 144)(font "Arial" (color 0 0 0)))
+		(text "acq_trigger_in" (rect 101 83 286 176)(font "Arial" (color 0 0 0)))
+		(text "acq_clk" (rect 53 99 148 211)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 101 123 220 256)(font "Arial" (color 0 0 0)))
+		(text "trigger_in" (rect 41 139 142 291)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "trigger_in" (rect 101 163 262 336)(font "Arial" (color 0 0 0)))
+		(text " system " (rect 237 184 522 378)(font "Arial" ))
+		(line (pt 96 32)(pt 176 32)(line_width 1))
+		(line (pt 176 32)(pt 176 184)(line_width 1))
+		(line (pt 96 184)(pt 176 184)(line_width 1))
+		(line (pt 96 32)(pt 96 184)(line_width 1))
+		(line (pt 97 52)(pt 97 92)(line_width 1))
+		(line (pt 98 52)(pt 98 92)(line_width 1))
+		(line (pt 97 108)(pt 97 132)(line_width 1))
+		(line (pt 98 108)(pt 98 132)(line_width 1))
+		(line (pt 97 148)(pt 97 172)(line_width 1))
+		(line (pt 98 148)(pt 98 172)(line_width 1))
+		(line (pt 0 0)(pt 272 0)(line_width 1))
+		(line (pt 272 0)(pt 272 200)(line_width 1))
+		(line (pt 0 200)(pt 272 200)(line_width 1))
+		(line (pt 0 0)(pt 0 200)(line_width 1))
+	)
+)

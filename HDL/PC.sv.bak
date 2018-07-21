@@ -12,7 +12,7 @@ output logic [31:0]nextPCAddress
 
 // The reserved addresses end at 0x00400000, but we don't
 //  have that much memory. Let's use 0x400
-logic [31:0]currentPC = 32'h400;
+logic [31:0]currentPC = 32'h3FC;
 
 logic [31:0]oldPC;
 always_comb begin
@@ -22,7 +22,7 @@ always_comb begin
 		oldPC = newPC;
 	end
 	else begin
-		oldPC = currentPC;
+		oldPC = currentPC + 32'h4;
 	end
 
 	
@@ -30,24 +30,18 @@ always_comb begin
 	// Always add 4
 	// The compiler/assembly author will know this
 	//  and take it into account in their code.
-	//nextPC = oldPC + 32'h4;
 	// This is the next address, used if we need to link.
-	nextPCAddress = oldPC + 32'h4;
+	pcAddress = oldPC;
 end
 
 always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b1) begin
-		currentPC <= 32'h400;
+	if (rst == 1'b0) begin
+		currentPC <= 32'h3FC;
 	end
 	else begin
 		// Update to next PC on the clock
-		currentPC <= oldPC + 32'h4;
+		currentPC <= pcAddress;
 	end
-end
-
-always_comb begin
-	// Update the PC output
-	pcAddress = currentPC;
 end
 
 endmodule

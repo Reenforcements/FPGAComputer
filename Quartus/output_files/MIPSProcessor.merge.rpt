@@ -1,0 +1,754 @@
+Partition Merge report for MIPSProcessor
+Wed Jul 18 15:59:25 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Partition Merge Summary                                                          ;
++------------------------------------+---------------------------------------------+
+; Partition Merge Status             ; Successful - Wed Jul 18 15:59:25 2018       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; MIPSProcessor                               ;
+; Top-level Entity Name              ; Main                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 3,703                                       ;
+;     Total combinational functions  ; 1,385                                       ;
+;     Dedicated logic registers      ; 3,203                                       ;
+; Total registers                    ; 3203                                        ;
+; Total pins                         ; 8                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 28,672                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                  ;
++--------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+------------------------------------------------------------------------------------------+
+; Name                           ; Type         ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                   ; Details                                                                                  ;
++--------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+------------------------------------------------------------------------------------------+
+; RS232:rs|Add3~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Add3~0                     ; N/A                                                                                      ;
+; RS232:rs|Add3~0                ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Add3~0                     ; N/A                                                                                      ;
+; RS232:rs|Equal0~0              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~0                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~0              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~0                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~1              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~1                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~1              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~1                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~10             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~10                  ; N/A                                                                                      ;
+; RS232:rs|Equal0~10             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~10                  ; N/A                                                                                      ;
+; RS232:rs|Equal0~2              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~2                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~2              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~2                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~3              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~3                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~3              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~3                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~4              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~4                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~4              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~4                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~5              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~5                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~5              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~5                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~6              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~6                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~6              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~6                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~7              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~7                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~7              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~7                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~8              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~8                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~8              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~8                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~9              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~9                   ; N/A                                                                                      ;
+; RS232:rs|Equal0~9              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal0~9                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~0              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~0                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~0              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~0                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~1              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~1                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~1              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~1                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~10             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~10                  ; N/A                                                                                      ;
+; RS232:rs|Equal2~10             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~10                  ; N/A                                                                                      ;
+; RS232:rs|Equal2~2              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~2                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~2              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~2                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~3              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~3                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~3              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~3                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~4              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~4                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~4              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~4                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~5              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~5                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~5              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~5                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~6              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~6                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~6              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~6                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~7              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~7                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~7              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~7                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~8              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~8                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~8              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~8                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~9              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~9                   ; N/A                                                                                      ;
+; RS232:rs|Equal2~9              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Equal2~9                   ; N/A                                                                                      ;
+; RS232:rs|LessThan0~30          ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan0~30               ; N/A                                                                                      ;
+; RS232:rs|LessThan0~30          ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan0~30               ; N/A                                                                                      ;
+; RS232:rs|LessThan1~30          ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan1~30               ; N/A                                                                                      ;
+; RS232:rs|LessThan1~30          ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan1~30               ; N/A                                                                                      ;
+; RS232:rs|LessThan2~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~0                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~0                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~1                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~1                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~2           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~2                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~2           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~2                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~3           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~3                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~3           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~3                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~4           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~4                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~4           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~4                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~5           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~5                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~5           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~5                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~6           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~6                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~6           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~6                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~7           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~7                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~7           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~7                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~8           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~8                ; N/A                                                                                      ;
+; RS232:rs|LessThan2~8           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|LessThan2~8                ; N/A                                                                                      ;
+; RS232:rs|RX[0]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[0]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[1]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[1]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[2]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[2]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[3]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[3]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[4]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[4]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[5]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[5]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[6]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX[6]~feeder          ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|RX_countOnes[0]~16    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[0]~16         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[0]~16    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[0]~16         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[10]~36   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[10]~36        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[10]~36   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[10]~36        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[11]~38   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[11]~38        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[11]~38   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[11]~38        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[12]~40   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[12]~40        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[12]~40   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[12]~40        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[13]~42   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[13]~42        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[13]~42   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[13]~42        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[14]~44   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[14]~44        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[14]~44   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[14]~44        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[15]~46   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[15]~46        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[15]~46   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[15]~46        ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[1]~18    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[1]~18         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[1]~18    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[1]~18         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[2]~20    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[2]~20         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[2]~20    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[2]~20         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[3]~22    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[3]~22         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[3]~22    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[3]~22         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[4]~24    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[4]~24         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[4]~24    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[4]~24         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[5]~26    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[5]~26         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[5]~26    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[5]~26         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[6]~28    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[6]~28         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[6]~28    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[6]~28         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[7]~30    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[7]~30         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[7]~30    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[7]~30         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[7]~48    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[7]~48         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[7]~48    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[7]~48         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[8]~32    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[8]~32         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[8]~32    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[8]~32         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[9]~34    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[9]~34         ; N/A                                                                                      ;
+; RS232:rs|RX_countOnes[9]~34    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countOnes[9]~34         ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[0]~16  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[0]~16       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[0]~16  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[0]~16       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[10]~36 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[10]~36      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[10]~36 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[10]~36      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[10]~48 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[10]~48      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[10]~48 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[10]~48      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[11]~38 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[11]~38      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[11]~38 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[11]~38      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[12]~40 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[12]~40      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[12]~40 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[12]~40      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[13]~42 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[13]~42      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[13]~42 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[13]~42      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[14]~44 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[14]~44      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[14]~44 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[14]~44      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[15]~46 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[15]~46      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[15]~46 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[15]~46      ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[1]~18  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[1]~18       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[1]~18  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[1]~18       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[2]~20  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[2]~20       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[2]~20  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[2]~20       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[3]~22  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[3]~22       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[3]~22  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[3]~22       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[4]~24  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[4]~24       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[4]~24  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[4]~24       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[5]~26  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[5]~26       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[5]~26  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[5]~26       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[6]~28  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[6]~28       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[6]~28  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[6]~28       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[7]~30  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[7]~30       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[7]~30  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[7]~30       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[8]~32  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[8]~32       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[8]~32  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[8]~32       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[9]~34  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[9]~34       ; N/A                                                                                      ;
+; RS232:rs|RX_countZeroes[9]~34  ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_countZeroes[9]~34       ; N/A                                                                                      ;
+; RS232:rs|RX_counter[0]~32      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[0]~32           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[0]~32      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[0]~32           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[10]~55     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[10]~55          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[10]~55     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[10]~55          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[11]~57     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[11]~57          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[11]~57     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[11]~57          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[12]~59     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[12]~59          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[12]~59     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[12]~59          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[13]~61     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[13]~61          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[13]~61     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[13]~61          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[14]~63     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[14]~63          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[14]~63     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[14]~63          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[15]~65     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[15]~65          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[15]~65     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[15]~65          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[16]~67     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[16]~67          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[16]~67     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[16]~67          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~40     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~40          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~40     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~40          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~41     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~41          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~41     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~41          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~42     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~42          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~42     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~42          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~69     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~69          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[17]~69     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[17]~69          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[18]~71     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[18]~71          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[18]~71     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[18]~71          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[19]~73     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[19]~73          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[19]~73     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[19]~73          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[1]~34      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[1]~34           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[1]~34      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[1]~34           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[20]~75     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[20]~75          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[20]~75     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[20]~75          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[21]~77     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[21]~77          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[21]~77     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[21]~77          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[22]~79     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[22]~79          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[22]~79     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[22]~79          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[23]~81     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[23]~81          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[23]~81     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[23]~81          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[24]~83     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[24]~83          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[24]~83     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[24]~83          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[25]~85     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[25]~85          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[25]~85     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[25]~85          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[26]~87     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[26]~87          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[26]~87     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[26]~87          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[27]~89     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[27]~89          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[27]~89     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[27]~89          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[28]~91     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[28]~91          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[28]~91     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[28]~91          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[29]~93     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[29]~93          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[29]~93     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[29]~93          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[2]~36      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[2]~36           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[2]~36      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[2]~36           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[30]~95     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[30]~95          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[30]~95     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[30]~95          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[31]~97     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[31]~97          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[31]~97     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[31]~97          ; N/A                                                                                      ;
+; RS232:rs|RX_counter[3]~38      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[3]~38           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[3]~38      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[3]~38           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[4]~43      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[4]~43           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[4]~43      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[4]~43           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[5]~45      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[5]~45           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[5]~45      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[5]~45           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[6]~47      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[6]~47           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[6]~47      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[6]~47           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[7]~49      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[7]~49           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[7]~49      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[7]~49           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[8]~51      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[8]~51           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[8]~51      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[8]~51           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[9]~53      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[9]~53           ; N/A                                                                                      ;
+; RS232:rs|RX_counter[9]~53      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_counter[9]~53           ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~10      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~10           ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~10      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~10           ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~6       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~6            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~6       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~6            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~7       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~7            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~7       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~7            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~8       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~8            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~8       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~8            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~9       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~9            ; N/A                                                                                      ;
+; RS232:rs|RX_currentBit~9       ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_currentBit~9            ; N/A                                                                                      ;
+; RS232:rs|RX_state.RX_RECEIVE~0 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state.RX_RECEIVE~0      ; N/A                                                                                      ;
+; RS232:rs|RX_state.RX_RECEIVE~0 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state.RX_RECEIVE~0      ; N/A                                                                                      ;
+; RS232:rs|RX_state~4            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~4                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~4            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~4                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~5            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~5                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~5            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~5                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~8            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~8                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~8            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~8                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~9            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~9                 ; N/A                                                                                      ;
+; RS232:rs|RX_state~9            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|RX_state~9                 ; N/A                                                                                      ;
+; RS232:rs|Selector1~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector1~0                ; N/A                                                                                      ;
+; RS232:rs|Selector1~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector1~0                ; N/A                                                                                      ;
+; RS232:rs|Selector2~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector2~0                ; N/A                                                                                      ;
+; RS232:rs|Selector2~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector2~0                ; N/A                                                                                      ;
+; RS232:rs|Selector2~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector2~1                ; N/A                                                                                      ;
+; RS232:rs|Selector2~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector2~1                ; N/A                                                                                      ;
+; RS232:rs|Selector3~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector3~0                ; N/A                                                                                      ;
+; RS232:rs|Selector3~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector3~0                ; N/A                                                                                      ;
+; RS232:rs|Selector3~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector3~1                ; N/A                                                                                      ;
+; RS232:rs|Selector3~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector3~1                ; N/A                                                                                      ;
+; RS232:rs|Selector8~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~0                ; N/A                                                                                      ;
+; RS232:rs|Selector8~0           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~0                ; N/A                                                                                      ;
+; RS232:rs|Selector8~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~1                ; N/A                                                                                      ;
+; RS232:rs|Selector8~1           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~1                ; N/A                                                                                      ;
+; RS232:rs|Selector8~2           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~2                ; N/A                                                                                      ;
+; RS232:rs|Selector8~2           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~2                ; N/A                                                                                      ;
+; RS232:rs|Selector8~3           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~3                ; N/A                                                                                      ;
+; RS232:rs|Selector8~3           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~3                ; N/A                                                                                      ;
+; RS232:rs|Selector8~4           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~4                ; N/A                                                                                      ;
+; RS232:rs|Selector8~4           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~4                ; N/A                                                                                      ;
+; RS232:rs|Selector8~5           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~5                ; N/A                                                                                      ;
+; RS232:rs|Selector8~5           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~5                ; N/A                                                                                      ;
+; RS232:rs|Selector8~6           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~6                ; N/A                                                                                      ;
+; RS232:rs|Selector8~6           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|Selector8~6                ; N/A                                                                                      ;
+; RS232:rs|TX_counter[0]~32      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[0]~32           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[0]~32      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[0]~32           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[10]~52     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[10]~52          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[10]~52     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[10]~52          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[11]~54     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[11]~54          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[11]~54     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[11]~54          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[12]~56     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[12]~56          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[12]~56     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[12]~56          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[13]~58     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[13]~58          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[13]~58     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[13]~58          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[14]~60     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[14]~60          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[14]~60     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[14]~60          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[15]~62     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[15]~62          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[15]~62     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[15]~62          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[16]~64     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[16]~64          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[16]~64     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[16]~64          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[17]~66     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[17]~66          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[17]~66     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[17]~66          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[18]~68     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[18]~68          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[18]~68     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[18]~68          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[19]~70     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[19]~70          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[19]~70     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[19]~70          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[1]~34      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[1]~34           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[1]~34      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[1]~34           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[20]~72     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[20]~72          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[20]~72     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[20]~72          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[21]~74     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[21]~74          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[21]~74     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[21]~74          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[22]~76     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[22]~76          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[22]~76     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[22]~76          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[23]~78     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[23]~78          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[23]~78     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[23]~78          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[24]~80     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[24]~80          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[24]~80     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[24]~80          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[25]~82     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[25]~82          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[25]~82     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[25]~82          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~84     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~84          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~84     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~84          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~92     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~92          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~92     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~92          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~93     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~93          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~93     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~93          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~94     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~94          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[26]~94     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[26]~94          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[27]~86     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[27]~86          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[27]~86     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[27]~86          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[28]~88     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[28]~88          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[28]~88     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[28]~88          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[29]~90     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[29]~90          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[29]~90     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[29]~90          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[2]~36      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[2]~36           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[2]~36      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[2]~36           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[30]~95     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[30]~95          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[30]~95     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[30]~95          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[31]~97     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[31]~97          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[31]~97     ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[31]~97          ; N/A                                                                                      ;
+; RS232:rs|TX_counter[3]~38      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[3]~38           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[3]~38      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[3]~38           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[4]~40      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[4]~40           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[4]~40      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[4]~40           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[5]~42      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[5]~42           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[5]~42      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[5]~42           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[6]~44      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[6]~44           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[6]~44      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[6]~44           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[7]~46      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[7]~46           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[7]~46      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[7]~46           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[8]~48      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[8]~48           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[8]~48      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[8]~48           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[9]~50      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[9]~50           ; N/A                                                                                      ;
+; RS232:rs|TX_counter[9]~50      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_counter[9]~50           ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[0]~17   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[0]~17        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[0]~17   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[0]~17        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[0]~8    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[0]~8         ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[0]~8    ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[0]~8         ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[1]~10   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[1]~10        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[1]~10   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[1]~10        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[2]~12   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[2]~12        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[2]~12   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[2]~12        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[3]~14   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[3]~14        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[3]~14   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[3]~14        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[4]~18   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[4]~18        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[4]~18   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[4]~18        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[5]~20   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[5]~20        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[5]~20   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[5]~20        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[6]~22   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[6]~22        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[6]~22   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[6]~22        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[7]~24   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[7]~24        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit[7]~24   ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit[7]~24        ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit~16      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit~16           ; N/A                                                                                      ;
+; RS232:rs|TX_currentBit~16      ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_currentBit~16           ; N/A                                                                                      ;
+; RS232:rs|TX_ready              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready                   ; N/A                                                                                      ;
+; RS232:rs|TX_ready              ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready                   ; N/A                                                                                      ;
+; RS232:rs|TX_ready~0            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready~0                 ; N/A                                                                                      ;
+; RS232:rs|TX_ready~0            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready~0                 ; N/A                                                                                      ;
+; RS232:rs|TX_ready~1            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready~1                 ; N/A                                                                                      ;
+; RS232:rs|TX_ready~1            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_ready~1                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~10           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~10                ; N/A                                                                                      ;
+; RS232:rs|TX_state~10           ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~10                ; N/A                                                                                      ;
+; RS232:rs|TX_state~4            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~4                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~4            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~4                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~5            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~5                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~5            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~5                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~8            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~8                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~8            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~8                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~9            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~9                 ; N/A                                                                                      ;
+; RS232:rs|TX_state~9            ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|TX_state~9                 ; N/A                                                                                      ;
+; RS232:rs|always0~7             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always0~7                  ; N/A                                                                                      ;
+; RS232:rs|always0~7             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always0~7                  ; N/A                                                                                      ;
+; RS232:rs|always0~8             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always0~8                  ; N/A                                                                                      ;
+; RS232:rs|always0~8             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always0~8                  ; N/A                                                                                      ;
+; RS232:rs|always2~5             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always2~5                  ; N/A                                                                                      ;
+; RS232:rs|always2~5             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always2~5                  ; N/A                                                                                      ;
+; RS232:rs|always3~0             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~0                  ; N/A                                                                                      ;
+; RS232:rs|always3~0             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~0                  ; N/A                                                                                      ;
+; RS232:rs|always3~1             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~1                  ; N/A                                                                                      ;
+; RS232:rs|always3~1             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~1                  ; N/A                                                                                      ;
+; RS232:rs|always3~2             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~2                  ; N/A                                                                                      ;
+; RS232:rs|always3~2             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|always3~2                  ; N/A                                                                                      ;
+; RS232:rs|currentTX[2]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[2]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[3]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[3]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[6]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[6]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[7]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|currentTX[7]~feeder   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; RS232:rs|hasRX                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|hasRX                      ; N/A                                                                                      ;
+; RS232:rs|hasRX                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|hasRX                      ; N/A                                                                                      ;
+; RS232:rs|hasRX~0               ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|hasRX~0                    ; N/A                                                                                      ;
+; RS232:rs|hasRX~0               ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|hasRX~0                    ; N/A                                                                                      ;
+; RS232:rs|rxError               ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError                    ; N/A                                                                                      ;
+; RS232:rs|rxError               ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError                    ; N/A                                                                                      ;
+; RS232:rs|rxError~0             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError~0                  ; N/A                                                                                      ;
+; RS232:rs|rxError~0             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError~0                  ; N/A                                                                                      ;
+; RS232:rs|rxError~1             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError~1                  ; N/A                                                                                      ;
+; RS232:rs|rxError~1             ; post-fitting ; connected ; Top                            ; post-synthesis    ; RS232:rs|rxError~1                  ; N/A                                                                                      ;
+; TX[0]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[0]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[1]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[1]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[2]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[2]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[3]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[3]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[4]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[4]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[5]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[5]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[7]~0                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; TX[7]~0                             ; N/A                                                                                      ;
+; TX[7]~0                        ; post-fitting ; connected ; Top                            ; post-synthesis    ; TX[7]~0                             ; N/A                                                                                      ;
+; TX[7]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; TX[7]~feeder                   ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; UART_RXD                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; UART_RXD                            ; N/A                                                                                      ;
+; UART_RXD                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; UART_RXD                            ; N/A                                                                                      ;
+; UART_RXD~input                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; UART_RXD                            ; N/A                                                                                      ;
+; UART_RXD~input                 ; post-fitting ; connected ; Top                            ; post-synthesis    ; UART_RXD                            ; N/A                                                                                      ;
+; always0~0                      ; post-fitting ; connected ; Top                            ; post-synthesis    ; always0~0                           ; N/A                                                                                      ;
+; always0~0                      ; post-fitting ; connected ; Top                            ; post-synthesis    ; always0~0                           ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|gnd           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; auto_signaltap_0|vcc           ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A                                                                                      ;
+; clk                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; clk                                 ; N/A                                                                                      ;
+; didUseRX                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; didUseRX                            ; N/A                                                                                      ;
+; didUseRX                       ; post-fitting ; connected ; Top                            ; post-synthesis    ; didUseRX                            ; N/A                                                                                      ;
+; didUseRX~0                     ; post-fitting ; connected ; Top                            ; post-synthesis    ; didUseRX~0                          ; N/A                                                                                      ;
+; didUseRX~0                     ; post-fitting ; connected ; Top                            ; post-synthesis    ; didUseRX~0                          ; N/A                                                                                      ;
+; en_TX                          ; post-fitting ; connected ; Top                            ; post-synthesis    ; en_TX                               ; N/A                                                                                      ;
+; en_TX                          ; post-fitting ; connected ; Top                            ; post-synthesis    ; en_TX                               ; N/A                                                                                      ;
+; rst                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; rst                                 ; N/A                                                                                      ;
+; rst                            ; post-fitting ; connected ; Top                            ; post-synthesis    ; rst                                 ; N/A                                                                                      ;
+; rxTemp[0]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[0]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[1]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[1]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[2]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[2]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[3]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[3]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[4]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[4]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[5]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[5]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[6]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[6]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[7]~0                    ; post-fitting ; connected ; Top                            ; post-synthesis    ; rxTemp[7]~0                         ; N/A                                                                                      ;
+; rxTemp[7]~0                    ; post-fitting ; connected ; Top                            ; post-synthesis    ; rxTemp[7]~0                         ; N/A                                                                                      ;
+; rxTemp[7]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; rxTemp[7]~feeder               ; post-fitting ; missing   ; Top                            ; post-synthesis    ; GND                                 ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
++--------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                    ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 248  ; 154              ; 3370                           ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total combinational functions               ; 217  ; 127              ; 1041                           ; 0                              ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;                                ;
+;     -- 4 input functions                    ; 56   ; 53               ; 636                            ; 0                              ;
+;     -- 3 input functions                    ; 44   ; 36               ; 305                            ; 0                              ;
+;     -- <=2 input functions                  ; 117  ; 38               ; 100                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;                                ;
+;     -- normal mode                          ; 88   ; 119              ; 972                            ; 0                              ;
+;     -- arithmetic mode                      ; 129  ; 8                ; 69                             ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total registers                             ; 149  ; 91               ; 2963                           ; 0                              ;
+;     -- Dedicated logic registers            ; 149  ; 91               ; 2963                           ; 0                              ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ; 0                              ;
+; I/O pins                                    ; 8    ; 0                ; 0                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                ; 0                              ; 0                              ;
+; Total memory bits                           ; 0    ; 0                ; 28672                          ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Connections                                 ;      ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 1    ; 134              ; 4253                           ; 0                              ;
+;     -- Registered Input Connections         ; 0    ; 102              ; 3435                           ; 0                              ;
+;     -- Output Connections                   ; 3987 ; 367              ; 34                             ; 0                              ;
+;     -- Registered Output Connections        ; 18   ; 367              ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 5201 ; 1056             ; 16059                          ; 0                              ;
+;     -- Registered Connections               ; 402  ; 825              ; 12565                          ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; External Connections                        ;      ;                  ;                                ;                                ;
+;     -- Top                                  ; 0    ; 123              ; 3865                           ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 123  ; 20               ; 358                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 3865 ; 358              ; 64                             ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 7    ; 45               ; 741                            ; 0                              ;
+;     -- Output Ports                         ; 5    ; 62               ; 463                            ; 0                              ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 454                            ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 29               ; 449                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 0                ; 69                             ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 28               ; 2                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 15                             ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 1                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 25               ; 228                            ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 30               ; 242                            ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 29               ; 451                            ; 0                              ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++----------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                               ;
++-----------------------------------+-----------+---------------+----------+-------------+
+; Name                              ; Partition ; Type          ; Location ; Status      ;
++-----------------------------------+-----------+---------------+----------+-------------+
+; LED1                              ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LED1                       ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LED1~output                ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; LED2                              ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LED2                       ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LED2~output                ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; UART_CTS                          ; Top       ; Input Port    ; n/a      ;             ;
+;     -- UART_CTS                   ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- UART_CTS~input             ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; UART_RTS                          ; Top       ; Output Port   ; n/a      ;             ;
+;     -- UART_RTS                   ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- UART_RTS~output            ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; UART_RXD                          ; Top       ; Input Port    ; n/a      ;             ;
+;     -- UART_RXD                   ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- UART_RXD~input             ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; UART_TXD                          ; Top       ; Output Port   ; n/a      ;             ;
+;     -- UART_TXD                   ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- UART_TXD~output            ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tck               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tck        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tck~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tdi               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tdi        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdi~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tdo               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- altera_reserved_tdo        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdo~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tms               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tms        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tms~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; clk                               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- clk                        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- clk~input                  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; rst                               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- rst                        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- rst~input                  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
++-----------------------------------+-----------+---------------+----------+-------------+
+
+
++---------------------------------------------------------+
+; Partition Merge Resource Usage Summary                  ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 3,703     ;
+;                                             ;           ;
+; Total combinational functions               ; 1385      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 745       ;
+;     -- 3 input functions                    ; 385       ;
+;     -- <=2 input functions                  ; 255       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1179      ;
+;     -- arithmetic mode                      ; 206       ;
+;                                             ;           ;
+; Total registers                             ; 3203      ;
+;     -- Dedicated logic registers            ; 3203      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 8         ;
+; Total memory bits                           ; 28672     ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 2265      ;
+; Total fan-out                               ; 17727     ;
+; Average fan-out                             ; 3.66      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_6824:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 224          ; 128          ; 224          ; 28672 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Wed Jul 18 15:59:24 2018
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off MIPSProcessor -c MIPSProcessor --merge=on
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 429 of its 481 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 52 missing sources or connections.
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "UART_CTS" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 6
+Info (21057): Implemented 4140 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 3903 logic cells
+    Info (21064): Implemented 224 RAM segments
+Info: Quartus Prime Partition Merge was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1177 megabytes
+    Info: Processing ended: Wed Jul 18 15:59:25 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

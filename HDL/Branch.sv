@@ -3,26 +3,26 @@ package BranchModesPackage;
 typedef enum logic [3:0] {
 
 // These have specific values
-BGEZ = 4'h1,
-BLTZ = 4'h0,
+BranchMode_BGEZ = 4'h1,
+BranchMode_BLTZ = 4'h0,
 
 // These can be anything.
-NONE = 4'h2,
-BEQ = 4'h3,
-BGTZ = 4'h4,
-BLEZ = 4'h5,
-BNE = 4'h6,
-BC1T = 4'h7,
-BC1F = 4'h8,
-J = 4'h9,
-JR = 4'hA
+BranchMode_NONE = 4'h2,
+BranchMode_BEQ = 4'h3,
+BranchMode_BGTZ = 4'h4,
+BranchMode_BLEZ = 4'h5,
+BranchMode_BNE = 4'h6,
+BranchMode_BC1T = 4'h7,
+BranchMode_BC1F = 4'h8,
+BranchMode_J = 4'h9,
+BranchMode_JR = 4'hA
 } BranchModes;
 
 typedef enum logic [4:0] {
-// These are paired with BGEZ and BLTZ above but
+// These are paired with BranchMode_BGEZ and BranchMode_BLTZ above but
 //  they have a "1" in the 16's place
-BGEZAL = 5'h11,
-BLTZAL = 5'h10
+BranchMode_BGEZAL = 5'h11,
+BranchMode_BLTZAL = 5'h10
 } LinkBranchModes;
 
 endpackage
@@ -61,37 +61,37 @@ end
 logic branchCompareResult;
 always_comb begin
 	unique case (mode)
-		NONE: begin
+		BranchMode_NONE: begin
 			branchCompareResult = 0;
 		end
-		BEQ: begin
+		BranchMode_BEQ: begin
 			branchCompareResult = resultZero && !resultNegative && !resultPositive;
 		end
-		BGEZ: begin
+		BranchMode_BGEZ: begin
 			branchCompareResult = (resultZero || resultPositive) && !resultNegative;
 		end
-		BGTZ: begin
+		BranchMode_BGTZ: begin
 			branchCompareResult = resultPositive && !resultZero && !resultNegative;
 		end
-		BLEZ: begin
+		BranchMode_BLEZ: begin
 			branchCompareResult = !resultPositive && (resultZero || resultNegative);
 		end
-		BLTZ: begin
+		BranchMode_BLTZ: begin
 			branchCompareResult = !resultPositive && !resultZero && resultNegative;
 		end
-		BNE: begin
+		BranchMode_BNE: begin
 			branchCompareResult = (resultPositive || resultNegative) && !resultZero;
 		end
-		BC1T: begin
+		BranchMode_BC1T: begin
 			branchCompareResult = 0;
 		end
-		BC1F: begin
+		BranchMode_BC1F: begin
 			branchCompareResult = 0;
 		end
-		J: begin
+		BranchMode_J: begin
 			branchCompareResult = 1;
 		end
-		JR: begin
+		BranchMode_JR: begin
 			branchCompareResult = 1;
 		end
 		default: begin
@@ -107,18 +107,18 @@ always_comb begin
 	//  outputting a branch/jump address.
 	if (shouldUseNewPC) begin
 		case (mode)
-			NONE: begin
+			BranchMode_NONE: begin
 				branchTo = 32'b0;
 			end
 
-			BEQ,
-			BGEZ,
-			BGTZ,
-			BLEZ,
-			BLTZ,
-			BNE,
-			BC1T,
-			BC1F: begin
+			BranchMode_BEQ,
+			BranchMode_BGEZ,
+			BranchMode_BGTZ,
+			BranchMode_BLEZ,
+			BranchMode_BLTZ,
+			BranchMode_BNE,
+			BranchMode_BC1T,
+			BranchMode_BC1F: begin
 				// Branches take into account the pc being auto
 				//  incremented by 4 every clock cycle. The compiler
 				//  (or assembly code author) takes this into account.
@@ -128,24 +128,23 @@ always_comb begin
 				logic signed[31:0]sBranchAddressOffset;
 				sBranchAddressOffset = 32'(branchAddressOffset) << 32'd2;
 				branchTo = pcAddress + sBranchAddressOffset;
-				/*$display("Branching to %d + %d = %d", 
-						sBranchAddressOffset,
-						pcAddress,
-						branchTo);*/
 			end
 
-			J: begin
+			BranchMode_J: begin
 				// Jumping uses the four MBbs of the PC,
 				//  the jump address, and then the two LSBs
 				//  are zero because instructions are word aligned.
-				branchTo = {pcAddress[31:28], jumpAddress, 2'b0} - 32'd4;
+				branchTo = {pcAddress[31:28], jumpAddress, 2'b0};
 			end
 
-			JR: begin
-				branchTo = jumpRegisterAddress - 32'd4;
+			BranchMode_JR: begin
+				branchTo = jumpRegisterAddress;
+				
 			end
 
-			default: begin end
+			default: begin
+				branchTo = 32'd0;
+			end
 		endcase
 	end
 	else begin

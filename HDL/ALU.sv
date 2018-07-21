@@ -96,7 +96,9 @@ end
 
 always_comb begin
 	// Make sure result is always driven
-	result = 0;
+	result = 32'd0;
+	hiResult = 32'd0;
+	loResult = 32'd0;
 	unique case (funct)
 
 		ADD: begin

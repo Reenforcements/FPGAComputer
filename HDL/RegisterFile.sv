@@ -24,9 +24,9 @@ logic [31:0]registers[0:31];
 
 
 always_ff @(posedge clk or negedge rst) begin
-	if(rst == 1'b0) begin:reset
+	if(rst == 1'b0) begin
 		
-	end:reset
+	end
 	else
 	begin
 		// Allow a write if registerWrite is enabled
@@ -49,7 +49,14 @@ always_comb begin
 				end
 			default:
 				begin
-					readValue0 = registers[rsAddress];
+					// If we're writing the same one, take the most current value.
+					if (registerWrite == 1'b1 && rsAddress == writeAddress) begin
+						readValue0 = writeData;
+					end
+					else begin
+						// We're not writing to rs right now so just take the stored value.
+						readValue0 = registers[rsAddress];
+					end
 				end
 		endcase
 		unique case(rtAddress)
@@ -59,7 +66,15 @@ always_comb begin
 				end
 			default:
 				begin
-					readValue1 = registers[rtAddress];
+					//readValue1 = registers[rtAddress];
+					// If we're writing the same one, take the most current value.
+					if (registerWrite == 1'b1 && rtAddress == writeAddress) begin
+						readValue1 = writeData;
+					end
+					else begin
+						// We're not writing to rs right now so just take the stored value.
+						readValue1 = registers[rtAddress];
+					end
 				end
 		endcase
 

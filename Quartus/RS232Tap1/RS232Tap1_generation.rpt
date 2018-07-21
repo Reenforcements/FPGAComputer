@@ -1,0 +1,15 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/imaustyn/Desktop/FPGAComputer/Quartus/RS232Tap1.qsys --synthesis=VERILOG --output-directory=/home/imaustyn/Desktop/FPGAComputer/Quartus/RS232Tap1/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading Quartus/RS232Tap1.qsys
+Progress: Reading input file
+Progress: Adding signaltap_ii_logic_analyzer_0 [altera_signaltap_ii_logic_analyzer 18.0]
+Progress: Parameterizing module signaltap_ii_logic_analyzer_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: RS232Tap1: Generating RS232Tap1 "RS232Tap1" for QUARTUS_SYNTH
+Info: signaltap_ii_logic_analyzer_0: "RS232Tap1" instantiated altera_signaltap_ii_logic_analyzer "signaltap_ii_logic_analyzer_0"
+Info: RS232Tap1: Done "RS232Tap1" with 2 modules, 1 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
