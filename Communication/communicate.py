@@ -49,6 +49,8 @@ if command == "INFO":
 	info = s.read(commandLength)
 	print(info)
 
+
+
 print("Done.")
 s.close()
 sys.exit(0)

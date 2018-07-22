@@ -73,6 +73,9 @@ always_ff @ (posedge clk or negedge rst) begin
 		rxError <= 1'b0;
 	end
 	else begin
+		UART_RTS <= 1'b0;
+		rxError <= 1'b0;
+	
 		// Clear hasRX by default. It will be set to 1 further down if we have data.
 		hasRX <= 1'b0;
 	

@@ -1,3 +1,5 @@
+import MemoryModesPackage::ReadWriteModes;
+
 module Main(
 input logic clk,
 input logic rst,
@@ -38,6 +40,13 @@ logic [2:0]externalWriteMode;
 logic [31:0]externalDataOut;
 // ----------
 
+// serialCP
+logic serialCP_writeToMemory;
+logic serialCP_readFromMemory;
+logic [31:0]serialCP_memoryAddress;
+logic [31:0]serialCP_memoryWordOut;
+logic [31:0]serialCP_memoryWordIn;
+
 
 RS232 #(.BAUD_RATE(250000)) rs(
 	.clk(clk),
@@ -60,42 +69,65 @@ RS232 #(.BAUD_RATE(250000)) rs(
 	.txError(txError)
 );
 
-Processor p(.*);
+Processor processor(
+	.clk(clk),
+	.rst(rst),
+	
+	.pause(pause),
+	
+	.externalMemoryControl(externalMemoryControl),
+	.externalAddress(externalAddress),
+	.externalData(externalData),
+	.externalReadMode(externalReadMode),
+	.externalWriteMode(externalWriteMode),
+	.externalDataOut(externalDataOut)
+)/*synthesis keep*/;
 
 // Set up a state machine to allow us to change memory through serial.
+SerialCommandProcessor serialCP(
+.clk(clk),
+.rst(rst),
 
+// RS232
+.RX(RX),
+.RX_ready(hasRX),
 
-/*
-logic [7:0]rxTemp;
-logic didUseRX;
-always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		start_TX <= 1'b0;
-		didUseRX <= 1'b1;
-	end
-	else begin
-		if (hasRX == 1'b1) begin
-			rxTemp <= RX;
-			didUseRX <= 1'b0;
-		end
-		
-		if (TX_ready == 1'b1 && didUseRX == 1'b0) begin
-			start_TX <= 1'b1;
-			TX <= rxTemp;
-			didUseRX <= 1'b1;
-		end
-		else begin
-			start_TX <= 1'b0;
-		end
-	end
-end
-*/
+.TX(TX),
+.start_TX(start_TX),
+.TX_ready(TX_ready),
 
-
+// Memory control
+.writeToMemory(serialCP_writeToMemory),
+.readFromMemory(serialCP_readFromMemory),
+.memoryAddress(serialCP_memoryAddress),
+.memoryWordOut(serialCP_memoryWordOut),
+.memoryWordIn(serialCP_memoryWordIn)
+);
 
 always_comb begin
-	LED1 = 1'b0;
-	LED2 = 1'b0;
+	// Set the read/write mode for external control.
+	externalAddress = serialCP_memoryAddress;
+	externalMemoryControl = serialCP_writeToMemory | serialCP_readFromMemory;
+	// Pause if we're controlling the memory externally.
+	pause = serialCP_writeToMemory | serialCP_readFromMemory;
+	LED1 = serialCP_writeToMemory;
+	LED2 = serialCP_readFromMemory;
+	if (serialCP_writeToMemory == 1'b1) begin
+		externalWriteMode = WORD;
+		externalReadMode = ReadWriteMode_NONE;
+	end
+	else if (serialCP_readFromMemory == 1'b1) begin
+		externalWriteMode = ReadWriteMode_NONE;
+		externalReadMode = WORD;
+	end
+	else begin
+		externalWriteMode = ReadWriteMode_NONE;
+		externalReadMode = ReadWriteMode_NONE;
+	end
+	
+	// Assign other memory lines.
+	externalData = serialCP_memoryWordOut;
+	serialCP_memoryWordIn = externalDataOut;
 end
 
 endmodule
