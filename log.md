@@ -1,8 +1,99 @@
+### 7/19/18
+
+I synchonized the inputs, which is something that I think needed to be done. I saw a glitch in one of my graphs where a timer wasn't being reset. I don't know how else to explain it if not with a glitch.
+
+I think the RX serial is slowly getting out of time with where it needs to be. I'm going to change the module to be more robust and automatically realign itself if it gets lost.
+
+THAT WAS IT, IT WORKS!
+
+Working on code to allow me to upload/download through serial. This includes SystemVerilog to tie the processor to the serial but also a python program with upload/download commands.
+
+### 7/18/18
+
+I've started troubleshooting the serial again.
+
+Okay, so the data gets messed up when I connect it through the USB hub. I wonder if this is because it has to share power with the FPGA's JTAG USB port.
+
+Nope, its just the hub. Now I have a reason to buy more USB 3 to USB 2 adapters. Now the text isn't nearly as corrupted, but its still breaking after a little while. I'm getting closer.
+
+Using signal tap to figure out why this thing is breaking.
+
+I've been trying all day but I can't figure out whyyyy.
+
+### 7/16/18
+
+The serial is unreliable. I suspect it has something to do with timing violations but I'm not sure. I figure I'll have to learn the timing analysis portion of Quartus eventually so I'm going to look up a tutorial now.
+
+### 7/15/18
+
+New adapter. Some fiddling. Changed rtscts to false. Serial is working :)
+
+### 7/13/18
+
+So, RS232 isn't working at all with the adapter I have. I hope I didn't accidentally buy the wrong adapter and break something. I'm going to keep fiddling with it and maybe try a new adapter. I don't think I have a machine with a native RS232 serial port that I can try unfortunately.
+	I've also almost got my second BOM together. While I'm waiting on those parts, I think I'll work on the PS2 keyboard. I'll need some parts from the second BOM before I start on the display.
+	
+I found out there are two different kinds of RS232 cables: DCE and DTE. They have reversed TX/RX pins so I'm wondering if that's why my cable doesn't work. It is a female cable but it has hex nuts on it. The FPGA is male but also has hex nuts. I'm guessing the RX and TX are connected to each other and that's why its not working. I'll either need to break out this cable or buy a new one.
+
+### 7/12/18
+
+Working on a RS232 serial module so I can upload programs.
+
+Finished version 1 of the RS232 serial module and testbench.
+
+Almost have a writeback test program running so I can make sure the RS232 serial works. I'm running into issues when trying to upload to the board. I found an online article that says it might be permissions issues with the USB device. [Here's a goood looking article that should fix things.](http://www.fpga-dev.com/altera-usb-blaster-with-ubuntu/)
+
+
+### 7/11/18
+
+After much fiddling, the piplined processor works! I think most of the diagrams online are incorrect. 
+
+
+### 7/9/18
+
+I've been pipelining the whole processor.
+
+Two problems:
+PC is outputting initial data so it does the first instruction twice.
+
+The branch is late causing the same instruction to be executed twice.
+
+### 7/8/18
+
+I'm starting to pipeline the whole thing. This should eliminate any incompatibilities with code compiled for the R2000.
+
+I think the memory should initially output zero, so I don't need to worry about weird initial register timing things.
+
+The pipelining is getting messy and daunting so I went back to the diagram and added boxes to show where things should be registered. I followed some diagrams that I found on Google because it needs to behave like an R2000. 
+
+I think the Branch has to be in the same part of the pipeline as the ALU but none of the diagrams show this. None of the diagrams that I find make logical sense with having a branch delay slot. The way they have things registered it looks like there should be two branch delay slots which is wrong? I think Dr. Majumder covered this problem in his slides. I think the Branch has to be in the same spot as the ALU.
+
+### 7/7/18
+
+I redid the memory module to use a Memory megafunction. It compiles almost instantly now. I'm going through the unit test that I made and fixing bugs that I introduced when I redid the Memory module. Now that I'm using the megafunction though, I'll need to pipeline at least some things in my processor to get it to work. I might just go ahead and pipeline the whole thing at this point.
+
+
+### 7/6/18
+
+Had a meeting with my professors about the project. It went well.
+
+Changed the Memory module to use a less convenient but compatible syntax that works with both Quartus and ModelSim. I'm now changing enums to be more compatible across files.
+
+The Memory module takes about 19GB of RAM to synthesize. That's not right. Something is wrong in the way I implemented the RAM. If I change the size to be 100 bytes instead of 65535, the synthesis is instant. The FPGA has these things called M9K memory blocks. I think if I more skillfully utilize those, things will compile much faster. I'm going to try using one of Quartus's RAM Megafunctions. I bet those work really well. [This document describes the Cyclone's onboard memory.](https://www.altera.com/en_US/pdfs/literature/hb/cyclone-iv/cyiv-51003.pdf#page3)
+
+If the Megafunction creator freezes when you try to use it, stretch out the window when it appears. Make it as big as you can. As long as no scroll bars appear on it at any time, the GUI shouldn't freeze. I found this solution [here.](https://alteraforum.com/forum/showthread.php?t=47561)
+
+Apparently you can't make a RAM that outputs combinatorially. It has to be on some sort of clock. I'm going to have to pipeline things related to the memory. Maybe I should just go ahead and pipeline the whole processor. I wish SystemVerilog had a nice construct for pipelining things. I know there's a funky thing you can do with repeat. I'll have to look into it further.
+
 ### 7/5/18
 
 jalr isn't working correctly because the compiler reorganizes the assembly to fill the delay slot of the jalr instruction. This means that when we jump back with `jr $ra`, we process the instruction in the delay slot again. This is because of my branch delay hack that I did instead of pipelining the whole processor. I just add 4 to the next PC address to fix this.
 
 Basic processor tests are done! :) 
+
+Apparently Quartus accepts very different syntax standards compared to ModelSim. I kind of expected this after Dr. Rajasekhar asked if I had tried synthesizing any of the SystemVerilog I'd written. I think I'm going to change the Memory module to use only unpacked values as I'm having problems converting between packed and unpacked values.
+
+ModelSim and Quartus can't agree on what is valid syntax for unpacked arrays. Oh boy...
 
 ### 7/3/18
 
