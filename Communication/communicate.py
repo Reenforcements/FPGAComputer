@@ -1,29 +1,57 @@
 import sys
 import serial
 from argparse import *
+import struct
 
 commands = {
-0:"NOP",
-1:"INFO",
-2:"UPLOAD",
-3:"DOWNLOAD"
+"NOP":0,
+"INFO":1,
+"UPLOAD":2,
+"DOWNLOAD":3
 }
 
 parser = ArgumentParser(description="Communicate with the processor uploaded to the FPGA through RS232 serial.")
-parser.add_argument("command", nargs=1, choices=commands.values(), action='store')
-parser.add_argument("-i", dest="input", type=FileType('r'), nargs="?", default="input.txt", action='store')
+parser.add_argument("command", nargs=1, choices=commands.keys(), action='store')
+parser.add_argument("-i", dest="input", nargs="?", default="input.txt", action='store')
 parser.add_argument("-o", dest="output", nargs="?", default="output.txt", action='store')
 
 args = parser.parse_args()
+command = args.command[0]
 
-print(args.input)
+s = serial.Serial("/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH063CIS-if00-port0", baudrate=250000, parity=serial.PARITY_NONE, rtscts=False, bytesize=serial.EIGHTBITS, timeout=2, stopbits=1)
 
-s = serial.Serial("/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH063CIS-if00-port0", baudrate=250000, parity=serial.PARITY_NONE, rtscts=False, bytesize=serial.EIGHTBITS, timeout=1, stopbits=1)
+def sendInt(i):
+	packed = struct.pack(">I", i)
+	s.write(packed)
+
+def readLength():
+	lenBytes = s.read(4)
+	if len(lenBytes) != 4:
+		print("Problem reading length of command. Didn't get four bytes.")
+		sys.exit(0)
+	unpacked = struct.unpack(">I", lenBytes)
+	return unpacked
 
 if s.is_open == False:
 	print("Couldn't connect to processor.")
 	sys.exit(0)
 
+if command == "NOP":
+	None
+if command == "INFO":
+	print("Getting device info...");
+	# Pack the command length as a big endian unsigned int (4 bytes)
+	sendInt(0x00000000)
+	# Pack the command as a big endian unsigned int (4 bytes)
+	sendInt(commands[command])
+	# We don't send anything else. We just receive an info string and print it.
+	commandLength = readLength()
+	info = s.read(commandLength)
+	print(info)
 
 print("Done.")
 s.close()
+sys.exit(0)
+
+
+
