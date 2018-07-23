@@ -27,7 +27,7 @@ output logic rxError
 // Buffer the inputs
 logic UART_RXD_d0;
 logic UART_RXD_d1;
-always @ (posedge clk or negedge rst) begin
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		UART_RXD_d0 <= 1'b1;
 		UART_RXD_d1 <= 1'b1;
@@ -37,7 +37,6 @@ always @ (posedge clk or negedge rst) begin
 		UART_RXD_d1 <= UART_RXD_d0;
 	end
 end
-
 
 
 // The baud rate can be changed when instantiating the module.

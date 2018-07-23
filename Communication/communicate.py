@@ -22,6 +22,7 @@ s = serial.Serial("/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH063CIS-if00-port
 
 def sendInt(i):
 	packed = struct.pack(">I", i)
+	print("{:02x}".format(ord(packed[3])) )
 	s.write(packed)
 
 def readLength():
@@ -45,7 +46,10 @@ if command == "INFO":
 	# Pack the command as a big endian unsigned int (4 bytes)
 	sendInt(commands[command])
 	# We don't send anything else. We just receive an info string and print it.
-	commandLength = readLength()
+	#commandLength = readLength()
+	commandLength = 110;
+	print("Length: {}".format(commandLength))
+
 	info = s.read(commandLength)
 	print(info)
 

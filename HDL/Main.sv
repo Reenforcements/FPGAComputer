@@ -11,8 +11,34 @@ output logic UART_RTS,
 output logic UART_TXD,
 
 output logic LED1,
-output logic LED2
+output logic LED2,
+output logic LED3
 );
+
+// Gate the clock so we can "pause" the processor.
+// Please see https://www.altera.com.cn/zh_CN/pdfs/literature/hb/qts/qts_qii51006.pdf
+// section "Synchronous Clock Enables" for more info.
+logic pause;
+//logic gatedClkEnable;
+logic gatedClk;
+/*
+always_ff @ (negedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		gatedClkEnable <= 1'b0;
+	end
+	else begin
+		gatedClkEnable <= ~pause;
+	end
+end
+always_comb begin
+	gatedClk = gatedClkEnable & clk;
+end*/
+ProcessorClockEnabler pce(
+		.inclk(clk),  //  altclkctrl_input.inclk
+		.ena(pause),    //                  .ena
+		.outclk(gatedClk) // altclkctrl_output.outclk
+	);
+
 
 // UART
 logic [7:0]TX;
@@ -26,10 +52,6 @@ logic txError;
 logic rxError;
 
 // PROCESSOR
-// ----------
-// Pauses the processor so we can change data in memory.
-logic pause;
-
 // Allows us to write to the memory from an external source
 // such as a ModelSim test or RS232 serial connection.
 logic externalMemoryControl;
@@ -38,7 +60,6 @@ logic [31:0]externalData;
 logic [2:0]externalReadMode;
 logic [2:0]externalWriteMode;
 logic [31:0]externalDataOut;
-// ----------
 
 // serialCP
 logic serialCP_writeToMemory;
@@ -70,10 +91,9 @@ RS232 #(.BAUD_RATE(250000)) rs(
 );
 
 Processor processor(
-	.clk(clk),
+	.clk(gatedClk),
+	.memory_clk(clk),
 	.rst(rst),
-	
-	.pause(pause),
 	
 	.externalMemoryControl(externalMemoryControl),
 	.externalAddress(externalAddress),
@@ -104,14 +124,20 @@ SerialCommandProcessor serialCP(
 .memoryWordIn(serialCP_memoryWordIn)
 );
 
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		// Pause must be changed on clk or it will be considered its own clock.
+		pause <= 1'b1;
+	end
+	else begin
+		pause <= serialCP_writeToMemory | serialCP_readFromMemory;
+	end
+end
 always_comb begin
 	// Set the read/write mode for external control.
 	externalAddress = serialCP_memoryAddress;
 	externalMemoryControl = serialCP_writeToMemory | serialCP_readFromMemory;
 	// Pause if we're controlling the memory externally.
-	pause = serialCP_writeToMemory | serialCP_readFromMemory;
-	LED1 = serialCP_writeToMemory;
-	LED2 = serialCP_readFromMemory;
 	if (serialCP_writeToMemory == 1'b1) begin
 		externalWriteMode = WORD;
 		externalReadMode = ReadWriteMode_NONE;
@@ -127,6 +153,9 @@ always_comb begin
 	
 	// Assign other memory lines.
 	externalData = serialCP_memoryWordOut;
+	LED1 = RX[0];
+	LED2 = externalDataOut[0];
+	LED3 = rst;
 	serialCP_memoryWordIn = externalDataOut;
 end
 
