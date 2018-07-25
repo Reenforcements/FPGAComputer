@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSProcessor
-Mon Jul 23 19:27:03 2018
+Tue Jul 24 20:22:03 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -10,8 +10,27 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |Main|SerialCommandProcessor:serialCP|state
+ 10. State Machine - |Main|SerialCommandProcessor:serialCP|wordsReceived
+ 11. State Machine - |Main|RS232:rs|TX_state
+ 12. State Machine - |Main|RS232:rs|RX_state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: RS232:rs
+ 19. Port Connectivity Checks: "SerialCommandProcessor:serialCP"
+ 20. Port Connectivity Checks: "RS232:rs"
+ 21. Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component"
+ 22. Port Connectivity Checks: "ProcessorClockEnabler:pce"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +56,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Jul 23 19:27:03 2018           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 24 20:22:03 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 717                                         ;
+;     Total combinational functions  ; 608                                         ;
+;     Dedicated logic registers      ; 372                                         ;
+; Total registers                    ; 372                                         ;
+; Total pins                         ; 9                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -151,21 +170,333 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                          ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+----------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                   ; IP Include File            ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+----------------------------+
-; N/A    ; altclkctrl   ; 18.0    ; N/A          ; N/A          ; |Main|ProcessorClockEnabler:pce                   ; ProcessorClockEnabler.qsys ;
-; Altera ; RAM: 2-PORT  ; 18.0    ; N/A          ; N/A          ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram ; RAM32Bit.v                 ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
+; File Name with User-Entered Path                                                ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                ; Library               ;
++---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
+; ../HDL/SerialCommandProcessor.sv                                                ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv                                                           ;                       ;
+; ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v                         ; yes             ; User Verilog HDL File        ; /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v                         ; ProcessorClockEnabler ;
+; ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v ; yes             ; User Verilog HDL File        ; /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v ; ProcessorClockEnabler ;
+; ../HDL/RS232.sv                                                                 ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv                                                                            ;                       ;
+; ../HDL/Memory.sv                                                                ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv                                                                           ;                       ;
+; ../HDL/Main.sv                                                                  ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv                                                                             ;                       ;
++---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 717       ;
+;                                             ;           ;
+; Total combinational functions               ; 608       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 231       ;
+;     -- 3 input functions                    ; 126       ;
+;     -- <=2 input functions                  ; 251       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 357       ;
+;     -- arithmetic mode                      ; 251       ;
+;                                             ;           ;
+; Total registers                             ; 372       ;
+;     -- Dedicated logic registers            ; 372       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 9         ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 372       ;
+; Total fan-out                               ; 3463      ;
+; Average fan-out                             ; 3.47      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name            ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
+; |Main                                ; 608 (0)             ; 372 (0)                   ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |Main                                 ; Main                   ; work         ;
+;    |RS232:rs|                        ; 201 (201)           ; 131 (131)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RS232:rs                        ; RS232                  ; work         ;
+;    |SerialCommandProcessor:serialCP| ; 407 (407)           ; 241 (241)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SerialCommandProcessor:serialCP ; SerialCommandProcessor ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                        ;
++--------+--------------+---------+--------------+--------------+---------------------------------+----------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                 ; IP Include File            ;
++--------+--------------+---------+--------------+--------------+---------------------------------+----------------------------+
+; N/A    ; altclkctrl   ; 18.0    ; N/A          ; N/A          ; |Main|ProcessorClockEnabler:pce ; ProcessorClockEnabler.qsys ;
++--------+--------------+---------+--------------+--------------+---------------------------------+----------------------------+
+
+
+Encoding Type:  User-Encoded
++-------------------------------------------------------------+
+; State Machine - |Main|SerialCommandProcessor:serialCP|state ;
++---------------------------+---------+-----------------------+
+; Name                      ; state~5 ; state~4               ;
++---------------------------+---------+-----------------------+
+; state.READ_COMMAND_LENGTH ; 0       ; 0                     ;
+; state.READ_COMMAND        ; 0       ; 1                     ;
+; state.PROCESS_COMMAND     ; 1       ; 0                     ;
+; state.BAD                 ; 1       ; 1                     ;
++---------------------------+---------+-----------------------+
+
+
+Encoding Type:  User-Encoded
++---------------------------------------------------------------------+
+; State Machine - |Main|SerialCommandProcessor:serialCP|wordsReceived ;
++------------------------------------------------+--------------------+
+; Name                                           ; wordsReceived~6    ;
++------------------------------------------------+--------------------+
+; wordsReceived.00000000000000000000000000000000 ; 0                  ;
+; wordsReceived.00000000000000000000000000000001 ; 1                  ;
++------------------------------------------------+--------------------+
+
+
+Encoding Type:  User-Encoded
++--------------------------------------------------------------+
+; State Machine - |Main|RS232:rs|TX_state                      ;
++-----------------------+------------+------------+------------+
+; Name                  ; TX_state~6 ; TX_state~5 ; TX_state~4 ;
++-----------------------+------------+------------+------------+
+; TX_state.TX_IDLE      ; 0          ; 0          ; 0          ;
+; TX_state.TX_START_BIT ; 0          ; 0          ; 1          ;
+; TX_state.TX_TRANSMIT  ; 0          ; 1          ; 0          ;
+; TX_state.TX_STOP_BIT  ; 0          ; 1          ; 1          ;
+; TX_state.TX_BAD       ; 1          ; 0          ; 0          ;
++-----------------------+------------+------------+------------+
+
+
+Encoding Type:  User-Encoded
++-----------------------------------------------------------------------+
+; State Machine - |Main|RS232:rs|RX_state                               ;
++--------------------------------+------------+------------+------------+
+; Name                           ; RX_state~6 ; RX_state~5 ; RX_state~4 ;
++--------------------------------+------------+------------+------------+
+; RX_state.RX_WAITING            ; 0          ; 0          ; 0          ;
+; RX_state.RX_POSSIBLE_START_BIT ; 0          ; 0          ; 1          ;
+; RX_state.RX_RECEIVE            ; 0          ; 1          ; 0          ;
+; RX_state.RX_POSSIBLE_STOP_BIT  ; 0          ; 1          ; 1          ;
+; RX_state.RX_BAD                ; 1          ; 0          ; 0          ;
++--------------------------------+------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++------------------------------------------------------+----------------------------------------+
+; Register name                                        ; Reason for Removal                     ;
++------------------------------------------------------+----------------------------------------+
+; RS232:rs|UART_RTS                                    ; Stuck at GND due to stuck port data_in ;
+; pause                                                ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|commandLength[30,31] ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|TX_word[7,15,23,31]  ; Stuck at GND due to stuck port data_in ;
+; SerialCommandProcessor:serialCP|TX[7]                ; Stuck at GND due to stuck port data_in ;
+; RS232:rs|currentTX[7]                                ; Stuck at GND due to stuck port data_in ;
+; SerialCommandProcessor:serialCP|state~6              ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|state~7              ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~7      ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~8      ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~9      ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~10     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~11     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~12     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~13     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~14     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~15     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~16     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~17     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~18     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~19     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~20     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~21     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~22     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~23     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~24     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~25     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~26     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~27     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~28     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~29     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~30     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~31     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~32     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~33     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~34     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~35     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~36     ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|wordsReceived~37     ; Lost fanout                            ;
+; RS232:rs|TX_state~7                                  ; Lost fanout                            ;
+; RS232:rs|RX_state~7                                  ; Lost fanout                            ;
+; RS232:rs|TX_state~6                                  ; Stuck at GND due to stuck port data_in ;
+; RS232:rs|RX_state~6                                  ; Stuck at GND due to stuck port data_in ;
+; SerialCommandProcessor:serialCP|wordsSent[5..31]     ; Lost fanout                            ;
+; Total Number of Removed Registers = 74               ;                                        ;
++------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                            ;
++---------------------------------------------+---------------------------+--------------------------------------------------------------+
+; Register name                               ; Reason for Removal        ; Registers Removed due to This Register                       ;
++---------------------------------------------+---------------------------+--------------------------------------------------------------+
+; SerialCommandProcessor:serialCP|TX_word[31] ; Stuck at GND              ; SerialCommandProcessor:serialCP|TX[7], RS232:rs|currentTX[7] ;
+;                                             ; due to stuck port data_in ;                                                              ;
++---------------------------------------------+---------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 372   ;
+; Number of registers using Synchronous Clear  ; 172   ;
+; Number of registers using Synchronous Load   ; 60    ;
+; Number of registers using Asynchronous Clear ; 365   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 257   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; RS232:rs|TX_ready                             ; 5       ;
+; SerialCommandProcessor:serialCP|TX_word_ready ; 8       ;
+; RS232:rs|UART_RXD_d1                          ; 5       ;
+; RS232:rs|UART_RXD_d0                          ; 1       ;
+; Total number of inverted registers = 4        ;         ;
++-----------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsSent[23]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|RS232:rs|TX_currentBit[1]                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|RS232:rs|RX_currentBit[3]                       ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|RS232:rs|RX_counter[26]                         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|TX[3]           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|RS232:rs|TX_counter[23]                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|lastStep[25]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|TX_word[7]      ;
+; 7:1                ; 28 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|TX_word[18]     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|currentStep[0]  ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|currentStep[10] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|wordsReceived   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RS232:rs               ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; BAUD_RATE      ; 250000                           ; Signed Integer  ;
+; TIME_ONE_BIT   ; 00000000000000000000000011001000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SerialCommandProcessor:serialCP"                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; memoryAddress ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memoryWordOut ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memoryWordIn  ; Input  ; Info     ; Stuck at GND                                                                        ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RS232:rs"                                                                              ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; rxError ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; txError ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component" ;
++-------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                      ;
++-------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; inclk[3..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                 ;
++-------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ProcessorClockEnabler:pce"                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; outclk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 9                           ;
+; cycloneiii_ff         ; 372                         ;
+;     CLR               ; 18                          ;
+;     CLR SCLR          ; 97                          ;
+;     ENA               ; 7                           ;
+;     ENA CLR           ; 145                         ;
+;     ENA CLR SCLR      ; 45                          ;
+;     ENA CLR SCLR SLD  ; 30                          ;
+;     ENA CLR SLD       ; 30                          ;
+; cycloneiii_lcell_comb ; 610                         ;
+;     arith             ; 251                         ;
+;         2 data inputs ; 190                         ;
+;         3 data inputs ; 61                          ;
+;     normal            ; 359                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 65                          ;
+;         4 data inputs ; 231                         ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.39                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -174,25 +505,27 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Jul 23 19:26:41 2018
+    Info: Processing started: Tue Jul 24 20:21:40 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12248): Elaborating Platform Designer system entity "ProcessorClockEnabler.qsys"
-Info (12250): 2018.07.23.19:26:58 Progress: Loading Quartus/ProcessorClockEnabler.qsys
-Info (12250): 2018.07.23.19:26:58 Progress: Reading input file
-Info (12250): 2018.07.23.19:26:58 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
-Info (12250): 2018.07.23.19:26:59 Progress: Parameterizing module altclkctrl_0
-Info (12250): 2018.07.23.19:26:59 Progress: Building connections
-Info (12250): 2018.07.23.19:26:59 Progress: Parameterizing connections
-Info (12250): 2018.07.23.19:26:59 Progress: Validating
-Info (12250): 2018.07.23.19:26:59 Progress: Done reading input file
-Info (12250): 2018.07.23.19:27:00 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
-Info (12250): 2018.07.23.19:27:00 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
+Info (12250): 2018.07.24.20:21:57 Progress: Loading Quartus/ProcessorClockEnabler.qsys
+Info (12250): 2018.07.24.20:21:57 Progress: Reading input file
+Info (12250): 2018.07.24.20:21:57 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
+Info (12250): 2018.07.24.20:21:57 Progress: Parameterizing module altclkctrl_0
+Info (12250): 2018.07.24.20:21:57 Progress: Building connections
+Info (12250): 2018.07.24.20:21:57 Progress: Parameterizing connections
+Info (12250): 2018.07.24.20:21:57 Progress: Validating
+Info (12250): 2018.07.24.20:21:58 Progress: Done reading input file
+Info (12250): 2018.07.24.20:21:58 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
+Info (12250): 2018.07.24.20:21:58 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
 Info (12250): ProcessorClockEnabler: Generating ProcessorClockEnabler "ProcessorClockEnabler" for QUARTUS_SYNTH
 Info (12250): Altclkctrl_0: Generating top-level entity ProcessorClockEnabler_altclkctrl_0.
 Info (12250): Altclkctrl_0: "ProcessorClockEnabler" instantiated altclkctrl "altclkctrl_0"
 Info (12250): ProcessorClockEnabler: Done "ProcessorClockEnabler" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "ProcessorClockEnabler.qsys"
+Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv
+    Info (12023): Found entity 1: SerialCommandProcessor File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v
     Info (12023): Found entity 1: ProcessorClockEnabler File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v Line: 6
 Info (12021): Found 2 design units, including 2 entities, in source file ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v
@@ -224,139 +557,51 @@ Info (12021): Found 1 design units, including 1 entities, in source file RAM32Bi
     Info (12023): Found entity 1: RAM32Bit File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
     Info (12023): Found entity 1: Main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file SerialCommandProcessor.sv
-    Info (12023): Found entity 1: SerialCommandProcessor File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 1
 Info (15248): File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/ip/ProcessorClockEnabler/ProcessorClockEnabler.v" is a duplicate of already analyzed file "/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file db/ip/ProcessorClockEnabler/ProcessorClockEnabler.v
 Info (15248): File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/ip/ProcessorClockEnabler/submodules/ProcessorClockEnabler_altclkctrl_0.v" is a duplicate of already analyzed file "/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file db/ip/ProcessorClockEnabler/submodules/ProcessorClockEnabler_altclkctrl_0.v
 Info (12127): Elaborating entity "Main" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Main.sv(57): object "externalMemoryControl" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 57
+Warning (10036): Verilog HDL or VHDL warning at Main.sv(58): object "externalAddress" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 58
+Warning (10036): Verilog HDL or VHDL warning at Main.sv(59): object "externalData" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 59
+Warning (10036): Verilog HDL or VHDL warning at Main.sv(60): object "externalReadMode" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 60
+Warning (10036): Verilog HDL or VHDL warning at Main.sv(61): object "externalWriteMode" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 61
+Warning (10858): Verilog HDL warning at Main.sv(62): object externalDataOut used but never assigned File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 62
+Warning (10030): Net "externalDataOut" at Main.sv(62) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 62
 Info (12128): Elaborating entity "ProcessorClockEnabler" for hierarchy "ProcessorClockEnabler:pce" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 40
 Info (12128): Elaborating entity "ProcessorClockEnabler_altclkctrl_0" for hierarchy "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v Line: 16
 Info (12128): Elaborating entity "ProcessorClockEnabler_altclkctrl_0_sub" for hierarchy "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v Line: 119
 Info (12128): Elaborating entity "RS232" for hierarchy "RS232:rs" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 91
 Info (10264): Verilog HDL Case Statement information at RS232.sv(120): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 120
 Info (10264): Verilog HDL Case Statement information at RS232.sv(225): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 225
-Info (12128): Elaborating entity "Processor" for hierarchy "Processor:processor" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 104
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(221): object "pc_pcAddress_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 221
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(224): object "instructionData_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 224
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(248): object "instruction_rsIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 248
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(249): object "instruction_rtIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 249
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(253): object "control_readMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 253
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(254): object "control_writeMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 254
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(255): object "control_unsignedLoad_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 255
-Info (12128): Elaborating entity "PC" for hierarchy "Processor:processor|PC:pc" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 38
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "Processor:processor|RegisterFile:registerFile" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 67
-Info (12128): Elaborating entity "ALU" for hierarchy "Processor:processor|ALU:alu" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 95
-Warning (10036): Verilog HDL or VHDL warning at ALU.sv(62): object "carry" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 62
-Info (12128): Elaborating entity "Branch" for hierarchy "Processor:processor|Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 128
-Info (12128): Elaborating entity "Memory" for hierarchy "Processor:processor|Memory:mem" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 160
-Info (12128): Elaborating entity "RAM32Bit" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 64
-Info (12128): Elaborating entity "altsyncram" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 114
-Info (12130): Elaborated megafunction instantiation "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 114
-Info (12133): Instantiated megafunction "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component" with the following parameter: File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 114
-    Info (12134): Parameter "address_reg_b" = "CLOCK1"
-    Info (12134): Parameter "byte_size" = "8"
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
-    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "65535"
-    Info (12134): Parameter "numwords_b" = "65535"
-    Info (12134): Parameter "operation_mode" = "BIDIR_DUAL_PORT"
-    Info (12134): Parameter "outdata_aclr_a" = "CLEAR0"
-    Info (12134): Parameter "outdata_aclr_b" = "CLEAR1"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
-    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_WITH_NBE_READ"
-    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_WITH_NBE_READ"
-    Info (12134): Parameter "widthad_a" = "16"
-    Info (12134): Parameter "widthad_b" = "16"
-    Info (12134): Parameter "width_a" = "32"
-    Info (12134): Parameter "width_b" = "32"
-    Info (12134): Parameter "width_byteena_a" = "4"
-    Info (12134): Parameter "width_byteena_b" = "1"
-    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_oni2.tdf
-    Info (12023): Found entity 1: altsyncram_oni2 File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_oni2.tdf Line: 31
-Info (12128): Elaborating entity "altsyncram_oni2" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated" File: /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
-    Info (12023): Found entity 1: decode_rsa File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/decode_rsa.tdf Line: 22
-Info (12128): Elaborating entity "decode_rsa" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|decode_rsa:decode2" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_oni2.tdf Line: 56
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_oob.tdf
-    Info (12023): Found entity 1: mux_oob File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mux_oob.tdf Line: 22
-Info (12128): Elaborating entity "mux_oob" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_oni2:auto_generated|mux_oob:mux4" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_oni2.tdf Line: 60
-Info (12128): Elaborating entity "Control" for hierarchy "Processor:processor|Control:control" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 202
-Info (12128): Elaborating entity "SerialCommandProcessor" for hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 125
-Warning (10036): Verilog HDL or VHDL warning at SerialCommandProcessor.sv(103): object "commandLength" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 103
-Warning (10240): Verilog HDL Always Construct warning at SerialCommandProcessor.sv(44): inferring latch(es) for variable "TX_word", which holds its previous value in one or more paths through the always construct File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Warning (10240): Verilog HDL Always Construct warning at SerialCommandProcessor.sv(44): inferring latch(es) for variable "TX_word_ready", which holds its previous value in one or more paths through the always construct File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(199): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 199
-Warning (10030): Net "INFO_STRING.data_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 31
-Warning (10030): Net "INFO_STRING.waddr_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 31
-Warning (10030): Net "INFO_STRING.we_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 31
-Warning (10034): Output port "start_TX" at SerialCommandProcessor.sv(10) has no driver File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 10
-Info (10041): Inferred latch for "TX_word_ready" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[0]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[1]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[2]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[3]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[4]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[5]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[6]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[7]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[8]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[9]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[10]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[11]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[12]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[13]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[14]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[15]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[16]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[17]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[18]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[19]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[20]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[21]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[22]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[23]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[24]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[25]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[26]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[27]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[28]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[29]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[30]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Info (10041): Inferred latch for "TX_word[31]" at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[31]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10029): Constant driver at SerialCommandProcessor.sv(44) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 44
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[30]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[29]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[28]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[27]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[26]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[25]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[24]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[23]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[22]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[21]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[20]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[19]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[18]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[17]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[16]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[15]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (10028): Can't resolve multiple constant drivers for net "TX_word[14]" at SerialCommandProcessor.sv(136) File: /home/imaustyn/Desktop/FPGAComputer/Quartus/SerialCommandProcessor.sv Line: 136
-Error (12152): Can't elaborate user hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 125
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 15 warnings
-    Error: Peak virtual memory: 955 megabytes
-    Error: Processing ended: Mon Jul 23 19:27:03 2018
-    Error: Elapsed time: 00:00:22
-    Error: Total CPU time (on all processors): 00:00:31
+Info (12128): Elaborating entity "SerialCommandProcessor" for hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 127
+Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(176): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 176
+Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(269): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 269
+Warning (10030): Net "INFO_STRING.data_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 31
+Warning (10030): Net "INFO_STRING.waddr_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 31
+Warning (10030): Net "INFO_STRING.we_a" at SerialCommandProcessor.sv(31) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 31
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (28) in the Memory Initialization File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/MIPSProcessor.ram0_SerialCommandProcessor_f94fa93e.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 18
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "UART_RTS" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 10
+    Warning (13410): Pin "LED1" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 13
+    Warning (13410): Pin "LED2" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 65 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "UART_CTS" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 8
+Info (21057): Implemented 727 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 718 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 966 megabytes
+    Info: Processing ended: Tue Jul 24 20:22:03 2018
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:33
 
 

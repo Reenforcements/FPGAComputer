@@ -6,6 +6,11 @@ state.READ_COMMAND 0 1
 state.PROCESS_COMMAND 1 0 
 state.BAD 1 1 
 
+State Machine - |Main|SerialCommandProcessor:serialCP|wordsReceived
+Name wordsReceived~6 
+wordsReceived.00000000000000000000000000000000 0 
+wordsReceived.00000000000000000000000000000001 1 
+
 State Machine - |Main|RS232:rs|TX_state
 Name TX_state~6 TX_state~5 TX_state~4 
 TX_state.TX_IDLE 0 0 0 

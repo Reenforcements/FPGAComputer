@@ -90,6 +90,7 @@ RS232 #(.BAUD_RATE(250000)) rs(
 	.txError(txError)
 );
 
+/*
 Processor processor(
 	.clk(gatedClk),
 	.memory_clk(clk),
@@ -101,7 +102,8 @@ Processor processor(
 	.externalReadMode(externalReadMode),
 	.externalWriteMode(externalWriteMode),
 	.externalDataOut(externalDataOut)
-)/*synthesis keep*/;
+);
+*/
 
 // Set up a state machine to allow us to change memory through serial.
 SerialCommandProcessor serialCP(
@@ -153,8 +155,8 @@ always_comb begin
 	
 	// Assign other memory lines.
 	externalData = serialCP_memoryWordOut;
-	LED1 = RX[0];
-	LED2 = externalDataOut[0];
+	LED1 = 1'b1;
+	LED2 = 1'b1;
 	LED3 = rst;
 	serialCP_memoryWordIn = externalDataOut;
 end
