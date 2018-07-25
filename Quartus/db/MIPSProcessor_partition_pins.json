@@ -18,10 +18,6 @@
 				{
 					"name" : "clk",
 					"strict" : false
-				},
-				{
-					"name" : "UART_RXD",
-					"strict" : false
 				}
 			]
 		}

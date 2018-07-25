@@ -1,15 +1,23 @@
 
-State Machine - |Main|SerialCommandProcessor:serialCP|state
-Name state~5 state~4 
-state.READ_COMMAND_LENGTH 0 0 
-state.READ_COMMAND 0 1 
-state.PROCESS_COMMAND 1 0 
-state.BAD 1 1 
+State Machine - |Main|SerialCommandProcessor:serialCP|SCP_state
+Name SCP_state~5 SCP_state~4 
+SCP_state.SCP_READ_COMMAND_LENGTH 0 0 
+SCP_state.SCP_READ_COMMAND 0 1 
+SCP_state.SCP_PROCESS_COMMAND 1 0 
+SCP_state.SCP_BAD 1 1 
 
-State Machine - |Main|SerialCommandProcessor:serialCP|wordsReceived
-Name wordsReceived~6 
-wordsReceived.00000000000000000000000000000000 0 
-wordsReceived.00000000000000000000000000000001 1 
+State Machine - |Main|SerialCommandProcessor:serialCP|WordRX_state
+Name WordRX_state~5 WordRX_state~4 
+WordRX_state.WORDRXSTATE_RECEIVING 0 0 
+WordRX_state.WORDRXSTATE_DONE 0 1 
+WordRX_state.WORDRXSTATE_BAD 1 0 
+
+State Machine - |Main|SerialCommandProcessor:serialCP|WordTX_state
+Name WordTX_state~5 WordTX_state~4 
+WordTX_state.WORDTXSTATE_WAITING 0 0 
+WordTX_state.WORDTXSTATE_SENDING 0 1 
+WordTX_state.WORDTXSTATE_DONE 1 0 
+WordTX_state.WORDTXSTATE_BAD 1 1 
 
 State Machine - |Main|RS232:rs|TX_state
 Name TX_state~6 TX_state~5 TX_state~4 

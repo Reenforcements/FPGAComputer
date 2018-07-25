@@ -16572,3 +16572,142 @@ run 20000
 # TX: M
 # TX: i
 # TX: a
+quit -sim
+# End time: 16:16:34 on Jul 25,2018, Elapsed time: 20:56:27
+# Errors: 0, Warnings: 0
+vsim -L altera_mf_ver -L altera_mf work.SerialCommandProcessor_TB
+# vsim -L altera_mf_ver -L altera_mf work.SerialCommandProcessor_TB 
+# Start time: 16:16:45 on Jul 25,2018
+# Loading sv_std.std
+# Loading work.SerialCommandProcessor_TB
+# Loading work.SerialCommandProcessor
+add wave  \
+sim:/SerialCommandProcessor_TB/clk
+add wave sim:/SerialCommandProcessor_TB/*
+restart -f
+run 20000
+# (1, 0)Words sent:          0
+# TX: 
+# TX: 
+# 
+# TX: Z
+# TX: I
+# (1, 0)Words sent:          1
+# TX: P
+# TX: S
+# TX:  
+# TX: -
+# (1, 0)Words sent:          2
+# TX:  
+# TX: A
+# TX:  
+# TX: M
+# (1, 0)Words sent:          3
+# TX: I
+# TX: P
+# TX: S
+# TX:  
+# (1, 0)Words sent:          4
+# TX: I
+# TX:  
+# TX: c
+# TX: o
+# (1, 0)Words sent:          5
+# TX: m
+# TX: p
+# TX: u
+# TX: t
+# (1, 0)Words sent:          6
+# TX: e
+# TX: r
+# TX:  
+# TX: 
+# 
+# (1, 0)Words sent:          7
+# TX: V
+# TX: e
+# TX: r
+# TX: s
+# (1, 0)Words sent:          8
+# TX: i
+# TX: o
+# TX: n
+# TX:  
+# (1, 0)Words sent:          9
+# TX: 1
+# TX: .
+# TX: 0
+# TX: 
+# 
+# (1, 0)Words sent:         10
+# TX: A
+# TX: u
+# TX: s
+# TX: t
+# (1, 0)Words sent:         11
+# TX: y
+# TX: n
+# TX:  
+# TX: L
+# (1, 0)Words sent:         12
+# TX: a
+# TX: r
+# TX: k
+# TX: i
+# (1, 0)Words sent:         13
+# TX: n
+# TX: 
+# 
+# TX: F
+# TX: o
+# (1, 0)Words sent:         14
+# TX: r
+# TX:  
+# TX: U
+# TX: n
+# (1, 0)Words sent:         15
+# TX: i
+# TX: t
+# TX: e
+# TX: d
+# (1, 0)Words sent:         16
+# TX:  
+# TX: S
+# TX: u
+# TX: m
+# (1, 0)Words sent:         17
+# TX: m
+# TX: e
+# TX: r
+# TX:  
+# (1, 0)Words sent:         18
+# TX: S
+# TX: c
+# TX: h
+# TX: o
+# (1, 0)Words sent:         19
+# TX: l
+# TX: a
+# TX: r
+# TX: s
+# (1, 0)Words sent:         20
+# TX:  
+# TX: p
+# TX: r
+# TX: o
+# (1, 0)Words sent:         21
+# TX: g
+# TX: r
+# TX: a
+# TX: m
+# (1, 0)Words sent:         22
+# TX:  
+# TX: a
+# TX: t
+# TX:  
+# (1, 0)Words sent:         23
+# TX: M
+# TX: i
+# TX: a
+# Compile of SerialCommandProcessor.sv failed with 1 errors.
+# Compile of SerialCommandProcessor.sv failed with 1 errors.
