@@ -1,5 +1,5 @@
 Fitter report for MIPSProcessor
-Tue Jul 24 20:22:18 2018
+Tue Jul 24 20:26:59 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -64,15 +64,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jul 24 20:22:18 2018       ;
+; Fitter Status                      ; Successful - Tue Jul 24 20:26:59 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 665 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 608 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 670 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 606 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 372 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 372                                         ;
 ; Total pins                         ; 9 / 529 ( 2 % )                             ;
@@ -156,7 +156,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.9%      ;
+;     Processor 2            ;   1.0%      ;
 +----------------------------+-------------+
 
 
@@ -166,8 +166,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1010 ) ; 0.00 % ( 0 / 1010 )        ; 0.00 % ( 0 / 1010 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1010 ) ; 0.00 % ( 0 / 1010 )        ; 0.00 % ( 0 / 1010 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1008 ) ; 0.00 % ( 0 / 1008 )        ; 0.00 % ( 0 / 1008 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1008 ) ; 0.00 % ( 0 / 1008 )        ; 0.00 % ( 0 / 1008 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -190,7 +190,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1000 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 998 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -206,26 +206,26 @@ The pin-out file can be found in /home/imaustyn/Desktop/FPGAComputer/Quartus/out
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 665 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 293                     ;
-;     -- Register only                        ; 57                      ;
-;     -- Combinational with a register        ; 315                     ;
+; Total logic elements                        ; 670 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 298                     ;
+;     -- Register only                        ; 64                      ;
+;     -- Combinational with a register        ; 308                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 231                     ;
-;     -- 3 input functions                    ; 126                     ;
-;     -- <=2 input functions                  ; 251                     ;
-;     -- Register only                        ; 57                      ;
+;     -- 4 input functions                    ; 258                     ;
+;     -- 3 input functions                    ; 130                     ;
+;     -- <=2 input functions                  ; 218                     ;
+;     -- Register only                        ; 64                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 357                     ;
+;     -- normal mode                          ; 355                     ;
 ;     -- arithmetic mode                      ; 251                     ;
 ;                                             ;                         ;
 ; Total registers*                            ; 372 / 117,053 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 372 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 48 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 51 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 9 / 529 ( 2 % )         ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -243,12 +243,12 @@ The pin-out file can be found in /home/imaustyn/Desktop/FPGAComputer/Quartus/out
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.2% / 0.1% / 0.2%      ;
-; Peak interconnect usage (total/H/V)         ; 5.8% / 5.1% / 6.8%      ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.2%      ;
+; Peak interconnect usage (total/H/V)         ; 6.1% / 5.6% / 6.7%      ;
 ; Maximum fan-out                             ; 372                     ;
 ; Highest non-global fan-out                  ; 367                     ;
-; Total fan-out                               ; 3506                    ;
-; Average fan-out                             ; 3.35                    ;
+; Total fan-out                               ; 3568                    ;
+; Average fan-out                             ; 3.41                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -261,26 +261,26 @@ The pin-out file can be found in /home/imaustyn/Desktop/FPGAComputer/Quartus/out
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 665 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 293                    ; 0                              ;
-;     -- Register only                        ; 57                     ; 0                              ;
-;     -- Combinational with a register        ; 315                    ; 0                              ;
+; Total logic elements                        ; 670 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 298                    ; 0                              ;
+;     -- Register only                        ; 64                     ; 0                              ;
+;     -- Combinational with a register        ; 308                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 231                    ; 0                              ;
-;     -- 3 input functions                    ; 126                    ; 0                              ;
-;     -- <=2 input functions                  ; 251                    ; 0                              ;
-;     -- Register only                        ; 57                     ; 0                              ;
+;     -- 4 input functions                    ; 258                    ; 0                              ;
+;     -- 3 input functions                    ; 130                    ; 0                              ;
+;     -- <=2 input functions                  ; 218                    ; 0                              ;
+;     -- Register only                        ; 64                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 357                    ; 0                              ;
+;     -- normal mode                          ; 355                    ; 0                              ;
 ;     -- arithmetic mode                      ; 251                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Total registers                             ; 372                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 372 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 48 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 51 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 9                      ; 0                              ;
@@ -296,8 +296,8 @@ The pin-out file can be found in /home/imaustyn/Desktop/FPGAComputer/Quartus/out
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 3501                   ; 5                              ;
-;     -- Registered Connections               ; 1192                   ; 0                              ;
+;     -- Total Connections                    ; 3563                   ; 5                              ;
+;     -- Registered Connections               ; 1226                   ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 0                      ; 0                              ;
@@ -1197,9 +1197,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                   ; Entity Name            ; Library Name ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------+------------------------+--------------+
-; |Main                                ; 665 (0)     ; 372 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 9    ; 0            ; 293 (0)      ; 57 (0)            ; 315 (0)          ; |Main                                 ; Main                   ; work         ;
-;    |RS232:rs|                        ; 209 (209)   ; 131 (131)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 78 (78)      ; 8 (8)             ; 123 (123)        ; |Main|RS232:rs                        ; RS232                  ; work         ;
-;    |SerialCommandProcessor:serialCP| ; 456 (456)   ; 241 (241)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 215 (215)    ; 49 (49)           ; 192 (192)        ; |Main|SerialCommandProcessor:serialCP ; SerialCommandProcessor ; work         ;
+; |Main                                ; 670 (0)     ; 372 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 9    ; 0            ; 298 (0)      ; 64 (0)            ; 308 (0)          ; |Main                                 ; Main                   ; work         ;
+;    |RS232:rs|                        ; 210 (210)   ; 131 (131)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 79 (79)      ; 9 (9)             ; 122 (122)        ; |Main|RS232:rs                        ; RS232                  ; work         ;
+;    |SerialCommandProcessor:serialCP| ; 460 (460)   ; 241 (241)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 219 (219)    ; 55 (55)           ; 186 (186)        ; |Main|SerialCommandProcessor:serialCP ; SerialCommandProcessor ; work         ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1409,6 +1409,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - RS232:rs|RX_countZeroes[1]                                ; 0                 ; 6       ;
 ;      - RS232:rs|RX_countOnes[0]                                  ; 0                 ; 6       ;
 ;      - RS232:rs|RX_countZeroes[0]                                ; 0                 ; 6       ;
+;      - SerialCommandProcessor:serialCP|TX_word[5]                ; 0                 ; 6       ;
+;      - SerialCommandProcessor:serialCP|TX_word[2]                ; 0                 ; 6       ;
+;      - SerialCommandProcessor:serialCP|TX_word[3]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|currentStep[31]           ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|currentStep[30]           ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|currentStep[29]           ; 0                 ; 6       ;
@@ -1456,11 +1459,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - SerialCommandProcessor:serialCP|TX_word[21]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[13]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[29]               ; 0                 ; 6       ;
-;      - SerialCommandProcessor:serialCP|TX_word[5]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[19]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[11]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[27]               ; 0                 ; 6       ;
-;      - SerialCommandProcessor:serialCP|TX_word[3]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[17]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[9]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[25]               ; 0                 ; 6       ;
@@ -1468,7 +1469,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - SerialCommandProcessor:serialCP|TX_word[10]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[18]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[26]               ; 0                 ; 6       ;
-;      - SerialCommandProcessor:serialCP|TX_word[2]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[8]                ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[16]               ; 0                 ; 6       ;
 ;      - SerialCommandProcessor:serialCP|TX_word[24]               ; 0                 ; 6       ;
@@ -1606,31 +1606,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                        ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; RS232:rs|RX_counter[26]~36                                  ; LCCOMB_X79_Y30_N0  ; 68      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|RX_currentBit~8                                    ; LCCOMB_X79_Y30_N12 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|TX_counter[23]~41                                  ; LCCOMB_X84_Y25_N4  ; 32      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|TX_currentBit[1]~13                                ; LCCOMB_X84_Y25_N16 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|TX_currentBit~12                                   ; LCCOMB_X84_Y25_N14 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|always3~5                                          ; LCCOMB_X84_Y25_N30 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; RS232:rs|hasRX                                              ; FF_X80_Y30_N1      ; 7       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|Decoder0~0                  ; LCCOMB_X81_Y29_N0  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|Decoder0~1                  ; LCCOMB_X81_Y29_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|Decoder0~2                  ; LCCOMB_X81_Y29_N16 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|Decoder0~3                  ; LCCOMB_X81_Y29_N4  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|Equal6~0                    ; LCCOMB_X80_Y29_N2  ; 36      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|TX[7]~0                     ; LCCOMB_X80_Y28_N2  ; 7       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|TX_word[30]~7               ; LCCOMB_X80_Y29_N0  ; 28      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|always1~6                   ; LCCOMB_X79_Y29_N12 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|always1~7                   ; LCCOMB_X79_Y29_N22 ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|currentStep[0]~62           ; LCCOMB_X79_Y29_N30 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|currentStep[10]~64          ; LCCOMB_X79_Y29_N8  ; 30      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|currentStep[10]~66          ; LCCOMB_X76_Y29_N12 ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|lastMemoryReadAddress[31]~4 ; LCCOMB_X74_Y29_N14 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|lastStep[25]~34             ; LCCOMB_X81_Y29_N6  ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|lastStep[25]~96             ; LCCOMB_X81_Y29_N8  ; 30      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|state.PROCESS_COMMAND~0     ; LCCOMB_X79_Y29_N14 ; 40      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|wordsSent[23]~17            ; LCCOMB_X82_Y25_N6  ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; SerialCommandProcessor:serialCP|wordsSent~16                ; LCCOMB_X80_Y28_N26 ; 6       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|RX_counter[26]~36                                  ; LCCOMB_X94_Y23_N20 ; 68      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|RX_currentBit~8                                    ; LCCOMB_X96_Y24_N6  ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|TX_counter[23]~41                                  ; LCCOMB_X94_Y26_N28 ; 32      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|TX_currentBit[1]~13                                ; LCCOMB_X94_Y26_N2  ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|TX_currentBit~12                                   ; LCCOMB_X94_Y26_N0  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|always3~5                                          ; LCCOMB_X90_Y26_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; RS232:rs|hasRX                                              ; FF_X94_Y23_N17     ; 7       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|Decoder0~0                  ; LCCOMB_X82_Y31_N14 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|Decoder0~1                  ; LCCOMB_X82_Y31_N24 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|Decoder0~2                  ; LCCOMB_X82_Y31_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|Decoder0~3                  ; LCCOMB_X82_Y31_N4  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|Equal6~1                    ; LCCOMB_X84_Y32_N22 ; 37      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|TX[7]~0                     ; LCCOMB_X87_Y29_N26 ; 7       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|TX_word[18]~7               ; LCCOMB_X88_Y30_N30 ; 28      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|TX_word[30]~10              ; LCCOMB_X88_Y30_N26 ; 28      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|always1~6                   ; LCCOMB_X88_Y31_N0  ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|always1~7                   ; LCCOMB_X88_Y31_N30 ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|currentStep[0]~62           ; LCCOMB_X87_Y31_N18 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|currentStep[10]~64          ; LCCOMB_X87_Y30_N26 ; 30      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|currentStep[10]~66          ; LCCOMB_X87_Y31_N6  ; 30      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|lastMemoryReadAddress[31]~2 ; LCCOMB_X87_Y28_N12 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|lastStep[25]~34             ; LCCOMB_X88_Y31_N12 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|lastStep[25]~96             ; LCCOMB_X88_Y31_N26 ; 30      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|state.PROCESS_COMMAND~0     ; LCCOMB_X88_Y31_N4  ; 38      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|wordsSent[23]~16            ; LCCOMB_X89_Y28_N28 ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; SerialCommandProcessor:serialCP|wordsSent~15                ; LCCOMB_X88_Y30_N16 ; 6       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
 ; clk                                                         ; PIN_Y2             ; 372     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; rst                                                         ; PIN_AB28           ; 367     ; Async. clear              ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
@@ -1650,37 +1651,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 849 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 9 / 10,120 ( < 1 % )    ;
-; C4 interconnects      ; 362 / 209,544 ( < 1 % ) ;
-; Direct links          ; 176 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 833 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 13 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 324 / 209,544 ( < 1 % ) ;
+; Direct links          ; 211 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )          ;
-; Local interconnects   ; 374 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 10 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 425 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 401 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 14 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 390 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.85) ; Number of LABs  (Total = 48) ;
+; Number of Logic Elements  (Average = 13.14) ; Number of LABs  (Total = 51) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 0                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 1                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 2                            ;
-; 6                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 3                            ;
-; 11                                          ; 3                            ;
-; 12                                          ; 0                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 1                            ;
 ; 13                                          ; 1                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 8                            ;
+; 14                                          ; 4                            ;
+; 15                                          ; 7                            ;
 ; 16                                          ; 27                           ;
 +---------------------------------------------+------------------------------+
 
@@ -1688,128 +1689,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.75) ; Number of LABs  (Total = 48) ;
+; LAB-wide Signals  (Average = 2.59) ; Number of LABs  (Total = 51) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 40                           ;
 ; 1 Clock                            ; 41                           ;
-; 1 Clock enable                     ; 22                           ;
-; 1 Sync. clear                      ; 17                           ;
-; 1 Sync. load                       ; 6                            ;
-; 2 Clock enables                    ; 6                            ;
+; 1 Clock enable                     ; 19                           ;
+; 1 Sync. clear                      ; 15                           ;
+; 1 Sync. load                       ; 8                            ;
+; 2 Clock enables                    ; 9                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 20.56) ; Number of LABs  (Total = 48) ;
+; Number of Signals Sourced  (Average = 19.35) ; Number of LABs  (Total = 51) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 2                            ;
+; 1                                            ; 3                            ;
+; 2                                            ; 3                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
+; 4                                            ; 1                            ;
 ; 5                                            ; 2                            ;
 ; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 1                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 3                            ;
-; 17                                           ; 3                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 6                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 5                            ;
 ; 21                                           ; 3                            ;
-; 22                                           ; 4                            ;
-; 23                                           ; 2                            ;
+; 22                                           ; 5                            ;
+; 23                                           ; 3                            ;
 ; 24                                           ; 3                            ;
 ; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
-; 28                                           ; 1                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 2                            ;
+; 30                                           ; 1                            ;
 ; 31                                           ; 2                            ;
-; 32                                           ; 6                            ;
+; 32                                           ; 7                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.17) ; Number of LABs  (Total = 48) ;
+; Number of Signals Sourced Out  (Average = 8.41) ; Number of LABs  (Total = 51) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 5                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 5                            ;
-; 4                                               ; 4                            ;
-; 5                                               ; 4                            ;
-; 6                                               ; 0                            ;
-; 7                                               ; 2                            ;
+; 1                                               ; 8                            ;
+; 2                                               ; 3                            ;
+; 3                                               ; 3                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 3                            ;
+; 6                                               ; 6                            ;
+; 7                                               ; 1                            ;
 ; 8                                               ; 2                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 4                            ;
-; 11                                              ; 3                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 0                            ;
-; 14                                              ; 2                            ;
-; 15                                              ; 4                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 3                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 4                            ;
+; 13                                              ; 1                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 3                            ;
 ; 16                                              ; 10                           ;
-; 17                                              ; 0                            ;
-; 18                                              ; 0                            ;
-; 19                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 17.12) ; Number of LABs  (Total = 48) ;
+; Number of Distinct Inputs  (Average = 16.14) ; Number of LABs  (Total = 51) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 3                            ;
-; 4                                            ; 5                            ;
+; 4                                            ; 6                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
+; 6                                            ; 3                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 4                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 5                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 2                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 6                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 3                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 4                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 4                            ;
-; 26                                           ; 0                            ;
-; 27                                           ; 1                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
+; 30                                           ; 1                            ;
 ; 31                                           ; 0                            ;
-; 32                                           ; 1                            ;
+; 32                                           ; 2                            ;
 ; 33                                           ; 0                            ;
-; 34                                           ; 1                            ;
-; 35                                           ; 1                            ;
-; 36                                           ; 2                            ;
+; 34                                           ; 0                            ;
+; 35                                           ; 2                            ;
+; 36                                           ; 1                            ;
+; 37                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1959,7 +1958,7 @@ Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DI
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1968,21 +1967,21 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X69_Y24 to location X80_Y36
+    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X81_Y24 to location X91_Y36
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info: Quartus Prime Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1445 megabytes
-    Info: Processing ended: Tue Jul 24 20:22:18 2018
+    Info: Peak virtual memory: 1451 megabytes
+    Info: Processing ended: Tue Jul 24 20:27:00 2018
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
