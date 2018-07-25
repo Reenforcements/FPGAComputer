@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSProcessor
-Wed Jul 25 16:20:24 2018
+Wed Jul 25 18:54:18 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -22,15 +22,16 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
  14. Registers Removed During Synthesis
  15. Removed Registers Triggering Further Register Optimizations
  16. General Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Parameter Settings for User Entity Instance: RS232:rs
- 19. Port Connectivity Checks: "SerialCommandProcessor:serialCP"
- 20. Port Connectivity Checks: "RS232:rs"
- 21. Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component"
- 22. Port Connectivity Checks: "ProcessorClockEnabler:pce"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Parameter Settings for User Entity Instance: RS232:rs
+ 20. Port Connectivity Checks: "SerialCommandProcessor:serialCP"
+ 21. Port Connectivity Checks: "RS232:rs"
+ 22. Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component"
+ 23. Port Connectivity Checks: "ProcessorClockEnabler:pce"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -56,15 +57,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 25 16:20:24 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 25 18:54:18 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 59                                          ;
-;     Total combinational functions  ; 59                                          ;
-;     Dedicated logic registers      ; 42                                          ;
-; Total registers                    ; 42                                          ;
+; Total logic elements               ; 520                                         ;
+;     Total combinational functions  ; 456                                         ;
+;     Dedicated logic registers      ; 297                                         ;
+; Total registers                    ; 297                                         ;
 ; Total pins                         ; 9                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -197,20 +198,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 59        ;
+; Estimated Total logic elements              ; 520       ;
 ;                                             ;           ;
-; Total combinational functions               ; 59        ;
+; Total combinational functions               ; 456       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 14        ;
-;     -- 3 input functions                    ; 3         ;
-;     -- <=2 input functions                  ; 42        ;
+;     -- 4 input functions                    ; 218       ;
+;     -- 3 input functions                    ; 55        ;
+;     -- <=2 input functions                  ; 183       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 21        ;
-;     -- arithmetic mode                      ; 38        ;
+;     -- normal mode                          ; 265       ;
+;     -- arithmetic mode                      ; 191       ;
 ;                                             ;           ;
-; Total registers                             ; 42        ;
-;     -- Dedicated logic registers            ; 42        ;
+; Total registers                             ; 297       ;
+;     -- Dedicated logic registers            ; 297       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 9         ;
@@ -218,20 +219,21 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 43        ;
-; Total fan-out                               ; 324       ;
-; Average fan-out                             ; 2.72      ;
+; Maximum fan-out                             ; 298       ;
+; Total fan-out                               ; 2650      ;
+; Average fan-out                             ; 3.44      ;
 +---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Main                      ; 59 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |Main               ; Main        ; work         ;
-;    |RS232:rs|              ; 59 (59)             ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RS232:rs      ; RS232       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name            ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
+; |Main                                ; 456 (0)             ; 297 (0)                   ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |Main                                 ; Main                   ; work         ;
+;    |RS232:rs|                        ; 203 (203)           ; 131 (131)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RS232:rs                        ; RS232                  ; work         ;
+;    |SerialCommandProcessor:serialCP| ; 253 (253)           ; 166 (166)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SerialCommandProcessor:serialCP ; SerialCommandProcessor ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -310,118 +312,38 @@ Encoding Type:  User-Encoded
 +--------------------------------+------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                            ;
-+-------------------------------------------------------------+-----------------------------------------------------------------+
-; Register name                                               ; Reason for Removal                                              ;
-+-------------------------------------------------------------+-----------------------------------------------------------------+
-; RS232:rs|UART_RTS                                           ; Stuck at GND due to stuck port data_in                          ;
-; pause                                                       ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordTX_word_reg[0..30]      ; Merged with SerialCommandProcessor:serialCP|WordTX_word_reg[31] ;
-; SerialCommandProcessor:serialCP|WordTX_word_reg[31]         ; Stuck at GND due to stuck port data_in                          ;
-; RS232:rs|currentTX[0..7]                                    ; Stuck at GND due to stuck port data_in                          ;
-; SerialCommandProcessor:serialCP|SCP_state~6                 ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|SCP_state~7                 ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordRX_state~6              ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordTX_state~6              ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordTX_state~7              ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordTX_state~8              ; Lost fanout                                                     ;
-; RS232:rs|TX_state~7                                         ; Lost fanout                                                     ;
-; RS232:rs|RX_state~7                                         ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|command[0..31]              ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|wordsSent[2..31]            ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|currentStep[0..31]          ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordRX_currentByte_reg[0,1] ; Lost fanout                                                     ;
-; RS232:rs|hasRX                                              ; Lost fanout                                                     ;
-; RS232:rs|RX_countOnes[0..15]                                ; Lost fanout                                                     ;
-; RS232:rs|RX_countZeroes[0..15]                              ; Lost fanout                                                     ;
-; RS232:rs|RX_counter[0..31]                                  ; Lost fanout                                                     ;
-; RS232:rs|UART_RXD_d1                                        ; Lost fanout                                                     ;
-; RS232:rs|RX_currentBit[0..3]                                ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordRX_word[0..31]          ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|wordsSent[0,1]              ; Lost fanout                                                     ;
-; RS232:rs|UART_RXD_d0                                        ; Lost fanout                                                     ;
-; RS232:rs|RX[0..7]                                           ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|SCP_state~4                 ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|SCP_state~5                 ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordRX_state~4              ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordRX_state~5              ; Lost fanout                                                     ;
-; RS232:rs|RX_state~4                                         ; Lost fanout                                                     ;
-; RS232:rs|RX_state~5                                         ; Lost fanout                                                     ;
-; RS232:rs|RX_state~6                                         ; Lost fanout                                                     ;
-; RS232:rs|TX_state~6                                         ; Stuck at GND due to stuck port data_in                          ;
-; SerialCommandProcessor:serialCP|WordTX_state~4              ; Stuck at GND due to stuck port data_in                          ;
-; SerialCommandProcessor:serialCP|WordTX_state~5              ; Lost fanout                                                     ;
-; RS232:rs|TX_ready                                           ; Lost fanout                                                     ;
-; SerialCommandProcessor:serialCP|WordTX_currentByte_reg[0,1] ; Lost fanout                                                     ;
-; Total Number of Removed Registers = 272                     ;                                                                 ;
-+-------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-------------------------------------------------------------+----------------------------------------+
+; Register name                                               ; Reason for Removal                     ;
++-------------------------------------------------------------+----------------------------------------+
+; RS232:rs|UART_RTS                                           ; Stuck at GND due to stuck port data_in ;
+; pause                                                       ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|WordTX_word_reg[7,15,23,31] ; Stuck at GND due to stuck port data_in ;
+; RS232:rs|currentTX[7]                                       ; Stuck at GND due to stuck port data_in ;
+; SerialCommandProcessor:serialCP|SCP_state~6                 ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|SCP_state~7                 ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|WordRX_state~6              ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|WordTX_state~6              ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|WordTX_state~7              ; Lost fanout                            ;
+; SerialCommandProcessor:serialCP|WordTX_state~8              ; Lost fanout                            ;
+; RS232:rs|TX_state~7                                         ; Lost fanout                            ;
+; RS232:rs|RX_state~7                                         ; Lost fanout                            ;
+; RS232:rs|TX_state~6                                         ; Stuck at GND due to stuck port data_in ;
+; SerialCommandProcessor:serialCP|WordRX_state~5              ; Stuck at GND due to stuck port data_in ;
+; RS232:rs|RX_state~6                                         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 18                      ;                                        ;
++-------------------------------------------------------------+----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                             ;
-+-----------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; Register name                                             ; Reason for Removal        ; Registers Removed due to This Register                                          ;
-+-----------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; SerialCommandProcessor:serialCP|WordTX_word_reg[31]       ; Stuck at GND              ; RS232:rs|currentTX[7], RS232:rs|currentTX[6], RS232:rs|currentTX[5],            ;
-;                                                           ; due to stuck port data_in ; RS232:rs|currentTX[4], RS232:rs|currentTX[3], RS232:rs|currentTX[2],            ;
-;                                                           ;                           ; RS232:rs|currentTX[1], RS232:rs|currentTX[0], RS232:rs|TX_ready,                ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|WordTX_currentByte_reg[1],                      ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|WordTX_currentByte_reg[0]                       ;
-; SerialCommandProcessor:serialCP|WordRX_currentByte_reg[1] ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_currentByte_reg[0], RS232:rs|hasRX,      ;
-;                                                           ;                           ; RS232:rs|RX_countOnes[15], RS232:rs|RX_counter[31], RS232:rs|UART_RXD_d1,       ;
-;                                                           ;                           ; RS232:rs|UART_RXD_d0, SerialCommandProcessor:serialCP|WordRX_state~5,           ;
-;                                                           ;                           ; RS232:rs|RX_state~4, RS232:rs|RX_state~5, RS232:rs|RX_state~6                   ;
-; SerialCommandProcessor:serialCP|wordsSent[31]             ; Lost Fanouts              ; SerialCommandProcessor:serialCP|wordsSent[5],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|wordsSent[4],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|wordsSent[3],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|wordsSent[2],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|wordsSent[0],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|wordsSent[1],                                   ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|WordTX_state~5                                  ;
-; SerialCommandProcessor:serialCP|currentStep[31]           ; Lost Fanouts              ; SerialCommandProcessor:serialCP|currentStep[5],                                 ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|currentStep[4],                                 ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|currentStep[3],                                 ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|currentStep[2],                                 ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|currentStep[1],                                 ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|currentStep[0]                                  ;
-; SerialCommandProcessor:serialCP|command[31]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[31], RS232:rs|RX[7],                ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|SCP_state~4,                                    ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|SCP_state~5,                                    ;
-;                                                           ;                           ; SerialCommandProcessor:serialCP|WordRX_state~4                                  ;
-; RS232:rs|RX_currentBit[3]                                 ; Lost Fanouts              ; RS232:rs|RX_currentBit[2], RS232:rs|RX_currentBit[1], RS232:rs|RX_currentBit[0] ;
-; SerialCommandProcessor:serialCP|command[26]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[26], RS232:rs|RX[2]                 ;
-; SerialCommandProcessor:serialCP|command[30]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[30], RS232:rs|RX[6]                 ;
-; SerialCommandProcessor:serialCP|command[29]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[29], RS232:rs|RX[5]                 ;
-; SerialCommandProcessor:serialCP|command[28]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[28], RS232:rs|RX[4]                 ;
-; SerialCommandProcessor:serialCP|command[27]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[27], RS232:rs|RX[3]                 ;
-; SerialCommandProcessor:serialCP|command[25]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[25], RS232:rs|RX[1]                 ;
-; SerialCommandProcessor:serialCP|command[24]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[24], RS232:rs|RX[0]                 ;
-; SerialCommandProcessor:serialCP|command[9]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[9]                                  ;
-; SerialCommandProcessor:serialCP|command[23]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[23]                                 ;
-; SerialCommandProcessor:serialCP|command[0]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[0]                                  ;
-; SerialCommandProcessor:serialCP|command[1]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[1]                                  ;
-; SerialCommandProcessor:serialCP|command[2]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[2]                                  ;
-; SerialCommandProcessor:serialCP|command[3]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[3]                                  ;
-; SerialCommandProcessor:serialCP|command[4]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[4]                                  ;
-; SerialCommandProcessor:serialCP|command[5]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[5]                                  ;
-; SerialCommandProcessor:serialCP|command[6]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[6]                                  ;
-; SerialCommandProcessor:serialCP|command[7]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[7]                                  ;
-; SerialCommandProcessor:serialCP|command[8]                ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[8]                                  ;
-; SerialCommandProcessor:serialCP|command[22]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[22]                                 ;
-; SerialCommandProcessor:serialCP|command[10]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[10]                                 ;
-; SerialCommandProcessor:serialCP|command[11]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[11]                                 ;
-; SerialCommandProcessor:serialCP|command[12]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[12]                                 ;
-; SerialCommandProcessor:serialCP|command[13]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[13]                                 ;
-; SerialCommandProcessor:serialCP|command[14]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[14]                                 ;
-; SerialCommandProcessor:serialCP|command[15]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[15]                                 ;
-; SerialCommandProcessor:serialCP|command[16]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[16]                                 ;
-; SerialCommandProcessor:serialCP|command[17]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[17]                                 ;
-; SerialCommandProcessor:serialCP|command[18]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[18]                                 ;
-; SerialCommandProcessor:serialCP|command[19]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[19]                                 ;
-; SerialCommandProcessor:serialCP|command[20]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[20]                                 ;
-; SerialCommandProcessor:serialCP|command[21]               ; Lost Fanouts              ; SerialCommandProcessor:serialCP|WordRX_word[21]                                 ;
-+-----------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                              ;
++-----------------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------------------------------------+---------------------------+----------------------------------------+
+; SerialCommandProcessor:serialCP|WordTX_word_reg[31] ; Stuck at GND              ; RS232:rs|currentTX[7]                  ;
+;                                                     ; due to stuck port data_in ;                                        ;
++-----------------------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -429,27 +351,47 @@ Encoding Type:  User-Encoded
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 42    ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 297   ;
+; Number of registers using Synchronous Clear  ; 168   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 42    ;
+; Number of registers using Asynchronous Clear ; 297   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Clock Enable       ; 185   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|RS232:rs|TX_currentBit[1]                           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|RS232:rs|RX_currentBit[0]                           ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|RS232:rs|RX_counter[20]                             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|RS232:rs|TX_counter[22]                             ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordRX_byte_next[7] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; RS232:rs|TX_ready                      ; 4       ;
+; RS232:rs|UART_RXD_d1                   ; 5       ;
+; RS232:rs|UART_RXD_d0                   ; 1       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|RS232:rs|TX_currentBit[5]                                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|currentStep[15]                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|RS232:rs|RX_currentBit[3]                                         ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|RS232:rs|RX_countOnes[7]                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsSent[15]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|RS232:rs|TX_counter[5]                                            ;
+; 5:1                ; 28 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|WordTX_word_reg[12]               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |Main|RS232:rs|currentTX[2]                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|WordTX_currentByte_reg[2]         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordTX_nextState.WORDTXSTATE_DONE ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordRX_byte_next[1]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -508,22 +450,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 9                           ;
-; cycloneiii_ff         ; 42                          ;
-;     CLR               ; 2                           ;
-;     CLR SCLR          ; 32                          ;
-;     ENA CLR           ; 8                           ;
-; cycloneiii_lcell_comb ; 62                          ;
-;     arith             ; 38                          ;
-;         2 data inputs ; 38                          ;
-;     normal            ; 24                          ;
+; cycloneiii_ff         ; 297                         ;
+;     CLR               ; 16                          ;
+;     CLR SCLR          ; 96                          ;
+;     ENA CLR           ; 113                         ;
+;     ENA CLR SCLR      ; 72                          ;
+; cycloneiii_lcell_comb ; 458                         ;
+;     arith             ; 191                         ;
+;         2 data inputs ; 159                         ;
+;         3 data inputs ; 32                          ;
+;     normal            ; 267                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 14                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 218                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.44                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -532,7 +476,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -542,20 +486,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Jul 25 16:20:02 2018
+    Info: Processing started: Wed Jul 25 18:53:58 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12248): Elaborating Platform Designer system entity "ProcessorClockEnabler.qsys"
-Info (12250): 2018.07.25.16:20:20 Progress: Loading Quartus/ProcessorClockEnabler.qsys
-Info (12250): 2018.07.25.16:20:20 Progress: Reading input file
-Info (12250): 2018.07.25.16:20:20 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
-Info (12250): 2018.07.25.16:20:20 Progress: Parameterizing module altclkctrl_0
-Info (12250): 2018.07.25.16:20:20 Progress: Building connections
-Info (12250): 2018.07.25.16:20:20 Progress: Parameterizing connections
-Info (12250): 2018.07.25.16:20:20 Progress: Validating
-Info (12250): 2018.07.25.16:20:21 Progress: Done reading input file
-Info (12250): 2018.07.25.16:20:21 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
-Info (12250): 2018.07.25.16:20:21 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
+Info (12250): 2018.07.25.18:54:12 Progress: Loading Quartus/ProcessorClockEnabler.qsys
+Info (12250): 2018.07.25.18:54:12 Progress: Reading input file
+Info (12250): 2018.07.25.18:54:12 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
+Info (12250): 2018.07.25.18:54:12 Progress: Parameterizing module altclkctrl_0
+Info (12250): 2018.07.25.18:54:12 Progress: Building connections
+Info (12250): 2018.07.25.18:54:12 Progress: Parameterizing connections
+Info (12250): 2018.07.25.18:54:12 Progress: Validating
+Info (12250): 2018.07.25.18:54:13 Progress: Done reading input file
+Info (12250): 2018.07.25.18:54:13 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
+Info (12250): 2018.07.25.18:54:13 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
 Info (12250): ProcessorClockEnabler: Generating ProcessorClockEnabler "ProcessorClockEnabler" for QUARTUS_SYNTH
 Info (12250): Altclkctrl_0: Generating top-level entity ProcessorClockEnabler_altclkctrl_0.
 Info (12250): Altclkctrl_0: "ProcessorClockEnabler" instantiated altclkctrl "altclkctrl_0"
@@ -613,12 +557,15 @@ Info (12128): Elaborating entity "RS232" for hierarchy "RS232:rs" File: /home/im
 Info (10264): Verilog HDL Case Statement information at RS232.sv(120): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 120
 Info (10264): Verilog HDL Case Statement information at RS232.sv(225): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 225
 Info (12128): Elaborating entity "SerialCommandProcessor" for hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 127
-Warning (10036): Verilog HDL or VHDL warning at SerialCommandProcessor.sv(50): object "WordTX_ready" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 50
-Warning (10036): Verilog HDL or VHDL warning at SerialCommandProcessor.sv(200): object "commandLength" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 200
+Warning (10036): Verilog HDL or VHDL warning at SerialCommandProcessor.sv(202): object "commandLength" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 202
 Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(80): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 80
-Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(149): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 149
-Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(232): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 232
-Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(290): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 290
+Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(151): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 151
+Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(233): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 233
+Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(292): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 292
+Warning (10030): Net "INFO_STRING.data_a" at SerialCommandProcessor.sv(32) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 32
+Warning (10030): Net "INFO_STRING.waddr_a" at SerialCommandProcessor.sv(32) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 32
+Warning (10030): Net "INFO_STRING.we_a" at SerialCommandProcessor.sv(32) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 32
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (28) in the Memory Initialization File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/MIPSProcessor.ram0_SerialCommandProcessor_f94fa93e.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 18
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -626,20 +573,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED1" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 13
     Warning (13410): Pin "LED2" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 14
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 229 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "UART_CTS" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 8
-    Warning (15610): No output dependent on input pin "UART_RXD" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 7
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 537 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 59 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 958 megabytes
-    Info: Processing ended: Wed Jul 25 16:20:24 2018
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:32
+    Info (21061): Implemented 528 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 965 megabytes
+    Info: Processing ended: Wed Jul 25 18:54:18 2018
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:28
 
 

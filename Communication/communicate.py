@@ -46,7 +46,7 @@ if command == "INFO":
 	# Pack the command as a big endian unsigned int (4 bytes)
 	sendInt(commands[command])
 	# We don't send anything else. We just receive an info string and print it.
-	commandLength = readLength()
+	commandLength = readLength() * 4
 	print("({} characters)".format(commandLength))
 	info = s.read(commandLength)
 	#print("Received: {} bytes".format(len(info)))

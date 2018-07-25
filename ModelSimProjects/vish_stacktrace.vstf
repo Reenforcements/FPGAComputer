@@ -5,3 +5,20 @@
 # Version = "2016.10"
 # Date = "Oct  5 2016"
 # Platform = linuxpe
+# Current time Wed Jul 25 18:19:01 2018
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "10.5b"
+# Version = "2016.10"
+# Date = "Oct  5 2016"
+# Platform = linuxpe
+# 0    0xf7fd7fe9: '<unknown (@0xf7fd7fe9)>'
+# 1    0xf7fd800b: '<unknown (@0xf7fd800b)>'
+# 2    0x0854b8f4: 'Tcl_DoOneEvent + 0xf4' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 3    0x083f2b8f: 'Tk_MainLoop + 0x1f' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 4    0x083fb4a4: 'Tk_MainEx + 0x374' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 5    0x081fee66: 'vish_inner_loop + 0x116' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 6    0x080e6029: 'main + 0x989' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 7    0xf7ba9632: '__libc_start_main + 0xf2' in '/lib/i386-linux-gnu/libc.so.6'
+# End of Stack Trace
+
