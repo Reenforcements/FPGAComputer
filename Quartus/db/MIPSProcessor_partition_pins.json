@@ -8,11 +8,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED1",
+					"strict" : false
+				},
+				{
 					"name" : "LED3",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "rstIn",
 					"strict" : false
 				},
 				{

@@ -32,6 +32,7 @@ always_comb begin
 	//  and take it into account in their code.
 	// This is the next address, used if we need to link.
 	pcAddress = oldPC;
+	nextPCAddress = pcAddress + 32'd4;
 end
 
 always_ff @ (posedge clk or negedge rst) begin

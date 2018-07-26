@@ -8,9 +8,8 @@ import MemoryModesPackage::ReadWriteModes;
 module Processor(
 input logic rst,
 input logic clk,
-
-// Pauses the processor so we can change data in memory.
-input logic pause,
+input logic memory_clk,
+input logic memory_rst,
 
 // Allows us to write to the memory from an external source
 // such as a ModelSim test or RS232 serial connection.
@@ -22,21 +21,6 @@ input logic [2:0]externalWriteMode,
 output logic [31:0]externalDataOut
 );
 
-// pClk stands for pausable clock.
-// We may want to be able to "pause" the processor at times.
-logic pClk;
-always_latch begin
-	if (pause == 1'b1) begin
-		// Maintain current clock state by latching
-		pClk = pClk;
-	end
-	else begin
-		// Change with the clock.
-		pClk = clk;
-	end
-end
-
-
 // PC
 logic [31:0]pc_newPC;
 logic pc_shouldUseNewPC;
@@ -44,7 +28,7 @@ logic pc_shouldUseNewPC;
 logic [31:0]pc_pcAddress;
 logic [31:0]pc_nextPCAddress;
 PC pc(
-	.clk(pClk),
+	.clk(clk),
 	.rst(rst),
 
 	.newPC(pc_newPC),
@@ -53,11 +37,6 @@ PC pc(
 	.pcAddress(pc_pcAddress),
 	.nextPCAddress(pc_nextPCAddress)
 );
-
-
-always @ (posedge pClk) begin
-	//$display("Current PC: %d", pc_pcAddress);
-end
 
 
 // Register File
@@ -73,7 +52,7 @@ logic [31:0]registerFile_readValue0;
 logic [31:0]registerFile_readValue1;
 
 RegisterFile registerFile(
-	.clk(pClk),
+	.clk(clk),
 	.rst(rst),
 
 	.rsAddress(registerFile_rsAddress),
@@ -102,7 +81,7 @@ logic alu_outputNegative;
 
 // ALU
 ALU alu(
-	.clk(pClk),
+	.clk(clk),
 	.rst(rst),
 
 	.dataIn0(alu_dataIn0),
@@ -132,7 +111,7 @@ logic [15:0]branch_branchAddressOffset;
 logic [31:0]branch_branchTo;
 
 Branch branch(
-	.clk(pClk),
+	.clk(clk),
 	.rst(rst),
 	
 	.shouldUseNewPC(branch_shouldUseNewPC),
@@ -151,10 +130,6 @@ Branch branch(
 
 // Memory
 
-// The memory has a separate clock because we might want
-//  to use the memory externally while the processor is running.
-logic memory_clk;
-
 logic [31:0]memory_address;
 logic [31:0]memory_dataIn;
 logic [2:0]memory_writeMode;
@@ -166,9 +141,12 @@ logic memory_unsignedLoad;
 logic [31:0]memory_pcAddress;
 logic [31:0]memory_pcData;
 Memory mem(
+	// The memory has a separate clock because we might want
+	//  to use the memory externally while the processor is running
 	.clk(memory_clk), 
-	.clk_pc(pClk),
-	.rst(rst),
+	// The PC runs with the rest of the processor.
+	.clk_pc(clk),
+	.rst(memory_rst),
 
 	.address(memory_address),
 	.data(memory_dataIn),
@@ -202,7 +180,7 @@ logic control_unsignedLoad;
 logic [3:0]control_branchMode;
 
 Control control(
-	.clk(pClk),
+	.clk(clk),
 	.rst(rst),
 
 	.instructionData(control_instructionData),
@@ -308,7 +286,7 @@ always_comb begin
 	memory_pcAddress = pc_pcAddress;
  	instructionData = memory_pcData;
 end
-always_ff @ (posedge pClk or negedge rst) begin
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_pcAddress_dIF <= 32'd0;
 		pc_nextPCAddress_dIF <= 32'd0;
@@ -320,7 +298,7 @@ always_ff @ (posedge pClk or negedge rst) begin
 end
 
 // Debug
-always @ (posedge pClk or negedge rst) begin
+always @ (posedge clk or negedge rst) begin
 	$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
 end
 
@@ -375,7 +353,7 @@ always_comb begin
 end
 
 // Save results in registers
-always_ff @ (posedge pClk or negedge rst) begin
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_pcAddress_d0 <= 32'd0;
 		pc_nextPCAddress_d0 <= 32'd0;
@@ -444,7 +422,7 @@ end
 // PIPELINE STAGE 1 BELOW
 
 //DEBUG
-always @ (posedge pClk) begin
+always @ (posedge clk) begin
 	//$display("Should use new PC: %d", branch_shouldUseNewPC);
 end
 
@@ -499,7 +477,6 @@ always_comb begin
 	if (externalMemoryControl == 1'b1) begin
 		// Force the memory to be controlled externally.
 		// This could be RS232 serial or ModelSim.
-		memory_clk = clk;
 		memory_address = externalAddress;
 		memory_dataIn = externalData;
 		memory_readMode = externalReadMode;
@@ -508,7 +485,6 @@ always_comb begin
 		externalDataOut = memory_dataOut;
 	end
 	else begin	
-		memory_clk = pClk;
 		memory_address = alu_result;
 		//memory_dataIn = registerFile_readValue1_d0;
 		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
@@ -526,7 +502,7 @@ always_comb begin
 end
 
 
-always_ff @ (posedge pClk or negedge rst) begin
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		pc_nextPCAddress_d1 <= 32'd0;
 	
@@ -597,7 +573,7 @@ always_comb begin
 	endcase
 end
 
-//always_ff @ (posedge pClk or negedge rst) begin
+//always_ff @ (posedge clk or negedge rst) begin
 //	if (rst == 1'b0) begin
 //		pc_nextPCAddress_d2 <= 32'd0;
 //		

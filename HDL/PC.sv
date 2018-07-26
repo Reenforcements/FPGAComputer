@@ -1,3 +1,5 @@
+`timescale 1ps / 1ps
+
 module PC(
 input logic clk,
 input logic rst,

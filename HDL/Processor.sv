@@ -9,6 +9,7 @@ module Processor(
 input logic rst,
 input logic clk,
 input logic memory_clk,
+input logic memory_rst,
 
 // Allows us to write to the memory from an external source
 // such as a ModelSim test or RS232 serial connection.
@@ -145,7 +146,7 @@ Memory mem(
 	.clk(memory_clk), 
 	// The PC runs with the rest of the processor.
 	.clk_pc(clk),
-	.rst(rst),
+	.rst(memory_rst),
 
 	.address(memory_address),
 	.data(memory_dataIn),
@@ -298,7 +299,7 @@ end
 
 // Debug
 always @ (posedge clk or negedge rst) begin
-	$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
+	//$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
 end
 
 // PIPELINE STAGE 0 BELOW (using clocked output from memory)

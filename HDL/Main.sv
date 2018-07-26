@@ -1,8 +1,11 @@
-import MemoryModesPackage::ReadWriteModes;
+//import MemoryModesPackage::ReadWriteModes;
+import MemoryModesPackage::*;
+
+`timescale 1ps / 1ps
 
 module Main(
 input logic clk,
-input logic rst,
+input logic rstIn,
 
 input logic UART_RXD,
 input logic UART_CTS,
@@ -15,29 +18,24 @@ output logic LED2,
 output logic LED3
 );
 
+parameter BAUD_RATE = 250000;
+
 // Gate the clock so we can "pause" the processor.
 // Please see https://www.altera.com.cn/zh_CN/pdfs/literature/hb/qts/qts_qii51006.pdf
 // section "Synchronous Clock Enables" for more info.
 logic pause;
-//logic gatedClkEnable;
 logic gatedClk;
+
 /*
-always_ff @ (negedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		gatedClkEnable <= 1'b0;
-	end
-	else begin
-		gatedClkEnable <= ~pause;
-	end
-end
-always_comb begin
-	gatedClk = gatedClkEnable & clk;
-end*/
 ProcessorClockEnabler pce(
 		.inclk(clk),  //  altclkctrl_input.inclk
-		.ena(pause),    //                  .ena
+		.ena(~pause),    //                  .ena
 		.outclk(gatedClk) // altclkctrl_output.outclk
 	);
+*/
+always_comb begin
+	gatedClk = clk;
+end
 
 
 // UART
@@ -68,10 +66,19 @@ logic [31:0]serialCP_memoryAddress;
 logic [31:0]serialCP_memoryWordOut;
 logic [31:0]serialCP_memoryWordIn;
 
+logic force_rst;
+logic rst;
 
-RS232 #(.BAUD_RATE(250000)) rs(
+always_comb begin
+	// The reset for most components is controlled by the reset switch or
+	//  the force_rst line which is controlled by serial commands.
+	rst = rstIn & force_rst;
+end
+
+
+RS232 #(.BAUD_RATE(BAUD_RATE)) rs(
 	.clk(clk),
-	.rst(rst),
+	.rst(rstIn),
 	
 	.UART_RXD(UART_RXD),
 	.UART_CTS(UART_CTS),
@@ -90,11 +97,12 @@ RS232 #(.BAUD_RATE(250000)) rs(
 	.txError(txError)
 );
 
-/*
+
 Processor processor(
 	.clk(gatedClk),
 	.memory_clk(clk),
 	.rst(rst),
+	.memory_rst(rstIn),
 	
 	.externalMemoryControl(externalMemoryControl),
 	.externalAddress(externalAddress),
@@ -103,12 +111,12 @@ Processor processor(
 	.externalWriteMode(externalWriteMode),
 	.externalDataOut(externalDataOut)
 );
-*/
+
 
 // Set up a state machine to allow us to change memory through serial.
 SerialCommandProcessor serialCP(
 .clk(clk),
-.rst(rst),
+.rst(rstIn),
 
 // RS232
 .RX(RX),
@@ -123,16 +131,18 @@ SerialCommandProcessor serialCP(
 .readFromMemory(serialCP_readFromMemory),
 .memoryAddress(serialCP_memoryAddress),
 .memoryWordOut(serialCP_memoryWordOut),
-.memoryWordIn(serialCP_memoryWordIn)
+.memoryWordIn(serialCP_memoryWordIn),
+
+.force_rst(force_rst)
 );
 
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		// Pause must be changed on clk or it will be considered its own clock.
-		pause <= 1'b1;
+		pause <= 1'b0;
 	end
 	else begin
-		pause <= serialCP_writeToMemory | serialCP_readFromMemory;
+		pause <= 1'b0;//serialCP_writeToMemory | serialCP_readFromMemory;
 	end
 end
 always_comb begin
@@ -155,8 +165,8 @@ always_comb begin
 	
 	// Assign other memory lines.
 	externalData = serialCP_memoryWordOut;
-	LED1 = 1'b1;
-	LED2 = 1'b1;
+	LED1 = rstIn;
+	LED2 = force_rst;
 	LED3 = rst;
 	serialCP_memoryWordIn = externalDataOut;
 end

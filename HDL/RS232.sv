@@ -1,4 +1,4 @@
-
+`timescale 1ps / 1ps
 // Assume 50,000,000 Hz clock
 // Baud rate is bits/second
 
@@ -94,7 +94,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		if (RX_counter == TIME_ONE_BIT) begin
 			if (RX_state == RX_RECEIVE) begin
 				// Save the bit
-				$display("Save bit: %d vs %d to last RX: %b", RX_countOnes, RX_countZeroes, RX);
+				//$display("Save bit: %d vs %d to last RX: %b", RX_countOnes, RX_countZeroes, RX);
 				RX <= (RX >> 8'd1) | ((RX_countOnes > RX_countZeroes) ? 8'b10000000 : 8'b0);
 
 				// Increment the current bit.
@@ -110,7 +110,7 @@ always_ff @ (posedge clk or negedge rst) begin
 			if (RX_nextState == RX_POSSIBLE_START_BIT || RX_nextState == RX_WAITING) begin
 				// Successful stop condition
 				hasRX <= 1'b1;
-				$display("Successful stop");
+				//$display("Successful stop");
 			end
 		end
 	end
