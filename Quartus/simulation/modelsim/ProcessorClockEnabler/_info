@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/imaustyn/Desktop/FPGAComputer/Quartus/simulation/modelsim
+vProcessorClockEnabler
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1532647978
+!i10b 1
+!s100 @meQOVP8^e^PE]4?jODI[0
+IYo6BeJnUh3TY@c0@VFAe13
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ProcessorClockEnabler_v_unit
+S1
+R0
+Z4 w1532379481
+8/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v
+F/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v
+L0 6
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1532647978.000000
+!s107 /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v|
+!s90 -reportprogress|300|-sv|-work|ProcessorClockEnabler|+incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis|/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v|
+!i113 1
+Z7 o-sv -work ProcessorClockEnabler
+!s92 -sv -work ProcessorClockEnabler +incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis
+Z8 tCvgOpt 0
+n@processor@clock@enabler
+vProcessorClockEnabler_altclkctrl_0
+R1
+R2
+!i10b 1
+!s100 Of<3VLPhPi:lEb7E@HlI12
+IX6m>7?_^RJc5>2:2I`W6j0
+R3
+Z9 !s105 ProcessorClockEnabler_altclkctrl_0_v_unit
+S1
+R0
+R4
+Z10 8/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v
+Z11 F/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v
+L0 89
+R5
+r1
+!s85 0
+31
+R6
+Z12 !s107 /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v|
+Z13 !s90 -reportprogress|300|-sv|-work|ProcessorClockEnabler|+incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules|/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v|
+!i113 1
+R7
+Z14 !s92 -sv -work ProcessorClockEnabler +incdir+/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules
+R8
+n@processor@clock@enabler_altclkctrl_0
+vProcessorClockEnabler_altclkctrl_0_sub
+R1
+R2
+!i10b 1
+!s100 bOh62lSa=BNhnAMmgS`Fj0
+Iz7b1QX?1He_`UbnY;Ko9L0
+R3
+R9
+S1
+R0
+R4
+R10
+R11
+L0 28
+R5
+r1
+!s85 0
+31
+R6
+R12
+R13
+!i113 1
+R7
+R14
+R8
+n@processor@clock@enabler_altclkctrl_0_sub
