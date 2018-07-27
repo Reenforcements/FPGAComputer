@@ -26,17 +26,17 @@ parameter BAUD_RATE = 250000;
 logic pause;
 logic gatedClk;
 
-/*
+
 ProcessorClockEnabler pce(
 		.inclk(clk),  //  altclkctrl_input.inclk
 		.ena(~pause),    //                  .ena
 		.outclk(gatedClk) // altclkctrl_output.outclk
 	);
-*/
+/*
 always_comb begin
 	gatedClk = clk;
 end
-
+*/
 
 // UART
 logic [7:0]TX;

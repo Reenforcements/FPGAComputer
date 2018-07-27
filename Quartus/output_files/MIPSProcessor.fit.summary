@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Jul 26 13:30:40 2018
+Fitter Status : Successful - Thu Jul 26 19:22:56 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : MIPSProcessor
 Top-level Entity Name : Main
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 7,615 / 114,480 ( 7 % )
-    Total combinational functions : 7,425 / 114,480 ( 6 % )
-    Dedicated logic registers : 1,789 / 114,480 ( 2 % )
-Total registers : 1789
+Total logic elements : 7,637 / 114,480 ( 7 % )
+    Total combinational functions : 7,465 / 114,480 ( 7 % )
+    Dedicated logic registers : 1,792 / 114,480 ( 2 % )
+Total registers : 1792
 Total pins : 9 / 529 ( 2 % )
 Total virtual pins : 0
 Total memory bits : 2,097,120 / 3,981,312 ( 53 % )

@@ -24,8 +24,16 @@ initial begin
 	clk = 0;
 	clk_pc = 0;
 	unsignedLoad = 0;
+	rst = 0;
+
+	pcAddress = 32'h00000400;
 end
 
+always begin
+#10;
+rst = 1;
+#10000000;
+end
 
 Memory m1(.*);
 
