@@ -1,0 +1,131 @@
+|PS2KeyboardTest
+clk => clk.IN1
+rst => rst.IN1
+PS2_CLK => PS2_CLK.IN1
+PS2_DAT => PS2_DAT.IN1
+PS2_CLK2 => led1.DATAIN
+PS2_DAT2 => led2.DATAIN
+led1 <= PS2_CLK2.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= PS2_DAT2.DB_MAX_OUTPUT_PORT_TYPE
+segMSB[0] <= Output7Seg:seg0.display
+segMSB[1] <= Output7Seg:seg0.display
+segMSB[2] <= Output7Seg:seg0.display
+segMSB[3] <= Output7Seg:seg0.display
+segMSB[4] <= Output7Seg:seg0.display
+segMSB[5] <= Output7Seg:seg0.display
+segMSB[6] <= Output7Seg:seg0.display
+segLSB[0] <= Output7Seg:seg1.display
+segLSB[1] <= Output7Seg:seg1.display
+segLSB[2] <= Output7Seg:seg1.display
+segLSB[3] <= Output7Seg:seg1.display
+segLSB[4] <= Output7Seg:seg1.display
+segLSB[5] <= Output7Seg:seg1.display
+segLSB[6] <= Output7Seg:seg1.display
+
+
+|PS2KeyboardTest|PS2Keyboard:ps2kb
+clk => scanCodeReady~reg0.CLK
+clk => didSetScanCodeReady.CLK
+clk => DEBOUNCED_PS2_CLK.CLK
+clk => debounceCounter[0].CLK
+clk => debounceCounter[1].CLK
+clk => debounceCounter[2].CLK
+clk => debounceCounter[3].CLK
+clk => debounceCounter[4].CLK
+clk => debounceCounter[5].CLK
+clk => debounceCounter[6].CLK
+clk => debounceCounter[7].CLK
+clk => debounceCounter[8].CLK
+clk => debounceCounter[9].CLK
+clk => lastPS2_CLK.CLK
+rst => currentBit[0].ACLR
+rst => currentBit[1].ACLR
+rst => currentBit[2].ACLR
+rst => currentBit[3].ACLR
+rst => currentBit[4].ACLR
+rst => currentBit[5].ACLR
+rst => currentBit[6].ACLR
+rst => currentBit[7].ACLR
+rst => scanCode[0]~reg0.ACLR
+rst => scanCode[1]~reg0.ACLR
+rst => scanCode[2]~reg0.ACLR
+rst => scanCode[3]~reg0.ACLR
+rst => scanCode[4]~reg0.ACLR
+rst => scanCode[5]~reg0.ACLR
+rst => scanCode[6]~reg0.ACLR
+rst => scanCode[7]~reg0.ACLR
+rst => didSetScanCodeReady.ACLR
+rst => DEBOUNCED_PS2_CLK.PRESET
+rst => debounceCounter[0].ACLR
+rst => debounceCounter[1].ACLR
+rst => debounceCounter[2].ACLR
+rst => debounceCounter[3].ACLR
+rst => debounceCounter[4].ACLR
+rst => debounceCounter[5].ACLR
+rst => debounceCounter[6].ACLR
+rst => debounceCounter[7].ACLR
+rst => debounceCounter[8].ACLR
+rst => debounceCounter[9].ACLR
+rst => lastPS2_CLK.ALOAD
+rst => state~3.DATAIN
+rst => scanCodeReady~reg0.ENA
+PS2_CLK => always0.IN1
+PS2_CLK => lastPS2_CLK.ADATA
+PS2_CLK => lastPS2_CLK.DATAIN
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => scanCode.DATAB
+PS2_DAT => Selector0.IN3
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => currentBit_next.OUTPUTSELECT
+PS2_DAT => Selector1.IN1
+scanCode[0] <= scanCode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[1] <= scanCode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[2] <= scanCode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[3] <= scanCode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[4] <= scanCode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[5] <= scanCode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[6] <= scanCode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCode[7] <= scanCode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scanCodeReady <= scanCodeReady~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PS2KeyboardTest|Output7Seg:seg0
+inp[0] => Decoder0.IN3
+inp[1] => Decoder0.IN2
+inp[2] => Decoder0.IN1
+inp[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PS2KeyboardTest|Output7Seg:seg1
+inp[0] => Decoder0.IN3
+inp[1] => Decoder0.IN2
+inp[2] => Decoder0.IN1
+inp[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
