@@ -7708,3 +7708,6 @@ run 1000
 run 1000
 run 1000
 # Scan code ready: cf
+quit -sim
+# End time: 19:12:24 on Jul 29,2018, Elapsed time: 22:58:14
+# Errors: 1, Warnings: 8

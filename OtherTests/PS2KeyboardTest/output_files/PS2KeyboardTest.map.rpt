@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PS2KeyboardTest
-Sun Jul 29 13:17:40 2018
+Sun Jul 29 19:12:33 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 29 13:17:40 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 29 19:12:33 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; PS2KeyboardTest                             ;
 ; Top-level Entity Name              ; PS2KeyboardTest                             ;
@@ -677,7 +677,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 29 13:17:12 2018
+    Info: Processing started: Sun Jul 29 19:12:00 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PS2KeyboardTest -c PS2KeyboardTest
 Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -717,7 +717,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_q4j File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/PS2KeyboardTest/db/cntr_q4j.tdf Line: 25
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.07.29.13:17:30 Progress: Loading sld767d1e55/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.07.29.19:12:21 Progress: Loading sld767d1e55/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -756,10 +756,10 @@ Info (21057): Implemented 1375 device resources after synthesis - the final reso
     Info (21061): Implemented 1333 logic cells
     Info (21064): Implemented 15 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1055 megabytes
-    Info: Processing ended: Sun Jul 29 13:17:40 2018
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 1051 megabytes
+    Info: Processing ended: Sun Jul 29 19:12:33 2018
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:43
 
 
 +------------------------------------------+

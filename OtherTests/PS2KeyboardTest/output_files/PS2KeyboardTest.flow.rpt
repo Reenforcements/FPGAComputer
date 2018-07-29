@@ -1,5 +1,5 @@
 Flow report for PS2KeyboardTest
-Sun Jul 29 13:17:40 2018
+Sun Jul 29 19:12:33 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Jul 29 13:17:40 2018       ;
+; Flow Status                        ; Successful - Sun Jul 29 19:12:33 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; PS2KeyboardTest                             ;
 ; Top-level Entity Name              ; PS2KeyboardTest                             ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/29/2018 13:17:12 ;
+; Start date & time ; 07/29/2018 19:12:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PS2KeyboardTest     ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                             ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-----------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153288463221937                                                       ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 52229457043.153290592023114                                                       ; --            ; --          ; --               ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                                 ; --            ; --          ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                                   ; <None>        ; --          ; --               ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                                              ; --            ; --          ; eda_simulation   ;
@@ -127,8 +127,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 1048 MB             ; 00:00:36                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:36                           ;
+; Analysis & Synthesis ; 00:00:31     ; 1.0                     ; 1047 MB             ; 00:00:41                           ;
+; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
