@@ -9,13 +9,39 @@ output logic [7:0]scanCode,
 output logic scanCodeReady
 );
 
-typedef enum logic [3:0] {
+typedef enum logic [4:0] {
 START,
 BITS,
 PARITY,
-STOP
+STOP,
+BAD
 
 } PS2KeyboardState;
+
+// Debounce
+logic [9:0]debounceCounter;
+logic lastPS2_CLK;
+logic DEBOUNCED_PS2_CLK;
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		lastPS2_CLK <= PS2_CLK;
+		debounceCounter <= 10'd0;
+		DEBOUNCED_PS2_CLK <= 1'b1;
+	end
+	else begin
+		if (lastPS2_CLK != PS2_CLK) begin
+			debounceCounter <= 10'd0;
+			lastPS2_CLK <= PS2_CLK;
+		end
+		else begin
+			debounceCounter <= debounceCounter + 10'd1;
+		end
+		
+		if (debounceCounter == 10'd800) begin
+			DEBOUNCED_PS2_CLK <= lastPS2_CLK;
+		end
+	end
+end
 
 PS2KeyboardState state;
 PS2KeyboardState nextState;
@@ -25,7 +51,7 @@ logic saveBit;
 logic [7:0]currentBit;
 logic [7:0]currentBit_next;
 
-always_ff @ (negedge PS2_CLK or negedge rst) begin
+always_ff @ (negedge DEBOUNCED_PS2_CLK or negedge rst) begin
 	if (rst == 1'b0) begin
 		scanCode <= 8'd0;
 
@@ -40,6 +66,8 @@ always_ff @ (negedge PS2_CLK or negedge rst) begin
 		if (saveBit == 1'b1) begin
 			scanCode[currentBit] <= PS2_DAT;
 		end
+		
+		currentBit <= currentBit_next;
 	end
 end
 
@@ -70,6 +98,9 @@ saveBit = 1'b0;
 		end
 		STOP: begin
 			nextState = START;
+		end
+		default: begin 
+			nextState = BAD;
 		end
 	endcase
 end

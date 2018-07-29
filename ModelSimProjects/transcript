@@ -7556,3 +7556,155 @@ quit -sim
 restart -f
 # No Design Loaded!
 # Load canceled
+vsim -L altera_mf_ver -L cycloneive_ver work.PS2Keyboard_TB
+# vsim -L altera_mf_ver -L cycloneive_ver work.PS2Keyboard_TB 
+# Start time: 20:14:10 on Jul 28,2018
+# Loading sv_std.std
+# Loading work.PS2Keyboard_TB
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2Keyboard_TB.sv failed with 1 errors.
+# Compile of PS2Keyboard_TB.sv was successful.
+run 10000
+run 10000
+add wave -position insertpoint clk
+# (vish-4014) No objects found matching 'clk'.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of ProcessorClockEnabler_altclkctrl_0.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# 28 compiles, 0 failed with no errors.
+restart -f
+# Loading work.PS2Keyboard_TB
+# Loading work.PS2Keyboard
+add wave sim:/PS2Keyboard_TB/*
+run 1000
+# Break key hit
+# Break in Module PS2Keyboard_TB at /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2Keyboard_TB.sv line 105
+# Compile of PS2Keyboard_TB.sv was successful.
+restart -f
+# Loading work.PS2Keyboard_TB
+run 1000
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /PS2Keyboard_TB/ps2kb
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /PS2Keyboard_TB/ps2kb
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of ProcessorClockEnabler_altclkctrl_0.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# 28 compiles, 0 failed with no errors.
+restart -f
+# Loading work.PS2Keyboard_TB
+# Loading work.PS2Keyboard
+run 1000
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /PS2Keyboard_TB/ps2kb
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /PS2Keyboard_TB/ps2kb
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+add wave -position insertpoint /PS2Keyboard_TB/ps2kb/state
+restart -f
+run 1000
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /PS2Keyboard_TB/ps2kb
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(50): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /PS2Keyboard_TB/ps2kb
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+add wave -position insertpoint /PS2Keyboard_TB/ps2kb/currentBit
+# Compile of PS2Keyboard.sv was successful.
+restart -f
+# Loading work.PS2Keyboard
+run 1000
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(52): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Instance: /PS2Keyboard_TB/ps2kb
+# ** Warning: (vsim-8315) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv(52): No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Instance: /PS2Keyboard_TB/ps2kb
+run 1000
+run 1000
+run 1000
+# Compile of PS2Keyboard.sv was successful.
+restart -f
+# Loading work.PS2Keyboard
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+# Compile of PS2Keyboard_TB.sv was successful.
+restart -f
+# Loading work.PS2Keyboard_TB
+run 1000
+run 1000
+run 1000
+# Scan code ready: cf

@@ -32,9 +32,6 @@ always_ff @ (negedge PS2_CLK or negedge rst) begin
 		state <= START;
 
 		currentBit <= 8'd0;
-
-		scanCode <= 8'd0;
-		scanCodeReady <= 1'b0;
 	end
 	else begin
 		state <= nextState;
@@ -43,6 +40,8 @@ always_ff @ (negedge PS2_CLK or negedge rst) begin
 		if (saveBit == 1'b1) begin
 			scanCode[currentBit] <= PS2_DAT;
 		end
+		
+		currentBit <= currentBit_next;
 	end
 end
 
