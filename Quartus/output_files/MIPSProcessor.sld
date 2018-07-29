@@ -3,7 +3,7 @@
     <sld_info hpath="ProcessorClockEnabler:pce" name="pce">
       <assignment_values>
         <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481"/>
-        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532647141"/>
+        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532726084"/>
       </assignment_values>
     </sld_info>
   </sld_infos>

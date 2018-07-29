@@ -97,7 +97,7 @@ always begin
 end
 
 // Send data
-logic [31:0]WORDS_TO_SEND[18] = {
+logic [31:0]WORDS_TO_SEND[28] = {
 // FORCE_RST LOW
 32'h00000000,
 32'h00000005,
@@ -123,15 +123,28 @@ logic [31:0]WORDS_TO_SEND[18] = {
 32'h00000003,
 
 32'h00000400,
-32'h00000420
+32'h00000420,
 
+// A couple NOPs
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+
+
+32'h00000000,
+32'h00000004
 
 };
 logic [31:0]n;
 logic [3:0]g;
 always begin
 	#20;
-	for (n = 0; n < 18; n = n + 1) begin
+	for (n = 0; n < 28; n = n + 1) begin
 		for (g = 0; g < 4; g = (RS232_TX_ready == 1) ? g + 1 : g) begin
 			RS232_TX = WORDS_TO_SEND[n][ (5'(2'd3 - g) * 5'd8)+:8 ];
 			RS232_start_TX = RS232_TX_ready;

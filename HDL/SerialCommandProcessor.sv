@@ -298,9 +298,6 @@ always_comb begin
 	RXDestination = RX_DESTINATION_NONE;
 	RXComplete = WordRX_ready;
 	
-	WordTX_word = TXSource;
-	// Only start if we're waiting for TX to send and WordTX is ready.
-	WordTX_start = waitForTX & WordTX_ready;
 	TXComplete = WordTX_done;
 	TXSource = 32'd0;
 	waitForTX = 1'b0;
@@ -415,6 +412,8 @@ always_comb begin
 					end
 					else if (currentStep == 32'd3) begin
 						// Send the word we read
+						memoryAddress = memory_startAddress + (wordsSent << 32'd2);
+						readFromMemory = 1'b1;
 						TXSource = memoryWordIn;
 						waitForTX = 1'b1;
 					end
@@ -448,6 +447,12 @@ always_comb begin
 			SCP_nextState = SCP_BAD;
 		end
 	endcase
+
+	// ModelSim gave me warnings that WordTX_word and start might be read before written
+	//  so I moved these lines down here.
+	WordTX_word = TXSource;
+	// Only start if we're waiting for TX to send and WordTX is ready.
+	WordTX_start = waitForTX & WordTX_ready;
 end
 
 

@@ -299,7 +299,8 @@ end
 
 // Debug
 always @ (posedge clk or negedge rst) begin
-	//$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
+	//if (rst == 1'b1)
+	//	$display(" [%d](%h) Current instruction: %h, branch %h (%b)", $time, memory_pcAddress, instructionData, pc_newPC, pc_shouldUseNewPC);
 end
 
 // PIPELINE STAGE 0 BELOW (using clocked output from memory)

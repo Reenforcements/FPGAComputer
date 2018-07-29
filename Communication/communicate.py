@@ -7,7 +7,9 @@ commands = {
 "NOP":0,
 "INFO":1,
 "UPLOAD":2,
-"DOWNLOAD":3
+"DOWNLOAD":3,
+"FORCE_RST_HIGH":4,
+"FORCE_RST_LOW":5
 }
 
 parser = ArgumentParser(description="Communicate with the processor uploaded to the FPGA through RS232 serial.")

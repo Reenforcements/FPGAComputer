@@ -97,7 +97,7 @@ always begin
 end
 
 // Send data
-logic [31:0]WORDS_TO_SEND[18] = {
+logic [31:0]WORDS_TO_SEND[28] = {
 // FORCE_RST LOW
 32'h00000000,
 32'h00000005,
@@ -123,8 +123,21 @@ logic [31:0]WORDS_TO_SEND[18] = {
 32'h00000003,
 
 32'h00000400,
-32'h00000420
+32'h00000420,
 
+// A couple NOPs
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+32'h00000000,
+
+
+32'h00000000,
+32'h00000004
 
 };
 logic [31:0]n;
@@ -157,7 +170,7 @@ always begin
 end
 always begin
 	if(RS232_hasRX) begin
-		$display("RX data: %h, %s", RS232_RX, RS232_RX);
+		$display("RX data: hex:%h string:%s", RS232_RX, RS232_RX);
 		#5; 
 	end
 	#5;
