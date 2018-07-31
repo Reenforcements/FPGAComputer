@@ -54,6 +54,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Testing_TB
 
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/ALUDIV1.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/ALUDIV1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALUDIV1
+
+Top level modules:
+	ALUDIV1
+
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package ProcessorPackage
@@ -136,15 +143,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	RS232_TB
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package Main_sv_unit
--- Importing package MemoryModesPackage
--- Compiling module Main
-
-Top level modules:
-	Main
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module RegisterFile_TB
@@ -201,6 +199,16 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Memory
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package ALUFunctCodesPackage
+-- Compiling package ALU_sv_unit
+-- Importing package ALUFunctCodesPackage
+-- Compiling module ALU
+
+Top level modules:
+	ALU
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

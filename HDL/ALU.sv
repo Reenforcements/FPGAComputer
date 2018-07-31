@@ -60,20 +60,43 @@ output logic outputPositive
 );
 
 // Division
-logic [31:0]numer;
-logic [31:0]denom;
-logic [31:0]quotient;
-logic [31:0]remain;
+
+// NOTE: Still need a separate one for unsigned.
+logic [31:0]signed_numer;
+logic [31:0]signed_denom;
+logic [31:0]signed_quotient;
+logic [31:0]signed_remain;
+/*
 lpm_divide #(
 .LPM_PIPELINE(0), 
 .LPM_WIDTHN(32), 
 .LPM_WIDTHD(32), 
 .LPM_NREPRESENTATION("SIGNED"),
 .LPM_DREPRESENTATION("SIGNED"),
-.LPM_HINT("MAXIMIZE_SPEED=9,LPM_PIPELINE=0")
-) divider1(
-	.numer(numer),
-	.denom(denom)
+.MAXIMIZE_SPEED(9)
+) 
+*/
+ALUDIV1 dividersigned(
+	.clock(clk),
+	.numer(signed_numer),
+	.denom(signed_denom),
+	.quotient(signed_quotient),
+	.remain(signed_remain)
+);
+
+logic [31:0]unsigned_numer;
+logic [31:0]unsigned_denom;
+logic [31:0]unsigned_quotient;
+logic [31:0]unsigned_remain;
+ALUDIV1
+#(
+.signParameter("UNSIGNED")
+) dividerunsigned(
+	.clock(clk),
+	.numer(unsigned_numer),
+	.denom(unsigned_denom),
+	.quotient(unsigned_quotient),
+	.remain(unsigned_remain)
 );
 
 
@@ -83,12 +106,17 @@ logic [31:0]loResult;
 logic [31:0]lo;
 logic [31:0]hi;
 
+logic [5:0]funct_d0;
+
 always_ff @(posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		lo <= 32'd0;
 		hi <= 32'd0;
+		funct_d0 <= 6'd0;
 	end
 	else begin
+		funct_d0 <= funct;
+	
 		// Save hi and lo on the clock, but only for certain instructions
 		unique case (funct)
 			MUL,
@@ -96,11 +124,13 @@ always_ff @(posedge clk or negedge rst) begin
 				lo <= loResult;
 				hi <= hiResult;
 			end
+			/*
 			DIV,
 			DIVU: begin
 				lo <= loResult;
 				hi <= hiResult;
 			end
+			*/
 			MTHI: begin
 				hi <= hiResult;
 			end
@@ -109,11 +139,28 @@ always_ff @(posedge clk or negedge rst) begin
 			end
 			default: begin end
 		endcase
+		
+		// Division is pipelined by one.
+		unique case (funct_d0)
+			DIV: begin
+				lo <= signed_quotient;
+				hi <= signed_remain;
+			end
+			DIVU: begin
+				lo <= unsigned_quotient;
+				hi <= unsigned_remain;
+			end
+			default: begin end
+		endcase
 	end
 end
 
 always_comb begin
 	// Make sure result is always driven
+	signed_numer = 32'd0;
+	signed_denom = 32'd0;
+	unsigned_numer = 32'd0;
+	unsigned_denom = 32'd0;
 	result = 32'd0;
 	hiResult = 32'd0;
 	loResult = 32'd0;
@@ -140,13 +187,21 @@ always_comb begin
 			{hiResult, loResult} = 64'(unsigned'(dataIn0)) * 64'(unsigned'(dataIn1));
 		end
 		DIV: begin
-			loResult = signed'(dataIn0) / signed'(dataIn1);
-			hiResult = signed'(dataIn0) - (signed'(loResult)  * signed'(dataIn1));
+			signed_numer = signed'(dataIn0);
+			signed_denom = signed'(dataIn1);
+			//loResult = signed_quotient;
+			//hiResult = signed_remain;
+			//loResult = signed'(dataIn0) / signed'(dataIn1);
+			//hiResult = signed'(dataIn0) - (signed'(loResult)  * signed'(dataIn1));
 			//$display("Division %h / %h : %h %h", signed'(dataIn0), signed'(dataIn1), hiResult, loResult);
 		end
 		DIVU: begin
-			loResult = unsigned'(dataIn0) / unsigned'(dataIn1);
-			hiResult = unsigned'(dataIn0) - (unsigned'(loResult)  * unsigned'(dataIn1));
+			unsigned_numer = unsigned'(dataIn0);
+			unsigned_denom = unsigned'(dataIn1);
+			//loResult = unsigned_quotient;
+			//hiResult = unsigned_remain;
+			//loResult = unsigned'(dataIn0) / unsigned'(dataIn1);
+			//hiResult = unsigned'(dataIn0) - (unsigned'(loResult)  * unsigned'(dataIn1));
 		end
 		
 
@@ -230,10 +285,34 @@ always_comb begin
 
 
 		MFHI: begin
-			result = hi;
+			// In the case of division, the result won't be
+			//  immediately available because of pipelining so
+			//  it will be in hi one cycle late.
+			unique case (funct_d0)
+				DIV: begin
+					result = signed_remain;
+				end
+				DIVU: begin
+					result = unsigned_remain;
+				end
+				default: begin
+					result = hi;
+				end
+			endcase
+			//result = hi;
 		end
 		MFLO: begin
-			result = lo;
+			unique case (funct_d0)
+				DIV: begin
+					result = signed_quotient;
+				end
+				DIVU: begin
+					result = unsigned_quotient;
+				end
+				default: begin
+					result = lo;
+				end
+			endcase
 		end
 		MTHI: begin
 			hiResult = dataIn0;

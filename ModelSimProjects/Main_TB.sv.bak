@@ -22,7 +22,7 @@ logic RS232_txError;
 logic RS232_rxError;
 
 
-logic clk;
+logic clkIn;
 logic rstIn;
 
 logic Main_UART_RXD;
@@ -47,8 +47,8 @@ end
 
 // Read and write using another instance of RS232 so
 //  we don't have to generate the signals ourselves.
-RS232 #(.BAUD_RATE(6250000)) fakeRS232Cable(
- .clk(clk),
+RS232 #(.BAUD_RATE(6250000), .CLOCK_SPEED(50000000)) fakeRS232Cable(
+ .clk(clkIn),
  .rst(rstIn),
 
  .UART_RXD(RS232_UART_RXD),
@@ -70,7 +70,7 @@ RS232 #(.BAUD_RATE(6250000)) fakeRS232Cable(
 );
 
 Main #(.BAUD_RATE(6250000)) main(
- .clk(clk),
+ .clkIn(clkIn),
  .rstIn(rstIn),
 
  .UART_RXD(Main_UART_RXD),
@@ -90,9 +90,9 @@ RS232_UART_RXD = Main_UART_TXD;
 end
 
 always begin
-	clk = 0;
+	clkIn = 0;
 	#5;
-	clk = 1;
+	clkIn = 1;
 	#5;
 end
 
@@ -164,7 +164,7 @@ always begin
 		RS232_TX = WORDS_TO_SEND[n][7:0];
 		RS232_start_TX = 1'b1;
 		#(10 * 8 * 10);*/
-		$display("(%d)Sent word: %h", n, WORDS_TO_SEND[n]);
+		//$display("(%d)Sent word: %h", n, WORDS_TO_SEND[n]);
 	end
 	$display("Done");
 	#200000000;

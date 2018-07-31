@@ -765,3 +765,747 @@ run 200000
 # RX data: hex:22 string:"
 # Done
 # Command is:          4
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv failed with 2 errors.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# 29 compiles, 2 failed with 3 errors.
+restart -f
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(79): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(94): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+run 200000
+# No Design Loaded!
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 19:41:10 on Jul 30,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(79): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(94): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Error loading design
+# End time: 12:13:40 on Jul 31,2018, Elapsed time: 16:32:30
+# Errors: 5, Warnings: 0
+# Load canceled
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 12:14:05 on Jul 31,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(79): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv(94): Instantiation of 'ALUDIV1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main/processor/alu File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Error loading design
+# End time: 12:14:06 on Jul 31,2018, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv failed with 2 errors.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# 30 compiles, 2 failed with 3 errors.
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 12:14:21 on Jul 31,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave -position insertpoint /Main_TB/main/clk
+restart -f
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:          5
+# Command is:          2
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Command is:          3
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+# Done
+# Command is:          4
+add wave -position insertpoint /Main_TB/main/clk
+add wave -position insertpoint /Main_TB/main/clk
+restart -f
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:          5
+# Command is:          2
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Command is:          3
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+# Done
+# Command is:          4
+add wave -position insertpoint /Main_TB/main/clk
+add wave -position insertpoint /Main_TB/main/clk
+# Compile of Main.sv failed with 2 errors.
+# Compile of Main_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 3 compiles, 2 failed with 3 errors.
+# Compile of Main.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors.
+# Compile of Main.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+restart -f
+# Loading work.Main_TB
+# Loading work.Main_sv_unit
+# Loading work.Main
+# ** Error: (vsim-3063) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): Port 'clk' not found in the connected module (1st connection).
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+run 2000000
+# No Design Loaded!
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 12:14:21 on Jul 31,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: (vsim-3063) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): Port 'clk' not found in the connected module (1st connection).
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+# Error loading design
+# End time: 12:19:08 on Jul 31,2018, Elapsed time: 0:04:47
+# Errors: 2, Warnings: 0
+# Compile of Main_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 12:19:24 on Jul 31,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Warning in wave window restart: (vish-4014) No objects found matching '/Main_TB/clk'. 
+vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB
+# End time: 12:19:35 on Jul 31,2018, Elapsed time: 0:00:11
+# Errors: 1, Warnings: 0
+# vsim -L altera_mf_ver -L 220model_ver -L cycloneive_ver -L lpm_ver work.Main_TB 
+# Start time: 12:19:35 on Jul 31,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/Main_TB/*
+add wave -position insertpoint /Main_TB/main/clkIn
+add wave -position insertpoint /Main_TB/main/clk
+restart -f
+run 20000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:  656408576
+run 20000
+# Done
+run 20000
+restart -f
+run 200000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:  656408576
+# Done
+# Compile of RS232.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+restart -f
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.Main_sv_unit
+# Loading work.Main
+run 200000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Done
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# 30 compiles, 1 failed with 1 error.
+restart -f
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+run 200000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:          0
+# Done
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# 30 compiles, 1 failed with 1 error.
+restart -f
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.SerialCommandProcessor
+run 200000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Done
+# Compile of RS232.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+restart -f
+# Loading work.Main_TB
+# Loading work.RS232
+run 200000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
+# Command is:          5
+run 200000
+# Command is:          2
+run 200000
+# Writing to memory: 12345678
+run 200000
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+run 200000
+# Writing to memory: 11112222
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+run 200000
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+run 200000
+# Command is:          3
+run 200000
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+run 200000
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+run 200000
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+run 200000
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+run 200000
+# Done
+# Command is:          4
+run 200000
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+stop
+vsim stop
+# End time: 14:08:26 on Jul 31,2018, Elapsed time: 1:48:51
+# Errors: 0, Warnings: 0
+# vsim stop 
+# Start time: 14:08:26 on Jul 31,2018
+# ** Error: (vsim-3170) Could not find 'stop'.
+#         Searched libraries:
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# Error loading design
+# End time: 14:08:27 on Jul 31,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

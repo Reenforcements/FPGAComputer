@@ -4,7 +4,7 @@ import MemoryModesPackage::*;
 `timescale 1ps / 1ps
 
 module Main(
-input logic clk,
+input logic clkIn,
 input logic rstIn,
 
 input logic UART_RXD,
@@ -19,6 +19,24 @@ output logic LED3
 );
 
 parameter BAUD_RATE = 250000;
+
+logic clk;
+logic [7:0]clkCounter;
+always_ff @ (posedge clkIn or negedge rstIn) begin
+	if (rstIn == 1'b0) begin
+		clk <= 1'b1;
+		clkCounter <= 8'd1;
+	end
+	else begin
+		if (clkCounter == 8'd3) begin
+			clk <= ~clk;
+			clkCounter <= 8'd1;
+		end
+		else begin
+			clkCounter <= clkCounter + 8'd1;
+		end
+	end
+end
 
 // Gate the clock so we can "pause" the processor.
 // Please see https://www.altera.com.cn/zh_CN/pdfs/literature/hb/qts/qts_qii51006.pdf
@@ -76,7 +94,7 @@ always_comb begin
 end
 
 
-RS232 #(.BAUD_RATE(BAUD_RATE)) rs(
+RS232 #(.BAUD_RATE(BAUD_RATE), .CLOCK_SPEED(8333333)) rs(
 	.clk(clk),
 	.rst(rstIn),
 	

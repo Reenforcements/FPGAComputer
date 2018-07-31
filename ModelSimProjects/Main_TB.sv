@@ -22,7 +22,7 @@ logic RS232_txError;
 logic RS232_rxError;
 
 
-logic clk;
+logic clkIn;
 logic rstIn;
 
 logic Main_UART_RXD;
@@ -47,8 +47,8 @@ end
 
 // Read and write using another instance of RS232 so
 //  we don't have to generate the signals ourselves.
-RS232 #(.BAUD_RATE(6250000)) fakeRS232Cable(
- .clk(clk),
+RS232 #(.BAUD_RATE(250000), .CLOCK_SPEED(50000000)) fakeRS232Cable(
+ .clk(clkIn),
  .rst(rstIn),
 
  .UART_RXD(RS232_UART_RXD),
@@ -69,8 +69,8 @@ RS232 #(.BAUD_RATE(6250000)) fakeRS232Cable(
  .rxError(RS232_rxError)
 );
 
-Main #(.BAUD_RATE(6250000)) main(
- .clk(clk),
+Main #(.BAUD_RATE(250000)) main(
+ .clkIn(clkIn),
  .rstIn(rstIn),
 
  .UART_RXD(Main_UART_RXD),
@@ -90,9 +90,9 @@ RS232_UART_RXD = Main_UART_TXD;
 end
 
 always begin
-	clk = 0;
+	clkIn = 0;
 	#5;
-	clk = 1;
+	clkIn = 1;
 	#5;
 end
 

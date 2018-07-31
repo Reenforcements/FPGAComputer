@@ -40,8 +40,9 @@ end
 
 
 // The baud rate can be changed when instantiating the module.
+parameter CLOCK_SPEED = 50000000;
 parameter BAUD_RATE = 9600;
-parameter logic [31:0]TIME_ONE_BIT = 32'd50000000 / BAUD_RATE;
+parameter logic [31:0]TIME_ONE_BIT = CLOCK_SPEED / BAUD_RATE;
 typedef enum logic [3:0] {
 	RX_WAITING,
 	RX_POSSIBLE_START_BIT,
@@ -110,7 +111,7 @@ always_ff @ (posedge clk or negedge rst) begin
 			if (RX_nextState == RX_POSSIBLE_START_BIT || RX_nextState == RX_WAITING) begin
 				// Successful stop condition
 				hasRX <= 1'b1;
-				$display("Successful stop");
+				//$display("Successful stop");
 			end
 		end
 	end
