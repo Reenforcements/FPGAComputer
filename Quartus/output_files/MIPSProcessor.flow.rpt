@@ -1,5 +1,5 @@
 Flow report for MIPSProcessor
-Sat Jul 28 20:40:03 2018
+Mon Jul 30 19:46:37 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jul 28 20:40:03 2018       ;
+; Flow Status                        ; Successful - Mon Jul 30 19:46:37 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 8,676                                       ;
-;     Total combinational functions  ; 7,481                                       ;
-;     Dedicated logic registers      ; 1,794                                       ;
-; Total registers                    ; 1794                                        ;
-; Total pins                         ; 9                                           ;
+; Total logic elements               ; 7,389 / 114,480 ( 6 % )                     ;
+;     Total combinational functions  ; 7,205 / 114,480 ( 6 % )                     ;
+;     Dedicated logic registers      ; 1,790 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 1790                                        ;
+; Total pins                         ; 9 / 529 ( 2 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 2,097,120                                   ;
-; Embedded Multiplier 9-bit elements ; 28                                          ;
-; Total PLLs                         ; 0                                           ;
+; Total memory bits                  ; 524,288 / 3,981,312 ( 13 % )                ;
+; Embedded Multiplier 9-bit elements ; 28 / 532 ( 5 % )                            ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/28/2018 20:39:21 ;
+; Start date & time ; 07/30/2018 19:43:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPSProcessor       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
 ; Assignment Name                     ; Value                                                                   ; Default Value ; Entity Name           ; Section Id           ;
 +-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153282476110085                                             ; --            ; --                    ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 52229457043.153299420527364                                             ; --            ; --                    ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                                                     ; --            ; --                    ; eda_design_synthesis ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                       ; --            ; --                    ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                         ; <None>        ; --                    ; --                   ;
@@ -111,8 +111,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 1031 MB             ; 00:00:52                           ;
-; Total                ; 00:00:40     ; --                      ; --                  ; 00:00:52                           ;
+; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 1025 MB             ; 00:00:47                           ;
+; Fitter               ; 00:02:03     ; 1.0                     ; 1602 MB             ; 00:02:34                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 852 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:16     ; 1.8                     ; 1153 MB             ; 00:00:16                           ;
+; EDA Netlist Writer   ; 00:00:08     ; 1.0                     ; 1143 MB             ; 00:00:08                           ;
+; Total                ; 00:03:09     ; --                      ; --                  ; 00:03:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,6 +126,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
 ; Analysis & Synthesis ; ubuntu           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
+; Fitter               ; ubuntu           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
+; Assembler            ; ubuntu           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
+; Timing Analyzer      ; ubuntu           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
+; EDA Netlist Writer   ; ubuntu           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -129,6 +137,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
+quartus_fit --read_settings_files=off --write_settings_files=off MIPSProcessor -c MIPSProcessor
+quartus_asm --read_settings_files=off --write_settings_files=off MIPSProcessor -c MIPSProcessor
+quartus_sta MIPSProcessor -c MIPSProcessor
+quartus_eda --read_settings_files=off --write_settings_files=off MIPSProcessor -c MIPSProcessor
 
 
 

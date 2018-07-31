@@ -267,7 +267,7 @@ always @ (posedge clk or negedge rst) begin
 					memory_endAddress <= WordRX_word;
 				end	
 				RX_DESTINATION_MEMORY: begin
-					
+					$display("Writing to memory: %h", WordRX_word); 
 				end
 				default: begin
 					// Don't do anything.

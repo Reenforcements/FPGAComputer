@@ -412,6 +412,8 @@ always_comb begin
 					end
 					else if (currentStep == 32'd3) begin
 						// Send the word we read
+						memoryAddress = memory_startAddress + (wordsSent << 32'd2);
+						readFromMemory = 1'b1;
 						TXSource = memoryWordIn;
 						waitForTX = 1'b1;
 					end

@@ -13,19 +13,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Register
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module Main_TB
+-- Compiling module PS2Keyboard
 
 Top level modules:
-	Main_TB
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2Keyboard_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2Keyboard_TB.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module PS2Keyboard_TB
-
-Top level modules:
-	PS2Keyboard_TB
+	PS2Keyboard
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -33,6 +26,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	SerialCommandProcessor
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv {0 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PS2KeyboardMemory
+** Error: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv(75): (vlog-13002) Enum member 'sce_rightalt' does not have unique value.
+** Warning: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv(578): (vlog-2584) there is a matching case item hence not unique 
+
+} {4.0 5.0} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2Keyboard_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2Keyboard_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PS2Keyboard_TB
+
+Top level modules:
+	PS2Keyboard_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -79,6 +85,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Control
 
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Testing
+
+Top level modules:
+	Testing
+
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package Memory_TB_sv_unit
@@ -88,19 +101,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Memory_TB
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Testing.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module Testing
-
-Top level modules:
-	Testing
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/PC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module PC
 
 Top level modules:
 	PC
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RS232
+
+Top level modules:
+	RS232
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -109,12 +122,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ProcessorClockEnabler
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RS232
+-- Compiling module RS232_TB
 
 Top level modules:
-	RS232
+	RS232_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -125,19 +138,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Main
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RS232_TB.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RS232_TB
+-- Compiling module RegisterFile_TB
 
 Top level modules:
-	RS232_TB
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RAM32Bit
-
-Top level modules:
-	RAM32Bit
+	RegisterFile_TB
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Branch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -149,12 +155,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Branch
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv {1 {vlog -work ProcessorTests -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/RegisterFile_TB.sv
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module RegisterFile_TB
+-- Compiling module RAM32Bit
 
 Top level modules:
-	RegisterFile_TB
+	RAM32Bit
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Branch_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Branch_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -172,6 +178,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	SerialCommandProcessor_TB
 
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PS2KeyboardMemory_TB
+
+Top level modules:
+	PS2KeyboardMemory_TB
+
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling package MemoryModesPackage
@@ -181,6 +194,9 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Memory
+
+} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -192,23 +208,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALU
 
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Control_TB.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ALU_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALU_TB
 
 Top level modules:
 	ALU_TB
-
-} {} {}} /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v {1 {vlog -work work -stats=none /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ProcessorClockEnabler_altclkctrl_0_sub
--- Compiling module ProcessorClockEnabler_altclkctrl_0
-
-Top level modules:
-	ProcessorClockEnabler_altclkctrl_0
 
 } {} {}} /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv {1 {vlog -work work -sv -stats=none /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PC_TB.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

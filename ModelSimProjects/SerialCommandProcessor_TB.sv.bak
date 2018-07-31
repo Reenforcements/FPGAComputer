@@ -21,9 +21,11 @@ logic [31:0]memoryAddress;
 logic [31:0]memoryWordOut;
 logic [31:0]memoryWordIn;
 
+logic force_rst;
+
 SerialCommandProcessor scp(.*);
 
-logic [7:0]n
+logic [7:0]n;
 
 initial begin
 	rst = 0;
@@ -120,7 +122,7 @@ always begin
 	#2000;
 	
 	// Eight words
-	for (n = 0; n < 7; n = n + 1) begin
+	for (n = 0; n < 8; n = n + 1) begin
 		// end address
 		RX <= 8'h00;
 		RX_ready <= 1; #10; RX_ready <= 0;
@@ -137,6 +139,7 @@ always begin
 	end
 	// Done uploading
 
+	#40000;
 	// download command
 	// length
 	RX <= 8'h00;
@@ -161,7 +164,7 @@ always begin
 	RX <= 8'h00;
 	RX_ready <= 1; #10; RX_ready <= 0;
 	#2000;
-	RX <= 8'h02;
+	RX <= 8'h03;
 	RX_ready <= 1; #10; RX_ready <= 0;
 	#2000;
 	// start address
@@ -193,7 +196,7 @@ always begin
 
 	#(2000 * 9); 
 	
-
+	$display("Done at time %d", $time);
 	#200000000;
 end
 

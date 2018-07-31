@@ -164,8 +164,9 @@ always begin
 		RS232_TX = WORDS_TO_SEND[n][7:0];
 		RS232_start_TX = 1'b1;
 		#(10 * 8 * 10);*/
-		$display("(%d)Sent word: %h", n, WORDS_TO_SEND[n]);
+		//$display("(%d)Sent word: %h", n, WORDS_TO_SEND[n]);
 	end
+	$display("Done");
 	#200000000;
 end
 always begin

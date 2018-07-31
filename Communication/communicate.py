@@ -1,7 +1,10 @@
+# This program sends/receives individual commands to/from the processor.
+
 import sys
 import serial
 from argparse import *
 import struct
+import time
 
 commands = {
 "NOP":0,
@@ -16,6 +19,8 @@ parser = ArgumentParser(description="Communicate with the processor uploaded to 
 parser.add_argument("command", nargs=1, choices=commands.keys(), action='store')
 parser.add_argument("-i", dest="input", nargs="?", default="input.txt", action='store')
 parser.add_argument("-o", dest="output", nargs="?", default="output.txt", action='store')
+parser.add_argument("-startAddress", type=int, dest="startAddress", nargs="?", default=1024, action='store')
+parser.add_argument("-endAddress", type=int, dest="endAddress", nargs="?", default=65532, action='store')
 
 args = parser.parse_args()
 command = args.command[0]
@@ -53,10 +58,62 @@ if command == "INFO":
 	info = s.read(commandLength)
 	#print("Received: {} bytes".format(len(info)))
 	print(info)
+if command == "UPLOAD":
+	with open(args.input, "r") as f:
+		lines = []
+		for line in f:
+			lines.append(line)
 
+		# Command length / command
+		sendInt(0x00000000)
+		sendInt(commands[command])
 
+		# start/end addresses
+		startAddress = 1024
+		endAddress = startAddress + (4*len(lines))
+		print("Start and end addresses: {} to {}".format(startAddress, endAddress))
+		sendInt(startAddress)
+		sendInt(endAddress)
 
-print("Done.")
+		# data
+		totalSent = 0
+		toSend = (endAddress - startAddress)/4
+		print("Preparing to upload {} words of data...".format(toSend))
+		while totalSent < toSend:
+			sendInt( int(lines[totalSent], 16) )
+			if s.out_waiting > 2000:
+				time.sleep(0.02)
+			totalSent += 1
+			if totalSent % (toSend / 10) == 0:
+				sys.stdout.write("|")
+				sys.stdout.flush()
+		print("")
+		print("Done uploading.")
+
+if command == "DOWNLOAD":
+	# Command length / command
+	sendInt(0x00000000)
+	sendInt(commands[command])
+
+	startAddress = args.startAddress
+	endAddress = args.endAddress
+	print(startAddress)
+	print(endAddress)
+
+	sendInt(startAddress)
+	sendInt(endAddress)
+
+	currentWord = 0
+	total = endAddress - startAddress
+	word = [0,0,0,0]
+	while currentWord < total:
+		curByte = 0
+		while curByte < 4:
+			word[curByte] = s.read(1)
+			curByte += 1
+		print("{:08x}".format( struct.unpack(">I", "".join(word))[0]  ))
+		currentWord = currentWord + 4
+
 s.close()
 sys.exit(0)
 

@@ -265,347 +265,348 @@ always_comb begin
 	secondary = shift;
 	
 	extended_next = extended;
-
-	unique case (ScanCode'(scanCode))
-		sc_1_exclamation: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_1;
-			else
-				asciiCode_next = ascii_exclamation;
-		end
-		sc_2_at: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_2;
-			else
-				asciiCode_next = ascii_at;
-		end
-		sc_3_pound: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_3;
-			else
-				asciiCode_next = ascii_pound;
-		end
-		sc_4_dollar: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_4;
-			else
-				asciiCode_next = ascii_dollarsign;
-		end
-		sc_5_percent: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_5;
-			else
-				asciiCode_next = ascii_percent;
-		end
-		sc_6_caret: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_6;
-			else
-				asciiCode_next = ascii_caret;
-		end
-		sc_7_ampersand: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_7;
-			else
-				asciiCode_next = ascii_ampersand;
-		end
-		sc_8_asterisk: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_8;
-			else
-				asciiCode_next = ascii_asterisk;
-		end
-		sc_9_leftparenthesis: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_9;
-			else
-				asciiCode_next = ascii_leftparenthesis;
-		end
-		sc_0_rightparenthesis: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_0;
-			else
-				asciiCode_next = ascii_rightparenthesis;
-		end
-		sc_dash_underscore: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_dash;
-			else
-				asciiCode_next = ascii_underscore;
-		end
-		sc_plus_equals: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_plus;
-			else
-				asciiCode_next = ascii_equals;
-		end
-		sc_backspace: begin
-			asciiCode_next = ascii_delete;
-		end
-		
-		sc_tab: begin
-			asciiCode_next = ascii_tab;
-		end
-		sc_q_Q: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_q;
-			else
-				asciiCode_next = ascii_Q;
-		end
-		sc_w_W: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_w;
-			else
-				asciiCode_next = ascii_W;
-		end
-		sc_e_E: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_e;
-			else
-				asciiCode_next = ascii_E;
-		end
-		sc_r_R: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_r;
-			else
-				asciiCode_next = ascii_R;
-		end
-		sc_t_T: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_t;
-			else
-				asciiCode_next = ascii_T;
-		end
-		sc_y_Y: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_y;
-			else
-				asciiCode_next = ascii_Y;
-		end
-		sc_u_U: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_u;
-			else
-				asciiCode_next = ascii_U;
-		end
-		sc_i_I: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_i;
-			else
-				asciiCode_next = ascii_I;
-		end
-		sc_o_O: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_o;
-			else
-				asciiCode_next = ascii_O;
-		end
-		sc_p_P: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_p;
-			else
-				asciiCode_next = ascii_P;
-		end
-		sc_leftbracket_leftcurly: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_leftbracket;
-			else
-				asciiCode_next = ascii_leftcurlybrace;
-		end
-		sc_rightbracket_rightcurly: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_rightbracket;
-			else
-				asciiCode_next = ascii_rightcurlybrace;
-		end
-		sc_pipe_backslash: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_pipe;
-			else
-				asciiCode_next = ascii_backslash;
-		end
-		
-		sc_a_A: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_a;
-			else
-				asciiCode_next = ascii_A;
-		end
-		sc_s_S: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_s;
-			else
-				asciiCode_next = ascii_S;
-		end
-		sc_d_D: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_d;
-			else
-				asciiCode_next = ascii_D;
-		end
-		sc_f_F: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_f;
-			else
-				asciiCode_next = ascii_F;
-		end
-		sc_g_G: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_g;
-			else
-				asciiCode_next = ascii_G;
-		end
-		sc_h_H: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_h;
-			else
-				asciiCode_next = ascii_H;
-		end
-		sc_j_J: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_j;
-			else
-				asciiCode_next = ascii_J;
-		end
-		sc_k_K: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_k;
-			else
-				asciiCode_next = ascii_K;
-		end
-		sc_l_L: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_l;
-			else
-				asciiCode_next = ascii_L;
-		end
-		sc_colon_semicolon: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_colon;
-			else
-				asciiCode_next = ascii_semicolon;
-		end
-		sc_doublequote_singlequote: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_doublequote;
-			else
-				asciiCode_next = ascii_singlequote;
-		end
-		sc_enter: begin
-			asciiCode_next = ascii_nl;
-		end
-		
-		sc_z_Z: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_z;
-			else
-				asciiCode_next = ascii_Z;
-		end
-		sc_x_X: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_x;
-			else
-				asciiCode_next = ascii_X;
-		end
-		sc_c_C: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_c;
-			else
-				asciiCode_next = ascii_C;
-		end
-		sc_v_V: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_v;
-			else
-				asciiCode_next = ascii_V;
-		end
-		sc_b_B: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_b;
-			else
-				asciiCode_next = ascii_B;
-		end
-		sc_n_N: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_n;
-			else
-				asciiCode_next = ascii_N;
-		end
-		sc_m_M: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_m;
-			else
-				asciiCode_next = ascii_M;
-		end
-		sc_lessthan_comma: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_lessthan;
-			else
-				asciiCode_next = ascii_comma;
-		end
-		sc_greaterthan_period: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_greaterthan;
-			else
-				asciiCode_next = ascii_period;
-		end
-		sc_questionmark_forwardslash: begin
-			if (secondary != 1'b1)
-				asciiCode_next = ascii_questionmark;
-			else
-				asciiCode_next = ascii_forwardslash;
-		end
-		
-		
-		sc_leftshift: begin
-			shift_next = 1'b1;
-		end	
-		sc_leftctrl: begin
-			ctrl_next = 1'b1;
-		end	
-		sc_leftalt: begin
-			alt_next = 1'b1;
-		end
-		sc_space:begin
-			asciiCode_next = ascii_space;
-		end
-		
-		// Extended
-		// (Two bytes per key code)
-		sc_rightshift: begin
-			shift_next = 1'b1;
-		end
-		sce_rightalt: begin
-			alt_next = 1'b1;
-		end
-		sce_rightctrl: begin
-			ctrl_next = 1'b1;
-		end
-		
-		sce_up: begin
+	if (scanCodeReady == 1'b1) begin
+		unique case (ScanCode'(scanCode))
+			sc_1_exclamation: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_1;
+				else
+					asciiCode_next = ascii_exclamation;
+			end
+			sc_2_at: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_2;
+				else
+					asciiCode_next = ascii_at;
+			end
+			sc_3_pound: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_3;
+				else
+					asciiCode_next = ascii_pound;
+			end
+			sc_4_dollar: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_4;
+				else
+					asciiCode_next = ascii_dollarsign;
+			end
+			sc_5_percent: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_5;
+				else
+					asciiCode_next = ascii_percent;
+			end
+			sc_6_caret: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_6;
+				else
+					asciiCode_next = ascii_caret;
+			end
+			sc_7_ampersand: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_7;
+				else
+					asciiCode_next = ascii_ampersand;
+			end
+			sc_8_asterisk: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_8;
+				else
+					asciiCode_next = ascii_asterisk;
+			end
+			sc_9_leftparenthesis: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_9;
+				else
+					asciiCode_next = ascii_leftparenthesis;
+			end
+			sc_0_rightparenthesis: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_0;
+				else
+					asciiCode_next = ascii_rightparenthesis;
+			end
+			sc_dash_underscore: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_dash;
+				else
+					asciiCode_next = ascii_underscore;
+			end
+			sc_plus_equals: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_plus;
+				else
+					asciiCode_next = ascii_equals;
+			end
+			sc_backspace: begin
+				asciiCode_next = ascii_delete;
+			end
 			
-		end
-		sce_down: begin
+			sc_tab: begin
+				asciiCode_next = ascii_tab;
+			end
+			sc_q_Q: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_q;
+				else
+					asciiCode_next = ascii_Q;
+			end
+			sc_w_W: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_w;
+				else
+					asciiCode_next = ascii_W;
+			end
+			sc_e_E: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_e;
+				else
+					asciiCode_next = ascii_E;
+			end
+			sc_r_R: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_r;
+				else
+					asciiCode_next = ascii_R;
+			end
+			sc_t_T: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_t;
+				else
+					asciiCode_next = ascii_T;
+			end
+			sc_y_Y: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_y;
+				else
+					asciiCode_next = ascii_Y;
+			end
+			sc_u_U: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_u;
+				else
+					asciiCode_next = ascii_U;
+			end
+			sc_i_I: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_i;
+				else
+					asciiCode_next = ascii_I;
+			end
+			sc_o_O: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_o;
+				else
+					asciiCode_next = ascii_O;
+			end
+			sc_p_P: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_p;
+				else
+					asciiCode_next = ascii_P;
+			end
+			sc_leftbracket_leftcurly: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_leftbracket;
+				else
+					asciiCode_next = ascii_leftcurlybrace;
+			end
+			sc_rightbracket_rightcurly: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_rightbracket;
+				else
+					asciiCode_next = ascii_rightcurlybrace;
+			end
+			sc_pipe_backslash: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_pipe;
+				else
+					asciiCode_next = ascii_backslash;
+			end
+			
+			sc_a_A: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_a;
+				else
+					asciiCode_next = ascii_A;
+			end
+			sc_s_S: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_s;
+				else
+					asciiCode_next = ascii_S;
+			end
+			sc_d_D: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_d;
+				else
+					asciiCode_next = ascii_D;
+			end
+			sc_f_F: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_f;
+				else
+					asciiCode_next = ascii_F;
+			end
+			sc_g_G: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_g;
+				else
+					asciiCode_next = ascii_G;
+			end
+			sc_h_H: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_h;
+				else
+					asciiCode_next = ascii_H;
+			end
+			sc_j_J: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_j;
+				else
+					asciiCode_next = ascii_J;
+			end
+			sc_k_K: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_k;
+				else
+					asciiCode_next = ascii_K;
+			end
+			sc_l_L: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_l;
+				else
+					asciiCode_next = ascii_L;
+			end
+			sc_colon_semicolon: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_colon;
+				else
+					asciiCode_next = ascii_semicolon;
+			end
+			sc_doublequote_singlequote: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_doublequote;
+				else
+					asciiCode_next = ascii_singlequote;
+			end
+			sc_enter: begin
+				asciiCode_next = ascii_nl;
+			end
+			
+			sc_z_Z: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_z;
+				else
+					asciiCode_next = ascii_Z;
+			end
+			sc_x_X: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_x;
+				else
+					asciiCode_next = ascii_X;
+			end
+			sc_c_C: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_c;
+				else
+					asciiCode_next = ascii_C;
+			end
+			sc_v_V: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_v;
+				else
+					asciiCode_next = ascii_V;
+			end
+			sc_b_B: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_b;
+				else
+					asciiCode_next = ascii_B;
+			end
+			sc_n_N: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_n;
+				else
+					asciiCode_next = ascii_N;
+			end
+			sc_m_M: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_m;
+				else
+					asciiCode_next = ascii_M;
+			end
+			sc_lessthan_comma: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_lessthan;
+				else
+					asciiCode_next = ascii_comma;
+			end
+			sc_greaterthan_period: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_greaterthan;
+				else
+					asciiCode_next = ascii_period;
+			end
+			sc_questionmark_forwardslash: begin
+				if (secondary != 1'b1)
+					asciiCode_next = ascii_questionmark;
+				else
+					asciiCode_next = ascii_forwardslash;
+			end
+			
+			
+			sc_leftshift: begin
+				shift_next = 1'b1;
+			end	
+			sc_leftctrl: begin
+				ctrl_next = 1'b1;
+			end	
+			sc_leftalt: begin
+				alt_next = 1'b1;
+			end
+			sc_space:begin
+				asciiCode_next = ascii_space;
+			end
+			
+			// Extended
+			// (Two bytes per key code)
+			sc_rightshift: begin
+				shift_next = 1'b1;
+			end
+			sce_rightalt: begin
+				alt_next = 1'b1;
+			end
+			sce_rightctrl: begin
+				ctrl_next = 1'b1;
+			end
+			
+			sce_up: begin
+				
+			end
+			sce_down: begin
+			
+			end
+			sce_left: begin
+			
+			end
+			sce_right: begin
+			
+			end
+			default: begin
+				// Keep the same ascii code we had before.
+			end
+		endcase
 		
+		// Extended scancode?
+		if (scanCode == 8'hE0) begin
+			extended_next = 1'b1;
 		end
-		sce_left: begin
-		
+		// Releasing a key?
+		if (scanCode == 8'hF0) begin
+			keyUp_next = 1'b1;
 		end
-		sce_right: begin
-		
-		end
-		default: begin
-			// Keep the same ascii code we had before.
-		end
-	endcase
-	
-	// Extended scancode?
-	if (scanCode == 8'hE0) begin
-		extended_next = 1'b1;
-	end
-	// Releasing a key?
-	if (scanCode == 8'hF0) begin
-		keyUp_next = 1'b1;
 	end
 end
 
