@@ -97,8 +97,8 @@ if command == "DOWNLOAD":
 
 	startAddress = args.startAddress
 	endAddress = args.endAddress
-	print(startAddress)
-	print(endAddress)
+	#print(startAddress)
+	#print(endAddress)
 
 	sendInt(startAddress)
 	sendInt(endAddress)
@@ -113,6 +113,10 @@ if command == "DOWNLOAD":
 			curByte += 1
 		print("{:08x}".format( struct.unpack(">I", "".join(word))[0]  ))
 		currentWord = currentWord + 4
+
+if command == "FORCE_RST_HIGH" or command == "FORCE_RST_LOW":
+	sendInt(0x00000000)
+	sendInt(commands[command])
 
 s.close()
 sys.exit(0)

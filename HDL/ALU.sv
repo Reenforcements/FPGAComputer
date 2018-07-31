@@ -59,6 +59,24 @@ output logic outputNegative,
 output logic outputPositive
 );
 
+// Division
+logic [31:0]numer;
+logic [31:0]denom;
+logic [31:0]quotient;
+logic [31:0]remain;
+lpm_divide #(
+.LPM_PIPELINE(0), 
+.LPM_WIDTHN(32), 
+.LPM_WIDTHD(32), 
+.LPM_NREPRESENTATION("SIGNED"),
+.LPM_DREPRESENTATION("SIGNED"),
+.LPM_HINT("MAXIMIZE_SPEED=9,LPM_PIPELINE=0")
+) divider1(
+	.numer(numer),
+	.denom(denom)
+);
+
+
 logic carry;
 logic [31:0]hiResult;
 logic [31:0]loResult;
@@ -67,10 +85,10 @@ logic [31:0]hi;
 
 always_ff @(posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-		
+		lo <= 32'd0;
+		hi <= 32'd0;
 	end
-	else
-	begin
+	else begin
 		// Save hi and lo on the clock, but only for certain instructions
 		unique case (funct)
 			MUL,
