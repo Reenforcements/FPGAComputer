@@ -1,3 +1,162 @@
+### 8/1/18
+
+Finished PS2KeyboardMemory and accompanying testbench modules.
+
+
+### 7/31/18
+
+Still having trouble with timing closure. I'm trying turning physical synthesis to "extra" to see if it can be more efficient.
+
+Didn't seem to do anything. The slack is pretty bad too. I might just have to slow down the clock.
+
+I might not be specifying the parameters properly to the lpm_divide instantiations.
+
+I'm trying an LPM divide generated using the megafunction generator.
+
+Didn't help. I think I'll have to slow the processor's clock. Because of how division works with the lo and hi registers though, I think I can get away with pipelining the division by 1 and speeding things up a little.
+
+I slowed the clock down to be 10 Mhz. Now I just need to implement the pipelining for the division results.
+
+Serial broke after I slowed down the clock. I don't know why. Maybe I did it incorrectly.
+
+Ok its mostly working again but now I'm seeing problems in the upload verification. Its having trouble with 8's
+
+I made the processor go a little faster and it seems like its all working now! I'm going to keep working on the keyboard memory module. I might speed up the clock later and just deal with division being super slow. I'm at 8.3 Mhz right now and I can't go any faster with plain clock division.
+
+### 7/30/18
+
+Working on the uploadProgram python script. It will upload, download again to verify, and then run the program.
+
+Fixed the outputHex.py to have a "-d" flag to control debug output. This is because it did debug output by default but I needed clean hex strings to upload.
+
+I think I made a mistake when switching to the RAM megafunction. I need to change the RAM size but also I might need to check the logic that reads from RAM. I was kinda treating the words in the RAM as bytes. I'm working on fixing the addressing scheme.
+
+Ok, now the processor actually has 65536 bytes (or 16384 words) of memory.
+
+Finished the communicate.py and uploadProgram.py programs. I tested the processor on the FPGA for the first time and it mostly worked! It seems to have trouble with division and then one of the branches. I think the division is taking too long for some reason. Its synthesizing an lpm_divide for the division. The timing analyzer seems to take issue with everything involving the divide. I'm not sure I can do a whole division with a 50 Mhz clock. I may try slowing down the clock and running it again to see if it changes anything.
+
+I might be able to speed up the division using the lpm module with certain parameters changed. See [this link](https://www.intel.com/content/dam/altera-www/global/zh_CN/pdfs/literature/ug/ug_lpm_alt_mfug.pdf) and the table within titled `LPM_DIVIDE Megafunction Parameters`.
+
+LPM means library of parameterized modules.
+<br>
+EDA means electronic design automation
+<br>
+[(more info)](https://www.intel.com/content/dam/altera-www/global/en_US/pdfs/literature/catalogs/lpm.pdf)
+
+### 7/29/18
+
+Troubleshooting why the PS2 module is unreliable and seems to give bad data sometimes.
+
+I added a debouncer to the PS2_CLK and it works perfectly!
+
+Starting work on the PS2KeyboardMemory module which will keep track of what keys are pressed/released. It will read in the scan codes and assign 1's or 0's to addresses of memory equivalent to the ascii value of the key. This will be down in the reserved memory area.
+
+### 7/28/18
+
+Working on PS2Keyboard module and testbench.
+
+Got the module and testbench done. I copied some 7 segment display code over from 287 so I could display the keyboard codes. I got it all ready to test but it doesn't work. I used signal tap to view all PS2 signals. I don't think the adapter I bought is working.
+
+It turns out that I DO own a PS2 keyboard. The module appears to work fairly well! I think I may have some timing bugs to work out. I read about the adapter we bought, and I made a mistake:
+**Note: This is a replacement adapter that can only be used with USB keyboards that are both USB and PS/2 compliant. 
+If you keyboard shipped with a similar adapter than this adapter will work with your keyboard. 
+If your keyboard did not ship with a similar adapter than this adapter will not work with your USB keyboard**
+
+
+
+### 7/27/18
+
+Working on finding out why I can't simulate megafunctions. I'm including the right libraries (or at least the libraries with the same names as the required ones.)
+
+Ok, so I tried rerunning things with altera_mf_ver itself and it worked. altera_mf is VHDL and altera_mf_ver is **ver**ilog. I guess I needed that one?
+
+I researched the PS/2 keyboard protocol a little bit more. [Info here.](http://pcbheaven.com/wikipages/The_PS2_protocol/) [This one too.](http://www.jkmicro.com/ps2keyboard_en.pdf)
+
+Tested the serial communication on the board. It seems that reading from and writing to memory works. So does setting the reset high and low. Also the info.
+
+
+### 7/26/18
+
+Wrote the code for uploading and downloading. Also added a force_rst line so the reset signal can be controllled serially. The force_rst doesn't control the Memory module however, so we're still free to use that while the rest of the processor is in reset mode. Now I'm going to write ModelSim code to test everything.
+
+I need to make a python program to convert data to a format that ModelSim can read to generate RXD/TXD signals. This is so I can test Main.sv.
+
+Never mind. I decided to just instantiate another RS232 instance to generate the RX/TX signals. Neat.
+
+Things were going great, but now ModelSim isn't simulating my RAM for some reason. It gives x's and z's as outputs for some reason. I don't know why.
+
+I went back to an old commit when the memory worked and its not working there either. 
+
+### 7/25/18
+
+Not happy with how I'm coding the serial command module. I'm going to redo it with more proper state machines.
+
+Going much better this time around! Code is much cleaner too.
+
+Still going great. I'm compiling over and over to catch coding errors.
+
+My SystemVerilog seems like its being evaluated incorrectly. I have a constant assignment in a combinatorial block that's not being overwritten by an assignment further down for some reason. Maybe SystemVerilog behaves differently.
+
+Here's what I learned.
+```
+TXSource = 32'd0;
+WordTX_word = TXSource;
+...
+TXSource = 32'd123;
+// WordTX_word is still zero!
+```
+versus
+```
+WordTX_word = TXSource;
+TXSource = 32'd0;
+...
+TXSource = 32'd123;
+// WordTX_word is 123 like it should be!
+```
+[A related Stackoverflow answer](https://electronics.stackexchange.com/questions/343041/systemverilog-sensitivity-list-of-always-comb)
+
+
+INFO command works again. Now to do the memory commands.
+
+
+### 7/24/18
+
+Struggling with the sending/receiving word code. I'm having a hard time thinking today.
+
+I got the info command working.
+
+### 7/23/18
+
+Apparently what I want for being able to "pause" my processor is a gated clock. [This Altera document helped me.](https://www.altera.com.cn/zh_CN/pdfs/literature/hb/qts/qts_qii51006.pdf)
+
+I implemented a gated clock. The design takes forever to compile now for some reason. I might try changing the settings to make it optimize less because I have plenty of FPGA space. I wonder if that will mess with timing and make the design fail timing requirements though.
+
+There's an IP core for clock control that I might be able to use. Gating clocks can be sketchy and this would be a good alternative.
+
+I replaced my clock gate with Altera's core.
+
+### 7/22/18
+
+I looked at data packing/unpacking in Python for working with raw data. I'm working on the module for serial commands and its going well.
+
+Made a small Python program to turn a string into a Verilog byte array so I can have an info string.
+
+Quartus is synthesizing away important aspects to my design. Some of my code must be wrong somewhere. Somewhere down the line Quartus must be deciding that the whole path is worthless. It doesn't know that I'm going to be reading and writing to this thing through serial I guess. Its even optimizing away either a huge chunk of my RAM or the whole thing. 
+
+Assigning a single bit of RAM output to an IO pin seemed to stop the RAM from being synthesized away. It still thinks that the RS232 input has no purpose.
+
+Now it thinks the received command is a clock for some reason. Something is really wrong here. Synthesis is a whole different world from ModelSim.
+
+I'll probably do away with the pause line (at least in the processor) and just have two clocks that go to the processor: clk, and memory_clk.
+
+### 7/21/18
+
+Working on SystemVerilog module for serial commands including RAM reading/writing.
+
+### 7/20/18
+
+Removed giant Logic Tap file preventing me from uploading my changes to Github.
+
 ### 7/19/18
 
 I synchonized the inputs, which is something that I think needed to be done. I saw a glitch in one of my graphs where a timer wasn't being reset. I don't know how else to explain it if not with a glitch.
