@@ -11,11 +11,11 @@ clkIn => clk.CLK
 rstIn => rstIn.IN3
 UART_RXD => UART_RXD.IN1
 UART_CTS => UART_CTS.IN1
-UART_RTS <= RS232:rs.UART_RTS
-UART_TXD <= RS232:rs.UART_TXD
-LED1 <= rstIn.DB_MAX_OUTPUT_PORT_TYPE
-LED2 <= SerialCommandProcessor:serialCP.force_rst
-LED3 <= rst.DB_MAX_OUTPUT_PORT_TYPE
+UART_RTS << RS232:rs.UART_RTS
+UART_TXD << RS232:rs.UART_TXD
+LED1 << rstIn.DB_MAX_OUTPUT_PORT_TYPE
+LED2 << SerialCommandProcessor:serialCP.force_rst
+LED3 << rst.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|ProcessorClockEnabler:pce
