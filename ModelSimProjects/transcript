@@ -1,169 +1,77 @@
 # Loading project ProcessorTests
-# Compile of ALU.sv was successful.
-# Compile of Memory.sv was successful.
-# Compile of Processor.sv was successful.
-# Compile of Processor_TB.sv was successful.
-# Compile of RAM32Bit.v was successful.
-# Compile of RS232.sv was successful.
-# Compile of SerialCommandProcessor.sv was successful.
-# Compile of SerialCommandProcessor_TB.sv was successful.
-# Compile of Main.sv was successful.
-# Compile of Main_TB.sv was successful.
-# Compile of PS2Keyboard.sv was successful.
-# Compile of PS2Keyboard_TB.sv was successful.
-# Compile of PS2KeyboardMemory.sv failed with 1 errors.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of ALUDIV1.v was successful.
-# 15 compiles, 1 failed with 1 error.
-# Compile of PS2KeyboardMemory.sv failed with 1 errors.
-# Error opening /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vlog-13069) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv
-# Path name '/home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/(vlog-13069) /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv' doesn't exist.
-# Compile of PS2KeyboardMemory.sv failed with 1 errors.
-# Compile of PS2KeyboardMemory.sv failed with 4 errors.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-vsim work.PS2KeyboardMemory_TB
-# vsim work.PS2KeyboardMemory_TB 
-# Start time: 14:34:02 on Aug 01,2018
+vsim work.PS2Keyboard_TB
+# vsim work.PS2Keyboard_TB 
+# Start time: 12:24:49 on Aug 02,2018
 # Loading sv_std.std
-# Loading work.PS2KeyboardMemoryCodes
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-# Loading work.PS2KeyboardMemory_sv_unit
-# Loading work.PS2KeyboardMemory
-add wave sim:/PS2KeyboardMemory_TB/*
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/keyMemory
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# 2 compiles, 0 failed with no errors.
+# Loading work.PS2Keyboard_TB
+# Loading work.PS2Keyboard
 restart -f
-# Loading work.PS2KeyboardMemoryCodes
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-# Loading work.PS2KeyboardMemory_sv_unit
-# Loading work.PS2KeyboardMemory
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+add wave sim:/PS2Keyboard_TB/*
+run 20000
+run 20000
+run 20000
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Pressing scan code: 1c
-# Pressing scan code: 1c
-# Pressing scan code: 1c
-# Pressing scan code: 1c
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard_TB
+run 20000
+# Done
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+run 2000
+run 2000
+# Done
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+run 2500
+# Done
+add wave -position insertpoint /PS2Keyboard_TB/ps2kb/state
+# Compile of PS2Keyboard.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv failed with 1 errors.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory.sv was successful.
+# Loading work.PS2Keyboard
+run 2500
+# Done
+add wave -position insertpoint /PS2Keyboard_TB/ps2kb/PS2_CLK_LAST
 restart -f
-# Loading work.PS2KeyboardMemoryCodes
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-# Loading work.PS2KeyboardMemory_sv_unit
-# Loading work.PS2KeyboardMemory
-run 200
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/shift
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/ctrl
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/alt
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/extended
-add wave -position insertpoint /PS2KeyboardMemory_TB/sp2kbm/keyUp
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+run 2500
+# Done
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard_TB
+run 2500
+# Done
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Compile of PS2KeyboardMemory.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# 2 compiles, 0 failed with no errors.
+# Loading work.PS2Keyboard_TB
+run 2500
+# Done
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemoryCodes
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-# Loading work.PS2KeyboardMemory_sv_unit
-# Loading work.PS2KeyboardMemory
-run 200
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard_TB
+run 2500
+# Done
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Successful key value.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard_TB
+run 2500
+# Done
+# Compile of PS2Keyboard.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Successful key value.
-# Successful key value.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard
+run 2500
+# Scan code ready: cf
+# Done
+# Compile of PS2Keyboard_TB.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Successful key value for 061
-# Successful key value for 061
-# Successful key value for 0cb
-# Successful key value for 0cb
-# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Loading work.PS2Keyboard_TB
+run 2500
+# Scan code ready: cf
+# Done
+# Compile of PS2Keyboard.sv was successful.
 restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Successful key value for 061
-# Successful key value for 061
-# Successful key value for 041
-# Successful key value for 0cb
-# Successful key value for 0cb
-# Compile of PS2KeyboardMemory_TB.sv failed with 2 errors.
-# Compile of PS2KeyboardMemory_TB.sv failed with 2 errors.
-# Compile of PS2KeyboardMemory_TB.sv failed with 1 errors.
-# Compile of PS2KeyboardMemory_TB.sv failed with 2 errors.
-# Compile of PS2KeyboardMemory_TB.sv was successful.
-restart -f
-# Loading work.PS2KeyboardMemory_TB_sv_unit
-# Loading work.PS2KeyboardMemory_TB
-run 200
-# Successful key value for 061
-# Successful key value for 061
-# Successful key value for 041
-# Successful key value for 0cb
-# Successful key value for 0cb
-run 200
-# Successful key value for 0c1
-# Successful key value for 0c1
-run 200
+# Loading work.PS2Keyboard
+run 2500
+# Scan code ready: cf
+# Done
+# Compile of PS2Keyboard.sv failed with 4 errors.
+# Compile of PS2Keyboard.sv was successful.
+quit
+# End time: 13:05:15 on Aug 02,2018, Elapsed time: 0:40:26
+# Errors: 0, Warnings: 0

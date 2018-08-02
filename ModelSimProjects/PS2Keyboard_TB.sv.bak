@@ -9,7 +9,7 @@ module PS2Keyboard_TB;
  logic [7:0]scanCode;
  logic scanCodeReady;
 
-PS2Keyboard ps2kb(.*);
+PS2Keyboard #(.COUNT_DURATION_LOW(7), .COUNT_DURATION_IDLE(12)) ps2kb(.*);
 
 initial begin
 	clk = 0;
@@ -98,6 +98,21 @@ always begin
 	PS2_DAT = 1;
 	#100;
 
+	// parity/stop
+	PS2_CLK = 1;
+	PS2_DAT = 1;
+	#100;
+	PS2_CLK = 0;
+	PS2_DAT = 1;
+	#100;
+	PS2_CLK = 1;
+	PS2_DAT = 1;
+	#100;
+	PS2_CLK = 0;
+	PS2_DAT = 1;
+	#100;
+
+	$display("Done");
 	#2000000;
 end
 

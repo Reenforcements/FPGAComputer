@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="510279587da531e8f5a9"/>
+    <hash md5_digest_80b="3d48527de6f10f77a567"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="MIPSProcessor.sof" usercode="0xFFFFFFFF"/>
@@ -9,7 +9,7 @@
     <sld_info hpath="ProcessorClockEnabler:pce" name="pce">
       <assignment_values>
         <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481"/>
-        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533061118"/>
+        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533167063"/>
       </assignment_values>
       <parameters/>
     </sld_info>

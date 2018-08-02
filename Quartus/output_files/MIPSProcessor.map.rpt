@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSProcessor
-Tue Jul 31 14:19:06 2018
+Wed Aug  1 19:45:12 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -19,34 +19,42 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
  11. State Machine - |Main|SerialCommandProcessor:serialCP|SCP_state
  12. State Machine - |Main|SerialCommandProcessor:serialCP|WordRX_state
  13. State Machine - |Main|SerialCommandProcessor:serialCP|WordTX_state
- 14. State Machine - |Main|RS232:rs|TX_state
- 15. State Machine - |Main|RS232:rs|RX_state
- 16. Registers Removed During Synthesis
- 17. General Register Statistics
- 18. Inverted Register Statistics
- 19. Multiplexer Restructuring Statistics (Restructuring Performed)
- 20. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider
- 21. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|alt_u_div_nrf:divider
- 22. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider
- 23. Source assignments for Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated
- 24. Parameter Settings for User Entity Instance: Top-level Entity: |Main
- 25. Parameter Settings for User Entity Instance: RS232:rs
- 26. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividersigned
- 27. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component
- 28. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividerunsigned
- 29. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component
- 30. Parameter Settings for User Entity Instance: Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component
- 31. Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult0
- 32. Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult1
- 33. altsyncram Parameter Settings by Entity Instance
- 34. lpm_mult Parameter Settings by Entity Instance
- 35. Port Connectivity Checks: "Processor:processor|Memory:mem|RAM32Bit:ram"
- 36. Port Connectivity Checks: "Processor:processor"
- 37. Port Connectivity Checks: "RS232:rs"
- 38. Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component"
- 39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Elapsed Time Per Partition
- 41. Analysis & Synthesis Messages
+ 14. State Machine - |Main|Processor:processor|PS2Keyboard:ps2kb|state
+ 15. State Machine - |Main|RS232:rs|TX_state
+ 16. State Machine - |Main|RS232:rs|RX_state
+ 17. Registers Removed During Synthesis
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Registers Added for RAM Pass-Through Logic
+ 21. Registers Packed Into Inferred Megafunctions
+ 22. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 23. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider
+ 24. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|alt_u_div_nrf:divider
+ 25. Source assignments for Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider
+ 26. Source assignments for Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated
+ 27. Source assignments for Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0|altsyncram_2dc1:auto_generated
+ 28. Parameter Settings for User Entity Instance: Top-level Entity: |Main
+ 29. Parameter Settings for User Entity Instance: RS232:rs
+ 30. Parameter Settings for User Entity Instance: Processor:processor
+ 31. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividersigned
+ 32. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component
+ 33. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividerunsigned
+ 34. Parameter Settings for User Entity Instance: Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component
+ 35. Parameter Settings for User Entity Instance: Processor:processor|PS2Keyboard:ps2kb
+ 36. Parameter Settings for User Entity Instance: Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component
+ 37. Parameter Settings for Inferred Entity Instance: Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0
+ 38. Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult1
+ 39. Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult0
+ 40. altsyncram Parameter Settings by Entity Instance
+ 41. lpm_mult Parameter Settings by Entity Instance
+ 42. Port Connectivity Checks: "Processor:processor|Memory:mem|RAM32Bit:ram"
+ 43. Port Connectivity Checks: "Processor:processor"
+ 44. Port Connectivity Checks: "RS232:rs"
+ 45. Port Connectivity Checks: "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
+ 49. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -72,18 +80,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 31 14:19:06 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug  1 19:45:12 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 8,616                                       ;
-;     Total combinational functions  ; 7,417                                       ;
-;     Dedicated logic registers      ; 1,967                                       ;
-; Total registers                    ; 1967                                        ;
-; Total pins                         ; 9                                           ;
+; Total logic elements               ; 9,038                                       ;
+;     Total combinational functions  ; 7,835                                       ;
+;     Dedicated logic registers      ; 2,033                                       ;
+; Total registers                    ; 2033                                        ;
+; Total pins                         ; 67                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 524,288                                     ;
+; Total memory bits                  ; 524,543                                     ;
 ; Embedded Multiplier 9-bit elements ; 16                                          ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -190,7 +198,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -199,6 +207,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
 ; File Name with User-Entered Path                                                ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                ; Library               ;
 +---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
+; ../HDL/PS2KeyboardMemory.sv                                                     ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv                                                                ;                       ;
+; ../HDL/PS2Keyboard.sv                                                           ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv                                                                      ;                       ;
 ; ../HDL/SerialCommandProcessor.sv                                                ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv                                                           ;                       ;
 ; ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v                         ; yes             ; User Verilog HDL File        ; /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v                         ; ProcessorClockEnabler ;
 ; ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v ; yes             ; User Verilog HDL File        ; /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v ; ProcessorClockEnabler ;
@@ -212,6 +222,7 @@ refer to the applicable agreement for further details.
 ; ../HDL/Processor.sv                                                             ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv                                                                        ;                       ;
 ; RAM32Bit.v                                                                      ; yes             ; User Wizard-Generated File   ; /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v                                                                      ;                       ;
 ; ../HDL/Main.sv                                                                  ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv                                                                             ;                       ;
+; ../HDL/Output7Seg.sv                                                            ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/Output7Seg.sv                                                                       ;                       ;
 ; ALUDIV1.v                                                                       ; yes             ; User Wizard-Generated File   ; /home/imaustyn/Desktop/FPGAComputer/Quartus/ALUDIV1.v                                                                       ;                       ;
 ; lpm_divide.tdf                                                                  ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/lpm_divide.tdf                                           ;                       ;
 ; abs_divider.inc                                                                 ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/abs_divider.inc                                          ;                       ;
@@ -236,13 +247,14 @@ refer to the applicable agreement for further details.
 ; db/altsyncram_gni2.tdf                                                          ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_gni2.tdf                                                          ;                       ;
 ; db/decode_jsa.tdf                                                               ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/decode_jsa.tdf                                                               ;                       ;
 ; db/mux_gob.tdf                                                                  ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mux_gob.tdf                                                                  ;                       ;
+; db/altsyncram_2dc1.tdf                                                          ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_2dc1.tdf                                                          ;                       ;
 ; lpm_mult.tdf                                                                    ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/lpm_mult.tdf                                             ;                       ;
 ; lpm_add_sub.inc                                                                 ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;                       ;
 ; multcore.inc                                                                    ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/multcore.inc                                             ;                       ;
 ; bypassff.inc                                                                    ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/bypassff.inc                                             ;                       ;
 ; altshift.inc                                                                    ; yes             ; Megafunction                 ; /home/imaustyn/intelFPGA_lite/18.0/quartus/libraries/megafunctions/altshift.inc                                             ;                       ;
-; db/mult_46t.tdf                                                                 ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_46t.tdf                                                                 ;                       ;
 ; db/mult_7dt.tdf                                                                 ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_7dt.tdf                                                                 ;                       ;
+; db/mult_46t.tdf                                                                 ; yes             ; Auto-Generated Megafunction  ; /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_46t.tdf                                                                 ;                       ;
 +---------------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 
@@ -251,31 +263,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 8,616                                                                                                                                                                                  ;
+; Estimated Total logic elements              ; 9,038                                                                                                                                                                                  ;
 ;                                             ;                                                                                                                                                                                        ;
-; Total combinational functions               ; 7417                                                                                                                                                                                   ;
+; Total combinational functions               ; 7835                                                                                                                                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                                                                                        ;
-;     -- 4 input functions                    ; 4186                                                                                                                                                                                   ;
-;     -- 3 input functions                    ; 2631                                                                                                                                                                                   ;
-;     -- <=2 input functions                  ; 600                                                                                                                                                                                    ;
+;     -- 4 input functions                    ; 4470                                                                                                                                                                                   ;
+;     -- 3 input functions                    ; 2674                                                                                                                                                                                   ;
+;     -- <=2 input functions                  ; 691                                                                                                                                                                                    ;
 ;                                             ;                                                                                                                                                                                        ;
 ; Logic elements by mode                      ;                                                                                                                                                                                        ;
-;     -- normal mode                          ; 5633                                                                                                                                                                                   ;
-;     -- arithmetic mode                      ; 1784                                                                                                                                                                                   ;
+;     -- normal mode                          ; 5987                                                                                                                                                                                   ;
+;     -- arithmetic mode                      ; 1848                                                                                                                                                                                   ;
 ;                                             ;                                                                                                                                                                                        ;
-; Total registers                             ; 1967                                                                                                                                                                                   ;
-;     -- Dedicated logic registers            ; 1967                                                                                                                                                                                   ;
+; Total registers                             ; 2033                                                                                                                                                                                   ;
+;     -- Dedicated logic registers            ; 2033                                                                                                                                                                                   ;
 ;     -- I/O registers                        ; 0                                                                                                                                                                                      ;
 ;                                             ;                                                                                                                                                                                        ;
-; I/O pins                                    ; 9                                                                                                                                                                                      ;
-; Total memory bits                           ; 524288                                                                                                                                                                                 ;
+; I/O pins                                    ; 67                                                                                                                                                                                     ;
+; Total memory bits                           ; 524543                                                                                                                                                                                 ;
 ;                                             ;                                                                                                                                                                                        ;
 ; Embedded Multiplier 9-bit elements          ; 16                                                                                                                                                                                     ;
 ;                                             ;                                                                                                                                                                                        ;
 ; Maximum fan-out node                        ; ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component|wire_clkctrl1_outclk ;
-; Maximum fan-out                             ; 1616                                                                                                                                                                                   ;
-; Total fan-out                               ; 34807                                                                                                                                                                                  ;
-; Average fan-out                             ; 3.67                                                                                                                                                                                   ;
+; Maximum fan-out                             ; 1665                                                                                                                                                                                   ;
+; Total fan-out                               ; 36562                                                                                                                                                                                  ;
+; Average fan-out                             ; 3.63                                                                                                                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -284,9 +296,11 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+-----------------------+
 ; Compilation Hierarchy Node                                                                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                             ; Entity Name                            ; Library Name          ;
 +----------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+-----------------------+
-; |Main                                                                                              ; 7417 (17)           ; 1967 (9)                  ; 524288      ; 16           ; 0       ; 8         ; 9    ; 0            ; |Main                                                                                                                                                                                           ; Main                                   ; work                  ;
-;    |Processor:processor|                                                                           ; 6721 (387)          ; 1561 (288)                ; 524288      ; 16           ; 0       ; 8         ; 0    ; 0            ; |Main|Processor:processor                                                                                                                                                                       ; Processor                              ; work                  ;
-;       |ALU:alu|                                                                                    ; 4343 (1700)         ; 232 (70)                  ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu                                                                                                                                                               ; ALU                                    ; work                  ;
+; |Main                                                                                              ; 7835 (17)           ; 2033 (9)                  ; 524543      ; 16           ; 0       ; 8         ; 67   ; 0            ; |Main                                                                                                                                                                                           ; Main                                   ; work                  ;
+;    |Output7Seg:display_seg0|                                                                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Output7Seg:display_seg0                                                                                                                                                                   ; Output7Seg                             ; work                  ;
+;    |Output7Seg:display_seg1|                                                                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Output7Seg:display_seg1                                                                                                                                                                   ; Output7Seg                             ; work                  ;
+;    |Processor:processor|                                                                           ; 7073 (582)          ; 1627 (296)                ; 524543      ; 16           ; 0       ; 8         ; 0    ; 0            ; |Main|Processor:processor                                                                                                                                                                       ; Processor                              ; work                  ;
+;       |ALU:alu|                                                                                    ; 4369 (1718)         ; 232 (70)                  ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu                                                                                                                                                               ; ALU                                    ; work                  ;
 ;          |ALUDIV1:dividersigned|                                                                   ; 1354 (0)            ; 82 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned                                                                                                                                         ; ALUDIV1                                ; work                  ;
 ;             |lpm_divide:LPM_DIVIDE_component|                                                      ; 1354 (0)            ; 82 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component                                                                                                         ; lpm_divide                             ; work                  ;
 ;                |lpm_divide_d0v:auto_generated|                                                     ; 1354 (0)            ; 82 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated                                                                           ; lpm_divide_d0v                         ; work                  ;
@@ -295,11 +309,11 @@ refer to the applicable agreement for further details.
 ;                         |add_sub_8pc:add_sub_1|                                                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|alt_u_div_nrf:divider|add_sub_8pc:add_sub_1       ; add_sub_8pc                            ; work                  ;
 ;                      |lpm_abs_i0a:my_abs_den|                                                      ; 65 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|lpm_abs_i0a:my_abs_den                            ; lpm_abs_i0a                            ; work                  ;
 ;                      |lpm_abs_i0a:my_abs_num|                                                      ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|lpm_abs_i0a:my_abs_num                            ; lpm_abs_i0a                            ; work                  ;
-;          |ALUDIV1:dividerunsigned|                                                                 ; 1118 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned                                                                                                                                       ; ALUDIV1                                ; work                  ;
-;             |lpm_divide:LPM_DIVIDE_component|                                                      ; 1118 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component                                                                                                       ; lpm_divide                             ; work                  ;
-;                |lpm_divide_jev:auto_generated|                                                     ; 1118 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated                                                                         ; lpm_divide_jev                         ; work                  ;
-;                   |sign_div_unsign_q8i:divider|                                                    ; 1118 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider                                             ; sign_div_unsign_q8i                    ; work                  ;
-;                      |alt_u_div_nrf:divider|                                                       ; 1118 (1117)         ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider                       ; alt_u_div_nrf                          ; work                  ;
+;          |ALUDIV1:dividerunsigned|                                                                 ; 1126 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned                                                                                                                                       ; ALUDIV1                                ; work                  ;
+;             |lpm_divide:LPM_DIVIDE_component|                                                      ; 1126 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component                                                                                                       ; lpm_divide                             ; work                  ;
+;                |lpm_divide_jev:auto_generated|                                                     ; 1126 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated                                                                         ; lpm_divide_jev                         ; work                  ;
+;                   |sign_div_unsign_q8i:divider|                                                    ; 1126 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider                                             ; sign_div_unsign_q8i                    ; work                  ;
+;                      |alt_u_div_nrf:divider|                                                       ; 1126 (1125)         ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider                       ; alt_u_div_nrf                          ; work                  ;
 ;                         |add_sub_8pc:add_sub_1|                                                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc                            ; work                  ;
 ;          |lpm_mult:Mult0|                                                                          ; 92 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|lpm_mult:Mult0                                                                                                                                                ; lpm_mult                               ; work                  ;
 ;             |mult_46t:auto_generated|                                                              ; 92 (92)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|lpm_mult:Mult0|mult_46t:auto_generated                                                                                                                        ; mult_46t                               ; work                  ;
@@ -307,7 +321,7 @@ refer to the applicable agreement for further details.
 ;             |mult_7dt:auto_generated|                                                              ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |Main|Processor:processor|ALU:alu|lpm_mult:Mult1|mult_7dt:auto_generated                                                                                                                        ; mult_7dt                               ; work                  ;
 ;       |Branch:branch|                                                                              ; 40 (40)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Branch:branch                                                                                                                                                         ; Branch                                 ; work                  ;
 ;       |Control:control|                                                                            ; 65 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Control:control                                                                                                                                                       ; Control                                ; work                  ;
-;       |Memory:mem|                                                                                 ; 397 (328)           ; 10 (6)                    ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem                                                                                                                                                            ; Memory                                 ; work                  ;
+;       |Memory:mem|                                                                                 ; 307 (238)           ; 10 (6)                    ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem                                                                                                                                                            ; Memory                                 ; work                  ;
 ;          |RAM32Bit:ram|                                                                            ; 69 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram                                                                                                                                               ; RAM32Bit                               ; work                  ;
 ;             |altsyncram:altsyncram_component|                                                      ; 69 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component                                                                                                               ; altsyncram                             ; work                  ;
 ;                |altsyncram_gni2:auto_generated|                                                    ; 69 (1)              ; 4 (4)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated                                                                                ; altsyncram_gni2                        ; work                  ;
@@ -315,24 +329,29 @@ refer to the applicable agreement for further details.
 ;                   |decode_jsa:rden_decode_a|                                                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|decode_jsa:rden_decode_a                                                       ; decode_jsa                             ; work                  ;
 ;                   |mux_gob:mux4|                                                                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|mux_gob:mux4                                                                   ; mux_gob                                ; work                  ;
 ;                   |mux_gob:mux5|                                                                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|mux_gob:mux5                                                                   ; mux_gob                                ; work                  ;
-;       |PC:pc|                                                                                      ; 151 (151)           ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PC:pc                                                                                                                                                                 ; PC                                     ; work                  ;
+;       |PC:pc|                                                                                      ; 152 (152)           ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PC:pc                                                                                                                                                                 ; PC                                     ; work                  ;
+;       |PS2Keyboard:ps2kb|                                                                          ; 48 (48)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PS2Keyboard:ps2kb                                                                                                                                                     ; PS2Keyboard                            ; work                  ;
+;       |PS2KeyboardMemory:ps2kbm|                                                                   ; 172 (172)           ; 26 (26)                   ; 255         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PS2KeyboardMemory:ps2kbm                                                                                                                                              ; PS2KeyboardMemory                      ; work                  ;
+;          |altsyncram:keyMemory_rtl_0|                                                              ; 0 (0)               ; 0 (0)                     ; 255         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0                                                                                                                   ; altsyncram                             ; work                  ;
+;             |altsyncram_2dc1:auto_generated|                                                       ; 0 (0)               ; 0 (0)                     ; 255         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0|altsyncram_2dc1:auto_generated                                                                                    ; altsyncram_2dc1                        ; work                  ;
 ;       |RegisterFile:registerFile|                                                                  ; 1338 (1338)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Processor:processor|RegisterFile:registerFile                                                                                                                                             ; RegisterFile                           ; work                  ;
 ;    |ProcessorClockEnabler:pce|                                                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ProcessorClockEnabler:pce                                                                                                                                                                 ; ProcessorClockEnabler                  ; ProcessorClockEnabler ;
 ;       |ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|                                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0                                                                                                                 ; ProcessorClockEnabler_altclkctrl_0     ; ProcessorClockEnabler ;
 ;          |ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component                         ; ProcessorClockEnabler_altclkctrl_0_sub ; ProcessorClockEnabler ;
-;    |RS232:rs|                                                                                      ; 202 (202)           ; 132 (132)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RS232:rs                                                                                                                                                                                  ; RS232                                  ; work                  ;
-;    |SerialCommandProcessor:serialCP|                                                               ; 477 (477)           ; 265 (265)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SerialCommandProcessor:serialCP                                                                                                                                                           ; SerialCommandProcessor                 ; work                  ;
+;    |RS232:rs|                                                                                      ; 201 (201)           ; 132 (132)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RS232:rs                                                                                                                                                                                  ; RS232                                  ; work                  ;
+;    |SerialCommandProcessor:serialCP|                                                               ; 530 (530)           ; 265 (265)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SerialCommandProcessor:serialCP                                                                                                                                                           ; SerialCommandProcessor                 ; work                  ;
 +----------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+-----------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                                                  ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
-; Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None ;
-+-----------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port   ; 16384        ; 32           ; 16384        ; 32           ; 524288 ; None ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0|altsyncram_2dc1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 255          ; 1            ; 255          ; 1            ; 255    ; None ;
++-----------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
 +-----------------------------------------------------+
@@ -401,6 +420,20 @@ Encoding Type:  User-Encoded
 ; WordTX_state.WORDTXSTATE_DONE    ; 1              ; 0              ;
 ; WordTX_state.WORDTXSTATE_BAD     ; 1              ; 1              ;
 +----------------------------------+----------------+----------------+
+
+
+Encoding Type:  User-Encoded
++-------------------------------------------------------------------+
+; State Machine - |Main|Processor:processor|PS2Keyboard:ps2kb|state ;
++--------------+---------+---------+--------------------------------+
+; Name         ; state~6 ; state~5 ; state~4                        ;
++--------------+---------+---------+--------------------------------+
+; state.START  ; 0       ; 0       ; 0                              ;
+; state.BITS   ; 0       ; 0       ; 1                              ;
+; state.PARITY ; 0       ; 1       ; 0                              ;
+; state.STOP   ; 0       ; 1       ; 1                              ;
+; state.BAD    ; 1       ; 0       ; 0                              ;
++--------------+---------+---------+--------------------------------+
 
 
 Encoding Type:  User-Encoded
@@ -495,19 +528,23 @@ Encoding Type:  User-Encoded
 ; Processor:processor|instruction_jumpAddress_d0[0]                                                                       ; Merged with Processor:processor|instruction_immediateExtended_d0[0]  ;
 ; Processor:processor|instruction_immediateExtended_d0[17..31]                                                            ; Merged with Processor:processor|instruction_immediateExtended_d0[16] ;
 ; Processor:processor|PC:pc|currentPC[2]                                                                                  ; Merged with Processor:processor|pc_nextPCAddress_dIF[2]              ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory~1                                                                ; Stuck at GND due to stuck port clock_enable                          ;
 ; SerialCommandProcessor:serialCP|SCP_state~6                                                                             ; Lost fanout                                                          ;
 ; SerialCommandProcessor:serialCP|SCP_state~7                                                                             ; Lost fanout                                                          ;
 ; SerialCommandProcessor:serialCP|WordRX_state~6                                                                          ; Lost fanout                                                          ;
 ; SerialCommandProcessor:serialCP|WordTX_state~6                                                                          ; Lost fanout                                                          ;
 ; SerialCommandProcessor:serialCP|WordTX_state~7                                                                          ; Lost fanout                                                          ;
 ; SerialCommandProcessor:serialCP|WordTX_state~8                                                                          ; Lost fanout                                                          ;
+; Processor:processor|PS2Keyboard:ps2kb|state~7                                                                           ; Lost fanout                                                          ;
+; Processor:processor|PS2Keyboard:ps2kb|state~8                                                                           ; Lost fanout                                                          ;
 ; RS232:rs|TX_state~7                                                                                                     ; Lost fanout                                                          ;
 ; RS232:rs|RX_state~7                                                                                                     ; Lost fanout                                                          ;
 ; RS232:rs|TX_state~6                                                                                                     ; Stuck at GND due to stuck port data_in                               ;
+; Processor:processor|PS2Keyboard:ps2kb|state~6                                                                           ; Stuck at GND due to stuck port data_in                               ;
 ; SerialCommandProcessor:serialCP|WordRX_state~5                                                                          ; Stuck at GND due to stuck port data_in                               ;
 ; RS232:rs|RX_state~6                                                                                                     ; Stuck at GND due to stuck port data_in                               ;
 ; SerialCommandProcessor:serialCP|wordsReceived[30,31]                                                                    ; Lost fanout                                                          ;
-; Total Number of Removed Registers = 86                                                                                  ;                                                                      ;
+; Total Number of Removed Registers = 90                                                                                  ;                                                                      ;
 +-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 
@@ -516,12 +553,12 @@ Encoding Type:  User-Encoded
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1967  ;
-; Number of registers using Synchronous Clear  ; 262   ;
+; Total registers                              ; 2033  ;
+; Number of registers using Synchronous Clear  ; 280   ;
 ; Number of registers using Synchronous Load   ; 101   ;
-; Number of registers using Asynchronous Clear ; 777   ;
+; Number of registers using Asynchronous Clear ; 832   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1373  ;
+; Number of registers using Clock Enable       ; 1396  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -531,13 +568,19 @@ Encoding Type:  User-Encoded
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                     ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Processor:processor|zeebee[5]                                                                                                                                                         ; 7       ;
+; Processor:processor|zeebee[7]                                                                                                                                                         ; 7       ;
+; Processor:processor|zeebee[0]                                                                                                                                                         ; 7       ;
+; Processor:processor|zeebee[1]                                                                                                                                                         ; 7       ;
+; Processor:processor|zeebee[3]                                                                                                                                                         ; 7       ;
 ; clk                                                                                                                                                                                   ; 472     ;
 ; RS232:rs|TX_ready                                                                                                                                                                     ; 4       ;
 ; clkCounter[0]                                                                                                                                                                         ; 2       ;
 ; Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider|alt_u_div_nrf:divider|DFFDenominator[0] ; 16      ;
 ; Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|alt_u_div_nrf:divider|DFFDenominator[0]       ; 16      ;
 ; Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_d0v:auto_generated|abs_divider_lug:divider|DFF_diff_signs[0]                             ; 33      ;
-; Processor:processor|control_branchMode_d0[1]                                                                                                                                          ; 26      ;
+; Processor:processor|PS2Keyboard:ps2kb|DEBOUNCED_PS2_CLK                                                                                                                               ; 19      ;
+; Processor:processor|control_branchMode_d0[1]                                                                                                                                          ; 27      ;
 ; Processor:processor|PC:pc|currentPC[9]                                                                                                                                                ; 1       ;
 ; Processor:processor|PC:pc|currentPC[8]                                                                                                                                                ; 1       ;
 ; Processor:processor|PC:pc|currentPC[7]                                                                                                                                                ; 1       ;
@@ -548,68 +591,106 @@ Encoding Type:  User-Encoded
 ; Processor:processor|control_unsignedLoad_d0                                                                                                                                           ; 1       ;
 ; RS232:rs|UART_RXD_d1                                                                                                                                                                  ; 5       ;
 ; RS232:rs|UART_RXD_d0                                                                                                                                                                  ; 1       ;
-; Total number of inverted registers = 17                                                                                                                                               ;         ;
+; Total number of inverted registers = 23                                                                                                                                               ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsReceived[27]                 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|RS232:rs|TX_currentBit[7]                                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|RS232:rs|RX_currentBit[0]                                         ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|RS232:rs|RX_counter[14]                                           ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_writeAddress_d0[0]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsSent[25]                     ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|RS232:rs|TX_counter[29]                                           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_readValue1_d0[2]                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_readValue0_d0[0]                 ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |Main|RS232:rs|currentTX[0]                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|WordTX_currentByte_reg[1]         ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |Main|Processor:processor|pc_pcAddress_dIF[0]                           ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 27 LEs               ; 99 LEs                 ; Yes        ; |Main|Processor:processor|control_branchMode_d0[2]                      ;
-; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Main|Processor:processor|control_shamt_d0[4]                           ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 36 LEs               ; 90 LEs                 ; Yes        ; |Main|Processor:processor|control_funct_d0[1]                           ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|currentStep[11]                   ;
-; 11:1               ; 31 bits   ; 217 LEs       ; 124 LEs              ; 93 LEs                 ; Yes        ; |Main|Processor:processor|ALU:alu|hi[30]                                ;
-; 12:1               ; 31 bits   ; 248 LEs       ; 124 LEs              ; 124 LEs                ; Yes        ; |Main|Processor:processor|ALU:alu|lo[22]                                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|memory_address[9]                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                               ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordTX_nextState.WORDTXSTATE_DONE ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Mux14                                         ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|TXSource                          ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress                     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordRX_byte_next[4]               ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Selector136                           ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|ShiftRight2                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|ShiftRight2                        ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|Processor:processor|memory_readMode[1]                            ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress                     ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux39                              ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux62                              ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux54                              ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|TXSource                          ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux13                              ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|Mux21                              ;
-; 17:1               ; 30 bits   ; 330 LEs       ; 90 LEs               ; 240 LEs                ; No         ; |Main|Processor:processor|PC:pc|pcAddress[9]                            ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux46                              ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Add1                                  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|Mux32                              ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux5                               ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |Main|Processor:processor|memory_dataIn[13]                             ;
-; 42:1               ; 7 bits    ; 196 LEs       ; 119 LEs              ; 77 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux17                                 ;
-; 44:1               ; 4 bits    ; 116 LEs       ; 68 LEs               ; 48 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux24                                 ;
-; 46:1               ; 7 bits    ; 210 LEs       ; 133 LEs              ; 77 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux14                                 ;
-; 46:1               ; 2 bits    ; 60 LEs        ; 38 LEs               ; 22 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux28                                 ;
-; 48:1               ; 4 bits    ; 128 LEs       ; 80 LEs               ; 48 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux7                                  ;
-; 50:1               ; 2 bits    ; 66 LEs        ; 42 LEs               ; 24 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux2                                  ;
-; 1:1                ; 31 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |Main|Processor:processor|ALU:alu|Add1                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                                             ;
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+; Register Name                                                           ; RAM Name                                                     ;
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[0]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[1]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[2]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[3]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[4]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[5]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[6]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[7]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[8]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[9]  ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[10] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[11] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[12] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[13] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[14] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[15] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[16] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
+; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0_bypass[17] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ;
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                ;
++-----------------------------------------------------------------------+--------------------------------------------------------------+------+
+; Register Name                                                         ; Megafunction                                                 ; Type ;
++-----------------------------------------------------------------------+--------------------------------------------------------------+------+
+; Processor:processor|PS2KeyboardMemory:ps2kbm|asciiKeyAddress_d0[0..7] ; Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0 ; RAM  ;
++-----------------------------------------------------------------------+--------------------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsReceived[8]          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|RS232:rs|TX_currentBit[5]                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|RS232:rs|RX_currentBit[3]                                 ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|RS232:rs|RX_counter[8]                                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_writeAddress_d0[2]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|wordsSent[0]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Main|RS232:rs|TX_counter[14]                                   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_readValue1_d0[13]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |Main|Processor:processor|registerFile_readValue0_d0[25]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Main|Processor:processor|PS2Keyboard:ps2kb|currentBit[7]       ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |Main|RS232:rs|currentTX[0]                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Main|SerialCommandProcessor:serialCP|WordTX_currentByte_reg[2] ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |Main|Processor:processor|pc_pcAddress_dIF[1]                   ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 27 LEs               ; 99 LEs                 ; Yes        ; |Main|Processor:processor|control_registerWrite_d0              ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Main|Processor:processor|control_funct_d0[3]                   ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 36 LEs               ; 90 LEs                 ; Yes        ; |Main|Processor:processor|control_funct_d0[1]                   ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |Main|SerialCommandProcessor:serialCP|currentStep[7]            ;
+; 11:1               ; 31 bits   ; 217 LEs       ; 124 LEs              ; 93 LEs                 ; Yes        ; |Main|Processor:processor|ALU:alu|hi[26]                        ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 124 LEs              ; 124 LEs                ; Yes        ; |Main|Processor:processor|ALU:alu|lo[26]                        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|memoryRouting_address[2]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|RS232:rs|ShiftLeft0                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|start_TX                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Mux12                                 ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|TXSource                  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|writeToMemory             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|SerialCommandProcessor:serialCP|WordRX_byte_next[7]       ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress             ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Selector151                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|ShiftRight2                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|ShiftRight2                ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |Main|Processor:processor|memory_address[15]                    ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 30 LEs               ; 60 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|memoryAddress             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |Main|Processor:processor|memory_readMode[2]                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |Main|SerialCommandProcessor:serialCP|TXSource                  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux15                      ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|Mux20                      ;
+; 17:1               ; 30 bits   ; 330 LEs       ; 90 LEs               ; 240 LEs                ; No         ; |Main|Processor:processor|PC:pc|pcAddress[16]                   ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Add1                          ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Main|Processor:processor|Memory:mem|Mux33                      ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Main|Processor:processor|Memory:mem|Mux9                       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Main|Processor:processor|memory_readMode[0]                    ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |Main|Processor:processor|memoryRouting_dataOut[26]             ;
+; 12:1               ; 7 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |Main|Processor:processor|memoryRouting_dataOut[5]              ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |Main|Processor:processor|memoryRouting_dataOut[13]             ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |Main|Processor:processor|memoryRouting_dataOut[23]             ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 64 LEs               ; 160 LEs                ; No         ; |Main|Processor:processor|memory_dataIn[4]                      ;
+; 42:1               ; 7 bits    ; 196 LEs       ; 119 LEs              ; 77 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux17                         ;
+; 44:1               ; 4 bits    ; 116 LEs       ; 68 LEs               ; 48 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux24                         ;
+; 46:1               ; 7 bits    ; 210 LEs       ; 133 LEs              ; 77 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux8                          ;
+; 46:1               ; 2 bits    ; 60 LEs        ; 38 LEs               ; 22 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux28                         ;
+; 48:1               ; 4 bits    ; 128 LEs       ; 80 LEs               ; 48 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux5                          ;
+; 50:1               ; 2 bits    ; 66 LEs        ; 42 LEs               ; 24 LEs                 ; No         ; |Main|Processor:processor|ALU:alu|Mux2                          ;
+; 1:1                ; 31 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |Main|Processor:processor|ALU:alu|Add1                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -774,6 +855,15 @@ Encoding Type:  User-Encoded
 +---------------------------------+--------------------+------+---------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0|altsyncram_2dc1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |Main ;
 +----------------+--------+--------------------------------------------+
@@ -793,6 +883,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; BAUD_RATE      ; 250000                           ; Signed Integer  ;
 ; TIME_ONE_BIT   ; 00000000000000000000000000100001 ; Unsigned Binary ;
 +----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Processor:processor ;
++----------------+---------+---------------------------------------+
+; Parameter Name ; Value   ; Type                                  ;
++----------------+---------+---------------------------------------+
+; CLOCK_SPEED    ; 8333333 ; Signed Integer                        ;
++----------------+---------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -862,6 +962,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Processor:processor|PS2Keyboard:ps2kb ;
++----------------+---------+---------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                    ;
++----------------+---------+---------------------------------------------------------+
+; CLOCK_SPEED    ; 8333333 ; Signed Integer                                          ;
+; DEBOUNCE_TIME  ; 133     ; Signed Integer                                          ;
++----------------+---------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component ;
 +------------------------------------+------------------------+------------------------------------------------------------+
@@ -923,38 +1034,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+-----------------------------+
-; Parameter Name                                 ; Value        ; Type                        ;
-+------------------------------------------------+--------------+-----------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                  ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE              ;
-; LPM_WIDTHA                                     ; 32           ; Untyped                     ;
-; LPM_WIDTHB                                     ; 32           ; Untyped                     ;
-; LPM_WIDTHP                                     ; 64           ; Untyped                     ;
-; LPM_WIDTHR                                     ; 64           ; Untyped                     ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                     ;
-; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                     ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                     ;
-; LATENCY                                        ; 0            ; Untyped                     ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                     ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                     ;
-; USE_EAB                                        ; OFF          ; Untyped                     ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                     ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                     ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                     ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K         ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                     ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                     ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                     ;
-; CBXI_PARAMETER                                 ; mult_46t     ; Untyped                     ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                     ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                     ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                     ;
-+------------------------------------------------+--------------+-----------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0 ;
++------------------------------------+----------------------+--------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                         ;
++------------------------------------+----------------------+--------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                      ;
+; WIDTH_A                            ; 1                    ; Untyped                                                      ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                                      ;
+; NUMWORDS_A                         ; 255                  ; Untyped                                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
+; WIDTH_B                            ; 1                    ; Untyped                                                      ;
+; WIDTHAD_B                          ; 8                    ; Untyped                                                      ;
+; NUMWORDS_B                         ; 255                  ; Untyped                                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                      ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                      ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                      ;
+; CBXI_PARAMETER                     ; altsyncram_2dc1      ; Untyped                                                      ;
++------------------------------------+----------------------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -993,12 +1130,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Processor:processor|ALU:alu|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-----------------------------+
+; Parameter Name                                 ; Value        ; Type                        ;
++------------------------------------------------+--------------+-----------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE              ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                     ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                     ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                     ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                     ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                     ;
+; LATENCY                                        ; 0            ; Untyped                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                     ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                     ;
+; USE_EAB                                        ; OFF          ; Untyped                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                     ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                     ;
++------------------------------------------------+--------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                                        ;
 +-------------------------------------------+-----------------------------------------------------------------------------+
 ; Name                                      ; Value                                                                       ;
 +-------------------------------------------+-----------------------------------------------------------------------------+
-; Number of entity instances                ; 1                                                                           ;
+; Number of entity instances                ; 2                                                                           ;
 ; Entity Instance                           ; Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                             ;
 ;     -- WIDTH_A                            ; 32                                                                          ;
@@ -1007,6 +1179,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- WIDTH_B                            ; 32                                                                          ;
 ;     -- NUMWORDS_B                         ; 16384                                                                       ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                   ;
+; Entity Instance                           ; Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0     ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                   ;
+;     -- WIDTH_A                            ; 1                                                                           ;
+;     -- NUMWORDS_A                         ; 255                                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                ;
+;     -- WIDTH_B                            ; 1                                                                           ;
+;     -- NUMWORDS_B                         ; 255                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                      ;
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                        ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                   ;
@@ -1019,22 +1202,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                  ; Value                                      ;
 +---------------------------------------+--------------------------------------------+
 ; Number of entity instances            ; 2                                          ;
-; Entity Instance                       ; Processor:processor|ALU:alu|lpm_mult:Mult0 ;
+; Entity Instance                       ; Processor:processor|ALU:alu|lpm_mult:Mult1 ;
 ;     -- LPM_WIDTHA                     ; 32                                         ;
 ;     -- LPM_WIDTHB                     ; 32                                         ;
 ;     -- LPM_WIDTHP                     ; 64                                         ;
-;     -- LPM_REPRESENTATION             ; SIGNED                                     ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                   ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                         ;
 ;     -- INPUT_B_IS_CONSTANT            ; NO                                         ;
 ;     -- USE_EAB                        ; OFF                                        ;
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                       ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                         ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                         ;
-; Entity Instance                       ; Processor:processor|ALU:alu|lpm_mult:Mult1 ;
+; Entity Instance                       ; Processor:processor|ALU:alu|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 32                                         ;
 ;     -- LPM_WIDTHB                     ; 32                                         ;
 ;     -- LPM_WIDTHP                     ; 64                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                   ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                     ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                         ;
 ;     -- INPUT_B_IS_CONSTANT            ; NO                                         ;
 ;     -- USE_EAB                        ; OFF                                        ;
@@ -1088,34 +1271,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 9                           ;
+; boundary_port         ; 67                          ;
 ; cycloneiii_clkctrl    ; 1                           ;
-; cycloneiii_ff         ; 1967                        ;
-;     CLR               ; 262                         ;
-;     CLR SCLR          ; 96                          ;
+; cycloneiii_ff         ; 2033                        ;
+;     CLR               ; 285                         ;
+;     CLR SCLR          ; 106                         ;
 ;     CLR SCLR SLD      ; 64                          ;
 ;     CLR SLD           ; 7                           ;
-;     ENA               ; 1025                        ;
-;     ENA CLR           ; 246                         ;
-;     ENA CLR SCLR      ; 102                         ;
+;     ENA               ; 1026                        ;
+;     ENA CLR           ; 260                         ;
+;     ENA CLR SCLR      ; 110                         ;
 ;     SLD               ; 30                          ;
-;     plain             ; 135                         ;
-; cycloneiii_lcell_comb ; 7418                        ;
-;     arith             ; 1784                        ;
-;         2 data inputs ; 333                         ;
-;         3 data inputs ; 1451                        ;
-;     normal            ; 5634                        ;
-;         0 data inputs ; 63                          ;
-;         1 data inputs ; 35                          ;
-;         2 data inputs ; 170                         ;
-;         3 data inputs ; 1180                        ;
-;         4 data inputs ; 4186                        ;
+;     plain             ; 145                         ;
+; cycloneiii_lcell_comb ; 7839                        ;
+;     arith             ; 1848                        ;
+;         2 data inputs ; 365                         ;
+;         3 data inputs ; 1483                        ;
+;     normal            ; 5991                        ;
+;         0 data inputs ; 64                          ;
+;         1 data inputs ; 47                          ;
+;         2 data inputs ; 219                         ;
+;         3 data inputs ; 1191                        ;
+;         4 data inputs ; 4470                        ;
 ; cycloneiii_mac_mult   ; 8                           ;
 ; cycloneiii_mac_out    ; 8                           ;
-; cycloneiii_ram_block  ; 64                          ;
+; cycloneiii_ram_block  ; 65                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 90.80                       ;
-; Average LUT depth     ; 37.98                       ;
+; Max LUT depth         ; 91.10                       ;
+; Average LUT depth     ; 37.88                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1124,7 +1307,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:22     ;
+; Top            ; 00:00:44     ;
 +----------------+--------------+
 
 
@@ -1134,25 +1317,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 31 14:18:16 2018
+    Info: Processing started: Wed Aug  1 19:43:57 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12248): Elaborating Platform Designer system entity "ProcessorClockEnabler.qsys"
-Info (12250): 2018.07.31.14:18:36 Progress: Loading Quartus/ProcessorClockEnabler.qsys
-Info (12250): 2018.07.31.14:18:36 Progress: Reading input file
-Info (12250): 2018.07.31.14:18:37 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
-Info (12250): 2018.07.31.14:18:37 Progress: Parameterizing module altclkctrl_0
-Info (12250): 2018.07.31.14:18:37 Progress: Building connections
-Info (12250): 2018.07.31.14:18:37 Progress: Parameterizing connections
-Info (12250): 2018.07.31.14:18:37 Progress: Validating
-Info (12250): 2018.07.31.14:18:38 Progress: Done reading input file
-Info (12250): 2018.07.31.14:18:38 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
-Info (12250): 2018.07.31.14:18:38 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
+Info (12250): 2018.08.01.19:44:22 Progress: Loading Quartus/ProcessorClockEnabler.qsys
+Info (12250): 2018.08.01.19:44:22 Progress: Reading input file
+Info (12250): 2018.08.01.19:44:22 Progress: Adding altclkctrl_0 [altclkctrl 18.0]
+Info (12250): 2018.08.01.19:44:22 Progress: Parameterizing module altclkctrl_0
+Info (12250): 2018.08.01.19:44:22 Progress: Building connections
+Info (12250): 2018.08.01.19:44:22 Progress: Parameterizing connections
+Info (12250): 2018.08.01.19:44:22 Progress: Validating
+Info (12250): 2018.08.01.19:44:23 Progress: Done reading input file
+Info (12250): 2018.08.01.19:44:23 : ProcessorClockEnabler.altclkctrl_0: Targeting device family: Cyclone IV E.
+Info (12250): 2018.08.01.19:44:23 : ProcessorClockEnabler.altclkctrl_0: Global clock network allows a clock signal to reach all parts of the chip with the same amount of skew. Input port 'clkselect' can be used to switch between four clock inputs.
 Info (12250): ProcessorClockEnabler: Generating ProcessorClockEnabler "ProcessorClockEnabler" for QUARTUS_SYNTH
 Info (12250): Altclkctrl_0: Generating top-level entity ProcessorClockEnabler_altclkctrl_0.
 Info (12250): Altclkctrl_0: "ProcessorClockEnabler" instantiated altclkctrl "altclkctrl_0"
 Info (12250): ProcessorClockEnabler: Done "ProcessorClockEnabler" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "ProcessorClockEnabler.qsys"
+Info (12021): Found 2 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv
+    Info (12022): Found design unit 1: PS2KeyboardMemoryCodes (SystemVerilog) File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv Line: 3
+    Info (12023): Found entity 1: PS2KeyboardMemory File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv Line: 197
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv
     Info (12023): Found entity 1: PS2Keyboard File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv
@@ -1197,23 +1383,23 @@ Info (12021): Found 0 design units, including 0 entities, in source file db/ip/P
 Info (15248): File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/ip/ProcessorClockEnabler/submodules/ProcessorClockEnabler_altclkctrl_0.v" is a duplicate of already analyzed file "/home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file db/ip/ProcessorClockEnabler/submodules/ProcessorClockEnabler_altclkctrl_0.v
 Info (12127): Elaborating entity "Main" for the top level hierarchy
-Info (12128): Elaborating entity "ProcessorClockEnabler" for hierarchy "ProcessorClockEnabler:pce" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 52
+Info (12128): Elaborating entity "ProcessorClockEnabler" for hierarchy "ProcessorClockEnabler:pce" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 67
 Info (12128): Elaborating entity "ProcessorClockEnabler_altclkctrl_0" for hierarchy "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/ProcessorClockEnabler.v Line: 16
 Info (12128): Elaborating entity "ProcessorClockEnabler_altclkctrl_0_sub" for hierarchy "ProcessorClockEnabler:pce|ProcessorClockEnabler_altclkctrl_0:altclkctrl_0|ProcessorClockEnabler_altclkctrl_0_sub:ProcessorClockEnabler_altclkctrl_0_sub_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ProcessorClockEnabler/synthesis/submodules/ProcessorClockEnabler_altclkctrl_0.v Line: 119
-Info (12128): Elaborating entity "RS232" for hierarchy "RS232:rs" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 116
+Info (12128): Elaborating entity "RS232" for hierarchy "RS232:rs" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 131
 Info (10264): Verilog HDL Case Statement information at RS232.sv(121): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 121
 Info (10264): Verilog HDL Case Statement information at RS232.sv(226): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 226
-Info (12128): Elaborating entity "Processor" for hierarchy "Processor:processor" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 131
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(222): object "pc_pcAddress_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 222
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(225): object "instructionData_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 225
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(249): object "instruction_rsIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 249
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(250): object "instruction_rtIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 250
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(254): object "control_readMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 254
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(255): object "control_writeMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 255
-Warning (10036): Verilog HDL or VHDL warning at Processor.sv(256): object "control_unsignedLoad_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 256
-Info (12128): Elaborating entity "PC" for hierarchy "Processor:processor|PC:pc" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 39
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "Processor:processor|RegisterFile:registerFile" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 68
-Info (12128): Elaborating entity "ALU" for hierarchy "Processor:processor|ALU:alu" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 96
+Info (12128): Elaborating entity "Processor" for hierarchy "Processor:processor" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 152
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(293): object "pc_pcAddress_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 293
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(296): object "instructionData_d0" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 296
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(320): object "instruction_rsIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 320
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(321): object "instruction_rtIn_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 321
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(325): object "control_readMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 325
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(326): object "control_writeMode_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 326
+Warning (10036): Verilog HDL or VHDL warning at Processor.sv(327): object "control_unsignedLoad_d1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 327
+Info (12128): Elaborating entity "PC" for hierarchy "Processor:processor|PC:pc" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 49
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "Processor:processor|RegisterFile:registerFile" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 78
+Info (12128): Elaborating entity "ALU" for hierarchy "Processor:processor|ALU:alu" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 106
 Warning (10036): Verilog HDL or VHDL warning at ALU.sv(103): object "carry" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 103
 Info (12128): Elaborating entity "ALUDIV1" for hierarchy "Processor:processor|ALU:alu|ALUDIV1:dividersigned" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 85
 Info (12128): Elaborating entity "lpm_divide" for hierarchy "Processor:processor|ALU:alu|ALUDIV1:dividersigned|lpm_divide:LPM_DIVIDE_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/ALUDIV1.v Line: 67
@@ -1261,8 +1447,12 @@ Info (12128): Elaborating entity "lpm_divide_jev" for hierarchy "Processor:proce
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_q8i.tdf
     Info (12023): Found entity 1: sign_div_unsign_q8i File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/sign_div_unsign_q8i.tdf Line: 24
 Info (12128): Elaborating entity "sign_div_unsign_q8i" for hierarchy "Processor:processor|ALU:alu|ALUDIV1:dividerunsigned|lpm_divide:LPM_DIVIDE_component|lpm_divide_jev:auto_generated|sign_div_unsign_q8i:divider" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/lpm_divide_jev.tdf Line: 35
-Info (12128): Elaborating entity "Branch" for hierarchy "Processor:processor|Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 129
-Info (12128): Elaborating entity "Memory" for hierarchy "Processor:processor|Memory:mem" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 161
+Info (12128): Elaborating entity "Branch" for hierarchy "Processor:processor|Branch:branch" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 139
+Info (12128): Elaborating entity "PS2Keyboard" for hierarchy "Processor:processor|PS2Keyboard:ps2kb" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 167
+Info (10264): Verilog HDL Case Statement information at PS2Keyboard.sv(81): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv Line: 81
+Info (12128): Elaborating entity "PS2KeyboardMemory" for hierarchy "Processor:processor|PS2KeyboardMemory:ps2kbm" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 181
+Warning (10036): Verilog HDL or VHDL warning at PS2KeyboardMemory.sv(217): object "extended_next" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv Line: 217
+Info (12128): Elaborating entity "Memory" for hierarchy "Processor:processor|Memory:mem" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 231
 Info (12128): Elaborating entity "RAM32Bit" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Memory.sv Line: 64
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 114
 Info (12130): Elaborated megafunction instantiation "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/RAM32Bit.v Line: 114
@@ -1302,8 +1492,9 @@ Info (12128): Elaborating entity "decode_jsa" for hierarchy "Processor:processor
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_gob.tdf
     Info (12023): Found entity 1: mux_gob File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mux_gob.tdf Line: 22
 Info (12128): Elaborating entity "mux_gob" for hierarchy "Processor:processor|Memory:mem|RAM32Bit:ram|altsyncram:altsyncram_component|altsyncram_gni2:auto_generated|mux_gob:mux4" File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_gni2.tdf Line: 60
-Info (12128): Elaborating entity "Control" for hierarchy "Processor:processor|Control:control" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 203
-Info (12128): Elaborating entity "SerialCommandProcessor" for hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 155
+Info (12128): Elaborating entity "Control" for hierarchy "Processor:processor|Control:control" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 274
+Info (12128): Elaborating entity "Output7Seg" for hierarchy "Output7Seg:display_seg7" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 155
+Info (12128): Elaborating entity "SerialCommandProcessor" for hierarchy "SerialCommandProcessor:serialCP" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 186
 Warning (10036): Verilog HDL or VHDL warning at SerialCommandProcessor.sv(211): object "commandLength" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 211
 Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(85): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 85
 Info (10264): Verilog HDL Case Statement information at SerialCommandProcessor.sv(156): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 156
@@ -1314,25 +1505,47 @@ Warning (10030): Net "INFO_STRING.waddr_a" at SerialCommandProcessor.sv(37) has 
 Warning (10030): Net "INFO_STRING.we_a" at SerialCommandProcessor.sv(37) has no driver or initial value, using a default initial value '0' File: /home/imaustyn/Desktop/FPGAComputer/HDL/SerialCommandProcessor.sv Line: 37
 Info (13014): Ignored 64 buffer(s)
     Info (13016): Ignored 64 CARRY_SUM buffer(s)
+Warning (276020): Inferred RAM node "Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "Processor:processor|RegisterFile:registerFile|registers" is uninferred due to asynchronous read logic File: /home/imaustyn/Desktop/FPGAComputer/HDL/RegisterFile.sv Line: 23
 Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (28) in the Memory Initialization File "/home/imaustyn/Desktop/FPGAComputer/Quartus/db/MIPSProcessor.ram0_SerialCommandProcessor_f94fa93e.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "Processor:processor|PS2KeyboardMemory:ps2kbm|keyMemory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 1
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 255
+        Info (286033): Parameter WIDTH_B set to 1
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 255
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Processor:processor|ALU:alu|Mult0" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Processor:processor|ALU:alu|Mult1" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 187
-Info (12130): Elaborated megafunction instantiation "Processor:processor|ALU:alu|lpm_mult:Mult0" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
-Info (12133): Instantiated megafunction "Processor:processor|ALU:alu|lpm_mult:Mult0" with the following parameter: File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
-    Info (12134): Parameter "LPM_WIDTHA" = "32"
-    Info (12134): Parameter "LPM_WIDTHB" = "32"
-    Info (12134): Parameter "LPM_WIDTHP" = "64"
-    Info (12134): Parameter "LPM_WIDTHR" = "64"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
-    Info (12023): Found entity 1: mult_46t File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_46t.tdf Line: 30
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Processor:processor|ALU:alu|Mult0" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
+Info (12130): Elaborated megafunction instantiation "Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0"
+Info (12133): Instantiated megafunction "Processor:processor|PS2KeyboardMemory:ps2kbm|altsyncram:keyMemory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "1"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "255"
+    Info (12134): Parameter "WIDTH_B" = "1"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "255"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2dc1.tdf
+    Info (12023): Found entity 1: altsyncram_2dc1 File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/altsyncram_2dc1.tdf Line: 27
 Info (12130): Elaborated megafunction instantiation "Processor:processor|ALU:alu|lpm_mult:Mult1" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 187
 Info (12133): Instantiated megafunction "Processor:processor|ALU:alu|lpm_mult:Mult1" with the following parameter: File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 187
     Info (12134): Parameter "LPM_WIDTHA" = "32"
@@ -1346,28 +1559,92 @@ Info (12133): Instantiated megafunction "Processor:processor|ALU:alu|lpm_mult:Mu
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
     Info (12023): Found entity 1: mult_7dt File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_7dt.tdf Line: 30
+Info (12130): Elaborated megafunction instantiation "Processor:processor|ALU:alu|lpm_mult:Mult0" File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
+Info (12133): Instantiated megafunction "Processor:processor|ALU:alu|lpm_mult:Mult0" with the following parameter: File: /home/imaustyn/Desktop/FPGAComputer/HDL/ALU.sv Line: 184
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
+    Info (12023): Found entity 1: mult_46t File: /home/imaustyn/Desktop/FPGAComputer/Quartus/db/mult_46t.tdf Line: 30
 Info (13014): Ignored 470 buffer(s)
     Info (13019): Ignored 470 SOFT buffer(s)
-Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/RS232.sv Line: 18
+Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/HDL/Processor.sv Line: 190
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "Processor:processor|PS2Keyboard:ps2kb|lastPS2_CLK" is converted into an equivalent circuit using register "Processor:processor|PS2Keyboard:ps2kb|lastPS2_CLK~_emulated" and latch "Processor:processor|PS2Keyboard:ps2kb|lastPS2_CLK~1" File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2Keyboard.sv Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "UART_RTS" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 13
+    Warning (13410): Pin "UART_RTS" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 14
+    Warning (13410): Pin "seg7[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg7[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 22
+    Warning (13410): Pin "seg6[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg6[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 23
+    Warning (13410): Pin "seg5[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg5[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 24
+    Warning (13410): Pin "seg4[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg4[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 25
+    Warning (13410): Pin "seg3[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg3[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 26
+    Warning (13410): Pin "seg2[0]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[1]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[3]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[4]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[5]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
+    Warning (13410): Pin "seg2[6]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/imaustyn/Desktop/FPGAComputer/Quartus/output_files/MIPSProcessor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "UART_CTS" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 11
-Info (21057): Implemented 8925 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 8835 logic cells
-    Info (21064): Implemented 64 RAM segments
+    Warning (15610): No output dependent on input pin "UART_CTS" File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv Line: 12
+Info (21057): Implemented 9416 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 9267 logic cells
+    Info (21064): Implemented 65 RAM segments
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 1055 megabytes
-    Info: Processing ended: Tue Jul 31 14:19:06 2018
-    Info: Elapsed time: 00:00:50
-    Info: Total CPU time (on all processors): 00:00:55
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
+    Info: Peak virtual memory: 1076 megabytes
+    Info: Processing ended: Wed Aug  1 19:45:12 2018
+    Info: Elapsed time: 00:01:15
+    Info: Total CPU time (on all processors): 00:01:20
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/imaustyn/Desktop/FPGAComputer/Quartus/output_files/MIPSProcessor.map.smsg.
 
 

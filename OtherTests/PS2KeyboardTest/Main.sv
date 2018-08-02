@@ -15,12 +15,36 @@ output logic [6:0]segMSB,
 output logic [6:0]segLSB
 );
 
+logic clk2;
+
+logic [7:0]clkCounter;
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		clk2 <= 1'b1;
+		clkCounter <= 8'd1;
+	end
+	else begin
+		if (clkCounter == 8'd3) begin
+			clk2 <= ~clk2;
+			clkCounter <= 8'd1;
+		end
+		else begin
+			clkCounter <= clkCounter + 8'd1;
+		end
+	end
+end
+/*
+always_comb begin
+	clk2 = clk;
+end
+*/
+
 
 logic [7:0]scanCode;
 logic scanCodeReady;
 
 PS2Keyboard ps2kb(
-	.clk(clk),
+	.clk(clk2),
 	.rst(rst),
 	
 	.PS2_CLK(PS2_CLK),
@@ -31,7 +55,7 @@ PS2Keyboard ps2kb(
 );
 
 logic [7:0]currentScanCode;
-always_ff @ (posedge clk or negedge rst) begin
+always_ff @ (posedge clk2 or negedge rst) begin
 	if (rst == 1'b0) begin
 		currentScanCode <= 8'd0;
 	end

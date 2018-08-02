@@ -7,11 +7,26 @@ module Main(
 input logic clkIn,
 input logic rstIn,
 
+// UART
 input logic UART_RXD,
 input logic UART_CTS,
 
 output logic UART_RTS,
 output logic UART_TXD,
+
+//	PS/2 Keyboard
+input logic PS2_CLK,
+input logic PS2_DAT,
+
+// Outputs
+output logic [6:0]seg7,
+output logic [6:0]seg6,
+output logic [6:0]seg5,
+output logic [6:0]seg4,
+output logic [6:0]seg3,
+output logic [6:0]seg2,
+output logic [6:0]seg1,
+output logic [6:0]seg0,
 
 output logic LED1,
 output logic LED2,
@@ -115,20 +130,36 @@ RS232 #(.BAUD_RATE(BAUD_RATE), .CLOCK_SPEED(8333333)) rs(
 	.txError(txError)
 );
 
+logic [31:0]sevenSegmentDisplayOutput;
 
-Processor processor(
+Processor #(.CLOCK_SPEED(8333333)) processor(
 	.clk(gatedClk),
 	.memory_clk(clk),
 	.rst(rst),
 	.memory_rst(rstIn),
+	
+	.PS2_CLK(PS2_CLK),
+	.PS2_DAT(PS2_DAT),
 	
 	.externalMemoryControl(externalMemoryControl),
 	.externalAddress(externalAddress),
 	.externalData(externalData),
 	.externalReadMode(externalReadMode),
 	.externalWriteMode(externalWriteMode),
-	.externalDataOut(externalDataOut)
+	.externalDataOut(externalDataOut),
+	
+	.sevenSegmentDisplayOutput(sevenSegmentDisplayOutput)
 );
+
+// 7 Segment Displays
+Output7Seg display_seg7(.inp(sevenSegmentDisplayOutput[31:28]), .display(seg7));
+Output7Seg display_seg6(.inp(sevenSegmentDisplayOutput[27:24]), .display(seg6));
+Output7Seg display_seg5(.inp(sevenSegmentDisplayOutput[23:20]), .display(seg5));
+Output7Seg display_seg4(.inp(sevenSegmentDisplayOutput[19:16]), .display(seg4));
+Output7Seg display_seg3(.inp(sevenSegmentDisplayOutput[15:12]), .display(seg3));
+Output7Seg display_seg2(.inp(sevenSegmentDisplayOutput[11:8]), .display(seg2));
+Output7Seg display_seg1(.inp(sevenSegmentDisplayOutput[7:4]), .display(seg1));
+Output7Seg display_seg0(.inp(sevenSegmentDisplayOutput[3:0]), .display(seg0));
 
 
 // Set up a state machine to allow us to change memory through serial.

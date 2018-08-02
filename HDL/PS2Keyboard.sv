@@ -9,39 +9,41 @@ output logic [7:0]scanCode,
 output logic scanCodeReady
 );
 
-typedef enum logic [4:0] {
-START,
-BITS,
-PARITY,
-STOP,
-BAD
+parameter CLOCK_SPEED = 8333333;
 
-} PS2KeyboardState;
+// Calculated PS2 clock speed is 13,796.909
+// How many of our cycles must pass before it's been a full low of the PS2 clock.
+parameter COUNT_DURATION_LOW = ((CLOCK_SPEED / 13508) / 2) / 2;
+// How many cycles must pass before we know we're just in an idle state.
+parameter COUNT_DURATION_IDLE = (CLOCK_SPEED / 13508) * 3 / 2;//((CLOCK_SPEED / (13508/2)) * 5) / 4;
 
-// Debounce
-logic [9:0]debounceCounter;
-logic lastPS2_CLK;
-logic DEBOUNCED_PS2_CLK;
+// Metastability prevention
+logic PS2_CLK_d0;
+logic PS2_CLK_d1;
+logic PS2_DAT_d0;
+logic PS2_DAT_d1;
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-		lastPS2_CLK <= PS2_CLK;
-		debounceCounter <= 10'd0;
-		DEBOUNCED_PS2_CLK <= 1'b1;
+		PS2_CLK_d0 <= 1'b1;
+		PS2_CLK_d1 <= 1'b1;
+		PS2_DAT_d0 <= 1'b0;
+		PS2_DAT_d1 <= 1'b0;
 	end
 	else begin
-		if (lastPS2_CLK != PS2_CLK) begin
-			debounceCounter <= 10'd0;
-			lastPS2_CLK <= PS2_CLK;
-		end
-		else begin
-			debounceCounter <= debounceCounter + 10'd1;
-		end
-		
-		if (debounceCounter == 10'd800) begin
-			DEBOUNCED_PS2_CLK <= lastPS2_CLK;
-		end
+		PS2_CLK_d0 <= PS2_CLK;
+		PS2_CLK_d1 <= PS2_CLK_d0;
+		PS2_DAT_d0 <= PS2_DAT;
+		PS2_DAT_d1 <= PS2_DAT_d0;
 	end
 end
+
+typedef enum logic [4:0] {
+START = 5'h1,
+BITS = 5'h2,
+PARITY = 5'h3,
+STOP = 5'h4,
+BAD = 5'h8
+} PS2KeyboardState;
 
 PS2KeyboardState state;
 PS2KeyboardState nextState;
@@ -51,23 +53,68 @@ logic saveBit;
 logic [7:0]currentBit;
 logic [7:0]currentBit_next;
 
-always_ff @ (negedge DEBOUNCED_PS2_CLK or negedge rst) begin
+logic PS2_CLK_LAST;
+logic [31:0]PS2_CLK_HIGH_COUNT;
+logic [31:0]PS2_CLK_LOW_COUNT;
+
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		scanCode <= 8'd0;
 
 		state <= START;
 
 		currentBit <= 8'd0;
+		PS2_CLK_LAST <= 1'b1;
+		PS2_CLK_HIGH_COUNT <= 32'd1;
+		PS2_CLK_LOW_COUNT <= 32'd1;
 	end
 	else begin
-		state <= nextState;
-		scanCode <= scanCode;
 		
-		if (saveBit == 1'b1) begin
-			scanCode[currentBit] <= PS2_DAT;
+		if (PS2_CLK_LAST != PS2_CLK_d1) begin
+			// Clock changed. Reset values.
+			PS2_CLK_LAST <= PS2_CLK_d1;
+			PS2_CLK_HIGH_COUNT <= 32'd0;
+			PS2_CLK_LOW_COUNT <= 32'd0;
 		end
+		else begin
+			// Clock stayed the same.
+			if (PS2_CLK_LAST == 1'b1) begin
+				if (PS2_CLK_HIGH_COUNT < COUNT_DURATION_IDLE) begin
+					PS2_CLK_HIGH_COUNT <= PS2_CLK_HIGH_COUNT + 32'd1;
+				end
+				else if (PS2_CLK_HIGH_COUNT == COUNT_DURATION_IDLE) begin
+					PS2_CLK_HIGH_COUNT <= PS2_CLK_HIGH_COUNT + 32'd1;
+					// Reset the state machine
+					state <= START;
+				end
+				else begin
+					// Do nothing and wait
+				end
+			end
+			else begin
+								
+				if (PS2_CLK_LOW_COUNT < COUNT_DURATION_LOW) begin
+					PS2_CLK_LOW_COUNT <= PS2_CLK_LOW_COUNT + 32'd1;
+				end
+				else if (PS2_CLK_LOW_COUNT == COUNT_DURATION_LOW) begin
+					// We've been in the LOW state of the PS2_CLK for the specified duration.
+					state <= nextState;
+
+					scanCode <= scanCode;
 		
-		currentBit <= currentBit_next;
+					if (saveBit == 1'b1) begin
+						scanCode[currentBit] <= PS2_DAT_d1;
+					end
+		
+					currentBit <= currentBit_next;
+
+					PS2_CLK_LOW_COUNT <= PS2_CLK_LOW_COUNT + 32'd1;
+				end
+				else begin
+					// Do nothing and wait
+				end
+			end
+		end
 	end
 end
 
@@ -78,7 +125,7 @@ saveBit = 1'b0;
 	unique case (state)
 		START: begin
 			nextState = START;
-			if (PS2_DAT == 1'b0) begin
+			if (PS2_DAT_d1 == 1'b0) begin
 				nextState = BITS;
 				currentBit_next = 8'd0;
 			end

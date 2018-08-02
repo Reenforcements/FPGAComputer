@@ -19,7 +19,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
-## DATE    "Sun Jul 29 10:38:46 2018"
+## DATE    "Wed Aug  1 20:44:40 2018"
 
 ##
 ## DEVICE  "EP4CE115F29C7"
@@ -40,7 +40,8 @@ set_time_format -unit ns -decimal_places 3
 
 create_clock -name {altera_reserved_tck} -period 100.000 -waveform { 0.000 50.000 } [get_ports {altera_reserved_tck}]
 create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {clk}]
-create_clock -name {PS2_CLK} -period 33333.000 -waveform { 0.000 16666.500 } [get_ports {PS2_CLK}]
+create_clock -name {clk2} -period 120.000 -waveform { 0.000 60.000 } [get_keepers {clk2}]
+create_clock -name {PS2_CLK} -period 74028.000 -waveform { 0.000 37014.000 } [get_ports {PS2_CLK}]
 
 
 #**************************************************************
@@ -59,18 +60,34 @@ create_clock -name {PS2_CLK} -period 33333.000 -waveform { 0.000 16666.500 } [ge
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk}]  0.030  
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}]  0.020  
 set_clock_uncertainty -rise_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -rise_to [get_clocks {altera_reserved_tck}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [get_clocks {altera_reserved_tck}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk2}] -rise_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk2}] -fall_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk2}] -rise_to [get_clocks {clk2}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk2}] -fall_to [get_clocks {clk2}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk2}] -rise_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk2}] -fall_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk2}] -rise_to [get_clocks {clk2}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk2}] -fall_to [get_clocks {clk2}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -rise_to [get_clocks {clk2}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {PS2_CLK}] -fall_to [get_clocks {clk2}]  0.030  
 
 
 #**************************************************************
@@ -89,6 +106,7 @@ set_clock_uncertainty -fall_from [get_clocks {altera_reserved_tck}] -fall_to [ge
 # Set Clock Groups
 #**************************************************************
 
+set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 
 

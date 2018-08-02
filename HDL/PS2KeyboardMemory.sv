@@ -201,7 +201,7 @@ input logic rst,
 input logic [7:0]scanCode,
 input logic scanCodeReady,
 
-input logic [8:0]asciiKeyAddress,
+input logic [7:0]asciiKeyAddress,
 output logic [31:0]keyValue
 );
 
@@ -222,7 +222,7 @@ logic secondary;
 //  value is being held down (1) or not (0).
 logic keyMemory[255];
 
-logic [8:0]asciiKeyAddress_d0;
+logic [7:0]asciiKeyAddress_d0;
 
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
@@ -612,7 +612,7 @@ always_comb begin
 		end
 	end
 
-	keyValue <= { {7{1'b0}}, keyMemory[ asciiKeyAddress_d0[7:0] ]};
+	keyValue = { {7{1'b0}}, keyMemory[ asciiKeyAddress_d0[7:0] ]};
 end
 
 

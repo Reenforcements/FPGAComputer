@@ -11,6 +11,10 @@ input logic clk,
 input logic memory_clk,
 input logic memory_rst,
 
+//	PS/2 Keyboard
+input logic PS2_CLK,
+input logic PS2_DAT,
+
 // Allows us to write to the memory from an external source
 // such as a ModelSim test or RS232 serial connection.
 input logic externalMemoryControl,
@@ -18,8 +22,14 @@ input logic [31:0]externalAddress,
 input logic [31:0]externalData,
 input logic [2:0]externalReadMode,
 input logic [2:0]externalWriteMode,
-output logic [31:0]externalDataOut
+output logic [31:0]externalDataOut,
+
+// 7 segment displays
+
+output logic [31:0]sevenSegmentDisplayOutput
 );
+
+parameter CLOCK_SPEED = 8333333;
 
 // PC
 logic [31:0]pc_newPC;
@@ -128,6 +138,66 @@ Branch branch(
 	.branchTo(branch_branchTo)
 );
 
+// 7 Segment displays
+logic [31:0]sevenSegDisplay;
+logic [31:0]sevenSegDisplay_next;
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0)
+		sevenSegDisplay <= 32'd0;
+	else
+		sevenSegDisplay <= sevenSegDisplay_next;
+end
+always_comb begin
+	//sevenSegmentDisplayOutput = sevenSegDisplay;
+end
+
+
+// PS/2 Keyboard
+logic [7:0]keyboard_scanCode;
+logic keyboard_scanCodeReady;
+PS2Keyboard #(.CLOCK_SPEED(CLOCK_SPEED)) ps2kb(
+	.clk(clk),
+	.rst(rst),
+
+	.PS2_CLK(PS2_CLK),
+	.PS2_DAT(PS2_DAT),
+
+	.scanCode(keyboard_scanCode),
+	.scanCodeReady(keyboard_scanCodeReady)
+);
+
+logic [7:0]keyboardMemory_asciiKeyAddress;
+logic [31:0]keyboardMemory_keyValue;
+
+PS2KeyboardMemory ps2kbm(
+	.clk(clk),
+	.rst(rst),
+	
+	.scanCode(keyboard_scanCode),
+	.scanCodeReady(keyboard_scanCodeReady),
+
+	.asciiKeyAddress(keyboardMemory_asciiKeyAddress),
+	.keyValue(keyboardMemory_keyValue)
+);
+
+//DEBUG
+logic [7:0]zeebee;
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		zeebee = 8'hAB;
+	end
+	else begin
+		if (keyboard_scanCodeReady == 1'b1) begin
+			zeebee <= keyboard_scanCode;
+		end
+	end
+end
+always_comb begin
+	sevenSegmentDisplayOutput = { {24{1'b0}}, zeebee};
+end
+//ENDDEBUG
+
+
 // Memory
 
 logic [31:0]memory_address;
@@ -159,6 +229,7 @@ Memory mem(
 	.pcAddress(memory_pcAddress),
 	.pcDataOutput(memory_pcData)
 );
+
 
 // Control
 logic [31:0]control_instructionData;
@@ -427,6 +498,14 @@ always @ (posedge clk) begin
 	//$display("Should use new PC: %d", branch_shouldUseNewPC);
 end
 
+logic [31:0]memoryRouting_address;
+logic [31:0]memoryRouting_dataIn;
+logic [2:0]memoryRouting_writeMode;
+logic [2:0]memoryRouting_readMode;
+logic memoryRouting_unsignedLoad;
+
+logic [31:0]memoryRouting_dataOut;
+
 // Assign values passed from last stage
 always_comb begin
 
@@ -478,27 +557,64 @@ always_comb begin
 	if (externalMemoryControl == 1'b1) begin
 		// Force the memory to be controlled externally.
 		// This could be RS232 serial or ModelSim.
-		memory_address = externalAddress;
-		memory_dataIn = externalData;
-		memory_readMode = externalReadMode;
-		memory_writeMode = externalWriteMode;
-		memory_unsignedLoad = 1'b1;
-		externalDataOut = memory_dataOut;
+		memoryRouting_address = externalAddress;
+		memoryRouting_dataIn = externalData;
+		memoryRouting_readMode = externalReadMode;
+		memoryRouting_writeMode = externalWriteMode;
+		memoryRouting_unsignedLoad = 1'b1;
+		externalDataOut = memoryRouting_dataOut;
 	end
 	else begin	
-		memory_address = alu_result;
+		memoryRouting_address = alu_result;
 		//memory_dataIn = registerFile_readValue1_d0;
 		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
 			// Use our last ALU result which hasn't been written back to the register file yet.
-			memory_dataIn = alu_result_d1;
+			memoryRouting_dataIn = alu_result_d1;
 		end
 		else begin
-			memory_dataIn = registerFile_readValue1_d0;
+			memoryRouting_dataIn = registerFile_readValue1_d0;
 		end
-		memory_readMode = control_readMode_d0;
-		memory_writeMode = control_writeMode_d0;
-		memory_unsignedLoad = control_unsignedLoad_d0;
+		memoryRouting_readMode = control_readMode_d0;
+		memoryRouting_writeMode = control_writeMode_d0;
+		memoryRouting_unsignedLoad = control_unsignedLoad_d0;
 		externalDataOut = 32'd0;
+	end
+end
+
+// Route the memory control lines to read/write from/to the correct module.
+always_comb begin
+	
+	memory_address = 32'd0;
+	memory_dataIn = 32'd0;
+	memory_readMode = MemoryModesPackage::ReadWriteMode_NONE;
+	memory_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
+	memory_unsignedLoad = 1'b1;
+	
+	keyboardMemory_asciiKeyAddress = 8'd0;
+	
+	sevenSegDisplay_next = sevenSegDisplay;
+	
+	// Default memoryRouting output
+	memoryRouting_dataOut = 32'd0;
+	
+	if (memoryRouting_address >= 0 && memoryRouting_address <= 255) begin
+		// Use the PS2KeyboardMemory module
+		keyboardMemory_asciiKeyAddress = memoryRouting_address[7:0];
+		
+		memoryRouting_dataOut = keyboardMemory_keyValue;
+	end
+	else if (memoryRouting_address == 32'd256) begin
+		sevenSegDisplay_next = memoryRouting_dataIn;
+	end
+	else if (memoryRouting_address >= 32'd1024) begin
+		// Use the Memory module
+		memory_address = memoryRouting_address;
+		memory_dataIn = memoryRouting_dataIn;
+		memory_readMode = memoryRouting_readMode;
+		memory_writeMode = memoryRouting_writeMode;
+		memory_unsignedLoad = memoryRouting_unsignedLoad;
+		
+		memoryRouting_dataOut = memory_dataOut;
 	end
 end
 
@@ -562,7 +678,7 @@ always_comb begin
 			registerFile_writeData = pc_nextPCAddress_d1 + 32'd4;
 		end
 		ControlLinePackage::DATA_OUTPUT: begin
-			registerFile_writeData = memory_dataOut;
+			registerFile_writeData = memoryRouting_dataOut;
 		end
 
 		ControlLinePackage::RESULT: begin
@@ -573,232 +689,8 @@ always_comb begin
 		end
 	endcase
 end
-
-//always_ff @ (posedge clk or negedge rst) begin
-//	if (rst == 1'b0) begin
-//		pc_nextPCAddress_d2 <= 32'd0;
-//		
-//		control_registerWriteSource_d2 <= ControlLinePackage::NONE;
-//		control_registerWrite_d2 <= 1'b0;
-//		
-//		registerFile_writeAddress_d2 <= 5'd0;
-//		
-//		alu_result_d2 <= 32'd0;
-//		
-//		memory_dataOut_d2 <= 32'd0;
-//	end
-//	else begin
-//		pc_nextPCAddress_d2 <= pc_nextPCAddress_d1;
-//		
-//		control_registerWriteSource_d2 <= control_registerWriteSource_d1;
-//		control_registerWrite_d2 <= control_registerWrite_d1;
-//		
-//		registerFile_writeAddress_d2 <= registerFile_writeAddress_d1;
-//		
-//		alu_result_d2 <= alu_result_d1;
-//		
-//		memory_dataOut_d2 <= memory_dataOut;
-//	end
-//end
-
-// d3 
-
-always_comb begin
-	
-// Moved to d2
-//	registerFile_writeAddress = registerFile_writeAddress_d2;
-//	registerFile_registerWrite = control_registerWrite_d2;
-//	
-//	unique case (control_registerWriteSource_d2)
-//		ControlLinePackage::NONE: begin
-//			registerFile_writeData = 32'd0;
-//		end
-//		ControlLinePackage::NEXT_PC_ADDRESS: begin
-//			registerFile_writeData = pc_nextPCAddress_d2 + 32'd4;
-//		end
-//		ControlLinePackage::DATA_OUTPUT: begin
-//			registerFile_writeData = memory_dataOut_d2;
-//		end
-//
-//		ControlLinePackage::RESULT: begin
-//			registerFile_writeData = alu_result_d2;
-//		end
-//		default: begin
-//			registerFile_writeData = 32'd0;
-//		end
-//	endcase
-end
-
-
-// NEW CODE ABOVE HERE.
-// (ORIGINAL IMPLEMENTATION BELOW)
-
-/*
 always_comb begin
 
-	// Assign control input.
-	control_instructionData = instructionData;
-
-	// Assign register file inputs.
-	registerFile_registerRead = control_registerRead;
-	registerFile_registerWrite = control_registerWrite;
-
-	registerFile_rsAddress = instruction_rsIn;
-	registerFile_rtAddress = instruction_rtIn;
-
-	// Choose our register write address based on the address mode.
-	unique case (control_registerWriteAddressMode)
-		ControlLinePackage::RD: begin
-			registerFile_writeAddress = instruction_rdIn;
-		end
-		ControlLinePackage::RT: begin
-			registerFile_writeAddress = instruction_rtIn;
-		end
-		ControlLinePackage::RA: begin
-			registerFile_writeAddress = 5'd31;
-		end
-		default: begin 
-			// Default to zero.
-			registerFile_writeAddress = 5'd0; 
-		end
-	endcase
 end
-
-// Choose our register write data based on registerWriteSource
-always_comb begin
-	unique case (control_registerWriteSource)
-		ControlLinePackage::NONE: begin
-			registerFile_writeData = 32'd0;
-		end
-		ControlLinePackage::NEXT_PC_ADDRESS: begin
-			registerFile_writeData = pc_nextPCAddress + 32'd4;
-		end
-		ControlLinePackage::DATA_OUTPUT: begin
-			registerFile_writeData = memory_dataOut;
-		end
-
-		ControlLinePackage::RESULT: begin
-			registerFile_writeData = alu_result;
-		end
-		default: begin
-			registerFile_writeData = 32'd0;
-		end
-	endcase
-end
-
-// Assign ALU inputs
-always_comb begin
-	alu_funct = control_funct;
-	alu_shamt = control_shamt;
-end
-
-always_comb begin
-//	alu_dataIn0 = registerFile_readValue0;
-//
-//	if (control_useImmediate == 1'b1) begin
-//		alu_dataIn1 = instruction_immediateExtended;
-//	end 
-//	else begin
-//		alu_dataIn1 = registerFile_readValue1;
-//	end
-end
-
-// Assign memory inputs
-
-// External memory reading/writing
-always_comb begin
-	if (externalMemoryControl == 1'b1) begin
-		// Force the memory to be controlled externally.
-		// This could be RS232 serial or ModelSim.
-		memory_clk = clk;
-		memory_address = externalAddress;
-		memory_dataIn = externalData;
-		memory_readMode = externalReadMode;
-		memory_writeMode = externalWriteMode;
-		memory_unsignedLoad = 1'b1;
-		externalDataOut = memory_dataOut;
-	end
-	else begin	
-		memory_clk = pClk;
-		memory_address = alu_result;
-		memory_dataIn = registerFile_readValue1;
-		memory_readMode = control_readMode;
-		memory_writeMode = control_writeMode;
-		memory_unsignedLoad = control_unsignedLoad;
-		externalDataOut = 32'd0;
-	end
-end
-
-
-logic [25:0]branch_jumpAddress_d0;
-logic [31:0]branch_jumpRegisterAddress_d0;
-
-logic [31:0]branch_pcAddress_d0;
-logic [15:0]branch_branchAddressOffset_d0;
-
-logic branch_resultZero_d0;
-logic branch_resultNegative_d0;
-logic branch_resultPositive_d0;
-
-logic [3:0]branch_mode_d0;
-
-// Assign branch inputs
-always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		branch_jumpAddress_d0 <= 26'd0;
-		branch_jumpRegisterAddress_d0 <= 32'd0;
-		
-		branch_pcAddress_d0 <= 32'd0;
-		branch_branchAddressOffset_d0 <= 16'd0;
-	
-		branch_resultZero_d0 <= 1'd0;
-		branch_resultNegative_d0 <= 1'd0;
-		branch_resultPositive_d0 <= 1'd0;
-		
-		branch_mode_d0 <= BranchModesPackage::NONE;
-	end
-	else begin
-		// Assign inputs to delay flip-flops on the clock.
-		branch_jumpAddress_d0 <= instruction_jumpAddress;
-		branch_jumpRegisterAddress_d0 <= alu_result;
-
-		branch_pcAddress_d0 <= pc_pcAddress;
-		branch_branchAddressOffset_d0 <= instruction_immediate;
-
-		branch_resultZero_d0 <= alu_outputZero;
-		branch_resultNegative_d0 <= alu_outputNegative;
-		branch_resultPositive_d0 <= alu_outputPositive;
-
-		branch_mode_d0 <= control_branchMode;
-	end
-end
-always_comb begin
-	branch_jumpAddress = branch_jumpAddress_d0;
-	branch_jumpRegisterAddress = branch_jumpRegisterAddress_d0;
-
-	branch_pcAddress = branch_pcAddress_d0;
-	branch_branchAddressOffset = branch_branchAddressOffset_d0;
-
-	branch_resultZero = branch_resultZero_d0;
-	branch_resultNegative = branch_resultNegative_d0;
-	branch_resultPositive = branch_resultPositive_d0;
-
-	branch_mode = branch_mode_d0;
-
-	// These are just outputs from Branch so they'll
-	//  follow the delayed inputs to Branch.
-	pc_newPC = branch_branchTo;
-	pc_shouldUseNewPC = branch_shouldUseNewPC;
-end
-
-
-logic [31:0]g;
-Register 
-#(.SIZE(32)) 
-r(
-.clk(clk), 
-.rst(rst), 
-.in(32'd0), 
-.out(g));*/
 
 endmodule

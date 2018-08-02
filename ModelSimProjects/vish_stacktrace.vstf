@@ -22,3 +22,23 @@
 # 7    0xf7ba9632: '__libc_start_main + 0xf2' in '/lib/i386-linux-gnu/libc.so.6'
 # End of Stack Trace
 
+# Current time Thu Aug  2 12:24:30 2018
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "10.5b"
+# Version = "2016.10"
+# Date = "Oct  5 2016"
+# Platform = linuxpe
+# 0    0xf7fd7fe9: '<unknown (@0xf7fd7fe9)>'
+# 1    0xf7fd800b: '<unknown (@0xf7fd800b)>'
+# 2    0x0854b8f4: 'Tcl_DoOneEvent + 0xf4' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 3    0x0849e0e7: '<unknown (@0x849e0e7)>'
+# 4    0x084cc41d: '<unknown (@0x84cc41d)>'
+# 5    0x0851503a: '<unknown (@0x851503a)>'
+# 6    0x0851d9dc: '<unknown (@0x851d9dc)>'
+# 7    0x084ce59c: 'TclEvalObjEx + 0x6c' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 8    0x084cea36: 'Tcl_EvalObjEx + 0x36' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/vish'
+# 9    0xf7810eac: 'Itcl_EvalMemberCode + 0x3cc' in '/home/imaustyn/ModelSim/modelsim_ase/linuxaloem/itcl3.4/libitcl3.4.so'
+# 10   0x09ca1763: '<unknown (@0x9ca1763)>'
+# 11   0x09c674fb: '<unknown (@0x9c674fb)>'
+# 12   0x674d776a: '<unknown (@0x674d776a)>'
