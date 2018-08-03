@@ -24,6 +24,7 @@ with open(args.inputELF[0], "rb") as f:
 	elf = ELFFile(f)
 	# Get the entry point of the program.
 	entryPoint = elf["e_entry"]
+	print("Entry point of program is {:08x} ({} in decimal.)".format(entryPoint, entryPoint))
 	# Ensure this is an executable
 	assert(elf["e_type"] == "ET_EXEC"), "ELF is not executable."
 

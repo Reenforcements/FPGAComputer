@@ -37,9 +37,14 @@ logic pc_shouldUseNewPC;
 
 logic [31:0]pc_pcAddress;
 logic [31:0]pc_nextPCAddress;
+
+logic [31:0]pc_resetAddress;
+logic [31:0]pc_resetAddress_next;
+
 PC pc(
 	.clk(clk),
 	.rst(rst),
+	.resetAddress(pc_resetAddress),
 
 	.newPC(pc_newPC),
 	.shouldUseNewPC(pc_shouldUseNewPC),
@@ -47,6 +52,15 @@ PC pc(
 	.pcAddress(pc_pcAddress),
 	.nextPCAddress(pc_nextPCAddress)
 );
+// Use the memory clock so this register isn't affected by regular processor resetting.
+always_ff @ (posedge memory_clk or negedge memory_rst) begin
+	if (memory_rst == 1'b0) begin
+		pc_resetAddress <= 32'h3FC;
+	end
+	else begin
+		pc_resetAddress <= pc_resetAddress_next;
+	end
+end
 
 
 // Register File
@@ -141,14 +155,14 @@ Branch branch(
 // 7 Segment displays
 logic [31:0]sevenSegDisplay;
 logic [31:0]sevenSegDisplay_next;
-always_ff @ (posedge clk or negedge rst) begin
-	if (rst == 1'b0)
+always_ff @ (posedge memory_clk or negedge memory_rst) begin
+	if (memory_rst == 1'b0)
 		sevenSegDisplay <= 32'd0;
 	else
 		sevenSegDisplay <= sevenSegDisplay_next;
 end
 always_comb begin
-	//sevenSegmentDisplayOutput = sevenSegDisplay;
+	sevenSegmentDisplayOutput = sevenSegDisplay;
 end
 
 
@@ -181,6 +195,7 @@ PS2KeyboardMemory ps2kbm(
 );
 
 //DEBUG
+/*
 logic [7:0]zeebee;
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
@@ -195,6 +210,7 @@ end
 always_comb begin
 	sevenSegmentDisplayOutput = { {24{1'b0}}, zeebee};
 end
+*/
 //ENDDEBUG
 
 
@@ -328,8 +344,12 @@ logic control_unsignedLoad_d1;
 logic [1:0]control_registerWriteSource_d1;
 
 logic [4:0]registerFile_writeAddress_d1;
+logic [31:0]registerFile_readValue1_d1;
 
 logic [31:0]alu_result_d1;
+
+logic [31:0]memoryRouting_address_d1;
+logic [2:0]memoryRouting_readMode_d1;
 
 // The memory data/address has built in input registers.
 
@@ -498,15 +518,14 @@ always @ (posedge clk) begin
 	//$display("Should use new PC: %d", branch_shouldUseNewPC);
 end
 
+// Assign values passed from last stage
+// Route the memory control lines to read/write from/to the correct module.
 logic [31:0]memoryRouting_address;
 logic [31:0]memoryRouting_dataIn;
 logic [2:0]memoryRouting_writeMode;
 logic [2:0]memoryRouting_readMode;
 logic memoryRouting_unsignedLoad;
 
-logic [31:0]memoryRouting_dataOut;
-
-// Assign values passed from last stage
 always_comb begin
 
 	// PC
@@ -562,7 +581,6 @@ always_comb begin
 		memoryRouting_readMode = externalReadMode;
 		memoryRouting_writeMode = externalWriteMode;
 		memoryRouting_unsignedLoad = 1'b1;
-		externalDataOut = memoryRouting_dataOut;
 	end
 	else begin	
 		memoryRouting_address = alu_result;
@@ -577,44 +595,60 @@ always_comb begin
 		memoryRouting_readMode = control_readMode_d0;
 		memoryRouting_writeMode = control_writeMode_d0;
 		memoryRouting_unsignedLoad = control_unsignedLoad_d0;
-		externalDataOut = 32'd0;
 	end
 end
 
-// Route the memory control lines to read/write from/to the correct module.
+
+logic externalMemoryControl_d1;
+logic writingToMemory;
+
+// This section handles writing and setting up reads
 always_comb begin
+	writingToMemory = (memoryRouting_writeMode != MemoryModesPackage::ReadWriteMode_NONE);
 	
+	// We're not writing to anything by default.
+	// Depending on the address, the appropriate module/registers will
+	// be routed for writing.
 	memory_address = 32'd0;
 	memory_dataIn = 32'd0;
 	memory_readMode = MemoryModesPackage::ReadWriteMode_NONE;
 	memory_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
-	memory_unsignedLoad = 1'b1;
+	memory_unsignedLoad = 1'b0;
 	
 	keyboardMemory_asciiKeyAddress = 8'd0;
 	
 	sevenSegDisplay_next = sevenSegDisplay;
 	
-	// Default memoryRouting output
-	memoryRouting_dataOut = 32'd0;
+	pc_resetAddress_next = pc_resetAddress;
 	
-	if (memoryRouting_address >= 0 && memoryRouting_address <= 255) begin
+	if (memoryRouting_address >= 0 && memoryRouting_address < 255) begin
 		// Use the PS2KeyboardMemory module
+		// Assign the address so we can get the result next cycle.
 		keyboardMemory_asciiKeyAddress = memoryRouting_address[7:0];
-		
-		memoryRouting_dataOut = keyboardMemory_keyValue;
 	end
-	else if (memoryRouting_address == 32'd256) begin
-		sevenSegDisplay_next = memoryRouting_dataIn;
+	else if (memoryRouting_address == 32'd255) begin
+		// Can read from this without setting anything up.
+	
+		// If we're writing though, just write to it.
+		if (writingToMemory)
+			sevenSegDisplay_next = memoryRouting_dataIn;
+	end
+	else if (memoryRouting_address == 32'd259) begin
+		// Set the starting PC address.
+		// This gets assigned when the PC module is reset
+		if (writingToMemory)
+			pc_resetAddress_next = memoryRouting_dataIn;
+	end
+	else if (memoryRouting_address == 32'd263) begin
+		// Can't write to PC directly.
 	end
 	else if (memoryRouting_address >= 32'd1024) begin
-		// Use the Memory module
+		// Use the Memory module		
 		memory_address = memoryRouting_address;
 		memory_dataIn = memoryRouting_dataIn;
 		memory_readMode = memoryRouting_readMode;
 		memory_writeMode = memoryRouting_writeMode;
 		memory_unsignedLoad = memoryRouting_unsignedLoad;
-		
-		memoryRouting_dataOut = memory_dataOut;
 	end
 end
 
@@ -635,14 +669,9 @@ always_ff @ (posedge clk or negedge rst) begin
 		alu_result_d1 <= 32'd0;
 		
 		registerFile_writeAddress_d1 <= 5'd0;
+		registerFile_readValue1_d1 <= 32'd0;
 	end
 	else begin
-//		$display("Memory: %h, %h, %h, %h, %h", 
-//alu_result, 
-//registerFile_readValue1_d0, 
-//control_readMode_d0, 
-//control_writeMode_d0, 
-//control_unsignedLoad_d0);
 
 		pc_nextPCAddress_d1 <= pc_nextPCAddress_d0;
 	
@@ -658,11 +687,65 @@ always_ff @ (posedge clk or negedge rst) begin
 		alu_result_d1 <= alu_result;
 		
 		registerFile_writeAddress_d1 <= registerFile_writeAddress_d0;
+		registerFile_readValue1_d1 <= registerFile_readValue1_d0;
 	end
 end
 
+// These registers can be written to/read while the processor is in the reset state
+//  so they need to work off the same clock and reset as the memory module.
+always_ff @ (posedge memory_clk or negedge memory_rst) begin
+	if (memory_rst == 1'b0) begin
+		memoryRouting_address_d1 <= 32'd0;
+		memoryRouting_readMode_d1 <= MemoryModesPackage::ReadWriteMode_NONE;
+		externalMemoryControl_d1 <= 32'd0;
+	end
+	else begin
+		memoryRouting_address_d1 <= memoryRouting_address;
+		memoryRouting_readMode_d1 <= memoryRouting_readMode;
+		externalMemoryControl_d1 <= externalMemoryControl;
+	end
+end
 
 // PIPELINE STAGE 2 BELOW
+logic readingFromMemory;
+logic [31:0]memoryRouting_dataOut;
+
+always_comb begin
+	if (externalMemoryControl_d1 == 1'b1)
+		externalDataOut = memoryRouting_dataOut;
+	else
+		externalDataOut = 32'd0;
+end
+always_comb begin
+	readingFromMemory = (memoryRouting_readMode_d1 != MemoryModesPackage::ReadWriteMode_NONE);
+	
+	memoryRouting_dataOut = 32'd0;
+	
+	if (memoryRouting_address_d1 >= 0 && memoryRouting_address_d1 < 255) begin
+		// Use the PS2KeyboardMemory module
+		if (readingFromMemory)
+			memoryRouting_dataOut = keyboardMemory_keyValue;
+	end
+	else if (memoryRouting_address_d1 == 32'd255) begin
+		if (readingFromMemory)
+			memoryRouting_dataOut = sevenSegDisplay;
+	end
+	else if (memoryRouting_address_d1 == 32'd259) begin
+		// Set the starting PC address.
+		// This gets assigned when the PC module is reset
+		if (readingFromMemory)
+			memoryRouting_dataOut = pc_resetAddress_next;
+	end
+	else if (memoryRouting_address_d1 == 32'd263) begin
+		// Can't write to PC directly.
+		if (readingFromMemory)	
+			memoryRouting_dataOut = pc_pcAddress;
+	end
+	else if (memoryRouting_address_d1 >= 32'd1024) begin
+		// Use the Memory module			
+		memoryRouting_dataOut = memory_dataOut;
+	end
+end
 
 // Assign inputs from previous registers
 always_comb begin
@@ -688,9 +771,6 @@ always_comb begin
 			registerFile_writeData = 32'd0;
 		end
 	endcase
-end
-always_comb begin
-
 end
 
 endmodule

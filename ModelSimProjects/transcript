@@ -1,77 +1,319 @@
 # Loading project ProcessorTests
-vsim work.PS2Keyboard_TB
-# vsim work.PS2Keyboard_TB 
-# Start time: 12:24:49 on Aug 02,2018
+# Load canceled
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# 30 compiles, 0 failed with no errors.
+vsim work.Main_TB -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver
+# vsim work.Main_TB -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver 
+# Start time: 22:08:37 on Aug 02,2018
 # Loading sv_std.std
-# Loading work.PS2Keyboard_TB
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
 # Loading work.PS2Keyboard
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(155): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(156): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(157): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(158): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(159): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(160): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(161): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# ** Error: (vsim-3033) /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv(162): Instantiation of 'Output7Seg' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+#         Searched libraries:
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/altera
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/cycloneive
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/ModelSim/modelsim_ase/altera/verilog/220model
+#             /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/ProcessorTests
+# Loading work.SerialCommandProcessor
+# Error loading design
+# End time: 22:08:37 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.Main_TB
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.Main_TB 
+# Start time: 22:09:01 on Aug 02,2018
+# Loading sv_std.std
+# Loading work.Main_TB
+# Loading work.RS232
+# Loading work.MemoryModesPackage
+# Loading work.Main_sv_unit
+# Loading work.Main
+# Loading work.ProcessorClockEnabler
+# Loading work.ProcessorClockEnabler_altclkctrl_0
+# Loading work.ProcessorClockEnabler_altclkctrl_0_sub
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.BranchModesPackage
+# Loading work.ControlLinePackage
+# Loading work.ProcessorPackage
+# Loading work.Processor_sv_unit
+# Loading work.Processor
+# Loading work.PC
+# Loading work.RegisterFile
+# Loading work.ALUFunctCodesPackage
+# Loading work.ALU_sv_unit
+# Loading work.ALU
+# Loading work.ALUDIV1
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Branch_sv_unit
+# Loading work.Branch
+# Loading work.PS2Keyboard
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading work.MIPSInstructionPackage
+# Loading work.Control_sv_unit
+# Loading work.Control
+# Loading work.Output7Seg
+# Loading work.SerialCommandProcessor
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3017) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Too few port connections. Expected 19, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'PS2_CLK'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'PS2_DAT'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg7'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg6'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg5'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg4'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg3'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg2'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg1'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg0'.
+add wave sim:/Main_TB/*
 restart -f
-add wave sim:/PS2Keyboard_TB/*
+# ** Warning: (vsim-3017) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Too few port connections. Expected 19, found 9.
+#    Time: 0 ps  Iteration: 0  Instance: /Main_TB/main File: /home/imaustyn/Desktop/FPGAComputer/HDL/Main.sv
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'PS2_CLK'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'PS2_DAT'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg7'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg6'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg5'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg4'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg3'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg2'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg1'.
+# ** Warning: (vsim-3722) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Main_TB.sv(72): [TFMPC] - Missing connection for port 'seg0'.
+run 20000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Main_TB.main.processor.mem.ram.altsyncram_component.m_default.altsyncram_inst
 run 20000
 run 20000
 run 20000
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
 run 20000
+run 20000
+run 20000
+run 20000
+run 20000
+# Command is:          5
+run 20000
+run 20000
+run 20000
+run 20000
+run 20000
+run 20000
+run 20000
+run 20000
+# Command is:          2
+run 2000000
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Writing to memory: 12345678
+# Writing to memory: aabbaabb
+# Writing to memory: cccccccc
+# Writing to memory: 11112222
+# Command is:          3
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
+# RX data: hex:12 string:
+# RX data: hex:34 string:4
+# RX data: hex:56 string:V
+# RX data: hex:78 string:x
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:aa string:ª
+# RX data: hex:bb string:»
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:cc string:Ì
+# RX data: hex:11 string:
+# RX data: hex:11 string:
+# RX data: hex:22 string:"
+# RX data: hex:22 string:"
 # Done
-restart -f
-run 2000
-run 2000
-# Done
-restart -f
-run 2500
-# Done
-add wave -position insertpoint /PS2Keyboard_TB/ps2kb/state
-# Compile of PS2Keyboard.sv was successful.
-restart -f
-# Loading work.PS2Keyboard
-run 2500
-# Done
-add wave -position insertpoint /PS2Keyboard_TB/ps2kb/PS2_CLK_LAST
-restart -f
-run 2500
-# Done
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
-run 2500
-# Done
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
-run 2500
-# Done
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
-run 2500
-# Done
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
-run 2500
-# Done
-# Compile of PS2Keyboard.sv was successful.
-restart -f
-# Loading work.PS2Keyboard
-run 2500
-# Scan code ready: cf
-# Done
-# Compile of PS2Keyboard_TB.sv was successful.
-restart -f
-# Loading work.PS2Keyboard_TB
-run 2500
-# Scan code ready: cf
-# Done
-# Compile of PS2Keyboard.sv was successful.
-restart -f
-# Loading work.PS2Keyboard
-run 2500
-# Scan code ready: cf
-# Done
-# Compile of PS2Keyboard.sv failed with 4 errors.
-# Compile of PS2Keyboard.sv was successful.
-quit
-# End time: 13:05:15 on Aug 02,2018, Elapsed time: 0:40:26
-# Errors: 0, Warnings: 0
+# Command is:          4

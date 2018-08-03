@@ -1,5 +1,5 @@
 Flow report for MIPSProcessor
-Wed Aug  1 19:46:27 2018
+Thu Aug  2 22:31:32 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug  1 19:46:27 2018       ;
+; Flow Status                        ; Successful - Thu Aug  2 22:31:32 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,995 / 114,480 ( 7 % )                     ;
-;     Total combinational functions  ; 7,836 / 114,480 ( 7 % )                     ;
-;     Dedicated logic registers      ; 2,033 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2033                                        ;
+; Total logic elements               ; 11,410 / 114,480 ( 10 % )                   ;
+;     Total combinational functions  ; 9,644 / 114,480 ( 8 % )                     ;
+;     Dedicated logic registers      ; 4,866 / 114,480 ( 4 % )                     ;
+; Total registers                    ; 4866                                        ;
 ; Total pins                         ; 67 / 529 ( 13 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 524,543 / 3,981,312 ( 13 % )                ;
+; Total memory bits                  ; 897,279 / 3,981,312 ( 23 % )                ;
 ; Embedded Multiplier 9-bit elements ; 16 / 532 ( 3 % )                            ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,49 +64,77 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/01/2018 19:43:58 ;
+; Start date & time ; 08/02/2018 22:28:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPSProcessor       ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                             ;
-+-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
-; Assignment Name                     ; Value                                                                   ; Default Value ; Entity Name           ; Section Id           ;
-+-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153316703819130                                             ; --            ; --                    ; --                   ;
-; EDA_INPUT_DATA_FORMAT               ; Vqm                                                                     ; --            ; --                    ; eda_design_synthesis ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                       ; --            ; --                    ; eda_simulation       ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                         ; <None>        ; --                    ; --                   ;
-; EDA_TIME_SCALE                      ; 1 ps                                                                    ; --            ; --                    ; eda_simulation       ;
-; ENABLE_SIGNALTAP                    ; Off                                                                     ; --            ; --                    ; --                   ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                      ; --            ; --                    ; --                   ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                       ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; ProcessorClockEnabler/synthesis/../ProcessorClockEnabler.cmp            ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; ProcessorClockEnabler/synthesis/../../ProcessorClockEnabler.qsys        ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; RAM32Bit_inst.v                                                         ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; RAM32Bit_bb.v                                                           ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; ALUDIV1_inst.v                                                          ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; ALUDIV1_bb.v                                                            ; --            ; --                    ; --                   ;
-; MISC_FILE                           ; ALUDIV1_syn.v                                                           ; --            ; --                    ; --                   ;
-; NUM_PARALLEL_PROCESSORS             ; All                                                                     ; --            ; --                    ; --                   ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                  ; --            ; Main                  ; Top                  ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                  ; --            ; Main                  ; Top                  ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                  ; --            ; Main                  ; Top                  ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                     ; --            ; --                    ; --                   ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                   ; --            ; --                    ; --                   ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                            ; --            ; --                    ; --                   ;
-; SLD_FILE                            ; ProcessorClockEnabler/synthesis/ProcessorClockEnabler.debuginfo         ; --            ; --                    ; --                   ;
-; SLD_INFO                            ; QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481 ; --            ; ProcessorClockEnabler ; --                   ;
-; SOPCINFO_FILE                       ; ProcessorClockEnabler/synthesis/../../ProcessorClockEnabler.sopcinfo    ; --            ; --                    ; --                   ;
-; STATE_MACHINE_PROCESSING            ; User-Encoded                                                            ; Auto          ; --                    ; --                   ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                      ; --            ; --                    ; --                   ;
-; TOP_LEVEL_ENTITY                    ; Main                                                                    ; MIPSProcessor ; --                    ; --                   ;
-; USE_SIGNALTAP_FILE                  ; STPrs232.stp                                                            ; --            ; --                    ; --                   ;
-; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                                                      ; Verilog_2001  ; --                    ; --                   ;
-; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                                                     ; --            ; --                    ; --                   ;
-+-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                     ;
++-------------------------------------+---------------------------------------------------------------------------------+---------------+-----------------------+----------------------+
+; Assignment Name                     ; Value                                                                           ; Default Value ; Entity Name           ; Section Id           ;
++-------------------------------------+---------------------------------------------------------------------------------+---------------+-----------------------+----------------------+
+; COMPILER_SIGNATURE_ID               ; 52229457043.153326331044444                                                     ; --            ; --                    ; --                   ;
+; EDA_INPUT_DATA_FORMAT               ; Vqm                                                                             ; --            ; --                    ; eda_design_synthesis ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                               ; --            ; --                    ; eda_simulation       ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                                 ; <None>        ; --                    ; --                   ;
+; EDA_TIME_SCALE                      ; 1 ps                                                                            ; --            ; --                    ; eda_simulation       ;
+; ENABLE_SIGNALTAP                    ; On                                                                              ; --            ; --                    ; --                   ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                              ; --            ; --                    ; --                   ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                               ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; ProcessorClockEnabler/synthesis/../ProcessorClockEnabler.cmp                    ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; ProcessorClockEnabler/synthesis/../../ProcessorClockEnabler.qsys                ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; RAM32Bit_inst.v                                                                 ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; RAM32Bit_bb.v                                                                   ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; ALUDIV1_inst.v                                                                  ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; ALUDIV1_bb.v                                                                    ; --            ; --                    ; --                   ;
+; MISC_FILE                           ; ALUDIV1_syn.v                                                                   ; --            ; --                    ; --                   ;
+; NUM_PARALLEL_PROCESSORS             ; All                                                                             ; --            ; --                    ; --                   ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                          ; --            ; Main                  ; Top                  ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                          ; --            ; Main                  ; Top                  ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                          ; --            ; Main                  ; Top                  ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                             ; --            ; --                    ; --                   ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                           ; --            ; --                    ; --                   ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                    ; --            ; --                    ; --                   ;
+; SLD_FILE                            ; ProcessorClockEnabler/synthesis/ProcessorClockEnabler.debuginfo                 ; --            ; --                    ; --                   ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                                                       ; --            ; --                    ; --                   ;
+; SLD_INFO                            ; QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481         ; --            ; ProcessorClockEnabler ; --                   ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                             ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                   ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                                         ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                         ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                          ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                   ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                      ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                  ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                               ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                          ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                    ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                                       ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                             ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                        ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                                          ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                                              ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                                          ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                    ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=1                                                   ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=0000000000000000000000000                                    ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=25                                                    ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=2048                                                           ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=2048                                                           ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=182                                                               ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=182                                                            ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=182                                                  ; --            ; --                    ; auto_signaltap_0     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=sld_reserved_MIPSProcessor_auto_signaltap_0_1_4f84, ; --            ; --                    ; auto_signaltap_0     ;
+; SOPCINFO_FILE                       ; ProcessorClockEnabler/synthesis/../../ProcessorClockEnabler.sopcinfo            ; --            ; --                    ; --                   ;
+; STATE_MACHINE_PROCESSING            ; User-Encoded                                                                    ; Auto          ; --                    ; --                   ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                              ; --            ; --                    ; --                   ;
+; TOP_LEVEL_ENTITY                    ; Main                                                                            ; MIPSProcessor ; --                    ; --                   ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                                        ; --            ; --                    ; --                   ;
+; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                                                              ; Verilog_2001  ; --                    ; --                   ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                                                             ; --            ; --                    ; --                   ;
++-------------------------------------+---------------------------------------------------------------------------------+---------------+-----------------------+----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -114,12 +142,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:14     ; 1.0                     ; 1034 MB             ; 00:01:19                           ;
-; Fitter               ; 00:00:50     ; 1.1                     ; 1552 MB             ; 00:01:01                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 854 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.4                     ; 1013 MB             ; 00:00:08                           ;
-; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 1152 MB             ; 00:00:09                           ;
-; Total                ; 00:02:23     ; --                      ; --                  ; 00:02:40                           ;
+; Analysis & Synthesis ; 00:01:18     ; 1.0                     ; 1135 MB             ; 00:01:32                           ;
+; Fitter               ; 00:01:09     ; 1.1                     ; 1601 MB             ; 00:01:26                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 873 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.4                     ; 1067 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:12     ; 1.0                     ; 1191 MB             ; 00:00:12                           ;
+; Total                ; 00:02:51     ; --                      ; --                  ; 00:03:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

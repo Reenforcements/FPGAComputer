@@ -1,0 +1,104 @@
+
+linkedAsm.elf:     file format elf32-tradbigmips
+
+
+Disassembly of section .MIPS.abiflags:
+
+00000400 <.MIPS.abiflags>:
+ 400:	00000100 	sll	zero,zero,0x4
+ 404:	01010001 	0x1010001
+	...
+
+Disassembly of section .reginfo:
+
+00000418 <.reginfo>:
+ 418:	40397d00 	0x40397d00
+	...
+ 42c:	00018520 	0x18520
+
+Disassembly of section .text:
+
+00000430 <_ftext>:
+ 430:	24080000 	li	t0,0
+ 434:	08000113 	j	44c <first>
+ 438:	00000000 	nop
+	...
+
+0000044c <first>:
+ 44c:	241e00ff 	li	s8,255
+ 450:	3c0aabcd 	lui	t2,0xabcd
+ 454:	354a1234 	ori	t2,t2,0x1234
+ 458:	afca0000 	sw	t2,0(s8)
+ 45c:	24080000 	li	t0,0
+
+00000460 <waitForUp>:
+ 460:	8c0800c1 	lw	t0,193(zero)
+ 464:	00000000 	nop
+ 468:	1008fffd 	beq	zero,t0,460 <waitForUp>
+ 46c:	00000000 	nop
+ 470:	24100000 	li	s0,0
+ 474:	24130000 	li	s3,0
+ 478:	24140000 	li	s4,0
+ 47c:	24150000 	li	s5,0
+
+00000480 <loop1>:
+ 480:	afd00000 	sw	s0,0(s8)
+ 484:	8c0b00c1 	lw	t3,193(zero)
+ 488:	8c0c00c2 	lw	t4,194(zero)
+ 48c:	8c0d00c3 	lw	t5,195(zero)
+ 490:	8c0e00b4 	lw	t6,180(zero)
+ 494:	00000000 	nop
+ 498:	166b0006 	bne	s3,t3,4b4 <newUpKey>
+ 49c:	00000000 	nop
+ 4a0:	00000000 	nop
+ 4a4:	08000132 	j	4c8 <continue1>
+ 4a8:	24080000 	li	t0,0
+	...
+
+000004b4 <newUpKey>:
+ 4b4:	01609825 	move	s3,t3
+ 4b8:	08000132 	j	4c8 <continue1>
+ 4bc:	31680001 	andi	t0,t3,0x1
+	...
+
+000004c8 <continue1>:
+ 4c8:	168c0006 	bne	s4,t4,4e4 <newUpKey2>
+ 4cc:	01108020 	add	s0,t0,s0
+ 4d0:	00000000 	nop
+ 4d4:	0800013e 	j	4f8 <continue2>
+ 4d8:	24080000 	li	t0,0
+	...
+
+000004e4 <newUpKey2>:
+ 4e4:	0180a025 	move	s4,t4
+ 4e8:	0800013e 	j	4f8 <continue2>
+ 4ec:	31880001 	andi	t0,t4,0x1
+	...
+
+000004f8 <continue2>:
+ 4f8:	02088022 	sub	s0,s0,t0
+ 4fc:	01b08020 	add	s0,t5,s0
+ 500:	020e8022 	sub	s0,s0,t6
+ 504:	8c0b0072 	lw	t3,114(zero)
+ 508:	00000000 	nop
+ 50c:	11600003 	beqz	t3,51c <continue3>
+ 510:	00000000 	nop
+ 514:	00000000 	nop
+ 518:	24100000 	li	s0,0
+
+0000051c <continue3>:
+ 51c:	08000120 	j	480 <loop1>
+ 520:	00000000 	nop
+
+00000524 <last>:
+ 524:	08000149 	j	524 <last>
+ 528:	00000000 	nop
+ 52c:	00000000 	nop
+
+Disassembly of section .gnu.attributes:
+
+00000000 <.gnu.attributes>:
+   0:	41000000 	bc0f	4 <_ftext-0x42c>
+   4:	0f676e75 	jal	d9db9d4 <_gp+0xd9c34b4>
+   8:	00010000 	sll	zero,at,0x0
+   c:	00070401 	0x70401

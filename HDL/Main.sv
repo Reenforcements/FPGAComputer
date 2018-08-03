@@ -215,7 +215,7 @@ always_comb begin
 	// Assign other memory lines.
 	externalData = serialCP_memoryWordOut;
 	LED1 = rstIn;
-	LED2 = force_rst;
+	LED2 = externalMemoryControl;
 	LED3 = rst;
 	serialCP_memoryWordIn = externalDataOut;
 end

@@ -21,6 +21,7 @@ parser.add_argument("-i", dest="input", nargs="?", default="input.txt", action='
 parser.add_argument("-o", dest="output", nargs="?", default="output.txt", action='store')
 parser.add_argument("-startAddress", type=int, dest="startAddress", nargs="?", default=1024, action='store')
 parser.add_argument("-endAddress", type=int, dest="endAddress", nargs="?", default=65532, action='store')
+parser.add_argument("-w", type=str, dest="word", nargs="?", default=None, action='store')
 
 args = parser.parse_args()
 command = args.command[0]
@@ -59,17 +60,26 @@ if command == "INFO":
 	#print("Received: {} bytes".format(len(info)))
 	print(info)
 if command == "UPLOAD":
+
+	# Command length / command
+	sendInt(0x00000000)
+	sendInt(commands[command])
+
+	if args.word != None:
+		print("Uploading single word {} to memory address {}".format(args.word, args.startAddress))
+		sendInt(args.startAddress)
+		sendInt(args.endAddress)
+		
+		sendInt(int(args.word, 16))
+		sys.exit(0)
+
 	with open(args.input, "r") as f:
 		lines = []
 		for line in f:
 			lines.append(line)
 
-		# Command length / command
-		sendInt(0x00000000)
-		sendInt(commands[command])
-
 		# start/end addresses
-		startAddress = 1024
+		startAddress = args.startAddress
 		endAddress = startAddress + (4*len(lines))
 		print("Start and end addresses: {} to {}".format(startAddress, endAddress))
 		sendInt(startAddress)
@@ -80,17 +90,19 @@ if command == "UPLOAD":
 		toSend = (endAddress - startAddress)/4
 		print("Preparing to upload {} words of data...".format(toSend))
 		while totalSent < toSend:
+
 			sendInt( int(lines[totalSent], 16) )
 			if s.out_waiting > 2000:
 				time.sleep(0.02)
 			totalSent += 1
-			if totalSent % (toSend / 10) == 0:
+			if toSend > 10 and (totalSent % (toSend / 10) == 0):
 				sys.stdout.write("|")
 				sys.stdout.flush()
 		print("")
 		print("Done uploading.")
 
 if command == "DOWNLOAD":
+
 	# Command length / command
 	sendInt(0x00000000)
 	sendInt(commands[command])
