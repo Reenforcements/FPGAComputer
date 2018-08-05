@@ -10,7 +10,7 @@ Display the counter on the seven segment displays.
 
 */
 void main() {
-	// Set our stack pointer
+	// Set our stack pocharer
 	//asm("lui $sp, 0xFF\n"
 	//	"ori $sp, $sp, 0xFF\n"
 	//	"move $s8, $sp");
@@ -34,26 +34,26 @@ void main() {
 	int *segmentedDisplay = (int *)255;
 
 
-	// The locations of the keys we're interested in.
+	// The locations of the keys we're charerested in.
 	// ascii_up = 8'hC1
 	// ascii_down = 8'hC2
 	// ascii_right = 8'hC3
 	// ascii_left = 8'hB4
-	int *upArrow = (int*) 0xC1;
-	int *downArrow = (int*) 0xC2;
-	int *rightArrow = (int*) 0xC3;
-	int *leftArrow = (int*) 0xB4;
-	int *rKey = (int*) 0x72;
-	int *shift = (int*) 0xCB;
+	char *upArrow = (char*) 0xC1;
+	char *downArrow = (char*) 0xC2;
+	char *rightArrow = (char*) 0xC3;
+	char *leftArrow = (char*) 0xB4;
+	char *rKey = (char*) 0x72;
+	char *shift = (char*) 0xCB;
 
 	*segmentedDisplay = 0xABCDEF12;
 
 	unsigned int counter = 0;
-	int upArrowPressed = 0;
-	int downArrowPressed = 0;
-	int *upArrowPressed_Specific = (int*) 64000;
+	char upArrowPressed = 0;
+	char downArrowPressed = 0;
+	char *upArrowPressed_Specific = (char*) 64000;
 	*upArrowPressed_Specific = 0;
-	int *downArrowPressed_Specific = (int*) 64004;
+	char *downArrowPressed_Specific = (char*) 64004;
 	*downArrowPressed_Specific = 0;
 	while(1) {
 	

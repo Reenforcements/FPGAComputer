@@ -23,11 +23,11 @@ Disassembly of section .note.gnu.build-id:
  434:	00000014 	0x14
  438:	00000003 	sra	zero,zero,0x0
  43c:	474e5500 	c1	0x14e5500
- 440:	211b9089 	addi	k1,t0,-28535
- 444:	fa901286 	0xfa901286
- 448:	1222433d 	beq	s1,v0,11140 <__bss_start+0x990>
- 44c:	05507cd7 	bltzal	t2,1f7ac <_gp+0x700c>
- 450:	08015d81 	j	57604 <_gp+0x3ee64>
+ 440:	28c4ac7f 	slti	a0,a2,-21377
+ 444:	4b34a046 	c2	0x134a046
+ 448:	cc693c55 	lwc3	$9,15445(v1)
+ 44c:	5e8a7ff4 	0x5e8a7ff4
+ 450:	b6d9848d 	0xb6d9848d
 
 Disassembly of section .text:
 
@@ -38,8 +38,8 @@ Display the counter on the seven segment displays.
 
 */
 void main() {
- 460:	27bdffb8 	addiu	sp,sp,-72
- 464:	afbe0044 	sw	s8,68(sp)
+ 460:	27bdffc0 	addiu	sp,sp,-64
+ 464:	afbe003c 	sw	s8,60(sp)
  468:	03a0f025 	move	s8,sp
 	asm("sw $s8, 30004($0)");
 	asm("li $t0, 30008");
@@ -48,77 +48,77 @@ void main() {
 
 	int *readback = (int*)20000;
  46c:	24024e20 	li	v0,20000
- 470:	afc20014 	sw	v0,20(s8)
+ 470:	afc20010 	sw	v0,16(s8)
 	*(readback) = 1234;
- 474:	8fc20014 	lw	v0,20(s8)
+ 474:	8fc20010 	lw	v0,16(s8)
  478:	240304d2 	li	v1,1234
  47c:	ac430000 	sw	v1,0(v0)
 
 	// 256 is the address of the 7 segment display register.
 	int *segmentedDisplay = (int *)255;
  480:	240200ff 	li	v0,255
- 484:	afc20018 	sw	v0,24(s8)
-	// The locations of the keys we're interested in.
+ 484:	afc20014 	sw	v0,20(s8)
+	// The locations of the keys we're charerested in.
 	// ascii_up = 8'hC1
 	// ascii_down = 8'hC2
 	// ascii_right = 8'hC3
 	// ascii_left = 8'hB4
-	int *upArrow = (int*) 0xC1;
+	char *upArrow = (char*) 0xC1;
  488:	240200c1 	li	v0,193
- 48c:	afc2001c 	sw	v0,28(s8)
-	int *downArrow = (int*) 0xC2;
+ 48c:	afc20018 	sw	v0,24(s8)
+	char *downArrow = (char*) 0xC2;
  490:	240200c2 	li	v0,194
- 494:	afc20020 	sw	v0,32(s8)
-	int *rightArrow = (int*) 0xC3;
+ 494:	afc2001c 	sw	v0,28(s8)
+	char *rightArrow = (char*) 0xC3;
  498:	240200c3 	li	v0,195
- 49c:	afc20024 	sw	v0,36(s8)
-	int *leftArrow = (int*) 0xB4;
+ 49c:	afc20020 	sw	v0,32(s8)
+	char *leftArrow = (char*) 0xB4;
  4a0:	240200b4 	li	v0,180
- 4a4:	afc20028 	sw	v0,40(s8)
-	int *rKey = (int*) 0x72;
+ 4a4:	afc20024 	sw	v0,36(s8)
+	char *rKey = (char*) 0x72;
  4a8:	24020072 	li	v0,114
- 4ac:	afc2002c 	sw	v0,44(s8)
-	int *shift = (int*) 0xCB;
+ 4ac:	afc20028 	sw	v0,40(s8)
+	char *shift = (char*) 0xCB;
  4b0:	240200cb 	li	v0,203
- 4b4:	afc20030 	sw	v0,48(s8)
+ 4b4:	afc2002c 	sw	v0,44(s8)
 
 	*segmentedDisplay = 0xABCDEF12;
- 4b8:	8fc20018 	lw	v0,24(s8)
+ 4b8:	8fc20014 	lw	v0,20(s8)
  4bc:	3c03abcd 	lui	v1,0xabcd
  4c0:	3463ef12 	ori	v1,v1,0xef12
  4c4:	ac430000 	sw	v1,0(v0)
 
 	unsigned int counter = 0;
  4c8:	afc00008 	sw	zero,8(s8)
-	int upArrowPressed = 0;
- 4cc:	afc0000c 	sw	zero,12(s8)
-	int downArrowPressed = 0;
- 4d0:	afc00010 	sw	zero,16(s8)
-	int *upArrowPressed_Specific = (int*) 64000;
+	char upArrowPressed = 0;
+ 4cc:	a3c0000c 	sb	zero,12(s8)
+	char downArrowPressed = 0;
+ 4d0:	a3c0000d 	sb	zero,13(s8)
+	char *upArrowPressed_Specific = (char*) 64000;
  4d4:	3402fa00 	li	v0,0xfa00
- 4d8:	afc20034 	sw	v0,52(s8)
+ 4d8:	afc20030 	sw	v0,48(s8)
 	*upArrowPressed_Specific = 0;
- 4dc:	8fc20034 	lw	v0,52(s8)
+ 4dc:	8fc20030 	lw	v0,48(s8)
  4e0:	00000000 	nop
- 4e4:	ac400000 	sw	zero,0(v0)
-	int *downArrowPressed_Specific = (int*) 64004;
+ 4e4:	a0400000 	sb	zero,0(v0)
+	char *downArrowPressed_Specific = (char*) 64004;
  4e8:	3402fa04 	li	v0,0xfa04
- 4ec:	afc20038 	sw	v0,56(s8)
+ 4ec:	afc20034 	sw	v0,52(s8)
 	*downArrowPressed_Specific = 0;
- 4f0:	8fc20038 	lw	v0,56(s8)
+ 4f0:	8fc20034 	lw	v0,52(s8)
  4f4:	00000000 	nop
- 4f8:	ac400000 	sw	zero,0(v0)
+ 4f8:	a0400000 	sb	zero,0(v0)
 	while(1) {
 	
 		if ((*upArrow) == 1) {
- 4fc:	8fc2001c 	lw	v0,28(s8)
+ 4fc:	8fc20018 	lw	v0,24(s8)
  500:	00000000 	nop
- 504:	8c430000 	lw	v1,0(v0)
+ 504:	80430000 	lb	v1,0(v0)
  508:	24020001 	li	v0,1
  50c:	1462000d 	bne	v1,v0,544 <main+0xe4>
  510:	00000000 	nop
 			if (upArrowPressed == 0) {
- 514:	8fc2000c 	lw	v0,12(s8)
+ 514:	83c2000c 	lb	v0,12(s8)
  518:	00000000 	nop
  51c:	14400005 	bnez	v0,534 <main+0xd4>
  520:	00000000 	nop
@@ -130,24 +130,24 @@ void main() {
 			}
 			upArrowPressed = 1;
  534:	24020001 	li	v0,1
- 538:	afc2000c 	sw	v0,12(s8)
+ 538:	a3c2000c 	sb	v0,12(s8)
  53c:	10000002 	b	548 <main+0xe8>
  540:	00000000 	nop
 		} else {
 			upArrowPressed = 0;
- 544:	afc0000c 	sw	zero,12(s8)
+ 544:	a3c0000c 	sb	zero,12(s8)
 		}
 
 		
 		if ((*downArrow) == 1) {
- 548:	8fc20020 	lw	v0,32(s8)
+ 548:	8fc2001c 	lw	v0,28(s8)
  54c:	00000000 	nop
- 550:	8c430000 	lw	v1,0(v0)
+ 550:	80430000 	lb	v1,0(v0)
  554:	24020001 	li	v0,1
  558:	1462000d 	bne	v1,v0,590 <main+0x130>
  55c:	00000000 	nop
 			if (!downArrowPressed) {
- 560:	8fc20010 	lw	v0,16(s8)
+ 560:	83c2000d 	lb	v0,13(s8)
  564:	00000000 	nop
  568:	14400005 	bnez	v0,580 <main+0x120>
  56c:	00000000 	nop
@@ -159,67 +159,67 @@ void main() {
 			}
 			downArrowPressed = 1;
  580:	24020001 	li	v0,1
- 584:	afc20010 	sw	v0,16(s8)
+ 584:	a3c2000d 	sb	v0,13(s8)
  588:	10000002 	b	594 <main+0x134>
  58c:	00000000 	nop
 		} else {
 			downArrowPressed = 0;
- 590:	afc00010 	sw	zero,16(s8)
+ 590:	a3c0000d 	sb	zero,13(s8)
 		}
 		
 		*readback = upArrowPressed;
- 594:	8fc20014 	lw	v0,20(s8)
- 598:	8fc3000c 	lw	v1,12(s8)
+ 594:	83c3000c 	lb	v1,12(s8)
+ 598:	8fc20010 	lw	v0,16(s8)
  59c:	00000000 	nop
  5a0:	ac430000 	sw	v1,0(v0)
 		*(readback + 4) = downArrowPressed;
- 5a4:	8fc20014 	lw	v0,20(s8)
+ 5a4:	8fc20010 	lw	v0,16(s8)
  5a8:	00000000 	nop
  5ac:	24420010 	addiu	v0,v0,16
- 5b0:	8fc30010 	lw	v1,16(s8)
+ 5b0:	83c3000d 	lb	v1,13(s8)
  5b4:	00000000 	nop
  5b8:	ac430000 	sw	v1,0(v0)
 		*(readback + 8) = *upArrow;
- 5bc:	8fc20014 	lw	v0,20(s8)
+ 5bc:	8fc20010 	lw	v0,16(s8)
  5c0:	00000000 	nop
  5c4:	24420020 	addiu	v0,v0,32
- 5c8:	8fc3001c 	lw	v1,28(s8)
+ 5c8:	8fc30018 	lw	v1,24(s8)
  5cc:	00000000 	nop
- 5d0:	8c630000 	lw	v1,0(v1)
+ 5d0:	80630000 	lb	v1,0(v1)
  5d4:	00000000 	nop
  5d8:	ac430000 	sw	v1,0(v0)
 		*(readback + 12) = *downArrow;
- 5dc:	8fc20014 	lw	v0,20(s8)
+ 5dc:	8fc20010 	lw	v0,16(s8)
  5e0:	00000000 	nop
  5e4:	24420030 	addiu	v0,v0,48
- 5e8:	8fc30020 	lw	v1,32(s8)
+ 5e8:	8fc3001c 	lw	v1,28(s8)
  5ec:	00000000 	nop
- 5f0:	8c630000 	lw	v1,0(v1)
+ 5f0:	80630000 	lb	v1,0(v1)
  5f4:	00000000 	nop
  5f8:	ac430000 	sw	v1,0(v0)
 		*(readback + 16) = *leftArrow;
- 5fc:	8fc20014 	lw	v0,20(s8)
+ 5fc:	8fc20010 	lw	v0,16(s8)
  600:	00000000 	nop
  604:	24420040 	addiu	v0,v0,64
- 608:	8fc30028 	lw	v1,40(s8)
+ 608:	8fc30024 	lw	v1,36(s8)
  60c:	00000000 	nop
- 610:	8c630000 	lw	v1,0(v1)
+ 610:	80630000 	lb	v1,0(v1)
  614:	00000000 	nop
  618:	ac430000 	sw	v1,0(v0)
 		*(readback + 20) = *rightArrow;
- 61c:	8fc20014 	lw	v0,20(s8)
+ 61c:	8fc20010 	lw	v0,16(s8)
  620:	00000000 	nop
  624:	24420050 	addiu	v0,v0,80
- 628:	8fc30024 	lw	v1,36(s8)
+ 628:	8fc30020 	lw	v1,32(s8)
  62c:	00000000 	nop
- 630:	8c630000 	lw	v1,0(v1)
+ 630:	80630000 	lb	v1,0(v1)
  634:	00000000 	nop
  638:	ac430000 	sw	v1,0(v0)
 
 		counter += ((*rightArrow) == 1) ? 1 : 0;
- 63c:	8fc20024 	lw	v0,36(s8)
+ 63c:	8fc20020 	lw	v0,32(s8)
  640:	00000000 	nop
- 644:	8c430000 	lw	v1,0(v0)
+ 644:	80430000 	lb	v1,0(v0)
  648:	24020001 	li	v0,1
  64c:	14620004 	bne	v1,v0,660 <main+0x200>
  650:	00000000 	nop
@@ -232,9 +232,9 @@ void main() {
  66c:	00621021 	addu	v0,v1,v0
  670:	afc20008 	sw	v0,8(s8)
 		counter += ((*leftArrow) == 1) ? -1 : 0;
- 674:	8fc20028 	lw	v0,40(s8)
+ 674:	8fc20024 	lw	v0,36(s8)
  678:	00000000 	nop
- 67c:	8c430000 	lw	v1,0(v0)
+ 67c:	80430000 	lb	v1,0(v0)
  680:	24020001 	li	v0,1
  684:	14620004 	bne	v1,v0,698 <main+0x238>
  688:	00000000 	nop
@@ -248,9 +248,9 @@ void main() {
  6a8:	afc20008 	sw	v0,8(s8)
 
 		*segmentedDisplay = ((((*upArrow == 1) ? 0xA000 : 0) + ((*downArrow == 1) ? 0x0B00 : 0) + ((*leftArrow == 1) ? 0x00C0 : 0) + ((*rightArrow == 1) ? 0x000D : 0)) << 16) | (0x0000FFFF & counter);
- 6ac:	8fc2001c 	lw	v0,28(s8)
+ 6ac:	8fc20018 	lw	v0,24(s8)
  6b0:	00000000 	nop
- 6b4:	8c430000 	lw	v1,0(v0)
+ 6b4:	80430000 	lb	v1,0(v0)
  6b8:	24020001 	li	v0,1
  6bc:	14620004 	bne	v1,v0,6d0 <main+0x270>
  6c0:	00000000 	nop
@@ -258,9 +258,9 @@ void main() {
  6c8:	10000002 	b	6d4 <main+0x274>
  6cc:	00000000 	nop
  6d0:	00001825 	move	v1,zero
- 6d4:	8fc20020 	lw	v0,32(s8)
+ 6d4:	8fc2001c 	lw	v0,28(s8)
  6d8:	00000000 	nop
- 6dc:	8c440000 	lw	a0,0(v0)
+ 6dc:	80440000 	lb	a0,0(v0)
  6e0:	24020001 	li	v0,1
  6e4:	14820004 	bne	a0,v0,6f8 <main+0x298>
  6e8:	00000000 	nop
@@ -269,9 +269,9 @@ void main() {
  6f4:	00000000 	nop
  6f8:	00001025 	move	v0,zero
  6fc:	00621821 	addu	v1,v1,v0
- 700:	8fc20028 	lw	v0,40(s8)
+ 700:	8fc20024 	lw	v0,36(s8)
  704:	00000000 	nop
- 708:	8c440000 	lw	a0,0(v0)
+ 708:	80440000 	lb	a0,0(v0)
  70c:	24020001 	li	v0,1
  710:	14820004 	bne	a0,v0,724 <main+0x2c4>
  714:	00000000 	nop
@@ -280,9 +280,9 @@ void main() {
  720:	00000000 	nop
  724:	00001025 	move	v0,zero
  728:	00621821 	addu	v1,v1,v0
- 72c:	8fc20024 	lw	v0,36(s8)
+ 72c:	8fc20020 	lw	v0,32(s8)
  730:	00000000 	nop
- 734:	8c440000 	lw	a0,0(v0)
+ 734:	80440000 	lb	a0,0(v0)
  738:	24020001 	li	v0,1
  73c:	14820004 	bne	a0,v0,750 <main+0x2f0>
  740:	00000000 	nop
@@ -298,14 +298,14 @@ void main() {
  768:	3042ffff 	andi	v0,v0,0xffff
  76c:	00621025 	or	v0,v1,v0
  770:	00401825 	move	v1,v0
- 774:	8fc20018 	lw	v0,24(s8)
+ 774:	8fc20014 	lw	v0,20(s8)
  778:	00000000 	nop
  77c:	ac430000 	sw	v1,0(v0)
 
 		if ((*rKey) == 1) {
- 780:	8fc2002c 	lw	v0,44(s8)
+ 780:	8fc20028 	lw	v0,40(s8)
  784:	00000000 	nop
- 788:	8c430000 	lw	v1,0(v0)
+ 788:	80430000 	lb	v1,0(v0)
  78c:	24020001 	li	v0,1
  790:	14620002 	bne	v1,v0,79c <main+0x33c>
  794:	00000000 	nop
@@ -345,7 +345,7 @@ Disassembly of section .pdr:
    4:	40000000 	mfc0	zero,c0_index
    8:	fffffffc 	0xfffffffc
 	...
-  14:	00000048 	0x48
+  14:	00000040 	ssnop
   18:	0000001e 	0x1e
   1c:	0000001f 	0x1f
 
@@ -363,10 +363,10 @@ Disassembly of section .debug_aranges:
 Disassembly of section .debug_info:
 
 00000000 <.debug_info>:
-   0:	00000102 	srl	zero,zero,0x4
+   0:	0000010f 	0x10f
    4:	00040000 	sll	zero,a0,0x0
    8:	00000401 	0x401
-   c:	000000ff 	0xff
+   c:	00000104 	0x104
   10:	0c000000 	jal	0 <main-0x460>
   14:	4e000000 	c3	0x0
   18:	bb000004 	swr	zero,4(t8)
@@ -380,55 +380,58 @@ Disassembly of section .debug_info:
   38:	00f10300 	0xf10300
   3c:	00003801 	0x3801
   40:	1e000000 	bgtz	s0,44 <main-0x41c>
-  44:	f102914c 	0xf102914c
+  44:	f1029150 	0xf1029150
   48:	03000000 	0x3000000
   4c:	76012200 	jalx	8048800 <_gp+0x8030060>
   50:	0000f102 	srl	s8,zero,0x4
-  54:	91500300 	lbu	s0,768(t2)
+  54:	91540300 	lbu	s4,768(t2)
   58:	00009f01 	0x9f01
   5c:	2a000000 	slti	zero,s0,0
-  60:	f1029154 	0xf1029154
+  60:	fe029158 	0xfe029158
   64:	03000000 	0x3000000
   68:	b1012b00 	0xb1012b00
-  6c:	0000f102 	srl	s8,zero,0x4
-  70:	91580300 	lbu	t8,768(t2)
+  6c:	0000fe02 	srl	ra,zero,0x18
+  70:	915c0300 	lbu	gp,768(t2)
   74:	00005701 	0x5701
   78:	2c000000 	sltiu	zero,zero,0
-  7c:	f102915c 	0xf102915c
+  7c:	fe029160 	0xfe029160
   80:	03000000 	0x3000000
   84:	a7012d00 	sh	at,11520(t8)
-  88:	0000f102 	srl	s8,zero,0x4
-  8c:	91600300 	lbu	zero,768(t3)
+  88:	0000fe02 	srl	ra,zero,0x18
+  8c:	91640300 	lbu	a0,768(t3)
   90:	00004901 	0x4901
   94:	2e000000 	sltiu	zero,s0,0
-  98:	f1029164 	0xf1029164
+  98:	fe029168 	0xfe029168
   9c:	03000000 	0x3000000
-  a0:	f9012f00 	0xf9012f00
-  a4:	0000f102 	srl	s8,zero,0x4
-  a8:	91680300 	lbu	t0,768(t3)
+  a0:	fe012f00 	0xfe012f00
+  a4:	0000fe02 	srl	ra,zero,0x18
+  a8:	916c0300 	lbu	t4,768(t3)
   ac:	00004101 	0x4101
-  b0:	33000000 	andi	zero,t8,0x0
-  b4:	fe029140 	0xfe029140
+  b0:	33000001 	andi	zero,t8,0x1
+  b4:	0b029148 	j	c0a4520 <_gp+0xc08bd80>
   b8:	03000000 	0x3000000
   bc:	62013400 	0x62013400
-  c0:	0000f702 	srl	s8,zero,0x1c
-  c4:	91440300 	lbu	a0,768(t2)
+  c0:	00010402 	srl	zero,at,0x10
+  c4:	914c0300 	lbu	t4,768(t2)
   c8:	00000001 	0x1
-  cc:	35000000 	ori	zero,t0,0x0
-  d0:	f7029148 	0xf7029148
+  cc:	35000001 	ori	zero,t0,0x1
+  d0:	0402914d 	0x402914d
   d4:	03000000 	0x3000000
   d8:	87013600 	lh	at,13824(t8)
-  dc:	0000f102 	srl	s8,zero,0x4
-  e0:	916c0300 	lbu	t4,768(t3)
+  dc:	0000fe02 	srl	ra,zero,0x18
+  e0:	91700300 	lbu	s0,768(t3)
   e4:	00001e01 	0x1e01
   e8:	38000000 	xori	zero,zero,0x0
-  ec:	f1029170 	0xf1029170
+  ec:	fe029174 	0xfe029174
   f0:	00040400 	sll	zero,a0,0x10
   f4:	0000f705 	0xf705
   f8:	0405696e 	0x405696e
-  fc:	74000604 	jalx	1810 <main+0x13b0>
- 100:	07000000 	bltz	t8,104 <main-0x35c>
- 104:	Address 0x0000000000000104 is out of bounds.
+  fc:	74000404 	jalx	1010 <main+0xbb0>
+ 100:	00000104 	0x104
+ 104:	06010600 	bgez	s0,1908 <main+0x14a8>
+ 108:	0000f906 	0xf906
+ 10c:	04070000 	0x4070000
+ 110:	Address 0x0000000000000110 is out of bounds.
 
 
 Disassembly of section .debug_abbrev:
@@ -531,7 +534,7 @@ Disassembly of section .debug_frame:
   14:	00000000 	nop
   18:	00000460 	0x460
   1c:	0000034c 	syscall	0xd
-  20:	440e4844 	0x440e4844
+  20:	440e4044 	0x440e4044
   24:	9e01440d 	0x9e01440d
   28:	1e000000 	bgtz	s0,2c <main-0x434>
 
@@ -600,30 +603,32 @@ Disassembly of section .debug_str:
   ec:	6f617264 	0x6f617264
   f0:	53657665 	0x53657665
   f4:	6e536567 	0x6e536567
-  f8:	00736869 	0x736869
-  fc:	66740047 	0x66740047
- 100:	4e552043 	c3	0x552043
- 104:	31312035 	andi	s1,t1,0x2035
- 108:	2e342e30 	sltiu	s4,s1,11824
- 10c:	20323031 	addi	s2,at,12337
- 110:	36303630 	ori	s0,s1,0x3630
- 114:	39202d6d 	xori	zero,t1,0x2d6d
- 118:	6562202d 	0x6562202d
- 11c:	6d697073 	0x6d697073
- 120:	31202d6d 	andi	zero,t1,0x2d6d
- 124:	66703332 	0x66703332
- 128:	202d6d68 	addi	t5,at,28008
- 12c:	6172642d 	0x6172642d
- 130:	666c6f61 	0x666c6f61
- 134:	74202d6d 	jalx	80b5b4 <_gp+0x7f2e14>
- 138:	6c6c7363 	0x6c6c7363
- 13c:	202d6d6e 	addi	t5,at,28014
- 140:	6f2d7368 	0x6f2d7368
- 144:	61726564 	0x61726564
- 148:	202d6d61 	addi	t5,at,28001
- 14c:	62693d33 	0x62693d33
- 150:	32202d67 	andi	zero,s1,0x2d67
-	...
+  f8:	00636861 	0x636861
+  fc:	72007368 	0x72007368
+ 100:	69667400 	0x69667400
+ 104:	474e5520 	c1	0x14e5520
+ 108:	43313120 	c0	0x1313120
+ 10c:	352e342e 	ori	t6,t1,0x342e
+ 110:	30203230 	andi	zero,at,0x3230
+ 114:	31363036 	andi	s6,t1,0x3036
+ 118:	3039202d 	andi	t9,at,0x202d
+ 11c:	6d656220 	0x6d656220
+ 120:	2d6d6970 	sltiu	t5,t3,26992
+ 124:	7331202d 	0x7331202d
+ 128:	6d667033 	0x6d667033
+ 12c:	32202d6d 	andi	zero,s1,0x2d6d
+ 130:	68617264 	0x68617264
+ 134:	2d666c6f 	sltiu	a2,t3,27759
+ 138:	6174202d 	0x6174202d
+ 13c:	6d6c6c73 	0x6d6c6c73
+ 140:	63202d6d 	0x63202d6d
+ 144:	6e6f2d73 	0x6e6f2d73
+ 148:	68617265 	0x68617265
+ 14c:	64202d6d 	0x64202d6d
+ 150:	6162693d 	0x6162693d
+ 154:	3332202d 	andi	s2,t9,0x202d
+ 158:	Address 0x0000000000000158 is out of bounds.
+
 
 Disassembly of section .gnu.attributes:
 
