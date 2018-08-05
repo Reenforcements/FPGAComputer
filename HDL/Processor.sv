@@ -519,6 +519,12 @@ always @ (posedge clk) begin
 end
 
 // Assign values passed from last stage
+
+// We might be using a value we calculated last cycle, so it won't be in its register yet.
+// Route it through these lines for immediate access.
+logic [31:0]registerRouting_readValue0;
+logic [31:0]registerRouting_readValue1;
+
 // Route the memory control lines to read/write from/to the correct module.
 logic [31:0]memoryRouting_address;
 logic [31:0]memoryRouting_dataIn;
@@ -528,31 +534,37 @@ logic memoryRouting_unsignedLoad;
 
 always_comb begin
 
+	// Register routing
+	if(control_registerWrite_d1 == 1'b1 && registerFile_writeAddress_d1 == instruction_rsIn_d0 && instruction_rsIn_d0 != 5'd0) begin
+		// Use the value just calculated that hasn't had a change to write yet.
+		registerRouting_readValue0 = alu_result_d1;
+	end
+	else begin
+		// Use the regular register value
+		registerRouting_readValue0 = registerFile_readValue0_d0;
+	end
+	
+	if(control_registerWrite_d1 == 1'b1 && registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
+		// Use our last ALU result which hasn't been written back to the register file yet.
+		registerRouting_readValue1 = alu_result_d1;
+	end
+	else begin
+		registerRouting_readValue1 = registerFile_readValue1_d0;
+	end
+	
 	// PC
 	pc_newPC = branch_branchTo;
 	pc_shouldUseNewPC = branch_shouldUseNewPC;
+	
 	// ALU
-	// Use immediately calculated data if we can
-	if(registerFile_writeAddress_d1 == instruction_rsIn_d0 && instruction_rsIn_d0 != 5'd0) begin
-		alu_dataIn0 = alu_result_d1;
-	end
-	else begin
-		alu_dataIn0 = registerFile_readValue0_d0;
-	end
+	alu_dataIn0 = registerRouting_readValue0;
 	
 	// We're not using data we just calculated.
 	if (control_useImmediate_d0 == 1'b1) begin
 		alu_dataIn1 = instruction_immediateExtended_d0;
 	end 
 	else begin
-		// Use immediately calculated data if we can
-		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
-			// Use our last ALU result which hasn't been written back to the register file yet.
-			alu_dataIn1 = alu_result_d1;
-		end
-		else begin
-			alu_dataIn1 = registerFile_readValue1_d0;
-		end
+		alu_dataIn1 = registerRouting_readValue1;
 	end
 
 	alu_funct = control_funct_d0;
@@ -585,13 +597,19 @@ always_comb begin
 	else begin	
 		memoryRouting_address = alu_result;
 		//memory_dataIn = registerFile_readValue1_d0;
-		if(registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
+		
+		/*
+		if(control_registerWrite_d1 == 1'b1 && registerFile_writeAddress_d1 == instruction_rtIn_d0 && instruction_rtIn_d0 != 5'd0) begin
 			// Use our last ALU result which hasn't been written back to the register file yet.
+			// This needs to be changed to the actual register write value right??
 			memoryRouting_dataIn = alu_result_d1;
 		end
 		else begin
 			memoryRouting_dataIn = registerFile_readValue1_d0;
 		end
+		*/
+		memoryRouting_dataIn = registerRouting_readValue1;
+		
 		memoryRouting_readMode = control_readMode_d0;
 		memoryRouting_writeMode = control_writeMode_d0;
 		memoryRouting_unsignedLoad = control_unsignedLoad_d0;
@@ -697,7 +715,7 @@ always_ff @ (posedge memory_clk or negedge memory_rst) begin
 	if (memory_rst == 1'b0) begin
 		memoryRouting_address_d1 <= 32'd0;
 		memoryRouting_readMode_d1 <= MemoryModesPackage::ReadWriteMode_NONE;
-		externalMemoryControl_d1 <= 32'd0;
+		externalMemoryControl_d1 <= 1'd0;
 	end
 	else begin
 		memoryRouting_address_d1 <= memoryRouting_address;
@@ -763,7 +781,6 @@ always_comb begin
 		ControlLinePackage::DATA_OUTPUT: begin
 			registerFile_writeData = memoryRouting_dataOut;
 		end
-
 		ControlLinePackage::RESULT: begin
 			registerFile_writeData = alu_result_d1;
 		end

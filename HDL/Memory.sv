@@ -178,13 +178,13 @@ always_comb begin
 					// Output the byte and sign extend if needed
 					dataOutput = { 
 					(unsignedLoad_d0 == 1'b0 & (q_a[7] == 1'b1)) ? {24{1'b1}} : {24{1'b0}}, 
-					8'( (q_a >> (5'd8 * address[1:0])) & (32'h000000FF) )
+					8'( (q_a >> (5'd8 * address_d0[1:0])) & (32'h000000FF) )
 					};
 				end
 				HALFWORD: begin
 					dataOutput = { 
 					(unsignedLoad_d0 == 1'b0 & (q_a[15] == 1'b1)) ? {16{1'b1}} : {16{1'b0}}, 
-					16'( (q_a >> (5'd8 * address[1:0])) & (32'h0000FFFF << (5'd8 * address[1:0])))
+					16'( (q_a >> (5'd8 * address_d0[1:0])) & (32'h0000FFFF << (5'd8 * address_d0[1:0])))
 					};
 				end
 				WORD: begin

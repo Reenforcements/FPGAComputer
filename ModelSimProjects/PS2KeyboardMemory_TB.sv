@@ -10,7 +10,7 @@ logic rst;
 logic [7:0]scanCode;
 logic scanCodeReady;
 
-logic [8:0]asciiKeyAddress;
+logic [7:0]asciiKeyAddress;
 logic [31:0]keyValue;
 
 PS2KeyboardMemory sp2kbm(
@@ -79,9 +79,14 @@ scanCode = sc_leftshift;
 scanCodeReady = 0;
 // right shift down
 scanCodeReady = 1;
+scanCode = 8'hE0;
+#10;
+scanCodeReady = 1;
 scanCode = sc_rightshift;
 #10;
 scanCodeReady = 0;
+
+
 // left shift up
 scanCodeReady = 1;
 scanCode = 8'hF0;
@@ -116,11 +121,14 @@ scanCodeReady = 1;
 scanCode = 8'hF0;
 #10;
 scanCodeReady = 1;
+scanCode = 8'hE0;
+#10;
+scanCodeReady = 1;
 scanCode = sc_rightshift;
 #10;
 scanCodeReady = 0;
 
-asciiKeyAddress = ascii_shift;
+asciiKeyAddress = ascii_rightshift;
 #10;
 assert(keyValue == 8'd0) 
 	$display("Successful key value for %h", asciiKeyAddress);
@@ -167,6 +175,7 @@ else
 	$error("Key value for %h incorrect: %d", asciiKeyAddress, keyValue);
 
 
+$display("Done.");
 #20000000;
 end
 

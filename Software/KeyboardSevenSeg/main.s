@@ -11,6 +11,23 @@
 	nop
 	nop
 	first:
+	sw $sp, 20000($0)
+	addi $sp, $sp, -1
+	nop
+	sw $sp, 20004($0)
+	nop
+
+	
+	#li $t5, -1
+	sw $sp, 20008($0)
+	add $sp, $sp, -1 # $rt, $rs, -1
+	sw $sp, 20012($0) # $rt, offset($rs)
+	
+	#li $t0, 0
+	#li $t1, 5
+	#sw $t0, 20008($0)
+	#addi $t0, $t0, -1
+	#sw $t1, 20012($t0)
 	
 
 	# Load the test data onto the 7 segment display.

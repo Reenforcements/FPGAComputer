@@ -50,7 +50,8 @@ with open(inputFile, "rb") as f:
 		section.stream.seek(seekTo)
 		
 		# Read all the bytes from the section into memory.
-		print("Reading from {} to {}".format(seekTo,seekTo+section.header.sh_size))
+		if args.debugInfo == 1:
+			print("Reading from {} to {}".format(seekTo,seekTo+section.header.sh_size))
 		for x in range(seekTo, seekTo+section.header.sh_size):
 			memoryMap[x] = section.stream.read(1)
 

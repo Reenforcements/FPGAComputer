@@ -100,7 +100,6 @@ ALUDIV1
 );
 
 
-logic carry;
 logic [31:0]hiResult;
 logic [31:0]loResult;
 logic [31:0]lo;
@@ -167,13 +166,13 @@ always_comb begin
 	unique case (funct)
 
 		ADD: begin
-			{carry, result} = signed'(dataIn0) + signed'(dataIn1);
+			result = signed'(dataIn0) + signed'(dataIn1);
 		end
 		ADDU: begin
 			result = unsigned'(dataIn0) + unsigned'(dataIn1);
 		end
 		SUB: begin
-			{carry, result} = signed'(dataIn0) - signed'(dataIn1);
+			result = signed'(dataIn0) - signed'(dataIn1);
 		end
 		SUBU: begin
 			result = unsigned'(dataIn0) - unsigned'(dataIn1);

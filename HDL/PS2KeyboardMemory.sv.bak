@@ -1,3 +1,5 @@
+`timescale 1 ps / 1 ps
+
 package PS2KeyboardMemoryCodes;
 typedef enum logic [7:0] {
 	sc_1_exclamation = 8'h16,
@@ -185,9 +187,17 @@ typedef enum logic [7:0] {
 	ascii_right = 8'hC3,
 	ascii_left = 8'hB4,
 
+	ascii_leftshift = 8'hC9,
+	ascii_rightshift = 8'hCA,
 	ascii_shift = 8'hCB,
-	ascii_ctrl = 8'hCD,
-	ascii_alt = 8'hC4
+
+	ascii_leftctrl = 8'hCC,
+	ascii_rightctrl = 8'hCD,
+	ascii_ctrl = 8'hCE,
+
+	ascii_leftalt = 8'hD1,
+	ascii_rightalt = 8'hD2,
+	ascii_alt = 8'hD3
 } AsciiCode;
 endpackage
 
@@ -199,7 +209,7 @@ input logic rst,
 input logic [7:0]scanCode,
 input logic scanCodeReady,
 
-input logic [8:0]asciiKeyAddress,
+input logic [7:0]asciiKeyAddress,
 output logic [31:0]keyValue
 );
 
@@ -208,9 +218,6 @@ AsciiCode asciiCode_next;
 logic keyUp;
 logic keyUp_next;
 // There's two of each control key
-logic [1:0]shift;
-logic [1:0]alt;
-logic [1:0]ctrl;
 logic extended;
 logic extended_next;
 
@@ -220,16 +227,19 @@ logic secondary;
 //  value is being held down (1) or not (0).
 logic keyMemory[255];
 
-logic [8:0]asciiKeyAddress_d0;
+logic [7:0]asciiKeyAddress_d0;
 
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		keyUp <= 1'b0;
-		shift <= 2'd0;
-		ctrl <= 2'd0;
-		alt <= 2'd0;
 		extended <= 1'b0;
 		asciiKeyAddress_d0 <= 8'd0;
+		keyMemory[ascii_leftshift] <= 1'b0;
+		keyMemory[ascii_rightshift] <= 1'b0;
+		keyMemory[ascii_leftalt] <= 1'b0;
+		keyMemory[ascii_rightalt] <= 1'b0;
+		keyMemory[ascii_leftctrl] <= 1'b0;
+		keyMemory[ascii_rightctrl] <= 1'b0;
 	end
 	else begin		
 
@@ -241,27 +251,16 @@ always_ff @ (posedge clk or negedge rst) begin
 		// Save the key press (or release) to memory.
 		if (asciiCode_next != ascii_null) begin
 			keyMemory[8'(asciiCode_next)] <= ~keyUp;
-			// Special keys
-			unique case (asciiCode_next)
-				ascii_shift: begin
-					shift <= shift + ( keyUp == 1'b1 ? -2'd1 : 2'd1 );
-					keyMemory[8'(asciiCode_next)] <= (shift + ( keyUp == 1'b1 ? -2'd1 : 2'd1 )) != 0;
-				end
-				ascii_ctrl: begin
-					ctrl <= ctrl + ( keyUp == 1'b1 ? -2'd1 : 2'd1 );
-					keyMemory[8'(asciiCode_next)] <= (ctrl + ( keyUp == 1'b1 ? -2'd1 : 2'd1 )) != 0;
-				end
-				ascii_alt: begin
-					alt <= alt + ( keyUp == 1'b1 ? -2'd1 : 2'd1 );
-					keyMemory[8'(asciiCode_next)] <= (alt + ( keyUp == 1'b1 ? -2'd1 : 2'd1 )) != 0;
-				end 
-				default: begin end
-			endcase
+			
 			// Clear modifiers
 			keyUp <= 1'b0;
 			extended <= 1'b0;
 		end
 		
+		// Assign control keys
+		keyMemory[ascii_alt] <= keyMemory[ascii_leftalt] | keyMemory[ascii_rightalt];
+		keyMemory[ascii_ctrl] <= keyMemory[ascii_leftctrl] | keyMemory[ascii_rightctrl];
+		keyMemory[ascii_shift] <= keyMemory[ascii_leftshift] | keyMemory[ascii_rightshift];
 	end
 end
 
@@ -269,7 +268,7 @@ end
 always_comb begin
 	asciiCode_next = ascii_null;
 	keyUp_next = keyUp;
-	secondary = shift > 2'd0;
+	secondary = keyMemory[ascii_leftshift] | keyMemory[ascii_rightshift];
 	
 	extended_next = extended;
 	if (scanCodeReady == 1'b1) begin
@@ -568,19 +567,25 @@ always_comb begin
 			end
 			
 			sc_leftshift: begin
-				asciiCode_next = ascii_shift;
+				asciiCode_next = ascii_leftshift;
 			end	
 			sc_rightshift: begin
-				asciiCode_next = ascii_shift;
+				asciiCode_next = ascii_rightshift;
 			end
 
 			// Extended
 			// (Two bytes per key code)
 			sc_ctrl: begin
-				asciiCode_next = ascii_ctrl;
+				if (extended == 1'b1)
+					asciiCode_next = ascii_rightctrl;
+				else
+					asciiCode_next = ascii_leftctrl;
 			end	
 			sc_alt: begin
-				asciiCode_next = ascii_alt;
+				if (extended == 1'b1)
+					asciiCode_next = ascii_rightalt;
+				else
+					asciiCode_next = ascii_leftalt;
 			end
 			
 			sce_up: begin
@@ -610,7 +615,7 @@ always_comb begin
 		end
 	end
 
-	keyValue <= { {7{1'b0}}, keyMemory[ asciiKeyAddress_d0[7:0] ]};
+	keyValue = { {7{1'b0}}, keyMemory[ asciiKeyAddress_d0[7:0] ]};
 end
 
 

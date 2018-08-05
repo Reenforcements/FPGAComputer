@@ -25,7 +25,39 @@ logic [31:0]registers[0:31];
 
 always_ff @(posedge clk or negedge rst) begin
 	if(rst == 1'b0) begin
-		
+		// Initialize the stack pointer to the top of memory.
+		registers[5'd0] <= 32'd0;
+		registers[5'd1] <= 32'd0;
+		registers[5'd2] <= 32'd0;
+		registers[5'd3] <= 32'd0;
+		registers[5'd4] <= 32'd0;
+		registers[5'd5] <= 32'd0;
+		registers[5'd6] <= 32'd0;
+		registers[5'd7] <= 32'd0;
+		registers[5'd8] <= 32'd0;
+		registers[5'd9] <= 32'd0;
+		registers[5'd10] <= 32'd0;
+		registers[5'd11] <= 32'd0;
+		registers[5'd12] <= 32'd0;
+		registers[5'd13] <= 32'd0;
+		registers[5'd14] <= 32'd0;
+		registers[5'd15] <= 32'd0;
+		registers[5'd16] <= 32'd0;
+		registers[5'd17] <= 32'd0;
+		registers[5'd18] <= 32'd0;
+		registers[5'd19] <= 32'd0;
+		registers[5'd20] <= 32'd0;
+		registers[5'd21] <= 32'd0;
+		registers[5'd22] <= 32'd0;
+		registers[5'd23] <= 32'd0;
+		registers[5'd24] <= 32'd0;
+		registers[5'd25] <= 32'd0;
+		registers[5'd26] <= 32'd0;
+		registers[5'd27] <= 32'd0;
+		registers[5'd28] <= 32'd0;
+		registers[5'd29] <= 32'd65532;
+		registers[5'd30] <= 32'd0;
+		registers[5'd31] <= 32'd0;
 	end
 	else
 	begin

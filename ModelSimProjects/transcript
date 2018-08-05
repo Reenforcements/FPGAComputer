@@ -317,3 +317,439 @@ run 2000000
 # RX data: hex:22 string:"
 # Done
 # Command is:          4
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB
+# End time: 15:18:08 on Aug 03,2018, Elapsed time: 17:09:07
+# Errors: 0, Warnings: 22
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB 
+# Start time: 15:18:08 on Aug 03,2018
+# Loading sv_std.std
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+# ** Error: (vsim-8378) /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv(16): Port size (8) does not match connection size (9) for implicit .name connection port 'asciiKeyAddress'. The port definition is at: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv(204).
+#    Time: 0 ps  Iteration: 0  Instance: /PS2KeyboardMemory_TB/sp2kbm File: /home/imaustyn/Desktop/FPGAComputer/HDL/PS2KeyboardMemory.sv
+# Error loading design
+# End time: 15:18:08 on Aug 03,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 0 failed with no errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB 
+# Start time: 15:19:19 on Aug 03,2018
+# Loading sv_std.std
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+add wave sim:/PS2KeyboardMemory_TB/*
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+restart -f
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+run 20000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for cb
+# Successful key value for cb
+# Successful key value for c1
+# Successful key value for c1
+run 20000
+run 20000
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+restart -f
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+run 20000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for cb
+# Successful key value for cb
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+restart -f
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+run 20000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for cb
+# ** Error: Key value for cb incorrect:          1
+#    Time: 220 ps  Scope: PS2KeyboardMemory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv Line: 136
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+restart -f
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+run 20000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for cb
+# Successful key value for cb
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+# Compile of PS2KeyboardMemory.sv failed with 11 errors.
+# Compile of PS2KeyboardMemory.sv failed with 8 errors.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv failed with 8 errors.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 1 failed with 8 errors.
+# Compile of PS2KeyboardMemory.sv failed with 1 errors.
+# Compile of PS2KeyboardMemory.sv was successful.
+restart -f
+# ** Error: (vsim-13) Recompile work.PS2KeyboardMemory_TB_sv_unit because work.PS2KeyboardMemoryCodes has changed.
+# ** Error (suppressible): (vsim-12) Recompile work.PS2KeyboardMemory_TB after work.PS2KeyboardMemory_TB_sv_unit is recompiled.
+# ** Error: (vsim-13) Recompile work.PS2KeyboardMemory_TB because work.PS2KeyboardMemoryCodes has changed.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv failed with 1 errors.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 1 failed with 1 error.
+restart -f
+# No Design Loaded!
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB 
+# Start time: 15:19:19 on Aug 03,2018
+# Error loading design
+# End time: 21:13:20 on Aug 03,2018, Elapsed time: 5:54:01
+# Errors: 4, Warnings: 0
+restart -f
+# No Design Loaded!
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.PS2KeyboardMemory_TB 
+# Start time: 21:13:30 on Aug 03,2018
+# Loading sv_std.std
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+restart -f
+run 20000000
+# ** Error: Key value for 61 incorrect:          X
+#    Time: 70 ps  Scope: PS2KeyboardMemory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv Line: 55
+# ** Error: Key value for 61 incorrect:          X
+#    Time: 100 ps  Scope: PS2KeyboardMemory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/PS2KeyboardMemory_TB.sv Line: 71
+# Successful key value for 41
+# Successful key value for ca
+# Successful key value for ca
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+restart -f
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+run 20000000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for ca
+# Successful key value for ca
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# Loading work.PS2KeyboardMemoryCodes
+# Loading work.PS2KeyboardMemory_TB_sv_unit
+# Loading work.PS2KeyboardMemory_TB
+# Loading work.PS2KeyboardMemory_sv_unit
+# Loading work.PS2KeyboardMemory
+run 20000000
+# Successful key value for 61
+# Successful key value for 61
+# Successful key value for 41
+# Successful key value for cb
+# Successful key value for ca
+# Successful key value for c1
+# Successful key value for c1
+# Done.
+vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.Memory_TB
+# End time: 11:07:20 on Aug 04,2018, Elapsed time: 13:53:50
+# Errors: 2, Warnings: 0
+# vsim -L altera_mf_ver -L altera_ver -L cycloneive_ver -L 220model_ver -L lpm_ver work.Memory_TB 
+# Start time: 11:07:20 on Aug 04,2018
+# Loading sv_std.std
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/Memory_TB/*
+restart -f
+run 20000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Done.
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 20000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Compile of Memory_TB.sv was successful.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 0 failed with no errors.
+# Done.
+# Break key hit
+# Break in Module altsyncram_body at /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v line 49249
+# Error opening /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# Path name '/build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v' doesn't exist.
+restart -f
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+restart -f
+run 20000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Break key hit
+# Break in Module altsyncram_body at /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v line 49369
+# Error opening /build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# Path name '/build/swbuild/SJ/nightly/18.0std/614/l64/work/modelsim/eda/sim_lib/altera_mf.v' doesn't exist.
+# Compile of RegisterFile_TB.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Testing.sv was successful.
+# Compile of Testing_TB.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_TB.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# Compile of Branch_TB.sv was successful.
+# Compile of Branch.sv was successful.
+# Compile of PC_TB.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of Control_TB.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Processor_TB.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of RS232.sv was successful.
+# Compile of RS232_TB.sv was successful.
+# Compile of SerialCommandProcessor.sv was successful.
+# Compile of SerialCommandProcessor_TB.sv was successful.
+# Compile of Main.sv was successful.
+# Compile of Main_TB.sv was successful.
+# Compile of ProcessorClockEnabler.v was successful.
+# Compile of PS2Keyboard.sv was successful.
+# Compile of PS2Keyboard_TB.sv was successful.
+# Compile of PS2KeyboardMemory.sv was successful.
+# Compile of PS2KeyboardMemory_TB.sv was successful.
+# Compile of ALUDIV1.v was successful.
+# Compile of Output7Seg.sv was successful.
+# 31 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+# Loading work.RAM32Bit
+run 20000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Break key hit
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Compile of Memory.sv was successful.
+restart -f
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Compile of Memory.sv was successful.
+# Compile of Memory_TB.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# Loading work.MemoryModesPackage
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+# Loading work.Memory_sv_unit
+# Loading work.Memory
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# ** Error: Reading the previously written value didn't work.
+#    Time: 299 ps  Scope: Memory_TB File: /home/imaustyn/Desktop/FPGAComputer/ModelSimProjects/Memory_TB.sv Line: 298
+# Done.
+# Compile of Memory_TB.sv was successful.
+restart -f
+# Loading work.Memory_TB_sv_unit
+# Loading work.Memory_TB
+run 2000000
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Memory_TB.m1.ram.altsyncram_component.m_default.altsyncram_inst
+# Done.
+# End time: 14:41:18 on Aug 05,2018, Elapsed time: 27:33:58
+# Errors: 3, Warnings: 0

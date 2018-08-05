@@ -32,8 +32,31 @@ output logic LED1,
 output logic LED2,
 output logic LED3
 );
-
 parameter BAUD_RATE = 250000;
+
+
+// Synchronous reset
+// (Commented out because it doesn't work.)
+/*
+logic rstIn_d0;
+logic rstIn_d1;
+logic rstIn_d2;
+logic rstIn;
+always_ff @ (posedge clk or negedge rstIn) begin
+	if (rstIn == 1'b0) begin
+		rstIn_d0 <= 1'b0;
+		rstIn_d1 <= 1'b0;
+		rstIn_d2 <= 1'b0;
+		rstIn <= 1'b0;
+	end
+	else begin
+		rstIn_d0 <= rstIn;
+		rstIn_d1 <= rstIn_d0;
+		rstIn_d2 <= rstIn_d1;
+		rstIn <= rstIn_d2;
+	end
+end
+*/
 
 logic clk;
 logic [7:0]clkCounter;
@@ -215,7 +238,7 @@ always_comb begin
 	// Assign other memory lines.
 	externalData = serialCP_memoryWordOut;
 	LED1 = rstIn;
-	LED2 = externalMemoryControl;
+	LED2 = force_rst;
 	LED3 = rst;
 	serialCP_memoryWordIn = externalDataOut;
 end

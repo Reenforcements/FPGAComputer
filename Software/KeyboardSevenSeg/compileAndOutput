@@ -1,1 +1,1 @@
-mips-linux-gnu-gcc ./main.c -mips1 -g -mfp32 -mhard-float -T ./linkerscript -o linked.elf && mips-linux-gnu-objdump linked.elf -D -S > compileAndOutputDump.txt
+mips-linux-gnu-gcc ./main.c -mips1 -g -mfp32 -mhard-float -T ./linkerscript -nodefaultlibs -nostdlib -o linked.elf && mips-linux-gnu-objdump linked.elf -D -S > compileAndOutputDump.txt

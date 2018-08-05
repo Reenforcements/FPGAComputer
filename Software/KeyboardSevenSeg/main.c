@@ -9,40 +9,89 @@ If either shift is held, increment or decrement the counter as long as
 Display the counter on the seven segment displays.
 
 */
-void delay(unsigned int amount) {
-	for(unsigned int i = 0; i < amount; i++)  {
-		// Prevents GCC from optimizing this for loop away.
-		asm("");
-	}
-}
 void main() {
+	// Set our stack pointer
+	//asm("lui $sp, 0xFF\n"
+	//	"ori $sp, $sp, 0xFF\n"
+	//	"move $s8, $sp");
+	/*	
+	asm("li	$sp, 0xAFFF\n"
+		"addiu	$sp,$sp,-64\n"
+		"sw	$s8,60($sp)\n"
+		"move $s8,$sp");
+	*/
+	/*
+	asm("sw $sp, 30000($0)");
+	asm("sw $s8, 30004($0)");
+	asm("li $t0, 30008");
+	asm("sw $sp, 0($t0)");
+	*/
+
 	int *readback = (int*)20000;
 	*(readback) = 1234;
 
 	// 256 is the address of the 7 segment display register.
 	int *segmentedDisplay = (int *)255;
 
-	// The locations of the keys we're interested in.
-	int *upArrow = (int*) 0xC1;
-	char *downArrow = (char*) 0xC2;
-	char *shift = (char*) 0xCB;
 
-	*segmentedDisplay = 0x27777777;
+	// The locations of the keys we're interested in.
+	// ascii_up = 8'hC1
+	// ascii_down = 8'hC2
+	// ascii_right = 8'hC3
+	// ascii_left = 8'hB4
+	int *upArrow = (int*) 0xC1;
+	int *downArrow = (int*) 0xC2;
+	int *rightArrow = (int*) 0xC3;
+	int *leftArrow = (int*) 0xB4;
+	int *rKey = (int*) 0x72;
+	int *shift = (int*) 0xCB;
+
+	*segmentedDisplay = 0xABCDEF12;
 
 	unsigned int counter = 0;
+	int upArrowPressed = 0;
+	int downArrowPressed = 0;
+	int *upArrowPressed_Specific = (int*) 64000;
+	*upArrowPressed_Specific = 0;
+	int *downArrowPressed_Specific = (int*) 64004;
+	*downArrowPressed_Specific = 0;
 	while(1) {
-		*segmentedDisplay = counter;
-		counter+=3;
-		
-		asm("li $t0, 10000 \n"
-			"sw $s8, 0($t0)\n"
-			"sw $sp, 4($t0)\n"
-			"sw $gp, 8($t0)\n"
-			);
-		/*
+	
 		if ((*upArrow) == 1) {
-			*segmentedDisplay = counter;
-			counter++;
-		}*/
+			if (upArrowPressed == 0) {
+				counter += 1;
+			}
+			upArrowPressed = 1;
+		} else {
+			upArrowPressed = 0;
+		}
+
+		
+		if ((*downArrow) == 1) {
+			if (!downArrowPressed) {
+				counter += -1;
+			}
+			downArrowPressed = 1;
+		} else {
+			downArrowPressed = 0;
+		}
+		
+		*readback = upArrowPressed;
+		*(readback + 4) = downArrowPressed;
+		*(readback + 8) = *upArrow;
+		*(readback + 12) = *downArrow;
+		*(readback + 16) = *leftArrow;
+		*(readback + 20) = *rightArrow;
+
+		counter += ((*rightArrow) == 1) ? 1 : 0;
+		counter += ((*leftArrow) == 1) ? -1 : 0;
+
+		*segmentedDisplay = ((((*upArrow == 1) ? 0xA000 : 0) + ((*downArrow == 1) ? 0x0B00 : 0) + ((*leftArrow == 1) ? 0x00C0 : 0) + ((*rightArrow == 1) ? 0x000D : 0)) << 16) | (0x0000FFFF & counter);
+
+		if ((*rKey) == 1) {
+			counter = 0;
+		}
+		asm("sw $sp, 30000($0)");
+		asm("sw $s8, 30004($0)");
 	}
 }
