@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led1",
+					"strict" : false
+				},
+				{
+					"name" : "led2",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segMSB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segLSB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK2",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_DAT2",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

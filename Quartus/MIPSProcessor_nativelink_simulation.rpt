@@ -1,5 +1,4 @@
 Info: Start Nativelink Simulation process
-Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
@@ -8,7 +7,7 @@ Family                :  cycloneive
 Quartus root          :  /home/imaustyn/intelFPGA_lite/18.0/quartus/linux64/
 Quartus sim root      :  /home/imaustyn/intelFPGA_lite/18.0/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
-Simulation Language   :  verilog
+Simulation Language   :  systemverilog
 Simulation Mode       :  GUI
 Sim Output File       :  
 Sim SDF file          :  

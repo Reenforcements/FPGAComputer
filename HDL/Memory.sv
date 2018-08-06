@@ -33,8 +33,8 @@ module Memory(
 
 // a is used for reading/writing
 // b is strictly used for PC data
-logic	[15:0]address_a;
-logic	[15:0]address_b;
+logic	[13:0]address_a;
+logic	[13:0]address_b;
 logic	[3:0]byteena_a;
 logic	[31:0]data_a;
 logic	[31:0]data_b;
@@ -65,13 +65,13 @@ RAM32Bit ram(
 
 
 logic [15:0]baseAddress;
-logic [15:0]wordAlignedBase;
+logic [13:0]wordAlignedBase;
 logic [1:0]byteOffset;
 
 // Set control lines common to reading/writing
 always_comb begin
 	baseAddress = address[15:0];
-	wordAlignedBase = {baseAddress[15:2], 2'b0};
+	wordAlignedBase = baseAddress[15:2];
 	byteOffset = address[1:0];
 	
 	// Set the RAM's read/write enables.
@@ -159,6 +159,7 @@ always_ff @(posedge clk or negedge rst) begin
 	else begin
 		// Save certain control lines so we can adjust the output
 		//  if we're reading.
+
 		address_d0 <= address;
 		readMode_d0 <= readMode;
 		unsignedLoad_d0 <= unsignedLoad;
@@ -177,13 +178,13 @@ always_comb begin
 					// Output the byte and sign extend if needed
 					dataOutput = { 
 					(unsignedLoad_d0 == 1'b0 & (q_a[7] == 1'b1)) ? {24{1'b1}} : {24{1'b0}}, 
-					8'( (q_a >> (5'd8 * address[1:0])) & (32'h000000FF) )
+					8'( (q_a >> (5'd8 * address_d0[1:0])) & (32'h000000FF) )
 					};
 				end
 				HALFWORD: begin
 					dataOutput = { 
 					(unsignedLoad_d0 == 1'b0 & (q_a[15] == 1'b1)) ? {16{1'b1}} : {16{1'b0}}, 
-					16'( (q_a >> (5'd8 * address[1:0])) & (32'h0000FFFF << (5'd8 * address[1:0])))
+					16'( (q_a >> (5'd8 * address_d0[1:0])) & (32'h0000FFFF << (5'd8 * address_d0[1:0])))
 					};
 				end
 				WORD: begin
@@ -212,7 +213,7 @@ end
 always_comb begin
 	rden_b = 1'b1;
 	wren_b = 1'b0;
-	address_b = pcAddress[15:0];
+	address_b = pcAddress[15:2];
 	pcDataOutput = q_b;
 end
 

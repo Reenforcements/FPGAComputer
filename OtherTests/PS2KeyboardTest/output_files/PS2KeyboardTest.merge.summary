@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Wed Aug  1 21:17:05 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : PS2KeyboardTest
+Top-level Entity Name : PS2KeyboardTest
+Family : Cyclone IV E
+Total logic elements : 1,490
+    Total combinational functions : 1,010
+    Dedicated logic registers : 883
+Total registers : 883
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 3,014,656
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

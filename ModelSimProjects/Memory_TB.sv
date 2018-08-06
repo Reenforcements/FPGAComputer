@@ -24,8 +24,16 @@ initial begin
 	clk = 0;
 	clk_pc = 0;
 	unsignedLoad = 0;
+	rst = 0;
+
+	pcAddress = 32'h00000400;
 end
 
+always begin
+#10;
+rst = 1;
+#10000000;
+end
 
 Memory m1(.*);
 
@@ -269,7 +277,9 @@ data = 32'h0;
 writeMode = ReadWriteMode_NONE;
 readMode = WORD;
 unsignedLoad = 0;
-#9;
+#8;
+address = 32'd0;
+#1;
 assert(dataOutput == 32'hA1B2C3D4) else $error("Reading the previously written value didn't work.");
 #1;
 //Read and check each byte
@@ -278,7 +288,13 @@ data = 32'h0;
 writeMode = ReadWriteMode_NONE;
 readMode = BYTE;
 unsignedLoad = 1;
-#9;
+#7;
+address = 32'd500;
+data = 32'h0;
+writeMode = ReadWriteMode_NONE;
+readMode = ReadWriteMode_NONE;
+unsignedLoad = 0;
+#2;
 assert(dataOutput == 32'hD4) else $error("Reading the previously written value didn't work.");
 #1;
 address = 32'd65529;

@@ -1,3 +1,5 @@
+# This program converts a compiled binary into a text file with each 4-byte instruction on a new line.
+
 # Requires pyelftools
 from elftools.elf.elffile import ELFFile
 from elftools.elf import enums
@@ -12,6 +14,7 @@ import sys
 parser = ArgumentParser(description="Outputs the important sections of an ELF file to a file of hex values separated by newline characters. The output format is what we need to get our program into ModelSim for texting.")
 parser.add_argument("inputELF", nargs=1, action='store')
 parser.add_argument("outputHex", nargs=1, action='store')
+parser.add_argument("-d", dest="debugInfo", action='store_const', const=1, default=0)
 
 # Parse argv
 args = parser.parse_args()
@@ -21,6 +24,7 @@ with open(args.inputELF[0], "rb") as f:
 	elf = ELFFile(f)
 	# Get the entry point of the program.
 	entryPoint = elf["e_entry"]
+	print("Entry point of program is {:08x} ({} in decimal.)".format(entryPoint, entryPoint))
 	# Ensure this is an executable
 	assert(elf["e_type"] == "ET_EXEC"), "ELF is not executable."
 
@@ -45,7 +49,10 @@ with open(args.inputELF[0], "rb") as f:
 				unpacked = struct.unpack_from(">i", four)[0]
 				val = c_uint(unpacked).value
 				line = "{:08x}".format(val)
-				line = " /*{} ({})*/    {}".format(currentPC, hex(currentPC), line)
+				if args.debugInfo == 1:
+					line = " /*{} ({})*/    {}".format(currentPC, hex(currentPC), line)
+				else:
+					line = line
 				print( line )
 				out.write(line)
 				out.write("\n")

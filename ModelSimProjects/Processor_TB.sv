@@ -7,6 +7,9 @@ module Processor_TB;
 logic rst;
 logic clk;
 
+logic memory_clk;
+logic memory_rst;
+
 // Pauses the processor so we can change data in memory.
 logic pause;
 
@@ -26,6 +29,8 @@ logic [31:0]results[2000:0];
 initial begin
 rst = 0;
 clk = 0;
+memory_clk = 0;
+memory_rst = 0;
 pause = 1;
 externalMemoryControl = 1;
 
@@ -37,13 +42,16 @@ end
 
 Processor p(.*);
 
+always @ (*) begin
+rst = ~pause;
+end
 
 logic [31:0]n;
 logic [31:0]curWord;
 always begin
 
 #10;
-rst = 1;
+memory_rst = 1;
 
 // Load the memory.
 // Make sure to take the offset into account.
@@ -95,8 +103,10 @@ end
 
 always begin
 clk = 0;
+memory_clk = 0;
 #5;
 clk = 1;
+memory_clk = 1;
 #5;
 end
 

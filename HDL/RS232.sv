@@ -1,4 +1,4 @@
-
+`timescale 1ps / 1ps
 // Assume 50,000,000 Hz clock
 // Baud rate is bits/second
 
@@ -27,7 +27,7 @@ output logic rxError
 // Buffer the inputs
 logic UART_RXD_d0;
 logic UART_RXD_d1;
-always @ (posedge clk or negedge rst) begin
+always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		UART_RXD_d0 <= 1'b1;
 		UART_RXD_d1 <= 1'b1;
@@ -39,10 +39,10 @@ always @ (posedge clk or negedge rst) begin
 end
 
 
-
 // The baud rate can be changed when instantiating the module.
+parameter CLOCK_SPEED = 50000000;
 parameter BAUD_RATE = 9600;
-parameter logic [31:0]TIME_ONE_BIT = 32'd50000000 / BAUD_RATE;
+parameter logic [31:0]TIME_ONE_BIT = CLOCK_SPEED / BAUD_RATE;
 typedef enum logic [3:0] {
 	RX_WAITING,
 	RX_POSSIBLE_START_BIT,
@@ -73,6 +73,9 @@ always_ff @ (posedge clk or negedge rst) begin
 		rxError <= 1'b0;
 	end
 	else begin
+		UART_RTS <= 1'b0;
+		rxError <= 1'b0;
+	
 		// Clear hasRX by default. It will be set to 1 further down if we have data.
 		hasRX <= 1'b0;
 	
@@ -92,7 +95,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		if (RX_counter == TIME_ONE_BIT) begin
 			if (RX_state == RX_RECEIVE) begin
 				// Save the bit
-				$display("Save bit: %d vs %d to last RX: %b", RX_countOnes, RX_countZeroes, RX);
+				//$display("Save bit: %d vs %d to last RX: %b", RX_countOnes, RX_countZeroes, RX);
 				RX <= (RX >> 8'd1) | ((RX_countOnes > RX_countZeroes) ? 8'b10000000 : 8'b0);
 
 				// Increment the current bit.
@@ -108,7 +111,7 @@ always_ff @ (posedge clk or negedge rst) begin
 			if (RX_nextState == RX_POSSIBLE_START_BIT || RX_nextState == RX_WAITING) begin
 				// Successful stop condition
 				hasRX <= 1'b1;
-				$display("Successful stop");
+				//$display("Successful stop");
 			end
 		end
 	end

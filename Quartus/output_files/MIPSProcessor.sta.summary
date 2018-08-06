@@ -2,100 +2,100 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : 7.586
+Type  : Slow 1200mV 85C Model Setup 'clkIn'
+Slack : 17.475
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 40.910
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : 25.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clkIn'
+Slack : 0.382
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.331
+Slack : 0.401
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.402
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : 111.219
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 93.136
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 7.914
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : 1.479
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkIn'
+Slack : 9.758
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : 9.622
+Slack : 59.661
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.559
+Type  : Slow 1200mV 0C Model Setup 'clkIn'
+Slack : 17.747
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : 8.580
+Slack : 34.391
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 41.754
+Type  : Slow 1200mV 0C Model Hold 'clkIn'
+Slack : 0.333
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.340
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
 Slack : 0.353
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 93.717
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : 111.991
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 1.356
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 7.129
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkIn'
+Slack : 9.779
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : 9.644
+Slack : 59.664
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.485
+Type  : Fast 1200mV 0C Model Setup 'clkIn'
+Slack : 18.764
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : 13.633
+Slack : 72.755
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 45.613
+Type  : Fast 1200mV 0C Model Hold 'clkIn'
+Slack : 0.160
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.131
+Slack : 0.178
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.180
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : 115.278
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 96.261
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 4.116
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.701
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkIn'
+Slack : 9.439
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : 9.371
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.454
+Slack : 59.704
 TNS   : 0.000
 
 ------------------------------------------------------------

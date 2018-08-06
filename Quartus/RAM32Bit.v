@@ -55,8 +55,8 @@ module RAM32Bit (
 
 	input	  aclr_a;
 	input	  aclr_b;
-	input	[15:0]  address_a;
-	input	[15:0]  address_b;
+	input	[13:0]  address_a;
+	input	[13:0]  address_b;
 	input	[3:0]  byteena_a;
 	input	  clock_a;
 	input	  clock_b;
@@ -122,8 +122,8 @@ module RAM32Bit (
 		altsyncram_component.indata_reg_b = "CLOCK1",
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_type = "altsyncram",
-		altsyncram_component.numwords_a = 65535,
-		altsyncram_component.numwords_b = 65535,
+		altsyncram_component.numwords_a = 16384,
+		altsyncram_component.numwords_b = 16384,
 		altsyncram_component.operation_mode = "BIDIR_DUAL_PORT",
 		altsyncram_component.outdata_aclr_a = "CLEAR0",
 		altsyncram_component.outdata_aclr_b = "CLEAR1",
@@ -132,8 +132,8 @@ module RAM32Bit (
 		altsyncram_component.power_up_uninitialized = "FALSE",
 		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_WITH_NBE_READ",
 		altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_WITH_NBE_READ",
-		altsyncram_component.widthad_a = 16,
-		altsyncram_component.widthad_b = 16,
+		altsyncram_component.widthad_a = 14,
+		altsyncram_component.widthad_b = 14,
 		altsyncram_component.width_a = 32,
 		altsyncram_component.width_b = 32,
 		altsyncram_component.width_byteena_a = 4,
@@ -215,8 +215,8 @@ endmodule
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK1"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "65535"
-// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "65535"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "16384"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "16384"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "BIDIR_DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "CLEAR0"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "CLEAR1"
@@ -225,8 +225,8 @@ endmodule
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_WITH_NBE_READ"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_B STRING "NEW_DATA_WITH_NBE_READ"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "16"
-// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "16"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "14"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "14"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "32"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "32"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "4"

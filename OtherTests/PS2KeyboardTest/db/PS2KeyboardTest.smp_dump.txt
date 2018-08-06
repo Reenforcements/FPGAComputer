@@ -1,0 +1,8 @@
+
+State Machine - |PS2KeyboardTest|PS2Keyboard:ps2kb|state
+Name state~12 state~11 state~10 state~9 
+state.START 0 0 0 0 
+state.BITS 0 0 1 1 
+state.PARITY 0 0 1 0 
+state.STOP 0 1 0 1 
+state.BAD 1 0 0 1 

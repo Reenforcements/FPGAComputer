@@ -1,0 +1,1 @@
+mips-linux-gnu-as ./main.s -mips1 -g -mfp32 -mhard-float -o mainAsm.elf && mips-linux-gnu-ld -T ./linkerscript ./mainAsm.elf -o "linkedAsm.elf" && mips-linux-gnu-objdump linkedAsm.elf -D -S > compileAndOutputAsmDump.txt
