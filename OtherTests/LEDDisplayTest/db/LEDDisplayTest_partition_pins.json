@@ -28,11 +28,59 @@
 					"strict" : false
 				},
 				{
+					"name" : "columnPixels0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[2]",
+					"strict" : false
+				},
+				{
 					"name" : "columnLatch",
 					"strict" : false
 				},
 				{
 					"name" : "blank",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[4]",
 					"strict" : false
 				},
 				{

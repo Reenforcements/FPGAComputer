@@ -18,20 +18,32 @@ rst => clkCounter[5].ACLR
 rst => clkCounter[6].ACLR
 rst => clkCounter[7].ACLR
 rst => clk.PRESET
-rowDecoder[0] << LEDDisplay:ld.rowDecoder[0]
-rowDecoder[1] << LEDDisplay:ld.rowDecoder[1]
-rowDecoder[2] << LEDDisplay:ld.rowDecoder[2]
-rowDecoder[3] << LEDDisplay:ld.rowDecoder[3]
-rowDecoder[4] << LEDDisplay:ld.rowDecoder[4]
-pixelClk << LEDDisplay:ld.pixelClk
-columnPixels0[0] << LEDDisplay:ld.columnPixels0[0]
-columnPixels0[1] << LEDDisplay:ld.columnPixels0[1]
-columnPixels0[2] << LEDDisplay:ld.columnPixels0[2]
-columnPixels1[0] << LEDDisplay:ld.columnPixels1[0]
-columnPixels1[1] << LEDDisplay:ld.columnPixels1[1]
-columnPixels1[2] << LEDDisplay:ld.columnPixels1[2]
-columnLatch << LEDDisplay:ld.columnLatch
-blank << LEDDisplay:ld.blank
+rowDecoder[0] <= LEDDisplay:ld.rowDecoder[0]
+rowDecoder[1] <= LEDDisplay:ld.rowDecoder[1]
+rowDecoder[2] <= LEDDisplay:ld.rowDecoder[2]
+rowDecoder[3] <= LEDDisplay:ld.rowDecoder[3]
+rowDecoder[4] <= LEDDisplay:ld.rowDecoder[4]
+pixelClk <= LEDDisplay:ld.pixelClk
+columnPixels0[0] <= LEDDisplay:ld.columnPixels0[0]
+columnPixels0[1] <= LEDDisplay:ld.columnPixels0[1]
+columnPixels0[2] <= LEDDisplay:ld.columnPixels0[2]
+columnPixels1[0] <= LEDDisplay:ld.columnPixels1[0]
+columnPixels1[1] <= LEDDisplay:ld.columnPixels1[1]
+columnPixels1[2] <= LEDDisplay:ld.columnPixels1[2]
+columnLatch <= LEDDisplay:ld.columnLatch
+blank <= LEDDisplay:ld.blank
+colorInputs[0] => LEDDisplay:ld.pixel1[0]
+colorInputs[0] => LEDDisplay:ld.pixel0[0]
+colorInputs[1] => LEDDisplay:ld.pixel1[1]
+colorInputs[1] => LEDDisplay:ld.pixel0[1]
+colorInputs[2] => LEDDisplay:ld.pixel1[2]
+colorInputs[2] => LEDDisplay:ld.pixel0[2]
+colorInputs[3] => LEDDisplay:ld.pixel1[3]
+colorInputs[3] => LEDDisplay:ld.pixel0[3]
+colorInputs[4] => LEDDisplay:ld.pixel1[4]
+colorInputs[4] => LEDDisplay:ld.pixel0[4]
+colorInputs[5] => LEDDisplay:ld.pixel1[5]
+colorInputs[5] => LEDDisplay:ld.pixel0[5]
 
 
 |LEDDisplayTest|LEDDisplay:ld
@@ -175,8 +187,8 @@ columnPixels0[2] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 columnPixels1[0] <= LessThan5.DB_MAX_OUTPUT_PORT_TYPE
 columnPixels1[1] <= LessThan4.DB_MAX_OUTPUT_PORT_TYPE
 columnPixels1[2] <= LessThan3.DB_MAX_OUTPUT_PORT_TYPE
-columnLatch <= blank.DB_MAX_OUTPUT_PORT_TYPE
-blank <= blank.DB_MAX_OUTPUT_PORT_TYPE
+columnLatch <= columnLatch.DB_MAX_OUTPUT_PORT_TYPE
+blank <= Selector31.DB_MAX_OUTPUT_PORT_TYPE
 done <= done.DB_MAX_OUTPUT_PORT_TYPE
 
 

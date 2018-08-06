@@ -7,7 +7,9 @@ module LEDDisplayTest(
 	output logic [2:0]columnPixels0,
 	output logic [2:0]columnPixels1,
 	output logic columnLatch,
-	output logic blank
+	output logic blank,
+	
+	input logic [5:0]colorInputs
 );
 
 logic clk;
@@ -44,10 +46,37 @@ LEDDisplay ld(
 	.*
 );
 
+logic [7:0]pixelColor0;
+logic [7:0]pixelColor1;
+logic [31:0]changeCounter;
+always_ff @ (posedge clk or negedge rst) begin
+	if (rst == 1'b0) begin
+		pixelColor0 <= 8'b00100000;
+		pixelColor1 <= 8'd0;
+		changeCounter <= 32'd0;
+	end
+	else begin
+		changeCounter <= changeCounter + 32'd1;
+		if (changeCounter == 32'd8333333) begin
+			changeCounter <= 32'd0;
+			pixelColor0 <= pixelColor0 >> 8'd1;
+			if (pixelColor0 == 8'd0) begin
+				pixelColor0 <= 8'b00100000;
+			end
+			
+			pixelColor1 <= pixelColor0;
+		end
+	end
+end
+
 always_comb begin
 	// Easiest test data on Earth.
-	pixel0 = 8'b00110000;//pixelAddress0[7:0];
-	pixel1 = 8'b00110000;//pixelAddress1[7:0];
+	//pixel0 = pixelColor0;//pixelAddress0[7:0];
+	//pixel1 = pixelColor1;//pixelAddress1[7:0];
+
+	pixel0 = {2'b0, colorInputs};
+	pixel1 = {2'b0, colorInputs};
+
 end
 
 endmodule

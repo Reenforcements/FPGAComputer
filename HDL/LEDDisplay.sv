@@ -200,14 +200,15 @@ always_comb begin
 		end
 		WAIT_FOR_COLUMN: begin
 			
+			n_blank = (binaryDigit == 1'b0) ? (rowTimeCount >= 16'd1) : (rowTimeCount >= 16'd300);
 			if (binaryDigit == 1'b0) begin
-				if (rowTimeCount >= 16'd32) begin
+				if (rowTimeCount >= 16'd300) begin
 					rowTimeCount_next = 16'd0;
 					nextState = NEXT_ROW;
 				end
 			end
 			else begin
-				if (rowTimeCount >= 16'd64) begin
+				if (rowTimeCount >= 16'd300) begin
 					rowTimeCount_next = 16'd0;
 					nextState = NEXT_ROW;
 				end

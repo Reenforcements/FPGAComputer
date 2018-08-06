@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LEDDisplayTest
-Mon Aug  6 16:55:36 2018
+Mon Aug  6 19:52:07 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -48,16 +48,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug  6 16:55:36 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug  6 19:52:07 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; LEDDisplayTest                              ;
 ; Top-level Entity Name              ; LEDDisplayTest                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 64                                          ;
-;     Total combinational functions  ; 60                                          ;
+; Total logic elements               ; 76                                          ;
+;     Total combinational functions  ; 72                                          ;
 ;     Dedicated logic registers      ; 47                                          ;
 ; Total registers                    ; 47                                          ;
-; Total pins                         ; 16                                          ;
+; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -183,30 +183,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 64        ;
+; Estimated Total logic elements              ; 76        ;
 ;                                             ;           ;
-; Total combinational functions               ; 60        ;
+; Total combinational functions               ; 72        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 22        ;
-;     -- 3 input functions                    ; 8         ;
+;     -- 4 input functions                    ; 27        ;
+;     -- 3 input functions                    ; 15        ;
 ;     -- <=2 input functions                  ; 30        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 38        ;
+;     -- normal mode                          ; 50        ;
 ;     -- arithmetic mode                      ; 22        ;
 ;                                             ;           ;
 ; Total registers                             ; 47        ;
 ;     -- Dedicated logic registers            ; 47        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 16        ;
+; I/O pins                                    ; 22        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
 ; Maximum fan-out                             ; 47        ;
-; Total fan-out                               ; 354       ;
-; Average fan-out                             ; 2.55      ;
+; Total fan-out                               ; 407       ;
+; Average fan-out                             ; 2.50      ;
 +---------------------------------------------+-----------+
 
 
@@ -215,8 +215,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
-; |LEDDisplayTest            ; 60 (13)             ; 47 (9)                    ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |LEDDisplayTest               ; LEDDisplayTest ; work         ;
-;    |LEDDisplay:ld|         ; 47 (47)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LEDDisplayTest|LEDDisplay:ld ; LEDDisplay     ; work         ;
+; |LEDDisplayTest            ; 72 (13)             ; 47 (9)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |LEDDisplayTest               ; LEDDisplayTest ; work         ;
+;    |LEDDisplay:ld|         ; 59 (59)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LEDDisplayTest|LEDDisplay:ld ; LEDDisplay     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -312,13 +312,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port          ; Type   ; Severity ; Details                                                                             ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 ; pixelAddress0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pixel0[5..4]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; pixel0[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pixel0[3..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; pixelAddress1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pixel1[5..4]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; pixel1[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pixel1[3..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; done          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -328,23 +324,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 16                          ;
+; boundary_port         ; 22                          ;
 ; cycloneiii_ff         ; 47                          ;
 ;     CLR               ; 26                          ;
 ;     CLR SCLR          ; 16                          ;
 ;     ENA CLR           ; 5                           ;
-; cycloneiii_lcell_comb ; 69                          ;
+; cycloneiii_lcell_comb ; 83                          ;
 ;     arith             ; 22                          ;
 ;         2 data inputs ; 22                          ;
-;     normal            ; 47                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
+;     normal            ; 61                          ;
+;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 5                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 22                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 27                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.04                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.45                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,7 +358,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Aug  6 16:55:24 2018
+    Info: Processing started: Mon Aug  6 19:51:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LEDDisplayTest -c LEDDisplayTest
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -372,29 +367,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/i
 Info (12021): Found 1 design units, including 1 entities, in source file LEDDisplayTest.sv
     Info (12023): Found entity 1: LEDDisplayTest File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 1
 Info (12127): Elaborating entity "LEDDisplayTest" for the top level hierarchy
-Info (12128): Elaborating entity "LEDDisplay" for hierarchy "LEDDisplay:ld" File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 45
+Warning (10036): Verilog HDL or VHDL warning at LEDDisplayTest.sv(50): object "pixelColor1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 50
+Info (12128): Elaborating entity "LEDDisplay" for hierarchy "LEDDisplay:ld" File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 47
 Info (10264): Verilog HDL Case Statement information at LEDDisplay.sv(147): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 147
-Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 13
+Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 15
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "columnPixels0[0]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 7
-    Warning (13410): Pin "columnPixels0[1]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 7
-    Warning (13410): Pin "columnPixels0[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 7
-    Warning (13410): Pin "columnPixels1[0]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 8
-    Warning (13410): Pin "columnPixels1[1]" is stuck at VCC File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 8
-    Warning (13410): Pin "columnPixels1[2]" is stuck at GND File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 65 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 957 megabytes
-    Info: Processing ended: Mon Aug  6 16:55:36 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:17
+    Info (21061): Implemented 77 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 955 megabytes
+    Info: Processing ended: Mon Aug  6 19:52:07 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 
