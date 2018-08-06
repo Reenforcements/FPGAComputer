@@ -1,0 +1,11 @@
+
+State Machine - |LEDDisplayTest|LEDDisplay:ld|state
+Name state.NEXT_BINARY_DIGIT state.NEXT_ROW state.CHECK_COLUMN_DONE state.CLOCK_COLUMN state.SET_COLUMN state.WAIT_COLUMN state.RETREIVE_COLUMN state.START 
+state.START 0 0 0 0 0 0 0 0 
+state.RETREIVE_COLUMN 0 0 0 0 0 0 1 1 
+state.WAIT_COLUMN 0 0 0 0 0 1 0 1 
+state.SET_COLUMN 0 0 0 0 1 0 0 1 
+state.CLOCK_COLUMN 0 0 0 1 0 0 0 1 
+state.CHECK_COLUMN_DONE 0 0 1 0 0 0 0 1 
+state.NEXT_ROW 0 1 0 0 0 0 0 1 
+state.NEXT_BINARY_DIGIT 1 0 0 0 0 0 0 1 
