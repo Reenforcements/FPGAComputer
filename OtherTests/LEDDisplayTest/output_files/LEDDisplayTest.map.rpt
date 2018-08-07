@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LEDDisplayTest
-Mon Aug  6 10:15:16 2018
+Mon Aug  6 19:52:07 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -10,7 +10,19 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |LEDDisplayTest|LEDDisplay:ld|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: LEDDisplay:ld
+ 14. Port Connectivity Checks: "LEDDisplay:ld"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +48,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Aug  6 10:15:16 2018           ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug  6 19:52:07 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; LEDDisplayTest                              ;
 ; Top-level Entity Name              ; LEDDisplayTest                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 76                                          ;
+;     Total combinational functions  ; 72                                          ;
+;     Dedicated logic registers      ; 47                                          ;
+; Total registers                    ; 47                                          ;
+; Total pins                         ; 22                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -148,11 +160,196 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; ../../HDL/LEDDisplay.sv          ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv                           ;         ;
+; LEDDisplayTest.sv                ; yes             ; User SystemVerilog HDL File  ; /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 76        ;
+;                                             ;           ;
+; Total combinational functions               ; 72        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 27        ;
+;     -- 3 input functions                    ; 15        ;
+;     -- <=2 input functions                  ; 30        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 50        ;
+;     -- arithmetic mode                      ; 22        ;
+;                                             ;           ;
+; Total registers                             ; 47        ;
+;     -- Dedicated logic registers            ; 47        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 22        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 47        ;
+; Total fan-out                               ; 407       ;
+; Average fan-out                             ; 2.50      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
+; |LEDDisplayTest            ; 72 (13)             ; 47 (9)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |LEDDisplayTest               ; LEDDisplayTest ; work         ;
+;    |LEDDisplay:ld|         ; 59 (59)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LEDDisplayTest|LEDDisplay:ld ; LEDDisplay     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LEDDisplayTest|LEDDisplay:ld|state                                                                                                                                                                                                  ;
++-------------------------+-----------+-------------------------+----------------+-----------------------+-------------------+-------------------------+--------------------+-------------------+-------------------+--------------------+-------------+
+; Name                    ; state.BAD ; state.NEXT_BINARY_DIGIT ; state.NEXT_ROW ; state.WAIT_FOR_COLUMN ; state.SHOW_COLUMN ; state.CHECK_COLUMN_DONE ; state.CLOCK_COLUMN ; state.GET_PIXEL_1 ; state.GET_PIXEL_0 ; state.RESET_COLUMN ; state.START ;
++-------------------------+-----------+-------------------------+----------------+-----------------------+-------------------+-------------------------+--------------------+-------------------+-------------------+--------------------+-------------+
+; state.START             ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 0           ;
+; state.RESET_COLUMN      ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 1                  ; 1           ;
+; state.GET_PIXEL_0       ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 1                 ; 0                  ; 1           ;
+; state.GET_PIXEL_1       ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 1                 ; 0                 ; 0                  ; 1           ;
+; state.CLOCK_COLUMN      ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 1                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.CHECK_COLUMN_DONE ; 0         ; 0                       ; 0              ; 0                     ; 0                 ; 1                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.SHOW_COLUMN       ; 0         ; 0                       ; 0              ; 0                     ; 1                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.WAIT_FOR_COLUMN   ; 0         ; 0                       ; 0              ; 1                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.NEXT_ROW          ; 0         ; 0                       ; 1              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.NEXT_BINARY_DIGIT ; 0         ; 1                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
+; state.BAD               ; 1         ; 0                       ; 0              ; 0                     ; 0                 ; 0                       ; 0                  ; 0                 ; 0                 ; 0                  ; 1           ;
++-------------------------+-----------+-------------------------+----------------+-----------------------+-------------------+-------------------------+--------------------+-------------------+-------------------+--------------------+-------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; LEDDisplay:ld|state~4                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~5                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~6                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~7                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~8                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~9                 ; Lost fanout                            ;
+; LEDDisplay:ld|state~10                ; Lost fanout                            ;
+; LEDDisplay:ld|state~11                ; Lost fanout                            ;
+; LEDDisplay:ld|state.BAD               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 47    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 47    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; clk                                    ; 39      ;
+; clkCounter[0]                          ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |LEDDisplayTest|LEDDisplay:ld|nextState.NEXT_ROW ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LEDDisplay:ld ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; RED            ; 2     ; Signed Integer                    ;
+; GREEN          ; 1     ; Signed Integer                    ;
+; BLUE           ; 0     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LEDDisplay:ld"                                                                               ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; pixelAddress0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pixel0[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pixelAddress1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pixel1[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; done          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 47                          ;
+;     CLR               ; 26                          ;
+;     CLR SCLR          ; 16                          ;
+;     ENA CLR           ; 5                           ;
+; cycloneiii_lcell_comb ; 83                          ;
+;     arith             ; 22                          ;
+;         2 data inputs ; 22                          ;
+;     normal            ; 61                          ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 27                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.45                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,7 +358,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Aug  6 10:15:05 2018
+    Info: Processing started: Mon Aug  6 19:51:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LEDDisplayTest -c LEDDisplayTest
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -169,19 +366,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/i
     Info (12023): Found entity 1: LEDDisplay File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file LEDDisplayTest.sv
     Info (12023): Found entity 1: LEDDisplayTest File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 1
-Error (10161): Verilog HDL error at LEDDisplay.sv(93): object "pixelAddress_reg" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 93
-Error (10161): Verilog HDL error at LEDDisplay.sv(135): object "WAIT_COLUMN" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 135
-Error (10161): Verilog HDL error at LEDDisplay.sv(142): object "SET_COLUMN" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 142
-Error (10161): Verilog HDL error at LEDDisplay.sv(147): object "SET_COLUMN" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 147
-Error (10161): Verilog HDL error at LEDDisplay.sv(151): object "RESET_COLUMN0" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 151
-Error (10161): Verilog HDL error at LEDDisplay.sv(153): object "RESET_COLUMN1" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 153
-Error (10161): Verilog HDL error at LEDDisplay.sv(155): object "RESET_COLUMN1" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 155
-Error (10161): Verilog HDL error at LEDDisplay.sv(158): object "SET_COLUMN_LINES" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 158
-Error (10161): Verilog HDL error at LEDDisplay.sv(160): object "SET_COLUMN_LINES" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 160
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 1 warning
-    Error: Peak virtual memory: 883 megabytes
-    Error: Processing ended: Mon Aug  6 10:15:16 2018
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:16
+Info (12127): Elaborating entity "LEDDisplayTest" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at LEDDisplayTest.sv(50): object "pixelColor1" assigned a value but never read File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 50
+Info (12128): Elaborating entity "LEDDisplay" for hierarchy "LEDDisplay:ld" File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 47
+Info (10264): Verilog HDL Case Statement information at LEDDisplay.sv(147): all case item expressions in this case statement are onehot File: /home/imaustyn/Desktop/FPGAComputer/HDL/LEDDisplay.sv Line: 147
+Info (13000): Registers with preset signals will power-up high File: /home/imaustyn/Desktop/FPGAComputer/OtherTests/LEDDisplayTest/LEDDisplayTest.sv Line: 15
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 77 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 955 megabytes
+    Info: Processing ended: Mon Aug  6 19:52:07 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 

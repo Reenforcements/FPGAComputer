@@ -9,14 +9,14 @@ module LEDDisplay(
 	input logic [7:0]pixel1,
 	
 	// This line is used to select what row of the matrix is enabled.
-	// It controls a 4 to 16 decoder.
-	//   and selects from rows 0-15 but also rows 16-31
-	output logic [3:0]rowDecoder,
+	// It controls a 5 to 32 decoder.
+	//   and selects from rows 0-31 but also rows 32-63
+	output logic [4:0]rowDecoder,
 	// Shift out pixel data on these lines using clk.
 	output logic pixelClk,
 	output logic [2:0]columnPixels0,
 	output logic [2:0]columnPixels1,
-	// This line controls when the new data that was shifted in goes into effect.
+
 	output logic columnLatch,
 	// This line will blank the entire display
 	output logic blank,
@@ -67,13 +67,12 @@ typedef enum logic [7:0] {
 DisplayState state;
 DisplayState nextState;
 
-logic [3:0]row;
-logic [3:0]row_next;
+logic [4:0]row;
+logic [4:0]row_next;
 // The actual column we're operating on comes 2 cycles later because
 //  of how the RAM works.
-logic [4:0]column;
-logic [4:0]column_next;
-logic [4:0]column_d0;
+logic [5:0]column;
+logic [5:0]column_next;
 
 // Are we using 2^0 or 2^1?
 // (There would be more if we had more than two bits per color.)
@@ -86,18 +85,15 @@ logic [15:0]rowTimeCount_next;
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
 		state <= START;
-		row <= 4'd0;
-		column <= 5'd0;
-		column_d0 <= 5'd0;
+		row <= 5'd0;
+		column <= 6'd0;
 		rowTimeCount <= 15'd0;
 		binaryDigit <= 1'b0;
-		pixelAddress_reg <= 11'd0;
 	end
 	else begin
 		state <= nextState;
 		row <= row_next;
 		column <= column_next;
-		column_d0 <= column;
 		rowTimeCount <= rowTimeCount_next;
 		binaryDigit <= binaryDigit_next;
 		
@@ -105,6 +101,17 @@ always_ff @ (posedge clk or negedge rst) begin
 end
 
 logic [10:0]pixelAddress_next;
+
+// The buffers invert our outputs, so we need to account for
+//  this by inverting all our outputs too.
+//  Use the same output names but prefix the non inverted signals
+//  with n_
+logic [4:0]n_rowDecoder;
+logic n_pixelClk;
+logic [2:0]n_columnPixels0;
+logic [2:0]n_columnPixels1;
+logic n_columnLatch;
+logic n_blank;
 
 always_comb begin
 	nextState = state;
@@ -122,19 +129,20 @@ always_comb begin
 	// Its not a lot, but it will still give us a whole 64 different colors.
 	// That's plenty!
 	// {X,X, R,R, G,G, B,B} = 8 bits
-	columnPixels0[RED] = (pixel0 & (8'b00010000 << binaryDigit));
-	columnPixels0[GREEN] = (pixel0 & (8'b00000100 << binaryDigit));
-	columnPixels0[BLUE] = (pixel0 & (8'b00000001 << binaryDigit));
+	n_columnPixels0[RED] = (pixel0 & (8'b00010000 << binaryDigit)) > 0;
+	n_columnPixels0[GREEN] = (pixel0 & (8'b00000100 << binaryDigit)) > 0;
+	n_columnPixels0[BLUE] = (pixel0 & (8'b00000001 << binaryDigit)) > 0;
 
-	columnPixels1[RED] = (pixel1 & (8'b00010000 << binaryDigit));
-	columnPixels1[GREEN] = (pixel1 & (8'b00000100 << binaryDigit));
-	columnPixels1[BLUE] = (pixel1 & (8'b00000001 << binaryDigit));
+	n_columnPixels1[RED] = (pixel1 & (8'b00010000 << binaryDigit)) > 0;
+	n_columnPixels1[GREEN] = (pixel1 & (8'b00000100 << binaryDigit)) > 0;
+	n_columnPixels1[BLUE] = (pixel1 & (8'b00000001 << binaryDigit)) > 0;
 	
-	pixelClk = 1'd0;
-	columnLatch = 1'b0;
-	blank = 1'b0;
+	n_pixelClk = 1'd0;
+	n_columnLatch = 1'b0;
+	n_blank = 1'b0;
+	n_rowDecoder = row;
 	
-	rowDecoder = row;
+	done = 1'b0;
 	
 	unique case (state)
 		START: begin
@@ -148,7 +156,7 @@ always_comb begin
 		end
 		GET_PIXEL_0: begin
 			// Clock the address into RAM.
-			nextState = SET_COLUMN_LINES;
+			nextState = GET_PIXEL_1;
 		end
 		GET_PIXEL_1: begin
 			// Clock the data out of RAM.
@@ -158,18 +166,18 @@ always_comb begin
 			// Set the clock high
 			// The values for the column shift register lines are set
 			//  higher up outside the case statement.
-			pixelClk = 1'd1;
+			n_pixelClk = 1'd1;
 			// Assign the different lines.
 			nextState = CHECK_COLUMN_DONE;
 		end
 		CHECK_COLUMN_DONE: begin
 		
 			// Put the clock back to zero.
-			pixelClk = 1'd0;
+			n_pixelClk = 1'd0;
 			
 			// Increment the column
 			column_next = column + 5'd1;
-			// If we just did the 31st column, then column_next will be
+			// If we just did the 63rd column, then column_next will be
 			//   zero and we're done shifting in this column
 			if (column_next == 5'd0) begin
 				// Done shifting in this column
@@ -184,22 +192,23 @@ always_comb begin
 			// Reset the row time counter.
 			rowTimeCount_next = 16'd0;
 			// Latch the new data in.
-			columnLatch = 1'b1;
-			// Blank the display while latching.
-			blank = 1'b1;
+			n_columnLatch = 1'b1;
+			// n_blank the display while latching.
+			n_blank = 1'b1;
 			// Wait for the column to display long enough.
 			nextState = WAIT_FOR_COLUMN;
 		end
 		WAIT_FOR_COLUMN: begin
 			
+			n_blank = (binaryDigit == 1'b0) ? (rowTimeCount >= 16'd1) : (rowTimeCount >= 16'd300);
 			if (binaryDigit == 1'b0) begin
-				if (rowTimeCount >= 16'd32) begin
+				if (rowTimeCount >= 16'd300) begin
 					rowTimeCount_next = 16'd0;
 					nextState = NEXT_ROW;
 				end
 			end
 			else begin
-				if (rowTimeCount >= 16'd64) begin
+				if (rowTimeCount >= 16'd300) begin
 					rowTimeCount_next = 16'd0;
 					nextState = NEXT_ROW;
 				end
@@ -207,10 +216,10 @@ always_comb begin
 		end
 		NEXT_ROW: begin
 			// Increment our row
-			row_next = row + 4'd1;
+			row_next = row + 5'd1;
 			// If row_next is zero, it means we did all 16 rows
 			//  and the row variable overflowed. Change our binary digit.
-			if (row_next == 4'd0) begin
+			if (row_next == 5'd0) begin
 				nextState = NEXT_BINARY_DIGIT;
 			end
 			else begin
@@ -221,12 +230,24 @@ always_comb begin
 			// Switch which binary digit we're lookin at.
 			// The 2^1 digit should run twice as long as 2^0
 			binaryDigit_next = ~binaryDigit;
+			
+			if (binaryDigit == 1'b1) begin
+				// We rendered the entire buffer
+				done = 1'b1;
+			end
 			nextState = RESET_COLUMN;
 		end
 		default: begin
 			nextState = BAD;
 		end
 	endcase
+	
+	rowDecoder = ~n_rowDecoder;
+   pixelClk = ~n_pixelClk;
+	columnPixels0 = ~n_columnPixels0;
+	columnPixels1 = ~n_columnPixels1;
+	columnLatch = ~n_columnLatch;
+	blank = ~n_blank;
 end
 
 endmodule

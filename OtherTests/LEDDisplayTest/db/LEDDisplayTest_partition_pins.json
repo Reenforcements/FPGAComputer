@@ -2,7 +2,96 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "rowDecoder[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rowDecoder[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rowDecoder[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rowDecoder[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rowDecoder[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pixelClk",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "columnPixels1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "columnLatch",
+					"strict" : false
+				},
+				{
+					"name" : "blank",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "colorInputs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clkIn",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
