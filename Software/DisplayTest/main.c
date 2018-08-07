@@ -4,6 +4,11 @@ Program description:
 Tests the LED Matrix display.
 
 */
+// Write a "1" to bit "0" to make graphics changes take effect.
+int *matrix_settings = (int*) 275;
+void updateScreen() {
+	*matrix_settings = 1;
+}
 void main() {
 	// This is the video buffer.
 	// It starts at address 65536
@@ -11,9 +16,6 @@ void main() {
 	//  giving us 1024 words of space
 	//  (or 4096 bytes.)
 	char *vram = (char*) 65536;
-
-	// Write a "1" to bit "0" to make graphics changes take effect.
-	int *matrix_settings = (int*) 275;
 	
 	// 256 is the address of the 7 segment display register.
 	int *segmentedDisplay = (int *)255;
@@ -52,6 +54,6 @@ void main() {
 		for (int i = 0; i < 4096; i++) {
 			*(vram + i) = currentColor;
 		}
-		*matrix_settings = 1;
+		updateScreen();
 	}
 }
