@@ -1,7 +1,91 @@
+### 8/6/18
+
+I got a basic controller set up. I don't know if it works, but the waveforms look good in ModelSim. I ran into a problem though. The LED matrix looks like it doesn't actually have enough lines to control all these pixels. The decoder should have 5 lines but it only has 4. My guess is there's twice as many shift registers as normal to accomodate this. I think I'm going to experiment with an Arduino first before continuing my FPGA code. I need to know how this works first.
+
+I have it somewhat working with the Arduino. That was fast! I think one of the ground pins is mislabeled and that's the 5th decoder adress pin.
+
+It WAS mislabeled. I have the whole screen being driven now. For fun, I'm changing all the digitalWrites to register writes to make it run quickly.
+
+It runs so much faster there's no comparison. Its updating the screen about 230 times a second.
+
+It turns out those buffers invert the output, so I had to invert all my LED matrix outputs for it to work.
+
+LEDDriver on FPGA working! There are some bugs to work out though. It doesn't change as instantly as it should. It looks like it "scans across".
+
+I'm not sure using the Pi breakout was such a good idea. I think the board makes a lot of assumptions about how things should be connected because it's supposed to be connected to a Pi (tying "GND"s together, etc.) I've had to move around a lot of connectors to different spots.
+
+Ok, I finished rearranging all I needed to and it works great!
+
+Fixed the matrix code so it displays the LSb less brightly than the MSb.
+
+I'm adding generic millisecond and microsecond counters just like the Arduino has. This will help when writing timing sensitive code like games use.
+
+I think I'm going to make the Memory module generic and then instantiate two small ones for video ram. That way, I can keep all the different reading/writing functionality as the main RAM has. I won't get to doing this until tomorrow though.
+
+### 8/5/18
+
+Still trying to figure out why C doesn't run so well. I changed the stack pointer to have the initial value of 65531 and all other registers to start at zero. When it decrements the stack pointer initially to make room for variables, it seems to go twice as far as it should. I wonder if that's related. I'm going to try to figure out why its doing that and fix it anyways.
+
+I think I introduced a bug where the memory write address is actually being written to the memory location. If I add nop's in between the sw, addiu, and sw commands, the bug goes away.
+
+Ok, NOW C seems to be working. Starting work on the LED display.
+
+### 8/4/18
+
+*Not so sure about this anymore:*
+Ok, its nothing to do with branching. Apparently changing my variables from char's to int's fixes things. That means my processor isn't properly handling single bytes somewhere. I'm going to go check the ModelSim tests for the memory module.
+
+I don't use address_d0 like I should in the Memory module when reading I use address. I don't think that fixed the bug though.
+
+Ok, I think it has to do with the stack pointer and memory locations. I tried using variables that are allocated at specific memory addresses and it works great (sometimes). Now I just have to figure out how to get the compiler to spit out code that works naturally.
+
+### 8/3/18
+
+Demo went well. Dr. Rajasekhar was very happy with progress.
+
+I'm exploring how to get compiled C to run on the processor.
+
+I think I might need to initialize the global pointer and stack pointer in my SystemVerilog. The compiler doesn't seem to use the frame pointer. This makes sense, as I don't rely on gp and sp in my assembly programs.
+
+The global poitner is used to point to global variables.
+
+There's apparently a file called ctr0.s which stands for CRunTime and it initializes a bunch of stuff. I think I may need to modify that because my MIPS isn't a regular MIPS. I at least want to look at it to maybe see where it's drawing its data from. I found compiled object files that look similar to a ctr0 file but no source files.
+
+Changing the entry symbol to "main" in the linkerscript and adding these flags to GCC seemed to produce plain, compiled C with no startup stuff "-nodefaultlibs -nostdlib".
+
+Really basic C is working now!
+
+The shift key doesn't seem to be working correctly. None of the modifier keys are working properly.
+
+Shift keys are working now. I discovered a problem with bnez it seems. I have two different conditionals written in C, and the one with bnez isn't working. I don't think its a logic error in the code. I don't even know if the bnez instruction is faulty.
+
+### 8/2/18
+
+Got the keyboard module working again with the new clock speed. It should work with any clock speed now. I tried reading from memory where the ascii key values are stored and it works! I'm also going to add a register that can be written to so the default PC address can be changed. I think this will be easier than trying to get the entry point of the program to be exact when I compile.
+
+I made a register that you can write to using the communicate.py program so you can effectively change the start PC address of the computer. I also added the ability to upload ELF files directly and it takes out the entry point and changes the PC address. I also fixed reading and writing to memory externally and within the processor so the other registers take a cycle to write just like the main memory. The keyboard is working from an assembly program now! I have a counter than I can increment/decrement/reset.
+
 ### 8/1/18
 
 Finished PS2KeyboardMemory and accompanying testbench modules.
 
+I'm working on integrating the PS2Keyboard/PS2KeyboardMemory modules into the processor so you can read if keys are pressed.
+
+Its integrated! I'm just waiting for the compilation so I can assign pins and then test it. I also added a special memory location that you can write a word to and it displays on the seven segment displays.
+
+Now I'm going to write a program to test the keyboard and display by being able to increment/decrement a counter.
+
+I don't think I can specify my own linker script for compiling C because it overwrites the default one and causes things to not compile correctly. I'm checking the default linkerscript using `mips-linux-gnu-ld --verbose > linkerscriptdefault.txt`.
+
+I just edited the dumped script. I changed all the 40000's to 400's and used it. What a hack, but it seemed to help.
+
+I have a ways to go before I can compile and run straight C programs, but I copied out the machine code for the main function and ran that and it works. The display is working too.
+
+I think the debounce time needs adjustment.
+
+I've been trying different values but nothing seems to be working. I'm wondering if my code doesn't work with a slower clock or something. I may have to try signaltap.
+
+I'm using signaltap. I think the debounce just happened to fix my issue and nothing needs to be debounced.
 
 ### 7/31/18
 
