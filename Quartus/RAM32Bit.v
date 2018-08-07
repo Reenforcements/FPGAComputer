@@ -52,11 +52,15 @@ module RAM32Bit (
 	wren_b,
 	q_a,
 	q_b);
+	
+	parameter NUMBER_OF_WORDS = 16384;
+	parameter ADDRESS_BIT_SIZE = 14;
+	
 
 	input	  aclr_a;
 	input	  aclr_b;
-	input	[13:0]  address_a;
-	input	[13:0]  address_b;
+	input	[ADDRESS_BIT_SIZE-1:0]  address_a;
+	input	[ADDRESS_BIT_SIZE-1:0]  address_b;
 	input	[3:0]  byteena_a;
 	input	  clock_a;
 	input	  clock_b;
@@ -90,7 +94,7 @@ module RAM32Bit (
 
 	altsyncram	altsyncram_component (
 				.aclr0 (aclr_a),
-				.aclr1 (aclr_b),
+				.aclr1 (1'b0),
 				.address_a (address_a),
 				.address_b (address_b),
 				.byteena_a (byteena_a),
@@ -122,18 +126,18 @@ module RAM32Bit (
 		altsyncram_component.indata_reg_b = "CLOCK1",
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_type = "altsyncram",
-		altsyncram_component.numwords_a = 16384,
-		altsyncram_component.numwords_b = 16384,
+		altsyncram_component.numwords_a = NUMBER_OF_WORDS,
+		altsyncram_component.numwords_b = NUMBER_OF_WORDS,
 		altsyncram_component.operation_mode = "BIDIR_DUAL_PORT",
 		altsyncram_component.outdata_aclr_a = "CLEAR0",
-		altsyncram_component.outdata_aclr_b = "CLEAR1",
+		altsyncram_component.outdata_aclr_b = "CLEAR0",
 		altsyncram_component.outdata_reg_a = "UNREGISTERED",
 		altsyncram_component.outdata_reg_b = "UNREGISTERED",
 		altsyncram_component.power_up_uninitialized = "FALSE",
 		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_WITH_NBE_READ",
 		altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_WITH_NBE_READ",
-		altsyncram_component.widthad_a = 14,
-		altsyncram_component.widthad_b = 14,
+		altsyncram_component.widthad_a = ADDRESS_BIT_SIZE,
+		altsyncram_component.widthad_b = ADDRESS_BIT_SIZE,
 		altsyncram_component.width_a = 32,
 		altsyncram_component.width_b = 32,
 		altsyncram_component.width_byteena_a = 4,

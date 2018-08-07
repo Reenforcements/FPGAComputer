@@ -23,29 +23,24 @@ Disassembly of section .note.gnu.build-id:
  434:	00000014 	0x14
  438:	00000003 	sra	zero,zero,0x0
  43c:	474e5500 	c1	0x14e5500
- 440:	28c4ac7f 	slti	a0,a2,-21377
- 444:	4b34a046 	c2	0x134a046
- 448:	cc693c55 	lwc3	$9,15445(v1)
- 44c:	5e8a7ff4 	0x5e8a7ff4
- 450:	b6d9848d 	0xb6d9848d
+ 440:	dc991366 	0xdc991366
+ 444:	6fd4697d 	0x6fd4697d
+ 448:	14eaeae9 	bne	a3,t2,ffffaff0 <_gp+0xfffe2850>
+ 44c:	4d1c5e3f 	0x4d1c5e3f
+ 450:	31321019 	andi	s2,t1,0x1019
 
 Disassembly of section .text:
 
 00000460 <main>:
-  either up/down key is held.
-
-Display the counter on the seven segment displays.
+Display the counter on the first four digits of the 7 segment display.
+Display which keys are pressed on the last four digits. 
+The letters A, B, C, D are assigned to each key.
 
 */
 void main() {
  460:	27bdffc0 	addiu	sp,sp,-64
  464:	afbe003c 	sw	s8,60(sp)
  468:	03a0f025 	move	s8,sp
-	asm("sw $s8, 30004($0)");
-	asm("li $t0, 30008");
-	asm("sw $sp, 0($t0)");
-	*/
-
 	int *readback = (int*)20000;
  46c:	24024e20 	li	v0,20000
  470:	afc20010 	sw	v0,16(s8)
@@ -373,55 +368,55 @@ Disassembly of section .debug_info:
   1c:	60000003 	0x60000003
   20:	4c000000 	mfc3	zero,$0
   24:	00020000 	sll	zero,v0,0x0
-  28:	0071010c 	syscall	0x1c404
+  28:	0071010e 	0x71010e
   2c:	00000460 	0x460
   30:	0000034c 	syscall	0xd
   34:	019c0000 	0x19c0000
   38:	00f10300 	0xf10300
   3c:	00003801 	0x3801
-  40:	1e000000 	bgtz	s0,44 <main-0x41c>
+  40:	0f000000 	jal	c000000 <_gp+0xbfe7860>
   44:	f1029150 	0xf1029150
   48:	03000000 	0x3000000
-  4c:	76012200 	jalx	8048800 <_gp+0x8030060>
+  4c:	76011300 	jalx	8044c00 <_gp+0x802c460>
   50:	0000f102 	srl	s8,zero,0x4
   54:	91540300 	lbu	s4,768(t2)
   58:	00009f01 	0x9f01
-  5c:	2a000000 	slti	zero,s0,0
+  5c:	1b000000 	blez	t8,60 <main-0x400>
   60:	fe029158 	0xfe029158
   64:	03000000 	0x3000000
-  68:	b1012b00 	0xb1012b00
+  68:	b1011c00 	0xb1011c00
   6c:	0000fe02 	srl	ra,zero,0x18
   70:	915c0300 	lbu	gp,768(t2)
   74:	00005701 	0x5701
-  78:	2c000000 	sltiu	zero,zero,0
+  78:	1d000000 	bgtz	t0,7c <main-0x3e4>
   7c:	fe029160 	0xfe029160
   80:	03000000 	0x3000000
-  84:	a7012d00 	sh	at,11520(t8)
+  84:	a7011e00 	sh	at,7680(t8)
   88:	0000fe02 	srl	ra,zero,0x18
   8c:	91640300 	lbu	a0,768(t3)
   90:	00004901 	0x4901
-  94:	2e000000 	sltiu	zero,s0,0
+  94:	1f000000 	bgtz	t8,98 <main-0x3c8>
   98:	fe029168 	0xfe029168
   9c:	03000000 	0x3000000
-  a0:	fe012f00 	0xfe012f00
+  a0:	fe012000 	0xfe012000
   a4:	0000fe02 	srl	ra,zero,0x18
   a8:	916c0300 	lbu	t4,768(t3)
   ac:	00004101 	0x4101
-  b0:	33000001 	andi	zero,t8,0x1
+  b0:	24000001 	li	zero,1
   b4:	0b029148 	j	c0a4520 <_gp+0xc08bd80>
   b8:	03000000 	0x3000000
-  bc:	62013400 	0x62013400
+  bc:	62012500 	0x62012500
   c0:	00010402 	srl	zero,at,0x10
   c4:	914c0300 	lbu	t4,768(t2)
   c8:	00000001 	0x1
-  cc:	35000001 	ori	zero,t0,0x1
+  cc:	26000001 	addiu	zero,s0,1
   d0:	0402914d 	0x402914d
   d4:	03000000 	0x3000000
-  d8:	87013600 	lh	at,13824(t8)
+  d8:	87012700 	lh	at,9984(t8)
   dc:	0000fe02 	srl	ra,zero,0x18
   e0:	91700300 	lbu	s0,768(t3)
   e4:	00001e01 	0x1e01
-  e8:	38000000 	xori	zero,zero,0x0
+  e8:	29000000 	slti	zero,t0,0
   ec:	fe029174 	0xfe029174
   f0:	00040400 	sll	zero,a0,0x10
   f4:	0000f705 	0xf705
@@ -465,7 +460,7 @@ Disassembly of section .debug_abbrev:
 Disassembly of section .debug_line:
 
 00000000 <.debug_line>:
-   0:	000000db 	0xdb
+   0:	000000d9 	0xd9
    4:	00020000 	sll	zero,v0,0x0
    8:	001f0101 	0x1f0101
    c:	fb0e0d00 	0xfb0e0d00
@@ -477,49 +472,49 @@ Disassembly of section .debug_line:
   24:	00010000 	sll	zero,at,0x0
   28:	00000502 	srl	zero,zero,0x14
   2c:	00000460 	0x460
-  30:	030b0103 	0x30b0103
-  34:	12ba83bd 	beq	s5,k0,fffe0f2c <_gp+0xfffc878c>
-  38:	8a838383 	lwl	v1,-31869(s4)
-  3c:	838384f4 	lb	v1,-31500(gp)
-  40:	4b4b4b83 	c2	0x14b4b83
-  44:	bb83bd08 	swr	v1,-17144(gp)
-  48:	75f3f4f4 	jalx	7cfd3d0 <_gp+0x7ce4c30>
-  4c:	4e0875f3 	c3	0x875f3
-  50:	f4f44df3 	0xf4f44df3
-  54:	087508e5 	j	1d42394 <_gp+0x1d29bf4>
-  58:	08e508e5 	j	3942394 <_gp+0x3929bf4>
-  5c:	08e60002 	j	3980008 <_gp+0x3967868>
-  60:	04010608 	b	1884 <main+0x1424>
-  64:	74000204 	jalx	810 <main+0x3b0>
-  68:	02ba0002 	0x2ba0002
-  6c:	04044a00 	0x4044a00
-  70:	02040406 	0x2040406
-  74:	f3000204 	0xf3000204
-  78:	01060874 	0x1060874
-  7c:	00020402 	srl	zero,v0,0x10
-  80:	ba000204 	swr	zero,516(s0)
-  84:	044a0002 	0x44a0002
-  88:	040406f4 	0x40406f4
-  8c:	00020401 	0x20401
-  90:	06087400 	0x6087400
-  94:	020402ba 	0x20402ba
-  98:	00020404 	0x20404
-  9c:	4a000204 	c2	0x204
-  a0:	05087400 	0x5087400
-  a4:	020406ba 	0x20406ba
-  a8:	00020408 	0x20408
-  ac:	4a000204 	c2	0x204
-  b0:	0908ac00 	j	422b000 <_gp+0x4212860>
-  b4:	02040aba 	0x2040aba
-  b8:	0002040c 	syscall	0x810
-  bc:	4a000204 	c2	0x204
-  c0:	0d08ac00 	jal	422b000 <_gp+0x4212860>
-  c4:	02040eba 	0x2040eba
-  c8:	00020410 	0x20410
-  cc:	4a000204 	c2	0x204
-  d0:	1006022c 	beq	zero,a2,984 <main+0x524>
-  d4:	1408754c 	bne	zero,t0,1d608 <_gp+0x4e68>
-  d8:	4b4b0208 	c2	0x14b0208
+  30:	030d01bb 	0x30d01bb
+  34:	83bd8a83 	lb	sp,-30077(sp)
+  38:	83838383 	lb	v1,-31869(gp)
+  3c:	84f44b4b 	lh	s4,19275(a3)
+  40:	4b83bb83 	c2	0x183bb83
+  44:	bd0875f3 	0xbd0875f3
+  48:	f4f44e08 	0xf4f44e08
+  4c:	75f3f4f4 	jalx	7cfd3d0 <_gp+0x7ce4c30>
+  50:	4df30875 	0x4df30875
+  54:	08e508e5 	j	3942394 <_gp+0x3929bf4>
+  58:	08e508e6 	j	3942398 <_gp+0x3929bf8>
+  5c:	00020401 	0x20401
+  60:	06087400 	0x6087400
+  64:	020402ba 	0x20402ba
+  68:	00020404 	0x20404
+  6c:	4a000204 	c2	0x204
+  70:	0406f300 	0x406f300
+  74:	02040106 	0x2040106
+  78:	08740002 	j	1d00008 <_gp+0x1ce7868>
+  7c:	0402ba00 	0x402ba00
+  80:	0204044a 	0x204044a
+  84:	00020404 	0x20404
+  88:	06f40002 	0x6f40002
+  8c:	04010608 	b	18b0 <main+0x1450>
+  90:	74000204 	jalx	810 <main+0x3b0>
+  94:	02ba0002 	0x2ba0002
+  98:	04044a00 	0x4044a00
+  9c:	02040508 	0x2040508
+  a0:	74000204 	jalx	810 <main+0x3b0>
+  a4:	06ba0002 	0x6ba0002
+  a8:	04084a00 	0x4084a00
+  ac:	02040908 	0x2040908
+  b0:	ac000204 	sw	zero,516(zero)
+  b4:	0aba0002 	j	ae80008 <_gp+0xae67868>
+  b8:	040c4a00 	0x40c4a00
+  bc:	02040d08 	0x2040d08
+  c0:	ac000204 	sw	zero,516(zero)
+  c4:	0eba0002 	jal	ae80008 <_gp+0xae67868>
+  c8:	04104a00 	bltzal	zero,128cc <__bss_start+0x211c>
+  cc:	02041006 	srlv	v0,a0,s0
+  d0:	022c1408 	0x22c1408
+  d4:	754c4b4b 	jalx	5312d2c <_gp+0x52fa58c>
+  d8:	02080001 	0x2080001
   dc:	Address 0x00000000000000dc is out of bounds.
 
 

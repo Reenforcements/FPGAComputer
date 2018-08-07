@@ -1,5 +1,5 @@
 Flow report for MIPSProcessor
-Sun Aug  5 15:36:54 2018
+Tue Aug  7 15:24:37 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Aug  5 15:36:54 2018       ;
+; Flow Status                        ; Successful - Tue Aug  7 15:24:37 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPSProcessor                               ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 8,873 / 114,480 ( 8 % )                     ;
-;     Total combinational functions  ; 8,721 / 114,480 ( 8 % )                     ;
-;     Dedicated logic registers      ; 2,415 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2415                                        ;
-; Total pins                         ; 67 / 529 ( 13 % )                           ;
+; Total logic elements               ; 10,000 / 114,480 ( 9 % )                    ;
+;     Total combinational functions  ; 9,846 / 114,480 ( 9 % )                     ;
+;     Dedicated logic registers      ; 2,565 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 2565                                        ;
+; Total pins                         ; 81 / 529 ( 15 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 524,288 / 3,981,312 ( 13 % )                ;
+; Total memory bits                  ; 589,824 / 3,981,312 ( 15 % )                ;
 ; Embedded Multiplier 9-bit elements ; 16 / 532 ( 3 % )                            ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/05/2018 15:34:39 ;
+; Start date & time ; 08/07/2018 15:21:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPSProcessor       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
 ; Assignment Name                     ; Value                                                                   ; Default Value ; Entity Name           ; Section Id           ;
 +-------------------------------------+-------------------------------------------------------------------------+---------------+-----------------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 52229457043.153349767911913                                             ; --            ; --                    ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 52229457043.153366966839868                                             ; --            ; --                    ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                                                     ; --            ; --                    ; eda_design_synthesis ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                       ; --            ; --                    ; eda_simulation       ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                         ; <None>        ; --                    ; --                   ;
@@ -114,12 +114,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:56     ; 1.0                     ; 1035 MB             ; 00:01:04                           ;
-; Fitter               ; 00:00:55     ; 1.1                     ; 1559 MB             ; 00:01:08                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 857 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 1024 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 1164 MB             ; 00:00:08                           ;
-; Total                ; 00:02:09     ; --                      ; --                  ; 00:02:30                           ;
+; Analysis & Synthesis ; 00:01:46     ; 1.0                     ; 1043 MB             ; 00:01:54                           ;
+; Fitter               ; 00:01:14     ; 1.1                     ; 1572 MB             ; 00:01:27                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 859 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.5                     ; 1050 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 1173 MB             ; 00:00:09                           ;
+; Total                ; 00:03:21     ; --                      ; --                  ; 00:03:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

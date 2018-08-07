@@ -15,7 +15,7 @@ import MemoryModesPackage::*;
 
 module Memory(
 	input logic clk,
-	input logic clk_pc,
+	input logic clk_secondary,
 	input logic rst,
 
 	input logic [31:0]address,
@@ -24,17 +24,21 @@ module Memory(
 	input logic [2:0]readMode,
 
 	input logic unsignedLoad,
-
-	input logic [31:0]pcAddress,
-
 	output logic [31:0]dataOutput,
-	output logic [31:0]pcDataOutput
+	
+	input logic [31:0]secondaryAddress,
+	output logic [31:0]secondaryOutput
 );
 
+parameter NUMBER_OF_WORDS = 16384;
+parameter ADDRESS_BIT_SIZE = 14;
+parameter BYTE_ADDRESS_BIT_SIZE = ADDRESS_BIT_SIZE + 2;
+
+
 // a is used for reading/writing
-// b is strictly used for PC data
-logic	[13:0]address_a;
-logic	[13:0]address_b;
+// b is a secondary output that's used for PC data and vram rendering.
+logic	[ADDRESS_BIT_SIZE-1:0]address_a;
+logic	[ADDRESS_BIT_SIZE-1:0]address_b;
 logic	[3:0]byteena_a;
 logic	[31:0]data_a;
 logic	[31:0]data_b;
@@ -46,14 +50,20 @@ logic	  wren_b;
 logic	[31:0]q_a;
 logic	[31:0]q_b;
 
-RAM32Bit ram(
+
+
+RAM32Bit 
+#(
+.NUMBER_OF_WORDS(NUMBER_OF_WORDS), 
+.ADDRESS_BIT_SIZE(ADDRESS_BIT_SIZE)
+) ram(
 	.aclr_a(~rst),
 	.aclr_b(~rst),
 	.address_a(address_a),
 	.address_b(address_b),
 	.byteena_a(byteena_a),
 	.clock_a(clk),
-	.clock_b(clk_pc),
+	.clock_b(clk_secondary),
 	.data_a(data_a),
 	.data_b(data_b),
 	.rden_a(rden_a),
@@ -64,14 +74,14 @@ RAM32Bit ram(
 	.q_b(q_b));
 
 
-logic [15:0]baseAddress;
-logic [13:0]wordAlignedBase;
+logic [BYTE_ADDRESS_BIT_SIZE-1:0]baseAddress; // For 16 bits, [15:0]
+logic [ADDRESS_BIT_SIZE-1:0]wordAlignedBase; // For 16 bits, [13:0]
 logic [1:0]byteOffset;
 
 // Set control lines common to reading/writing
 always_comb begin
-	baseAddress = address[15:0];
-	wordAlignedBase = baseAddress[15:2];
+	baseAddress = address[BYTE_ADDRESS_BIT_SIZE-1:0]; // For 16 bits, [15:0]
+	wordAlignedBase = baseAddress[BYTE_ADDRESS_BIT_SIZE-1:2]; // For 16 bits, [15:2]
 	byteOffset = address[1:0];
 	
 	// Set the RAM's read/write enables.
@@ -208,13 +218,12 @@ always_comb begin
 	end
 end
 
-// PC related things:
-// Output next instruction
+// Secondary output
 always_comb begin
 	rden_b = 1'b1;
 	wren_b = 1'b0;
-	address_b = pcAddress[15:2];
-	pcDataOutput = q_b;
+	address_b = secondaryAddress[BYTE_ADDRESS_BIT_SIZE-1:2]; // For 16 bits, [15:2]
+	secondaryOutput = q_b;
 end
 
 endmodule

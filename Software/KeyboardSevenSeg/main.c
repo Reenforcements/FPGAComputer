@@ -3,30 +3,15 @@ Program description:
 
 Increment a counter once when the up arrow is pressed.
 Decrement a counter once when the down arrow is press.
-If either shift is held, increment or decrement the counter as long as
-  either up/down key is held.
+Increment/decrement the counter as long as the right/left arrow key is held.
+Press r to reset the counter.
 
-Display the counter on the seven segment displays.
+Display the counter on the first four digits of the 7 segment display.
+Display which keys are pressed on the last four digits. 
+The letters A, B, C, D are assigned to each key.
 
 */
 void main() {
-	// Set our stack pocharer
-	//asm("lui $sp, 0xFF\n"
-	//	"ori $sp, $sp, 0xFF\n"
-	//	"move $s8, $sp");
-	/*	
-	asm("li	$sp, 0xAFFF\n"
-		"addiu	$sp,$sp,-64\n"
-		"sw	$s8,60($sp)\n"
-		"move $s8,$sp");
-	*/
-	/*
-	asm("sw $sp, 30000($0)");
-	asm("sw $s8, 30004($0)");
-	asm("li $t0, 30008");
-	asm("sw $sp, 0($t0)");
-	*/
-
 	int *readback = (int*)20000;
 	*(readback) = 1234;
 

@@ -19,6 +19,20 @@ WordTX_state.WORDTXSTATE_SENDING 0 1
 WordTX_state.WORDTXSTATE_DONE 1 0 
 WordTX_state.WORDTXSTATE_BAD 1 1 
 
+State Machine - |Main|Processor:processor|LEDDisplay:ledDisplay1|state
+Name state~7 state~6 state~5 state~4 
+state.START 0 0 0 0 
+state.RESET_COLUMN 0 0 0 1 
+state.GET_PIXEL_0 0 0 1 0 
+state.GET_PIXEL_1 0 0 1 1 
+state.CLOCK_COLUMN 0 1 0 0 
+state.CHECK_COLUMN_DONE 0 1 0 1 
+state.SHOW_COLUMN 0 1 1 0 
+state.WAIT_FOR_COLUMN 0 1 1 1 
+state.NEXT_ROW 1 0 0 0 
+state.NEXT_BINARY_DIGIT 1 0 0 1 
+state.BAD 1 0 1 0 
+
 State Machine - |Main|Processor:processor|PS2Keyboard:ps2kb|state
 Name state~12 state~11 state~10 state~9 
 state.START 0 0 0 0 

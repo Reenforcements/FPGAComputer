@@ -18,6 +18,14 @@ output logic UART_TXD,
 input logic PS2_CLK,
 input logic PS2_DAT,
 
+// LED Matrix
+output logic [4:0]rowDecoder,
+output logic pixelClk,
+output logic [2:0]columnPixels0,
+output logic [2:0]columnPixels1,
+output logic columnLatch,
+output logic blank,
+
 // Outputs
 output logic [6:0]seg7,
 output logic [6:0]seg6,
@@ -170,6 +178,13 @@ Processor #(.CLOCK_SPEED(8333333)) processor(
 	.externalReadMode(externalReadMode),
 	.externalWriteMode(externalWriteMode),
 	.externalDataOut(externalDataOut),
+	
+	.rowDecoder(rowDecoder),
+	.pixelClk(pixelClk),
+	.columnPixels0(columnPixels0),
+	.columnPixels1(columnPixels1),
+	.columnLatch(columnLatch),
+	.blank(blank),
 	
 	.sevenSegmentDisplayOutput(sevenSegmentDisplayOutput)
 );

@@ -24,8 +24,15 @@ input logic [2:0]externalReadMode,
 input logic [2:0]externalWriteMode,
 output logic [31:0]externalDataOut,
 
-// 7 segment displays
+// LED Matrix
+output logic [4:0]rowDecoder,
+output logic pixelClk,
+output logic [2:0]columnPixels0,
+output logic [2:0]columnPixels1,
+output logic columnLatch,
+output logic blank,
 
+// 7 segment displays
 output logic [31:0]sevenSegmentDisplayOutput
 );
 
@@ -52,13 +59,36 @@ PC pc(
 	.pcAddress(pc_pcAddress),
 	.nextPCAddress(pc_nextPCAddress)
 );
+logic [31:0]genericPreCounter;
+logic [31:0]genericCounter;
+
+logic [7:0]genericPreCounterHighRes;
+logic [31:0]genericCounterHighRes;
 // Use the memory clock so this register isn't affected by regular processor resetting.
 always_ff @ (posedge memory_clk or negedge memory_rst) begin
 	if (memory_rst == 1'b0) begin
 		pc_resetAddress <= 32'h3FC;
+		genericPreCounter <= 32'd0;
+		genericCounter <= 32'd0;
+		genericPreCounterHighRes <= 8'd0;
+		genericPreCounter <= 32'd0;
 	end
 	else begin
 		pc_resetAddress <= pc_resetAddress_next;
+		
+		// Millisecond counter
+		genericPreCounter <= genericPreCounter + 32'd1;
+		if (genericPreCounter == 32'd8333) begin
+			genericPreCounter <= 32'd1;
+			genericCounter <= genericCounter + 32'd1;
+		end
+		
+		// Microsecond counter
+		genericPreCounterHighRes <= genericPreCounterHighRes + 8'd1;
+		if (genericPreCounterHighRes == 8'd8) begin
+			genericPreCounterHighRes <= 8'd1;
+			genericCounterHighRes <= genericCounterHighRes + 32'd1;
+		end
 	end
 end
 
@@ -194,24 +224,170 @@ PS2KeyboardMemory ps2kbm(
 	.keyValue(keyboardMemory_keyValue)
 );
 
-//DEBUG
-/*
-logic [7:0]zeebee;
+// The matrix needs two video RAMS:
+// We need to read a byte for the upper half of the display at the same 
+//  time that we read a byte for the lower half. A simple solution is to have two
+//  RAMs. The lower half and upper half of each RAM will be used for an onscreen
+//  buffer (what we're showing) and an offscreen buffer, which we can render into
+//  without creating screen tearing.
+
+logic [11:0]vram0_address;
+logic [31:0]vram0_dataIn;
+logic [2:0]vram0_writeMode;
+logic [2:0]vram0_readMode;
+logic [31:0]vram0_dataOut;
+
+logic vram0_unsignedLoad;
+
+logic [11:0]vram0_pixelAddress0;
+logic [31:0]vram0_pixels0;
+Memory 
+#(
+.NUMBER_OF_WORDS(1024), 
+.ADDRESS_BIT_SIZE(10)
+)
+vram0(
+	.clk(memory_clk), 
+	.clk_secondary(clk),
+	.rst(memory_rst),
+
+	.address(vram0_address),
+	.data(vram0_dataIn),
+	.writeMode(vram0_writeMode),
+	.readMode(vram0_readMode),
+	.dataOutput(vram0_dataOut),
+	.unsignedLoad(vram0_unsignedLoad),
+
+	.secondaryAddress(vram0_pixelAddress0),
+	.secondaryOutput(vram0_pixels0)
+);
+
+logic [11:0]vram1_address;
+logic [31:0]vram1_dataIn;
+logic [2:0]vram1_writeMode;
+logic [2:0]vram1_readMode;
+logic [31:0]vram1_dataOut;
+
+logic vram1_unsignedLoad;
+
+logic [11:0]vram1_pixelAddress1;
+logic [31:0]vram1_pixels1;
+Memory 
+#(
+.NUMBER_OF_WORDS(1024), 
+.ADDRESS_BIT_SIZE(10)
+)
+vram1(
+	.clk(memory_clk), 
+	.clk_secondary(clk),
+	.rst(memory_rst),
+
+	.address(vram1_address),
+	.data(vram1_dataIn),
+	.writeMode(vram1_writeMode),
+	.readMode(vram1_readMode),
+	.dataOutput(vram1_dataOut),
+	.unsignedLoad(vram1_unsignedLoad),
+
+	.secondaryAddress(vram1_pixelAddress1),
+	.secondaryOutput(vram1_pixels1)
+);
+
+// LED Matrix
+logic [10:0]matrix_pixelAddress0;
+logic [7:0]matrix_pixel0;
+	
+logic [10:0]matrix_pixelAddress1;
+logic [7:0]matrix_pixel1;
+
+logic matrix_done;
+
+// Matrix internal settings 
+logic matrix_use_secondary_buffer;
+
+
+LEDDisplay ledDisplay1(
+	.clk(clk),
+	.rst(rst),
+	
+	.pixelAddress0(matrix_pixelAddress0),
+	.pixel0(matrix_pixel0),
+	
+	.pixelAddress1(matrix_pixelAddress1),
+	.pixel1(matrix_pixel1),
+	
+	.done(matrix_done),
+	
+	.rowDecoder(rowDecoder),
+	.pixelClk(pixelClk),
+	.columnPixels0(columnPixels0),
+	.columnPixels1(columnPixels1),
+	.columnLatch(columnLatch),
+	.blank(blank),
+);
+
+typedef struct {
+	// Set to "1" to switch to the secondary buffer.
+	logic secondary_buffer;
+	
+} MatrixSettings;
+MatrixSettings matrix_settings;
+MatrixSettings matrix_settings_next;
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
-		zeebee = 8'hAB;
+		matrix_settings.secondary_buffer <= 1'b0;
+	
+		matrix_use_secondary_buffer <= 1'b0;
 	end
 	else begin
-		if (keyboard_scanCodeReady == 1'b1) begin
-			zeebee <= keyboard_scanCode;
+		matrix_settings <= matrix_settings_next;
+		
+		// Only swap buffers when we're done rendering the current buffer
+		//  and when the programmer asks.
+		if (matrix_done == 1'b1 && matrix_settings.secondary_buffer == 1'b1) begin
+			matrix_settings.secondary_buffer <= 1'b0;
+			matrix_use_secondary_buffer <= ~matrix_use_secondary_buffer;
 		end
 	end
 end
+
+// Make connections so the LEDDisplay can read pixels as it needs them.
 always_comb begin
-	sevenSegmentDisplayOutput = { {24{1'b0}}, zeebee};
+	// secondary_buffer is used as the MSb here which lets us select
+	//  between the lower half and the upper half of the buffer.
+	vram0_pixelAddress0 = {matrix_use_secondary_buffer, matrix_pixelAddress0[10:2], 2'b00};
+	unique case (matrix_pixelAddress0[1:0])
+		2'd0: begin
+			matrix_pixel0 = vram0_pixels0[7:0];
+		end
+		2'd1: begin
+			matrix_pixel0 = vram0_pixels0[15:8];
+		end
+		2'd2: begin
+			matrix_pixel0 = vram0_pixels0[23:16];
+		end
+		2'd3: begin
+			matrix_pixel0 = vram0_pixels0[31:24];
+		end
+	endcase
+	//                     { 1 + 9 bits for word address, 2 bits for byte address}
+	vram1_pixelAddress1 = {matrix_use_secondary_buffer, matrix_pixelAddress1[10:2], 2'b00};
+	// Select the pixel we wanted from the 32 bit word we read.
+	unique case (matrix_pixelAddress1[1:0])
+		2'd0: begin
+			matrix_pixel1 = vram1_pixels1[7:0];
+		end
+		2'd1: begin
+			matrix_pixel1 = vram1_pixels1[15:8];
+		end
+		2'd2: begin
+			matrix_pixel1 = vram1_pixels1[23:16];
+		end
+		2'd3: begin
+			matrix_pixel1 = vram1_pixels1[31:24];
+		end
+	endcase
 end
-*/
-//ENDDEBUG
 
 
 // Memory
@@ -226,12 +402,17 @@ logic memory_unsignedLoad;
 
 logic [31:0]memory_pcAddress;
 logic [31:0]memory_pcData;
-Memory mem(
+Memory 
+#(
+.NUMBER_OF_WORDS(16384), 
+.ADDRESS_BIT_SIZE(14)
+)
+mem(
 	// The memory has a separate clock because we might want
 	//  to use the memory externally while the processor is running
 	.clk(memory_clk), 
 	// The PC runs with the rest of the processor.
-	.clk_pc(clk),
+	.clk_secondary(clk),
 	.rst(memory_rst),
 
 	.address(memory_address),
@@ -242,8 +423,8 @@ Memory mem(
 
 	.unsignedLoad(memory_unsignedLoad),
 
-	.pcAddress(memory_pcAddress),
-	.pcDataOutput(memory_pcData)
+	.secondaryAddress(memory_pcAddress),
+	.secondaryOutput(memory_pcData)
 );
 
 
@@ -492,7 +673,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		
 		registerFile_readValue0_d0 <= registerFile_readValue0;
 		registerFile_readValue1_d0 <= registerFile_readValue1;
-		// Choose our register write address based on the address mode.
+		// Choose our register write addgenericCounterress based on the address mode.
 		unique case (control_registerWriteAddressMode)
 			ControlLinePackage::RD: begin
 				registerFile_writeAddress_d0 <= instruction_rdIn;
@@ -637,6 +818,20 @@ always_comb begin
 	
 	sevenSegDisplay_next = sevenSegDisplay;
 	
+	matrix_settings_next = matrix_settings;
+	
+	vram0_address = 10'd0;
+	vram0_dataIn = 32'd0;
+	vram0_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
+	vram0_readMode = MemoryModesPackage::ReadWriteMode_NONE;
+	vram0_unsignedLoad = 1'b0;
+	
+	vram1_address = 10'd0;
+	vram1_dataIn = 32'd0;
+	vram1_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
+	vram1_readMode = MemoryModesPackage::ReadWriteMode_NONE;
+	vram1_unsignedLoad = 1'b0;
+	
 	pc_resetAddress_next = pc_resetAddress;
 	
 	if (memoryRouting_address >= 0 && memoryRouting_address < 255) begin
@@ -660,13 +855,33 @@ always_comb begin
 	else if (memoryRouting_address == 32'd263) begin
 		// Can't write to PC directly.
 	end
-	else if (memoryRouting_address >= 32'd1024) begin
+	else if (memoryRouting_address == 32'd275) begin
+		if (writingToMemory) begin
+			matrix_settings_next.secondary_buffer = memoryRouting_dataIn[0];
+		end 
+	end
+	else if (memoryRouting_address >= 32'd1024 && memoryRouting_address <= 32'd65535) begin
 		// Use the Memory module		
 		memory_address = memoryRouting_address;
 		memory_dataIn = memoryRouting_dataIn;
 		memory_readMode = memoryRouting_readMode;
 		memory_writeMode = memoryRouting_writeMode;
 		memory_unsignedLoad = memoryRouting_unsignedLoad;
+	end
+	else if (memoryRouting_address >= 32'd65536 && memoryRouting_address < 32'd67584) begin
+		// Adjust the memory address to be in range of RAM.
+		vram0_address = {~matrix_use_secondary_buffer, 11'(memoryRouting_address - 32'd65536) };
+		vram0_dataIn = memoryRouting_dataIn;
+		vram0_writeMode = memoryRouting_writeMode;
+		vram0_readMode = memoryRouting_readMode;
+		vram0_unsignedLoad = memoryRouting_unsignedLoad;
+	end
+	else if (memoryRouting_address >= 32'd67584 && memoryRouting_address < 32'd69632) begin
+		vram1_address = {~matrix_use_secondary_buffer, 11'(memoryRouting_address - 32'd67584) };
+		vram1_dataIn = memoryRouting_dataIn;
+		vram1_writeMode = memoryRouting_writeMode;
+		vram1_readMode = memoryRouting_readMode;
+		vram1_unsignedLoad = memoryRouting_unsignedLoad;
 	end
 end
 
@@ -756,12 +971,33 @@ always_comb begin
 	end
 	else if (memoryRouting_address_d1 == 32'd263) begin
 		// Can't write to PC directly.
-		if (readingFromMemory)	
+		if (readingFromMemory)
 			memoryRouting_dataOut = pc_pcAddress;
+	end
+	else if (memoryRouting_address_d1 == 32'd267) begin
+		if (readingFromMemory)
+			memoryRouting_dataOut = genericCounter;
+	end
+	else if (memoryRouting_address_d1 == 32'd271) begin
+		if (readingFromMemory)
+			memoryRouting_dataOut = genericCounterHighRes;
+	end
+	else if (memoryRouting_address == 32'd275) begin
+		// Can't write to PC directly.
+		if (readingFromMemory) begin
+			memoryRouting_dataOut = {31'd0, matrix_settings.secondary_buffer};
+		end
 	end
 	else if (memoryRouting_address_d1 >= 32'd1024) begin
 		// Use the Memory module			
 		memoryRouting_dataOut = memory_dataOut;
+	end
+	else if (memoryRouting_address_d1 >= 32'd65536 && memoryRouting_address_d1 < 32'd67584) begin
+		// Adjust the memory address to be in range of RAM.
+		memoryRouting_dataOut = vram0_dataOut;
+	end
+	else if (memoryRouting_address_d1 >= 32'd67584 && memoryRouting_address_d1 < 32'd69632) begin
+		memoryRouting_dataOut = vram1_dataOut;
 	end
 end
 
