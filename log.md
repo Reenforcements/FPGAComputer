@@ -1,3 +1,17 @@
+
+
+### 8/7/18
+
+Started making Memory generic so I can use it for my two VRAMs.
+
+I want the ability to set the port b data width by parameter so I generated a new RAM module.
+
+Having problems parameterizing the RAM module the way I want. I'm just going to use my original RAM and fix it to read individual bytes.
+
+Matrix is working! (sort of) I have to fix some bugs. The display flickers when you write to the buffer but it should never do that.
+
+Ok I definitely jumped the gun. Definitely seeing lots of problems with driving the LED display from the FPGA.
+
 ### 8/6/18
 
 I got a basic controller set up. I don't know if it works, but the waveforms look good in ModelSim. I ran into a problem though. The LED matrix looks like it doesn't actually have enough lines to control all these pixels. The decoder should have 5 lines but it only has 4. My guess is there's twice as many shift registers as normal to accomodate this. I think I'm going to experiment with an Arduino first before continuing my FPGA code. I need to know how this works first.
