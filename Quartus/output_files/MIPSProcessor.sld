@@ -3,7 +3,7 @@
     <sld_info hpath="ProcessorClockEnabler:pce" name="pce">
       <assignment_values>
         <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481"/>
-        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533688573"/>
+        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533699436"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">

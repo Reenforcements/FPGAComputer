@@ -197,6 +197,8 @@ always_comb begin
 			n_blank = 1'b1;
 			// Wait for the column to display long enough.
 			nextState = WAIT_FOR_COLUMN;
+			// Increment our row
+			row_next = row + 5'd1;
 		end
 		WAIT_FOR_COLUMN: begin
 			
@@ -215,8 +217,7 @@ always_comb begin
 			end
 		end
 		NEXT_ROW: begin
-			// Increment our row
-			row_next = row + 5'd1;
+			
 			// If row_next is zero, it means we did all 16 rows
 			//  and the row variable overflowed. Change our binary digit.
 			if (row_next == 5'd0) begin

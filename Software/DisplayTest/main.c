@@ -47,6 +47,7 @@ void main() {
 	char *leftArrow = (char*) 0xB4;
 	char *rKey = (char*) 0x72;
 	char *shift = (char*) 0xCB;
+	char *hKey = (char*) 0x68;
 
 	// Hardware counters
 	int *milliCounter = (int*) 267;
@@ -56,53 +57,108 @@ void main() {
 	unsigned char currentColor = 0;
 	unsigned int lastSecond = 0;
 
+	// Render some test images until an arrow keypress is detected.
+	unsigned int currentTime = 0xFFFFFFFF;
+	unsigned int render1 = 0;
+	unsigned int render2 = 0;
+	unsigned int reset1 = 0;
+	while (1) {
+		currentTime = *milliCounter;
 
-	for (int i = 0; i < 4096; i++) {
-		*(vram + i) = 0b00010000;
-	}
-	*matrix_settings = 1;
-
-	for (int i = 0; i < 2048; i+=64) {
-		for(int g = 0; g < 32; g++) {
-			*(vram + i + g) = 0b00010000; //r
-		}
-		for(int g = 32; g < 64; g++) {
-			*(vram + i + g) = 0b00000100; //g
-		}
-	}
-	for (int i = 2048; i < 4096; i+=64) {
-		for(int g = 0; g < 32; g++) {
-			*(vram + i + g) = 0b00000001; //b
-		}
-		for(int g = 32; g < 64; g++) {
-			*(vram + i + g) = 0b00010101; //white
-		}
-	}
-	*matrix_settings = 1;
-
-	while(1) {
-		if (*shift) {
-			*segmentedDisplay = *microCounter;
-		}
-		else {
-			*segmentedDisplay = (*milliCounter);
-		}
-	
-		if (currentColor == 0) {
-			currentColor = 0b00100000;
-		} else {
-			if ( (*milliCounter / 1000) > lastSecond) {
-				lastSecond = (*milliCounter / 1000);
-				currentColor = currentColor >> 1;
+		if (currentTime < render1) {
+			// Render an all red screen
+			for (int i = 0; i < 4096; i++) {
+				*(vram + i) = 0b00010000;
 			}
+			*matrix_settings = 1;
 		}
-		//for (int i = 0; i < 4096; i++) {
-		//	*(vram + i) = 0x00;
-		//}
-		//for (int i = 0; i < 4096; i++) {
-		//	*(vram + i) = 0b00000001;
-		//}
-		//updateScreen();
-		//*matrix_settings = 1;
+		else if (currentTime >= render1 && currentTime < render2) {
+			// Render an all light blue screen
+			for (int i = 0; i < 4096; i++) {
+				*(vram + i) = 0b00000111;
+			}
+			*matrix_settings = 1;
+		}
+		else if (currentTime >= render2 && currentTime < reset1) {
+			for (int i = 0; i < 2048; i+=64) {
+				for(int g = 0; g < 32; g++) {
+					*(vram + i + g) = 0b00010000; //r
+				}
+				for(int g = 32; g < 64; g++) {
+					*(vram + i + g) = 0b00000100; //g
+				}
+			}
+
+			for (int i = 2048; i < 4096; i+=64) {
+				for(int g = 0; g < 32; g++) {
+					*(vram + i + g) = 0b00000001; //b
+				}
+				for(int g = 32; g < 64; g++) {
+					*(vram + i + g) = 0b00010101; //white
+				}
+			}
+			*matrix_settings = 1;
+		}
+		else if (currentTime >= reset1) {
+			render1 = currentTime + 1000;
+			render2 = currentTime + 2000;
+			reset1 = currentTime + 3000;
+		}
+
+		// Show the number of seconds onscreen
+		*segmentedDisplay = (*milliCounter / 1000);
+
+		// Leave this loop if any arrow key is pressed.
+		if (*upArrow != 0 || *downArrow != 0 || *leftArrow != 0 || *rightArrow != 0)
+			break;
+	}
+
+	// Box position
+	int b_x = 32;
+	int b_y = 32;
+	unsigned int lastDisplayTime = *milliCounter;
+	unsigned int lastMoveTime = *milliCounter;
+	while(1) {
+		// Get the arrow keys.
+		int xMod = (*leftArrow != 0 ? -1 : 0) + (*rightArrow != 0 ? 1 : 0);
+		int yMod = (*downArrow != 0 ? 1 : 0) + (*upArrow != 0 ? -1 : 0);
+
+		// Only move the box if a little time has passed.
+		if ((*milliCounter) > lastMoveTime + 33) {
+			lastMoveTime = *milliCounter;
+			b_x += xMod;
+			b_y += yMod;
+		}
+
+		// Don't write anything until the buffers actually switch
+		if ((*matrix_settings & 1) == 0) {
+			if ((*hKey) != 1) {
+				// Clear the display.
+				for (int i = 0; i < 4096; i++) {
+					*(vram + i) = 0b00000111;
+				}	
+			}
+	
+			// Draw an 8x8 box.
+			for (int x = -4; x <= 4; x++) {
+				for (int y = -4; y <= 4; y++) {
+					int currentX = b_x + x;
+					int currentY = b_y + y;
+					if (currentX >= 0 && currentX < 64 && currentY >= 0 && currentY < 64) {
+						*(vram + currentX + (64 * currentY)) = 0b00001100;
+					}
+				}
+			}
+			
+			*matrix_settings = 1;
+		}
+
+
+		// Show the number of seconds onscreen
+		*segmentedDisplay = (*milliCounter);
 	}
 }
+
+
+
+

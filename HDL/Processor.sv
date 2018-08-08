@@ -346,6 +346,7 @@ always_ff @ (posedge clk or negedge rst) begin
 		//  and when the programmer asks.
 		if (matrix_done == 1'b1 && matrix_settings.secondary_buffer == 1'b1) begin
 			matrix_settings.secondary_buffer <= 1'b0;
+			//DEBUG commented out line below
 			matrix_use_secondary_buffer <= ~matrix_use_secondary_buffer;
 		end
 	end
@@ -870,14 +871,16 @@ always_comb begin
 	end
 	else if (memoryRouting_address >= 32'd65536 && memoryRouting_address < 32'd67584) begin
 		// Adjust the memory address to be in range of RAM.
-		vram0_address = {~matrix_use_secondary_buffer, 11'(memoryRouting_address - 32'd65536) };
+		// DEBUG REMOVED ~
+		vram0_address = {~matrix_use_secondary_buffer, memoryRouting_address[10:0] };
 		vram0_dataIn = memoryRouting_dataIn;
 		vram0_writeMode = memoryRouting_writeMode;
 		vram0_readMode = memoryRouting_readMode;
 		vram0_unsignedLoad = memoryRouting_unsignedLoad;
 	end
 	else if (memoryRouting_address >= 32'd67584 && memoryRouting_address < 32'd69632) begin
-		vram1_address = {~matrix_use_secondary_buffer, 11'(memoryRouting_address - 32'd67584) };
+		// DEBUG REMOVED ~
+		vram1_address = {~matrix_use_secondary_buffer, memoryRouting_address[10:0] };
 		vram1_dataIn = memoryRouting_dataIn;
 		vram1_writeMode = memoryRouting_writeMode;
 		vram1_readMode = memoryRouting_readMode;
