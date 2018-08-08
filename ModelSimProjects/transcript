@@ -79,3 +79,25 @@ vsim work.LEDDisplay_TB
 restart -f
 run 20000
 # Done.
+restart -f
+run 200000
+# Done.
+run 200000
+# Compile of Memory.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of RAM32Bit.v was successful.
+# Compile of Main.sv was successful.
+# Compile of LEDDisplay.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.LEDDisplay
+run 200000
+# Done.
+run 200000
+restart -f
+run 200000
+# Done.
+add wave -position insertpoint /LEDDisplay_TB/rowDecoder
+restart -f
+run 200000
+# Done.

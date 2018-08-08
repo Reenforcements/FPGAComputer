@@ -1,5 +1,5 @@
 Assembler report for MIPSProcessor
-Tue Aug  7 15:24:18 2018
+Tue Aug  7 20:39:22 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -9,9 +9,10 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: MIPSProcessor.sof
-  6. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: MIPSProcessor.sof
+  7. Assembler Messages
 
 
 
@@ -37,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Aug  7 15:24:18 2018 ;
+; Assembler Status      ; Successful - Tue Aug  7 20:39:22 2018 ;
 ; Revision Name         ; MIPSProcessor                         ;
 ; Top-level Entity Name ; Main                                  ;
 ; Family                ; Cyclone IV E                          ;
@@ -50,6 +51,16 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 ; Option ; Setting ; Default Value ;
 +--------+---------+---------------+
+
+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
 
 
 +----------------------------------------------------------------------------+
@@ -66,8 +77,8 @@ refer to the applicable agreement for further details.
 +----------------+----------------------------+
 ; Option         ; Setting                    ;
 +----------------+----------------------------+
-; JTAG usercode  ; 0x00CAFF0B                 ;
-; Checksum       ; 0x00CAFF0B                 ;
+; JTAG usercode  ; 0x00D47772                 ;
+; Checksum       ; 0x00D47772                 ;
 +----------------+----------------------------+
 
 
@@ -77,14 +88,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Aug  7 15:24:14 2018
+    Info: Processing started: Tue Aug  7 20:39:17 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPSProcessor -c MIPSProcessor
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 859 megabytes
-    Info: Processing ended: Tue Aug  7 15:24:18 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 865 megabytes
+    Info: Processing ended: Tue Aug  7 20:39:22 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

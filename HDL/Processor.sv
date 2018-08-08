@@ -323,7 +323,7 @@ LEDDisplay ledDisplay1(
 	.columnPixels0(columnPixels0),
 	.columnPixels1(columnPixels1),
 	.columnLatch(columnLatch),
-	.blank(blank),
+	.blank(blank)
 );
 
 typedef struct {
@@ -820,13 +820,13 @@ always_comb begin
 	
 	matrix_settings_next = matrix_settings;
 	
-	vram0_address = 10'd0;
+	vram0_address = 12'd0;
 	vram0_dataIn = 32'd0;
 	vram0_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 	vram0_readMode = MemoryModesPackage::ReadWriteMode_NONE;
 	vram0_unsignedLoad = 1'b0;
 	
-	vram1_address = 10'd0;
+	vram1_address = 12'd0;
 	vram1_dataIn = 32'd0;
 	vram1_writeMode = MemoryModesPackage::ReadWriteMode_NONE;
 	vram1_readMode = MemoryModesPackage::ReadWriteMode_NONE;
@@ -982,13 +982,13 @@ always_comb begin
 		if (readingFromMemory)
 			memoryRouting_dataOut = genericCounterHighRes;
 	end
-	else if (memoryRouting_address == 32'd275) begin
+	else if (memoryRouting_address_d1 == 32'd275) begin
 		// Can't write to PC directly.
 		if (readingFromMemory) begin
 			memoryRouting_dataOut = {31'd0, matrix_settings.secondary_buffer};
 		end
 	end
-	else if (memoryRouting_address_d1 >= 32'd1024) begin
+	else if (memoryRouting_address_d1 >= 32'd1024 && memoryRouting_address_d1 <= 32'd65535) begin
 		// Use the Memory module			
 		memoryRouting_dataOut = memory_dataOut;
 	end

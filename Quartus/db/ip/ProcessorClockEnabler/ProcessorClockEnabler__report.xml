@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2018.08.07.15:21:30"
+ date="2018.08.07.20:36:14"
  outputDirectory="/home/imaustyn/Desktop/FPGAComputer/Quartus/db/ip/ProcessorClockEnabler/">
  <perimeter>
   <parameter
@@ -47,12 +47,12 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="ProcessorClockEnabler:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1533669689,AUTO_UNIQUE_ID=(altclkctrl:18.0:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=true,NUMBER_OF_CLOCKS=1,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
+   parameterizationKey="ProcessorClockEnabler:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1533688573,AUTO_UNIQUE_ID=(altclkctrl:18.0:CLOCK_TYPE=1,DEVICE_FAMILY=Cyclone IV E,ENA_REGISTER_MODE=1,GUI_USE_ENA=true,NUMBER_OF_CLOCKS=1,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
    instancePathKey="ProcessorClockEnabler"
    kind="ProcessorClockEnabler"
    version="1.0"
    name="ProcessorClockEnabler">
-  <parameter name="AUTO_GENERATION_ID" value="1533669689" />
+  <parameter name="AUTO_GENERATION_ID" value="1533688573" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />

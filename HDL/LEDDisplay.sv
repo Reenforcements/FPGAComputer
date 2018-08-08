@@ -122,10 +122,10 @@ always_comb begin
 	
 	// Always set these lines.
 	// Whether or not anything actually happens is controlled by the clock.
-	pixelAddress0 = (11'(row) * 11'd32) + 11'(column);
-	pixelAddress1 = (11'(row) * 11'd32) + 11'(column);
+	pixelAddress0 = (11'(row) * 11'd64) + 11'(column);
+	pixelAddress1 = (11'(row) * 11'd64) + 11'(column);
 	
-	// Each color has two bits.
+	// Each color has two bits
 	// Its not a lot, but it will still give us a whole 64 different colors.
 	// That's plenty!
 	// {X,X, R,R, G,G, B,B} = 8 bits
@@ -176,10 +176,10 @@ always_comb begin
 			n_pixelClk = 1'd0;
 			
 			// Increment the column
-			column_next = column + 5'd1;
+			column_next = column + 6'd1;
 			// If we just did the 63rd column, then column_next will be
 			//   zero and we're done shifting in this column
-			if (column_next == 5'd0) begin
+			if (column_next == 6'd0) begin
 				// Done shifting in this column
 				nextState = SHOW_COLUMN;
 			end
@@ -242,7 +242,7 @@ always_comb begin
 		end
 	endcase
 	
-	rowDecoder = ~n_rowDecoder;
+	rowDecoder = ~(n_rowDecoder - 5'd1);
    pixelClk = ~n_pixelClk;
 	columnPixels0 = ~n_columnPixels0;
 	columnPixels1 = ~n_columnPixels1;
