@@ -101,6 +101,8 @@ end
 
 // Each bit controls the state of its corresponding output.
 // Note: The pin must be set as an output first using GPIO_modes.
+logic [7:0]GPIO_modes;
+
 logic [7:0]GPIO_outputs;
 // These are the input values of the pins that are set as inputs.
 logic [7:0]GPIO_inputs;
@@ -108,13 +110,16 @@ logic [7:0]GPIO_inputs;
 
 logic [7:0]GPIO_outputs_next;
 logic [7:0]GPIO_inputs_next;
+logic [7:0]GPIO_modes_next;
 
 always_ff @ (posedge clk or negedge rst) begin
 	if (rst == 1'b0) begin
+		GPIO_modes <= 8'hFF;
 		GPIO_outputs <= 8'd0;
 		GPIO_inputs <= 8'd0;
 	end
 	else begin
+		GPIO_modes <= GPIO_modes_next;
 		GPIO_outputs <= GPIO_outputs_next;
 		GPIO_inputs <= GPIO_inputs_next;
 	end
@@ -126,7 +131,7 @@ GPIO1 gpio1 (
 	// Because of the way the buffer chip works, the pin modes
 	//   have to be switched 4 at a time. I'm just going to
 	//   hard wire 4 to be outputs and 4 to be inputs.
-	.oe(8'b11110000),
+	.oe(GPIO_modes),
 	.dataio(GPIO_pins),
 	//dataout needs to be registered.
 	.dataout(GPIO_inputs_next)
@@ -874,6 +879,7 @@ always_comb begin
 	vram1_unsignedLoad = 1'b0;
 	
 	GPIO_outputs_next = GPIO_outputs;
+	GPIO_modes_next = GPIO_modes;
 	
 	pc_resetAddress_next = pc_resetAddress;
 	
@@ -901,6 +907,11 @@ always_comb begin
 	else if (memoryRouting_address == 32'd275) begin
 		if (writingToMemory) begin
 			matrix_settings_next.secondary_buffer = memoryRouting_dataIn[0];
+		end 
+	end
+	else if (memoryRouting_address == 32'd279) begin
+		if (writingToMemory) begin
+			GPIO_modes_next = memoryRouting_dataIn[7:0];
 		end 
 	end
 	else if (memoryRouting_address == 32'd283) begin
@@ -1036,6 +1047,11 @@ always_comb begin
 		// Can't write to PC directly.
 		if (readingFromMemory) begin
 			memoryRouting_dataOut = {31'd0, matrix_settings.secondary_buffer};
+		end
+	end
+	else if (memoryRouting_address_d1 == 32'd279) begin
+		if (readingFromMemory) begin
+			memoryRouting_dataOut = {24'b0, GPIO_modes};
 		end
 	end
 	else if (memoryRouting_address_d1 == 32'd283) begin
