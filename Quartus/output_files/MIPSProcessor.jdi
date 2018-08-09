@@ -75,7 +75,7 @@
     <sld_info hpath="ProcessorClockEnabler:pce" name="pce">
       <assignment_values>
         <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1532379481"/>
-        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533699436"/>
+        <assignment_value text="QSYS_NAME ProcessorClockEnabler HAS_SOPCINFO 1 GENERATION_ID 1533754675"/>
       </assignment_values>
       <parameters/>
     </sld_info>

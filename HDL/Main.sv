@@ -26,6 +26,9 @@ output logic [2:0]columnPixels1,
 output logic columnLatch,
 output logic blank,
 
+// GPIO
+inout wire [7:0]GPIO_pins,
+
 // Outputs
 output logic [6:0]seg7,
 output logic [6:0]seg6,
@@ -185,6 +188,8 @@ Processor #(.CLOCK_SPEED(8333333)) processor(
 	.columnPixels1(columnPixels1),
 	.columnLatch(columnLatch),
 	.blank(blank),
+	
+	.GPIO_pins(GPIO_pins),
 	
 	.sevenSegmentDisplayOutput(sevenSegmentDisplayOutput)
 );

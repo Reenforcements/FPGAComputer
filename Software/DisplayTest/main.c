@@ -65,6 +65,9 @@ void main() {
 	while (1) {
 		currentTime = *milliCounter;
 
+		if ((*matrix_settings & 1) != 0)
+			continue;
+
 		if (currentTime < render1) {
 			// Render an all red screen
 			for (int i = 0; i < 4096; i++) {
@@ -135,17 +138,17 @@ void main() {
 			if ((*hKey) != 1) {
 				// Clear the display.
 				for (int i = 0; i < 4096; i++) {
-					*(vram + i) = 0b00000111;
+					*(vram + i) = 0b00000001;
 				}	
 			}
 	
 			// Draw an 8x8 box.
-			for (int x = -4; x <= 4; x++) {
-				for (int y = -4; y <= 4; y++) {
+			for (int x = -1; x <= 1; x++) {
+				for (int y = -1; y <= 1; y++) {
 					int currentX = b_x + x;
 					int currentY = b_y + y;
 					if (currentX >= 0 && currentX < 64 && currentY >= 0 && currentY < 64) {
-						*(vram + currentX + (64 * currentY)) = 0b00001100;
+						*(vram + currentX + (64 * currentY)) = (((*milliCounter / 1000)) % 2 != 0) ? 0b00001100 : 0b00010000;
 					}
 				}
 			}

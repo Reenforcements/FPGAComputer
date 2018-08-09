@@ -1,13 +1,12 @@
-LPM_DREPRESENTATION=SIGNED
-LPM_HINT=MAXIMIZE_SPEED=6,LPM_REMAINDERPOSITIVE=FALSE
-LPM_NREPRESENTATION=SIGNED
-LPM_PIPELINE=1
-LPM_TYPE=LPM_DIVIDE
-LPM_WIDTHD=32
-LPM_WIDTHN=32
+INTENDED_DEVICE_FAMILY="Cyclone IV E"
+enable_bus_hold=FALSE
+number_of_channels=8
+open_drain_output=FALSE
+use_differential_mode=FALSE
+use_dynamic_termination_control=FALSE
+use_termination_control=FALSE
 DEVICE_FAMILY="Cyclone IV E"
-clock
-denom
-numer
-quotient
-remain
+datain
+oe
+dataio
+dataout

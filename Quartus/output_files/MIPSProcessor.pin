@@ -225,11 +225,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :      
 seg7[1]                      : AE17      : output : 2.5 V             :         : 4         : Y              
 seg4[6]                      : AE18      : output : 2.5 V             :         : 4         : Y              
 seg4[4]                      : AE19      : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :         : 4         :                
+GPIO_pins[6]                 : AE20      : bidir  : 2.5 V             :         : 4         : Y              
 columnPixels1[2]             : AE21      : output : 2.5 V             :         : 4         : Y              
 blank                        : AE22      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4         :                
+GPIO_pins[0]                 : AE24      : bidir  : 2.5 V             :         : 4         : Y              
 columnPixels1[0]             : AE25      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 5         :                
@@ -253,7 +253,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :      
 seg7[4]                      : AF17      : output : 2.5 V             :         : 4         : Y              
 seg5[5]                      : AF18      : output : 2.5 V             :         : 4         : Y              
 seg4[5]                      : AF19      : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4         :                
+GPIO_pins[7]                 : AF20      : bidir  : 2.5 V             :         : 4         : Y              
 columnPixels0[1]             : AF21      : output : 2.5 V             :         : 4         : Y              
 columnLatch                  : AF22      : output : 2.5 V             :         : 4         : Y              
 seg3[5]                      : AF23      : output : 2.5 V             :         : 4         : Y              
@@ -283,11 +283,11 @@ seg7[5]                      : AG18      : output : 2.5 V             :         
 seg5[4]                      : AG19      : output : 2.5 V             :         : 4         : Y              
 GND                          : AG20      : gnd    :                   :         :           :                
 seg4[2]                      : AG21      : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4         :                
+GPIO_pins[4]                 : AG22      : bidir  : 2.5 V             :         : 4         : Y              
+GPIO_pins[1]                 : AG23      : bidir  : 2.5 V             :         : 4         : Y              
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4         :                
+GPIO_pins[3]                 : AG26      : bidir  : 2.5 V             :         : 4         : Y              
 GND                          : AG27      : gnd    :                   :         :           :                
 VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
 VCCIO3                       : AH2       : power  :                   : 2.5V    : 3         :                
@@ -310,11 +310,11 @@ seg5[6]                      : AH18      : output : 2.5 V             :         
 seg5[3]                      : AH19      : output : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
 seg4[3]                      : AH21      : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4         :                
+GPIO_pins[5]                 : AH22      : bidir  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4         :                
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 4         :                
+GPIO_pins[2]                 : AH26      : bidir  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AH27      : power  :                   : 2.5V    : 4         :                
 VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                

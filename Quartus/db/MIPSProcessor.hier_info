@@ -29,6 +29,14 @@ columnPixels1[1] <= Processor:processor.columnPixels1
 columnPixels1[2] <= Processor:processor.columnPixels1
 columnLatch <= Processor:processor.columnLatch
 blank <= Processor:processor.blank
+GPIO_pins[0] <> Processor:processor.GPIO_pins
+GPIO_pins[1] <> Processor:processor.GPIO_pins
+GPIO_pins[2] <> Processor:processor.GPIO_pins
+GPIO_pins[3] <> Processor:processor.GPIO_pins
+GPIO_pins[4] <> Processor:processor.GPIO_pins
+GPIO_pins[5] <> Processor:processor.GPIO_pins
+GPIO_pins[6] <> Processor:processor.GPIO_pins
+GPIO_pins[7] <> Processor:processor.GPIO_pins
 seg7[0] <= Output7Seg:display_seg7.display
 seg7[1] <= Output7Seg:display_seg7.display
 seg7[2] <= Output7Seg:display_seg7.display
@@ -600,6 +608,14 @@ columnPixels1[1] <= LEDDisplay:ledDisplay1.columnPixels1
 columnPixels1[2] <= LEDDisplay:ledDisplay1.columnPixels1
 columnLatch <= LEDDisplay:ledDisplay1.columnLatch
 blank <= LEDDisplay:ledDisplay1.blank
+GPIO_pins[0] <> GPIO1:gpio1.dataio
+GPIO_pins[1] <> GPIO1:gpio1.dataio
+GPIO_pins[2] <> GPIO1:gpio1.dataio
+GPIO_pins[3] <> GPIO1:gpio1.dataio
+GPIO_pins[4] <> GPIO1:gpio1.dataio
+GPIO_pins[5] <> GPIO1:gpio1.dataio
+GPIO_pins[6] <> GPIO1:gpio1.dataio
+GPIO_pins[7] <> GPIO1:gpio1.dataio
 sevenSegmentDisplayOutput[0] <= sevenSegDisplay[0].DB_MAX_OUTPUT_PORT_TYPE
 sevenSegmentDisplayOutput[1] <= sevenSegDisplay[1].DB_MAX_OUTPUT_PORT_TYPE
 sevenSegmentDisplayOutput[2] <= sevenSegDisplay[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -859,6 +875,76 @@ resetAddress[28] => currentPC.DATAB
 resetAddress[29] => currentPC.DATAB
 resetAddress[30] => currentPC.DATAB
 resetAddress[31] => currentPC.DATAB
+
+
+|Main|Processor:processor|GPIO1:gpio1
+datain[0] => datain[0].IN1
+datain[1] => datain[1].IN1
+datain[2] => datain[2].IN1
+datain[3] => datain[3].IN1
+datain[4] => datain[4].IN1
+datain[5] => datain[5].IN1
+datain[6] => datain[6].IN1
+datain[7] => datain[7].IN1
+oe[0] => oe[0].IN1
+oe[1] => oe[1].IN1
+oe[2] => oe[2].IN1
+oe[3] => oe[3].IN1
+oe[4] => oe[4].IN1
+oe[5] => oe[5].IN1
+oe[6] => oe[6].IN1
+oe[7] => oe[7].IN1
+dataio[0] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[1] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[2] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[3] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[4] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[5] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[6] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataio[7] <> GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataio
+dataout[0] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[1] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[2] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[3] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[4] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[5] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[6] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+dataout[7] <= GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component.dataout
+
+
+|Main|Processor:processor|GPIO1:gpio1|GPIO1_iobuf_bidir_a0p:GPIO1_iobuf_bidir_a0p_component
+datain[0] => obufa_0.IN
+datain[1] => obufa_1.IN
+datain[2] => obufa_2.IN
+datain[3] => obufa_3.IN
+datain[4] => obufa_4.IN
+datain[5] => obufa_5.IN
+datain[6] => obufa_6.IN
+datain[7] => obufa_7.IN
+dataio[0] <> dataio[0]
+dataio[1] <> dataio[1]
+dataio[2] <> dataio[2]
+dataio[3] <> dataio[3]
+dataio[4] <> dataio[4]
+dataio[5] <> dataio[5]
+dataio[6] <> dataio[6]
+dataio[7] <> dataio[7]
+dataout[0] <= ibufa_0.OUT
+dataout[1] <= ibufa_1.OUT
+dataout[2] <= ibufa_2.OUT
+dataout[3] <= ibufa_3.OUT
+dataout[4] <= ibufa_4.OUT
+dataout[5] <= ibufa_5.OUT
+dataout[6] <= ibufa_6.OUT
+dataout[7] <= ibufa_7.OUT
+oe[0] => obufa_0.OE
+oe[1] => obufa_1.OE
+oe[2] => obufa_2.OE
+oe[3] => obufa_3.OE
+oe[4] => obufa_4.OE
+oe[5] => obufa_5.OE
+oe[6] => obufa_6.OE
+oe[7] => obufa_7.OE
 
 
 |Main|Processor:processor|RegisterFile:registerFile
