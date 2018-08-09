@@ -1,4 +1,16 @@
 
+### 8/9/18
+
+Working on the wiki. I'm making an outline and looking over this log and the other work that I did over the summer to figure how how I want to write this thing.
+
+
+### 8/8/18
+
+Working on GPIO now. There's a megafunction called ALTIOBUF that I might use for GPIO.
+
+Oops, I don't think these tristate buffers can act as inputs.
+
+I started working on the 3D printed case. Just one of the pieces will take almost 24 hours straight to print. I decided that there isn't enough time to make the case before Friday and I'm abandoning it. I may pursue the case in my free time after the project ends, but I might need a break before school.
 
 ### 8/7/18
 
@@ -11,6 +23,18 @@ Having problems parameterizing the RAM module the way I want. I'm just going to 
 Matrix is working! (sort of) I have to fix some bugs. The display flickers when you write to the buffer but it should never do that.
 
 Ok I definitely jumped the gun. Definitely seeing lots of problems with driving the LED display from the FPGA.
+
+I made a quick python program to convert a test image into a hex file that I can upload to RAM.
+
+The test image displays well... I'm afraid the processor isn't writing to memory correctly again. Oh no... It does seem to display just fine if you write the same image over and over. Maybe that's because of the weird overlapping buffer looking thing. Whatever it is, its consistent in the location it pops up in and it goes away if you write the image more than once. That suggests its related to the buffering system I tried to do.
+
+Ok, it was something to do with the double buffer. I must've messed up the code somewhere.
+
+I think I was writing to the display too quickly.... That would explain the partially written pixels. It works. I don't think there's an issue with the multi-buffer code.
+
+Ghosting was occurring because I was changing the row at the wrong time. The bottom~ish half of the display works amazingly now, but the upper half doesn't work so well. It gets worse the farther up you go.
+
+Ok, the problem was, I was writing to the offscreen buffer, then I was telling the hardware to swap, but then I'd start writing to the newly "offscreen buffer". That "offscreen buffer" might still be being used though! The solution was to wait for the flag to go back to zero before I try rendering again.
 
 ### 8/6/18
 
