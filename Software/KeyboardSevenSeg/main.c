@@ -9,7 +9,6 @@ Press r to reset the counter.
 Display the counter on the first four digits of the 7 segment display.
 Display which keys are pressed on the last four digits. 
 The letters A, B, C, D are assigned to each key.
-
 */
 void main() {
 	int *readback = (int*)20000;
