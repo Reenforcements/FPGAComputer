@@ -60,13 +60,6 @@ void main() {
 		} else {
 			downArrowPressed = 0;
 		}
-		
-		*readback = upArrowPressed;
-		*(readback + 4) = downArrowPressed;
-		*(readback + 8) = *upArrow;
-		*(readback + 12) = *downArrow;
-		*(readback + 16) = *leftArrow;
-		*(readback + 20) = *rightArrow;
 
 		counter += ((*rightArrow) == 1) ? 1 : 0;
 		counter += ((*leftArrow) == 1) ? -1 : 0;
